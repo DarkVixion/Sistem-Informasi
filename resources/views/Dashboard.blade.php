@@ -20,6 +20,26 @@
 </head>
 
 <body style="background: #FAF6E9;">
+    <div class="card main" style="background: #FAF6E9;">
+        <div class="card-header">
+            <h2>Dashboard</h2>
+            <a href="#" class="notification">
+                <span>Inbox</span>
+                <span class="badge">*</span>
+            </a>
+            <div class="dropdown">
+                <button class="dropbtn">Universitas Pertamina</button>
+                <div class="dropdown-content">
+                    <a href="#">Akun</a>
+                    <a href="#">Keluar</a>
+                </div>
+            </div>
+
+        </div>
+        <p>This sidebar is of full height (100%) and always shown.</p>
+        <p>Scroll down the page to see the result.</p>
+    </div>
+
     <div class=" sidenav">
         <img src="image/Head Logo.png" alt="Logo" width="200" height="85">
         <br></br>
@@ -34,12 +54,7 @@
         <a href="#contact">Kerja Sama </a>
     </div>
 
-    <div class="main">
-        <h1>Sidebar</h1>
-        <p>This sidebar is of full height (100%) and always shown.</p>
-        <p>Scroll down the page to see the result.</p>
 
-    </div>
 
 
 
