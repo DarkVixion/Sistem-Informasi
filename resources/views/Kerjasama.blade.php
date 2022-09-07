@@ -20,36 +20,10 @@
 </head>
 
 <body style="background: #FAF6E9;">
-    <div class="card main" style="background: #FAF6E9;">
-        <div class="card-header" style="float: right;">
-            <h2>Dashboard</h2>
-            <div class=>
-                <a href="#" class="notification">
-                    <i class="fa fa-bell"></i>
-                    <span class="badge">*</span>
-                </a>
-            </div>
-            &nbsp
-            <div class="dropdown">
-                <button class="dropbtn">Universitas Pertamina<img
-                        src="https://ppm.universitaspertamina.ac.id/uploads/profile/admin/Logo_Universitas_Pertamina_-_Full_Color.png"
-                        alt="Photo" style="width:100%;max-width:50px"></button>
-
-                <div class="dropdown-content">
-                    <a href="#">Akun</a>
-                    <a href="#">Keluar</a>
-                </div>
-            </div>
-
-        </div>
-        <p>This sidebar is of full height (100%) and always shown.</p>
-        <p>Scroll down the page to see the result.</p>
-    </div>
-
     <div class=" sidenav">
         <img src="image/Head Logo.png" alt="Logo" width="200" height="85">
         <br></br>
-        <a href="#">Dashboard</a>
+        <a href="/Dashboard">Dashboard</a>
         <button class="dropdown-btn">Master Data
             <i class="fa fa-caret-down"></i>
         </button>
@@ -58,6 +32,18 @@
             <a href="#">Skala Kerjasama</a>
         </div>
         <a href="/Kerjasama">Kerja Sama </a>
+    </div>
+
+    <div class="profile d-flex">
+        <span class="profile-name align-self-center">Universitas Pertamina</span>
+        <div class="profile-pic aling-align-self-center">
+            <img src="https://ppm.universitaspertamina.ac.id/uploads/profile/admin/Logo_Universitas_Pertamina_-_Full_Color.png"
+                alt="Photo">
+        </div>
+        <div class="dropdown">
+            <a href="#">Akun</a>
+            <a href="#">Keluar</a>
+        </div>
     </div>
 
 
