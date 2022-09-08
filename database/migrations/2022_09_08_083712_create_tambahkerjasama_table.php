@@ -24,7 +24,6 @@ class CreateTambahkerjasamaTable extends Migration
             $table->integer("notelp");
             $table->double("web");
             $table->string("bulankerjasama");
-
             $table->integer("nilaikontrak");
             $table->datetime("tglmulai");
             $table->datetime("tglselesai");
