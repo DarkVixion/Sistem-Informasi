@@ -28,6 +28,16 @@ class CreateTambahkerjasamaTable extends Migration
             $table->integer("nilaikontrak");
             $table->datetime("tglmulai");
             $table->datetime("tglselesai");
+
+            $table->string("namafileperjanjian");
+
+            $table->string("judulkerjasamamou");
+
+            $table->string("judulkerjasamamoa");
+
+            $table->string("pic");
+            $table->string("notelpic");
+            $table->string("emailpic");
         });
     }
 
