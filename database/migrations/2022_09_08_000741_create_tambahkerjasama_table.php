@@ -24,10 +24,13 @@ class CreateTambahkerjasamaTable extends Migration
             $table->integer("notelp");
             $table->double("web");
             $table->string("bulankerjasama");
-
             $table->integer("nilaikontrak");
             $table->datetime("tglmulai");
             $table->datetime("tglselesai");
+
+            $table->string('pic');
+            $table->integer('no_telp_pic');
+            $table->string('email_pic');
         });
     }
 
