@@ -56,7 +56,53 @@
         <br>
         <h2>Tambah Kerja Sama</h2><br>
         <div class="grid-container">
-            <div class="grid-container2"></div>
+            <div class="grid-container2">
+                <div class="item1">
+                    <p>Status</p>
+                </div>
+                <div class="item2">
+                    <form class="form-inline" action="/action_page.php">
+                        <input type="email" id="email" placeholder="Enter email" name="email">
+                    </form>
+                </div>
+                <div class="item1">
+                    <p>Nama Mitra</p>
+                </div>
+                <div class="item2">4</div>
+                <div class="item1">
+                    <p>Jenis Mitra</p>
+                </div>
+                <div class="item2">6</div>
+                <div class="item1">
+                    <p>Judul Kerja Sama</p>
+                </div>
+                <div class="item2">8</div>
+                <div class="item1">
+                    <p>Skala Kerja Sama</p>
+                </div>
+                <div class="item2">8</div>
+                <div class="item1">
+                    <p>Alamat</p>
+                </div>
+                <div class="item2">8</div>
+                <div class="item1">
+                    <p>Negara</p>
+                </div>
+                <div class="item2">8</div>
+                <div class="item1">
+                    <p>Nomor Telephone</p>
+                </div>
+                <div class="item2">8</div>
+                <div class="item1">
+                    <p>Website</p>
+                </div>
+                <div class="item2">8</div>
+                <div class="item1">
+                    <p>Bulan Kerjasama</p>
+                </div>
+                <div class="item2">8</div>
+
+            </div>
         </div><br>
         <div class="grid-container">asas</div><br>
         <div class="grid-container">asas</div><br>

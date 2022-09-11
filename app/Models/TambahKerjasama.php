@@ -28,3 +28,4 @@ class TambahKerjasama extends Model
         'no_telp_pic',
         'email_pic'
     ];
+}
