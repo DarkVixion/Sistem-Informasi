@@ -25,8 +25,8 @@ class CreateTambahkerjasamaTable extends Migration
             $table->double("web");
             $table->string("bulankerjasama");
             $table->integer("nilaikontrak");
-            $table->datetime("tglmulai");
-            $table->datetime("tglselesai");
+            $table->date("tglmulai");
+            $table->date("tglselesai");
             $table->string("judul_mou");
             $table->string("path_mou");
             $table->string("judul_moa");
