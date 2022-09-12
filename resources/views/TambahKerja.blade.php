@@ -17,6 +17,15 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Dashboard</title>
+    <style>
+        .berlin {
+    border: 1px solid whitesmoke;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    margin-bottom: 1rem;
+    padding: 10px;
+}
+    </style>
 </head>
 
 <body style="background: #FAF6E9;">
@@ -29,7 +38,7 @@
         </button>
         <div class="dropdown-container">
             <a href="/JenisMitra">Jenis Mitra</a>
-            <a href="#">Skala Kerjasama</a>
+            <a href="#" >Skala Kerjasama</a>
         </div>
         <a href="/Kerjasama">Kerja Sama </a>
     </div>
@@ -53,20 +62,47 @@
                 </div>
             </div>
         </div>
+        <div class="card-body">
+            <form style="background-color: grey">
+                <div class="row">
+                <div class="col-md-2 berlin"
+">Status</div>
+                <div class="col-md-10" style="
+    border-radius: 21px;
+"><select class="form-control" name="cars" id="cars">
+                                    <option value="Aktif">Aktif</option>
+                                    <option value="Tidak Aktif">Tidak Aktif</option>
+                                    <option value="Kedaluwarsa">Kedaluwarsa</option>
+                                    <option value="Perpanjangan">Perpanjangan</option>
+                                    <option value="Dalam Penjajakan">Dalam Penjajakan</option>
+                                </select></div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 berlin">
+                    Nama Mitra
+                </div>
+                <div class="col-md-10">
+                    <input placeholder="Masukkan nama elo di sini" class="form-control berlin"></div>
+                </div>
+            </div>    
+            
+            </form>
+        </div>
         <br>
         <h2>Tambah Kerja Sama</h2><br>
         <div class="grid-container">
-            <div class="grid-container2">
+            <div class="grid-container2"  width=50 >
                 <div class="item1">
                     <p>Status</p>
                 </div>
                 <div class="item2">
                     <form action="/action_page.php">
                         <select name="cars" id="cars">
-                            <option value="volvo">Volvo</option>
-                            <option value="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
+                            <option value="Aktif">Aktif</option>
+                            <option value="Tidak Aktif">Tidak Aktif</option>
+                            <option value="Kedaluwarsa">Kedaluwarsa</option>
+                            <option value="Perpanjangan">Perpanjangan</option>
+                            <option value="Dalam Penjajakan">Dalam Penjajakan</option>
                         </select>
                         <br><br>
 
@@ -75,7 +111,9 @@
                 <div class="item1">
                     <p>Nama Mitra</p>
                 </div>
-                <div class="item2">4</div>
+                <div class="item2">
+                    <input type="nama_mitra" id="nama_mitra" placeholder="Masukkan Nama Mitra" name="nama_mitra">
+                </div>
                 <div class="item1">
                     <p>Jenis Mitra</p>
                 </div>
@@ -83,7 +121,9 @@
                 <div class="item1">
                     <p>Judul Kerja Sama</p>
                 </div>
-                <div class="item2">8</div>
+                <div class="item2">
+                        <input type="judul_kerja_sama" id="judul_kerja_sama" placeholder="Masukkan Judul Kerja Sama" name="judul_kerja_sama">
+                </div>
                 <div class="item1">
                     <p>Skala Kerja Sama</p>
                 </div>
@@ -91,23 +131,37 @@
                 <div class="item1">
                     <p>Alamat</p>
                 </div>
-                <div class="item2">8</div>
+                <div class="item2">
+                    <input type="alamat" id="alamat" placeholder="Masukkan Alamat" name="alamat">
+                </div>
                 <div class="item1">
                     <p>Negara</p>
                 </div>
-                <div class="item2">8</div>
+                <div class="item2">
+                        <input type="negara" id="negara" placeholder="Masukkan Negara" name="negara">
+                    </form>
+                </div>
                 <div class="item1">
                     <p>Nomor Telephone</p>
                 </div>
-                <div class="item2">8</div>
+                <div class="item2">
+                        <input type="no_telp" id="no_telp" placeholder="Masukkan Nomor Telepon" name="no_telp">
+                    </form>
+                </div>
                 <div class="item1">
                     <p>Website</p>
                 </div>
-                <div class="item2">8</div>
+                <div class="item2">
+                        <input type="web" id="web" placeholder="Masukkan URL Website" name="web">
+                    </form>
+                </div>
                 <div class="item1">
                     <p>Bulan Kerjasama</p>
                 </div>
-                <div class="item2">8</div>
+                <div class="item2">
+                        <input type="bulan_kerja_sama" id="bulan_kerja_sama" placeholder="Masukkan Bulan Kerja Sama" name="bulan_kerja_sama">
+                    </form>
+                </div>
 
             </div>
         </div><br>
@@ -117,7 +171,6 @@
                     <p>Status</p>
                 </div>
                 <div class="item2">
-                    <form class="form-inline" action="/action_page.php">
                         <input type="email" id="email" placeholder="Enter email" name="email">
                     </form>
                 </div>
@@ -141,7 +194,6 @@
                     <p>Status</p>
                 </div>
                 <div class="item2">
-                    <form class="form-inline" action="/action_page.php">
                         <input type="email" id="email" placeholder="Enter email" name="email">
                     </form>
                 </div>
@@ -161,7 +213,6 @@
                     <p>Status</p>
                 </div>
                 <div class="item2">
-                    <form class="form-inline" action="/action_page.php">
                         <input type="email" id="email" placeholder="Enter email" name="email">
                     </form>
                 </div>
@@ -181,7 +232,6 @@
                     <p>Status</p>
                 </div>
                 <div class="item2">
-                    <form class="form-inline" action="/action_page.php">
                         <input type="email" id="email" placeholder="Enter email" name="email">
                     </form>
                 </div>
