@@ -63,28 +63,14 @@
         <div class="grid-container" style=" overflow-x:auto;">
             <table>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
-                    <th>Points</th>
+                    <th>Bulan Pencacatan</th>
+                    <th>Nama</th>
+                    <th>Jenis Mitra</th>
+                    <th>Jenis Kontrak</th>
+                    <th>Judul</th>
+                    <th>Lingkup Kerja Sama</th>
+                    <th>Periode Mulai</th>
+                    <th>Periode Akhir</th>
                     <th>Edit/Delete</th>
                 </tr>
                 <tr>
@@ -96,73 +82,21 @@
                     <td>50</td>
                     <td>50</td>
                     <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td>50</td>
-                    <td><a href="#">Edit </a><a href="#">Delete</a></td>
-
+                    <td><a href="#">Edit </a> | <a href="#">Delete</a></td>
                 </tr>
-                <tr>
-                    <td>Eve</td>
-                    <td>Jackson</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td>94</td>
-                    <td><a href="#">Edit </a><a href="#">Delete</a></td>
-                </tr>
-                <tr>
-                    <td>Adam</td>
-                    <td>Johnson</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td>67</td>
-                    <td><a href="#">Edit </a><a href="#">Delete</a></td>
-                </tr>
+                @foreach($kerjasama as $item)
+                    <tr>
+                        <td>{{ $item->bulankerjasama }}</td>
+                        <td>{{ $item->namamitra }}</td>
+                        <td>{{ $item->jenismitra }}</td>
+                        <td>{{ $item->judul_moa }}</td>
+                        <td>{{ $item->judulkerjasama }}</td>
+                        <td>{{ $item->skalakerjasama }}</td>
+                        <td>{{ $item->tglmulai }}</td>
+                        <td>{{ $item->tglselesai }}</td>
+                        <td><a href="#">Edit </a> | <a href="#">Delete</a></td>
+                    </tr>
+                @endforeach
             </table>
         </div><br>
 
