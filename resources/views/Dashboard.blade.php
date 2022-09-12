@@ -22,7 +22,7 @@
 <body style="background: #FAF6E9;">
     <div class="card main" style="background: #FAF6E9;">
         <div class="card-header" style="float: right;">
-            <h2>Dashboard</h2>
+
             <div class=>
                 <a href="#" class="notification">
                     <i class="fa fa-bell"></i>
@@ -55,7 +55,7 @@
         </button>
         <div class="dropdown-container">
             <a href="/JenisMitra">Jenis Mitra</a>
-            <a href="#">Skala Kerjasama</a>
+            <a href="/SkalaKerja">Skala Kerjasama</a>
         </div>
         <a href="/Kerjasama">Kerja Sama </a>
     </div>

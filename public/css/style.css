@@ -1,309 +1,355 @@
-body {
-    font-family: "Lato", sans-serif;
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {
-        padding-top: 15px;
-    }
-    .sidenav a {
-        font-size: 18px;
-    }
-}
-
-.sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #494949;
-    overflow-x: hidden;
-    padding-top: 20px;
-}
-
-
-/* Style the sidenav links and the dropdown button */
-
-.sidenav a,
-.dropdown-btn {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #000000;
-    display: block;
-    border: none;
-    background: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    outline: none;
-}
-
-
-/* On mouse-over */
-
-.sidenav a:hover,
-.dropdown-btn:hover {
-    color: #f1f1f1;
-}
-
-
-/* Main content */
-
-.main {
-    margin-left: 200px;
-    /* Same as the width of the sidenav */
-    font-size: 20px;
-    /* Increased text to enable scrolling */
-    padding: 0px 10px;
-}
-
-
-/* Add an active class to the active dropdown button */
-
-.active {
-    background-color: green;
-    color: white;
-}
-
-
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-
-.dropdown-container {
-    display: none;
-    background-color: #262626;
-    padding-left: 8px;
-}
-
-
-/* Optional: Style the caret down icon */
-
-.fa-caret-down {
-    float: right;
-    padding-right: 8px;
-}
-
-.fa-caret-down2 {
-    float: right;
-    padding-right: 8px;
-}
-
-
-/* Dropdown Button */
-
-.btn {
-    background-color: #2196F3;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-}
-
-
-/* The container <div> - needed to position the dropdown content */
-
-.dropdown {
-    position: absolute;
-    display: inline-block;
-}
-
-
-/* Dropdown Content (Hidden by Default) */
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    z-index: 1;
-}
-
-
-/* Links inside the dropdown */
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-
-/* Change color of dropdown links on hover */
-
-.dropdown-content a:hover {
-    background-color: #ddd
-}
-
-
-/* Show the dropdown menu on hover */
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
-.btn:hover,
-.dropdown:hover .btn {
-    background-color: #0b7dda;
-}
-
-.notification {
-    background-color: #555;
-    color: white;
-    text-decoration: none;
-    padding: 16px;
-    position: relative;
-    display: inline-start;
-    border-radius: 2px;
-    float: right;
-}
-
-.notification:hover {
-    background: red;
-}
-
-.notification .badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    padding: 5px 10px;
-    border-radius: 50%;
-    background: red;
-    color: white;
-}
-
-.card-header {
-    padding: .75rem 1.25rem;
-    margin-bottom: 0;
-    background-color: rgba(0, 0, 0, .03);
-    border-bottom: 1px solid rgba(0, 0, 0, .125);
-    display: flex;
-    flex-direction: row;
-}
-
-
-/* Dropdown Button */
-
-.dropbtn {
-    background-color: #D9D9D9;
-    color: black;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-}
-
-
-/* The container <div> - needed to position the dropdown content */
-
-.dropdown {
-    position: absolute;
-    display: inline-block;
-    float: right;
-}
-
-
-/* Dropdown Content (Hidden by Default) */
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-
-/* Links inside the dropdown */
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-
-/* Change color of dropdown links on hover */
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-
-
-/* Show the dropdown menu on hover */
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-
-.btn {
-    border: none;
-    color: black;
-    padding: 12px 16px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-
-/* Darker background on mouse-over */
-
-.btn:hover {
-    background-color: RoyalBlue;
-}
-
-.header-menu {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-}
-
-.header-menu .profile {
-    cursor: pointer;
-}
-
-.d-flex {
-    display: flex!important;
-}
-
-.header-menu .profile-name {
-    padding-right: 10px;
-    font-weight: 600;
-}
-
-.align-self-center {
-    align-self: center!important;
-}
-
-.header-menu .profile-pic {
-    border: 1px solid #d1d1d1;
-    border-radius: 50px;
-    display: inline-block;
-    overflow: hidden;
-    padding: 3px;
-    width: 42px;
-}
-
-.header-menu .profile .dropdown {
-    background: #fff;
-    border: 1px solid #dfe0eb;
-    border-radius: 6px;
-    position: absolute;
-    opacity: 0;
-    visibility: hidden;
-    margin-top: 52px;
-    min-width: 170px;
-}
+        body {
+            font-family: "Lato", sans-serif;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+        
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #494949;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+        /* Style the sidenav links and the dropdown button */
+        
+        .sidenav a,
+        .dropdown-btn {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #000000;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+        }
+        /* On mouse-over */
+        
+        .sidenav a:hover,
+        .dropdown-btn:hover {
+            color: #f1f1f1;
+        }
+        /* Main content */
+        
+        .main {
+            margin-left: 200px;
+            /* Same as the width of the sidenav */
+            font-size: 20px;
+            /* Increased text to enable scrolling */
+            padding: 0px 10px;
+        }
+        /* Add an active class to the active dropdown button */
+        
+        .active {
+            background-color: green;
+            color: white;
+        }
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        
+        .dropdown-container {
+            display: none;
+            background-color: #262626;
+            padding-left: 8px;
+        }
+        /* Optional: Style the caret down icon */
+        
+        .fa-caret-down {
+            float: right;
+            padding-right: 8px;
+        }
+        
+        .fa-caret-down2 {
+            float: right;
+            padding-right: 8px;
+        }
+        /* Dropdown Button */
+        
+        .btn {
+            background-color: #2196F3;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+        }
+        /* The container <div> - needed to position the dropdown content */
+        
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+        }
+        /* Dropdown Content (Hidden by Default) */
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            z-index: 1;
+        }
+        /* Links inside the dropdown */
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        
+        .dropdown-content a:hover {
+            background-color: #ddd
+        }
+        /* Show the dropdown menu on hover */
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        
+        .btn:hover,
+        .dropdown:hover .btn {
+            background-color: #0b7dda;
+        }
+        
+        .notification {
+            background-color: #555;
+            color: white;
+            text-decoration: none;
+            padding: 16px;
+            position: relative;
+            display: inline-start;
+            border-radius: 2px;
+            float: right;
+        }
+        
+        .notification:hover {
+            background: red;
+        }
+        
+        .notification .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            padding: 5px 10px;
+            border-radius: 50%;
+            background: red;
+            color: white;
+        }
+        
+        .card-header {
+            padding: .75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: rgba(0, 0, 0, .03);
+            border-bottom: 1px solid rgba(0, 0, 0, .125);
+            display: flex;
+            flex-direction: row;
+        }
+        /* Dropdown Button */
+        
+        .dropbtn {
+            background-color: #D9D9D9;
+            color: black;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+        /* The container <div> - needed to position the dropdown content */
+        
+        .dropdown {
+            position: absolute;
+            display: inline-block;
+            float: right;
+        }
+        /* Dropdown Content (Hidden by Default) */
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        /* Links inside the dropdown */
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        /* Change color of dropdown links on hover */
+        
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+        /* Show the dropdown menu on hover */
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+        
+        .btn {
+            border: none;
+            color: black;
+            padding: 12px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* Darker background on mouse-over */
+        
+        .btn:hover {
+            background-color: RoyalBlue;
+        }
+        
+        .header-menu {
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+        }
+        
+        .header-menu .profile {
+            cursor: pointer;
+        }
+        
+        .d-flex {
+            display: flex!important;
+        }
+        
+        .header-menu .profile-name {
+            padding-right: 10px;
+            font-weight: 600;
+        }
+        
+        .align-self-center {
+            align-self: center!important;
+        }
+        
+        .header-menu .profile-pic {
+            border: 1px solid #d1d1d1;
+            border-radius: 50px;
+            display: inline-block;
+            overflow: hidden;
+            padding: 3px;
+            width: 42px;
+        }
+        
+        .header-menu .profile .dropdown {
+            background: #fff;
+            border: 1px solid #dfe0eb;
+            border-radius: 6px;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            margin-top: 52px;
+            min-width: 170px;
+        }
+        
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        
+        .grid-container {
+            object-fit: fill;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            min-height: max-content;
+            padding-left: 15px;
+            /* width: max-content; */
+            background-color: rgba(73, 73, 73, 15%);
+            border: 1px solid #ffffff;
+            border-bottom: solid gray 5px;
+            border-radius: 10px;
+        }
+        
+        .grid-container2 {
+            display: grid;
+            grid-template-columns: 85% 90%;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+        
+        .grid-container2>div {
+            background-color: whitesmoke;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 25px;
+            border-radius: 10px;
+        }
+        
+        .form-inline {
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+        }
+        /* Add some margins for each label */
+        
+        .form-inline label {
+            margin: 5px 10px 5px 0;
+        }
+        /* Style the input fields */
+        
+        .form-inline input {
+            vertical-align: middle;
+            margin: 5px 10px 5px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+        }
+        /* Style the submit button */
+        
+        .form-inline button {
+            padding: 10px 20px;
+            background-color: dodgerblue;
+            border: 1px solid #ddd;
+            color: white;
+        }
+        
+        .form-inline button:hover {
+            background-color: royalblue;
+        }
+        /* Add responsiveness - display the form controls vertically instead of horizontally on screens that are less than 800px wide */
+        
+        @media (max-width: 800px) {
+            .form-inline input {
+                margin: 10px 0;
+            }
+            .form-inline {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }

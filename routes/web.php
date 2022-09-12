@@ -25,3 +25,9 @@ Route::get('/Kerjasama', function () {
 Route::get('/JenisMitra', function () {
     return view('JenisMitra');
 });
+Route::get('/SkalaKerja', function () {
+    return view('SkalaKerja');
+});
+Route::get('/TambahKerja', function () {
+    return view('TambahKerja');
+});
