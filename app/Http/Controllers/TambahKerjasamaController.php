@@ -11,7 +11,7 @@ class TambahKerjasamaController extends Controller
         return view('Kerjasama');
     }
 
-    public function tambah()
+    public function tambah() //sama aja dengan fungsi create
     {
         return view('TambahKerja');
     }
