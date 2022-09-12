@@ -28,9 +28,15 @@ class CreateTambahkerjasamaTable extends Migration
             $table->datetime("tglmulai");
             $table->datetime("tglselesai");
 
-            $table->string('pic');
-            $table->integer('no_telp_pic');
-            $table->string('email_pic');
+            $table->string("namafileperjanjian");
+
+            $table->string("judulkerjasamamou");
+
+            $table->string("judulkerjasamamoa");
+
+            $table->string("pic");
+            $table->string("notelpic");
+            $table->string("emailpic");
         });
     }
 

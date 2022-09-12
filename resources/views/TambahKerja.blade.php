@@ -61,8 +61,15 @@
                     <p>Status</p>
                 </div>
                 <div class="item2">
-                    <form class="form-inline" action="/action_page.php">
-                        <input type="email" id="email" placeholder="Enter email" name="email">
+                    <form action="/action_page.php">
+                        <select name="cars" id="cars">
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="opel">Opel</option>
+                            <option value="audi">Audi</option>
+                        </select>
+                        <br><br>
+
                     </form>
                 </div>
                 <div class="item1">
@@ -104,10 +111,90 @@
 
             </div>
         </div><br>
-        <div class="grid-container">asas</div><br>
-        <div class="grid-container">asas</div><br>
-        <div class="grid-container">asas</div><br>
-        <div class="grid-container">asas</div><br>
+        <div class="grid-container">
+            <div class="grid-container2">
+                <div class="item1">
+                    <p>Status</p>
+                </div>
+                <div class="item2">
+                    <form class="form-inline" action="/action_page.php">
+                        <input type="email" id="email" placeholder="Enter email" name="email">
+                    </form>
+                </div>
+                <div class="item1">
+                    <p>Nama Mitra</p>
+                </div>
+                <div class="item2">4</div>
+                <div class="item1">
+                    <p>Jenis Mitra</p>
+                </div>
+                <div class="item2">6</div>
+                <div class="item1">
+                    <p>Judul Kerja Sama</p>
+                </div>
+                <div class="item2">6</div>
+            </div>
+        </div><br>
+        <div class="grid-container">
+            <div class="grid-container2">
+                <div class="item1">
+                    <p>Status</p>
+                </div>
+                <div class="item2">
+                    <form class="form-inline" action="/action_page.php">
+                        <input type="email" id="email" placeholder="Enter email" name="email">
+                    </form>
+                </div>
+                <div class="item1">
+                    <p>Nama Mitra</p>
+                </div>
+                <div class="item2">4</div>
+                <div class="item1">
+                    <p>Jenis Mitra</p>
+                </div>
+                <div class="item2">6</div>
+            </div>
+        </div><br>
+        <div class="grid-container">
+            <div class="grid-container2">
+                <div class="item1">
+                    <p>Status</p>
+                </div>
+                <div class="item2">
+                    <form class="form-inline" action="/action_page.php">
+                        <input type="email" id="email" placeholder="Enter email" name="email">
+                    </form>
+                </div>
+                <div class="item1">
+                    <p>Nama Mitra</p>
+                </div>
+                <div class="item2">4</div>
+                <div class="item1">
+                    <p>Jenis Mitra</p>
+                </div>
+                <div class="item2">6</div>
+            </div>
+        </div><br>
+        <div class="grid-container">
+            <div class="grid-container2">
+                <div class="item1">
+                    <p>Status</p>
+                </div>
+                <div class="item2">
+                    <form class="form-inline" action="/action_page.php">
+                        <input type="email" id="email" placeholder="Enter email" name="email">
+                    </form>
+                </div>
+                <div class="item1">
+                    <p>Nama Mitra</p>
+                </div>
+                <div class="item2">4</div>
+                <div class="item1">
+                    <p>Jenis Mitra</p>
+                </div>
+                <div class="item2">6</div>
+            </div>
+        </div><br>
 
         <div>
             <a href="#">
