@@ -10,4 +10,9 @@ class JenisMitraController extends Controller
     {
         return view('JenisMitra');
     }
+
+    public function create()
+    {
+        return view('JenisMitra');
+    }
 }
