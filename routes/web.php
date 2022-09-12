@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TambahKerjasamaController;
+use App\Http\Controllers\AkunController;
+use App\Http\Controllers\JenisMitraController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,18 +20,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Dashboard');
 });
-Route::get('/Dashboard', function () {
-    return view('Dashboard');
-});
-Route::get('/Kerjasama', function () {
-    return view('Kerjasama');
-});
-Route::get('/JenisMitra', function () {
-    return view('JenisMitra');
-});
+
+Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
+
+Route::get('/TambahKerja', [TambahKerjasamaController::class, 'tambah']);
+
+Route::get('/JenisMitra',[JenisMitraController::class, 'index']);
+
 Route::get('/SkalaKerja', function () {
     return view('SkalaKerja');
-});
-Route::get('/TambahKerja', function () {
-    return view('TambahKerja');
 });

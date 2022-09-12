@@ -32,7 +32,7 @@
     <div class=" sidenav">
         <img src="image/Head Logo.png" alt="Logo" width="200" height="85">
         <br></br>
-        <a href="#">Dashboard</a>
+        <a href="/">Dashboard</a>
         <button class="dropdown-btn">Master Data
             <i class="fa fa-caret-down"></i>
         </button>

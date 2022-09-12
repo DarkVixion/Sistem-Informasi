@@ -27,15 +27,12 @@ class CreateTambahkerjasamaTable extends Migration
             $table->integer("nilaikontrak");
             $table->datetime("tglmulai");
             $table->datetime("tglselesai");
-
-            $table->string("namafileperjanjian");
-
-            $table->string("judulkerjasamamou");
-
-            $table->string("judulkerjasamamoa");
-
+            $table->string("judul_mou");
+            $table->string("path_mou");
+            $table->string("judul_moa");
+            $table->string("path_moa");
             $table->string("pic");
-            $table->string("notelpic");
+            $table->integer("notelpic");
             $table->string("emailpic");
         });
     }

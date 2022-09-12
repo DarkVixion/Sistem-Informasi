@@ -24,8 +24,12 @@ class TambahKerjasama extends Model
         "tglmulai",
         "tglselesai",
 
-        'pic',
-        'no_telp_pic',
-        'email_pic'
+        "namafileperjanjian",
+        "judulkerjasamamou",
+        "judulkerjasamamoa",
+
+        "pic",
+        "no_telp_pic",
+        "email_pic"
     ];
 }
