@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Testing | Universitas Pertamina</title>
+    <title>Tambah Kerjasama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -374,11 +374,11 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
                             <div class="col-sm-10">
-<<<<<<< HEAD
-                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
-=======
-                                <input type="text" class="form-control select2bs4 select2-hidden-accessible" disabled="" id="NamaMitra" placeholder="Memorandum of Understanding (MoU)">
->>>>>>> 36264d79a330f858e4e711b0e61940a7f58f4996
+                                <<<<<<< HEAD <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                                    =======
+                                    <input type="text" class="form-control select2bs4 select2-hidden-accessible"
+                                        disabled="" id="NamaMitra" placeholder="Memorandum of Understanding (MoU)">
+                                    >>>>>>> 36264d79a330f858e4e711b0e61940a7f58f4996
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
