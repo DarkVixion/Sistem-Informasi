@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Testing | Universitas Pertamina</title>
+    <title>Tambah Kerjasama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -43,7 +44,8 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -163,7 +165,8 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -273,7 +276,8 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
                             </div>
                         </div>.
                         <div class="form-group row ">
@@ -292,20 +296,24 @@
                         <div class="form-group row ">
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Alamat">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Alamat">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Negara">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Nomor Telephone">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
-                                <input type="url" class="form-control " id="inputPassword3 " placeholder="Masukan Website">
+                                <input type="url" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Website">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                             <div class="col-sm-10 ">
@@ -329,7 +337,8 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nilai Kontrak">
+                                <input type="text" class="form-control" id="NamaMitra"
+                                    placeholder="Masukan Nilai Kontrak">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal Mulai</label>
@@ -365,12 +374,17 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
                             <div class="col-sm-10">
-                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                                <<<<<<< HEAD <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                                    =======
+                                    <input type="text" class="form-control select2bs4 select2-hidden-accessible"
+                                        disabled="" id="NamaMitra" placeholder="Memorandum of Understanding (MoU)">
+                                    >>>>>>> 36264d79a330f858e4e711b0e61940a7f58f4996
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
@@ -400,7 +414,8 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoA</label>
@@ -429,12 +444,14 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan No. Telepon">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan Alamat Email">
+                                <input type="text" class="form-control" id="NamaMitra"
+                                    placeholder="Masukkan Alamat Email">
                             </div>
                         </div>
 
