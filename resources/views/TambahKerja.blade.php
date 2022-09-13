@@ -365,10 +365,7 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
                             <div class="col-sm-10">
-                                <<<<<<< HEAD <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
-                                    =======
-                                    <input type="text" class="form-control select2bs4 select2-hidden-accessible" disabled="" id="NamaMitra" placeholder="Memorandum of Understanding (MoU)">
-                                    >>>>>>> 36264d79a330f858e4e711b0e61940a7f58f4996
+                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
@@ -415,96 +412,6 @@
 
                     </div>
                     <!-- /.card-body -->
-                </form>
-            </div>
-            <!-- Horizontal Form -->
-            <div class="card card-info">
-
-                <!-- form start -->
-                <form class="form-horizontal">
-                    <div class="card-body">
-
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">PIC</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Masukan PIC">
-                            </div>
-                            <br><br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telephone</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Nomor Telephone">
-                            </div>
-                            <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
-                            <div class="col-sm-10 ">
-                                <input type="email" class="form-control" id="NamaMitra" placeholder="Masukan Email">
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card-footer -->
-                </form>
-            </div>
-            <!-- /.card -->
-
-            <div class="card card-info">
-
-                <!-- form start -->
-                <form class="form-horizontal">
-                    <div class="card-body">
-
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Memorandum of Understanding (MoU)">
-                            </div>
-                            <br><br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
-                            </div>
-                            <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoU</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Upload File">
-                                <input type="file" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card-footer -->
-                </form>
-            </div>
-
-            <div class="card card-info">
-
-                <!-- form start -->
-                <form class="form-horizontal">
-                    <div class="card-body">
-
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Memorandum of Agreement (MoA)">
-                            </div>
-                            <br><br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
-                            </div>
-                            <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoA</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Upload File">
-                                <input type="file" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card-footer -->
                 </form>
             </div>
 
