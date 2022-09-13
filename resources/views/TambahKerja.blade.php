@@ -359,7 +359,7 @@
             <div class="card card-info">
 
                 <!-- form start -->
-                <form class="form-horizontal" action="#" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="/tambah_kerjasama" method="POST" enctype="multipart/form-data">
                     <div class="card-body">
 
                         <div class="form-group row">

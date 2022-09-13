@@ -10,15 +10,18 @@ use Illuminate\Http\Request;
 
 class TambahKerjasamaController extends Controller
 {
-    public function create()
-    {
-        return view('TambahKerja');
-    }
+
 
     public function index()
     {
         $kerjasama = TambahKerjasama::all();
-        return view('TambahKerja', compact('kerjasama'));
+        return view('Kerjasama')->with('kerjasama', $kerjasama);
+    }
+
+    public function create()
+    {
+        $tambahkerjasama = TambahKerjasama::all();
+        return view('TambahKerja')->with('tambahkerjasama', $tambahkerjasama);
     }
 
     public function edit()
