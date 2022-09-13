@@ -383,7 +383,7 @@
                                     placeholder="Masukan Judul Kerjasama">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class="col-sm-10 ">
                                 <input type="file" class="form-control " id="inputPassword3 ">
                             </div>
@@ -453,23 +453,114 @@
 
                     </div>
                     <!-- /.card-body -->
-                    <div class=" card-footer ">
-                        <button type="submit " class="btn btn-info ">Save</button>
-                        <button type="submit " class="btn btn-default float-right ">Cancel</button>
-                    </div>
                     <!-- /.card-footer -->
                 </form>
             </div>
+            <<<<<<< HEAD=======<!-- /.card -->
+
+                <div class="card card-info">
+                    >>>>>>> 02424d1cd9cddc3b55c0602b8c6d8834d5a4b4b7
+
+                    <!-- form start -->
+                    <form class="form-horizontal">
+                        <div class="card-body">
+
+                            <div class="form-group row">
+                                <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="NamaMitra"
+                                        placeholder="Memorandum of Understanding (MoU)">
+                                </div>
+                                <br><br><br>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control " id="inputPassword3 "
+                                        placeholder="Masukan Judul Kerjasama">
+                                </div>
+                                <br><br><br>
+                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoU</label>
+                                <div class="col-sm-10 ">
+                                    <input type="text" class="form-control" id="NamaMitra" placeholder="Upload File">
+                                    <input type="file" class="form-control " id="inputPassword3 "
+                                        placeholder="Masukan Negara">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
+
+                <div class="card card-info">
+
+                    <!-- form start -->
+                    <form class="form-horizontal">
+                        <div class="card-body">
+
+                            <div class="form-group row">
+                                <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="NamaMitra"
+                                        placeholder="Memorandum of Agreement (MoA)">
+                                </div>
+                                <br><br><br>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control " id="inputPassword3 "
+                                        placeholder="Masukan Judul Kerjasama">
+                                </div>
+                                <br><br><br>
+                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoA</label>
+                                <div class="col-sm-10 ">
+                                    <input type="text" class="form-control" id="NamaMitra" placeholder="Upload File">
+                                    <input type="file" class="form-control " id="inputPassword3 "
+                                        placeholder="Masukan Negara">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
+
+                <div class="card card-info">
+
+                    <!-- form start -->
+                    <form class="form-horizontal">
+                        <div class="card-body">
+
+                            <div class="form-group row">
+                                <label for="input" class="col-sm-2 col-form-label">PIC</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan PIC">
+                                </div>
+                                <br><br><br>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control " id="inputPassword3 "
+                                        placeholder="Masukan No. Telepon">
+                                </div>
+                                <br><br><br>
+                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
+                                <div class="col-sm-10 ">
+                                    <input type="text" class="form-control" id="NamaMitra"
+                                        placeholder="Masukkan Alamat Email">
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.card-body -->
+                        <div class=" card-footer ">
+                            <button type="submit " class="btn btn-info ">Save</button>
+                            <button type="submit " class="btn btn-default float-right ">Cancel</button>
+                        </div>
+                        <!-- /.card-footer -->
+                    </form>
+                </div>
 
         </section>
-
-
-
-
-
-
-
-
 
     </div>
 
@@ -482,7 +573,6 @@
     <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js "></script>
-
 
 </body>
 
