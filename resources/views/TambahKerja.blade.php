@@ -381,8 +381,6 @@
         </div><br>
 
 
-
-
         <!-- jQuery -->
         <script src="plugins/jquery/jquery.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
@@ -417,6 +415,30 @@
         <script src="dist/js/pages/dashboard.js"></script>
 
 
+    </aside>
+    <!-- Testing Upload Multiple Files MoA -->
+
+    <div class="col-md-5">
+        <h3>Upload Files MoA</h3>
+        <form action="/add-product" method="POST" enctype="multipart/form-data">
+
+            <div class="form-group">
+                <label for="judul_moa" class="mt-4">Dokumen MoA</label>
+                <input type="text" class="form-control @error('form-group') is-invalid @enderror" name="form-group" placeholder="nama file">
+            </div>
+
+            <div class="form-group">
+                <label for="files" class="form-label mt4">Upload File</label>
+                <input type="file" name="[images]" accept="pdf/*" class="form-control" multiple>
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">Save Product</button>
+            </div>
+
+        </form>
+    </div>
 </body>
+
 
 </html>
