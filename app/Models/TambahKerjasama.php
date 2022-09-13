@@ -24,12 +24,18 @@ class TambahKerjasama extends Model
         "tglmulai",
         "tglselesai",
 
-        "namafileperjanjian",
-        "judulkerjasamamou",
-        "judulkerjasamamoa",
+        "judul_mou",
+        "path_mou",
+        "judul_moa",
+        "path_moa",
 
         "pic",
-        "no_telp_pic",
-        "email_pic"
+        "notelpic",
+        "emailpic"
     ];
+
+    public function filemou($value)
+    {
+        return $this->attributes["judul_mou"] = json_encode($value);
+    }
 }

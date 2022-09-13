@@ -22,7 +22,7 @@ class CreateTambahkerjasamaTable extends Migration
             $table->string("alamat");
             $table->string("negara");
             $table->integer("notelp");
-            $table->double("web");
+            $table->string("web");
             $table->string("bulankerjasama");
             $table->integer("nilaikontrak");
             $table->date("tglmulai");
