@@ -30,9 +30,6 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
-    <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="dist/img/Head Logo.png" alt="AdminLTELogo" height="60" width="60">
-    </div>
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
 
@@ -199,7 +196,7 @@
                             <li class="nav-item">
                                 <a href="/SkalaKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Skala Kerjasama</p>
+                                    <p>Skala Kerja Sama</p>
                                 </a>
                             </li>
                         </ul>
