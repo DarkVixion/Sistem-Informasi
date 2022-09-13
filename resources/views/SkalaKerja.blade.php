@@ -179,7 +179,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/Dashboard" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Master Data
@@ -188,13 +188,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/layout/top-nav.html" class="nav-link">
+                                <a href="/JenisMitra" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Jenis Mitra</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                <a href="#" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Skala Kerjasama</p>
                                 </a>
@@ -202,7 +202,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/Kerjasama" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerjasama</p>
                         </a>

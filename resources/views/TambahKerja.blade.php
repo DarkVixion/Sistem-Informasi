@@ -176,7 +176,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/Dashboard" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Master Data
@@ -342,7 +342,7 @@
                                 <input type="date" class="form-control " id="inputPassword3 ">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Perjanjian Kerjasama</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
                                 <input type="file" class="form-control " id="inputPassword3 ">
@@ -360,29 +360,33 @@
 
                 <!-- form start -->
                 <form class="form-horizontal" action="/tambah_kerjasama" method="POST" enctype="multipart/form-data">
-                    <div class="card-body">
+                    <form class="form-horizontal">
+                        <div class="card-body">
 
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
-                            <div class="col-sm-10">
-                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                            <div class="form-group row">
+                                <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                                <div class="col-sm-10">
+                                    <<<<<<< HEAD <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                                        =======
+                                        <input type="text" class="form-control select2bs4 select2-hidden-accessible" disabled="" id="NamaMitra" placeholder="Memorandum of Understanding (MoU)">
+                                        >>>>>>> 36264d79a330f858e4e711b0e61940a7f58f4996
+                                </div>
+                                <br><br><br>
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                                </div>
+                                <br><br><br>
+                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
+                                <div class="col-sm-10 ">
+                                    <input type="file" class="form-control " id="inputPassword3 ">
+                                </div>
                             </div>
-                            <br><br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
-                            </div>
-                            <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoU</label>
-                            <div class="col-sm-10 ">
-                                <input type="file" name="filemou" accept="pdf/*" class="form-control">
-                            </div>
+
                         </div>
+                        <!-- /.card-body -->
 
-                    </div>
-                    <!-- /.card-body -->
-
-                </form>
+                    </form>
             </div>
 
             <!-- Horizontal Form -->
@@ -403,10 +407,10 @@
                                 <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoA</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
-                                <input type="file" class="form-control" name="filemoa[]" id="inputPassword3 ">
+                                <input type="file" class="form-control " id="inputPassword3 ">
                             </div>
                         </div>
 

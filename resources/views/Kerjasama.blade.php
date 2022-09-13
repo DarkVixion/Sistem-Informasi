@@ -183,7 +183,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/Dashboard" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Master Data
@@ -200,15 +200,15 @@
                             <li class="nav-item">
                                 <a href="/SkalaKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Skala Kerjasama</p>
+                                    <p>Skala Kerja Sama</p>
                                 </a>
                             </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="/Kerjasama" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
-                            <p>Kerjasama</p>
+                            <p>Kerja Sama</p>
                         </a>
                     </li>
                 </ul>
