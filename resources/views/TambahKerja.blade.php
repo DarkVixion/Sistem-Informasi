@@ -7,8 +7,7 @@
     <title>Testing | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -44,8 +43,7 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -165,8 +163,7 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -277,8 +274,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Judul Kerjasama">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
                             </div>
                         </div>.
                         <div class="form-group row ">
@@ -298,24 +294,20 @@
                         <div class="form-group row ">
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Alamat">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Alamat">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Negara">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Nomor Telephone">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
-                                <input type="url" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Website">
+                                <input type="url" class="form-control " id="inputPassword3 " placeholder="Masukan Website">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                             <div class="col-sm-10 ">
@@ -339,27 +331,113 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra"
-                                    placeholder="Masukan Nilai Kontrak">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nilai Kontrak">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Judul Kerjasama">
+                                <input type="date" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class="col-sm-10 ">
-                                <input type="date" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Alamat">
+                                <input type="date" class="form-control " id="inputPassword3 " placeholder="Masukan Alamat">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Perjanjian Kerjasama</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
-                                <input type="file" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Negara">
+                                <input type="file" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                    <!-- /.card-footer -->
+                </form>
+            </div>
+            <!-- /.card -->
+
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Memorandum of Understanding (MoU)">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoU</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Upload File">
+                                <input type="file" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                    <!-- /.card-footer -->
+                </form>
+            </div>
+
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Memorandum of Agreement (MoA)">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoA</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Upload File">
+                                <input type="file" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                    <!-- /.card-footer -->
+                </form>
+            </div>
+
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">PIC</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan PIC">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan No. Telepon">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan Alamat Email">
                             </div>
                         </div>
 
@@ -372,18 +450,8 @@
                     <!-- /.card-footer -->
                 </form>
             </div>
-            <!-- /.card -->
-
 
         </section>
-
-
-
-
-
-
-
-
 
     </div>
 
@@ -396,7 +464,6 @@
     <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js "></script>
-
 
 </body>
 

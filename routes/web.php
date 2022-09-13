@@ -26,7 +26,7 @@ Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 
 Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
 
-Route::get('/JenisMitra',[JenisMitraController::class, 'index']);
+Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
 
 Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
 
