@@ -171,7 +171,7 @@
                with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="/" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Dashboard
@@ -188,13 +188,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/JenisMitra" class="nav-link">
+                                <a href="pages/layout/top-nav.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Jenis Mitra</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/SkalaKerja" class="nav-link">
+                                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Skala Kerjasama</p>
                                 </a>
@@ -202,7 +202,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="Kerjasama" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerjasama</p>
                         </a>
@@ -214,40 +214,188 @@
         <!-- /.sidebar -->
     </aside>
 
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Tambah Kerjasama</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Kerjasama">Kerjasama</a></li>
+                            <li class="breadcrumb-item active">Tambah Kerjasama</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <!-- /.container-fluid -->
+
+            <!-- Horizontal Form -->
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="select" class="col-sm-2 col-form-label">Status</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama Mitra">
+                            </div>
+                        </div><br>
+                        <div class="form-group row">
+                            <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
+                            </div>
+                        </div>.
+                        <div class="form-group row ">
+                            <label for="select " class="col-sm-2 col-form-label ">Skala Kerjasama</label>
+                            <div class="col-sm-10 ">
+                                <div class="form-group ">
+                                    <select class="form-control ">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Alamat">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Negara">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Nomor Telephone">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                            <div class="col-sm-10 ">
+                                <input type="url" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Website">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
+                            <div class="col-sm-10 ">
+                                <input type="month" class="form-control " id="inputPassword3">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                </form>
+            </div>
+            <!-- /.card -->
+
+            <!-- Horizontal Form -->
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Nilai Kontrak</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra"
+                                    placeholder="Masukan Nilai Kontrak">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <div class="col-sm-10 ">
+                                <input type="date" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Alamat">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
+                                <input type="file" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Negara">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                    <div class=" card-footer ">
+                        <button type="submit " class="btn btn-info ">Save</button>
+                        <button type="submit " class="btn btn-default float-right ">Cancel</button>
+                    </div>
+                    <!-- /.card-footer -->
+                </form>
+            </div>
+            <!-- /.card -->
+
+
+        </section>
+
+
+
+
+
+
+
+
+
+    </div>
 
 
     <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-    $.widget.bridge('uibutton', $.ui.button)
-    </script>
+    <script src="plugins/jquery/jquery.min.js "></script>
     <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- ChartJS -->
-    <script src="plugins/chart.js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="plugins/moment/moment.min.js"></script>
-    <script src="plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Summernote -->
-    <script src="plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <!-- bs-custom-file-input -->
+    <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
     <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard.js"></script>
+    <script src="dist/js/adminlte.min.js "></script>
 
 
 </body>
