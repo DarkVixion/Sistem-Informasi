@@ -22,7 +22,7 @@
 <body style="background: #FAF6E9;">
     <div class="card main" style="background: #FAF6E9;">
         <div class="card-header" style="float: right;">
-
+        <h2>Dashboard</h2>
             <div class=>
                 <a href="#" class="notification">
                     <i class="fa fa-bell"></i>
