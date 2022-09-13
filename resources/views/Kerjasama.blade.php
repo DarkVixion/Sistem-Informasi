@@ -206,7 +206,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="Kerjasama" class="nav-link">
+                        <a href="/Kerjasama" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerjasama</p>
                         </a>

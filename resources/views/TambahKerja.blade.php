@@ -171,7 +171,7 @@
                with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Dashboard
@@ -188,13 +188,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="pages/layout/top-nav.html" class="nav-link">
+                                <a href="/JenisMitra" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Jenis Mitra</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                <a href="/SkalaKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Skala Kerjasama</p>
                                 </a>
@@ -202,7 +202,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/Kerjasama" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerjasama</p>
                         </a>
@@ -245,11 +245,11 @@
                             <div class="col-sm-10">
                                 <div class="form-group">
                                     <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                        <option>Aktif</option>
+                                        <option>Tidak Aktif</option>
+                                        <option>Kadarluwasa</option>
+                                        <option>Dalam Penjajakan</option>
+                                        <option>Perpanjangan</option>
                                     </select>
                                 </div>
                             </div>
@@ -265,11 +265,10 @@
                             <div class="col-sm-10">
                                 <div class="form-group">
                                     <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                        <option>Pertamina</option>
+                                        <option>Non Pertamina</option>
+                                        <option>BUMN</option>
+                                        <option>Kementrian</option>
                                     </select>
                                 </div>
                             </div>
@@ -286,11 +285,10 @@
                             <div class="col-sm-10 ">
                                 <div class="form-group ">
                                     <select class="form-control ">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                        <option>Nasional</option>
+                                        <option>Internasional</option>
+                                        <option>Regional</option>
+                                        <option>Provinsi</option>
                                     </select>
                                 </div>
                             </div>
@@ -345,21 +343,111 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Judul Kerjasama">
+                                <input type="date" class="form-control " id="inputPassword3 ">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class="col-sm-10 ">
-                                <input type="date" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Alamat">
+                                <input type="date" class="form-control " id="inputPassword3 ">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
-                                <input type="file" class="form-control " id="inputPassword3 "
-                                    placeholder="Masukan Negara">
+                                <input type="file" class="form-control " id="inputPassword3 ">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                </form>
+            </div>
+            <!-- /.card -->
+
+            <!-- Horizontal Form -->
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                            <div class="col-sm-10">
+                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <div class="col-sm-10 ">
+                                <input type="file" class="form-control " id="inputPassword3 ">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+
+                </form>
+            </div>
+
+            <!-- Horizontal Form -->
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                            <div class="col-sm-10">
+                                <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
+                                <input type="file" class="form-control " id="inputPassword3 ">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                </form>
+            </div>
+            <!-- Horizontal Form -->
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">PIC</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Masukan PIC">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telephone</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Nomor Telephone">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
+                            <div class="col-sm-10 ">
+                                <input type="email" class="form-control" id="NamaMitra" placeholder="Masukan Email">
                             </div>
                         </div>
 
@@ -372,8 +460,6 @@
                     <!-- /.card-footer -->
                 </form>
             </div>
-            <!-- /.card -->
-
 
         </section>
 
