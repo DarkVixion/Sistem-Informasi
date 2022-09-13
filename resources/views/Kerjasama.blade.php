@@ -206,11 +206,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-<<<<<<< HEAD
                         <a href="/Kerjasama" class="nav-link">
-=======
-                        <a href="Kerjasama" class="nav-link">
->>>>>>> 9d595f7e82a9c5f8a0081418f11febbcc2dc73f7
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerjasama</p>
                         </a>
@@ -266,12 +262,18 @@
                                             <td>{{ $item->tglmulai }}</td>
                                             <td>{{ $item->tglselesai }}</td>
                                             <td>
-                                                <a href="{{ url('/pegawai/' . $item->id . '/edit') }}" title="Edit Pegawai"><button class="btn btn-primary btn-sm"><i aria-hidden="true"></i> Edit</button></a>
-                                                <form method="POST" action="{{ url('/pegawai/' . $item->id) }}" accept-charset="UTF-8" style="display:inline">
+                                                <a href="{{ url('/pegawai/' . $item->id . '/edit') }}"
+                                                    title="Edit Pegawai"><button class="btn btn-primary btn-sm"><i
+                                                            aria-hidden="true"></i> Edit</button></a>
+                                                <form method="POST" action="{{ url('/pegawai/' . $item->id) }}"
+                                                    accept-charset="UTF-8" style="display:inline">
                                                     {{ method_field('DELETE') }}
                                                     {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger btn-sm" title="Delete Pegawai" onclick='return confirm("Confirm delete?")'><i aria-hidden="true"></i> Delete</button>
-                                            </form>
+                                                    <button type="submit" class="btn btn-danger btn-sm"
+                                                        title="Delete Pegawai"
+                                                        onclick='return confirm("Confirm delete?")'><i
+                                                            aria-hidden="true"></i> Delete</button>
+                                                </form>
                                             </td>
                                         </tr>
                                         @endforeach
