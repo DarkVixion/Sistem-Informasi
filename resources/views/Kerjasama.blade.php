@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>KerjaSama - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -198,7 +198,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                <a href="/SkalaKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Skala Kerjasama</p>
                                 </a>
@@ -206,7 +206,11 @@
                         </ul>
                     </li>
                     <li class="nav-item">
+<<<<<<< HEAD
                         <a href="/Kerjasama" class="nav-link">
+=======
+                        <a href="Kerjasama" class="nav-link">
+>>>>>>> 9d595f7e82a9c5f8a0081418f11febbcc2dc73f7
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerjasama</p>
                         </a>
@@ -228,7 +232,10 @@
                             <div class="card-header">
                                 <h3 class="card-title">KerjaSama</h3>
                                 <a href="/TambahKerja">
-                                    <button style="float:right; border-radius:15px;">Tambah Kerja Sama </button>
+                                    <button
+                                        style="float:right; background-color:cornflowerblue; border-radius:15px;">Tambah
+                                        Kerja Sama
+                                    </button>
                                 </a>
                             </div>
                             <!-- /.card-header -->

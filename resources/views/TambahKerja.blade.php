@@ -1,292 +1,403 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing | Universitas Pertamina</title>
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href={{ asset('css/style.css') }}>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Dashboard</title>
-    <style>
-    .berlin {
-        border: 1px solid whitesmoke;
-        border-radius: 20px;
-        background-color: whitesmoke;
-        margin-bottom: 1rem;
-        padding: 10px;
-    }
-    </style>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 </head>
 
-<body style="background: #FAF6E9;">
-    <div class=" sidenav">
-        <img src="image/Head Logo.png" alt="Logo" width="200" height="85">
-        <br></br>
-        <a href="/">Dashboard</a>
-        <button class="dropdown-btn">Master Data
-            <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-container">
-            <a href="/JenisMitra">Jenis Mitra</a>
-            <a href="/SkalaKerja">Skala Kerjasama</a>
-        </div>
-        <a href="/Kerjasama">Kerja Sama </a>
-    </div>
-    <div class="card main" style="background: #FAF6E9;">
-        <div class="card-header" style="float: right;">
-            <div class=>
-                <a href="#" class="notification">
-                    <i class="fa fa-bell"></i>
-                    <span class="badge">*</span>
+<body class="hold-transition sidebar-mini layout-fixed">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <!-- Navbar Search -->
+            <li class="nav-item">
+                <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                    <i class="fas fa-search"></i>
                 </a>
-            </div>
-            &nbsp
-            <div class="dropdown">
-                <button class="dropbtn">Universitas Pertamina<img
-                        src="https://ppm.universitaspertamina.ac.id/uploads/profile/admin/Logo_Universitas_Pertamina_-_Full_Color.png"
-                        alt="Photo" style="width:100%;max-width:50px"></button>
+                <div class="navbar-search-block">
+                    <form class="form-inline">
+                        <div class="input-group input-group-sm">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                aria-label="Search">
+                            <div class="input-group-append">
+                                <button class="btn btn-navbar" type="submit">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </li>
 
-                <div class="dropdown-content">
-                    <a href="#">Akun</a>
-                    <a href="#">Keluar</a>
+            <!-- Messages Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-comments"></i>
+                    <span class="badge badge-danger navbar-badge">3</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Brad Diesel
+                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">Call me whenever you can...</p>
+                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    John Pierce
+                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">I got your message bro</p>
+                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <!-- Message Start -->
+                        <div class="media">
+                            <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                            <div class="media-body">
+                                <h3 class="dropdown-item-title">
+                                    Nora Silvester
+                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                                </h3>
+                                <p class="text-sm">The subject goes here</p>
+                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                            </div>
+                        </div>
+                        <!-- Message End -->
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                </div>
+            </li>
+            <!-- Notifications Dropdown Menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-bell"></i>
+                    <span class="badge badge-warning navbar-badge">15</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">15 Notifications</span>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-envelope mr-2"></i> 4 new messages
+                        <span class="float-right text-muted text-sm">3 mins</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-users mr-2"></i> 8 friend requests
+                        <span class="float-right text-muted text-sm">12 hours</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item">
+                        <i class="fas fa-file mr-2"></i> 3 new reports
+                        <span class="float-right text-muted text-sm">2 days</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                </div>
+            </li>
+
+
+        </ul>
+    </nav>
+    <!-- /.navbar -->
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-5 pb-5 mb-5 d-flex">
+                <div>
+                    <img src="dist/img/Head Logo.png" alt="User Image" style="width:100%;">
+                </div>
+
+            </div>
+
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Master Data
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="pages/layout/top-nav.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Jenis Mitra</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Skala Kerjasama</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>Kerjasama</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Tambah Kerjasama</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Kerjasama">Kerjasama</a></li>
+                            <li class="breadcrumb-item active">Tambah Kerjasama</li>
+                        </ol>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="card-body">
-            <form style="background-color: grey">
-                <div class="row">
-                    <div class="col-md-2 berlin">Status</div>
-                    <div class="col-md-10" style="border-radius: 21px;">
-                        <select class="form-control" name="status" id="status">
-                            <option value="Aktif">Aktif</option>
-                            <option value="Tidak Aktif">Tidak Aktif</option>
-                            <option value="Kedaluwarsa">Kedaluwarsa</option>
-                            <option value="Perpanjangan">Perpanjangan</option>
-                            <option value="Dalam Penjajakan">Dalam Penjajakan</option>
-                        </select>
+            <!-- /.container-fluid -->
+
+            <!-- Horizontal Form -->
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="select" class="col-sm-2 col-form-label">Status</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama Mitra">
+                            </div>
+                        </div><br>
+                        <div class="form-group row">
+                            <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
+                            </div>
+                        </div>.
+                        <div class="form-group row ">
+                            <label for="select " class="col-sm-2 col-form-label ">Skala Kerjasama</label>
+                            <div class="col-sm-10 ">
+                                <div class="form-group ">
+                                    <select class="form-control ">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Alamat">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Negara">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Nomor Telephone">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                            <div class="col-sm-10 ">
+                                <input type="url" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Website">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
+                            <div class="col-sm-10 ">
+                                <input type="month" class="form-control " id="inputPassword3">
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2 berlin">
-                        Nama Mitra
+                    <!-- /.card-body -->
+                </form>
+            </div>
+            <!-- /.card -->
+
+            <!-- Horizontal Form -->
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Nilai Kontrak</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra"
+                                    placeholder="Masukan Nilai Kontrak">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <div class="col-sm-10 ">
+                                <input type="date" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Alamat">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
+                                <input type="file" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Negara">
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="col-md-10">
-                        <input placeholder="Masukkan nama Perusahaan di sini" class="form-control berlin">
+                    <!-- /.card-body -->
+                    <div class=" card-footer ">
+                        <button type="submit " class="btn btn-info ">Save</button>
+                        <button type="submit " class="btn btn-default float-right ">Cancel</button>
                     </div>
-                </div>
-            </form>
-        </div>
+                    <!-- /.card-footer -->
+                </form>
+            </div>
+            <!-- /.card -->
+
+
+        </section>
+
+
+
+
+
+
+
 
 
     </div>
-    <br>
-    <h2>Tambah Kerja Sama</h2><br>
-    <div class="grid-container">
-        <div class="grid-container2" width=50>
-            <div class="item1">
-                <p>Status</p>
-            </div>
-            <div class="item2">
-                <form action="/action_page.php">
-                    <select name="cars" id="cars">
-                        <option value="Aktif">Aktif</option>
-                        <option value="Tidak Aktif">Tidak Aktif</option>
-                        <option value="Kedaluwarsa">Kedaluwarsa</option>
-                        <option value="Perpanjangan">Perpanjangan</option>
-                        <option value="Dalam Penjajakan">Dalam Penjajakan</option>
-                    </select>
-                    <br><br>
-
-                </form>
-            </div>
-            <div class="item1">
-                <p>Nama Mitra</p>
-            </div>
-            <div class="item2">
-                <input type="nama_mitra" id="nama_mitra" placeholder="Masukkan Nama Mitra" name="nama_mitra">
-            </div>
-            <div class="item1">
-                <p>Jenis Mitra</p>
-            </div>
-            <div class="item2">6</div>
-            <div class="item1">
-                <p>Judul Kerja Sama</p>
-            </div>
-            <div class="item2">
-                <input type="judul_kerja_sama" id="judul_kerja_sama" placeholder="Masukkan Judul Kerja Sama"
-                    name="judul_kerja_sama">
-            </div>
-            <div class="item1">
-                <p>Skala Kerja Sama</p>
-            </div>
-            <div class="item2">8</div>
-            <div class="item1">
-                <p>Alamat</p>
-            </div>
-            <div class="item2">
-                <input type="alamat" id="alamat" placeholder="Masukkan Alamat" name="alamat">
-            </div>
-            <div class="item1">
-                <p>Negara</p>
-            </div>
-            <div class="item2">
-                <input type="negara" id="negara" placeholder="Masukkan Negara" name="negara">
-                </form>
-            </div>
-            <div class="item1">
-                <p>Nomor Telephone</p>
-            </div>
-            <div class="item2">
-                <input type="no_telp" id="no_telp" placeholder="Masukkan Nomor Telepon" name="no_telp">
-                </form>
-            </div>
-            <div class="item1">
-                <p>Website</p>
-            </div>
-            <div class="item2">
-                <input type="web" id="web" placeholder="Masukkan URL Website" name="web">
-                </form>
-            </div>
-            <div class="item1">
-                <p>Bulan Kerjasama</p>
-            </div>
-            <div class="item2">
-                <input type="bulan_kerja_sama" id="bulan_kerja_sama" placeholder="Masukkan Bulan Kerja Sama"
-                    name="bulan_kerja_sama">
-                </form>
-            </div>
-
-        </div>
-    </div><br>
-    <div class="grid-container">
-        <div class="grid-container2">
-            <div class="item1">
-                <p>Status</p>
-            </div>
-            <div class="item2">
-                <input type="email" id="email" placeholder="Enter email" name="email">
-                </form>
-            </div>
-            <div class="item1">
-                <p>Nama Mitra</p>
-            </div>
-            <div class="item2">4</div>
-            <div class="item1">
-                <p>Jenis Mitra</p>
-            </div>
-            <div class="item2">6</div>
-            <div class="item1">
-                <p>Judul Kerja Sama</p>
-            </div>
-            <div class="item2">6</div>
-        </div>
-    </div><br>
-    <div class="grid-container">
-        <div class="grid-container2">
-            <div class="item1">
-                <p>Status</p>
-            </div>
-            <div class="item2">
-                <input type="email" id="email" placeholder="Enter email" name="email">
-                </form>
-            </div>
-            <div class="item1">
-                <p>Nama Mitra</p>
-            </div>
-            <div class="item2">4</div>
-            <div class="item1">
-                <p>Jenis Mitra</p>
-            </div>
-            <div class="item2">6</div>
-        </div>
-    </div><br>
-    <div class="grid-container">
-        <div class="grid-container2">
-            <div class="item1">
-                <p>Status</p>
-            </div>
-            <div class="item2">
-                <input type="email" id="email" placeholder="Enter email" name="email">
-                </form>
-            </div>
-            <div class="item1">
-                <p>Nama Mitra</p>
-            </div>
-            <div class="item2">4</div>
-            <div class="item1">
-                <p>Jenis Mitra</p>
-            </div>
-            <div class="item2">6</div>
-        </div>
-    </div><br>
-    <div class="grid-container">
-        <div class="grid-container2">
-            <div class="item1">
-                <p>Status</p>
-            </div>
-            <div class="item2">
-                <input type="email" id="email" placeholder="Enter email" name="email">
-                </form>
-            </div>
-            <div class="item1">
-                <p>Nama Mitra</p>
-            </div>
-            <div class="item2">4</div>
-            <div class="item1">
-                <p>Jenis Mitra</p>
-            </div>
-            <div class="item2">6</div>
-        </div>
-    </div><br>
-
-    <div>
-        <a href="#">
-            <button style="float:left;border-radius:15px;">Simpan </button>
-        </a>
-
-        <a href="#">
-            <button style="float:right;border-radius:15px;">Hapus Kerja Sama</button>
-        </a>
-    </div><br>
 
 
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js "></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <!-- bs-custom-file-input -->
+    <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js "></script>
 
 
-    <script>
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
-
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        });
-    }
-    </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>

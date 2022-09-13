@@ -9,8 +9,8 @@ class TambahKerjasamaController extends Controller
 {
     public function index()
     {
-        $kerjasama = TambahKerjasama::all();
-        return view('Kerjasama')->with('kerjasama',$kerjasama);
+        /*$kerjasama = TambahKerjasama::all();*/
+        return view('Kerjasama')/*->with('kerjasama',$kerjasama)*/;
     }
 
     public function create()
