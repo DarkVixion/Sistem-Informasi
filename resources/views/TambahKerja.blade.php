@@ -245,11 +245,11 @@
                             <div class="col-sm-10">
                                 <div class="form-group">
                                     <select class="form-control">
-                                        <option>option 1</option>
-                                        <option>option 2</option>
-                                        <option>option 3</option>
-                                        <option>option 4</option>
-                                        <option>option 5</option>
+                                        <option>Aktif</option>
+                                        <option>Tidak Aktif</option>
+                                        <option>Dalam Penjajakan</option>
+                                        <option>Kedaluwarsa</option>
+                                        <option>Perpanjangan</option>
                                     </select>
                                 </div>
                             </div>
