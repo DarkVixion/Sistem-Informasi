@@ -5,6 +5,7 @@ use App\Http\Controllers\TambahKerjasamaController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\JenisMitraController;
 use App\Http\Controllers\LoginController;
+use App\Models\TambahKerjasama;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +24,11 @@ Route::get('/', function () {
 
 Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 
-Route::get('/TambahKerja', [TambahKerjasamaController::class, 'tambah']);
+Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
 
 Route::get('/JenisMitra',[JenisMitraController::class, 'index']);
+
+Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
 
 Route::get('/SkalaKerja', function () {
     return view('SkalaKerja');

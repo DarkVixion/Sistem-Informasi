@@ -7,7 +7,8 @@
     <title>Testing | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -43,7 +44,8 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                                aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -163,12 +165,13 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="/" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Dashboard
@@ -185,13 +188,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/JenisMitra" class="nav-link">
+                                <a href="pages/layout/top-nav.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Jenis Mitra</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/SkalaKerja" class="nav-link">
+                                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Skala Kerjasama</p>
                                 </a>
@@ -199,7 +202,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="Kerjasama" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerjasama</p>
                         </a>
@@ -208,179 +211,174 @@
             </nav>
             <!-- /.sidebar-menu -->
         </div>
+        <!-- /.sidebar -->
+    </aside>
 
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
 
-        </div>
-        <br>
-        <h2>Tambah Kerja Sama</h2><br>
-        <div class="grid-container">
-            <div class="grid-container2" width=50>
-                <div class="item1">
-                    <p>Status</p>
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Tambah Kerjasama</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Kerjasama">Kerjasama</a></li>
+                            <li class="breadcrumb-item active">Tambah Kerjasama</li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="item2">
-                    <form action="/action_page.php">
-                        <select name="cars" id="cars">
-                            <option value="Aktif">Aktif</option>
-                            <option value="Tidak Aktif">Tidak Aktif</option>
-                            <option value="Kedaluwarsa">Kedaluwarsa</option>
-                            <option value="Perpanjangan">Perpanjangan</option>
-                            <option value="Dalam Penjajakan">Dalam Penjajakan</option>
-                        </select>
-                        <br><br>
-
-                    </form>
-                </div>
-                <div class="item1">
-                    <p>Nama Mitra</p>
-                </div>
-                <div class="item2">
-                    <input type="nama_mitra" id="nama_mitra" placeholder="Masukkan Nama Mitra" name="nama_mitra">
-                </div>
-                <div class="item1">
-                    <p>Jenis Mitra</p>
-                </div>
-                <div class="item2">6</div>
-                <div class="item1">
-                    <p>Judul Kerjasama</p>
-                </div>
-                <div class="item2">
-                    <input type="judul_kerja_sama" id="judul_kerja_sama" placeholder="Masukkan Judul Kerja Sama" name="judul_kerja_sama">
-                </div>
-                <div class="item1">
-                    <p>Skala Kerjasama</p>
-                </div>
-                <div class="item2">8</div>
-                <div class="item1">
-                    <p>Alamat</p>
-                </div>
-                <div class="item2">
-                    <input type="alamat" id="alamat" placeholder="Masukkan Alamat" name="alamat">
-                </div>
-                <div class="item1">
-                    <p>Negara</p>
-                </div>
-                <div class="item2">
-                    <input type="negara" id="negara" placeholder="Masukkan Negara" name="negara">
-                    </form>
-                </div>
-                <div class="item1">
-                    <p>Nomor Telephone</p>
-                </div>
-                <div class="item2">
-                    <input type="no_telp" id="no_telp" placeholder="Masukkan Nomor Telepon" name="no_telp">
-                    </form>
-                </div>
-                <div class="item1">
-                    <p>Website</p>
-                </div>
-                <div class="item2">
-                    <input type="web" id="web" placeholder="Masukkan URL Website" name="web">
-                    </form>
-                </div>
-                <div class="item1">
-                    <p>Bulan Kerjasama</p>
-                </div>
-                <div class="item2">
-                    <input type="bulan_kerja_sama" id="bulan_kerja_sama" placeholder="Masukkan Bulan Kerja Sama" name="bulan_kerja_sama">
-                    </form>
-                </div>
-
             </div>
-        </div><br>
-        <div class="grid-container">
-            <div class="grid-container2">
-                <div class="item1">
-                    <p>Nilai Kontrak</p>
-                </div>
-                <div class="item2">
-                    <input type="email" id="email" placeholder="Masukkan Nilai Kontrak" name="email">
-                    <! --type, id, email masih blm d ganti -->
-                        </form>
-                </div>
-                <div class="item1">
-                    <p>Tanggal Mulai</p>
-                </div>
-                <div class="item2">4</div>
-                <div class="item1">
-                    <p>Tanggal Selesai</p>
-                </div>
-                <div class="item2">6</div>
-                <div class="item1">
-                    <p>Perjanjian Kerjasama</p>
-                </div>
-                <div class="item2">6</div>
-            </div>
-        </div><br>
-        <div class="grid-container">
-            <div class="grid-container2">
-                <div class="item1">
-                    <p>Jenis Kontrak</p>
-                </div>
-                <div class="item2">
-                    <input type="email" id="email" placeholder="Enter email" name="email">
-                    </form>
-                </div>
-                <div class="item1">
-                    <p>Judul Kerjasama</p>
-                </div>
-                <div class="item2">4</div>
-                <div class="item1">
-                    <p>Dokumen MoU</p>
-                </div>
-                <div class="item2">6</div>
-            </div>
-        </div><br>
-        <div class="grid-container">
-            <div class="grid-container2">
-                <div class="item1">
-                    <p>Judul Kerjasama</p>
-                </div>
-                <div class="item2">
-                    <input type="email" id="email" placeholder="Enter email" name="email">
-                    </form>
-                </div>
-                <div class="item1">
-                    <p>Dokumen MoA</p>
-                </div>
-                <div class="item2">4</div>
-                <div class="item1">
-                    <p>Jenis Mitra</p>
-                </div>
-                <div class="item2">6</div>
-            </div>
-        </div><br>
-        <div class="grid-container">
-            <div class="grid-container2">
-                <div class="item1">
-                    <p>PIC</p>
-                </div>
-                <div class="item2">
-                    <input type="email" id="email" placeholder="Enter email" name="email">
-                    </form>
-                </div>
-                <div class="item1">
-                    <p>Nomor Telepon</p>
-                </div>
-                <div class="item2">4</div>
-                <div class="item1">
-                    <p>Email</p>
-                </div>
-                <div class="item2">6</div>
-            </div>
-        </div><br>
+            <!-- /.container-fluid -->
 
-        <div>
-            <a href="#">
-                <button style="float:left;border-radius:15px;">Simpan </button>
-            </a>
+            <!-- Horizontal Form -->
+            <div class="card card-info">
 
-            <a href="#">
-                <button style="float:right;border-radius:15px;">Hapus Kerja Sama</button>
-            </a>
-        </div><br>
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="select" class="col-sm-2 col-form-label">Status</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama Mitra">
+                            </div>
+                        </div><br>
+                        <div class="form-group row">
+                            <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
+                            </div>
+                        </div>.
+                        <div class="form-group row ">
+                            <label for="select " class="col-sm-2 col-form-label ">Skala Kerjasama</label>
+                            <div class="col-sm-10 ">
+                                <div class="form-group ">
+                                    <select class="form-control ">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Alamat">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Negara">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Nomor Telephone">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                            <div class="col-sm-10 ">
+                                <input type="url" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Website">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
+                            <div class="col-sm-10 ">
+                                <input type="month" class="form-control " id="inputPassword3">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                </form>
+            </div>
+            <!-- /.card -->
+
+            <!-- Horizontal Form -->
+            <div class="card card-info">
+
+                <!-- form start -->
+                <form class="form-horizontal">
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Nilai Kontrak</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra"
+                                    placeholder="Masukan Nilai Kontrak">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <div class="col-sm-10 ">
+                                <input type="date" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Alamat">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
+                                <input type="file" class="form-control " id="inputPassword3 "
+                                    placeholder="Masukan Negara">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
+                    <div class=" card-footer ">
+                        <button type="submit " class="btn btn-info ">Save</button>
+                        <button type="submit " class="btn btn-default float-right ">Cancel</button>
+                    </div>
+                    <!-- /.card-footer -->
+                </form>
+            </div>
+            <!-- /.card -->
 
 
+        </section>
+
+
+<<<<<<< HEAD
         <!-- jQuery -->
         <script src="plugins/jquery/jquery.min.js"></script>
         <!-- jQuery UI 1.11.4 -->
@@ -413,6 +411,26 @@
         <script src="dist/js/adminlte.js"></script>
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
         <script src="dist/js/pages/dashboard.js"></script>
+=======
+
+
+
+
+
+
+
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js "></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <!-- bs-custom-file-input -->
+    <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js "></script>
+>>>>>>> be112003644d8ed34f40e13957d12766647b630b
 
 
     </aside>

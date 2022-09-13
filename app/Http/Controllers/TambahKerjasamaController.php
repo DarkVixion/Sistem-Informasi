@@ -14,7 +14,16 @@ class TambahKerjasamaController extends Controller
         return view('Kerjasama')/*->with('kerjasama',$kerjasama)*/;
     }
 
+<<<<<<< HEAD
     public function tambah() //sama aja dengan fungsi create //store?
+=======
+    public function create()
+    {
+        return view('TambahKerja');
+    }
+
+    public function edit()
+>>>>>>> be112003644d8ed34f40e13957d12766647b630b
     {
         return view('TambahKerja');
     }
