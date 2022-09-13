@@ -342,7 +342,7 @@
                                 <input type="date" class="form-control " id="inputPassword3 ">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Perjanjian Kerjasama</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
                                 <input type="file" class="form-control " id="inputPassword3 ">
@@ -366,10 +366,7 @@
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
                                 <div class="col-sm-10">
-                                    <<<<<<< HEAD <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
-                                        =======
-                                        <input type="text" class="form-control select2bs4 select2-hidden-accessible" disabled="" id="NamaMitra" placeholder="Memorandum of Understanding (MoU)">
-                                        >>>>>>> 36264d79a330f858e4e711b0e61940a7f58f4996
+                                    <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                                 </div>
                                 <br><br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
@@ -377,7 +374,7 @@
                                     <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
                                 </div>
                                 <br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
+                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoU</label>
                                 <div class="col-sm-10 ">
                                     <input type="file" class="form-control " id="inputPassword3 ">
                                 </div>
@@ -407,9 +404,8 @@
                                 <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoA</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
                                 <input type="file" class="form-control " id="inputPassword3 ">
                             </div>
                         </div>
