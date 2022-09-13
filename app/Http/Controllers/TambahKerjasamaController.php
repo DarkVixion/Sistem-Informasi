@@ -10,15 +10,15 @@ use Illuminate\Http\Request;
 
 class TambahKerjasamaController extends Controller
 {
-    public function index()
-    {
-        $kerjasama = TambahKerjasama::all();
-        return view('Kerjasama')->with('kerjasama', $kerjasama);
-    }
-
     public function create()
     {
         return view('TambahKerja');
+    }
+
+    public function index()
+    {
+        $kerjasama = TambahKerjasama::all();
+        return view('TambahKerja', compact('kerjasama'));
     }
 
     public function edit()
@@ -36,7 +36,6 @@ class TambahKerjasamaController extends Controller
 
         $request->filejudulmou->move(public_path('files'), $new_mou);
 
-        return back()->with('success', 'Added');
-        /** show success message after storing product and image*/
+        return back();
     }
 }

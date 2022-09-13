@@ -342,7 +342,7 @@
                                 <input type="date" class="form-control " id="inputPassword3 ">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MOU</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Perjanjian Kerjasama</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
                                 <input type="file" class="form-control " id="inputPassword3 ">
@@ -359,7 +359,7 @@
             <div class="card card-info">
 
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="#" method="POST" enctype="multipart/form-data">
                     <div class="card-body">
 
                         <div class="form-group row">
@@ -373,9 +373,9 @@
                                 <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoU</label>
                             <div class="col-sm-10 ">
-                                <input type="file" class="form-control" name="filemou" id="inputPassword3 ">
+                                <input type="file" name="filemou" accept="pdf/*" class="form-control">
                             </div>
                         </div>
 
