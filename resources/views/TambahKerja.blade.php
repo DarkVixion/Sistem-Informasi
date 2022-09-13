@@ -13,18 +13,17 @@
     <!-- Styles -->
     <link rel="stylesheet" href={{ asset('css/style.css') }}>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Dashboard</title>
     <style>
-    .berlin {
-        border: 1px solid whitesmoke;
-        border-radius: 20px;
-        background-color: whitesmoke;
-        margin-bottom: 1rem;
-        padding: 10px;
-    }
+        .berlin {
+            border: 1px solid whitesmoke;
+            border-radius: 20px;
+            background-color: whitesmoke;
+            margin-bottom: 1rem;
+            padding: 10px;
+        }
     </style>
 </head>
 
@@ -52,9 +51,7 @@
             </div>
             &nbsp
             <div class="dropdown">
-                <button class="dropbtn">Universitas Pertamina<img
-                        src="https://ppm.universitaspertamina.ac.id/uploads/profile/admin/Logo_Universitas_Pertamina_-_Full_Color.png"
-                        alt="Photo" style="width:100%;max-width:50px"></button>
+                <button class="dropbtn">Universitas Pertamina<img src="https://ppm.universitaspertamina.ac.id/uploads/profile/admin/Logo_Universitas_Pertamina_-_Full_Color.png" alt="Photo" style="width:100%;max-width:50px"></button>
 
                 <div class="dropdown-content">
                     <a href="#">Akun</a>
@@ -120,14 +117,13 @@
             </div>
             <div class="item2">6</div>
             <div class="item1">
-                <p>Judul Kerja Sama</p>
+                <p>Judul Kerjasama</p>
             </div>
             <div class="item2">
-                <input type="judul_kerja_sama" id="judul_kerja_sama" placeholder="Masukkan Judul Kerja Sama"
-                    name="judul_kerja_sama">
+                <input type="judul_kerja_sama" id="judul_kerja_sama" placeholder="Masukkan Judul Kerja Sama" name="judul_kerja_sama">
             </div>
             <div class="item1">
-                <p>Skala Kerja Sama</p>
+                <p>Skala Kerjasama</p>
             </div>
             <div class="item2">8</div>
             <div class="item1">
@@ -161,8 +157,7 @@
                 <p>Bulan Kerjasama</p>
             </div>
             <div class="item2">
-                <input type="bulan_kerja_sama" id="bulan_kerja_sama" placeholder="Masukkan Bulan Kerja Sama"
-                    name="bulan_kerja_sama">
+                <input type="bulan_kerja_sama" id="bulan_kerja_sama" placeholder="Masukkan Bulan Kerja Sama" name="bulan_kerja_sama">
                 </form>
             </div>
 
@@ -171,41 +166,23 @@
     <div class="grid-container">
         <div class="grid-container2">
             <div class="item1">
-                <p>Status</p>
+                <p>Nilai Kontrak</p>
             </div>
             <div class="item2">
-                <input type="email" id="email" placeholder="Enter email" name="email">
-                </form>
+                <input type="email" id="email" placeholder="Masukkan Nilai Kontrak" name="email">
+                <! --type, id, email masih blm d ganti -->
+                    </form>
             </div>
             <div class="item1">
-                <p>Nama Mitra</p>
+                <p>Tanggal Mulai</p>
             </div>
             <div class="item2">4</div>
             <div class="item1">
-                <p>Jenis Mitra</p>
+                <p>Tanggal Selesai</p>
             </div>
             <div class="item2">6</div>
             <div class="item1">
-                <p>Judul Kerja Sama</p>
-            </div>
-            <div class="item2">6</div>
-        </div>
-    </div><br>
-    <div class="grid-container">
-        <div class="grid-container2">
-            <div class="item1">
-                <p>Status</p>
-            </div>
-            <div class="item2">
-                <input type="email" id="email" placeholder="Enter email" name="email">
-                </form>
-            </div>
-            <div class="item1">
-                <p>Nama Mitra</p>
-            </div>
-            <div class="item2">4</div>
-            <div class="item1">
-                <p>Jenis Mitra</p>
+                <p>Perjanjian Kerjasama</p>
             </div>
             <div class="item2">6</div>
         </div>
@@ -213,14 +190,33 @@
     <div class="grid-container">
         <div class="grid-container2">
             <div class="item1">
-                <p>Status</p>
+                <p>Jenis Kontrak</p>
             </div>
             <div class="item2">
                 <input type="email" id="email" placeholder="Enter email" name="email">
                 </form>
             </div>
             <div class="item1">
-                <p>Nama Mitra</p>
+                <p>Judul Kerjasama</p>
+            </div>
+            <div class="item2">4</div>
+            <div class="item1">
+                <p>Dokumen MoU</p>
+            </div>
+            <div class="item2">6</div>
+        </div>
+    </div><br>
+    <div class="grid-container">
+        <div class="grid-container2">
+            <div class="item1">
+                <p>Judul Kerjasama</p>
+            </div>
+            <div class="item2">
+                <input type="email" id="email" placeholder="Enter email" name="email">
+                </form>
+            </div>
+            <div class="item1">
+                <p>Dokumen MoA</p>
             </div>
             <div class="item2">4</div>
             <div class="item1">
@@ -232,18 +228,18 @@
     <div class="grid-container">
         <div class="grid-container2">
             <div class="item1">
-                <p>Status</p>
+                <p>PIC</p>
             </div>
             <div class="item2">
                 <input type="email" id="email" placeholder="Enter email" name="email">
                 </form>
             </div>
             <div class="item1">
-                <p>Nama Mitra</p>
+                <p>Nomor Telepon</p>
             </div>
             <div class="item2">4</div>
             <div class="item1">
-                <p>Jenis Mitra</p>
+                <p>Email</p>
             </div>
             <div class="item2">6</div>
         </div>
@@ -263,29 +259,26 @@
 
 
     <script>
-    var dropdown = document.getElementsByClassName("dropdown-btn");
-    var i;
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
 
-    for (i = 0; i < dropdown.length; i++) {
-        dropdown[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var dropdownContent = this.nextElementSibling;
-            if (dropdownContent.style.display === "block") {
-                dropdownContent.style.display = "none";
-            } else {
-                dropdownContent.style.display = "block";
-            }
-        });
-    }
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
     </script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
 </body>
 
