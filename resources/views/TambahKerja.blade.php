@@ -397,7 +397,7 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Memorandum of Agreement (MoA)">
+                                <input type="text" class="form-control select2bs4 select2-hidden-accessible" disabled="" id=" NamaMitra" placeholder="Memorandum of Agreement (MoA)">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
