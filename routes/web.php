@@ -26,6 +26,8 @@ Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 
 Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
 
+Route::post('TambahKerjasama', [TambahKerjasamaController::class, 'store']);
+
 Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
 
 Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
