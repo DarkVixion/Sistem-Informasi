@@ -324,29 +324,30 @@
             <div class="card card-info">
 
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="/tambah_kerjasama" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="card-body">
 
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Nilai Kontrak</label>
+                            <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nilai Kontrak">
+                                <input type="text" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control " id="inputPassword3 ">
+                                <input type="date" class="form-control @error('tglmulai') is-invalid @enderror" name="tglmulai">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Tanggal Selesai</label>
-                            <div class="col-sm-10 ">
-                                <input type="date" class="form-control " id="inputPassword3 ">
+                            <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <div class=" col-sm-10 ">
+                                <input type=" date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Perjanjian Kerjasama</label>
+                            <label for="perjanjiankerjasama" class="col-sm-2 col-form-label ">Perjanjian Kerjasama</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama File">
-                                <input type="file" class="form-control " id="inputPassword3 ">
+                                <input type="text" class="form-control @error('nilaikontrak') is-invalid @enderror" name="perjanjiankerjasama" placeholder="Masukan Nama File">
+                                <input type="file" class="form-control" name="perjanjiankerjasama[]" accept="pdf/*" multiple>
                             </div>
                         </div>
 
@@ -361,6 +362,7 @@
 
                 <!-- form start -->
                 <form class="form-horizontal" action="/tambah_kerjasama" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <form class="form-horizontal">
                         <div class="card-body">
 
@@ -370,14 +372,14 @@
                                     <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                                 </div>
                                 <br><br><br>
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                                <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                                    <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerjasama">
                                 </div>
                                 <br><br><br>
-                                <label for="filemou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
+                                <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                                 <div class="col-sm-10 ">
-                                    <input type="file" class="form-control " id="filemou" name="filemou">
+                                    <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                                 </div>
                             </div>
 
@@ -391,7 +393,8 @@
             <div class="card card-info">
 
                 <!-- form start -->
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="/tambah_kerjasama" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div class="card-body">
 
                         <div class="form-group row">
@@ -400,14 +403,14 @@
                                 <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                                <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerjasama">
                             </div>
                             <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoA</label>
+                            <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
                             <div class="col-sm-10 ">
-                                <input type="file" class="form-control " id="inputPassword3 ">
+                                <input type="file" class="form-control" name="path_moa[]" accept="pdf/*" multiple>
                             </div>
                         </div>
 
@@ -442,8 +445,8 @@
                     </div>
                     <!-- /.card-body -->
                     <div class=" card-footer ">
-                        <button type="submit " class="btn btn-info ">Save</button>
-                        <button type="submit " class="btn btn-default float-right ">Cancel</button>
+                        <button type="submit" class="btn btn-info">Save</button>
+                        <button type="submit" class="btn btn-default float-right">Cancel</button>
                     </div>
                     <!-- /.card-footer -->
                 </form>
