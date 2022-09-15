@@ -26,7 +26,7 @@ Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 
 Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
 
-Route::post('/tambah_kerjasama', [TambahKerjasamaController::class, 'store']);
+Route::post('/tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('berlin');
 
 Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
 

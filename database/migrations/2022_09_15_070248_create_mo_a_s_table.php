@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use App\Models\TambahKerjasama;
 
-class CreatePerjanjianKerjasamasTable extends Migration
+class CreateMoASTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreatePerjanjianKerjasamasTable extends Migration
      */
     public function up()
     {
-        Schema::create('perjanjian_kerjasamas', function (Blueprint $table) {
+        Schema::create('mo_a_s', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(TambahKerjasama::class);
             $table->string('namaperjanjian');
@@ -31,6 +31,6 @@ class CreatePerjanjianKerjasamasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('perjanjian_kerjasamas');
+        Schema::dropIfExists('mo_a_s');
     }
 }

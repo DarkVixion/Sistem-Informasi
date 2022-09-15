@@ -216,26 +216,26 @@
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Tambah Kerjasama</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="/Kerjasama">Kerjasama</a></li>
-                            <li class="breadcrumb-item active">Tambah Kerjasama</li>
-                        </ol>
+            <form class="form-horizontal" action="{{route('berlin')}}" method="POST" enctype="multipart/form-data">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Tambah Kerjasama</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="/Kerjasama">Kerjasama</a></li>
+                                <li class="breadcrumb-item active">Tambah Kerjasama</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!-- /.container-fluid -->
+                <!-- /.container-fluid -->
 
-            <!-- Horizontal Form -->
-            <div class="card card-info">
+                <!-- Horizontal Form -->
+                <div class="card card-info">
 
-                <!-- form start -->
-                <form class="form-horizontal">
+                    <!-- form start -->
                     <div class="card-body">
                         <div class="form-group row">
                             <label for="select" class="col-sm-2 col-form-label">Status</label>
@@ -316,15 +316,13 @@
 
                     </div>
                     <!-- /.card-body -->
-                </form>
-            </div>
-            <!-- /.card -->
+                </div>
+                <!-- /.card -->
 
-            <!-- Horizontal Form -->
-            <div class="card card-info">
+                <!-- Horizontal Form -->
+                <div class="card card-info">
 
-                <!-- form start -->
-                <form class="form-horizontal" action="/tambah_kerjasama" method="POST" enctype="multipart/form-data">
+                    <!-- form start -->
                     @csrf
                     <div class="card-body">
 
@@ -353,47 +351,45 @@
 
                     </div>
                     <!-- /.card-body -->
-                </form>
-            </div>
-            <!-- /.card -->
 
-            <!-- Horizontal Form -->
-            <div class="card card-info">
+                </div>
+                <!-- /.card -->
 
-                <!-- form start -->
-                <form class="form-horizontal" action="/tambah_kerjasama" method="POST" enctype="multipart/form-data">
+                <!-- Horizontal Form -->
+                <div class="card card-info">
+
+                    <!-- form start -->
+
                     @csrf
-                    <form class="form-horizontal">
-                        <div class="card-body">
+                    <div class="card-body">
 
-                            <div class="form-group row">
-                                <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
-                                <div class="col-sm-10">
-                                    <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
-                                </div>
-                                <br><br><br>
-                                <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerjasama</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerjasama">
-                                </div>
-                                <br><br><br>
-                                <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
-                                <div class="col-sm-10 ">
-                                    <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
-                                </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                            <div class="col-sm-10">
+                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                             </div>
-
+                            <br><br><br>
+                            <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
+                            <div class="col-sm-10 ">
+                                <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
+                            </div>
                         </div>
-                        <!-- /.card-body -->
 
-                    </form>
-            </div>
+                    </div>
+                    <!-- /.card-body -->
 
-            <!-- Horizontal Form -->
-            <div class="card card-info">
 
-                <!-- form start -->
-                <form class="form-horizontal" action="/tambah_kerjasama" method="POST" enctype="multipart/form-data">
+                </div>
+
+                <!-- Horizontal Form -->
+                <div class="card card-info">
+
+                    <!-- form start -->
                     @csrf
                     <div class="card-body">
 
@@ -416,13 +412,11 @@
 
                     </div>
                     <!-- /.card-body -->
-                </form>
-            </div>
+                </div>
 
-            <div class="card card-info">
+                <div class="card card-info">
 
-                <!-- form start -->
-                <form class="form-horizontal">
+                    <!-- form start -->
                     <div class="card-body">
 
                         <div class="form-group row">
@@ -449,13 +443,10 @@
                         <button type="submit" class="btn btn-default float-right">Cancel</button>
                     </div>
                     <!-- /.card-footer -->
-                </form>
-            </div>
-
+                </div>
+            </form>
         </section>
-
     </div>
-
 
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js "></script>
