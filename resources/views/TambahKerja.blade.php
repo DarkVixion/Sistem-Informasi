@@ -266,6 +266,7 @@
                                         <option>Non Pertamina</option>
                                         <option>BUMN</option>
                                         <option>Kementrian</option>
+                                        <option><a href='/JenisMitra'>Tambah Jenis Mitra</a></option>
                                     </select>
                                 </div>
                             </div>
