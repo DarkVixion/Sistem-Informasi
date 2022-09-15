@@ -236,88 +236,86 @@
                 <div class="card card-info">
 
                     <!-- form start -->
-                    <form class="form-horizontal">
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label for="select" class="col-sm-2 col-form-label">Status</label>
-                                <div class="col-sm-10">
-                                    <div class="form-group">
-                                        <select class="form-control">
-                                            <option>Aktif</option>
-                                            <option>Tidak Aktif</option>
-                                            <option>Kadarluwasa</option>
-                                            <option>Dalam Penjajakan</option>
-                                            <option>Perpanjangan</option>
-                                        </select>
-                                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="select" class="col-sm-2 col-form-label">Status</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Aktif</option>
+                                        <option>Tidak Aktif</option>
+                                        <option>Kadarluwasa</option>
+                                        <option>Dalam Penjajakan</option>
+                                        <option>Perpanjangan</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama Mitra">
-                                </div>
-                            </div><br>
-                            <div class="form-group row">
-                                <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
-                                <div class="col-sm-10">
-                                    <div class="form-group">
-                                        <select class="form-control">
-                                            <option>Pertamina</option>
-                                            <option>Non Pertamina</option>
-                                            <option>BUMN</option>
-                                            <option>Kementrian</option>
-                                            <option><a href='/JenisMitra'>Tambah Jenis Mitra</a></option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
-                                </div>
-                            </div>.
-                            <div class="form-group row ">
-                                <label for="select " class="col-sm-2 col-form-label ">Skala Kerjasama</label>
-                                <div class="col-sm-10 ">
-                                    <div class="form-group ">
-                                        <select class="form-control ">
-                                            <option>Nasional</option>
-                                            <option>Internasional</option>
-                                            <option>Regional</option>
-                                            <option>Provinsi</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row ">
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                                <div class="col-sm-10 ">
-                                    <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Alamat">
-                                </div>
-                                <br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
-                                <div class="col-sm-10 ">
-                                    <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
-                                </div><br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
-                                <div class="col-sm-10 ">
-                                    <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Nomor Telephone">
-                                </div><br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-                                <div class="col-sm-10 ">
-                                    <input type="url" class="form-control " id="inputPassword3 " placeholder="Masukan Website">
-                                </div><br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
-                                <div class="col-sm-10 ">
-                                    <input type="month" class="form-control " id="inputPassword3">
-                                </div>
-                            </div>
-
                         </div>
-                        <!-- /.card-body -->
-                    </form>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama Mitra">
+                            </div>
+                        </div><br>
+                        <div class="form-group row">
+                            <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
+                            <div class="col-sm-10">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Pertamina</option>
+                                        <option>Non Pertamina</option>
+                                        <option>BUMN</option>
+                                        <option>Kementrian</option>
+                                        <option><a href='/JenisMitra'>Tambah Jenis Mitra</a></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                            </div>
+                        </div>.
+                        <div class="form-group row ">
+                            <label for="select " class="col-sm-2 col-form-label ">Skala Kerjasama</label>
+                            <div class="col-sm-10 ">
+                                <div class="form-group ">
+                                    <select class="form-control ">
+                                        <option>Nasional</option>
+                                        <option>Internasional</option>
+                                        <option>Regional</option>
+                                        <option>Provinsi</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Alamat">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Nomor Telephone">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                            <div class="col-sm-10 ">
+                                <input type="url" class="form-control " id="inputPassword3 " placeholder="Masukan Website">
+                            </div><br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
+                            <div class="col-sm-10 ">
+                                <input type="month" class="form-control " id="inputPassword3">
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
 
@@ -363,28 +361,27 @@
                     <!-- form start -->
 
                     @csrf
-                    <form class="form-horizontal">
-                        <div class="card-body">
+                    <div class="card-body">
 
-                            <div class="form-group row">
-                                <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
-                                <div class="col-sm-10">
-                                    <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
-                                </div>
-                                <br><br><br>
-                                <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerjasama</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerjasama">
-                                </div>
-                                <br><br><br>
-                                <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
-                                <div class="col-sm-10 ">
-                                    <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
-                                </div>
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                            <div class="col-sm-10">
+                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                             </div>
-
+                            <br><br><br>
+                            <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerjasama">
+                            </div>
+                            <br><br><br>
+                            <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
+                            <div class="col-sm-10 ">
+                                <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
+                            </div>
                         </div>
-                        <!-- /.card-body -->
+
+                    </div>
+                    <!-- /.card-body -->
 
 
                 </div>

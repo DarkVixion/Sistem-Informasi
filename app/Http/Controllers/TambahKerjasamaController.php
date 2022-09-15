@@ -33,9 +33,6 @@ class TambahKerjasamaController extends Controller
 
     public function store(Request $req)
     {
-        var_dump($req);
-        die();
-
         $data = $req->validate([
             'namaperjanjian' => 'required',
             'path' => 'required',
