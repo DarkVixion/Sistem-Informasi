@@ -31,7 +31,6 @@ class TambahKerjasamaController extends Controller
 
     public function store(Request $request)
     {
-        ddd($request);
         $this->validate($request, [
             'filejudulmou' => 'required|mimes:pdf|max:2048',
         ]);
