@@ -374,9 +374,9 @@
                                     <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
                                 </div>
                                 <br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Dokumen MoU</label>
+                                <label for="filemou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                                 <div class="col-sm-10 ">
-                                    <input type="file" class="form-control " id="inputPassword3 ">
+                                    <input type="file" class="form-control " id="filemou" name="filemou">
                                 </div>
                             </div>
 
