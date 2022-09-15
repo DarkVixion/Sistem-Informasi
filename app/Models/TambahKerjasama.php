@@ -36,6 +36,16 @@ class TambahKerjasama extends Model
 
     public function perjanjiankerjasama()
     {
-        return $this->hasMany("");
+        return $this->hasMany(PerjanjianKerjasama::class);
+    }
+
+    public function path_mou()
+    {
+        return $this->hasMany(MoU::class);
+    }
+
+    public function path_moa()
+    {
+        return $this->hasMany(MoA::class);
     }
 }
