@@ -34,8 +34,8 @@ class TambahKerjasama extends Model
         "emailpic"
     ];
 
-    public function filemou($value)
+    public function perjanjiankerjasama()
     {
-        return $this->attributes["judul_mou"] = json_encode($value);
+        return $this->hasMany("");
     }
 }
