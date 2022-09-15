@@ -241,7 +241,7 @@
                                     <button type="button" class="btn btn-default" data-toggle="modal"
                                         data-target="#modal-xl"
                                         style="float:right; background-color:cornflowerblue; border-radius:15px;">
-                                        Tambah Jenis Kerjasama
+                                        Tambah Jenis Mitra
                                     </button>
                                 </div>
                                 <!-- /.card-header -->

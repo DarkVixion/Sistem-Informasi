@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tambah Kerjasama | Universitas Pertamina</title>
+    <title>Tambah Kerja Sama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -193,7 +193,7 @@
                             <li class="nav-item">
                                 <a href="/SkalaKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Skala Kerjasama</p>
+                                    <p>Skala Kerja Sama</p>
                                 </a>
                             </li>
                         </ul>
@@ -201,7 +201,7 @@
                     <li class="nav-item">
                         <a href="/Kerjasama" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
-                            <p>Kerjasama</p>
+                            <p>Kerja Sama</p>
                         </a>
                     </li>
                 </ul>
@@ -220,12 +220,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Tambah Kerjasama</h1>
+                            <h1>Tambah Kerja Sama</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="/Kerjasama">Kerjasama</a></li>
-                                <li class="breadcrumb-item active">Tambah Kerjasama</li>
+                                <li class="breadcrumb-item"><a href="/Kerjasama">Kerja Sama</a></li>
+                                <li class="breadcrumb-item active">Tambah Kerja Sama</li>
                             </ol>
                         </div>
                     </div>
@@ -272,13 +272,13 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerjasama">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerja Sama">
                             </div>
                         </div>.
                         <div class="form-group row ">
-                            <label for="select " class="col-sm-2 col-form-label ">Skala Kerjasama</label>
+                            <label for="select " class="col-sm-2 col-form-label ">Skala Kerja Sama</label>
                             <div class="col-sm-10 ">
                                 <div class="form-group ">
                                     <select class="form-control ">
@@ -342,7 +342,7 @@
                                 <input type=" date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai">
                             </div>
                             <br><br><br>
-                            <label for="perjanjiankerjasama" class="col-sm-2 col-form-label ">Perjanjian Kerjasama</label>
+                            <label for="perjanjiankerjasama" class="col-sm-2 col-form-label ">Perjanjian Kerja Sama</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control @error('nilaikontrak') is-invalid @enderror" name="perjanjiankerjasama" placeholder="Masukan Nama File">
                                 <input type="file" class="form-control" name="perjanjiankerjasama[]" accept="pdf/*" multiple>
@@ -369,9 +369,9 @@
                                 <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                             </div>
                             <br><br><br>
-                            <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                            <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerjasama">
+                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -401,7 +401,7 @@
                             <br><br><br>
                             <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerjasama">
+                                <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama">
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>

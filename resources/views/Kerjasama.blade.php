@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>KerjaSama - Universitas Pertamina</title>
+    <title>Kerja Sama - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -224,7 +224,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Kerjasama</h1>
+                        <h1>Kerja Sama</h1>
                     </div>
                     <div class="col-sm-6">
                         <a href="/TambahKerja">

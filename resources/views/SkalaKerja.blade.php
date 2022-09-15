@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skala Kerjasama | Universitas Pertamina</title>
+    <title>Skala Kerja Sama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -217,12 +217,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Skala Kerjasama</h1>
+                            <h1>Skala Kerja Sama</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Master Data</a></li>
-                                <li class="breadcrumb-item active">Skala Kerjasama</li>
+                                <li class="breadcrumb-item active">Skala Kerja Sama</li>
                             </ol>
                         </div>
                     </div>
@@ -241,7 +241,7 @@
                                     <button type="button" class="btn btn-default" data-toggle="modal"
                                         data-target="#modal-xl"
                                         style="float:right; background-color:cornflowerblue; border-radius:15px;">
-                                        Tambah Skala Kerjasama
+                                        Tambah Skala Kerja Sama
                                     </button>
                                 </div>
                                 <!-- /.card-header -->
@@ -250,7 +250,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No. </th>
-                                                <th>Skala Kerjasama</th>
+                                                <th>Skala Kerja Sama</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -275,7 +275,7 @@
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Tambah Skala Kerjasama Baru</h4>
+                                <h4 class="modal-title">Tambah Skala Kerja Sama Baru</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -283,10 +283,10 @@
                             <div class="modal-body">
                                 <div class="form-group row ">
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Skala
-                                        Kerjasama</label>
+                                        Kerja Sama</label>
                                     <div class="col-sm-10 ">
                                         <input type="text" class="form-control " id="inputPassword3 "
-                                            placeholder="Masukan Skala Kerjasama Baru">
+                                            placeholder="Masukan Skala Kerja Sama Baru">
                                     </div>
                                 </div>
                             </div>
