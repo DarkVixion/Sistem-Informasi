@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard 3</title>
+    <title>Dashboard | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -30,7 +30,7 @@
     <div class="wrapper">
         <!-- PreLoader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="dist/img/Head Logo.png" alt="AdminLTELogo" height="60" width="60">
+            <img class="animation__shake" src="dist/img/logo UP.jpeg" alt="AdminLTELogo" height="350" width="400">
         </div>
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
