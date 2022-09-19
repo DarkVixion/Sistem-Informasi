@@ -248,6 +248,7 @@
                                             <tr>
                                                 <th>No. </th>
                                                 <th>Nama Mitra</th>
+                                                <th>Jenis Kontrak</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -255,7 +256,20 @@
                                                 <tr>
                                                     <td> 1. </td>
                                                     <td>DIKTI</td>  {{--  --}}
-                                                    <td><a style='color: blue'><i class="fa fa-eye"></i></a></td>                                                    
+                                                    <td>MOU</td>
+                                                    <td><a style='color: blue'><i class="fa fa-eye"></i></a></td>  
+                                                </tr>
+                                                <tr>
+                                                    <td> 2. </td>
+                                                    <td>DIKTI</td>  {{--  --}}
+                                                    <td>MOA</td>
+                                                    <td><a style='color: blue'><i class="fa fa-eye"></i></a></td>  
+                                                </tr>
+                                                <tr>
+                                                    <td> 3. </td>
+                                                    <td>DIKTI</td>  {{--  --}}
+                                                    <td>MOA</td>
+                                                    <td><a style='color: blue'><i class="fa fa-eye"></i></a></td>  
                                                 </tr>
                                             </tbody>
                                     </table>
