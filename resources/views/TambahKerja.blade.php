@@ -274,7 +274,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerja Sama">
+                                <input type="text" class="form-control " id="judulkerja" placeholder="Masukan Judul Kerja Sama">
                             </div>
                         </div>.
                         <div class="form-group row ">
@@ -293,24 +293,24 @@
                         <div class="form-group row ">
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Alamat">
+                                <input type="text" class="form-control " id="alamat" placeholder="Masukan Alamat">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
+                                <input type="text" class="form-control " id="negara" placeholder="Masukan Negara">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Nomor Telephone">
+                                <input type="text" class="form-control " id="no.telpmitra" placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
-                                <input type="url" class="form-control " id="inputPassword3 " placeholder="Masukan Website">
+                                <input type="url" class="form-control " id="web" placeholder="Masukan Website">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                             <div class="col-sm-10 ">
-                                <input type="month" class="form-control " id="inputPassword3">
+                                <input type="month" class="form-control " id="bulaninput">
                             </div>
                         </div>
 
@@ -412,17 +412,17 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan Narahubung">
+                                <input type="text" class="form-control" id="narahubung" placeholder="Masukkan Narahubung">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="No. Telepon">
+                                <input type="text" class="form-control " id="no.telpnara" placeholder="No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Alamat Email">
+                                <input type="text" class="form-control" id="emailnara" placeholder="Alamat Email">
                             </div>
                         </div>
 
@@ -448,12 +448,12 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="No. Telepon">
+                                <input type="text" class="form-control " id="no.telppic" placeholder="No. Telepon" value="" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Alamat Email">
+                                <input type="text" class="form-control" id="emailpic" placeholder="Alamat Email" value="" disabled>
                             </div>
                         </div>
 
