@@ -302,7 +302,7 @@
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="no.telp1" placeholder="Masukan Nomor Telephone">
+                                <input type="text" class="form-control " id="no.telpmitra" placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
@@ -417,12 +417,12 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="no.telp2" placeholder="No. Telepon">
+                                <input type="text" class="form-control " id="no.telpnara" placeholder="No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="email1" placeholder="Alamat Email">
+                                <input type="text" class="form-control" id="emailnara" placeholder="Alamat Email">
                             </div>
                         </div>
 
@@ -445,12 +445,12 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="no.telp3" placeholder="No. Telepon" value="" disabled>
+                                <input type="text" class="form-control " id="no.telppic" placeholder="No. Telepon" value="" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="email2" placeholder="Alamat Email" value="" disabled>
+                                <input type="text" class="form-control" id="emailpic" placeholder="Alamat Email" value="" disabled>
                             </div>
                         </div>
 
