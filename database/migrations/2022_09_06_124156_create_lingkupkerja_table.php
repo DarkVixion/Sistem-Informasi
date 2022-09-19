@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSkalakerjasamaTable extends Migration
+class CreateLingkupkerjaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateSkalakerjasamaTable extends Migration
      */
     public function up()
     {
-        Schema::create('skalakerjasama', function (Blueprint $table) {
+        Schema::create('lingkupkerja', function (Blueprint $table) {
             $table->id();
-            $table->string("judulskalakerjasama");
+            $table->string("judullingkupkerja");
         });
     }
 
