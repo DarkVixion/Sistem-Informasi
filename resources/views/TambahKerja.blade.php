@@ -302,7 +302,7 @@
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="no.telpmitra" placeholder="Masukan Nomor Telephone">
+                                <input type="text" class="form-control " id="notelpmitra" placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
@@ -417,7 +417,7 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="no.telpnara" placeholder="No. Telepon">
+                                <input type="text" class="form-control " id="notelpnara" placeholder="No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
@@ -438,22 +438,25 @@
                             <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
                             <div class="col-sm-10">
                                 <div class="form-group">
-                                    <select class="form-control">
+                                    <select class="form-control" id="pic">
                                         <option hidden>Pilih Nama PIC UPer</option>
                                         <option>Bapak Abcd</option>
                                         <option>Ibu Efgh</option>
                                     </select>
+                                    <!-- @foreach ($pic as $item)
+                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach -->
                                 </div>                      
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="no.telppic" placeholder="No. Telepon" value="" disabled>
+                                <input type="text" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="emailpic" placeholder="Alamat Email" value="" disabled>
+                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="emailpic" value="" disabled>
                             </div>
                         </div>
 
@@ -478,6 +481,43 @@
     <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js "></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#pic').on('change', function() {
+            var picID = $(this).val();
+            if(picID) {
+                $.ajax({
+                    url: '/getData/'+picID,
+                    type: "GET",
+                    data : {"_token":"{{ csrf_token() }}"},
+                    dataType: "json",
+                    success:function(data)
+                    {
+                        if(data){
+                            $('#notelppic').empty();
+                            $('#emailpic').empty();
+                            $('#notelppic').append('<option hidden>Choose Course</option>'); 
+                            $.each(data, function(key, course){
+                                $('select[name="notelppic"]').append('<option value="'+ key +'">' + course.name+ '</option>');
+                            });
+                            $('#emailpic').append('<option hidden>Choose Course</option>'); 
+                            $.each(data, function(key, course){
+                                $('select[name="emailpic"]').append('<option value="'+ key +'">' + course.name+ '</option>');
+                            });
+                        }else{
+                            $('#notelppic').empty();
+                            $('#emailpic').empty();
+                        }
+                    }
+                });
+            }else{
+                $('#notelppic').empty();
+                $('#emailpic').empty();
+            }
+            });
+        });
+    </script>
 
 </body>
 

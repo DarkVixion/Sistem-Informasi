@@ -39,7 +39,7 @@ class TambahKerjasamaController extends Controller
             'jenis' => 'required'
         ]);
 
-        $new_file = TambahKerja::create($data);
+        $new_file = TambahKerjasama::create($data);
 
         if ($req->has('path')) {
             foreach ($req->get('path') as $path) {
@@ -50,7 +50,6 @@ class TambahKerjasamaController extends Controller
                 PerjanjianKerjasama::create([
                     'file_id' => $new_file->id,
                     'path' => $pathname
-
                 ]);
             }
         }
