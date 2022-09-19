@@ -191,9 +191,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/SkalaKerja" class="nav-link">
+                                <a href="/LingkupKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Skala Kerja Sama</p>
+                                    <p>Lingkup Kerja Sama</p>
                                 </a>
                             </li>
                         </ul>
@@ -278,7 +278,7 @@
                             </div>
                         </div>.
                         <div class="form-group row ">
-                            <label for="select " class="col-sm-2 col-form-label ">Skala Kerja Sama</label>
+                            <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
                             <div class="col-sm-10 ">
                                 <div class="form-group ">
                                     <select class="form-control ">

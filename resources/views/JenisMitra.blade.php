@@ -189,9 +189,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/SkalaKerja" class="nav-link">
+                                    <a href="/LingkupKerja" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Skala Kerja Sama</p>
+                                        <p>Lingkup Kerja Sama</p>
                                     </a>
                                 </li>
                             </ul>

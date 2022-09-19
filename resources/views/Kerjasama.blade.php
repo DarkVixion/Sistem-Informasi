@@ -198,9 +198,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/SkalaKerja" class="nav-link">
+                                <a href="/LingkupKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Skala Kerja Sama</p>
+                                    <p>Lingkup Kerja Sama</p>
                                 </a>
                             </li>
                         </ul>
@@ -253,7 +253,7 @@
                                             <th>Jenis Mitra</th>
                                             <th>Jenis Kontrak</th>
                                             <th>Judul</th>
-                                            <th>Skala Kerja Sama</th>
+                                            <th>Lingkup Kerja Sama</th>
                                             <th>Periode Mulai</th>
                                             <th>Periode Berakhir</th>
                                             <th>Misc.</th>
@@ -267,7 +267,7 @@
                                             <td>{{ $item->jenismitra }}</td>
                                             <td>{{ $item->jenismitra }}</td>
                                             <td>{{ $item->judul }}</td>
-                                            <td>{{ $item->skalakerjasama }}</td>
+                                            <td>{{ $item->Lingkupkerja }}</td>
                                             <td>{{ $item->tglmulai }}</td>
                                             <td>{{ $item->tglselesai }}</td>
                                             <td>
@@ -294,7 +294,7 @@
                                             <th>Jenis Mitra</th>
                                             <th>Jenis Kontrak</th>
                                             <th>Judul</th>
-                                            <th>Skala Kerja Sama</th>
+                                            <th>Lingkup Kerja Sama</th>
                                             <th>Periode Mulai</th>
                                             <th>Periode Berakhir</th>
                                             <th>Misc.</th>

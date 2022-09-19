@@ -32,6 +32,6 @@ Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
 
 Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
 
-Route::get('/SkalaKerja', function () {
-    return view('SkalaKerja');
+Route::get('/LingkupKerja', function () {
+    return view('LingkupKerja');
 });

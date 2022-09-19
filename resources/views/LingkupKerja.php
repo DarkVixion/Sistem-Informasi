@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skala Kerja Sama | Universitas Pertamina</title>
+    <title>Lingkup Kerja Sama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- SweetAlert2 -->
@@ -35,8 +34,7 @@
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                    aria-label="Search">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
@@ -60,8 +58,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user1-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 mr-3 img-circle">
+                                <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Brad Diesel
@@ -77,8 +74,7 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user8-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         John Pierce
@@ -94,13 +90,11 @@
                         <a href="#" class="dropdown-item">
                             <!-- Message Start -->
                             <div class="media">
-                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
+                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                                 <div class="media-body">
                                     <h3 class="dropdown-item-title">
                                         Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i
-                                                class="fas fa-star"></i></span>
+                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
                                     </h3>
                                     <p class="text-sm">The subject goes here</p>
                                     <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
@@ -160,8 +154,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -189,9 +182,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/SkalaKerja" class="nav-link">
+                                    <a href="/LingkupKerja" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Skala Kerja Sama</p>
+                                        <p>Lingkup Kerja Sama</p>
                                     </a>
                                 </li>
                             </ul>
@@ -217,12 +210,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Skala Kerja Sama</h1>
+                            <h1>Lingkup Kerja Sama</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Master Data</a></li>
-                                <li class="breadcrumb-item active">Skala Kerja Sama</li>
+                                <li class="breadcrumb-item active">Lingkup Kerja Sama</li>
                             </ol>
                         </div>
                     </div>
@@ -238,10 +231,8 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <button type="button" class="btn btn-default" data-toggle="modal"
-                                        data-target="#modal-xl"
-                                        style="float:right; background-color:cornflowerblue; border-radius:15px;">
-                                        Tambah Skala Kerja Sama
+                                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:cornflowerblue; border-radius:15px;">
+                                        Tambah Lingkup Kerja Sama
                                     </button>
                                 </div>
                                 <!-- /.card-header -->
@@ -250,7 +241,7 @@
                                         <thead>
                                             <tr>
                                                 <th>No. </th>
-                                                <th>Skala Kerja Sama</th>
+                                                <th>Lingkup Kerja Sama</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -275,24 +266,23 @@
                     <div class="modal-dialog modal-xl">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Tambah Skala Kerja Sama Baru</h4>
+                                <h4 class="modal-title">Tambah Lingkup Kerja Sama Baru</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
                                 <div class="form-group row ">
-                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Skala
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup
                                         Kerja Sama</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" class="form-control " id="inputPassword3 "
-                                            placeholder="Masukan Skala Kerja Sama Baru">
+                                        <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Lingkup Kerja Sama Baru">
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-target="">Tambah Skala</button>
+                                <button type="button" class="btn btn-primary" data-target="">Tambah Lingkup Kerja Sama</button>
                             </div>
                         </div>
                         <!-- /.modal-content -->
