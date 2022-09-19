@@ -234,7 +234,7 @@
                     </div>
                     <div class="col-sm-6">
                         <a href="/TambahKerja">
-                            <button style="float:right; background-color:cornflowerblue; border-radius:15px;">Tambah
+                            <button style="float:right; background-color:lightblue; border-radius:15px;">Tambah
                                 Kerja Sama
                             </button>
                         </a>
@@ -293,19 +293,6 @@
                                         </tr>
                                         @endforeach
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Bulan Pencatatan</th>
-                                            <th>Nama</th>
-                                            <th>Jenis Mitra</th>
-                                            <th>Jenis Kontrak</th>
-                                            <th>Judul</th>
-                                            <th>Lingkup Kerja Sama</th>
-                                            <th>Periode Mulai</th>
-                                            <th>Periode Berakhir</th>
-                                            <th>Misc.</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
                             </div>
                             <!-- /.card-body -->
