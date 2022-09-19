@@ -204,6 +204,12 @@
                             <p>Kerja Sama</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/Mitra" class="nav-link">
+                            <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
+                            <p>Mitra</p>
+                        </a>
+                    </li> 
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
