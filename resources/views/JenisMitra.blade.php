@@ -246,7 +246,7 @@
                                 <div class="card-header">
                                     <button type="button" class="btn btn-default" data-toggle="modal"
                                         data-target="#modal-xl"
-                                        style="float:right; background-color:cornflowerblue; border-radius:15px;">
+                                        style="float:right; background-color:lightblue; border-radius:15px;">
                                         Tambah Jenis Mitra
                                     </button>
                                 </div>
@@ -263,8 +263,9 @@
                                         <tbody>
                                             <tr>
                                                 <td>1. </td>
-                                                <td>Pemerintahan</td>
-                                                <td><a style='color: red'><i class="fa fa-trash"></i></a></td>
+                                                <td>Dikti</td>
+                                                <td><a style='color: green'><i class="fa fa-edit"></i></a> &ensp;
+                                                <a style='color: red'><i class="fa fa-trash"></i></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
