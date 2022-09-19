@@ -442,12 +442,12 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="No. Telepon">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="No. Telepon" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Alamat Email">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Alamat Email" disabled>
                             </div>
                         </div>
 
