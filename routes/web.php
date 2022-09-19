@@ -39,3 +39,7 @@ Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
 Route::get('/LingkupKerja', function () {
     return view('LingkupKerja');
 });
+
+Route::get('/InformasiMitra', function () {
+    return view('InformasiMitra');
+});

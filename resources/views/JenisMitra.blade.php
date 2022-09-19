@@ -264,8 +264,8 @@
                                             <tr>
                                                 <td>1. </td>
                                                 <td>Dikti</td>
-                                                <td><a style='color: green'><i class="fa fa-edit"></i></a> &ensp;
-                                                <a style='color: red'><i class="fa fa-trash"></i></a></td>
+                                                <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
+                                                <button style='color: red'><i class="fa fa-trash"></i></button></td>
                                             </tr>
                                         </tbody>
                                     </table>
