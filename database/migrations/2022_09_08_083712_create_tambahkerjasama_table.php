@@ -31,9 +31,11 @@ class CreateTambahkerjasamaTable extends Migration
             $table->string("path_mou");
             $table->string("judul_moa");
             $table->string("path_moa");
-            $table->string("pic");
+            $table->string("narahubung");
             $table->integer("notelpic");
             $table->string("emailpic");
+            $table->string('status');
+            $table->string("pic");
         });
     }
 
