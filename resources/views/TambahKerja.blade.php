@@ -266,7 +266,7 @@
                                         <option>Non Pertamina</option>
                                         <option>BUMN</option>
                                         <option>Kementrian</option>
-                                        <option><a href='/JenisMitra'>Tambah Jenis Mitra</a></option>
+                                        {{-- <option><a href='/JenisMitra'>Tambah Jenis Mitra</a></option> --}}
                                     </select>
                                 </div>
                             </div>
@@ -282,10 +282,10 @@
                             <div class="col-sm-10 ">
                                 <div class="form-group ">
                                     <select class="form-control ">
-                                        <option>Nasional</option>
-                                        <option>Internasional</option>
-                                        <option>Regional</option>
-                                        <option>Provinsi</option>
+                                        <option>Beasiswa</option>
+                                        <option>Fast Track</option>
+                                        <option>MBKM</option>
+                                        <option>Magang</option>
                                     </select>
                                 </div>
                             </div>
@@ -323,13 +323,19 @@
                 <div class="card card-info">
 
                     <!-- form start -->
+
                     @csrf
                     <div class="card-body">
 
                         <div class="form-group row">
-                            <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
+                            <label for="input" class="col-sm-2 col-form-label"> </label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak">
+                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                            </div>
+                            <br><br><br>
+                            <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
                             </div>
                             <br><br><br>
                             <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
@@ -339,39 +345,7 @@
                             <br><br><br>
                             <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type=" date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai">
-                            </div>
-                            <br><br><br>
-                            <label for="perjanjiankerjasama" class="col-sm-2 col-form-label ">Perjanjian Kerja Sama</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" class="form-control @error('nilaikontrak') is-invalid @enderror" name="perjanjiankerjasama" placeholder="Masukan Nama File">
-                                <input type="file" class="form-control" name="perjanjiankerjasama[]" accept="pdf/*" multiple>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!-- /.card-body -->
-
-                </div>
-                <!-- /.card -->
-
-                <!-- Horizontal Form -->
-                <div class="card card-info">
-
-                    <!-- form start -->
-
-                    @csrf
-                    <div class="card-body">
-
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
-                            <div class="col-sm-10">
-                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
-                            </div>
-                            <br><br><br>
-                            <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
+                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai">
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -386,6 +360,7 @@
 
                 </div>
 
+            
                 <!-- Horizontal Form -->
                 <div class="card card-info">
 
@@ -394,7 +369,7 @@
                     <div class="card-body">
 
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Jenis Kontrak</label>
+                            <label for="input" class="col-sm-2 col-form-label"> </label>
                             <div class="col-sm-10">
                                 <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
                             </div>
@@ -402,6 +377,21 @@
                             <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama">
+                            </div>
+                            <br><br><br>
+                            <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak">
+                            </div>
+                            <br><br><br>
+                            <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control @error('tglmulai') is-invalid @enderror" name="tglmulai">
+                            </div>
+                            <br><br><br>
+                            <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <div class=" col-sm-10 ">
+                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai">
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
@@ -420,24 +410,50 @@
                     <div class="card-body">
 
                         <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">PIC</label>
+                            <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan PIC">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan Narahubung">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan No. Telepon">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan Alamat Email">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Alamat Email">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card card-info">
+
+                    <!-- form start -->
+                    <div class="card-body">
+
+                        <div class="form-group row">
+                            <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan PIC UPer">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control " id="inputPassword3 " placeholder="No. Telepon">
+                            </div>
+                            <br><br><br>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" id="NamaMitra" placeholder="Alamat Email">
                             </div>
                         </div>
 
                     </div>
                     <!-- /.card-body -->
+
                     <div class=" card-footer ">
                         <button type="submit" class="btn btn-info">Save</button>
                         <button type="submit" class="btn btn-default float-right">Cancel</button>
