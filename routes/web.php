@@ -24,6 +24,10 @@ Route::get('/', function () {
 
 Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 
+Route::get('/Mitra', function () {
+    return view('Mitra');
+});
+
 Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
 
 Route::post('/tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('berlin');

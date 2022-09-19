@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kerja Sama - Universitas Pertamina</title>
+    <title>Mtra - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -211,6 +211,12 @@
                             <p>Kerja Sama</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/Mitra" class="nav-link">
+                            <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
+                            <p>Mitra</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -224,14 +230,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Kerja Sama</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="/TambahKerja">
-                            <button style="float:right; background-color:cornflowerblue; border-radius:15px;">Tambah
-                                Kerja Sama
-                            </button>
-                        </a>
+                        <h1>Mitra</h1>
                     </div>
                 </div>
             </div>
