@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mtra - Universitas Pertamina</title>
+    <title>Mitra - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -206,7 +206,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="/Kerjasama" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerja Sama</p>
                         </a>
@@ -235,7 +235,39 @@
                 </div>
             </div>
             <!-- /.container-fluid -->
-        </section>
+
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <!-- /.card-header -->
+                                <div class="card-body table-responsive p-0">
+                                    <table class="table table-hover text-nowrap">
+                                        <thead>
+                                            <tr>
+                                                <th>No. </th>
+                                                <th>Nama Mitra</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td> 1. </td>
+                                                    <td>DIKTI</td>  {{--  --}}
+                                                    <td><a style='color: blue'><i class="fa fa-eye"></i></a></td>                                                    
+                                                </tr>
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- /.card-body -->
+            </section>
+                            
+            
 
     </div>
 </form>
