@@ -437,7 +437,13 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan PIC UPer">
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option>Pilih Nama PIC UPer</option>
+                                        <option>Bapak Abcd</option>
+                                        <option>Ibu Efgh</option>
+                                    </select>
+                                </div>                      
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
