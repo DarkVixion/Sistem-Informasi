@@ -204,6 +204,12 @@
                             <p>Kerja Sama</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/Mitra" class="nav-link">
+                            <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
+                            <p>Mitra</p>
+                        </a>
+                    </li> 
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -274,7 +280,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Judul Kerja Sama">
+                                <input type="text" class="form-control " id="judulkerja" placeholder="Masukan Judul Kerja Sama">
                             </div>
                         </div>.
                         <div class="form-group row ">
@@ -293,24 +299,24 @@
                         <div class="form-group row ">
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Alamat">
+                                <input type="text" class="form-control " id="alamat" placeholder="Masukan Alamat">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Negara">
+                                <input type="text" class="form-control " id="negara" placeholder="Masukan Negara">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Nomor Telephone">
+                                <input type="text" class="form-control " id="notelpmitra" placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
-                                <input type="url" class="form-control " id="inputPassword3 " placeholder="Masukan Website">
+                                <input type="url" class="form-control " id="web" placeholder="Masukan Website">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                             <div class="col-sm-10 ">
-                                <input type="month" class="form-control " id="inputPassword3">
+                                <input type="month" class="form-control " id="bulaninput">
                             </div>
                         </div>
 
@@ -412,17 +418,17 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan Narahubung">
+                                <input type="text" class="form-control" id="narahubung" placeholder="Masukkan Narahubung">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="No. Telepon">
+                                <input type="text" class="form-control " id="notelpnara" placeholder="No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Alamat Email">
+                                <input type="text" class="form-control" id="emailnara" placeholder="Alamat Email">
                             </div>
                         </div>
 
@@ -437,17 +443,24 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukkan PIC UPer">
+                                <div class="form-group">
+                                    <select class="form-control" id="pic">
+                                        <option hidden>Pilih Nama PIC UPer</option>
+                                        <option>Bapak Abcd</option>
+                                        <option>Ibu Efgh</option>
+                                    </select>
+                                    
+                                </div>                      
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="inputPassword3 " placeholder="No. Telepon" disabled>
+                                <input type="text" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Alamat Email" disabled>
+                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="emailpic" value="" disabled>
                             </div>
                         </div>
 
@@ -472,6 +485,43 @@
     <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js "></script>
+
+    <!-- <script>
+        $(document).ready(function() {
+            $('#pic').on('change', function() {
+            var picID = $(this).val();
+            if(picID) {
+                $.ajax({
+                    url: '/getData/'+picID,
+                    type: "GET",
+                    data : {"_token":"{{ csrf_token() }}"},
+                    dataType: "json",
+                    success:function(data)
+                    {
+                        if(data){
+                            $('#notelppic').empty();
+                            $('#emailpic').empty();
+                            $('#notelppic').append('<option hidden>Choose Course</option>'); 
+                            $.each(data, function(key, course){
+                                $('select[name="notelppic"]').append('<option value="'+ key +'">' + course.name+ '</option>');
+                            });
+                            $('#emailpic').append('<option hidden>Choose Course</option>'); 
+                            $.each(data, function(key, course){
+                                $('select[name="emailpic"]').append('<option value="'+ key +'">' + course.name+ '</option>');
+                            });
+                        }else{
+                            $('#notelppic').empty();
+                            $('#emailpic').empty();
+                        }
+                    }
+                });
+            }else{
+                $('#notelppic').empty();
+                $('#emailpic').empty();
+            }
+            });
+        });
+    </script> -->
 
 </body>
 

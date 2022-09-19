@@ -50,7 +50,6 @@ class TambahKerjasamaController extends Controller
                 PerjanjianKerjasama::create([
                     'file_id' => $new_file->id,
                     'path' => $pathname
-
                 ]);
             }
         }
