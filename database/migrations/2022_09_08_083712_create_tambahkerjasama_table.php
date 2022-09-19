@@ -15,25 +15,25 @@ class CreateTambahkerjasamaTable extends Migration
     {
         Schema::create('tambahkerjasama', function (Blueprint $table) {
             $table->id();
-            $table->string("namamitra");
-            $table->string("jenismitra");
-            $table->string("judulkerjasama");
-            $table->string("lingkupkerja");
+            $table->string("nama_mitra");
+            $table->string("jenis_mitra");
+            $table->string("judul_kerjasama");
+            $table->string("lingkup_kerja");
             $table->string("alamat");
             $table->string("negara");
-            $table->integer("notelp");
+            $table->integer("no_telp");
             $table->string("web");
-            $table->string("bulankerjasama");
-            $table->integer("nilaikontrak");
-            $table->date("tglmulai");
-            $table->date("tglselesai");
+            $table->string("bulan_kerjasama");
+            $table->integer("nilai_kontrak");
+            $table->date("tgl_mulai");
+            $table->date("tgl_selesai");
             $table->string("judul_mou");
             $table->string("path_mou");
             $table->string("judul_moa");
             $table->string("path_moa");
             $table->string("narahubung");
-            $table->integer("notelnara");
-            $table->string("emailnara");
+            $table->integer("no_tel_nara");
+            $table->string("email_nara");
             $table->string("pic_uper");
             $table->string('status');
         });

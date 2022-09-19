@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TambahKerjasama;
 use App\Models\PerjanjianKerjasama;
+use Illuminate\Support\Facades\Redirect;
+use App\Models\Pic;
 use App\Models\MoU;
 use App\Models\MoA;
 
-/*Kalo error maklumin masih on progress*/
+
+/* KALO ERROR MAKLUMIN MASIH ON PROGRESS */
 
 class TambahKerjasamaController extends Controller
 {
-
-
     public function index()
     {
         $kerjasama = TambahKerjasama::all();
@@ -33,6 +34,11 @@ class TambahKerjasamaController extends Controller
 
     public function store(Request $req)
     {
+        $input = $req->all();
+        $input = TambahKerjasama::Select("select * from tambahkerjasama");
+
+        TambahKerjasama::create($input);
+
         $data = $req->validate([
             'namaperjanjian' => 'required',
             'path' => 'required',
@@ -53,6 +59,6 @@ class TambahKerjasamaController extends Controller
                 ]);
             }
         }
-        return back();
+        return redirect('Kerjasama');
     }
 }
