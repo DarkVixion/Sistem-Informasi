@@ -10,7 +10,7 @@ use App\Models\MoU;
 use App\Models\MoA;
 
 
-/*Kalo error maklumin masih on progress*/
+/* KALO ERROR MAKLUMIN MASIH ON PROGRESS */
 
 class TambahKerjasamaController extends Controller
 {
