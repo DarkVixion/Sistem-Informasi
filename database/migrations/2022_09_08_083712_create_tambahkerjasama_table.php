@@ -18,7 +18,7 @@ class CreateTambahkerjasamaTable extends Migration
             $table->string("namamitra");
             $table->string("jenismitra");
             $table->string("judulkerjasama");
-            $table->string("skalakerjasama");
+            $table->string("lingkupkerja");
             $table->string("alamat");
             $table->string("negara");
             $table->integer("notelp");
