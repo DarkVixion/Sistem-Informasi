@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\TambahKerjasama;
 use App\Models\PerjanjianKerjasama;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Pic;
 use App\Models\MoU;
 use App\Models\MoA;
 
