@@ -443,9 +443,7 @@
                                         <option>Bapak Abcd</option>
                                         <option>Ibu Efgh</option>
                                     </select>
-                                    <!-- @foreach ($pic as $item)
-                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                    @endforeach -->
+                                    
                                 </div>                      
                             </div>
                             <br><br><br>
@@ -482,7 +480,7 @@
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js "></script>
 
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             $('#pic').on('change', function() {
             var picID = $(this).val();
@@ -517,7 +515,7 @@
             }
             });
         });
-    </script>
+    </script> -->
 
 </body>
 
