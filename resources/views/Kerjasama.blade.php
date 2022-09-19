@@ -271,7 +271,7 @@
                                             <td>{{ $item->tglmulai }}</td>
                                             <td>{{ $item->tglselesai }}</td>
                                             <td>
-                                                <a href="{{ url('/pegawai/' . $item->id . '/edit') }}"
+                                                <!-- <a href="{{ url('/pegawai/' . $item->id . '/edit') }}"
                                                     title="Edit Pegawai"><button class="btn btn-primary btn-sm"><i
                                                             aria-hidden="true"></i> Edit</button></a>
                                                 <form method="POST" action="{{ url('/pegawai/' . $item->id) }}"
@@ -282,7 +282,7 @@
                                                         title="Delete Pegawai"
                                                         onclick='return confirm("Confirm delete?")'><i
                                                             aria-hidden="true"></i> Delete</button>
-                                                </form>
+                                                </form> -->
                                             </td>
                                         </tr>
                                         @endforeach
