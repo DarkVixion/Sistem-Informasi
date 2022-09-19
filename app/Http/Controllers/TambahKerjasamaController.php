@@ -7,13 +7,12 @@ use App\Models\TambahKerjasama;
 use App\Models\PerjanjianKerjasama;
 use App\Models\MoU;
 use App\Models\MoA;
+use Illuminate\Support\Facades\Redirect;
 
 /*Kalo error maklumin masih on progress*/
 
 class TambahKerjasamaController extends Controller
 {
-
-
     public function index()
     {
         $kerjasama = TambahKerjasama::all();
@@ -33,6 +32,11 @@ class TambahKerjasamaController extends Controller
 
     public function store(Request $req)
     {
+        $input = $req->all();
+        $input = TambahKerjasama::Select("select * from tambahkerjasama");
+
+        TambahKerjasama::create($input);
+
         $data = $req->validate([
             'namaperjanjian' => 'required',
             'path' => 'required',
@@ -53,6 +57,6 @@ class TambahKerjasamaController extends Controller
                 ]);
             }
         }
-        return back();
+        return redirect('Kerjasama');
     }
 }
