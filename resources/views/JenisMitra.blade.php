@@ -133,7 +133,15 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-
+                <!-- profile -->
+                <div class="user-panel mt-1 pb-1 mb-1 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="/Akun" class="d-block">Admin UPer</a>
+                    </div>
+                </div>
 
             </ul>
         </nav>

@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kerja Sama - Universitas Pertamina</title>
+    <title>Akun - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
@@ -48,8 +47,7 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -172,8 +170,7 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -233,148 +230,60 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Kerja Sama</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <a href="/TambahKerja">
-                            <button style="float:right; background-color:lightblue; border-radius:15px;">Tambah
-                                Kerja Sama
-                            </button>
-                        </a>
+                        <h1>Akun</h1>
                     </div>
                 </div>
             </div>
             <!-- /.container-fluid -->
-        </section>
 
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>Bulan Pencatatan</th>
-                                            <th>Nama</th>
-                                            <th>Jenis Mitra</th>
-                                            <th>Jenis Kontrak</th>
-                                            <th>Judul</th>
-                                            <th>Lingkup Kerja Sama</th>
-                                            <th>Periode Mulai</th>
-                                            <th>Periode Berakhir</th>
-                                            <th>Misc.</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach($kerjasama as $item)
-                                        <tr>
-                                            <td>{{ $item->bulankerjasama }}</td>
-                                            <td>{{ $item->namamitra }}</td>
-                                            <td>{{ $item->jenismitra }}</td>
-                                            <td>{{ $item->jenismitra }}</td>
-                                            <td>{{ $item->judul }}</td>
-                                            <td>{{ $item->Lingkupkerja }}</td>
-                                            <td>{{ $item->tglmulai }}</td>
-                                            <td>{{ $item->tglselesai }}</td>
-                                            <td>
-                                                <!-- <a href="{{ url('/pegawai/' . $item->id . '/edit') }}"
-                                                    title="Edit Pegawai"><button class="btn btn-primary btn-sm"><i
-                                                            aria-hidden="true"></i> Edit</button></a>
-                                                <form method="POST" action="{{ url('/pegawai/' . $item->id) }}"
-                                                    accept-charset="UTF-8" style="display:inline">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Pegawai"
-                                                        onclick='return confirm("Confirm delete?")'><i
-                                                            aria-hidden="true"></i> Delete</button>
-                                                </form> -->
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <!-- /.card-header -->
+                                <div class="card-body table-responsive p-3">
+                                    <div class="d-flex justify-content-center"">
+                                        <img class=" profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg" alt=" User profile picture">
+
+                                    </div>
+                                    <h3 class="profile-username text-center">Admin UPer</h3>
+                                    <p class="text-muted text-center">Universitas Pertamina</p><br><br><br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">Nama</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Nama" placeholder="Admin UPer">
+                                        </div>
+                                    </div><br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">Alamat</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Nama" placeholder="Jl. Teuku Nyak Arief">
+                                        </div>
+                                    </div><br>
+                                </div>
                             </div>
-                            <!-- /.card-body -->
                         </div>
                     </div>
-                    <!-- /.col -->
                 </div>
-                <!-- /.row -->
-            </div>
-            <!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
+                <!-- /.card-body -->
+            </section>
+
+
+    </div>
+    </form>
+    </section>
     </div>
 
     <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-    $.widget.bridge('uibutton', $.ui.button)
-    </script>
+    <script src=" plugins/jquery/jquery.min.js "></script>
     <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- ChartJS -->
-    <script src="plugins/chart.js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="plugins/moment/moment.min.js"></script>
-    <script src="plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Summernote -->
-    <script src="plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <script src=" plugins/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <!-- bs-custom-file-input -->
+    <script src=" plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
     <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.js"></script>
-    <!-- DataTables  & Plugins -->
-    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src="plugins/jszip/jszip.min.js"></script>
-    <script src="plugins/pdfmake/pdfmake.min.js"></script>
-    <script src="plugins/pdfmake/vfs_fonts.js"></script>
-    <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard.js"></script>
+    <script src=" dist/js/adminlte.min.js "></script>
 
-    <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-    });
-    </script>
 </body>
 
 </html>
