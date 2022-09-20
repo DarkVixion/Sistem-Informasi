@@ -257,6 +257,15 @@
                                                 <td>halo</td>
                                                 <td>halo</td>
                                             </tr>
+                                            
+                                            @foreach($jm as $item)
+                                            <tr>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $item->juduljenismitra }}</td>
+                                                <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
+                                                <button style='color: red'><i class="fa fa-trash"></i></button></td>
+                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
