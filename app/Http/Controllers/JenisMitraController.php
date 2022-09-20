@@ -17,12 +17,12 @@ class JenisMitraController extends Controller
     {
         $input = $req->all();
         JenisMitra::create($input);
-        return redirect('JenisMitra')->with('flash_message','Data Tersimpan!');
+        return redirect('JenisMitra');
     }
 
     public function delete($id)
     {
         JenisMitra::destroy($id);
-        return redirect('JenisMitra')->with('flash_message','Data Terhapus!');
+        return redirect('JenisMitra');
     }
 }

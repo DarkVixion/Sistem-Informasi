@@ -258,8 +258,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->juduljenismitra }}</td>
-                                                <td>
-                                                    <button style='color: green'><i class="fa fa-edit"></i></button>
+                                                <td><button style='color: green'><i class="fa fa-edit"></i></button>
                                                     <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}

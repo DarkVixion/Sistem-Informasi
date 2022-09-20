@@ -23,6 +23,6 @@ class LingkupKerjaController extends Controller
     public function delete($id)
     {
         LingkupKerja::destroy($id);
-        return redirect('LingkupKerja')->with('flash_message','Data Terhapus!');
+        return redirect('LingkupKerja');
     }
 }

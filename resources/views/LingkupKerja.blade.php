@@ -252,7 +252,7 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->judullingkupkerja }}</td>
                                                 <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
-                                                    <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST">
+                                                    <form action="{{url('/LingkupKerja/hapus/'.$item->id)}}" method="POST">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         <button type="submit" style='color: red'><i class="fa fa-trash"></i></button>
@@ -280,7 +280,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="{{url('/LingkupKerja/proses')}}" method="post">
+                            <form action="{{url('/LingkupKerja/tambah')}}" method="post">
                             {!! csrf_field() !!}
                             <div class="modal-body">
                                 <div class="form-group row ">
