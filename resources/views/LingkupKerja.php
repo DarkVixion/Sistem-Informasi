@@ -128,7 +128,15 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-
+                <!-- profile -->
+                <div class="user-panel mt-1 pb-1 mb-1 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="/Akun" class="d-block">Admin UPer</a>
+                    </div>
+                </div>
 
             </ul>
         </nav>
@@ -252,13 +260,14 @@
                                                 <td>halo</td>
                                                 <td>halo</td>
                                             </tr>
-                                            
+
                                             @foreach($jm as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->juduljenismitra }}</td>
                                                 <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
-                                                <button style='color: red'><i class="fa fa-trash"></i></button></td>
+                                                    <button style='color: red'><i class="fa fa-trash"></i></button>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>

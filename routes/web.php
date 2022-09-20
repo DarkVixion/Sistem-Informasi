@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('Dashboard');
 });
 
+Route::get('/Akun', function () {
+    return view('Akun');
+});
+
 Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 
 Route::get('/Mitra', function () {
