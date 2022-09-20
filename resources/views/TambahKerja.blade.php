@@ -204,7 +204,7 @@
                             <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
                             <p>Mitra</p>
                         </a>
-                    </li> 
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -218,6 +218,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <form class="form-horizontal" action="{{route('berlin')}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
@@ -255,7 +256,7 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama Mitra">
+                                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
                             </div>
                         </div><br>
                         <div class="form-group row">
@@ -275,7 +276,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="judulkerja" placeholder="Masukan Judul Kerja Sama">
+                                <input type="text" class="form-control " name="judulkerja" placeholder="Masukan Judul Kerja Sama">
                             </div>
                         </div>.
                         <div class="form-group row ">
@@ -294,24 +295,24 @@
                         <div class="form-group row ">
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="alamat" placeholder="Masukan Alamat">
+                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="negara" placeholder="Masukan Negara">
+                                <input type="text" class="form-control " name="negara" placeholder="Masukan Negara">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="notelpmitra" placeholder="Masukan Nomor Telephone">
+                                <input type="text" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
-                                <input type="url" class="form-control " id="web" placeholder="Masukan Website">
+                                <input type="url" class="form-control " name="web" placeholder="Masukan Website">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                             <div class="col-sm-10 ">
-                                <input type="month" class="form-control " id="bulaninput">
+                                <input type="month" class="form-control " name="bulaninput">
                             </div>
                         </div>
 
@@ -325,7 +326,6 @@
 
                     <!-- form start -->
 
-                    @csrf
                     <div class="card-body">
 
                         <div class="form-group row">
@@ -361,12 +361,11 @@
 
                 </div>
 
-            
+
                 <!-- Horizontal Form -->
                 <div class="card card-info">
 
                     <!-- form start -->
-                    @csrf
                     <div class="card-body">
 
                         <div class="form-group row">
@@ -413,17 +412,17 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="narahubung" placeholder="Masukkan Narahubung">
+                                <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="notelpnara" placeholder="No. Telepon">
+                                <input type="text" class="form-control " name="notelpnara" placeholder="No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="emailnara" placeholder="Alamat Email">
+                                <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email">
                             </div>
                         </div>
 
@@ -444,8 +443,8 @@
                                         <option>Bapak Abcd</option>
                                         <option>Ibu Efgh</option>
                                     </select>
-                                    
-                                </div>                      
+
+                                </div>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>

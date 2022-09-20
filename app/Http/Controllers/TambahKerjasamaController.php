@@ -34,15 +34,31 @@ class TambahKerjasamaController extends Controller
 
     public function store(Request $req)
     {
+
+        // $data = $request->all();
+        // $finalArray = array();
+        // foreach($data as $key=>$value){
+        // array_push($finalArray, array(
+        // 'fltno'=>$value['sflt'],
+        // 'model'=>$value['smodel'],
+        // 'engine'=>$value['sengine'],
+        // 'loc'=>$value['sloc'],
+        // 'serviceType'=>$value['sstye'],
+        // 'nextSvr'=> $value['snsvr'] )
+        // );
+        // });
+
+        //Model::insert($finalArray);
+
         $input = $req->all();
-        TambahKerjasama::create(array($input));
+        // TambahKerjasama::create($input);
+
+        $finalArray = array();
 
         $data = $req->validate([
             'namaperjanjian' => 'required',
             'path' => 'required',
-            'jenis' => 'required',
-            'tglmulai' => 'required',
-            'tgl_selesai' => 'required'
+            'jenis' => 'required'
         ]);
 
         $new_file = TambahKerjasama::create($data);
@@ -58,7 +74,49 @@ class TambahKerjasamaController extends Controller
                     'path' => $pathname
                 ]);
             }
+
+            foreach ($input as $key => $value) {
+                array_push(
+                    $finalArray,
+                    array(
+                        'namamitra' => $value['namamitra'],
+                        'judulkerja' => $value['judulkerja'],
+                        'alamat' => $value['alamat'],
+                        'negara' => $value['negara'],
+                        'notelpmitra' => $value['notelpmitra'],
+                        'web' => $value['web'],
+                        'judul_mou' => $value['judul_mou'],
+                        'tglmulai' => $value['tglmulai'],
+                        'tglselesai' => $value['tglselesai'],
+                        'path_mou' => $value['path_mou'],
+                        'judul_moa' => $value['judul_moa'],
+                        'nilaikontrak' => $value['nilaikontrak'],
+                        'tglmulai' => $value['tglmulai'],
+                        'tglselesai' => $value['tglselesai'],
+                        'path_moa' => $value['path_moa'],
+                        'narahubung' => $value['narahubung'],
+                        'notelpnara' => $value['notelpnara'],
+                        'emailnara' => $value['emailnara']
+                    )
+                );
+            };
+            Model::insert($finalArray);
         }
         return redirect('Kerjasama');
+    }
+
+    public function perjanjiankerjasama()
+    {
+        return $this->hasMany(PerjanjianKerjasama::class);
+    }
+
+    public function path_mou()
+    {
+        return $this->hasMany(MoU::class);
+    }
+
+    public function path_moa()
+    {
+        return $this->hasMany(MoA::class);
     }
 }
