@@ -252,11 +252,12 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->judullingkupkerja }}</td>
                                                 <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
-                                                <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" style='color: red'><i class="fa fa-trash"></i></button></td>
-                                                </form>
+                                                    <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST">
+                                                        {{ method_field('DELETE') }}
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" style='color: red'><i class="fa fa-trash"></i></button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
