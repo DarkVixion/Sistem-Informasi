@@ -162,8 +162,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                        <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a href="/" class="nav-link">
@@ -261,12 +260,14 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($jm as $item)
                                             <tr>
-                                                <td>1. </td>
-                                                <td>Dikti</td>
+                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $item->juduljenismitra }}</td>
                                                 <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
                                                 <button style='color: red'><i class="fa fa-trash"></i></button></td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -287,12 +288,12 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+                            <form action="" method="POST">
                             <div class="modal-body">
                                 <div class="form-group row ">
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Jenis Mitra</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" class="form-control " id="inputPassword3 "
-                                            placeholder="Masukan Jenis Mitra Baru">
+                                        <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Jenis Mitra Baru">
                                     </div>
                                 </div>
                             </div>
@@ -300,6 +301,8 @@
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary" data-target="">Tambah Mitra</button>
                             </div>
+                            </form>
+                            
                         </div>
                         <!-- /.modal-content -->
                     </div>

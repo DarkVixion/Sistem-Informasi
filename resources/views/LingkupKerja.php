@@ -220,7 +220,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Master Data</a></li>
+                                <li class="breadcrumb-item">Master Data</a></li>
                                 <li class="breadcrumb-item active">Lingkup Kerja Sama</li>
                             </ol>
                         </div>
@@ -253,11 +253,9 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1. </td>
-                                                <td>Internasional</td>
-                                                <td><a style='color: green'><i class="fa fa-edit"></i></a> &ensp;
-                                                    <a style='color: red'><i class="fa fa-trash"></i></a>
-                                                </td>
+                                                <td>halo</td>
+                                                <td>halo</td>
+                                                <td>halo</td>
                                             </tr>
                                         </tbody>
                                     </table>
