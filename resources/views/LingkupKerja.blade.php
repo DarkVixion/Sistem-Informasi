@@ -255,30 +255,16 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-<<<<<<< HEAD:resources/views/LingkupKerja.php
-                                            <tr>
-                                                <td>halo</td>
-                                                <td>halo</td>
-                                                <td>halo</td>
-                                            </tr>
-
-                                            @foreach($jm as $item)
-=======
                                             @foreach($lk as $item)
->>>>>>> 15c6d1455614c2792e092bb6ab68ed46d76a7e1e:resources/views/LingkupKerja.blade.php
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->judullingkupkerja }}</td>
                                                 <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
-<<<<<<< HEAD:resources/views/LingkupKerja.php
-                                                    <button style='color: red'><i class="fa fa-trash"></i></button>
-=======
-                                                    <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST">
+                                                    <form action="{{url('/LingkupKerja/hapus/'.$item->id)}}" method="POST">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         <button type="submit" style='color: red'><i class="fa fa-trash"></i></button>
                                                     </form>
->>>>>>> 15c6d1455614c2792e092bb6ab68ed46d76a7e1e:resources/views/LingkupKerja.blade.php
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -302,7 +288,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="{{url('/LingkupKerja/proses')}}" method="post">
+                            <form action="{{url('/LingkupKerja/tambah')}}" method="post">
                             {!! csrf_field() !!}
                             <div class="modal-body">
                                 <div class="form-group row ">
