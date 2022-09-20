@@ -17,6 +17,12 @@ class JenisMitraController extends Controller
     {
         $input = $req->all();
         JenisMitra::create($input);
-        return redirect('JenisMitra')->with('flash_message','Jenis Mitra Terdaftar!');;
+        return redirect('JenisMitra')->with('flash_message','Data Tersimpan!');
+    }
+
+    public function delete($id)
+    {
+        JenisMitra::destroy($id);
+        return redirect('JenisMitra')->with('flash_message','Data Terhapus!');
     }
 }

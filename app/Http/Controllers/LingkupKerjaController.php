@@ -19,4 +19,10 @@ class LingkupKerjaController extends Controller
         LingkupKerja::create($input);
         return redirect('LingkupKerja');
     }
+
+    public function delete($id)
+    {
+        LingkupKerja::destroy($id);
+        return redirect('LingkupKerja')->with('flash_message','Data Terhapus!');
+    }
 }
