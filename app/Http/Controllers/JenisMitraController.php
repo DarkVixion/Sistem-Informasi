@@ -13,9 +13,16 @@ class JenisMitraController extends Controller
         return view('JenisMitra')->with('jm',$jmitra);
     }
 
-    public function store()
+    public function store(Request $req)
     {
+        $input = $req->all();
+        JenisMitra::create($input);
+        return redirect('JenisMitra')->with('flash_message','Data Tersimpan!');
+    }
 
-        return redirect('JenisMitra');
+    public function delete($id)
+    {
+        JenisMitra::destroy($id);
+        return redirect('JenisMitra')->with('flash_message','Data Terhapus!');
     }
 }

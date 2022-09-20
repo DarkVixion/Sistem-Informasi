@@ -255,6 +255,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+<<<<<<< HEAD:resources/views/LingkupKerja.php
                                             <tr>
                                                 <td>halo</td>
                                                 <td>halo</td>
@@ -262,11 +263,22 @@
                                             </tr>
 
                                             @foreach($jm as $item)
+=======
+                                            @foreach($lk as $item)
+>>>>>>> 15c6d1455614c2792e092bb6ab68ed46d76a7e1e:resources/views/LingkupKerja.blade.php
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->juduljenismitra }}</td>
+                                                <td>{{ $item->judullingkupkerja }}</td>
                                                 <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
+<<<<<<< HEAD:resources/views/LingkupKerja.php
                                                     <button style='color: red'><i class="fa fa-trash"></i></button>
+=======
+                                                    <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST">
+                                                        {{ method_field('DELETE') }}
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" style='color: red'><i class="fa fa-trash"></i></button>
+                                                    </form>
+>>>>>>> 15c6d1455614c2792e092bb6ab68ed46d76a7e1e:resources/views/LingkupKerja.blade.php
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -290,19 +302,21 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+                            <form action="{{url('/LingkupKerja/proses')}}" method="post">
+                            {!! csrf_field() !!}
                             <div class="modal-body">
                                 <div class="form-group row ">
-                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup
-                                        Kerja Sama</label>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Lingkup Kerja Sama Baru">
+                                        <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru">
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-target="">Tambah Lingkup Kerja Sama</button>
+                                <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
                             </div>
+                            </form>
                         </div>
                         <!-- /.modal-content -->
                     </div>

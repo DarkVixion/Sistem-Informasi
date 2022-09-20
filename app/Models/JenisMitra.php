@@ -13,4 +13,5 @@ class JenisMitra extends Model
     protected $fillable = [
         "juduljenismitra"
     ];
+    public $timestamps = false;
 }

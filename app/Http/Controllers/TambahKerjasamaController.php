@@ -35,14 +35,14 @@ class TambahKerjasamaController extends Controller
     public function store(Request $req)
     {
         $input = $req->all();
-        $input = TambahKerjasama::Select("select * from tambahkerjasama");
-
-        TambahKerjasama::create($input);
+        TambahKerjasama::create(array($input));
 
         $data = $req->validate([
             'namaperjanjian' => 'required',
             'path' => 'required',
-            'jenis' => 'required'
+            'jenis' => 'required',
+            'tglmulai' => 'required',
+            'tgl_selesai' => 'required'
         ]);
 
         $new_file = TambahKerjasama::create($data);
