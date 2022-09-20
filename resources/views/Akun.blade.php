@@ -123,7 +123,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
+                    <span class="badge badge-warning navbar-badge">2</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header">2 Notifications</span>
@@ -245,10 +245,9 @@
                                 <div class="card-body table-responsive p-3">
                                     <div class="d-flex justify-content-center"">
                                         <img class=" profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg" alt=" User profile picture">
-
                                     </div>
                                     <h3 class="profile-username text-center">Admin UPer</h3>
-                                    <p class="text-muted text-center">Universitas Pertamina</p><br><br><br>
+                                    <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                                     <div class="form-group row">
                                         <label for="input" class="col-sm-2 col-form-label">Nama</label>
                                         <div class="col-sm-10">
@@ -256,11 +255,27 @@
                                         </div>
                                     </div><br>
                                     <div class="form-group row">
-                                        <label for="input" class="col-sm-2 col-form-label">Alamat</label>
+                                        <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="Nama" placeholder="Jl. Teuku Nyak Arief">
+                                            <input type="text" class="form-control" id="Nama" placeholder="122333">
+                                        </div>
+                                    </div></br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Nama" placeholder="admin.uper@dududu.ac.id">
                                         </div>
                                     </div><br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">Alamat</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Nama" placeholder="Jl. Teuku Nyak Ariefr">
+                                        </div>
+                                    </div><br>
+                                    <div>
+                                        <button type="submit" class="btn btn-info">Simpan</button>
+                                        <button type="submit" class="btn btn-default float-right">Buang</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

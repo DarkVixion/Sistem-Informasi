@@ -268,7 +268,7 @@
                                                 <td>{{ $item->juduljenismitra }}</td>
                                                 <td>
                                                     <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
-                                                    <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST">
+                                                    <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST" style="display:inline ">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>

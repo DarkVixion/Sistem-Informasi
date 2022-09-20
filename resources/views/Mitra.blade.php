@@ -260,19 +260,19 @@
                                                     <td> 1. </td>
                                                     <td>DIKTI</td>  {{--  --}}
                                                     <td>MOU</td>
-                                                    <td> <a href="/InformasiMitra"> <button style='color: blue'><i class="fa fa-eye"></i></button></a></td>  
+                                                    <td> <a href="/InformasiMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
                                                 </tr>
                                                 <tr>
                                                     <td> 2. </td>
                                                     <td>DIKTI</td>  {{--  --}}
                                                     <td>MOA</td>
-                                                    <td> <a href="/InformasiMitra"> <button style='color: blue'><i class="fa fa-eye"></i></button></a></td>  
+                                                    <td> <a href="/InformasiMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
                                                 </tr>
                                                 <tr>
                                                     <td> 3. </td>
                                                     <td>DIKTI</td>  {{--  --}}
                                                     <td>MOA</td>
-                                                    <td> <a href="/InformasiMitra"> <button style='color: blue'><i class="fa fa-eye"></i></button></a></td>  
+                                                    <td> <a href="/InformasiMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
                                                 </tr>
                                             </tbody>
                                     </table>
