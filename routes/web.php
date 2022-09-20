@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('Dashboard');
 });
 
+Route::get('/Akun', function () {
+    return view('Akun');
+});
+
 Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 
 Route::get('/Mitra', function () {
@@ -39,6 +43,7 @@ Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
 
 Route::get('/LingkupKerja', [LingkupKerjaController::class, 'index']);
 Route::post('/LingkupKerja/tambah',[LingkupKerjaController::class, 'store']);
+Route::delete('/LingkupKerja/hapus/{lingkupkerja}', [LingkupKerjaController::class, 'delete']);
 
 Route::get('/InformasiMitra', function () {
     return view('InformasiMitra');

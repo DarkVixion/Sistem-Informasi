@@ -128,7 +128,15 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-
+                <!-- profile -->
+                <div class="user-panel mt-1 pb-1 mb-1 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="/Akun" class="d-block">Admin UPer</a>
+                    </div>
+                </div>
 
             </ul>
         </nav>
@@ -251,12 +259,14 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->judullingkupkerja }}</td>
-                                                <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
-                                                <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" style='color: red'><i class="fa fa-trash"></i></button></td>
-                                                </form>
+                                                <td>
+                                                    <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                                                    <form action="{{url('/LingkupKerja/hapus/'.$item->id)}}" method="POST" style="display:inline ">
+                                                        {{ method_field('DELETE') }}
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -279,7 +289,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="{{url('/LingkupKerja/proses')}}" method="post">
+                            <form action="{{url('/LingkupKerja/tambah')}}" method="post">
                             {!! csrf_field() !!}
                             <div class="modal-body">
                                 <div class="form-group row ">

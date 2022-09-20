@@ -4,11 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mitra - Universitas Pertamina</title>
+    <title>Akun - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
@@ -48,8 +47,7 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -125,7 +123,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
+                    <span class="badge badge-warning navbar-badge">2</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <span class="dropdown-item dropdown-header">2 Notifications</span>
@@ -172,8 +170,7 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -233,7 +230,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Mitra</h1>
+                        <h1>Akun</h1>
                     </div>
                 </div>
             </div>
@@ -245,60 +242,62 @@
                         <div class="col-12">
                             <div class="card">
                                 <!-- /.card-header -->
-                                <div class="card-body table-responsive p-0">
-                                    <table class="table table-hover text-nowrap">
-                                        <thead>
-                                            <tr>
-                                                <th>No. </th>
-                                                <th>Nama Mitra</th>
-                                                <th>Jenis Kontrak</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td> 1. </td>
-                                                    <td>DIKTI</td>  {{--  --}}
-                                                    <td>MOU</td>
-                                                    <td> <a href="/InformasiMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
-                                                </tr>
-                                                <tr>
-                                                    <td> 2. </td>
-                                                    <td>DIKTI</td>  {{--  --}}
-                                                    <td>MOA</td>
-                                                    <td> <a href="/InformasiMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
-                                                </tr>
-                                                <tr>
-                                                    <td> 3. </td>
-                                                    <td>DIKTI</td>  {{--  --}}
-                                                    <td>MOA</td>
-                                                    <td> <a href="/InformasiMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
-                                                </tr>
-                                            </tbody>
-                                    </table>
+                                <div class="card-body table-responsive p-3">
+                                    <div class="d-flex justify-content-center"">
+                                        <img class=" profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg" alt=" User profile picture">
+                                    </div>
+                                    <h3 class="profile-username text-center">Admin UPer</h3>
+                                    <p class="text-muted text-center">Universitas Pertamina</p><br><br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">Nama</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Nama" placeholder="Admin UPer">
+                                        </div>
+                                    </div><br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">NIP</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Nama" placeholder="122333">
+                                        </div>
+                                    </div></br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Nama" placeholder="admin.uper@dududu.ac.id">
+                                        </div>
+                                    </div><br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">Alamat</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="Nama" placeholder="Jl. Teuku Nyak Ariefr">
+                                        </div>
+                                    </div><br>
+                                    <div>
+                                        <button type="submit" class="btn btn-info">Simpan</button>
+                                        <button type="submit" class="btn btn-default float-right">Buang</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <!-- /.card-body -->
+                <!-- /.card-body -->
             </section>
-                            
-            
+
 
     </div>
-</form>
-</section>
-</div>
+    </form>
+    </section>
+    </div>
 
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js "></script>
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js "></script>
-<!-- bs-custom-file-input -->
-<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js "></script>
+    <!-- jQuery -->
+    <script src=" plugins/jquery/jquery.min.js "></script>
+    <!-- Bootstrap 4 -->
+    <script src=" plugins/bootstrap/js/bootstrap.bundle.min.js "></script>
+    <!-- bs-custom-file-input -->
+    <script src=" plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
+    <!-- AdminLTE App -->
+    <script src=" dist/js/adminlte.min.js "></script>
 
 </body>
 
