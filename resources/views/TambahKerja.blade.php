@@ -481,6 +481,7 @@
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js "></script>
 
+    <!-- on progress -->
     <!-- <script>
         $(document).ready(function() {
             $('#pic').on('change', function() {
