@@ -259,11 +259,11 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->judullingkupkerja }}</td>
-                                                <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
-                                                    <form action="{{url('/LingkupKerja/hapus/'.$item->id)}}" method="POST">
+                                                <td><button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                                                    <form action="{{url('/LingkupKerja/hapus/'.$item->id)}}" method="POST" style="display:inline;">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
-                                                        <button type="submit" style='color: red'><i class="fa fa-trash"></i></button>
+                                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                                     </form>
                                                 </td>
                                             </tr>
