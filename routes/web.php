@@ -32,12 +32,12 @@ Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
 Route::post('/tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('berlin');
 
 Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
-// Route::post('/JenisMitra/proses',[JenisMitraController::class, 'store']);
+Route::post('/JenisMitra/proses',[JenisMitraController::class, 'store']);
 
 Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
 
 Route::get('/LingkupKerja', [LingkupKerjaController::class, 'index']);
-// Route::post('/LingkupKerja/proses',[JenisMitraController::class, 'store']);
+Route::post('/LingkupKerja/proses',[LingkupKerjaController::class, 'store']);
 
 Route::get('/InformasiMitra', function () {
     return view('InformasiMitra');

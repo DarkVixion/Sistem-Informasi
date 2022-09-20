@@ -13,9 +13,10 @@ class JenisMitraController extends Controller
         return view('JenisMitra')->with('jm',$jmitra);
     }
 
-    public function store()
+    public function store(Request $req)
     {
-
-        return redirect('JenisMitra');
+        $input = $req->all();
+        JenisMitra::create($input);
+        return redirect('JenisMitra')->with('flash_message','Jenis Mitra Terdaftar!');;
     }
 }

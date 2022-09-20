@@ -247,16 +247,10 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>halo</td>
-                                                <td>halo</td>
-                                                <td>halo</td>
-                                            </tr>
-                                            
-                                            @foreach($jm as $item)
+                                            @foreach($lk as $item)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $item->juduljenismitra }}</td>
+                                                <td>{{ $item->judullingkupkerja }}</td>
                                                 <td><button style='color: green'><i class="fa fa-edit"></i></button> &ensp;
                                                 <button style='color: red'><i class="fa fa-trash"></i></button></td>
                                             </tr>
@@ -281,19 +275,21 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
+                            <form action="{{url('/LingkupKerja/proses')}}" method="post">
+                            {!! csrf_field() !!}
                             <div class="modal-body">
                                 <div class="form-group row ">
-                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup
-                                        Kerja Sama</label>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Lingkup Kerja Sama Baru">
+                                        <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru">
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-target="">Tambah Lingkup Kerja Sama</button>
+                                <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
                             </div>
+                            </form>
                         </div>
                         <!-- /.modal-content -->
                     </div>

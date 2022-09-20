@@ -13,4 +13,5 @@ class LingkupKerja extends Model
     protected $fillable = [
         "judullingkupkerja"
     ];
+    public $timestamps = false;
 }

@@ -7,8 +7,7 @@
     <title>Jenis Mitra | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- SweetAlert2 -->
@@ -283,21 +282,21 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="" method="POST">
+                            <form action="{{url('/JenisMitra/proses')}}" method="post">
+                            {!! csrf_field() !!}
                             <div class="modal-body">
                                 <div class="form-group row ">
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Jenis Mitra</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" class="form-control " id="inputPassword3 " placeholder="Masukan Jenis Mitra Baru">
+                                        <input type="text" name="juduljenismitra" id="juduljenismitra" class="form-control " placeholder="Masukan Jenis Mitra Baru">
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" data-target="">Tambah Mitra</button>
+                                <button type="submit" class="btn btn-primary" value="Save">Tambah Mitra</button>
                             </div>
                             </form>
-                            
                         </div>
                         <!-- /.modal-content -->
                     </div>

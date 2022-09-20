@@ -13,9 +13,10 @@ class LingkupKerjaController extends Controller
         return view('LingkupKerja')->with('lk',$lkerja);
     }
 
-    public function store()
+    public function store(Request $req)
     {
-
+        $input = $req->all();
+        LingkupKerja::create($input);
         return redirect('LingkupKerja');
     }
 }
