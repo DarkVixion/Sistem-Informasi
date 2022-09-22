@@ -6,6 +6,8 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\JenisMitraController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
+use App\Models\TambahKerjasama;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +31,7 @@ Route::get('/Mitra', function () {
     return view('Mitra');
 });
 
+Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
 Route::post('/tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('inputdata');
 
