@@ -7,8 +7,7 @@
     <title>Kerja Sama - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
@@ -48,8 +47,7 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -172,8 +170,7 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -271,28 +268,15 @@
                                     <tbody>
                                         @foreach($kerjasama as $item)
                                         <tr>
-                                            <td>{{ $item->bulankerjasama }}</td>
+                                            <td>{{ $item->bulaninput }}</td>
                                             <td>{{ $item->namamitra }}</td>
                                             <td>{{ $item->jenismitra }}</td>
                                             <td>{{ $item->jenismitra }}</td>
-                                            <td>{{ $item->judul }}</td>
-                                            <td>{{ $item->Lingkupkerja }}</td>
+                                            <td>{{ $item->judulkerjasama }}</td>
+                                            <td>{{ $item->lingkupkerja }}</td>
                                             <td>{{ $item->tglmulai }}</td>
                                             <td>{{ $item->tglselesai }}</td>
                                             <td>
-                                                <!-- <a href="{{ url('/pegawai/' . $item->id . '/edit') }}"
-                                                    title="Edit Pegawai"><button class="btn btn-primary btn-sm"><i
-                                                            aria-hidden="true"></i> Edit</button></a>
-                                                <form method="POST" action="{{ url('/pegawai/' . $item->id) }}"
-                                                    accept-charset="UTF-8" style="display:inline">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger btn-sm"
-                                                        title="Delete Pegawai"
-                                                        onclick='return confirm("Confirm delete?")'><i
-                                                            aria-hidden="true"></i> Delete</button>
-                                                </form> -->
-                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -316,7 +300,7 @@
     <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-    $.widget.bridge('uibutton', $.ui.button)
+        $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -357,23 +341,23 @@
     <script src="dist/js/pages/dashboard.js"></script>
 
     <script>
-    $(function() {
-        $("#example1").DataTable({
-            "responsive": true,
-            "lengthChange": false,
-            "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
+        $(function() {
+            $("#example1").DataTable({
+                "responsive": true,
+                "lengthChange": false,
+                "autoWidth": false,
+                "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
         });
-    });
     </script>
 </body>
 

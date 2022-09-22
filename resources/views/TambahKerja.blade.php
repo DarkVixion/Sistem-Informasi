@@ -26,6 +26,18 @@
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -212,7 +224,7 @@
                             <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
                             <p>Mitra</p>
                         </a>
-                    </li> 
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -225,7 +237,8 @@
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <form class="form-horizontal" action="{{route('berlin')}}" method="POST" enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{route('inputdata')}}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
@@ -250,7 +263,7 @@
                             <label for="select" class="col-sm-2 col-form-label">Status</label>
                             <div class="col-sm-10">
                                 <div class="form-group">
-                                    <select class="form-control">
+                                    <select class="form-control" name="status">
                                         <option>Aktif</option>
                                         <option>Tidak Aktif</option>
                                         <option>Kadarluwasa</option>
@@ -263,14 +276,14 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="NamaMitra" placeholder="Masukan Nama Mitra">
+                                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
                             </div>
                         </div><br>
                         <div class="form-group row">
                             <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
                             <div class="col-sm-10">
                                 <div class="form-group">
-                                    <select class="form-control">
+                                    <select class="form-control" name="jenismitra">
                                         <option>Pertamina</option>
                                         <option>Non Pertamina</option>
                                         <option>BUMN</option>
@@ -283,14 +296,14 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="judulkerja" placeholder="Masukan Judul Kerja Sama">
+                                <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama">
                             </div>
                         </div>.
                         <div class="form-group row ">
                             <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
                             <div class="col-sm-10 ">
                                 <div class="form-group ">
-                                    <select class="form-control ">
+                                    <select class="form-control" name="lingkupkerja">
                                         <option>Beasiswa</option>
                                         <option>Fast Track</option>
                                         <option>MBKM</option>
@@ -302,24 +315,24 @@
                         <div class="form-group row ">
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="alamat" placeholder="Masukan Alamat">
+                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="negara" placeholder="Masukan Negara">
+                                <input type="text" class="form-control " name="negara" placeholder="Masukan Negara">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " id="notelpmitra" placeholder="Masukan Nomor Telephone">
+                                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
-                                <input type="url" class="form-control " id="web" placeholder="Masukan Website">
+                                <input type="url" class="form-control " name="website" placeholder="Masukan Website">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                             <div class="col-sm-10 ">
-                                <input type="month" class="form-control " id="bulaninput">
+                                <input type="month" class="form-control " name="bulaninput">
                             </div>
                         </div>
 
@@ -333,7 +346,6 @@
 
                     <!-- form start -->
 
-                    @csrf
                     <div class="card-body">
 
                         <div class="form-group row">
@@ -354,7 +366,7 @@
                             <br><br><br>
                             <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai">
+                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai  ">
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -369,12 +381,11 @@
 
                 </div>
 
-            
+
                 <!-- Horizontal Form -->
                 <div class="card card-info">
 
                     <!-- form start -->
-                    @csrf
                     <div class="card-body">
 
                         <div class="form-group row">
@@ -390,7 +401,7 @@
                             <br><br><br>
                             <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak">
+                                <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
                             </div>
                             <br><br><br>
                             <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
@@ -421,17 +432,17 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="narahubung" placeholder="Masukkan Narahubung">
+                                <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " id="notelpnara" placeholder="No. Telepon">
+                                <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" id="emailnara" placeholder="Alamat Email">
+                                <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email">
                             </div>
                         </div>
 
@@ -447,18 +458,18 @@
                             <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
                             <div class="col-sm-10">
                                 <div class="form-group">
-                                    <select class="form-control" id="pic">
+                                    <select class="form-control" name="pic">
                                         <option hidden>Pilih Nama PIC UPer</option>
                                         <option>Bapak Abcd</option>
                                         <option>Ibu Efgh</option>
                                     </select>
-                                    
-                                </div>                      
+
+                                </div>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
+                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
@@ -474,6 +485,7 @@
                         <button type="submit" class="btn btn-info">Save</button>
                         <button type="submit" class="btn btn-default float-right">Cancel</button>
                     </div>
+
                     <!-- /.card-footer -->
                 </div>
             </form>
