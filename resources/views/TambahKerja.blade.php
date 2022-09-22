@@ -33,6 +33,7 @@
             -webkit-appearance: none;
             margin: 0;
         }
+
         input[type=number] {
             -moz-appearance: textfield;
         }
@@ -327,7 +328,7 @@
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
-                                <input type="url" class="form-control " name="web" placeholder="Masukan Website">
+                                <input type="url" class="form-control " name="website" placeholder="Masukan Website">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                             <div class="col-sm-10 ">

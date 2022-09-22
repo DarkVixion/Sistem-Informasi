@@ -69,17 +69,41 @@ class TambahKerjasamaController extends Controller
         $user->judul_mou = $req['judul_mou'];
         $user->tglmulai = $req['tglmulai'];
         $user->tglselesai = $req['tglselesai'];
-        //$user->path_mou = $req['path_mou'];
+        $user->path_mou = $req['path_mou'];
         $user->judul_moa = $req['judul_moa'];
-        $user->nilaikontrak = $req['nilaikontra'];
-        //$user->path_moa = $req['path_moa'];
+        $user->nilaikontrak = $req['nilaikontrak'];
+        $user->path_moa = $req['path_moa'];
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
-        $user->emailnara = $req['mailnara'];
+        $user->emailnara = $req['emailnara'];
         $user->pic = $req['pic'];
 
-        $user->save();
+        $dir = "directory";
+        echo "<pre>";
 
+        $mou = '';
+        $moa = '';
+
+
+
+
+        foreach ($req['path_mou'] as $file) {
+            $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+            $mou .= $namafilemou . '_';
+
+            $file->move(public_path('files'), $namafilemou);
+        }
+        $user->path_mou = $mou;
+
+        foreach ($req['path_moa'] as $file) {
+            $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+            $moa .= $namafilemoa . '_';
+            $file->move(public_path('files'), $namafilemoa);
+        }
+        $user->path_moa = $moa;
+
+
+        $user->save();
         return redirect('/Kerjasama');
     }
 
