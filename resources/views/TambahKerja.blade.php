@@ -26,6 +26,17 @@
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -312,7 +323,7 @@
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
+                                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
@@ -389,7 +400,7 @@
                             <br><br><br>
                             <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak">
+                                <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
                             </div>
                             <br><br><br>
                             <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
@@ -425,7 +436,7 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " name="notelpnara" placeholder="No. Telepon">
+                                <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
@@ -457,7 +468,7 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
+                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>

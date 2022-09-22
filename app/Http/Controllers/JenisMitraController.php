@@ -20,6 +20,14 @@ class JenisMitraController extends Controller
         return redirect('JenisMitra');
     }
 
+    // public function update(Request $req, $id)
+    // {
+    //     $jm = JenisMitra::find($id);
+    //     $input = $req->all();
+    //     $jm->update($input);
+    //     return redirect('JenisMitra');
+    // }
+
     public function delete($id)
     {
         JenisMitra::destroy($id);
