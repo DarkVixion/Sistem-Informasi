@@ -10,7 +10,7 @@ class TambahKerjasama extends Model
     use HasFactory;
     protected $table = 'tambahkerjasama';
     protected $primaryKey = 'id';
-    protected $fillable = [
+    /*protected $fillable = [
         "namamitra",
         "jenismitra",
         "judulkerjasama",
@@ -32,7 +32,7 @@ class TambahKerjasama extends Model
         "pic",
         "notelpic",
         "emailpic"
-    ];
+    ];*/
 
     protected $dates = ['tglmulai', 'tglselesai'];
 

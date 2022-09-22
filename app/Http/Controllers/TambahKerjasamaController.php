@@ -15,94 +15,77 @@ use App\Models\MoA;
 
 class TambahKerjasamaController extends Controller
 {
-    public function index()
+    public function index() // untuk view hal Kerjasama
     {
         $kerjasama = TambahKerjasama::all();
         return view('Kerjasama')->with('kerjasama', $kerjasama);
     }
 
-    public function create()
+    public function create() // untuk view hal Tambah Kerjasama, smae as index
     {
         $tambahkerjasama = TambahKerjasama::all();
         return view('TambahKerja')->with('tambahkerjasama', $tambahkerjasama);
     }
 
+    public function store(Request $req) // store input dari hal Tambah Kerjasama
+    {
+
+        /*$data = $req->validate([
+            'status' => 'required',
+            'namamitra' => 'required',
+            'jenismitra' => 'required',
+            'judulkerja' => 'required',
+            'lingkupkerja' => 'required',
+            'alamat' => 'required',
+            'negara' => 'required',
+            'notelpmitra' => 'required',
+            'website' => 'required',
+            'bulaninput' => 'required',
+            'judul_mou' => 'required',
+            'tglmulai' => 'required',
+            'tglselesai' => 'required',
+            'path_mou' => 'required',
+            'judul_moa' => 'required',
+            'nilaikontrak' => 'required',
+            'path_moa' => 'required',
+            'narahubung' => 'required',
+            'notelpnara' => 'required',
+            'emailnara' => 'required',
+            'pic' => 'required'
+        ]);*/
+
+        $user = new TambahKerjasama;
+
+        $user->status = $req['status'];
+        $user->namamitra = $req['namamitra'];
+        $user->jenismitra = $req['jenismitra'];
+        $user->judulkerjasama = $req['judulkerjasama'];
+        $user->lingkupkerja = $req['lingkupkerja'];
+        $user->alamat = $req['alamat'];
+        $user->negara = $req['negara'];
+        $user->notelpmitra = $req['notelpmitra'];
+        $user->website = $req['website'];
+        $user->bulaninput = $req['bulaninput'];
+        $user->judul_mou = $req['judul_mou'];
+        $user->tglmulai = $req['tglmulai'];
+        $user->tglselesai = $req['tglselesai'];
+        //$user->path_mou = $req['path_mou'];
+        $user->judul_moa = $req['judul_moa'];
+        $user->nilaikontrak = $req['nilaikontra'];
+        //$user->path_moa = $req['path_moa'];
+        $user->narahubung = $req['narahubung'];
+        $user->notelpnara = $req['notelpnara'];
+        $user->emailnara = $req['mailnara'];
+        $user->pic = $req['pic'];
+
+        $user->save();
+
+        return redirect('/Kerjasama');
+    }
+
     public function edit()
     {
         return view('TambahKerja');
-    }
-
-    public function store(Request $req)
-    {
-
-        // $data = $request->all();
-        // $finalArray = array();
-        // foreach($data as $key=>$value){
-        // array_push($finalArray, array(
-        // 'fltno'=>$value['sflt'],
-        // 'model'=>$value['smodel'],
-        // 'engine'=>$value['sengine'],
-        // 'loc'=>$value['sloc'],
-        // 'serviceType'=>$value['sstye'],
-        // 'nextSvr'=> $value['snsvr'] )
-        // );
-        // });
-
-        //Model::insert($finalArray);
-
-        $input = $req->all();
-        // TambahKerjasama::create($input);
-
-        $finalArray = array();
-
-        $data = $req->validate([
-            'namaperjanjian' => 'required',
-            'path' => 'required',
-            'jenis' => 'required'
-        ]);
-
-        $new_file = TambahKerjasama::create($data);
-
-        if ($req->has('path')) {
-            foreach ($req->get('path') as $path) {
-                $pathname = $data['path'] . time() . $path->extension;
-
-                $path->move(public_path('files', $pathname));
-
-                PerjanjianKerjasama::create([
-                    'file_id' => $new_file->id,
-                    'path' => $pathname
-                ]);
-            }
-
-            foreach ($input as $key => $value) {
-                array_push(
-                    $finalArray,
-                    array(
-                        'namamitra' => $value['namamitra'],
-                        'judulkerja' => $value['judulkerja'],
-                        'alamat' => $value['alamat'],
-                        'negara' => $value['negara'],
-                        'notelpmitra' => $value['notelpmitra'],
-                        'web' => $value['web'],
-                        'judul_mou' => $value['judul_mou'],
-                        'tglmulai' => $value['tglmulai'],
-                        'tglselesai' => $value['tglselesai'],
-                        'path_mou' => $value['path_mou'],
-                        'judul_moa' => $value['judul_moa'],
-                        'nilaikontrak' => $value['nilaikontrak'],
-                        'tglmulai' => $value['tglmulai'],
-                        'tglselesai' => $value['tglselesai'],
-                        'path_moa' => $value['path_moa'],
-                        'narahubung' => $value['narahubung'],
-                        'notelpnara' => $value['notelpnara'],
-                        'emailnara' => $value['emailnara']
-                    )
-                );
-            };
-            Model::insert($finalArray);
-        }
-        return redirect('Kerjasama');
     }
 
     public function perjanjiankerjasama()

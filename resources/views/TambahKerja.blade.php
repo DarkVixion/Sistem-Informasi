@@ -225,7 +225,7 @@
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <form class="form-horizontal" action="{{route('berlin')}}" method="POST" enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{route('inputdata')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="container-fluid">
                     <div class="row mb-2">
@@ -251,7 +251,7 @@
                             <label for="select" class="col-sm-2 col-form-label">Status</label>
                             <div class="col-sm-10">
                                 <div class="form-group">
-                                    <select class="form-control">
+                                    <select class="form-control" name="status">
                                         <option>Aktif</option>
                                         <option>Tidak Aktif</option>
                                         <option>Kadarluwasa</option>
@@ -271,7 +271,7 @@
                             <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
                             <div class="col-sm-10">
                                 <div class="form-group">
-                                    <select class="form-control">
+                                    <select class="form-control" name="jenismitra">
                                         <option>Pertamina</option>
                                         <option>Non Pertamina</option>
                                         <option>BUMN</option>
@@ -284,14 +284,14 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " name="judulkerja" placeholder="Masukan Judul Kerja Sama">
+                                <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama">
                             </div>
                         </div>.
                         <div class="form-group row ">
                             <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
                             <div class="col-sm-10 ">
                                 <div class="form-group ">
-                                    <select class="form-control ">
+                                    <select class="form-control" name="lingkupkerja">
                                         <option>Beasiswa</option>
                                         <option>Fast Track</option>
                                         <option>MBKM</option>
@@ -354,7 +354,7 @@
                             <br><br><br>
                             <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai">
+                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai  ">
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -446,7 +446,7 @@
                             <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
                             <div class="col-sm-10">
                                 <div class="form-group">
-                                    <select class="form-control" id="pic">
+                                    <select class="form-control" name="pic">
                                         <option hidden>Pilih Nama PIC UPer</option>
                                         <option>Bapak Abcd</option>
                                         <option>Ibu Efgh</option>
@@ -473,6 +473,7 @@
                         <button type="submit" class="btn btn-info">Save</button>
                         <button type="submit" class="btn btn-default float-right">Cancel</button>
                     </div>
+
                     <!-- /.card-footer -->
                 </div>
             </form>
