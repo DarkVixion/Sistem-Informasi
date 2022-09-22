@@ -37,6 +37,8 @@ Route::post('/tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->n
 
 Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
 Route::post('/JenisMitra/tambah',[JenisMitraController::class, 'store']);
+// Route::post('/JenisMitra/{jenismitra}/edit', [JenisMitraController::class, 'edit']);
+// Route::match(['put','patch'], '/JenisMitra/{jenismitra}/edit', [JenisMitraController::class, 'update']);
 Route::delete('/JenisMitra/hapus/{jenismitra}', [JenisMitraController::class, 'delete']);
 
 Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);

@@ -267,7 +267,8 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->juduljenismitra }}</td>
                                                 <td>
-                                                    <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                                                    <a data-toggle="modal" data-target="#modal-xl" href="" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                                    
                                                     <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST" style="display:inline ">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
@@ -308,7 +309,7 @@
                             </div>
                             <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-primary" value="Save">Tambah Mitra</button>
+                                <button type="submit" class="btn btn-primary" value="Save">Tambah</button>
                             </div>
                             </form>
                         </div>
@@ -317,6 +318,7 @@
                     <!-- /.modal-dialog -->
                 </div>
                 <!-- /.modal -->
+
             </section>
 
         </div>
