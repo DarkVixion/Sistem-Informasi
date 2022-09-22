@@ -47,3 +47,7 @@ Route::delete('/LingkupKerja/hapus/{lingkupkerja}', [LingkupKerjaController::cla
 Route::get('/LingkupKerja', [LingkupKerjaController::class, 'index']);
 Route::post('/LingkupKerja/tambah', [LingkupKerjaController::class, 'store']);
 Route::delete('/LingkupKerja/hapus/{lingkupkerja}', [LingkupKerjaController::class, 'delete']);
+
+Route::get('InformasiMitra', function(){
+    return view('InformasiMitra');
+});
