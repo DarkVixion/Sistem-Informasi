@@ -79,31 +79,34 @@ class TambahKerjasamaController extends Controller
         $user->pic = $req['pic'];
 
         $dir = "directory";
-        echo "<pre>";
 
         $mou = '';
         $moa = '';
 
 
-
-
         foreach ($req['path_mou'] as $file) {
             $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
             $mou .= $namafilemou . '_';
+            // . untuk menggabungkan semua nama filenya
 
             $file->move(public_path('files'), $namafilemou);
         }
         $user->path_mou = $mou;
 
-        foreach ($req['path_moa'] as $file) {
-            $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-            $moa .= $namafilemoa . '_';
-            $file->move(public_path('files'), $namafilemoa);
+        //jika ada path, jalankan code. jika tidak ada, skip code.
+        if (isset($req['path_moa'])) {
+            foreach ($req['path_moa'] as $file) {
+                $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+                $moa .= $namafilemoa . '_';
+
+                $file->move(public_path('files'), $namafilemoa);
+            }
         }
+
         $user->path_moa = $moa;
 
-
         $user->save();
+
         return redirect('/Kerjasama');
     }
 
