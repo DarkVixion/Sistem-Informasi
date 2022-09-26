@@ -26,6 +26,7 @@ Route::get('/', function () {
 Route::get('/Akun', function () {
     return view('Akun');
 });
+Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
 
 Route::get('/Mitra', function () {
     return view('Mitra');
@@ -51,6 +52,6 @@ Route::get('/LingkupKerja', [LingkupKerjaController::class, 'index']);
 Route::post('/LingkupKerja/tambah', [LingkupKerjaController::class, 'store']);
 Route::delete('/LingkupKerja/hapus/{lingkupkerja}', [LingkupKerjaController::class, 'delete']);
 
-Route::get('InformasiMitra', function(){
+Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
 });

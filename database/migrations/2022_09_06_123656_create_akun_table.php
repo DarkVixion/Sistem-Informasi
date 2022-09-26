@@ -15,7 +15,13 @@ class CreateAkunTable extends Migration
     {
         Schema::create('akun', function (Blueprint $table) {
             $table->id();
-            $table->string("alamat");
+            $table->string("namaakun");
+            $table->string("userssoakun");
+            $table->string("emailakun");
+            $table->string("nipakun");
+            $table->string("notelpakun");
+            $table->string("roleakun");
+            $table->string("statusakun");
         });
     }
 
