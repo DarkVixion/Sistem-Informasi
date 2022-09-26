@@ -261,7 +261,7 @@
                                                 <td>{{ $item->judullingkupkerja }}</td>
                                                 <td>
                                                     <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
-                                                    <form action="{{url('/LingkupKerja/hapus/'.$item->id)}}" method="POST" style="display:inline ">
+                                                    <form action="{{route('hapus_lingkup', $item->id)}}" method="POST" style="display:inline ">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -289,7 +289,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="{{url('/LingkupKerja/tambah')}}" method="post">
+                            <form action="{{route('tambah_lingkup')}}" method="post">
                             {!! csrf_field() !!}
                             <div class="modal-body">
                                 <div class="form-group row ">

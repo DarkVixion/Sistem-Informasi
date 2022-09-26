@@ -35,22 +35,17 @@ Route::get('/Mitra', function () {
 Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
 Route::post('/tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('inputdata');
-
-Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
-Route::post('/JenisMitra/tambah', [JenisMitraController::class, 'store']);
-// Route::post('/JenisMitra/{jenismitra}/edit', [JenisMitraController::class, 'edit']);
-// Route::match(['put','patch'], '/JenisMitra/{jenismitra}/edit', [JenisMitraController::class, 'update']);
-Route::delete('/JenisMitra/hapus/{jenismitra}', [JenisMitraController::class, 'delete']);
-
 Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
 
-Route::get('/LingkupKerja', [LingkupKerjaController::class, 'index']);
-Route::post('/LingkupKerja/tambah', [LingkupKerjaController::class, 'store']);
-Route::delete('/LingkupKerja/hapus/{lingkupkerja}', [LingkupKerjaController::class, 'delete']);
+Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
+Route::post('/JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');
+Route::delete('/JenisMitra/{id}', [JenisMitraController::class, 'delete'])->name('hapus_mitra');
+// Route::post('/JenisMitra/{id}/edit', [JenisMitraController::class, 'edit']);
+// Route::match(['put','patch'], '/JenisMitra/{id}/edit', [JenisMitraController::class, 'update']);
 
 Route::get('/LingkupKerja', [LingkupKerjaController::class, 'index']);
-Route::post('/LingkupKerja/tambah', [LingkupKerjaController::class, 'store']);
-Route::delete('/LingkupKerja/hapus/{lingkupkerja}', [LingkupKerjaController::class, 'delete']);
+Route::post('/LingkupKerja', [LingkupKerjaController::class, 'store'])->name('tambah_lingkup');
+Route::delete('/LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->name('hapus_lingkup');
 
 Route::get('InformasiMitra', function () {
     return view('InformasiMitra');

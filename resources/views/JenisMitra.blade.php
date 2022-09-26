@@ -269,7 +269,7 @@
                                                 <td>
                                                     <a data-toggle="modal" data-target="#modal-xl" href="" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
                                                     
-                                                    <form action="{{url('/JenisMitra/hapus/'.$item->id)}}" method="POST" style="display:inline ">
+                                                    <form action="{{route('hapus_mitra', $item->id)}}" method="POST" style="display:inline ">
                                                         {{ method_field('DELETE') }}
                                                         {{ csrf_field() }}
                                                         <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -297,7 +297,7 @@
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="{{url('/JenisMitra/tambah')}}" method="post">
+                            <form action="{{route('tambah_mitra')}}" method="post">
                             {!! csrf_field() !!}
                             <div class="modal-body">
                                 <div class="form-group row ">
