@@ -30,16 +30,8 @@
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 </head>
-<section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-6">
-                <h1>Akun</h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-wrapper">
+    
+    
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <div class="container-fluid">
@@ -151,19 +143,9 @@
                             </div>
                         </div>
                     </div>
-<<<<<<< HEAD
                 </div>
             </div>
-        </div>
+       
         <!-- /.card-body -->
-=======
-                    <!-- /.card-body -->
-                </form>
-            </section>
-
-
-    </div>
-    </form>
->>>>>>> 2527d600a1f758aea33442e08106d1445501de8a
-    </section>
+   
 @endsection
