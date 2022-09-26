@@ -17,12 +17,12 @@ class LingkupKerjaController extends Controller
     {
         $input = $req->all();
         LingkupKerja::create($input);
-        return redirect('LingkupKerja');
+        return back();
     }
 
     public function delete($id)
     {
         LingkupKerja::destroy($id);
-        return redirect('LingkupKerja');
+        return back();
     }
 }
