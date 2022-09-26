@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Akun;
 
 class AkunController extends Controller
 {
@@ -19,42 +20,15 @@ class AkunController extends Controller
             'statusakun' => 'required',
         ]);
 
-        $akun = new Akun;
+        $akun = new Akun();
 
-        $akun->status = $req['namaakun'];
-        $akun->namamitra = $req['userssoakun'];
-        $akun->jenismitra = $req['emailakun'];
-        $akun->judulkerjasama = $req['nipakun'];
-        $akun->lingkupkerja = $req['notelpakun'];
-        $akun->alamat = $req['roleakun'];
-        $akun->negara = $req['statusakun'];
-
-        /*$dir = "directory";
-
-        $mou = '';
-        $moa = '';
-
-
-        foreach ($req['path_mou'] as $file) {
-            $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-            $mou .= $namafilemou . '_';
-            // . untuk menggabungkan semua nama filenya
-
-            $file->move(public_path('files'), $namafilemou);
-        }
-        $user->path_mou = $mou;
-
-        //jika ada path, jalankan code. jika tidak ada, skip code.
-        if (isset($req['path_moa'])) {
-            foreach ($req['path_moa'] as $file) {
-                $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-                $moa .= $namafilemoa . '_';
-
-                $file->move(public_path('files'), $namafilemoa);
-            }
-        }
-
-        $user->path_moa = $moa;*/
+        $akun->namaakun = $req['namaakun'];
+        $akun->userssoakun = $req['userssoakun'];
+        $akun->emailakun = $req['emailakun'];
+        $akun->nipakun = $req['nipakun'];
+        $akun->notelpakun = $req['notelpakun'];
+        $akun->roleakun = $req['roleakun'];
+        $akun->statusakun = $req['statusakun'];
 
         $akun->save();
 

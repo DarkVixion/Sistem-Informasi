@@ -19,4 +19,6 @@ class Akun extends Model
         "roleakun",
         "statusakun"
     ];
+
+    public $timestamp = false;
 }
