@@ -249,29 +249,60 @@
                                     <h3 class="profile-username text-center">Admin UPer</h3>
                                     <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                                     <div class="form-group row">
-                                        <label for="input" class="col-sm-2 col-form-label">Nama</label>
+                                        <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="Nama" placeholder="Admin UPer">
+                                            <input type="text" class="form-control" name="namaakun" placeholder="Admin UPer">
+                                        </div>
+                                    </div><br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01">
+                                        </div>
+                                    </div><br>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="emailakun" placeholder="admin.uper@dududu.ac.id">
                                         </div>
                                     </div><br>
                                     <div class="form-group row">
                                         <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="Nama" placeholder="122333">
+                                            <input type="text" class="form-control" name="nipakun" placeholder="122333">
                                         </div>
                                     </div></br>
                                     <div class="form-group row">
-                                        <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
+                                        <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="Nama" placeholder="admin.uper@dududu.ac.id">
+                                            <input type="text" class="form-control" name="notelpakun" placeholder="0812xxx">
                                         </div>
                                     </div><br>
                                     <div class="form-group row">
-                                        <label for="input" class="col-sm-2 col-form-label">Alamat</label>
+                                        <label for="select" class="col-sm-2 col-form-label">Role</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="Nama" placeholder="Jl. Teuku Nyak Ariefr">
+                                            <div class="form-group">
+                                                <select class="form-control" name="status">
+                                                    <option>Role 1</option>
+                                                    <option>Role 2</option>
+                                                    <option>Role 3</option>
+                                                    <option>Role 4</option>
+                                                    <option>Role 5</option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div><br>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="select" class="col-sm-2 col-form-label">Status</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group">
+                                                <select class="form-control" name="status">
+                                                    <option>Aktif</option>
+                                                    <option>Tidak Aktif</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div>
                                         <button type="submit" class="btn btn-info">Simpan</button>
                                         <button type="submit" class="btn btn-default float-right">Buang</button>
