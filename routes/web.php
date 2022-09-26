@@ -19,8 +19,8 @@ use App\Models\TambahKerjasama;
 |
 */
 
-Route::get('/', function () {
-    return view('Dashboard');
+Route::get('/AdminDashboard', function () {
+    return view('AdminDashboard');
 });
 
 Route::get('/Akun', function () {
@@ -51,6 +51,31 @@ Route::get('/LingkupKerja', [LingkupKerjaController::class, 'index']);
 Route::post('/LingkupKerja/tambah', [LingkupKerjaController::class, 'store']);
 Route::delete('/LingkupKerja/hapus/{lingkupkerja}', [LingkupKerjaController::class, 'delete']);
 
-Route::get('InformasiMitra', function(){
+Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
+});
+
+// PUNYA USER
+Route::get('AdminUserMenu', function () {
+    return view('AdminUserMenu');
+});
+
+Route::get('UserDashboard', function () {
+    return view('UserDashboard');
+});
+
+Route::get('/UserAkun', function () {
+    return view('UserAkun');
+});
+
+Route::get('/UserInfo', function () {
+    return view('UserInformation');
+});
+
+Route::get('/template', function () {
+    return view('template');
+});
+
+Route::get('/D3', function () {
+    return view('D3');
 });

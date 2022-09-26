@@ -1,4 +1,4 @@
-@extends('UserTemplate')
+@extends('template')
 @section('isi')
 
 @endsection
