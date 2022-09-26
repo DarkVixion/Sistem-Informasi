@@ -63,8 +63,8 @@
                                 </div>
                                 <h3 class="profile-username text-center">Admin UPer</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
-                                <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                 <div class="form-group row">
+                                    <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                     <div class="col-sm-10 ">
                                         <input type="file" class="form-control " name="path_profileakun[]" accept="png/*" multiple>
                                     </div>
