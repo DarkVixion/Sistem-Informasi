@@ -13,8 +13,6 @@
                     <li class="breadcrumb-item active">Jenis Mitra</li>
                 </ol>
             </div>
-<<<<<<< HEAD
-=======
             <!-- /.sidebar -->
         </aside>
 
@@ -123,7 +121,6 @@
 
             </section>
 
->>>>>>> 932cc9329a3ac5d7749c3d4e5ac5f5a38927cf8a
         </div>
     </div>
     <!-- /.container-fluid -->
