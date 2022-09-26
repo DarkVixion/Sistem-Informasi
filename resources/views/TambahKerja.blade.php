@@ -284,11 +284,9 @@
                             <div class="col-sm-10">
                                 <div class="form-group">
                                     <select class="form-control" name="jenismitra">
-                                        <option>Pertamina</option>
-                                        <option>Non Pertamina</option>
-                                        <option>BUMN</option>
-                                        <option>Kementrian</option>
-                                        {{-- <option><a href='/JenisMitra'>Tambah Jenis Mitra</a></option> --}}
+                                        @foreach ($jm as $item)
+                                            <option>{{ $item->juduljenismitra }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -304,10 +302,9 @@
                             <div class="col-sm-10 ">
                                 <div class="form-group ">
                                     <select class="form-control" name="lingkupkerja">
-                                        <option>Beasiswa</option>
-                                        <option>Fast Track</option>
-                                        <option>MBKM</option>
-                                        <option>Magang</option>
+                                        @foreach ($lk as $item)
+                                            <option>{{ $item->judullingkupkerja }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

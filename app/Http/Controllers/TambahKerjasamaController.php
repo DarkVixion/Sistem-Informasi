@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Redirect;
 use App\Models\Pic;
 use App\Models\MoU;
 use App\Models\MoA;
+use App\Models\JenisMitra;
+use App\Models\LingkupKerja;
 
 
 /* KALO ERROR MAKLUMIN MASIH ON PROGRESS */
@@ -24,7 +26,11 @@ class TambahKerjasamaController extends Controller
     public function create() // untuk view hal Tambah Kerjasama, smae as index
     {
         $tambahkerjasama = TambahKerjasama::all();
-        return view('TambahKerja')->with('tambahkerjasama', $tambahkerjasama);
+        $jenismitra = JenisMitra::all();
+        $lingkup = LingkupKerja::all();
+        return view('TambahKerja')->with('tambahkerjasama', $tambahkerjasama)
+                                  ->with('jm', $jenismitra)
+                                  ->with('lk', $lingkup);
     }
 
     public function store(Request $req) // store input dari hal Tambah Kerjasama
