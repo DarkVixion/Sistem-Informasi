@@ -1,24 +1,6 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lingkup Kerja Sama | Universitas Pertamina</title>
-
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-    <!-- Toastr -->
-    <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
-</head>
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -66,7 +48,7 @@
                                     <td>{{ $item->judullingkupkerja }}</td>
                                     <td>
                                         <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
-                                        <form action="{{url('/LingkupKerja/hapus/'.$item->id)}}" method="POST" style="display:inline ">
+                                        <form action="{{route('hapus_lingkup', $item->id)}}" method="POST" style="display:inline ">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
                                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
@@ -94,7 +76,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{url('/LingkupKerja/tambah')}}" method="post">
+                <form action="{{route('tambah_lingkup')}}" method="post">
                 {!! csrf_field() !!}
                 <div class="modal-body">
                     <div class="form-group row ">
