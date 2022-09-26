@@ -110,7 +110,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/AdminUserMenu" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
                                 <p>User</p>
                             </a>
@@ -126,32 +126,32 @@
         <div class="content-wrapper">
             @yield('isiAdmin')
         </div>
-            
+
     </div>
-        <!-- /.content-wrapper -->
+    <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
 
 
-        <!-- ./wrapper -->
+    <!-- ./wrapper -->
 
-        <!-- REQUIRED SCRIPTS -->
+    <!-- REQUIRED SCRIPTS -->
 
-        <!-- jQuery -->
-        <script src="plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE -->
-        <script src="dist/js/adminlte.js"></script>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="dist/js/adminlte.js"></script>
 
-        <!-- OPTIONAL SCRIPTS -->
-        <script src="plugins/chart.js/Chart.min.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="dist/js/pages/dashboard3.js"></script>
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard3.js"></script>
 </body>
 
 </html>
