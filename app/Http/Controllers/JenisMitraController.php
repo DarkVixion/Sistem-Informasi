@@ -17,20 +17,12 @@ class JenisMitraController extends Controller
     {
         $input = $req->all();
         JenisMitra::create($input);
-        return redirect('JenisMitra');
+        return back();
     }
 
-    // public function update(Request $req, $id)
-    // {
-    //     $jm = JenisMitra::find($id);
-    //     $input = $req->all();
-    //     $jm->update($input);
-    //     return redirect('JenisMitra');
-    // }
-
-    public function delete($id)
+        public function delete($id)
     {
         JenisMitra::destroy($id);
-        return redirect('JenisMitra');
+        return back();
     }
 }
