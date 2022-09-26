@@ -22,6 +22,7 @@ class CreateAkunTable extends Migration
             $table->string("notelpakun");
             $table->string("roleakun");
             $table->string("statusakun");
+            $table->string("path_profileakun");
         });
     }
 
