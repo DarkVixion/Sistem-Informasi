@@ -101,7 +101,7 @@
                                                         <option>Role 2</option>
                                                         <option>Role 3</option>
                                                         <option>Role 4</option>
-                                                        <option>Role 5</option>
+                                                        <option>Staff</option>
                                                     </select>
                                                 </div>
                                             </div>
