@@ -26,6 +26,7 @@ Route::get('/AdminDashboard', function () {
 Route::get('/Akun', function () {
     return view('Akun');
 });
+Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
 
 Route::get('/Mitra', function () {
     return view('Mitra');

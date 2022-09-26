@@ -11,6 +11,12 @@ class Akun extends Model
     protected $table = 'akun';
     protected $primaryKey = 'id';
     protected $fillable = [
-        "alamat"
+        "namaakun",
+        "userssoakun",
+        "emailakun",
+        "nipakun",
+        "notelpakun",
+        "roleakun",
+        "statusakun"
     ];
 }
