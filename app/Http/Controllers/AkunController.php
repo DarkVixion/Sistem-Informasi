@@ -29,6 +29,15 @@ class AkunController extends Controller
         $akun->notelpakun = $req['notelpakun'];
         $akun->roleakun = $req['roleakun'];
         $akun->statusakun = $req['statusakun'];
+        $akun->path_profileakun = $req['path_profileakun'];
+
+        $picprofile = '';
+
+        $file = $req['path_profileakun'];
+        $namapicprofile = $req['path_profileakun'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+        $picprofile .= $namapicprofile . '_';
+        $file->move(public_path('profilpic'), $namapicprofile);
+        $akun->path_profileakun = $picprofile;
 
         $akun->save();
 
