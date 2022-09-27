@@ -141,10 +141,9 @@
         </div>
         <!-- /.row -->
 
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card card-info">
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-md-4">
                     <!-- PIE CHART -->
                     <div class="card-body">
                         <canvas id="pieChart"
@@ -152,7 +151,9 @@
                     </div>
                     <!-- /.card-body -->
                     <!-- /.card -->
-
+                </div>
+                <!-- /.col -->
+                <div class="col-md-8">
                     <!-- LINE CHART -->
                     <div class="card-body">
                         <div class="chart">
@@ -163,26 +164,35 @@
                     <!-- /.card-body -->
                     <!-- /.card -->
                 </div>
-
+                <!-- /.col -->
             </div>
-            <div class="col-md-12">
-                <!-- AREA CHART -->
-                <div class="card card-primary">
+            <!-- /.row -->
+        </div>
+        <div class="card card-body">
+            <div class="row">
+                <div class="col-md-4">
                     <div class="card-body">
-                        <div class="chart">
-                            <canvas id="areaChart"
-                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-
                         <canvas id="donutChart"
                             style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
+                    <!-- /.card -->
                 </div>
-                <!-- /.card -->
+                <!-- /.col -->
+                <div class="col-md-8">
+
+                    <div class="chart">
+                        <canvas id="areaChart"
+                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    </div>
+                    <!-- /.card-body -->
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
             </div>
-            <!-- /.col (LEFT) -->
+            <!-- /.row -->
         </div>
+
         <!-- /.row -->div>
         <!-- /.container-fluid -->
     </div>
