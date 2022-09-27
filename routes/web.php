@@ -51,6 +51,10 @@ Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
 });
 
+Route::get('AdminShowUser', function () {
+    return view('AdminShowUser');
+});
+
 // PUNYA USER
 Route::get('AdminUserMenu', function () {
     return view('AdminUserMenu');
