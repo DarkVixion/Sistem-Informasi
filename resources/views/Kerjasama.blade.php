@@ -42,6 +42,7 @@
                 <h1>Kerja Sama</h1>
             </div>
             <div class="col-sm-6">
+                <a href="/TambahKerja">
                     <button type="button" class="btn btn-default" data-toggle="modal"
                             data-target="#modal-xl"
                             style="float:right; background-color:lightblue; border-radius:15px;">
