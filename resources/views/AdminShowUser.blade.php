@@ -1,12 +1,9 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kerja Sama - Universitas Pertamina</title>
+    <title>Data User - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -39,13 +36,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Kerja Sama</h1>
+                <h1>Data User</h1>
             </div>
             <div class="col-sm-6">
-                    <button type="button" class="btn btn-default" data-toggle="modal"
-                            data-target="#modal-xl"
-                            style="float:right; background-color:lightblue; border-radius:15px;">
-                            Tambah Kerja Sama
+                <a href="/T">
+                    <button style="float:right; background-color:lightblue; border-radius:15px;">Tambah
+                        User Baru
                     </button>
                 </a>
             </div>
@@ -75,21 +71,6 @@
                                     <th>Misc.</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                @foreach($kerjasama as $item)
-                                <tr>
-                                    <td>{{ $item->bulaninput }}</td>
-                                    <td>{{ $item->namamitra }}</td>
-                                    <td>{{ $item->jenismitra }}</td>
-                                    <td>{{ $item->jenismitra }}</td>
-                                    <td>{{ $item->judulkerjasama }}</td>
-                                    <td>{{ $item->lingkupkerja }}</td>
-                                    <td>{{ $item->tglmulai }}</td>
-                                    <td>{{ $item->tglselesai }}</td>
-                                    <td>yeeaaay</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -139,5 +120,23 @@
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+<script>
+    $(function() {
+        $("#example1").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
 @endsection
-
