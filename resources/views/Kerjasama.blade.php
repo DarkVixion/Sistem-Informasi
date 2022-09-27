@@ -86,7 +86,7 @@
                                     <td>{{ $item->lingkupkerja }}</td>
                                     <td>{{ $item->tglmulai }}</td>
                                     <td>{{ $item->tglselesai }}</td>
-                                    <td>
+                                    <td>yeeaaay</td>
                                 </tr>
                                 @endforeach
                             </tbody>
