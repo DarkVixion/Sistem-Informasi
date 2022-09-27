@@ -1,6 +1,5 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,7 +65,7 @@
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                     <div class="col-sm-10 ">
-                                        <input type="file" class="form-control " name="path_profileakun[]" accept="png/*" multiple>
+                                        <input type="file" class="form-control " name="path_profileakun" accept="png/*" multiple>
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
