@@ -145,8 +145,8 @@
                         </li>
                         <li class="nav-item">
                             <a href="/AdminUserMenu" class="nav-link">
-                                <img class="nav-icon" style="background-color:grey opacity: 75%" 
-                                    srcset="https://cdn-icons-png.flaticon.com/128/3171/3171065.png 2.5x" alt="Building icon" 
+                                <img class="nav-icon" style="opacity: 55%" 
+                                    srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" 
                                     loading="lazy"></img>
                                 <p>User</p>
                             </a>
