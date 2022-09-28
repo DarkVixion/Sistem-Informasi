@@ -2,28 +2,28 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tambah Kerja Sama | Universitas Pertamina</title>
+    <title>Edit Kerja Sama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
-    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 
     <style>
         input::-webkit-outer-spin-button,
@@ -92,7 +92,7 @@
             <!-- profile -->
             <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                 <div class="image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="/Akun" class="d-block">Admin UPer</a>
@@ -110,7 +110,7 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-5 pb-5 mb-5 d-flex">
                 <div>
-                    <img src="dist/img/Head Logo.png" alt="User Image" style="width:100%;">
+                    <img src="{{ asset('dist/img/Head Logo.png') }}" alt="User Image" style="width:100%;">
                 </div>
 
             </div>
@@ -182,12 +182,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Tambah Kerja Sama</h1>
+                            <h1>Edit Kerja Sama</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="Kerjasama">Kerja Sama</a></li>
-                                <li class="breadcrumb-item active">Tambah Kerja Sama</li>
+                                <li class="breadcrumb-item active">Edit Kerja Sama</li>
                             </ol>
                         </div>
                     </div>
@@ -209,6 +209,7 @@
                                         <option>Kadarluwasa</option>
                                         <option>Dalam Penjajakan</option>
                                         <option>Perpanjangan</option>
+                                        <option hidden selected>{{ $tks->status }}</option>
                                     </select>
                                 </div>
                             </div>
@@ -216,7 +217,7 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
+                                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}">
                             </div>
                         </div><br>
                         <div class="form-group row">
@@ -227,6 +228,7 @@
                                         @foreach ($jm as $item)
                                             <option>{{ $item->juduljenismitra }}</option>
                                         @endforeach
+                                        <option hidden selected>{{ $tks->jenismitra }}</option>
                                     </select>
                                 </div>
                             </div>
@@ -234,7 +236,7 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama">
+                                <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama" value="{{ $tks->judulkerjasama }}">
                             </div>
                         </div>.
                         <div class="form-group row ">
@@ -245,6 +247,7 @@
                                         @foreach ($lk as $item)
                                             <option>{{ $item->judullingkupkerja }}</option>
                                         @endforeach
+                                        <option hidden selected>{{ $tks->lingkupkerja }}</option>
                                     </select>
                                 </div>
                             </div>
@@ -252,24 +255,24 @@
                         <div class="form-group row ">
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
+                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control " name="negara" placeholder="Masukan Negara">
+                                <input type="text" class="form-control " name="negara" placeholder="Masukan Negara" value="{{ $tks->negara }}">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                             <div class="col-sm-10 ">
-                                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
+                                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" value="{{ $tks->notelpmitra }}">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                             <div class="col-sm-10 ">
-                                <input type="url" class="form-control " name="website" placeholder="Masukan Website">
+                                <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}">
                             </div><br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                             <div class="col-sm-10 ">
-                                <input type="month" class="form-control " name="bulaninput">
+                                <input type="month" class="form-control " name="bulaninput" value="{{ $tks->bulaninput }}">
                             </div>
                         </div>
 
@@ -293,7 +296,7 @@
                             <br><br><br>
                             <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
+                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama" value="{{ $tks->judul_mou }}">
                             </div>
                             <br><br><br>
                             <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
@@ -333,12 +336,12 @@
                             <br><br><br>
                             <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama">
+                                <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama" value="{{ $tks->judul_moa }}">
                             </div>
                             <br><br><br>
                             <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
+                                <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" value="{{ $tks->nilaikontrak }}">
                             </div>
                             <br><br><br>
                             <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
@@ -369,17 +372,17 @@
                         <div class="form-group row">
                             <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung">
+                                <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung" value="{{ $tks->narahubung }}">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon">
+                                <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon" value="{{ $tks->notelpnara }}">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email">
+                                <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email" value="{{ $tks->emailnara }}">
                             </div>
                         </div>
 
