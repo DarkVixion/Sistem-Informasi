@@ -7,6 +7,14 @@ use App\Models\Akun;
 
 class AkunController extends Controller
 {
+    public function index(){
+        return view('');
+    }
+    
+    public function create(){
+        return view('');
+    }
+
     public function store(Request $req) // store input dari hal Akun
     {
 
