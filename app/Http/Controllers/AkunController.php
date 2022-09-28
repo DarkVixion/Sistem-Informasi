@@ -43,4 +43,16 @@ class AkunController extends Controller
 
         return redirect('/Kerjasama');
     }
+
+    public function test() //untuk testing
+    {
+        $akun = Akun::all();
+        return view('AkunTampil')->with('akun', $akun);
+    }
+
+    public function test2()
+    {
+        $akun = Akun::all();
+        return view('Akun')->with('akun', $akun);
+    }
 }

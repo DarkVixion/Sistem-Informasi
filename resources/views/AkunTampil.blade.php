@@ -36,7 +36,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Edit Akun</h1>
+                <h1>Akun</h1>
             </div>
             <!-- /.col -->
             <!-- <div class="col-sm-6">
@@ -64,21 +64,17 @@
                                 <h3 class="profile-username text-center">Admin UPer</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                                 <div class="form-group row">
-                                    <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
-                                    <div class="col-sm-10 ">
-                                        <input type="file" class="form-control " name="path_profileakun" accept="png/*" multiple>
-                                    </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="namaakun" placeholder="Admin UPer" value="{{ $akun[1]->namaakun }}">
+                                        <input type="text" class="form-control" name="namaakun" placeholder="Admin UPer" value='{{ $akun[1]->namaakun }}'>
                                     </div>
                                 </div><br>
-                                <div class=" form-group row">
+                                <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01">
+                                        <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01" value='{{ $akun[1]->userssoakun }}'>
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
@@ -125,8 +121,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-info">Simpan</button>
-                                    <button type="submit" class="btn btn-default float-right">Buang</button>
+                                    <button type="submit" class="btn btn-info float-right">Edit</button>
                                 </div>
                             </div>
                         </div>
