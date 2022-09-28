@@ -78,32 +78,32 @@
                                 <div class=" form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01">
+                                        <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01" value="{{ $akun[1]->userssoakun }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="emailakun" placeholder="admin.uper@dududu.ac.id">
+                                        <input type="text" class="form-control" name="emailakun" placeholder="admin.uper@dududu.ac.id" value="{{ $akun[1]->emailakun }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nipakun" placeholder="122333">
+                                        <input type="text" class="form-control" name="nipakun" placeholder="122333" value="{{ $akun[1]->nipakun }}">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelpakun" placeholder="0812xxx">
+                                        <input type="text" class="form-control" name="notelpakun" placeholder="0812xxx" value="{{ $akun[1]->notelpakun }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="select" class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="roleakun">
+                                            <select class="form-control" name="roleakun" value="{{ $akun[1]->roleakun }}">
                                                 <option>Role 1</option>
                                                 <option>Role 2</option>
                                                 <option>Role 3</option>
@@ -117,7 +117,7 @@
                                     <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="statusakun">
+                                            <select class="form-control" name="statusakun" value="{{ $akun[1]->statusakun }}">
                                                 <option>Aktif</option>
                                                 <option>Tidak Aktif</option>
                                             </select>
