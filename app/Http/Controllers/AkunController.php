@@ -7,6 +7,22 @@ use App\Models\Akun;
 
 class AkunController extends Controller
 {
+    public function index_admin(){
+        return view('');
+    }
+
+    public function index_user(){
+        return view('');
+    }
+
+    public function create_admin(){
+        return view('');
+    }
+
+    public function create_user(){
+        return view('');
+    }
+
     public function store(Request $req) // store input dari hal Akun
     {
 
@@ -41,7 +57,7 @@ class AkunController extends Controller
 
         $akun->save();
 
-        return redirect('/Kerjasama');
+        return redirect('AdminDashboard');
     }
 
     public function test() //untuk testing
