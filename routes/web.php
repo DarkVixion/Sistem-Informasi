@@ -19,6 +19,7 @@ use App\Models\TambahKerjasama;
 |
 */
 
+// <-- BAGIAN ADMIN -->
 Route::get('AdminDashboard', function () {
     return view('AdminDashboard');
 });
@@ -56,7 +57,7 @@ Route::get('AdminShowUser', function () {
 });
 
 
-// PUNYA USER
+// <-- BAGIAN USER -->
 Route::get('AdminUserMenu', function () {
     return view('AdminUserMenu');
 });
