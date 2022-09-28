@@ -7,11 +7,19 @@ use App\Models\Akun;
 
 class AkunController extends Controller
 {
-    public function index(){
+    public function index_admin(){
         return view('');
     }
-    
-    public function create(){
+
+    public function index_user(){
+        return view('');
+    }
+
+    public function create_admin(){
+        return view('');
+    }
+
+    public function create_user(){
         return view('');
     }
 
@@ -49,6 +57,6 @@ class AkunController extends Controller
 
         $akun->save();
 
-        return redirect('/Kerjasama');
+        return redirect('AdminDashboard');
     }
 }

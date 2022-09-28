@@ -35,7 +35,7 @@ Route::get('Mitra', function () {
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('TambahKerja', [TambahKerjasamaController::class, 'create']);
-Route::post('tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('inputdata');
+Route::post('tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('tambahkerjasama');
 Route::get('EditKerja', [TambahKerjasamaController::class, 'edit']);
 
 Route::get('JenisMitra', [JenisMitraController::class, 'index']);

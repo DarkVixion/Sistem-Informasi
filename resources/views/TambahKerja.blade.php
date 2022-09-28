@@ -235,7 +235,7 @@
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <form class="form-horizontal" action="{{route('inputdata')}}" method="POST" enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{route('tambahkerjasama')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="container-fluid">
                     <div class="row mb-2">
