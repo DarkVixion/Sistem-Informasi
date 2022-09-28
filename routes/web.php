@@ -24,9 +24,11 @@ Route::get('AdminDashboard', function () {
     return view('AdminDashboard');
 });
 
-Route::get('/Akun', [AkunController::class, 'test2']);
 Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
+
+// <-- BAGIAN TEST -->
 Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
+Route::get('/Akun', [AkunController::class, 'test2']);
 
 Route::get('Mitra', function () {
     return view('Mitra');

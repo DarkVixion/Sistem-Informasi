@@ -36,7 +36,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Edit Akun</h1>
+                <h1>Akun</h1>
             </div>
             <!-- /.col -->
             <!-- <div class="col-sm-6">
@@ -59,7 +59,7 @@
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-3">
                                 <div class="d-flex justify-content-center">
-                                    <img class=" profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg" alt=" User profile picture">
+                                    <img class=" profile-user-img img-fluid img-circle" src="{{ asset('profilpic/'.$akun->path_profileakun) }}" alt=" User profile picture">
                                 </div>
                                 <h3 class="profile-username text-center">Admin UPer</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
@@ -72,43 +72,43 @@
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="namaakun" placeholder="Admin UPer" value="{{ $akun[1]->namaakun }}">
+                                        <input type="text" class="form-control" name="namaakun" placeholder="Admin UPer" value="{{ $akun->namaakun }}">
                                     </div>
                                 </div><br>
                                 <div class=" form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01" value="{{ $akun[1]->userssoakun }}">
+                                        <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01" value="{{ $akun->userssoakun }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="emailakun" placeholder="admin.uper@dududu.ac.id" value="{{ $akun[1]->emailakun }}">
+                                        <input type="text" class="form-control" name="emailakun" placeholder="admin.uper@dududu.ac.id" value="{{ $akun->emailakun }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nipakun" placeholder="122333" value="{{ $akun[1]->nipakun }}">
+                                        <input type="text" class="form-control" name="nipakun" placeholder="122333" value="{{ $akun->nipakun }}">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelpakun" placeholder="0812xxx" value="{{ $akun[1]->notelpakun }}">
+                                        <input type="text" class="form-control" name="notelpakun" placeholder="0812xxx" value="{{ $akun->notelpakun }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="select" class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="roleakun" value="{{ $akun[1]->roleakun }}">
-                                                <option>Role 1</option>
-                                                <option>Role 2</option>
-                                                <option>Role 3</option>
-                                                <option>Role 4</option>
-                                                <option>Staff</option>
+                                            <select class="form-control" name="roleakun" value="{{ $akun->roleakun }}">
+                                                <option @if ($akun->roleakun == 'Role 1') selected @else "" @endif> Role 1</option>
+                                                <option @if ($akun->roleakun == 'Role 2') selected @else "" @endif> Role 2</option>
+                                                <option @if ($akun->roleakun == 'Role 3') selected @else "" @endif> Role 3</option>
+                                                <option @if ($akun->roleakun == 'Role 4') selected @else "" @endif> Role 4</option>
+                                                <option @if ($akun->roleakun == 'Staff') selected @else "" @endif> Staff</option>
                                             </select>
                                         </div>
                                     </div>
@@ -117,9 +117,9 @@
                                     <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="statusakun" value="{{ $akun[1]->statusakun }}">
-                                                <option>Aktif</option>
-                                                <option>Tidak Aktif</option>
+                                            <select class="form-control" name="statusakun" value="{{ $akun->statusakun }}">
+                                                <option @if ($akun->statusakun == 'Aktif') selected @else "" @endif>Aktif</option>
+                                                <option @if ($akun->statusakun == 'Tidak Aktif') selected @else "" @endif>Tidak Aktif</option>
                                             </select>
                                         </div>
                                     </div>
