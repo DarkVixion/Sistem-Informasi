@@ -34,9 +34,10 @@ Route::get('Mitra', function () {
 });
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
+Route::get('Kerjasama/edit/{id}', [TambahKerjasamaController::class, 'edit'])->name('edit_kerjasama');
+Route::delete('Kerjasama/{id}', [TambahKerjasamaController::class, 'delete'])->name('hapus_kerjasama');
 Route::get('TambahKerja', [TambahKerjasamaController::class, 'create']);
-Route::post('tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('tambahkerjasama');
-Route::get('EditKerja', [TambahKerjasamaController::class, 'edit']);
+Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('tambah_kerjasama');
 
 Route::get('JenisMitra', [JenisMitraController::class, 'index']);
 Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');

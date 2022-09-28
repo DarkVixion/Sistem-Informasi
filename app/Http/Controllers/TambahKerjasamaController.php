@@ -25,11 +25,9 @@ class TambahKerjasamaController extends Controller
 
     public function create() // untuk view hal Tambah Kerjasama, smae as index
     {
-        $tambahkerjasama = TambahKerjasama::all();
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
-        return view('TambahKerja')->with('tambahkerjasama', $tambahkerjasama)
-                                  ->with('jm', $jenismitra)
+        return view('TambahKerja')->with('jm', $jenismitra)
                                   ->with('lk', $lingkup);
     }
 
@@ -116,9 +114,25 @@ class TambahKerjasamaController extends Controller
         return redirect('/Kerjasama');
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view('TambahKerja');
+        $tambahkerjasama = TambahKerjasama::find($id);
+        $jenismitra = JenisMitra::all();
+        $lingkup = LingkupKerja::all();
+        return view('EditKerja')->with('tks', $tambahkerjasama)
+                                ->with('jm', $jenismitra)
+                                ->with('lk', $lingkup);
+    }
+
+    public function update(Request $req, $id)
+    {
+
+    }
+
+    public function delete($id)
+    {
+        TambahKerjasama::destroy($id);
+        return back();
     }
 
     public function perjanjiankerjasama()

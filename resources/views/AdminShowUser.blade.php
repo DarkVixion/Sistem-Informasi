@@ -39,7 +39,7 @@
                 <h1>Data User</h1>
             </div>
             <div class="col-sm-6">
-                <a href="/T">
+                <a href="{{url('AdminUserMenu')}}">
                     <button style="float:right; background-color:lightblue; border-radius:15px;">Tambah
                         User Baru
                     </button>

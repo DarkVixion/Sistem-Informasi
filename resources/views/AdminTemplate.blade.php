@@ -2,8 +2,7 @@
 
 <head>
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
@@ -116,13 +115,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="/JenisMitra" class="nav-link">
+                                    <a href="JenisMitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Jenis Mitra</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="/LingkupKerja" class="nav-link">
+                                    <a href="LingkupKerja" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lingkup Kerja Sama</p>
                                     </a>
@@ -130,13 +129,13 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="/Kerjasama" class="nav-link">
+                            <a href="Kerjasama" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>Kerjasama</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/Mitra" class="nav-link">
+                            <a href="Mitra" class="nav-link">
                                 <img class="nav-icon" style="opacity: 75%"
                                     srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
                                     loading="lazy"></img>
@@ -144,7 +143,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/AdminUserMenu" class="nav-link">
+                            <a href="AdminShowUser" class="nav-link">
                                 <img class="nav-icon" style="opacity: 55%" 
                                     srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" 
                                     loading="lazy"></img>

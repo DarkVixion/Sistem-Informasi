@@ -67,64 +67,6 @@
                 </div>
             </li>
 
-            <!-- Messages Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="far fa-comments"></i>
-                    <span class="badge badge-danger navbar-badge">3</span>
-                </a>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Brad Diesel
-                                    <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">Call me whenever you can...</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    John Pierce
-                                    <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">I got your message bro</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item">
-                        <!-- Message Start -->
-                        <div class="media">
-                            <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
-                            <div class="media-body">
-                                <h3 class="dropdown-item-title">
-                                    Nora Silvester
-                                    <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
-                                </h3>
-                                <p class="text-sm">The subject goes here</p>
-                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                            </div>
-                        </div>
-                        <!-- Message End -->
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                </div>
-            </li>
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
@@ -235,7 +177,7 @@
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <form class="form-horizontal" action="{{route('tambahkerjasama')}}" method="POST" enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="container-fluid">
                     <div class="row mb-2">
@@ -244,7 +186,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="/Kerjasama">Kerja Sama</a></li>
+                                <li class="breadcrumb-item"><a href="Kerjasama">Kerja Sama</a></li>
                                 <li class="breadcrumb-item active">Tambah Kerja Sama</li>
                             </ol>
                         </div>
@@ -495,44 +437,6 @@
     <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js "></script>
-
-    <!-- on progress -->
-    <!-- <script>
-        $(document).ready(function() {
-            $('#pic').on('change', function() {
-            var picID = $(this).val();
-            if(picID) {
-                $.ajax({
-                    url: '/getData/'+picID,
-                    type: "GET",
-                    data : {"_token":"{{ csrf_token() }}"},
-                    dataType: "json",
-                    success:function(data)
-                    {
-                        if(data){
-                            $('#notelppic').empty();
-                            $('#emailpic').empty();
-                            $('#notelppic').append('<option hidden>Choose Course</option>'); 
-                            $.each(data, function(key, course){
-                                $('select[name="notelppic"]').append('<option value="'+ key +'">' + course.name+ '</option>');
-                            });
-                            $('#emailpic').append('<option hidden>Choose Course</option>'); 
-                            $.each(data, function(key, course){
-                                $('select[name="emailpic"]').append('<option value="'+ key +'">' + course.name+ '</option>');
-                            });
-                        }else{
-                            $('#notelppic').empty();
-                            $('#emailpic').empty();
-                        }
-                    }
-                });
-            }else{
-                $('#notelppic').empty();
-                $('#emailpic').empty();
-            }
-            });
-        });
-    </script> -->
 
 </body>
 
