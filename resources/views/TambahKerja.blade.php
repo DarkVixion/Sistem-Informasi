@@ -312,22 +312,12 @@
                             <br><br><br>
                             <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-<<<<<<< HEAD
-                                <input type="date" class="form-control @error('tglmulai') is-invalid @enderror"
-                                    name="tglmulai">
-=======
                                 <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou">
->>>>>>> b3956ec88dc34bf7fb749f2209d829f9d51ba920
                             </div>
                             <br><br><br>
                             <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-<<<<<<< HEAD
-                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror"
-                                    name="tglselesai  ">
-=======
                                 <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou">
->>>>>>> b3956ec88dc34bf7fb749f2209d829f9d51ba920
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -369,22 +359,12 @@
                             <br><br><br>
                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-<<<<<<< HEAD
-                                <input type="date" class="form-control @error('tglmulai') is-invalid @enderror"
-                                    name="tglmulai">
-=======
                                 <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa">
->>>>>>> b3956ec88dc34bf7fb749f2209d829f9d51ba920
                             </div>
                             <br><br><br>
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-<<<<<<< HEAD
-                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror"
-                                    name="tglselesai">
-=======
                                 <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa">
->>>>>>> b3956ec88dc34bf7fb749f2209d829f9d51ba920
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
