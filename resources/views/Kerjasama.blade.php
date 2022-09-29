@@ -42,7 +42,7 @@
                 <h1>Kerja Sama</h1>
             </div>
             <div class="col-sm-6">
-                <a href="/TambahKerja">
+                <a href="TambahKerja">
                     <button type="button" class="btn btn-default" data-toggle="modal"
                             data-target="#modal-xl"
                             style="float:right; background-color:lightblue; border-radius:15px;">
@@ -85,9 +85,16 @@
                                     <td>{{ $item->jenismitra }}</td>
                                     <td>{{ $item->judulkerjasama }}</td>
                                     <td>{{ $item->lingkupkerja }}</td>
-                                    <td>{{ $item->tglmulai }}</td>
-                                    <td>{{ $item->tglselesai }}</td>
-                                    <td>yeeaaay</td>
+                                    <td>{{ $item->tglmulai->format('Y-m-d') }}</td>
+                                    <td>{{ $item->tglselesai->format('Y-m-d') }}</td>
+                                    <td>
+                                        <a href="{{route('edit_kerjasama', $item->id)}}" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                        <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

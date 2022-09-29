@@ -193,7 +193,7 @@
             <!-- /.row -->
         </div>
 
-        <!-- /.row -->div>
+        <!-- /.row -->
         <!-- /.container-fluid -->
     </div>
     <!-- /.content -->

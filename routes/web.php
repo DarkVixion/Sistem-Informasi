@@ -19,33 +19,36 @@ use App\Models\TambahKerjasama;
 |
 */
 
-Route::get('/AdminDashboard', function () {
+// <-- BAGIAN ADMIN -->
+Route::get('AdminDashboard', function () {
     return view('AdminDashboard');
 });
 
-Route::get('/Akun', function () {
-    return view('Akun');
-});
 Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
 
-Route::get('/Mitra', function () {
+// <-- BAGIAN TEST -->
+Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
+Route::get('/Akun', [AkunController::class, 'test2']);
+
+Route::get('Mitra', function () {
     return view('Mitra');
 });
 
-Route::get('/Kerjasama', [TambahKerjasamaController::class, 'index']);
-Route::get('/TambahKerja', [TambahKerjasamaController::class, 'create']);
-Route::post('/tambah_kerjasama', [TambahKerjasamaController::class, 'store'])->name('inputdata');
-Route::get('/EditKerja', [TambahKerjasamaController::class, 'edit']);
+Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
+Route::get('Kerjasama/edit/{id}', [TambahKerjasamaController::class, 'edit'])->name('edit_kerjasama');
+Route::delete('Kerjasama/{id}', [TambahKerjasamaController::class, 'delete'])->name('hapus_kerjasama');
+Route::get('TambahKerja', [TambahKerjasamaController::class, 'create']);
+Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('tambah_kerjasama');
 
-Route::get('/JenisMitra', [JenisMitraController::class, 'index']);
-Route::post('/JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');
-Route::delete('/JenisMitra/{id}', [JenisMitraController::class, 'delete'])->name('hapus_mitra');
+Route::get('JenisMitra', [JenisMitraController::class, 'index']);
+Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');
+Route::delete('JenisMitra/{id}', [JenisMitraController::class, 'delete'])->name('hapus_mitra');
 // Route::post('/JenisMitra/{id}/edit', [JenisMitraController::class, 'edit']);
 // Route::match(['put','patch'], '/JenisMitra/{id}/edit', [JenisMitraController::class, 'update']);
 
-Route::get('/LingkupKerja', [LingkupKerjaController::class, 'index']);
-Route::post('/LingkupKerja', [LingkupKerjaController::class, 'store'])->name('tambah_lingkup');
-Route::delete('/LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->name('hapus_lingkup');
+Route::get('LingkupKerja', [LingkupKerjaController::class, 'index']);
+Route::post('LingkupKerja', [LingkupKerjaController::class, 'store'])->name('tambah_lingkup');
+Route::delete('LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->name('hapus_lingkup');
 
 Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
@@ -59,7 +62,8 @@ Route::get('AdminShowUser', function () {
     return view('AdminShowUser');
 });
 
-// PUNYA USER
+
+// <-- BAGIAN USER -->
 Route::get('AdminUserMenu', function () {
     return view('AdminUserMenu');
 });
@@ -68,18 +72,18 @@ Route::get('UserDashboard', function () {
     return view('UserDashboard');
 });
 
-Route::get('/UserAkun', function () {
+Route::get('UserAkun', function () {
     return view('UserAkun');
 });
 
-Route::get('/UserInfo', function () {
+Route::get('UserInfo', function () {
     return view('UserInformation');
 });
 
-Route::get('/template', function () {
+Route::get('template', function () {
     return view('template');
 });
 
-Route::get('/D3', function () {
+Route::get('D3', function () {
     return view('D3');
 });
