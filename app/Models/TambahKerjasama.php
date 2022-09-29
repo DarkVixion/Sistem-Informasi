@@ -34,7 +34,7 @@ class TambahKerjasama extends Model
         "emailpic"
     ];*/
 
-    protected $dates = ['tglmulai', 'tglselesai'];
+    protected $dates = ['tglmulai_mou', 'tglselesai_mou','tglmulai_moa', 'tglselesai_moa'];
 
     public $timestamp = false;
 }

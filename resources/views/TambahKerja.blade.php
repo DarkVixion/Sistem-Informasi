@@ -302,14 +302,14 @@
                                 <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
                             </div>
                             <br><br><br>
-                            <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai') is-invalid @enderror" name="tglmulai">
+                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou">
                             </div>
                             <br><br><br>
-                            <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai  ">
+                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou">
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -347,14 +347,14 @@
                                 <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
                             </div>
                             <br><br><br>
-                            <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai') is-invalid @enderror" name="tglmulai">
+                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa">
                             </div>
                             <br><br><br>
-                            <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai') is-invalid @enderror" name="tglselesai">
+                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa">
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
