@@ -6,6 +6,7 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\JenisMitraController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
+use App\Http\Controllers\MitraController;
 use App\Models\TambahKerjasama;
 
 /*
@@ -30,13 +31,11 @@ Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun
 Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
 Route::get('/Akun', [AkunController::class, 'test2']);
 
-Route::get('Mitra', function () {
-    return view('Mitra');
-});
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('Kerjasama/edit/{id}', [TambahKerjasamaController::class, 'edit'])->name('edit_kerjasama');
 Route::delete('Kerjasama/{id}', [TambahKerjasamaController::class, 'delete'])->name('hapus_kerjasama');
+Route::match(['put','patch'], 'Kerjasama/{id}', [TambahKerjasamaController::class, 'update'])->name('update_kerjasama');
 Route::get('TambahKerja', [TambahKerjasamaController::class, 'create']);
 Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('tambah_kerjasama');
 
@@ -53,6 +52,10 @@ Route::delete('LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->n
 Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
 });
+
+
+Route::get('Mitra', [MitraController::class, 'index']);
+Route::get('AdminViewMitra', [MitraController::class, 'show']);
 
 Route::get('AdminShowUser', function () {
     return view('AdminShowUser');

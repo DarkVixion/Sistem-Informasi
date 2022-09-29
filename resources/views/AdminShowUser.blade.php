@@ -1,54 +1,24 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data User - Universitas Pertamina</title>
-
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- DataTables -->
-    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-    <!-- iCheck -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-    <!-- JQVMap -->
-    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
-    <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-    <!-- summernote -->
-    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-</head>
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Data User</h1>
-            </div>
+                <h1>User</h1>
+            {{-- </div>
             <div class="col-sm-6">
-                <a href="{{url('AdminUserMenu')}}">
-                    <button style="float:right; background-color:lightblue; border-radius:15px;">Tambah
-                        User Baru
-                    </button>
-                </a>
-            </div>
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">User</li>
+                    <li class="breadcrumb-item active">Jenis Mitra</li>
+                </ol>
+            </div> --}}
         </div>
     </div>
     <!-- /.container-fluid -->
 </section>
+
 
 <!-- Main content -->
 <section class="content">
@@ -56,68 +26,82 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
+                    <div class="card-header">
+                        <a href="/AdminUserMenu">
+                        <button type="button" class="btn btn-default" data-toggle="modal"
+                            data-target="#modal-xl"
+                            style="float:right; background-color:lightblue; border-radius:15px;">
+                            Tambah User Baru
+                        </button>
+                        </a>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body table-responsive p-0">
+                        <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>Bulan Pencatatan</th>
-                                    <th>Nama</th>
-                                    <th>Jenis Mitra</th>
-                                    <th>Jenis Kontrak</th>
-                                    <th>Judul</th>
-                                    <th>Lingkup Kerja Sama</th>
-                                    <th>Periode Mulai</th>
-                                    <th>Periode Berakhir</th>
-                                    <th>Misc.</th>
+                                    <th>No. </th>
+                                    <th>User</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                {{-- @foreach($jm as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $item->juduljenismitra }}</td>
+                                    <td>
+                                        <a data-toggle="modal" data-target="#modal-xl" href="" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                        
+                                        <form action="{{route('hapus_mitra', $item->id)}}" method="POST" style="display:inline ">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endforeach --}}
+                            </tbody>
                         </table>
                     </div>
                     <!-- /.card-body -->
                 </div>
+                <!-- /.card -->
             </div>
-            <!-- /.col -->
         </div>
         <!-- /.row -->
     </div>
-    <!-- /.container-fluid -->
+
+    {{-- <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah User Baru</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('tambah_mitra')}}" method="post">
+                {!! csrf_field() !!}
+                <div class="modal-body">
+                    <div class="form-group row ">
+                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Jenis Mitra</label>
+                        <div class="col-sm-10 ">
+                            <input type="text" name="juduljenismitra" id="juduljenismitra" class="form-control " placeholder="Masukan Jenis Mitra Baru">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" value="Save">Tambah</button>
+                </div>
+                </form>
+            </div> --}}
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 </section>
-<!-- /.content -->
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script><!-- Sparkline -->
-<script src="plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="plugins/moment/moment.min.js"></script>
-<script src="plugins/daterangepicker/daterangepicker.js"></script>
-<!-- Tempusdominus Bootstrap 4 -->
-<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-<!-- Summernote -->
-<script src="plugins/summernote/summernote-bs4.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- DataTables  & Plugins -->
-<script src="plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="plugins/jszip/jszip.min.js"></script>
-<script src="plugins/pdfmake/pdfmake.min.js"></script>
-<script src="plugins/pdfmake/vfs_fonts.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
-<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 @endsection

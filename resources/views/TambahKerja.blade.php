@@ -129,7 +129,7 @@
                with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="/" class="nav-link">
+                        <a href="AdminDashboard" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Dashboard
@@ -137,7 +137,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/Dashboard" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Master Data
@@ -146,13 +146,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/JenisMitra" class="nav-link">
+                                <a href="JenisMitra" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Jenis Mitra</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/LingkupKerja" class="nav-link">
+                                <a href="LingkupKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Lingkup Kerja Sama</p>
                                 </a>
@@ -160,7 +160,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="/Kerjasama" class="nav-link">
+                        <a href="Kerjasama" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerja Sama</p>
                         </a>
@@ -171,6 +171,12 @@
                                 srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
                                 loading="lazy"></img>
                             <p>Mitra</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Akun" class="nav-link">
+                            <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
+                            <p>User</p>
                         </a>
                     </li>
                 </ul>
@@ -304,16 +310,24 @@
                                     name="judul_mou" placeholder="Masukan Judul Kerja Sama">
                             </div>
                             <br><br><br>
-                            <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
+<<<<<<< HEAD
                                 <input type="date" class="form-control @error('tglmulai') is-invalid @enderror"
                                     name="tglmulai">
+=======
+                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou">
+>>>>>>> b3956ec88dc34bf7fb749f2209d829f9d51ba920
                             </div>
                             <br><br><br>
-                            <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
+<<<<<<< HEAD
                                 <input type="date" class="form-control @error('tglselesai') is-invalid @enderror"
                                     name="tglselesai  ">
+=======
+                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou">
+>>>>>>> b3956ec88dc34bf7fb749f2209d829f9d51ba920
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -353,16 +367,24 @@
                                     name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
                             </div>
                             <br><br><br>
-                            <label for="tglmulai" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                            <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
+<<<<<<< HEAD
                                 <input type="date" class="form-control @error('tglmulai') is-invalid @enderror"
                                     name="tglmulai">
+=======
+                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa">
+>>>>>>> b3956ec88dc34bf7fb749f2209d829f9d51ba920
                             </div>
                             <br><br><br>
-                            <label for="tglselesai" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
+                            <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
+<<<<<<< HEAD
                                 <input type="date" class="form-control @error('tglselesai') is-invalid @enderror"
                                     name="tglselesai">
+=======
+                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa">
+>>>>>>> b3956ec88dc34bf7fb749f2209d829f9d51ba920
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>

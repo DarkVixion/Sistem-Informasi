@@ -25,11 +25,13 @@ class CreateTambahkerjasamaTable extends Migration
             $table->string("website");
             $table->string("bulaninput");
             $table->integer("nilaikontrak");
-            $table->date("tglmulai");
-            $table->date("tglselesai");
             $table->string("judul_mou");
+            $table->date("tglmulai_mou");
+            $table->date("tglselesai_mou");
             $table->string("path_mou");
-            $table->string("judul_moa");
+            $table->string("judul_moa")->nullable();
+            $table->date("tglmulai_moa")->nullable();
+            $table->date("tglselesai_moa")->nullable();
             $table->string("path_moa");
             $table->string("narahubung");
             $table->integer("notelpnara");
