@@ -35,6 +35,7 @@ Route::get('/Akun', [AkunController::class, 'test2']);
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('Kerjasama/edit/{id}', [TambahKerjasamaController::class, 'edit'])->name('edit_kerjasama');
 Route::delete('Kerjasama/{id}', [TambahKerjasamaController::class, 'delete'])->name('hapus_kerjasama');
+Route::match(['put','patch'], 'Kerjasama/{id}', [TambahKerjasamaController::class, 'update'])->name('update_kerjasama');
 Route::get('TambahKerja', [TambahKerjasamaController::class, 'create']);
 Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('tambah_kerjasama');
 

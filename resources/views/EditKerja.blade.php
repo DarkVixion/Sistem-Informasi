@@ -182,8 +182,9 @@
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST" enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{route('update_kerjasama', $tks->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method("PATCH")
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
