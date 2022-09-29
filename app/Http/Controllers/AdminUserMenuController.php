@@ -28,7 +28,7 @@ class AdminUserMenuController extends Controller
         $adminusermenu->ssoakunuser = $req['ssoakunuser'];
         $adminusermenu->passwordakunuser = $req['passwordakunuser'];
         $adminusermenu->emailakunuser = $req['emailakunuser'];
-        $$adminusermenu->nipakunuser = $req['nipakunusers'];
+        $adminusermenu->nipakunuser = $req['nipakunuser'];
         $adminusermenu->notelpakunuser = $req['notelpakunuser'];
         $adminusermenu->roleakunuser = $req['roleakunuser'];
         $adminusermenu->statusakunuser = $req['statusakunuser'];

@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Models\TambahKerjasama;
+use App\Http\Controllers\AdminUserMenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,7 +68,8 @@ Route::get('AdminShowUser', function () {
 Route::get('AdminUserMenu', function () {
     return view('AdminUserMenu');
 });
-Route::get('/AdminUserMenu', [AkunController::class, 'testuser']);
+Route::post('/AdminUserMenuStore', [AdminUserMenuController::class, 'store'])->name('inputdataakunuser');
+Route::get('/AdminUserMenu', [AdminUserMenuController::class, 'testuser']);
 
 Route::get('UserDashboard', function () {
     return view('UserDashboard');
