@@ -123,7 +123,7 @@
                with font-awesome or any other icon font library -->
 
                     <li class="nav-item">
-                        <a href="/" class="nav-link">
+                        <a href="AdminDashboard" class="nav-link">
                             <i class="nav-icon fas fa-th"></i>
                             <p>
                                 Dashboard
@@ -131,7 +131,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/Dashboard" class="nav-link">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-copy"></i>
                             <p>
                                 Master Data
@@ -140,13 +140,13 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="/JenisMitra" class="nav-link">
+                                <a href="JenisMitra" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Jenis Mitra</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="/LingkupKerja" class="nav-link">
+                                <a href="LingkupKerja" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Lingkup Kerja Sama</p>
                                 </a>
@@ -154,7 +154,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="/Kerjasama" class="nav-link">
+                        <a href="Kerjasama" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
                             <p>Kerja Sama</p>
                         </a>
@@ -166,7 +166,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/Akun" class="nav-link">
+                        <a href="Akun" class="nav-link">
                             <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
                             <p>User</p>
                         </a>
