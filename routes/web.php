@@ -27,7 +27,7 @@ Route::get('AdminDashboard', function () {
 
 Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
 
-// <-- BAGIAN TEST -->
+// <-- BAGIAN TEST AKUN ADMIN -->
 Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
 Route::get('/Akun', [AkunController::class, 'test2']);
 
@@ -35,19 +35,19 @@ Route::get('/Akun', [AkunController::class, 'test2']);
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('Kerjasama/edit/{id}', [TambahKerjasamaController::class, 'edit'])->name('edit_kerjasama');
 Route::delete('Kerjasama/{id}', [TambahKerjasamaController::class, 'delete'])->name('hapus_kerjasama');
-Route::match(['put','patch'], 'Kerjasama/{id}', [TambahKerjasamaController::class, 'update'])->name('update_kerjasama');
+Route::match(['put', 'patch'], 'Kerjasama/{id}', [TambahKerjasamaController::class, 'update'])->name('update_kerjasama');
 Route::get('TambahKerja', [TambahKerjasamaController::class, 'create']);
 Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('tambah_kerjasama');
 
 Route::get('JenisMitra', [JenisMitraController::class, 'index']);
 Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');
 Route::delete('JenisMitra/{id}', [JenisMitraController::class, 'delete'])->name('hapus_mitra');
-Route::match(['put','patch'], '/JenisMitra/{id}/edit', [JenisMitraController::class, 'update'])->name('edit_mitra');
+Route::match(['put', 'patch'], '/JenisMitra/{id}/edit', [JenisMitraController::class, 'update'])->name('edit_mitra');
 
 Route::get('LingkupKerja', [LingkupKerjaController::class, 'index']);
 Route::post('LingkupKerja', [LingkupKerjaController::class, 'store'])->name('tambah_lingkup');
 Route::delete('LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->name('hapus_lingkup');
-Route::match(['put','patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaController::class, 'update'])->name('edit_lingkup');
+Route::match(['put', 'patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaController::class, 'update'])->name('edit_lingkup');
 
 Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
@@ -66,6 +66,7 @@ Route::get('AdminShowUser', function () {
 Route::get('AdminUserMenu', function () {
     return view('AdminUserMenu');
 });
+Route::get('/AdminUserMenu', [AkunController::class, 'testuser']);
 
 Route::get('UserDashboard', function () {
     return view('UserDashboard');

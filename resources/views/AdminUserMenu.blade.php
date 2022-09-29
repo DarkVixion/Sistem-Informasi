@@ -1,5 +1,6 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,7 +51,7 @@
     <!-- /.container-fluid -->
 
     <section class="content">
-        <form class="form-horizontal" action="{{route('inputdataakun')}}" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" {{-- action="{{route('inputdataakun')}}" --}} method="POST" enctype="multipart/form-data">
             @csrf
             <div class="container-fluid">
                 <div class="row">
@@ -59,57 +60,57 @@
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-3">
                                 <div class="d-flex justify-content-center">
-                                    <img class=" profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg" alt=" User profile picture">
+                                    <img class=" profile-user-img img-fluid img-circle" src="asset ../../dist/img/user4-128x128.jpg" alt=" User profile picture">
                                 </div>
                                 <h3 class="profile-username text-center">User UPer</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                     <div class="col-sm-10 ">
-                                        <input type="file" class="form-control " name="path_profileakun" accept="png/*" multiple>
+                                        <input type="file" class="form-control " name="path_profileakunuser" accept="png/*" multiple>
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="namaakun" placeholder="User UPer">
+                                        <input type="text" class="form-control" name="namaakunuser" placeholder="User UPer">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="userssoakun" placeholder="User_UPer01">
+                                        <input type="text" class="form-control" name="ssoakunuser" placeholder="User_UPer01">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="userPW" placeholder="User_UPer01"><!-- buat kolom db baru?-->
+                                        <input type="text" class="form-control" name="passwordakunuser" placeholder="User_UPer01"><!-- buat kolom db baru?-->
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="emailakun" placeholder="User.uper@dududu.ac.id">
+                                        <input type="text" class="form-control" name="emailakunuser" placeholder="User.uper@dududu.ac.id">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nipakun" placeholder="122333">
+                                        <input type="text" class="form-control" name="nipakunuser" placeholder="122333">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelpakun" placeholder="0812xxx">
+                                        <input type="text" class="form-control" name="notelpakunuser" placeholder="0812xxx">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="select" class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="roleakun">
+                                            <select class="form-control" name="roleakunuser">
                                                 <option>Role 1</option>
                                                 <option>Role 2</option>
                                                 <option>Role 3</option>
@@ -123,7 +124,7 @@
                                     <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="statusakun">
+                                            <select class="form-control" name="statusakunuser">
                                                 <option>Aktif</option>
                                                 <option>Tidak Aktif</option>
                                             </select>
@@ -142,5 +143,5 @@
 
 
             <!-- /.card-body -->
-    
-@endsection
+
+            @endsection
