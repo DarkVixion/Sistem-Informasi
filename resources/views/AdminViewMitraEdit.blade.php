@@ -23,7 +23,7 @@
         <div class="form-group row">
             <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" disable>
+                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" >
             </div>
         </div><br>
         <div class="form-group row">
@@ -84,11 +84,11 @@
 <!-- Main content -->
 
     <div class="col-sm-12">
-        <a href="AdminViewMitraEdit">
+        <a href="#">
             <button type="button" class="btn btn-default" data-toggle="modal"
                     data-target="#modal-xl"
                     style="float:right; background-color:lightblue; border-radius:15px;">
-                    Edit
+                    Simpan
             </button>
         </a>
     </div>

@@ -59,9 +59,12 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(/*$id*/)
     {
-        //
+        $lkerja = LingkupKerja::all();
+        $jmitra = JenisMitra::all();
+        return view('AdminViewMitraEdit')->with('lk', $lkerja)
+            ->with('jm', $jmitra);
     }
 
     /**
