@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\LingkupKerja;
 use App\Models\JenisMitra;
 
 class MitraController extends Controller
@@ -44,10 +45,12 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show( /*$id*/ )
+    public function show( /*$id*/)
     {
+        $lkerja = LingkupKerja::all();
         $jmitra = JenisMitra::all();
-        return view('AdminViewMitra')->with('jm',$jmitra);
+        return view('AdminViewMitra')->with('lk', $lkerja)
+            ->with('jm', $jmitra);
     }
 
     /**
