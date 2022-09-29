@@ -20,6 +20,14 @@ class LingkupKerjaController extends Controller
         return back();
     }
 
+    public function update(Request $req, $id)
+    {
+        $input = $req->all();
+        $lingkup = LingkupKerja::find($id);
+        $lingkup->update($input);
+        return back();
+    }
+
     public function delete($id)
     {
         LingkupKerja::destroy($id);

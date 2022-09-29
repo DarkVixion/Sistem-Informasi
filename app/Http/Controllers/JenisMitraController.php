@@ -20,6 +20,14 @@ class JenisMitraController extends Controller
         return back();
     }
 
+    public function update(Request $req, $id)
+    {
+        $input = $req->all();
+        $jenis = JenisMitra::find($id);
+        $jenis->update($input);
+        return back();
+    }
+
         public function delete($id)
     {
         JenisMitra::destroy($id);

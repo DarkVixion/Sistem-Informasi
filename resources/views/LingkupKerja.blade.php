@@ -47,7 +47,7 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $item->judullingkupkerja }}</td>
                                     <td>
-                                        <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}" data-toggle="modal"><i class="fa fa-edit"></i></button>
                                         <form action="{{route('hapus_lingkup', $item->id)}}" method="POST" style="display:inline ">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
@@ -55,6 +55,40 @@
                                         </form>
                                     </td>
                                 </tr>
+                                
+                                <!-- modal untuk edit -->
+                                <div class="modal fade" id="modal-xxl{{ $item->id }}">
+                                    <div class="modal-dialog modal-xl">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Edit Lingkup Kerja Sama Baru</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <form action="{{route('edit_lingkup', $item->id)}}" method="post">
+                                            {!! csrf_field() !!}
+                                            @method("PATCH")
+                                            <div class="modal-body">
+                                                <div class="form-group row ">
+                                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+                                                    <div class="col-sm-10 ">
+                                                        <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru" value="{{ $item->judullingkupkerja }}">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer justify-content-between">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary" value="Save">Simpan</button>
+                                            </div>
+                                            </form>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <!-- /.modal -->
+                                
                                 @endforeach
                             </tbody>
                         </table>
@@ -67,6 +101,7 @@
         <!-- /.row -->
     </div>
 
+    <!-- modal untuk tambah lingkup -->
     <div class="modal fade" id="modal-xl">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
