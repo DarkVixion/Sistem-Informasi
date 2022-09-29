@@ -70,8 +70,10 @@
                                     <th>Jenis Mitra</th>
                                     <th>Judul</th>
                                     <th>Lingkup Kerja Sama</th>
-                                    <th>Periode Mulai</th>
-                                    <th>Periode Berakhir</th>
+                                    <th>Periode Mulai MoU</th>
+                                    <th>Periode Berakhir MoU</th>
+                                    <th>Periode Mulai MoA</th>
+                                    <th>Periode Berakhir MoA</th>
                                     <th>Misc.</th>
                                 </tr>
                             </thead>
@@ -83,8 +85,10 @@
                                     <td>{{ $item->jenismitra }}</td>
                                     <td>{{ $item->judulkerjasama }}</td>
                                     <td>{{ $item->lingkupkerja }}</td>
-                                    <td>{{ $item->tglmulai->format('Y-m-d') }}</td>
-                                    <td>{{ $item->tglselesai->format('Y-m-d') }}</td>
+                                    <td>{{ $item->tglmulai_mou->format('Y-m-d') }}</td>
+                                    <td>{{ $item->tglselesai_mou->format('Y-m-d') }}</td>
+                                    <td>{{ $item->tglmulai_moa }}</td>
+                                    <td>{{ $item->tglselesai_moa }}</td>
                                     <td>
                                         <a href="{{route('edit_kerjasama', $item->id)}}" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
                                         <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
