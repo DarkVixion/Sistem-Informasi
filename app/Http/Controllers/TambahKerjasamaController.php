@@ -28,12 +28,11 @@ class TambahKerjasamaController extends Controller
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
         return view('TambahKerja')->with('jm', $jenismitra)
-                                  ->with('lk', $lingkup);
+            ->with('lk', $lingkup);
     }
 
     public function store(Request $req) // store input dari hal Tambah Kerjasama
     {
-
         /*$data = $req->validate([
             'status' => 'required',
             'namamitra' => 'required',
@@ -122,8 +121,8 @@ class TambahKerjasamaController extends Controller
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
         return view('EditKerja')->with('tks', $tambahkerjasama)
-                                ->with('jm', $jenismitra)
-                                ->with('lk', $lingkup);
+            ->with('jm', $jenismitra)
+            ->with('lk', $lingkup);
     }
 
     public function update(Request $req, $id)

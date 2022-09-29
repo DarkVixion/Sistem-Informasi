@@ -41,8 +41,18 @@
                             <thead>
                                 <tr>
                                     <th>No. </th>
-                                    <th>User</th>
+                                    <th>Nama</th>
+                                    <th>Username</th>
+                                    <th>NIP</th>
                                     <th>Aksi</th>
+                                    {{-- <td>
+                                        <a href="{{route('edit_kerjasama', $item->id)}}" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                        <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td> --}}
                                 </tr>
                             </thead>
                             <tbody>
