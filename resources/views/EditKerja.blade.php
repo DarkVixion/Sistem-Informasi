@@ -307,7 +307,7 @@
                             <br><br><br>
                             <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" value="{{ $tks->tglmulai_mou->format('Y-m-d') }}">
+                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" value="{{ $tks->tglmulai_mou->format('d-m-Y') }}">
                             </div>
                             <br><br><br>
                             <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>

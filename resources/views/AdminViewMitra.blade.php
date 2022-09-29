@@ -1,7 +1,5 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
-
-
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
@@ -20,7 +18,6 @@
     <!-- /.container-fluid -->
 </section>
 <div class="card card-info">
-
     <!-- form start -->
     <div class="card-body">
         <div class="form-group row">
