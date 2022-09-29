@@ -51,7 +51,7 @@
     <!-- /.container-fluid -->
 
     <section class="content">
-        <form class="form-horizontal" action="{{route('inputdataakunuser')}}" --}} method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{route('inputdataakunuser')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="container-fluid">
                 <div class="row">
@@ -60,9 +60,9 @@
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-3">
                                 <div class="d-flex justify-content-center">
-                                    <img class=" profile-user-img img-fluid img-circle" src="asset ../../dist/img/user4-128x128.jpg" alt=" User profile picture">
+                                    <img class=" profile-user-img img-fluid img-circle" src="{{ asset('profilpicuser/'.$adminusermenu->path_profileakunuser) }}" alt=" User profile picture">
                                 </div>
-                                <h3 class="profile-username text-center">User UP</h3>
+                                <h3 class="profile-username text-center">{{ $adminusermenu->namaakunuser }}</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
@@ -73,37 +73,37 @@
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="namaakunuser" placeholder="User UPer">
+                                        <input type="text" class="form-control" name="namaakunuser" placeholder="User UPer" value="{{ $adminusermenu->namaakunuser }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="ssoakunuser" placeholder="User_UPer01">
+                                        <input type="text" class="form-control" name="ssoakunuser" placeholder="User_UPer01" value="{{ $adminusermenu->ssoakunuser }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="passwordakunuser" placeholder="User_UPer01"><!-- buat kolom db baru?-->
+                                        <input type="text" class="form-control" name="passwordakunuser" placeholder="User_UPer01" value="{{ $adminusermenu->passwordakunuser }}"><!-- buat kolom db baru?-->
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="emailakunuser" placeholder="User.uper@dududu.ac.id">
+                                        <input type="text" class="form-control" name="emailakunuser" placeholder="User.uper@dududu.ac.id" value="{{ $adminusermenu->emailakunuser }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nipakunuser" placeholder="122333">
+                                        <input type="text" class="form-control" name="nipakunuser" placeholder="122333" value="{{ $adminusermenu->nipakunuser }}">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelpakunuser" placeholder="0812xxx">
+                                        <input type="text" class="form-control" name="notelpakunuser" placeholder="0812xxx" value="{{ $adminusermenu->notelpakunuser }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
@@ -111,11 +111,11 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="roleakunuser">
-                                                <option>Role 1</option>
-                                                <option>Role 2</option>
-                                                <option>Role 3</option>
-                                                <option>Role 4</option>
-                                                <option>Staff</option>
+                                                <option {{-- if ($adminusermenu->roleakunuser == 'Role 1') selected @else "" @endif --}}>Role 1</option>
+                                                <option {{-- if ($adminusermenu->roleakunuser == 'Role 2') selected @else "" @endif --}}>Role 2</option>
+                                                <option {{-- if ($adminusermenu->roleakunuser == 'Role 3') selected @else "" @endif --}}>Role 3</option>
+                                                <option {{-- if ($adminusermenu->roleakunuser == 'Role 4') selected @else "" @endif --}}>Role 4</option>
+                                                <option {{-- if ($adminusermenu->roleakunuser == 'Staff') selected @else "" @endif --}}>Staff</option>
                                             </select>
                                         </div>
                                     </div>
@@ -125,8 +125,8 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="statusakunuser">
-                                                <option>Aktif</option>
-                                                <option>Tidak Aktif</option>
+                                                <option {{-- if ($adminusermenu->roleakunuser == 'Aktif') selected @else "" @endif --}}>Aktif</option>
+                                                <option {{-- if ($adminusermenu->roleakunuser == 'Tidak Aktif') selected @else "" @endif --}}>Tidak Aktif</option>
                                             </select>
                                         </div>
                                     </div>
