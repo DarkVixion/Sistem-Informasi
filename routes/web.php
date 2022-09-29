@@ -51,6 +51,10 @@ Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
 });
 
+Route::get('AdminViewMitra', function () {
+    return view('AdminViewMitra');
+});
+
 Route::get('AdminShowUser', function () {
     return view('AdminShowUser');
 });
