@@ -42,12 +42,12 @@ Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('t
 Route::get('JenisMitra', [JenisMitraController::class, 'index']);
 Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');
 Route::delete('JenisMitra/{id}', [JenisMitraController::class, 'delete'])->name('hapus_mitra');
-// Route::post('/JenisMitra/{id}/edit', [JenisMitraController::class, 'edit']);
-// Route::match(['put','patch'], '/JenisMitra/{id}/edit', [JenisMitraController::class, 'update']);
+Route::match(['put','patch'], '/JenisMitra/{id}/edit', [JenisMitraController::class, 'update'])->name('edit_mitra');
 
 Route::get('LingkupKerja', [LingkupKerjaController::class, 'index']);
 Route::post('LingkupKerja', [LingkupKerjaController::class, 'store'])->name('tambah_lingkup');
 Route::delete('LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->name('hapus_lingkup');
+Route::match(['put','patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaController::class, 'update'])->name('edit_lingkup');
 
 Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
