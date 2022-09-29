@@ -47,11 +47,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach($kerjasama as $item) --}}
                                 <tr>
-                                    <td>yeeaaay</td>
+                                    <td>{{ $jm[0]->juduljenismitra }}</td>
                                 </tr>
-                                {{-- @endforeach --}}
                             </tbody>
                         </table>
                     </div>

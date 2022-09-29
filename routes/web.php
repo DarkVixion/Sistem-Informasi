@@ -6,6 +6,7 @@ use App\Http\Controllers\AkunController;
 use App\Http\Controllers\JenisMitraController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
+use App\Http\Controllers\MitraController;
 use App\Models\TambahKerjasama;
 
 /*
@@ -30,9 +31,6 @@ Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun
 Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
 Route::get('/Akun', [AkunController::class, 'test2']);
 
-Route::get('Mitra', function () {
-    return view('Mitra');
-});
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('Kerjasama/edit/{id}', [TambahKerjasamaController::class, 'edit'])->name('edit_kerjasama');
@@ -54,9 +52,9 @@ Route::get('InformasiMitra', function () {
     return view('InformasiMitra');
 });
 
-Route::get('AdminViewMitra', function () {
-    return view('AdminViewMitra');
-});
+
+Route::get('Mitra', [MitraController::class, 'index']);
+Route::get('AdminViewMitra', [MitraController::class, 'show']);
 
 Route::get('AdminShowUser', function () {
     return view('AdminShowUser');

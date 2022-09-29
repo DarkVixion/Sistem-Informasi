@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\JenisMitra;
 
 class MitraController extends Controller
 {
@@ -13,7 +14,7 @@ class MitraController extends Controller
      */
     public function index()
     {
-        //
+        return view('Mitra');
     }
 
     /**
@@ -43,9 +44,10 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show( /*$id*/ )
     {
-        //
+        $jmitra = JenisMitra::all();
+        return view('AdminViewMitra')->with('jm',$jmitra);
     }
 
     /**
