@@ -352,12 +352,22 @@
                             <br><br><br>
                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" value="{{ $tks->tglmulai_moa }}">
+                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" 
+                                    value="@if ( $item->tglmulai_moa  != null)
+                                            {{ $item->tglmulai_moa->format('Y-m-d') }}
+                                            @else
+                                            {{ $item->tglmulai_moa}}
+                                            @endif ">
                             </div>
                             <br><br><br>
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" value="{{ $tks->tglselesai_moa }}">
+                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" 
+                                    value="@if ( $item->tglselesai_moa  != null)
+                                            {{ $item->tglselesai_moa->format('Y-m-d') }}
+                                            @else
+                                            {{ $item->tglselesai_moa }}
+                                            @endif ">
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
