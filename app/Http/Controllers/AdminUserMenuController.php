@@ -53,7 +53,7 @@ class AdminUserMenuController extends Controller
         $adminusermenu = new AdminUserMenu();
         //$adminusermenu->where('id', '4');
 
-        $bebasuser = $adminusermenu::where('id', '2')->first();
+        $bebasuser = $adminusermenu::where('id', '1')->first();
 
         return view('AdminUserMenu')->with('adminusermenu', $bebasuser);
     }
