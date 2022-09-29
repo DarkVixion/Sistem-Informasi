@@ -165,6 +165,12 @@
                             <p>Mitra</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/Akun" class="nav-link">
+                            <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
+                            <p>User</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
