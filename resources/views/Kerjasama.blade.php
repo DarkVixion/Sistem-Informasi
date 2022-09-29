@@ -87,8 +87,20 @@
                                     <td>{{ $item->lingkupkerja }}</td>
                                     <td>{{ $item->tglmulai_mou->format('Y-m-d') }}</td>
                                     <td>{{ $item->tglselesai_mou->format('Y-m-d') }}</td>
-                                    <td>{{ $item->tglmulai_moa }}</td>
-                                    <td>{{ $item->tglselesai_moa }}</td>
+                                    <td>
+                                        @if ( $item->tglmulai_moa  != null)
+                                        {{ $item->tglmulai_moa->format('Y-m-d') }}
+                                        @else
+                                        {{ $item->tglmulai_moa}}
+                                        @endif                                    
+                                    </td>
+                                    <td>
+                                        @if ( $item->tglselesai_moa  != null)
+                                        {{ $item->tglselesai_moa->format('Y-m-d') }}
+                                        @else
+                                        {{ $item->tglselesai_moa }}
+                                        @endif  
+                                    </td>
                                     <td>
                                         <a href="{{route('edit_kerjasama', $item->id)}}" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
                                         <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
