@@ -59,7 +59,7 @@
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-3">
                                 <div class="d-flex justify-content-center">
-                                    <img class=" profile-user-img img-fluid img-circle" src="{{ asset('profilpic/'.$akun->path_profileakun) }}" alt=" User profile picture">
+                                    {{-- <img class=" profile-user-img img-fluid img-circle" src="{{ asset('profilpic/'.$akun->path_profileakun) }}" alt=" User profile picture"> --}}
                                 </div>
                                 <h3 class="profile-username text-center">{{ $akun->namaakun }}</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
