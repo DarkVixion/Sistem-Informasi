@@ -312,7 +312,7 @@
                             <br><br><br>
                             <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou" value="{{ $tks->tglselesai_mou }}">
+                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou" value="{{ $tks->tglselesai_mou->format('Y-m-d') }}">
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -357,7 +357,7 @@
                             <br><br><br>
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" value="{{ $tks->tglselesai_moa}}">
+                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" value="{{ $tks->tglselesai_moa }}">
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
