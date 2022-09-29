@@ -68,7 +68,6 @@
                                     <th>Bulan Pencatatan</th>
                                     <th>Nama</th>
                                     <th>Jenis Mitra</th>
-                                    <th>Jenis Kontrak</th>
                                     <th>Judul</th>
                                     <th>Lingkup Kerja Sama</th>
                                     <th>Periode Mulai</th>
@@ -82,7 +81,6 @@
                                     <td>{{ $item->bulaninput }}</td>
                                     <td>{{ $item->namamitra }}</td>
                                     <td>{{ $item->jenismitra }}</td>
-                                    <td>{{-- $item->jenismitra --}}</td>
                                     <td>{{ $item->judulkerjasama }}</td>
                                     <td>{{ $item->lingkupkerja }}</td>
                                     <td>{{ $item->tglmulai->format('Y-m-d') }}</td>
