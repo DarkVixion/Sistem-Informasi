@@ -382,7 +382,7 @@
                                 <div class="col-sm-10">
                                     <div class="form-group">
                                         <select class="form-control" name="assignuserakun">
-                                            <option hidden>Pilih PIC</option>
+                                            <option hidden>Pilih Nama PIC User</option>
                                             <option>User 1 sementara</option>
                                             <option>User 2 sementara</option>
                                         </select>
