@@ -6,7 +6,7 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1>Detail Mitra</h1>
-            </div>            
+            </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/Mitra">Mitra</a></li>
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <select class="form-control" name="jenismitra" disabled>
                         @foreach ($jm as $item)
-                            <option>{{ $item->juduljenismitra }}</option >
+                        <option>{{ $item->juduljenismitra }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <select class="form-control" name="jenismitra" disabled>
                         @foreach ($lk as $item)
-                            <option>{{ $item->judullingkupkerja }}</option>
+                        <option>{{ $item->judullingkupkerja }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -55,7 +55,7 @@
             <div class="col-sm-10 ">
                 <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" disabled>
             </div>
-            <br><br><br>            
+            <br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
             <div class="col-sm-10 ">
                 <input type="url" class="form-control " name="website" placeholder="Masukan Website" disabled>
@@ -63,38 +63,39 @@
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
             <div class="col-sm-10 ">
                 <input type="number" class="form-control " name="notelpmitra" placeholder="nama narahubung" disabled>
-            </div><br><br><br>            
+            </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" disabled>
-            </div><br><br><br>           
+                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone"
+                    disabled>
+            </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
             <div class="col-sm-10 ">
                 <input type="number" class="form-control " name="notelpmitra" placeholder="nama pic" disabled>
-            </div><br><br><br>            
+            </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" disabled>
+                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone"
+                    disabled>
             </div><br><br>
-        </div>       
+        </div>
 
     </div>
     <!-- /.card-body -->
-</div>
-<!-- Main content -->
-
-    <div class="col-sm-12">
+    <div class=" card-footer ">
         <a href="AdminViewMitraEdit">
-            <button type="button" class="btn btn-default" data-toggle="modal"
-                    data-target="#modal-xl"
-                    style="float:right; background-color:lightblue; border-radius:15px;">
-                    Edit
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
+                style="float:right; background-color:lightblue; border-radius:15px;">
+                Edit
             </button>
         </a>
     </div>
+</div>
+<!-- Main content -->
 
-    
-    {{-- <div class="modal fade" id="modal-xl">
+
+
+{{-- <div class="modal fade" id="modal-xl">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -104,26 +105,27 @@
                     </button>
                 </div>
                 <form action="{{route('tambah_lingkup')}}" method="post">
-                {!! csrf_field() !!}
-                <div class="modal-body">
-                    <div class="form-group row ">
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                        <div class="col-sm-10 ">
-                            <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
-                </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
+{!! csrf_field() !!}
+<div class="modal-body">
+    <div class="form-group row ">
+        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+        <div class="col-sm-10 ">
+            <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3"
+                placeholder="Masukan Lingkup Kerja Sama Baru">
         </div>
-        <!-- /.modal-dialog -->
-    </div> --}}
-    <!-- /.modal -->
+    </div>
+</div>
+<div class="modal-footer justify-content-between">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
+</div>
+</form>
+</div>
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div> --}}
+<!-- /.modal -->
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>

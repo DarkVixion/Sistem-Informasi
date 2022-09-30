@@ -86,13 +86,28 @@ class AkunController extends Controller
         $akun = Akun::find($id);
         $akun->update($input);
 
-        $picprofile = '';
-        $file = $req['path_profileakun'];
+        //$picprofile = '';
+
+        /*$file = $req['path_profileakun'];
         $namapicprofile = $req['namaakun'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
         $picprofile .= $namapicprofile;
-        $file->move(public_path('profilpic'), $namapicprofile);
-        $akun->path_profileakun = $picprofile;
-        $akun->save();
+        $file->move(public_path('profilpic'), $namapicprofile);*/
+
+        if (isset($req['path_profileakun'])) {
+            $picprofile = '';
+
+            $file = $req['path_profileakun'];
+            $namapicprofile = $req['namaakun'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+            $picprofile .= $namapicprofile;
+            $file->move(public_path('profilpic'), $namapicprofile);
+
+            $akun->path_profileakun = $picprofile;
+            $akun->save();
+        }
+
+
+        /*$akun->path_profileakun = $picprofile;
+        $akun->save();*/
 
         return back();
     }

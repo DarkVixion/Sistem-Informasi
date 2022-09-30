@@ -16,7 +16,8 @@ class Akun extends Model
         "nipakun",
         "notelpakun",
         "roleakun",
-        "statusakun"
+        "statusakun",
+        "_token"
     ];
 
     public $timestamp = false;
