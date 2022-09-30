@@ -232,7 +232,7 @@
                                 <div class="form-group">
                                     <select class="form-control" name="jenismitra">
                                         @foreach ($jm as $item)
-                                            <option>{{ $item->juduljenismitra }}</option>
+                                        <option>{{ $item->juduljenismitra }}</option>
                                         @endforeach
                                         <option hidden selected>{{ $tks->jenismitra }}</option>
                                     </select>
@@ -251,7 +251,7 @@
                                 <div class="form-group ">
                                     <select class="form-control" name="lingkupkerja">
                                         @foreach ($lk as $item)
-                                            <option>{{ $item->judullingkupkerja }}</option>
+                                        <option>{{ $item->judullingkupkerja }}</option>
                                         @endforeach
                                         <option hidden selected>{{ $tks->lingkupkerja }}</option>
                                     </select>
@@ -420,18 +420,17 @@
                                         <option>Bapak Abcd</option>
                                         <option>Ibu Efgh</option>
                                     </select>
-
                                 </div>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
+                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="emailpic" value="" disabled>
+                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="">
                             </div>
                         </div>
 
