@@ -4,8 +4,7 @@
     <title>Tambah Kerja Sama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -26,15 +25,15 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 
     <style>
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
-    input[type=number] {
-        -moz-appearance: textfield;
-    }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     </style>
 </head>
 
@@ -54,8 +53,7 @@
                     <div class="navbar-search-block">
                         <form class="form-inline">
                             <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                    aria-label="Search">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-navbar" type="submit">
                                         <i class="fas fa-search"></i>
@@ -79,15 +77,13 @@
                         <span class="dropdown-item dropdown-header">2 Notifications</span>
                         <div class="dropdown-divider"></div>
                         <a href="/InformasiMitra" class="dropdown-item">
-                            <img class="nav-icon"
-                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
+                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
                             Kedaluwarsa - nama MOU
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="/InformasiMitra" class="dropdown-item">
-                            <img class="nav-icon"
-                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
+                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
                             Dokumen - nama kerja sama
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
@@ -124,8 +120,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -168,17 +163,13 @@
                         </li>
                         <li class="nav-item">
                             <a href="/Mitra" class="nav-link">
-                                <img class="nav-icon" style="opacity: 75%"
-                                    srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
-                                    loading="lazy"></img>
+                                <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
                                 <p>Mitra</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="Akun" class="nav-link">
-                                <img class="nav-icon" style="opacity: 55%"
-                                    srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x"
-                                    alt="Building icon" loading="lazy"></img>
+                                <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
                                 <p>User</p>
                             </a>
                         </li>
@@ -208,8 +199,7 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
-                <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST"
-                    enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <!-- Horizontal Form -->
                     <div class="card card-info">
@@ -230,8 +220,7 @@
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="namamitra"
-                                        placeholder="Masukan Nama Mitra">
+                                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -247,8 +236,7 @@
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control " name="judulkerjasama"
-                                        placeholder="Masukan Judul Kerja Sama">
+                                    <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama">
                                 </div>
                             </div>
                             <div class="form-group row ">
@@ -274,13 +262,11 @@
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                                 <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra"
-                                        placeholder="Masukan Nomor Telephone">
+                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
                                 </div><br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                                 <div class="col-sm-10 ">
-                                    <input type="url" class="form-control " name="website"
-                                        placeholder="Masukan Website">
+                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website">
                                 </div><br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                                 <div class="col-sm-10 ">
@@ -304,21 +290,17 @@
                                 <br><br>
                                 <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('judul_mou') is-invalid @enderror"
-                                        name="judul_mou" placeholder="Masukan Judul Kerja Sama">
+                                    <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
                                 </div>
                                 <br><br>
                                 <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror"
-                                        name="tglmulai_mou">
+                                    <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou">
                                 </div>
                                 <br><br>
                                 <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                                 <div class=" col-sm-10 ">
-                                    <input type="date"
-                                        class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                        name="tglselesai_mou">
+                                    <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou">
                                 </div>
                                 <br><br>
                                 <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -343,28 +325,22 @@
                                 <br><br>
                                 <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('judul_moa') is-invalid @enderror"
-                                        name="judul_moa" placeholder="Masukan Judul Kerja Sama">
+                                    <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama">
                                 </div>
                                 <br><br>
                                 <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                                 <div class="col-sm-10">
-                                    <input type="number"
-                                        class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                        name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
+                                    <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
                                 </div>
                                 <br><br>
                                 <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror"
-                                        name="tglmulai_moa">
+                                    <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa">
                                 </div>
                                 <br><br>
                                 <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                                 <div class=" col-sm-10 ">
-                                    <input type="date"
-                                        class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                        name="tglselesai_moa">
+                                    <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa">
                                 </div>
                                 <br><br>
                                 <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
@@ -382,14 +358,12 @@
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="narahubung"
-                                        placeholder="Masukkan Narahubung">
+                                    <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control " name="notelpnara"
-                                        placeholder="No. Telepon">
+                                    <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
@@ -417,14 +391,23 @@
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name='notelppic' id="notelppic"
-                                        placeholder="notelppic" value="" disabled>
+                                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                 <div class="col-sm-10 ">
-                                    <input type="text" class="form-control" name="emailpic" id="emailpic"
-                                        placeholder="emailpic" value="" disabled>
+                                    <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="emailpic" value="" disabled>
+                                </div>
+                                <br><br>
+                                <label for="input" class="col-sm-2 col-form-label">Assigned User</label>
+                                <div class="col-sm-10">
+                                    <div class="form-group">
+                                        <select class="form-control" name="assignakun">
+                                            <option hidden>Pilih Nama User untuk diassign</option>
+                                            <option>User 1</option>
+                                            <option>USer 2</option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
