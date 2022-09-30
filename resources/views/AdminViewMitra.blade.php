@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <select class="form-control" name="jenismitra" disabled>
                         @foreach ($jm as $item)
-                            <option>{{ $item->juduljenismitra }}</option>
+                            <option>{{ $item->juduljenismitra }}</option >
                         @endforeach
                     </select>
                 </div>

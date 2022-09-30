@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Models\TambahKerjasama;
+use App\Http\Controllers\AdminUserMenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('AdminDashboard', function () {
 
 Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
 
-// <-- BAGIAN TEST -->
+// <-- BAGIAN TEST AKUN ADMIN -->
 Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
 Route::get('/Akun', [AkunController::class, 'test2']);
 
@@ -61,12 +62,14 @@ Route::get('AdminViewMitraEdit', [MitraController::class, 'edit']);
 Route::get('AdminShowUser', function () {
     return view('AdminShowUser');
 });
-
+Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
 
 // <-- BAGIAN USER -->
 Route::get('AdminUserMenu', function () {
     return view('AdminUserMenu');
 });
+Route::post('/AdminUserMenuStore', [AdminUserMenuController::class, 'store'])->name('inputdataakunuser');
+Route::get('/AdminUserMenu', [AdminUserMenuController::class, 'testuser']);
 
 Route::get('UserDashboard', function () {
     return view('UserDashboard');
