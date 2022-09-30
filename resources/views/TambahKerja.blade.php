@@ -382,7 +382,7 @@
                                 <div class="col-sm-10">
                                     <div class="form-group">
                                         <select class="form-control" name="pic">
-                                            <option hidden>Pilih Nama PIC UPer</option>
+                                            <option value="" hidden>Pilih Nama PIC UPer</option>
                                             <option>Bapak Abcd</option>
                                             <option>Ibu Efgh</option>
                                         </select>
@@ -403,7 +403,7 @@
                                 <div class="col-sm-10">
                                     <div class="form-group">
                                         <select class="form-control" name="assignakun">
-                                            <option hidden>Pilih Nama User untuk diassign</option>
+                                            <option value="" hidden>Pilih Nama User untuk diassign</option>
                                             <option>User 1</option>
                                             <option>USer 2</option>
                                         </select>

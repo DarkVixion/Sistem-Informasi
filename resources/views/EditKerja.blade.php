@@ -354,7 +354,7 @@
                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" 
-                                    value="@if ( $item->tglmulai_moa  != null)
+                                    value="@if ( $item->tglmulai_moa != null)
                                             {{ $item->tglmulai_moa->format('Y-m-d') }}
                                             @else
                                             {{ $item->tglmulai_moa}}
@@ -364,7 +364,7 @@
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
                                 <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" 
-                                    value="@if ( $item->tglselesai_moa  != null)
+                                    value="@if ( $item->tglselesai_moa != null)
                                             {{ $item->tglselesai_moa->format('Y-m-d') }}
                                             @else
                                             {{ $item->tglselesai_moa }}
@@ -416,7 +416,7 @@
                             <div class="col-sm-10">
                                 <div class="form-group">
                                     <select class="form-control" name="pic">
-                                        <option hidden>Pilih Nama PIC UPer</option>
+                                        <option value="" hidden>Pilih Nama PIC UPer</option>
                                         <option>Bapak Abcd</option>
                                         <option>Ibu Efgh</option>
                                     </select>

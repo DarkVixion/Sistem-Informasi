@@ -23,7 +23,7 @@
         <div class="form-group row">
             <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" disabled>
+                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}" disabled>
             </div>
         </div><br>
         <div class="form-group row">
@@ -31,9 +31,7 @@
             <div class="col-sm-10">
                 <div class="form-group">
                     <select class="form-control" name="jenismitra" disabled>
-                        @foreach ($jm as $item)
-                        <option>{{ $item->juduljenismitra }}</option>
-                        @endforeach
+                        <option>{{ $tks->jenismitra }}</option>
                     </select>
                 </div>
             </div>
@@ -43,9 +41,7 @@
             <div class="col-sm-10">
                 <div class="form-group">
                     <select class="form-control" name="jenismitra" disabled>
-                        @foreach ($lk as $item)
-                        <option>{{ $item->judullingkupkerja }}</option>
-                        @endforeach
+                        <option>{{ $tks->lingkupkerja }}</option>
                     </select>
                 </div>
             </div>
@@ -53,30 +49,28 @@
         <div class="form-group row ">
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
             <div class="col-sm-10 ">
-                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" disabled>
+                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}" disabled>
             </div>
             <br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
             <div class="col-sm-10 ">
-                <input type="url" class="form-control " name="website" placeholder="Masukan Website" disabled>
+                <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}" disabled>
             </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="nama narahubung" disabled>
+                <input type="text" class="form-control " name="notelpmitra" placeholder="nama narahubung" value="{{ $tks->narahubung }}" disabled>
             </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone"
-                    disabled>
+                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" value="{{ $tks->notelpnara }}" disabled>
             </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="nama pic" disabled>
+                <input type="text" class="form-control " name="notelpmitra" placeholder="nama pic" value="{{ $tks->pic }}" disabled>
             </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone"
-                    disabled>
+                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" value="" disabled>
             </div><br><br>
         </div>
 

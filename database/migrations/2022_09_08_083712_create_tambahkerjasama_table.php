@@ -21,10 +21,10 @@ class CreateTambahkerjasamaTable extends Migration
             $table->string("lingkupkerja");
             $table->string("alamat");
             $table->string("negara");
-            $table->integer("notelpmitra");
+            $table->bigInteger("notelpmitra");
             $table->string("website");
             $table->string("bulaninput");
-            $table->integer("nilaikontrak");
+            $table->bigInteger("nilaikontrak", false, true)->nullable();
             $table->string("judul_mou");
             $table->date("tglmulai_mou");
             $table->date("tglselesai_mou");
@@ -34,9 +34,11 @@ class CreateTambahkerjasamaTable extends Migration
             $table->date("tglselesai_moa")->nullable();
             $table->string("path_moa");
             $table->string("narahubung");
-            $table->integer("notelpnara");
+            $table->bigInteger("notelpnara");
             $table->string("emailnara");
-            $table->string("pic");
+            $table->string("pic")->nullable();
+            $table->bigInteger('notelppic')->nullable();
+            $table->string('emailpic')->nullable();
             $table->string("status");
             $table->datetime("updated_at");
             $table->datetime("created_at");

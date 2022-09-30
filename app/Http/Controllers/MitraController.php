@@ -26,12 +26,10 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show( /*$id*/)
+    public function show($id)
     {
-        $lkerja = LingkupKerja::all();
-        $jmitra = JenisMitra::all();
-        return view('AdminViewMitra')->with('lk', $lkerja)
-            ->with('jm', $jmitra);
+        $tks = TambahKerjasama::find($id);
+        return view('AdminViewMitra')->with('tks', $tks);
     }
 
     /**
@@ -40,12 +38,14 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(/*$id*/)
+    public function edit($id)
     {
+        $tks = TambahKerjasama::find($id);
         $lkerja = LingkupKerja::all();
         $jmitra = JenisMitra::all();
-        return view('AdminViewMitraEdit')->with('lk', $lkerja)
-            ->with('jm', $jmitra);
+        return view('AdminViewMitraEdit')->with('tks', $tks)
+                                         ->with('lk', $lkerja)
+                                         ->with('jm', $jmitra);
     }
 
     /**

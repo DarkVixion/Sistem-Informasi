@@ -110,13 +110,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="JenisMitra" class="nav-link">
+                                    <a href="/JenisMitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Jenis Mitra</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="LingkupKerja" class="nav-link">
+                                    <a href="/LingkupKerja" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lingkup Kerja Sama</p>
                                     </a>
@@ -124,7 +124,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="Kerjasama" class="nav-link">
+                            <a href="/Kerjasama" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>Kerjasama</p>
                             </a>

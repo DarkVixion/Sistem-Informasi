@@ -86,20 +86,20 @@
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $item->namamitra }}</td>
                                                     <td>MoU</td>
-                                                    <td><a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                    <td><a href="{{ route('show_mitra', $item->id) }}"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
                                                 </tr>
                                             @else
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $item->namamitra }}</td>
                                                     <td>MoU</td>
-                                                    <td><a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                    <td><a href="{{ route('show_mitra', $item->id) }}"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $item->namamitra }}</td>
                                                     <td>MoA</td>
-                                                    <td><a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                    <td><a href="{{ route('show_mitra', $item->id) }}"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
                                                 </tr>
                                             @endif
                                         @endforeach

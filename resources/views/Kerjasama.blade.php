@@ -84,7 +84,11 @@
                                     <td>{{ $item->jenismitra }}</td>
                                     <td>{{ $item->judulkerjasama }}</td>
                                     <td>{{ $item->lingkupkerja }}</td>
-                                    <td>Rp {{ $item->nilaikontrak }}</td>
+                                    <td>
+                                        @if ( $item->nilaikontrak != null)
+                                        Rp {{ $item->nilaikontrak }}
+                                        @endif
+                                    </td>
                                     <td>{{ $item->tglmulai_mou->format('Y-m-d') }}</td>
                                     <td>{{ $item->tglselesai_mou->format('Y-m-d') }}</td>
                                     <td>

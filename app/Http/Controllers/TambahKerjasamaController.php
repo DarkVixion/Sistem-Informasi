@@ -93,7 +93,7 @@ class TambahKerjasamaController extends Controller
 
         foreach ($req['path_mou'] as $file) {
             $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-            $mou .= $namafilemou . '_';
+            $mou = $namafilemou;
             // . untuk menggabungkan semua nama filenya
 
             $file->move(public_path('files'), $namafilemou);
