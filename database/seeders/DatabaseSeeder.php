@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             JenisMitraSeeder::class,
-            LingkupKerjaSeeder::class
+            LingkupKerjaSeeder::class,
+            AkunAdminSeeder::class
         ]);
     }
 }
