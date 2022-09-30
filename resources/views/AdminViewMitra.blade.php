@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <select class="form-control" name="jenismitra">
                         @foreach ($jm as $item)
-                            <option>{{ $item->juduljenismitra }}</option>
+                            <option>{{ $item->juduljenismitra }}</option >
                         @endforeach
                     </select>
                 </div>
@@ -53,28 +53,28 @@
         <div class="form-group row ">
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
             <div class="col-sm-10 ">
-                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
+                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" disabled>
             </div>
             <br><br><br>            
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
             <div class="col-sm-10 ">
-                <input type="url" class="form-control " name="website" placeholder="Masukan Website">
+                <input type="url" class="form-control " name="website" placeholder="Masukan Website" disabled>
             </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="nama narahubung">
+                <input type="number" class="form-control " name="notelpmitra" placeholder="nama narahubung" disabled>
             </div><br><br><br>            
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
+                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" disabled>
             </div><br><br><br>           
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="nama pic">
+                <input type="number" class="form-control " name="notelpmitra" placeholder="nama pic" disabled>
             </div><br><br><br>            
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
             <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
+                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" disabled>
             </div><br><br>
         </div>       
 
