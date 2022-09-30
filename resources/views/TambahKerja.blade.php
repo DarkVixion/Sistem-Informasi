@@ -262,7 +262,7 @@
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                                 <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
+                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                 </div><br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                                 <div class="col-sm-10 ">
@@ -363,7 +363,7 @@
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon">
+                                    <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
