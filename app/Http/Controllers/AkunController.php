@@ -76,7 +76,7 @@ class AkunController extends Controller
         $akun = new Akun();
         //$akun->where('id', '4');
 
-        $bebas = $akun::where('id', '5')->first();
+        $bebas = $akun::where('id', '1')->first();
 
         return view('Akun')->with('akun', $bebas);
     }

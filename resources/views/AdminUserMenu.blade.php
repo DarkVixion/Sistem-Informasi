@@ -62,7 +62,7 @@
                                 <div class="d-flex justify-content-center">
                                     <img class=" profile-user-img img-fluid img-circle" src="../../dist/img/user2-160x160.jpg" alt=" User profile picture">
                                 </div>
-                                <h3 class="profile-username text-center">USer UP</h3>
+                                <h3 class="profile-username text-center">User UP</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>

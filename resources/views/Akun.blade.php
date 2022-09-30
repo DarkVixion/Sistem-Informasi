@@ -59,9 +59,9 @@
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-3">
                                 <div class="d-flex justify-content-center">
-                                    {{-- <img class=" profile-user-img img-fluid img-circle" src="{{ asset('profilpic/'.$akun->path_profileakun) }}" alt=" User profile picture"> --}}
+                                    <img class=" profile-user-img img-fluid img-circle" src="{{ asset('profilpic/'.$akun->path_profileakun) }}" alt=" User profile picture">
                                 </div>
-                                <h3 class="profile-username text-center">{{ $akun->namaakun }}</h3>
+                                <h3 class="profile-username text-center"> {{ $akun->namaakun }} </h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
@@ -107,7 +107,7 @@
                                                 <option {{-- if ($akun->roleakun == 'Role 1') selected @else "" @endif --}}> Role 1</option>
                                                 <option {{-- if ($akun->roleakun == 'Role 2') selected @else "" @endif --}}> Role 2</option>
                                                 <option {{-- if ($akun->roleakun == 'Role 3') selected @else "" @endif --}}> Role 3</option>
-                                                <option {{-- if ($akun->roleakun == 'Role 4') selected @else "" @endif --}}> Role 4</option>
+                                                <option {{--if ($akun->roleakun == 'Role 4') selected @else "" @endif --}}> Role 4</option>
                                                 <option {{-- if ($akun->roleakun == 'Staff') selected @else "" @endif --}}> Staff</option>
                                             </select>
                                         </div>
