@@ -27,7 +27,7 @@ class AkunController extends Controller
         return view('');
     }
 
-    public function store(Request $req) // store input dari hal Akun
+    /* public function store(Request $req) // store input dari hal Akun
     {
 
         $data = $req->validate([
@@ -63,21 +63,37 @@ class AkunController extends Controller
         $akun->save();
 
         return redirect('AdminDashboard');
-    }
+    } 
 
     public function test() //untuk testing
     {
         $akun = Akun::all();
         return view('AkunTampil')->with('akun', $akun);
-    }
+    } */
 
-    public function test2()
+    public function isiakun()
     {
-        $akun = new Akun();
-        //$akun->where('id', '4');
+        $akun = Akun::find(1);
 
         $bebas = $akun::where('id', '1')->first();
 
         return view('Akun')->with('akun', $bebas);
+    }
+
+    public function edit(Request $req, $id)
+    {
+        $input = $req->all();
+        $akun = Akun::find($id);
+        $akun->update($input);
+
+        $picprofile = '';
+        $file = $req['path_profileakun'];
+        $namapicprofile = $req['namaakun'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+        $picprofile .= $namapicprofile;
+        $file->move(public_path('profilpic'), $namapicprofile);
+        $akun->path_profileakun = $picprofile;
+        $akun->save();
+
+        return back();
     }
 }
