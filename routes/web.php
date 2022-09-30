@@ -7,7 +7,6 @@ use App\Http\Controllers\JenisMitraController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
-use App\Models\TambahKerjasama;
 use App\Http\Controllers\AdminUserMenuController;
 
 /*
@@ -32,7 +31,6 @@ Route::get('/Akun', [AkunController::class, 'isiakun']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
 Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
-
 
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);

@@ -63,22 +63,46 @@
                                     <tbody>
                                         <tr>
                                             <td> 1. </td>
-                                            <td>DIKTI</td>  {{--  --}}
-                                            <td>MOU</td>
+                                            <td>DIKTI</td>
+                                            <td>MoU</td>
                                             <td> <a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
                                         </tr>
                                         <tr>
                                             <td> 2. </td>
-                                            <td>DIKTI</td>  {{--  --}}
-                                            <td>MOA</td>
+                                            <td>DIKTI</td>
+                                            <td>MoA</td>
                                             <td> <a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
                                         </tr>
                                         <tr>
                                             <td> 3. </td>
-                                            <td>DIKTI</td>  {{--  --}}
-                                            <td>MOA</td>
+                                            <td>DIKTI</td>
+                                            <td>MoA</td>
                                             <td> <a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
                                         </tr>
+
+                                        @foreach ($tks as $item)
+                                            @if ($item->path_moa == null)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $item->namamitra }}</td>
+                                                    <td>MoU</td>
+                                                    <td><a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                </tr>
+                                            @else
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $item->namamitra }}</td>
+                                                    <td>MoU</td>
+                                                    <td><a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $item->namamitra }}</td>
+                                                    <td>MoA</td>
+                                                    <td><a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
                                     </tbody>
                             </table>
                         </div>

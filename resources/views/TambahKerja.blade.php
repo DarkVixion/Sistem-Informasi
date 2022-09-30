@@ -274,13 +274,11 @@
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                                 <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra"
-                                        placeholder="Masukan Nomor Telephone">
+                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                 </div><br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                                 <div class="col-sm-10 ">
-                                    <input type="url" class="form-control " name="website"
-                                        placeholder="Masukan Website">
+                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website">
                                 </div><br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                                 <div class="col-sm-10 ">
@@ -382,14 +380,12 @@
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="narahubung"
-                                        placeholder="Masukkan Narahubung">
+                                    <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control " name="notelpnara"
-                                        placeholder="No. Telepon">
+                                    <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
@@ -417,14 +413,12 @@
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name='notelppic' id="notelppic"
-                                        placeholder="notelppic" value="" disabled>
+                                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                 <div class="col-sm-10 ">
-                                    <input type="text" class="form-control" name="emailpic" id="emailpic"
-                                        placeholder="emailpic" value="" disabled>
+                                    <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="emailpic" value="" disabled>
                                 </div>
                             </div>
                         </div>
