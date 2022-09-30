@@ -70,6 +70,7 @@
                                     <th>Jenis Mitra</th>
                                     <th>Judul</th>
                                     <th>Lingkup Kerja Sama</th>
+                                    <th>Nilai Kontrak</th>
                                     <th>Periode Mulai MoU</th>
                                     <th>Periode Berakhir MoU</th>
                                     <th>Periode Mulai MoA</th>
@@ -85,6 +86,7 @@
                                     <td>{{ $item->jenismitra }}</td>
                                     <td>{{ $item->judulkerjasama }}</td>
                                     <td>{{ $item->lingkupkerja }}</td>
+                                    {{-- <nilai kontrak> --}}
                                     <td>{{ $item->tglmulai_mou->format('Y-m-d') }}</td>
                                     <td>{{ $item->tglselesai_mou->format('Y-m-d') }}</td>
                                     <td>
