@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <!-- Google Font: Source Sans Pro -->
@@ -27,13 +28,10 @@
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini">
-
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-
-
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light" >
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Notifications Dropdown Menu -->
@@ -45,13 +43,13 @@
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">2 Notifications</span>
                         <div class="dropdown-divider"></div>
-                        <a href="/UserInformasiMitra" class="dropdown-item">
+                        <a href="/AdminViewMitra" class="dropdown-item">
                             <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
                             Kedaluwarsa - nama MOU
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="/UserInformasiMitra" class="dropdown-item">
+                        <a href="/AdminViewMitra" class="dropdown-item">
                             <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
                             Dokumen - nama kerja sama
                             <span class="float-right text-muted text-sm">D-5</span>
@@ -63,7 +61,7 @@
                 <!-- profile -->
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image">
-                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" {{-- src="{{ asset('profilpic/'.$akun->path_profileakun) }}" --}} class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/Akun" class="d-block">Admin123</a>

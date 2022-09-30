@@ -23,7 +23,7 @@
         <div class="form-group row">
             <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" >
+                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
             </div>
         </div><br>
         <div class="form-group row">
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <select class="form-control" name="jenismitra">
                         @foreach ($jm as $item)
-                            <option>{{ $item->juduljenismitra }}</option>
+                        <option>{{ $item->juduljenismitra }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="form-group">
                     <select class="form-control" name="jenismitra">
                         @foreach ($lk as $item)
-                            <option>{{ $item->judullingkupkerja }}</option>
+                        <option>{{ $item->judullingkupkerja }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -55,7 +55,7 @@
             <div class="col-sm-10 ">
                 <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
             </div>
-            <br><br><br>            
+            <br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
             <div class="col-sm-10 ">
                 <input type="url" class="form-control " name="website" placeholder="Masukan Website">
@@ -63,38 +63,37 @@
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
             <div class="col-sm-10 ">
                 <input type="number" class="form-control " name="notelpmitra" placeholder="nama narahubung">
-            </div><br><br><br>            
+            </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
             <div class="col-sm-10 ">
                 <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
-            </div><br><br><br>           
+            </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
             <div class="col-sm-10 ">
                 <input type="number" class="form-control " name="notelpmitra" placeholder="nama pic">
-            </div><br><br><br>            
+            </div><br><br><br>
             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
             <div class="col-sm-10 ">
                 <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
             </div><br><br>
-        </div>       
+        </div>
 
     </div>
     <!-- /.card-body -->
-</div>
-<!-- Main content -->
-
-    <div class="col-sm-12">
+    <div class=" card-footer ">
         <a href="#">
-            <button type="button" class="btn btn-default" data-toggle="modal"
-                    data-target="#modal-xl"
-                    style="float:right; background-color:lightblue; border-radius:15px;">
-                    Simpan
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
+                style="float:right; background-color:lightblue; border-radius:15px;">
+                Simpan
             </button>
         </a>
     </div>
+</div>
+<!-- Main content -->
 
-    
-    {{-- <div class="modal fade" id="modal-xl">
+
+
+{{-- <div class="modal fade" id="modal-xl">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -104,26 +103,27 @@
                     </button>
                 </div>
                 <form action="{{route('tambah_lingkup')}}" method="post">
-                {!! csrf_field() !!}
-                <div class="modal-body">
-                    <div class="form-group row ">
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                        <div class="col-sm-10 ">
-                            <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
-                </div>
-                </form>
-            </div>
-            <!-- /.modal-content -->
+{!! csrf_field() !!}
+<div class="modal-body">
+    <div class="form-group row ">
+        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+        <div class="col-sm-10 ">
+            <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3"
+                placeholder="Masukan Lingkup Kerja Sama Baru">
         </div>
-        <!-- /.modal-dialog -->
-    </div> --}}
-    <!-- /.modal -->
+    </div>
+</div>
+<div class="modal-footer justify-content-between">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
+</div>
+</form>
+</div>
+<!-- /.modal-content -->
+</div>
+<!-- /.modal-dialog -->
+</div> --}}
+<!-- /.modal -->
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
