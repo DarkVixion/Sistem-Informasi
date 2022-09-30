@@ -5,12 +5,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Detail Mitra</h1>
+                <h1>Edit Detail Mitra</h1>
             </div>            
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">Mitra</a></li>
-                    <li class="breadcrumb-item active">Detail Mitra</li>
+                    <li class="breadcrumb-item"><a href="/Mitra">Mitra</a></li>
+                    <li class="breadcrumb-item active">Edit Detail Mitra</li>
                 </ol>
             </div>
         </div>
