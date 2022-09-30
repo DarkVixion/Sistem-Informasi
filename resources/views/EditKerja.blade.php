@@ -192,7 +192,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="Kerjasama">Kerja Sama</a></li>
+                                <li class="breadcrumb-item"><a href="/Kerjasama">Kerja Sama</a></li>
                                 <li class="breadcrumb-item active">Edit Kerja Sama</li>
                             </ol>
                         </div>
@@ -317,6 +317,7 @@
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                             <div class="col-sm-10 ">
+                                <iframe src="{{ asset('.\files\adfs_1664446583_618.pdf') }}" width="500" height="400" alt="pdf"></iframe>
                                 <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                             </div>
                         </div>
