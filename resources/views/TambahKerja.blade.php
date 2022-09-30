@@ -378,36 +378,25 @@
                         <!-- form start -->
                         <div class="card-body">
                             <div class="form-group row">
-                                <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
+                                <label for="input" class="col-sm-2 col-form-label">Assign User</label>
                                 <div class="col-sm-10">
                                     <div class="form-group">
-                                        <select class="form-control" name="pic">
-                                            <option hidden>Pilih Nama PIC UPer</option>
-                                            <option>Bapak Abcd</option>
-                                            <option>Ibu Efgh</option>
+                                        <select class="form-control" name="assignuserakun">
+                                            <option hidden>Pilih PIC</option>
+                                            <option>User 1 sementara</option>
+                                            <option>User 2 sementara</option>
                                         </select>
                                     </div>
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
+                                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                 <div class="col-sm-10 ">
-                                    <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="emailpic" value="" disabled>
-                                </div>
-                                <br><br>
-                                <label for="input" class="col-sm-2 col-form-label">Assigned User</label>
-                                <div class="col-sm-10">
-                                    <div class="form-group">
-                                        <select class="form-control" name="assignakun">
-                                            <option hidden>Pilih Nama User untuk diassign</option>
-                                            <option>User 1</option>
-                                            <option>USer 2</option>
-                                        </select>
-                                    </div>
+                                    <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="">
                                 </div>
                             </div>
                         </div>

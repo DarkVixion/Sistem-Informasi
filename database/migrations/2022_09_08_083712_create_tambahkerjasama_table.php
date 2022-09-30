@@ -36,7 +36,7 @@ class CreateTambahkerjasamaTable extends Migration
             $table->string("narahubung");
             $table->integer("notelpnara");
             $table->string("emailnara");
-            $table->string("pic");
+            $table->string("assignuserakun");
             $table->string("status");
             $table->datetime("updated_at");
             $table->datetime("created_at");
