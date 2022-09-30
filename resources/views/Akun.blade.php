@@ -9,27 +9,27 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset ('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- DataTables -->
-    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
-    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 </head>
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -50,8 +50,9 @@
     <!-- /.container-fluid -->
 
     <section class="content">
-        <form class="form-horizontal" action="{{route('inputdataakun')}}" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" action="{{ route('editdataakun', $akun->id )}}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method("PATCH")
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -104,11 +105,11 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="roleakun" value="{{ $akun->roleakun }}">
-                                                <option {{-- if ($akun->roleakun == 'Role 1') selected @else "" @endif --}}> Role 1</option>
-                                                <option {{-- if ($akun->roleakun == 'Role 2') selected @else "" @endif --}}> Role 2</option>
-                                                <option {{-- if ($akun->roleakun == 'Role 3') selected @else "" @endif --}}> Role 3</option>
-                                                <option {{--if ($akun->roleakun == 'Role 4') selected @else "" @endif --}}> Role 4</option>
-                                                <option {{-- if ($akun->roleakun == 'Staff') selected @else "" @endif --}}> Staff</option>
+                                                <option @if ($akun->roleakun == 'Role 1') selected @else "" @endif> Role 1</option>
+                                                <option @if ($akun->roleakun == 'Role 2') selected @else "" @endif> Role 2</option>
+                                                <option @if ($akun->roleakun == 'Role 3') selected @else "" @endif> Role 3</option>
+                                                <option @if ($akun->roleakun == 'Role 4') selected @else "" @endif> Role 4</option>
+                                                <option @if ($akun->roleakun == 'Staff') selected @else "" @endif> Staff</option>
                                             </select>
                                         </div>
                                     </div>
@@ -118,8 +119,8 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="statusakun" value="{{ $akun->statusakun }}">
-                                                <option {{-- if ($akun->statusakun == 'Aktif') selected @else "" @endif --}}>Aktif</option>
-                                                <option {{-- if ($akun->statusakun == 'Tidak Aktif') selected @else "" @endif --}}>Tidak Aktif</option>
+                                                <option @if ($akun->statusakun == 'Aktif') selected @else "" @endif>Aktif</option>
+                                                <option @if ($akun->statusakun == 'Tidak Aktif') selected @else "" @endif>Tidak Aktif</option>
                                             </select>
                                         </div>
                                     </div>

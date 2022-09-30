@@ -27,10 +27,12 @@ Route::get('AdminDashboard', function () {
 });
 
 Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
+Route::match(['put', 'patch'], '/Akun/{id}', [AkunController::class, 'edit'])->name('editdataakun');
+Route::get('/Akun', [AkunController::class, 'isiakun']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
 Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
-Route::get('/Akun', [AkunController::class, 'test2']);
+
 
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
