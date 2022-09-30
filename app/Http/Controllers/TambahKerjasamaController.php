@@ -54,7 +54,8 @@ class TambahKerjasamaController extends Controller
             'narahubung' => 'required',
             'notelpnara' => 'required',
             'emailnara' => 'required',
-            'pic' => 'required'
+            'pic' => 'required',
+            'nilaikontrak' => 'required'
         ]);*/
 
         $user = new TambahKerjasama;
@@ -64,6 +65,7 @@ class TambahKerjasamaController extends Controller
         $user->jenismitra = $req['jenismitra'];
         $user->judulkerjasama = $req['judulkerjasama'];
         $user->lingkupkerja = $req['lingkupkerja'];
+        $user->nilaikontrak = $req['nilaikontrak'];
         $user->alamat = $req['alamat'];
         $user->negara = $req['negara'];
         $user->notelpmitra = $req['notelpmitra'];
