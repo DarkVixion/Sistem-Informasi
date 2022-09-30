@@ -62,7 +62,7 @@ Route::get('AdminViewMitraEdit', [MitraController::class, 'edit']);
 Route::get('AdminShowUser', function () {
     return view('AdminShowUser');
 });
-
+Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
 
 // <-- BAGIAN USER -->
 Route::get('AdminUserMenu', function () {

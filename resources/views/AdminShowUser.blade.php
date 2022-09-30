@@ -54,14 +54,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @foreach($adminusermenu as $itemuser)
+                                @foreach($adminakunusershow as $itemuser)
                                 <tr>
                                     <td>{{ $itemuser->id }}</td>
-                                <td>{{ $itemuser->namaakunuser }}</td>
-                                <td>{{ $itemuser->ssoakunuser }}</td>
-                                <td>{{ $itemuser->nipakunuser }}</td>
+                                    <td>{{ $itemuser->namaakunuser }}</td>
+                                    <td>{{ $itemuser->ssoakunuser }}</td>
+                                    <td>{{ $itemuser->nipakunuser }}</td>
                                 </tr>
-                                @endforeach --}}
+                                @endforeach
                             </tbody>
                             <tbody>
                                 {{-- @foreach($jm as $item)

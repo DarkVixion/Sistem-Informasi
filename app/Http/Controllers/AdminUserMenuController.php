@@ -8,6 +8,12 @@ use App\Models\AdminUserMenu;
 class AdminUserMenuController extends Controller
 {
 
+    public function index()
+    {
+        $adminakunusershow = AdminUserMenu::all();
+        return view('AdminShowUser')->with('adminakunusershow', $adminakunusershow);
+    }
+
     public function store(Request $req) // store input dari hal AdminUserMenu
     {
 
