@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
+use App\Http\Controllers\AdminViewUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::match(['put', 'patch'], '/Akun/{id}', [AkunController::class, 'edit'])->n
 Route::get('/Akun', [AkunController::class, 'isiakun']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
-Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
+//Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
 
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
@@ -57,8 +58,8 @@ Route::get('InformasiMitra', function () {
 
 Route::get('Mitra', [MitraController::class, 'index']);
 Route::get('AdminViewMitra/{id}', [MitraController::class, 'show'])->name('show_mitra');
-Route::get('AdminViewMitraEdit/{id}', [MitraController::class, 'edit'])->name('ubah_mitra');
-Route::match(['put', 'patch'],'AdminViewMitraEdit/{id}',[MitraController::class, 'update'])->name('update_mitra');
+Route::get('AdminViewMitraEdit', [MitraController::class, 'edit']);
+Route::match(['put', 'patch'], '/Mitra/{id}/edit', [MitraController::class, 'update'])->name('edit_mitra');
 
 Route::get('AdminShowUser', function () {
     return view('AdminShowUser');
@@ -71,6 +72,8 @@ Route::get('AdminUserMenu', function () {
 });
 Route::post('/AdminUserMenuStore', [AdminUserMenuController::class, 'store'])->name('inputdataakunuser');
 Route::get('/AdminUserMenu', [AdminUserMenuController::class, 'testuser']);
+//Route::get('/AdminViewUser', [AdminViewUserController::class, 'index']);
+Route::get('/AdminViewUser/{id}', [AdminViewUserController::class, 'show'])->name('view_user');
 
 Route::get('UserDashboard', function () {
     return view('UserDashboard');
