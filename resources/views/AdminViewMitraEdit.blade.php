@@ -46,7 +46,7 @@
                 <label for="select" class="col-sm-2 col-form-label">Lingkup Kerja Sama</label>
                 <div class="col-sm-10">
                     <div class="form-group">
-                        <select class="form-control" name="jenismitra" >
+                        <select class="form-control" name="lingkupkerja" >
                             <option selected hidden>{{ $tks->lingkupkerja }}</option>
                             @foreach ($lk as $item)
                                 <option>{{ $item->judullingkupkerja }}</option>
@@ -67,19 +67,19 @@
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
                 <div class="col-sm-10 ">
-                    <input type="text" class="form-control " name="notelpmitra" placeholder="nama narahubung" value="{{ $tks->narahubung }}" >
+                    <input type="text" class="form-control " name="narahubung" placeholder="nama narahubung" value="{{ $tks->narahubung }}" >
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
                 <div class="col-sm-10 ">
-                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="{{ $tks->notelpnara }}" >
+                    <input type="number" class="form-control " name="notelpnara" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="{{ $tks->notelpnara }}" >
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="text" class="form-control " name="notelpmitra" placeholder="nama pic" value="{{ $tks->pic }}" >
+                    <input type="text" class="form-control " name="pic" placeholder="nama pic" value="{{ $tks->pic }}" >
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="" >
+                    <input type="number" class="form-control " name="notelppic" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="" >
                 </div><br><br>
             </div>
         </div>

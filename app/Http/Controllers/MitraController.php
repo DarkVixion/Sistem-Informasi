@@ -17,11 +17,7 @@ class MitraController extends Controller
     public function index()
     {
         $tks = TambahKerjasama::all();
-        $lkerja = LingkupKerja::all();
-        $jmitra = JenisMitra::all();
-        return view('Mitra')->with('tks', $tks)
-                            ->with('lk', $lkerja)
-                            ->with('jm', $jmitra);
+        return view('Mitra')->with('tks', $tks);
     }
 
     /**
@@ -59,10 +55,23 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $req, $id)
     {
         $tks = TambahKerjasama::find($id);
-        return $this->index();
+
+        $tks->namamitra = $req['namamitra'];
+        $tks->jenismitra = $req['jenismitra'];
+        $tks->lingkupkerja = $req['lingkupkerja'];
+        $tks->alamat = $req['alamat'];
+        $tks->website = $req['website'];
+        $tks->narahubung = $req['narahubung'];
+        $tks->notelpnara = $req['notelpnara'];
+        $tks->pic = $req['pic'];
+        $tks->notelppic = $req['notelppic'];
+
+        $tks->save();
+
+        return redirect('Mitra');
     }
 
 }
