@@ -51,9 +51,9 @@ Route::post('LingkupKerja', [LingkupKerjaController::class, 'store'])->name('tam
 Route::delete('LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->name('hapus_lingkup');
 Route::match(['put', 'patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaController::class, 'update'])->name('edit_lingkup');
 
-Route::get('InformasiMitra', function () {
-    return view('InformasiMitra');
-});
+// Route::get('InformasiMitra', function () {
+//     return view('InformasiMitra');
+// });
 
 
 Route::get('Mitra', [MitraController::class, 'index']);
