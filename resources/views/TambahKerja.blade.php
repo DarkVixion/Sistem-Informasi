@@ -41,49 +41,27 @@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Navbar Search -->
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <div class="navbar-search-block">
-                        <form class="form-inline">
-                            <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-navbar" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
-
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
+                        <span class="badge badge-warning navbar-badge">2</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">2 Notifications</span>
                         <div class="dropdown-divider"></div>
-                        <a href="/InformasiMitra" class="dropdown-item">
-                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
+                        <a href="/UserInformasiMitra" class="dropdown-item">
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
                             Kedaluwarsa - nama MOU
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="/InformasiMitra" class="dropdown-item">
-                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
+                        <a href="/UserInformasiMitra" class="dropdown-item">
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
                             Dokumen - nama kerja sama
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
@@ -94,12 +72,14 @@
                 <!-- profile -->
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/Akun" class="d-block">Admin UPer</a>
+                        <a href="/Akun" class="d-block">Admin123</a>
                     </div>
                 </div>
+
 
             </ul>
         </nav>

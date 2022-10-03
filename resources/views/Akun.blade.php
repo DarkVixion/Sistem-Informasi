@@ -105,11 +105,8 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="roleakun" value="{{ $akun->roleakun }}">
-                                                <option @if ($akun->roleakun == 'Role 1') selected @else "" @endif> Role 1</option>
-                                                <option @if ($akun->roleakun == 'Role 2') selected @else "" @endif> Role 2</option>
-                                                <option @if ($akun->roleakun == 'Role 3') selected @else "" @endif> Role 3</option>
-                                                <option @if ($akun->roleakun == 'Role 4') selected @else "" @endif> Role 4</option>
-                                                <option @if ($akun->roleakun == 'Staff') selected @else "" @endif> Staff</option>
+                                                <option @if ($akun->roleakun == 'Admin') selected @else "" @endif> Role 4</option>
+                                                <option @if ($akun->roleakun == 'User') selected @else "" @endif> Staff</option>
                                             </select>
                                         </div>
                                     </div>
