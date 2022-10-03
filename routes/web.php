@@ -30,7 +30,7 @@ Route::match(['put', 'patch'], '/Akun/{id}', [AkunController::class, 'edit'])->n
 Route::get('/Akun', [AkunController::class, 'isiakun']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
-Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
+//Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
 
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
@@ -70,6 +70,9 @@ Route::get('AdminUserMenu', function () {
 });
 Route::post('/AdminUserMenuStore', [AdminUserMenuController::class, 'store'])->name('inputdataakunuser');
 Route::get('/AdminUserMenu', [AdminUserMenuController::class, 'testuser']);
+Route::get('/AkunView', function () {
+    return view('UserDashboard');
+});
 
 Route::get('UserDashboard', function () {
     return view('UserDashboard');
