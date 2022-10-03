@@ -60,6 +60,7 @@
                                     <td>{{ $itemuser->namaakunuser }}</td>
                                     <td>{{ $itemuser->ssoakunuser }}</td>
                                     <td>{{ $itemuser->nipakunuser }}</td>
+                                    <td><a href=#><button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

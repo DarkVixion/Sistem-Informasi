@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <!-- Google Font: Source Sans Pro -->
@@ -29,13 +30,10 @@
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 </head>
 
-<body class="hold-transition sidebar-mini">
-
+<body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-
-
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Notifications Dropdown Menu -->
@@ -118,13 +116,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="JenisMitra" class="nav-link">
+                                    <a href="/JenisMitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Jenis Mitra</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="LingkupKerja" class="nav-link">
+                                    <a href="/LingkupKerja" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lingkup Kerja Sama</p>
                                     </a>
@@ -132,7 +130,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="Kerjasama" class="nav-link">
+                            <a href="/Kerjasama" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>Kerjasama</p>
                             </a>

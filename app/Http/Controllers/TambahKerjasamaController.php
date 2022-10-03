@@ -54,7 +54,8 @@ class TambahKerjasamaController extends Controller
             'narahubung' => 'required',
             'notelpnara' => 'required',
             'emailnara' => 'required',
-            'pic' => 'required'
+            'pic' => 'required',
+            'nilaikontrak' => 'required'
         ]);*/
 
         $user = new TambahKerjasama;
@@ -64,6 +65,7 @@ class TambahKerjasamaController extends Controller
         $user->jenismitra = $req['jenismitra'];
         $user->judulkerjasama = $req['judulkerjasama'];
         $user->lingkupkerja = $req['lingkupkerja'];
+        $user->nilaikontrak = $req['nilaikontrak'];
         $user->alamat = $req['alamat'];
         $user->negara = $req['negara'];
         $user->notelpmitra = $req['notelpmitra'];
@@ -91,7 +93,7 @@ class TambahKerjasamaController extends Controller
 
         foreach ($req['path_mou'] as $file) {
             $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-            $mou .= $namafilemou . '_';
+            $mou = $namafilemou;
             // . untuk menggabungkan semua nama filenya
 
             $file->move(public_path('files'), $namafilemou);

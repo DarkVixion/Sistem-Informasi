@@ -232,7 +232,7 @@
                                 <div class="form-group">
                                     <select class="form-control" name="jenismitra">
                                         @foreach ($jm as $item)
-                                            <option>{{ $item->juduljenismitra }}</option>
+                                        <option>{{ $item->juduljenismitra }}</option>
                                         @endforeach
                                         <option hidden selected>{{ $tks->jenismitra }}</option>
                                     </select>
@@ -251,7 +251,7 @@
                                 <div class="form-group ">
                                     <select class="form-control" name="lingkupkerja">
                                         @foreach ($lk as $item)
-                                            <option>{{ $item->judullingkupkerja }}</option>
+                                        <option>{{ $item->judullingkupkerja }}</option>
                                         @endforeach
                                         <option hidden selected>{{ $tks->lingkupkerja }}</option>
                                     </select>
@@ -354,7 +354,7 @@
                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" 
-                                    value="@if ( $item->tglmulai_moa  != null)
+                                    value="@if ( $item->tglmulai_moa != null)
                                             {{ $item->tglmulai_moa->format('Y-m-d') }}
                                             @else
                                             {{ $item->tglmulai_moa}}
@@ -364,7 +364,7 @@
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
                                 <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" 
-                                    value="@if ( $item->tglselesai_moa  != null)
+                                    value="@if ( $item->tglselesai_moa != null)
                                             {{ $item->tglselesai_moa->format('Y-m-d') }}
                                             @else
                                             {{ $item->tglselesai_moa }}
@@ -416,22 +416,21 @@
                             <div class="col-sm-10">
                                 <div class="form-group">
                                     <select class="form-control" name="pic">
-                                        <option hidden>Pilih Nama PIC UPer</option>
+                                        <option value="" hidden>Pilih Nama PIC UPer</option>
                                         <option>Bapak Abcd</option>
                                         <option>Ibu Efgh</option>
                                     </select>
-
                                 </div>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="notelppic" value="" disabled>
+                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="emailpic" value="" disabled>
+                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="">
                             </div>
                         </div>
 

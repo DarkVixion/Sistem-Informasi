@@ -43,10 +43,8 @@
             </div>
             <div class="col-sm-6">
                 <a href="TambahKerja">
-                    <button type="button" class="btn btn-default" data-toggle="modal"
-                            data-target="#modal-xl"
-                            style="float:right; background-color:lightblue; border-radius:15px;">
-                            Tambah Kerja Sama
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
+                        Tambah Kerja Sama
                     </button>
                 </a>
             </div>
@@ -70,6 +68,7 @@
                                     <th>Jenis Mitra</th>
                                     <th>Judul</th>
                                     <th>Lingkup Kerja Sama</th>
+                                    <th>Nilai Kontrak</th>
                                     <th>Periode Mulai MoU</th>
                                     <th>Periode Berakhir MoU</th>
                                     <th>Periode Mulai MoA</th>
@@ -85,24 +84,29 @@
                                     <td>{{ $item->jenismitra }}</td>
                                     <td>{{ $item->judulkerjasama }}</td>
                                     <td>{{ $item->lingkupkerja }}</td>
+                                    <td>
+                                        @if ( $item->nilaikontrak != null)
+                                        Rp {{ $item->nilaikontrak }}
+                                        @endif
+                                    </td>
                                     <td>{{ $item->tglmulai_mou->format('Y-m-d') }}</td>
                                     <td>{{ $item->tglselesai_mou->format('Y-m-d') }}</td>
                                     <td>
-                                        @if ( $item->tglmulai_moa  != null)
+                                        @if ( $item->tglmulai_moa != null)
                                         {{ $item->tglmulai_moa->format('Y-m-d') }}
                                         @else
                                         {{ $item->tglmulai_moa}}
-                                        @endif                                    
+                                        @endif
                                     </td>
                                     <td>
-                                        @if ( $item->tglselesai_moa  != null)
+                                        @if ( $item->tglselesai_moa != null)
                                         {{ $item->tglselesai_moa->format('Y-m-d') }}
                                         @else
                                         {{ $item->tglselesai_moa }}
-                                        @endif  
+                                        @endif
                                     </td>
                                     <td>
-                                        <a href="{{route('edit_kerjasama', $item->id)}}" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                        <a href="{{route('edit_kerjasama', $item->id)}}"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
                                         <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
@@ -162,4 +166,3 @@
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
 @endsection
-

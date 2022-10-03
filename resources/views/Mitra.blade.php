@@ -61,7 +61,7 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <<<<<<< HEAD <tbody>
                                     <tr>
                                         <td> 1. </td>
                                         <td>DIKTI</td> {{-- --}}
@@ -95,7 +95,36 @@
                                             </button>
                                         </td>
                                     </tr>
-                                </tbody>
+
+
+                                    @foreach ($tks as $item)
+                                    @if ($item->path_moa == null)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->namamitra }}</td>
+                                        <td>MoU</td>
+                                        <td><a href="{{ route('show_mitra', $item->id) }}"> <button
+                                                    class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                    </tr>
+                                    @else
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->namamitra }}</td>
+                                        <td>MoU</td>
+                                        <td><a href="{{ route('show_mitra', $item->id) }}"> <button
+                                                    class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->namamitra }}</td>
+                                        <td>MoA</td>
+                                        <td><a href="{{ route('show_mitra', $item->id) }}"> <button
+                                                    class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
+                                    </tbody>
+                                    >>>>>>> 3e63a35b1f80fff3d6f8d52675dddca80ad04d5d
                             </table>
                         </div>
                     </div>

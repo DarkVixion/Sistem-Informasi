@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\LingkupKerja;
 use App\Models\JenisMitra;
+use App\Models\TambahKerjasama;
 
 class MitraController extends Controller
 {
@@ -15,28 +16,8 @@ class MitraController extends Controller
      */
     public function index()
     {
-        return view('Mitra');
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        $tks = TambahKerjasama::all();
+        return view('Mitra')->with('tks', $tks);
     }
 
     /**
@@ -45,12 +26,10 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show( /*$id*/)
+    public function show($id)
     {
-        $lkerja = LingkupKerja::all();
-        $jmitra = JenisMitra::all();
-        return view('AdminViewMitra')->with('lk', $lkerja)
-            ->with('jm', $jmitra);
+        $tks = TambahKerjasama::find($id);
+        return view('AdminViewMitra')->with('tks', $tks);
     }
 
     /**
@@ -59,12 +38,14 @@ class MitraController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(/*$id*/)
+    public function edit($id)
     {
+        $tks = TambahKerjasama::find($id);
         $lkerja = LingkupKerja::all();
         $jmitra = JenisMitra::all();
-        return view('AdminViewMitraEdit')->with('lk', $lkerja)
-            ->with('jm', $jmitra);
+        return view('AdminViewMitraEdit')->with('tks', $tks)
+                                         ->with('lk', $lkerja)
+                                         ->with('jm', $jmitra);
     }
 
     /**
@@ -79,14 +60,4 @@ class MitraController extends Controller
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
