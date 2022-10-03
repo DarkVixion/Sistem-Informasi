@@ -182,9 +182,6 @@
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <form class="form-horizontal" action="{{route('update_kerjasama', $tks->id)}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                @method("PATCH")
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
@@ -199,7 +196,10 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
-
+                
+            <form class="form-horizontal" action="{{route('update_kerjasama', $tks->id)}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method("PATCH")
                 <!-- Horizontal Form -->
                 <div class="card card-info">
 
@@ -317,7 +317,7 @@
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                             <div class="col-sm-10 ">
-                                <iframe src="{{ asset('.\files\adfs_1664446583_618.pdf') }}" width="500" height="400" alt="pdf"></iframe>
+                                <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="500" height="400" alt="pdf"></iframe>
                                 <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                             </div>
                         </div>
@@ -354,21 +354,21 @@
                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" 
-                                    value="@if ( $item->tglmulai_moa != null)
-                                            {{ $item->tglmulai_moa->format('Y-m-d') }}
-                                            @else
-                                            {{ $item->tglmulai_moa}}
-                                            @endif ">
+                                value="@if ( $tks->tglmulai_moa != null)
+                                        {{ $tks->tglmulai_moa->format('Y-m-d') }}
+                                        @else
+                                        {{ $tks->tglmulai_moa }}
+                                        @endif">
                             </div>
                             <br><br><br>
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
                                 <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" 
-                                    value="@if ( $item->tglselesai_moa != null)
-                                            {{ $item->tglselesai_moa->format('Y-m-d') }}
+                                    value="@if ( $tks->tglselesai_moa != null)
+                                            {{ $tks->tglselesai_moa->format('Y-m-d') }}
                                             @else
-                                            {{ $item->tglselesai_moa }}
-                                            @endif ">
+                                            {{ $tks->tglselesai_moa }}
+                                            @endif">
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>

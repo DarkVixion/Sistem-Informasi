@@ -19,75 +19,78 @@
 </section>
 <div class="card card-info">
     <!-- form start -->
-    <div class="card-body">
-        <div class="form-group row">
-            <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
-            </div>
-        </div><br>
-        <div class="form-group row">
-            <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
-            <div class="col-sm-10">
-                <div class="form-group">
-                    <select class="form-control" name="jenismitra">
-                        @foreach ($jm as $item)
-                        <option>{{ $item->juduljenismitra }}</option>
-                        @endforeach
-                    </select>
+    <form action="{{ route('update_mitra', $tks->id) }}" method="POST">
+        @csrf
+        @method("PATCH")
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}" >
+                </div>
+            </div><br>
+            <div class="form-group row">
+                <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
+                <div class="col-sm-10">
+                    <div class="form-group">
+                        <select class="form-control" name="jenismitra" >
+                            <option selected hidden>{{ $tks->jenismitra }}</option>
+                            @foreach ($jm as $item)
+                                <option>{{ $item->juduljenismitra }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="select" class="col-sm-2 col-form-label">Lingkup Kerja Sama</label>
-            <div class="col-sm-10">
-                <div class="form-group">
-                    <select class="form-control" name="jenismitra">
-                        @foreach ($lk as $item)
-                        <option>{{ $item->judullingkupkerja }}</option>
-                        @endforeach
-                    </select>
+            <div class="form-group row">
+                <label for="select" class="col-sm-2 col-form-label">Lingkup Kerja Sama</label>
+                <div class="col-sm-10">
+                    <div class="form-group">
+                        <select class="form-control" name="jenismitra" >
+                            <option selected hidden>{{ $tks->lingkupkerja }}</option>
+                            @foreach ($lk as $item)
+                                <option>{{ $item->judullingkupkerja }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group row ">
-            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-            <div class="col-sm-10 ">
-                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
+            <div class="form-group row ">
+                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                <div class="col-sm-10 ">
+                    <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}" >
+                </div>
+                <br><br><br>
+                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                <div class="col-sm-10 ">
+                    <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}" >
+                </div><br><br><br>
+                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
+                <div class="col-sm-10 ">
+                    <input type="text" class="form-control " name="notelpmitra" placeholder="nama narahubung" value="{{ $tks->narahubung }}" >
+                </div><br><br><br>
+                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
+                <div class="col-sm-10 ">
+                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="{{ $tks->notelpnara }}" >
+                </div><br><br><br>
+                <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
+                <div class="col-sm-10 ">
+                    <input type="text" class="form-control " name="notelpmitra" placeholder="nama pic" value="{{ $tks->pic }}" >
+                </div><br><br><br>
+                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
+                <div class="col-sm-10 ">
+                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="" >
+                </div><br><br>
             </div>
-            <br><br><br>
-            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-            <div class="col-sm-10 ">
-                <input type="url" class="form-control " name="website" placeholder="Masukan Website">
-            </div><br><br><br>
-            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
-            <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="nama narahubung">
-            </div><br><br><br>
-            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
-            <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
-            </div><br><br><br>
-            <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
-            <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="nama pic">
-            </div><br><br><br>
-            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
-            <div class="col-sm-10 ">
-                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone">
-            </div><br><br>
         </div>
-
-    </div>
-    <!-- /.card-body -->
-    <div class=" card-footer ">
-        <a href="#">
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
-                style="float:right; background-color:lightblue; border-radius:15px;">
+        <!-- /.card-body -->
+        <div class=" card-footer ">
+            <button class="btn btn-default" style="float:right; background-color:lightblue; border-radius:15px;">
                 Simpan
             </button>
-        </a>
-    </div>
+        </div>
+    </form>
+
 </div>
 <!-- Main content -->
 

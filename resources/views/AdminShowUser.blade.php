@@ -60,7 +60,13 @@
                                     <td>{{ $itemuser->namaakunuser }}</td>
                                     <td>{{ $itemuser->ssoakunuser }}</td>
                                     <td>{{ $itemuser->nipakunuser }}</td>
-                                    <td><a href=#><button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                    <td><a href="{{route('view_user', $itemuser->id)}}"><button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                    {{-- YANG INI NADD DELETENYA HEHEHE --}}
+                                    {{-- <form action="{{route('hapus_user', $item->id)}}" method="POST" style="display:inline ">
+                                        {{ method_field('DELETE') }}
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                    </form> --}}
                                 </tr>
                                 @endforeach
                             </tbody>

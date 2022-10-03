@@ -10,7 +10,7 @@
                     <div class="d-flex justify-content-center"">
                         <img class=" profile-user-img img-fluid img-circle" src="../../dist/img/user4-128x128.jpg" alt=" User profile picture">
                     </div>
-                    <h3 class="profile-username text-center">User123</h3>
+                    <h3 class="profile-username text-center">User456</h3>
                     <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                     <div class="form-group row">
                         <label for="input" class="col-sm-2 col-form-label">Nama</label>

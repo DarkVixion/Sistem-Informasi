@@ -9,27 +9,27 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset ('plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
+    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
+    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
-    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 </head>
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -39,20 +39,20 @@
                 <h1>Akun</h1>
             </div>
             <!-- /.col -->
-            <!-- <div class="col-sm-6">
+            <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">Akun</li>
+                    <li class="breadcrumb-item">User</li>
+                    <li class="breadcrumb-item active">View Akun</li>
                 </ol>
-            </div> -->
+            </div>
             <!-- /.col -->
         </div>
     </div>
     <!-- /.container-fluid -->
 
     <section class="content">
-        <form class="form-horizontal" action="{{ route('editdataakun', $akun->id )}}" method="POST" enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" enctype="multipart/form-data">
             @csrf
-            @method("PATCH")
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -60,53 +60,62 @@
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-3">
                                 <div class="d-flex justify-content-center">
-                                    <img class=" profile-user-img img-fluid img-circle" src="{{ asset('profilpic/'.$akun->path_profileakun) }}" alt=" User profile picture">
+                                    <img class=" profile-user-img img-fluid img-circle" src="../../dist/img/user2-160x160.jpg" alt=" User profile picture">
                                 </div>
-                                <h3 class="profile-username text-center"> {{ $akun->namaakun }} </h3>
+                                <h3 class="profile-username text-center">User UP</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
-                                <div class="form-group row">
+                                <!-- <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                     <div class="col-sm-10 ">
-                                        <input type="file" class="form-control " name="path_profileakun" accept="png/*" multiple>
+                                        <input type="file" class="form-control " name="path_profileakunuser" accept="png/*" multiple>
                                     </div>
-                                </div><br>
+                                </div><br> -->
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="namaakun" placeholder="Admin UPer" value="{{ $akun->namaakun }}">
+                                        <input type="text" class="form-control" name="namaakunuser" placeholder="User UPer" value="{{ $adminviewuser->namaakunuser }}" disabled>
                                     </div>
                                 </div><br>
-                                <div class=" form-group row">
+                                <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01" value="{{ $akun->userssoakun }}">
+                                        <input type="text" class="form-control" name="ssoakunuser" placeholder="User_UPer01" value="{{ $adminviewuser->ssoakunuser }}" disabled>
+                                    </div>
+                                </div><br>
+                                <div class="form-group row">
+                                    <label for="input" class="col-sm-2 col-form-label">Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="passwordakunuser" placeholder="User_UPer01" value="{{ $adminviewuser->passwordakunuser }}" disabled><!-- buat kolom db baru?-->
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="emailakun" placeholder="admin.uper@dududu.ac.id" value="{{ $akun->emailakun }}">
+                                        <input type="text" class="form-control" name="emailakunuser" placeholder="User.uper@dududu.ac.id" value="{{ $adminviewuser->emailakunuser }}" disabled>
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nipakun" placeholder="122333" value="{{ $akun->nipakun }}">
+                                        <input type="text" class="form-control" name="nipakunuser" placeholder="122333" value="{{ $adminviewuser->nipakunuser }}" disabled>
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelpakun" placeholder="0812xxx" value="{{ $akun->notelpakun }}">
+                                        <input type="text" class="form-control" name="notelpakunuser" placeholder="0812xxx" value="{{ $adminviewuser->notelpakunuser }}" disabled>
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="select" class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="roleakun" value="{{ $akun->roleakun }}">
-                                                <option @if ($akun->roleakun == 'Admin') selected @else "" @endif> Role 4</option>
-                                                <option @if ($akun->roleakun == 'User') selected @else "" @endif> Staff</option>
+                                            <select class="form-control" name="roleakunuser" value="{{ $adminviewuser->roleakunuser }}" disabled>
+                                                <option>Role 1</option>
+                                                <option>Role 2</option>
+                                                <option>Role 3</option>
+                                                <option>Role 4</option>
+                                                <option>Staff</option>
                                             </select>
                                         </div>
                                     </div>
@@ -115,25 +124,23 @@
                                     <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="statusakun" value="{{ $akun->statusakun }}">
-                                                <option @if ($akun->statusakun == 'Aktif') selected @else "" @endif>Aktif</option>
-                                                <option @if ($akun->statusakun == 'Tidak Aktif') selected @else "" @endif>Tidak Aktif</option>
+                                            <select class="form-control" name="statusakunuser" value="{{ $adminviewuser->statusakunuser }}" disabled>
+                                                <option>Aktif</option>
+                                                <option>Tidak Aktif</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-info">Simpan</button>
-                                    <button type="submit" class="btn btn-default float-right">Buang</button>
+                                    <button type="submit" class="btn btn-info float-right">Edit</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </form>
 
 
-        <!-- /.card-body -->
+            <!-- /.card-body -->
 
-        @endsection
+            @endsection

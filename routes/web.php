@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
+use App\Http\Controllers\AdminViewUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,15 +51,15 @@ Route::post('LingkupKerja', [LingkupKerjaController::class, 'store'])->name('tam
 Route::delete('LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->name('hapus_lingkup');
 Route::match(['put', 'patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaController::class, 'update'])->name('edit_lingkup');
 
-Route::get('InformasiMitra', function () {
-    return view('InformasiMitra');
-});
+// Route::get('InformasiMitra', function () {
+//     return view('InformasiMitra');
+// });
 
 
 Route::get('Mitra', [MitraController::class, 'index']);
 Route::get('AdminViewMitra/{id}', [MitraController::class, 'show'])->name('show_mitra');
-Route::get('AdminViewMitraEdit', [MitraController::class, 'edit']);
-Route::match(['put', 'patch'], '/Mitra/{id}/edit', [MitraController::class, 'update'])->name('edit_mitra');
+Route::get('AdminViewMitraEdit', [MitraController::class, 'edit'])->name('edit_info_mitra');
+Route::match(['put', 'patch'], '/Mitra/{id}/edit', [MitraController::class, 'update'])->name('update_mitra');
 
 Route::get('AdminShowUser', function () {
     return view('AdminShowUser');
@@ -71,9 +72,10 @@ Route::get('AdminUserMenu', function () {
 });
 Route::post('/AdminUserMenuStore', [AdminUserMenuController::class, 'store'])->name('inputdataakunuser');
 Route::get('/AdminUserMenu', [AdminUserMenuController::class, 'testuser']);
-Route::get('/AkunView', function () {
-    return view('UserDashboard');
-});
+Route::get('/AdminViewUser/{id}', [AdminViewUserController::class, 'show'])->name('view_user');
+
+//Route::get('/AdminEditUser', [AdminViewUserController::class, 'index']);
+Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminViewUserController::class, 'edit'])->name('edit_user');
 
 Route::get('UserDashboard', function () {
     return view('UserDashboard');
