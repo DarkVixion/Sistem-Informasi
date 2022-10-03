@@ -131,8 +131,9 @@
                     </div>
                 </div>
             </div>
+        </form>
 
 
-            <!-- /.card-body -->
+        <!-- /.card-body -->
 
-            @endsection
+        @endsection

@@ -82,7 +82,7 @@ class AkunController extends Controller
 
     public function edit(Request $req, $id)
     {
-        $input = $req->all();
+        $input = $req->except(['_token']);
         $akun = Akun::find($id);
         $akun->update($input);
 
