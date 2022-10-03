@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\TambahKerjasama;
 use App\Models\PerjanjianKerjasama;
-use Illuminate\Support\Facades\Redirect;
 use App\Models\Pic;
 use App\Models\MoU;
 use App\Models\MoA;
@@ -33,31 +32,6 @@ class TambahKerjasamaController extends Controller
 
     public function store(Request $req) // store input dari hal Tambah Kerjasama
     {
-        /*$data = $req->validate([
-            'status' => 'required',
-            'namamitra' => 'required',
-            'jenismitra' => 'required',
-            'judulkerja' => 'required',
-            'lingkupkerja' => 'required',
-            'alamat' => 'required',
-            'negara' => 'required',
-            'notelpmitra' => 'required',
-            'website' => 'required',
-            'bulaninput' => 'required',
-            'judul_mou' => 'required',
-            'tglmulai' => 'required',
-            'tglselesai' => 'required',
-            'path_mou' => 'required',
-            'judul_moa' => 'required',
-            'nilaikontrak' => 'required',
-            'path_moa' => 'required',
-            'narahubung' => 'required',
-            'notelpnara' => 'required',
-            'emailnara' => 'required',
-            'pic' => 'required',
-            'nilaikontrak' => 'required'
-        ]);*/
-
         $user = new TambahKerjasama;
 
         $user->status = $req['status'];
@@ -84,8 +58,6 @@ class TambahKerjasamaController extends Controller
         $user->notelpnara = $req['notelpnara'];
         $user->emailnara = $req['emailnara'];
         $user->pic = $req['pic'];
-
-        $dir = "directory";
 
         $mou = '';
         $moa = '';
@@ -120,6 +92,7 @@ class TambahKerjasamaController extends Controller
     public function edit($id)
     {
         $tambahkerjasama = TambahKerjasama::find($id);
+        // var_dump($tambahkerjasama); die;
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
         return view('EditKerja')->with('tks', $tambahkerjasama)
@@ -155,20 +128,19 @@ class TambahKerjasamaController extends Controller
         $user->emailnara = $req['emailnara'];
         $user->pic = $req['pic'];
 
-        $dir = "directory";
-
         $mou = '';
         $moa = '';
 
 
-        foreach ($req['path_mou'] as $file) {
-            $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-            $mou .= $namafilemou . '_';
-            // . untuk menggabungkan semua nama filenya
+        if (isset($req['path_moa'])) {
+            foreach ($req['path_mou'] as $file) {
+                $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+                $mou= $namafilemou;
 
-            $file->move(public_path('files'), $namafilemou);
+                $file->move(public_path('files'), $namafilemou);
+            }
+            $user->path_mou = $mou;
         }
-        $user->path_mou = $mou;
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
         if (isset($req['path_moa'])) {

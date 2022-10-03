@@ -77,7 +77,7 @@
     </div>
     <!-- /.card-body -->
     <div class=" card-footer ">
-        <a href="AdminViewMitraEdit">
+        <a href="{{ route('ubah_mitra', $tks->id) }}">
             <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
                 style="float:right; background-color:lightblue; border-radius:15px;">
                 Edit

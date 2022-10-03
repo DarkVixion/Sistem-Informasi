@@ -57,7 +57,8 @@ class MitraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tks = TambahKerjasama::find($id);
+        return $this->index();
     }
 
 }

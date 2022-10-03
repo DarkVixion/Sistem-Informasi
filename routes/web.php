@@ -57,7 +57,8 @@ Route::get('InformasiMitra', function () {
 
 Route::get('Mitra', [MitraController::class, 'index']);
 Route::get('AdminViewMitra/{id}', [MitraController::class, 'show'])->name('show_mitra');
-Route::get('AdminViewMitraEdit', [MitraController::class, 'edit']);
+Route::get('AdminViewMitraEdit/{id}', [MitraController::class, 'edit'])->name('ubah_mitra');
+Route::match(['put', 'patch'],'AdminViewMitraEdit/{id}',[MitraController::class, 'update'])->name('update_mitra');
 
 Route::get('AdminShowUser', function () {
     return view('AdminShowUser');
