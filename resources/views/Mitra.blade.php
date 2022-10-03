@@ -44,6 +44,7 @@
     </div>
     <!-- /.container-fluid -->
 
+    <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
             <div class="row">
@@ -60,59 +61,174 @@
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td> 1. </td>
-                                            <td>DIKTI</td>
-                                            <td>MoU</td>
-                                            <td> <a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
-                                        </tr>
-                                        <tr>
-                                            <td> 2. </td>
-                                            <td>DIKTI</td>
-                                            <td>MoA</td>
-                                            <td> <a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
-                                        </tr>
-                                        <tr>
-                                            <td> 3. </td>
-                                            <td>DIKTI</td>
-                                            <td>MoA</td>
-                                            <td> <a href="/AdminViewMitra"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>  
-                                        </tr>
+                                <<<<<<< HEAD <tbody>
+                                    <tr>
+                                        <td> 1. </td>
+                                        <td>DIKTI</td> {{-- --}}
+                                        <td>MOU</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info" data-toggle="modal"
+                                                data-target="#modal-xxl{{ $item->id }}">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2. </td>
+                                        <td>DIKTI</td> {{-- --}}
+                                        <td>MOA</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info" data-toggle="modal"
+                                                data-target="#modal-xxl{{ $item->id }}">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 3. </td>
+                                        <td>DIKTI</td> {{-- --}}
+                                        <td>MOA</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info" data-toggle="modal"
+                                                data-target="#modal-xxl{{ $item->id }}">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
 
-                                        @foreach ($tks as $item)
-                                            @if ($item->path_moa == null)
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $item->namamitra }}</td>
-                                                    <td>MoU</td>
-                                                    <td><a href="{{ route('show_mitra', $item->id) }}"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
-                                                </tr>
-                                            @else
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $item->namamitra }}</td>
-                                                    <td>MoU</td>
-                                                    <td><a href="{{ route('show_mitra', $item->id) }}"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>{{ $item->namamitra }}</td>
-                                                    <td>MoA</td>
-                                                    <td><a href="{{ route('show_mitra', $item->id) }}"> <button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
-                                                </tr>
-                                            @endif
-                                        @endforeach
+
+                                    @foreach ($tks as $item)
+                                    @if ($item->path_moa == null)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->namamitra }}</td>
+                                        <td>MoU</td>
+                                        <td><a href="{{ route('show_mitra', $item->id) }}"> <button
+                                                    class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                    </tr>
+                                    @else
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->namamitra }}</td>
+                                        <td>MoU</td>
+                                        <td><a href="{{ route('show_mitra', $item->id) }}"> <button
+                                                    class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $item->namamitra }}</td>
+                                        <td>MoA</td>
+                                        <td><a href="{{ route('show_mitra', $item->id) }}"> <button
+                                                    class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                    </tr>
+                                    @endif
+                                    @endforeach
                                     </tbody>
+                                    >>>>>>> 3e63a35b1f80fff3d6f8d52675dddca80ad04d5d
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- /.card-body -->
+        <!-- /.card-body -->
+        <!-- modal untuk tambah lingkup -->
+        <div class="modal fade" id="#modal-xxl{{ $item->id }}">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Profile Mitra</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{route('edit_mitra', $item->id)}}" method="post">
+                        {!! csrf_field() !!}
+                        @method("PATCH")
+                        <div class="modal-body">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="namamitra"
+                                            placeholder="Masukan Nama Mitra" disabled>
+                                    </div>
+                                </div><br>
+                                <div class="form-group row">
+                                    <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group">
+                                            <select class="form-control" name="jenismitra" disabled>
+                                                @foreach ($jm as $item)
+                                                <option>{{ $item->juduljenismitra }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="select" class="col-sm-2 col-form-label">Lingkup Kerja Sama</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group">
+                                            <select class="form-control" name="jenismitra" disabled>
+                                                @foreach ($lk as $item)
+                                                <option>{{ $item->judullingkupkerja }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row ">
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="text" class="form-control " name="alamat"
+                                            placeholder="Masukan Alamat" disabled>
+                                    </div>
+                                    <br><br><br>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="url" class="form-control " name="website"
+                                            placeholder="Masukan Website" disabled>
+                                    </div><br><br><br>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="number" class="form-control " name="notelpmitra"
+                                            placeholder="nama narahubung" disabled>
+                                    </div><br><br><br>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone
+                                        Narahubung</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="number" class="form-control " name="notelpmitra"
+                                            placeholder="Masukan Nomor Telephone" disabled>
+                                    </div><br><br><br>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="number" class="form-control " name="notelpmitra"
+                                            placeholder="nama pic" disabled>
+                                    </div><br><br><br>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone
+                                        PIC</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="number" class="form-control " name="notelpmitra"
+                                            placeholder="Masukan Nomor Telephone" disabled>
+                                    </div><br><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer justify-content-between">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <a href="/AdminViewMitraEdit"><button type="submit" class="btn btn-primary"
+                                    value="Save">Edit Data Mitra</button></a>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
     </section>
-                    
+</section>
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js "></script>
 <!-- Bootstrap 4 -->
@@ -120,7 +236,7 @@
 <!-- bs-custom-file-input -->
 <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js "></script>    
+<script src="dist/js/adminlte.min.js "></script>
 
 
 @endsection
