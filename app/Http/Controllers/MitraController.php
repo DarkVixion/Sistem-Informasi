@@ -17,7 +17,11 @@ class MitraController extends Controller
     public function index()
     {
         $tks = TambahKerjasama::all();
-        return view('Mitra')->with('tks', $tks);
+        $lkerja = LingkupKerja::all();
+        $jmitra = JenisMitra::all();
+        return view('Mitra')->with('tks', $tks)
+                            ->with('lk', $lkerja)
+                            ->with('jm', $jmitra);
     }
 
     /**
