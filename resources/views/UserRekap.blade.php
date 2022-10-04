@@ -1,5 +1,5 @@
-@extends('AdminTemplate')
-@section('isiAdmin')
+@extends('UserTemplate')
+@section('isiUser')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +44,7 @@
             <div class="col-sm-6">
                 <a href="TambahKerja">
                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
-                        Tambah Kerja Sama
+                        Tambah Kontrak
                     </button>
                 </a>
             </div>
@@ -68,7 +68,6 @@
                                     <th>Jenis Mitra</th>
                                     <th>Judul</th>
                                     <th>Lingkup Kerja Sama</th>
-                                    <th>Nilai Kontrak</th>
                                     <th>Periode Mulai MoU</th>
                                     <th>Periode Berakhir MoU</th>
                                     <th>Periode Mulai MoA</th>
@@ -77,18 +76,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($kerjasama as $item)
+                                {{-- @foreach($kerjasama as $item)
                                 <tr>
                                     <td>{{ $item->bulaninput }}</td>
                                     <td>{{ $item->namamitra }}</td>
                                     <td>{{ $item->jenismitra }}</td>
                                     <td>{{ $item->judulkerjasama }}</td>
                                     <td>{{ $item->lingkupkerja }}</td>
-                                    <td>
-                                        @if ( $item->nilaikontrak != null)
-                                        Rp {{ $item->nilaikontrak }}
-                                        @endif
-                                    </td>
                                     <td>{{ $item->tglmulai_mou->format('Y-m-d') }}</td>
                                     <td>{{ $item->tglselesai_mou->format('Y-m-d') }}</td>
                                     <td>
@@ -114,7 +108,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                                @endforeach
+                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>

@@ -132,7 +132,7 @@
                         <li class="nav-item">
                             <a href="/Kerjasama" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
-                                <p>Kerjasama</p>
+                                <p>Rekap Kontrak</p>
                             </a>
                         </li>
                         <li class="nav-item">
