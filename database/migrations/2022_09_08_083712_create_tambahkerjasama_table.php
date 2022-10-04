@@ -37,7 +37,6 @@ class CreateTambahkerjasamaTable extends Migration
             $table->string("narahubung")->nullable();
             $table->bigInteger("notelpnara")->nullable();
             $table->string("emailnara")->nullable();
-            $table->string("pic")->nullable();
             $table->bigInteger('notelppic')->nullable();
             $table->string('emailpic')->nullable();
             $table->string("assignuserakun")->nullable();

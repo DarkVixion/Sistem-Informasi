@@ -229,17 +229,6 @@
                                 </div>
                             </div>
                             <div class="form-group row ">
-                                <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                                <div class="col-sm-10 ">
-                                    <select class="form-control" name="lingkupkerja">
-                                        <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
-                                        @foreach ($lk as $item)
-                                        <option>{{ $item->judullingkupkerja }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row ">
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                                 <div class="col-sm-10 ">
                                     <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
@@ -331,6 +320,16 @@
                                     <input type="number"
                                         class="form-control @error('nilaikontrak') is-invalid @enderror"
                                         name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
+                                </div>
+                                <br><br>
+                                <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+                                <div class="col-sm-10 ">
+                                    <select class="form-control" name="lingkupkerja">
+                                        <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
+                                        @foreach ($lk as $item)
+                                        <option>{{ $item->judullingkupkerja }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <br><br>
                                 <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
