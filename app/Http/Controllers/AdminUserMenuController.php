@@ -51,7 +51,7 @@ class AdminUserMenuController extends Controller
 
         $adminusermenu->save();
 
-        return redirect('AdminDashboard');
+        return redirect('AdminShowUser');
     }
 
     public function testuser()
