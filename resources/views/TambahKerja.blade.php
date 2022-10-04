@@ -232,6 +232,7 @@
                                 <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
                                 <div class="col-sm-10 ">
                                     <select class="form-control" name="lingkupkerja">
+                                        <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
                                         @foreach ($lk as $item)
                                         <option>{{ $item->judullingkupkerja }}</option>
                                         @endforeach
@@ -260,7 +261,7 @@
                                     <input type="url" class="form-control " name="website"
                                         placeholder="Masukan Website">
                                 </div><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
+                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Pencatatan</label>
                                 <div class="col-sm-10 ">
                                     <input type="month" class="form-control " name="bulaninput">
                                 </div>
@@ -397,13 +398,13 @@
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
                                     <input type="number" class="form-control" name='notelppic' id="notelppic"
-                                        placeholder="No Telepon PIC" value="">
+                                        placeholder="No Telepon PIC" value="" disabled>
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                 <div class="col-sm-10 ">
                                     <input type="text" class="form-control" name="emailpic" id="emailpic"
-                                        placeholder="Email PIC" value="">
+                                        placeholder="Email PIC" value="" disabled>
                                 </div>
                             </div>
                         </div>

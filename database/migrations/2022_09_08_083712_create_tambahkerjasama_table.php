@@ -15,34 +15,34 @@ class CreateTambahkerjasamaTable extends Migration
     {
         Schema::create('tambahkerjasama', function (Blueprint $table) {
             $table->id();
+            $table->string("status");
             $table->string("namamitra");
             $table->string("jenismitra");
-            $table->string("judulkerjasama");
-            $table->string("lingkupkerja");
-            $table->string("alamat");
-            $table->string("negara");
-            $table->bigInteger("notelpmitra");
-            $table->string("website");
-            $table->string("bulaninput");
-            $table->bigInteger("nilaikontrak", false, true)->nullable();
+            $table->string("judulkerjasama")->nullable();
+            $table->string("lingkupkerja")->nullable();
+            $table->string("alamat")->nullable();
+            $table->string("negara")->nullable();
+            $table->bigInteger("notelpmitra")->nullable();
+            $table->string("website")->nullable();
+            $table->string("bulaninput")->nullable();
+            $table->bigInteger("nilaikontrak")->nullable();
             $table->string("judul_mou");
-            $table->date("tglmulai_mou");
-            $table->date("tglselesai_mou");
+            $table->date("tglmulai_mou")->nullable();
+            $table->date("tglselesai_mou")->nullable();
             $table->string("path_mou");
-            $table->string("judul_moa")->nullable();
+            $table->string("judul_moa");
             $table->date("tglmulai_moa")->nullable();
             $table->date("tglselesai_moa")->nullable();
             $table->string("path_moa");
-            $table->string("narahubung");
-            $table->bigInteger("notelpnara");
-            $table->string("emailnara");
+            $table->string("narahubung")->nullable();
+            $table->bigInteger("notelpnara")->nullable();
+            $table->string("emailnara")->nullable();
             $table->string("pic")->nullable();
             $table->bigInteger('notelppic')->nullable();
             $table->string('emailpic')->nullable();
-            $table->string("assignuserakun");
-            $table->string("status");
-            $table->datetime("updated_at");
-            $table->datetime("created_at");
+            $table->string("assignuserakun")->nullable();
+            $table->datetime("updated_at")->nullable();
+            $table->datetime("created_at")->nullable();
         });
     }
 

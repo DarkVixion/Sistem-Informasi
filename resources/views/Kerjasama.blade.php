@@ -89,8 +89,20 @@
                                         Rp {{ $item->nilaikontrak }}
                                         @endif
                                     </td>
-                                    <td>{{ $item->tglmulai_mou->format('Y-m-d') }}</td>
-                                    <td>{{ $item->tglselesai_mou->format('Y-m-d') }}</td>
+                                    <td>
+                                        @if ( $item->tglmulai_mou != null)
+                                        {{ $item->tglmulai_mou->format('Y-m-d') }}
+                                        @else
+                                        {{ $item->tglmulai_mou}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if ( $item->tglselesai_mou != null)
+                                        {{ $item->tglselesai_mou->format('Y-m-d') }}
+                                        @else
+                                        {{ $item->tglselesai_mou}}
+                                        @endif
+                                    </td>
                                     <td>
                                         @if ( $item->tglmulai_moa != null)
                                         {{ $item->tglmulai_moa->format('Y-m-d') }}

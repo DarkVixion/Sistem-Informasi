@@ -39,37 +39,44 @@ class TambahKerjasamaController extends Controller
         $user->jenismitra = $req['jenismitra'];
         $user->judulkerjasama = $req['judulkerjasama'];
         $user->lingkupkerja = $req['lingkupkerja'];
-        $user->nilaikontrak = $req['nilaikontrak'];
         $user->alamat = $req['alamat'];
         $user->negara = $req['negara'];
         $user->notelpmitra = $req['notelpmitra'];
         $user->website = $req['website'];
         $user->bulaninput = $req['bulaninput'];
-        $user->judul_mou = $req['judul_mou'];
-        $user->tglmulai_mou = $req['tglmulai_mou'];
-        $user->tglselesai_mou = $req['tglselesai_mou'];
-        $user->path_mou = $req['path_mou'];
-        $user->judul_moa = $req['judul_moa'];
-        $user->nilaikontrak = $req['nilaikontrak'];
-        $user->tglmulai_moa = $req['tglmulai_moa'];
-        $user->tglselesai_moa = $req['tglselesai_moa'];
-        $user->path_moa = $req['path_moa'];
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
         $user->emailnara = $req['emailnara'];
         $user->pic = $req['pic'];
 
+        $user->judul_mou = '';
+        $user->tglmulai_mou = null;
+        $user->tglselesai_mou = null;
+
+        $user->judul_moa = '';
+        $user->tglmulai_moa = null;
+        $user->tglselesai_moa = null;
+        $user->nilaikontrak = null;
+
         $mou = '';
         $moa = '';
 
 
-        foreach ($req['path_mou'] as $file) {
-            $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-            $mou = $namafilemou;
-            // . untuk menggabungkan semua nama filenya
+        if (isset($req['path_mou'])) {
+            foreach ($req['path_mou'] as $file) {
+                $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+                $mou = $namafilemou;
+                // . untuk menggabungkan semua nama filenya
 
-            $file->move(public_path('files'), $namafilemou);
+                $file->move(public_path('files'), $namafilemou);
+            }
+
+            $user->judul_mou = $req['judul_mou'];
+            $user->tglmulai_mou = $req['tglmulai_mou'];
+            $user->tglselesai_mou = $req['tglselesai_mou'];
+
         }
+        
         $user->path_mou = $mou;
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
@@ -80,6 +87,12 @@ class TambahKerjasamaController extends Controller
 
                 $file->move(public_path('files'), $namafilemoa);
             }
+
+            $user->judul_moa = $req['judul_moa'];
+            $user->tglmulai_moa = $req['tglmulai_moa'];
+            $user->tglselesai_moa = $req['tglselesai_moa'];
+            $user->nilaikontrak = $req['nilaikontrak'];
+
         }
 
         $user->path_moa = $moa;
@@ -132,7 +145,7 @@ class TambahKerjasamaController extends Controller
         $moa = '';
 
 
-        if (isset($req['path_moa'])) {
+        if (isset($req['path_mou'])) {
             foreach ($req['path_mou'] as $file) {
                 $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $mou= $namafilemou;
