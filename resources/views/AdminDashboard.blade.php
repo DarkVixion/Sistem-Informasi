@@ -160,6 +160,61 @@
         <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Jenis Kerja Sama</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-body">
+                        <canvas id="donutChart"
+                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    </div>
+                    <!-- /.card-body -->
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+                <div class="col-md-8">
+
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <p class="d-flex flex-column">
+                                <span class="text-bold text-lg">50</span>
+                                <span>Jenis Kerja Sama </span>
+                            </p>
+                            <p class="ml-auto d-flex flex-column text-right">
+                                <span class="text-success">
+                                    <i class="fas fa-arrow-up"></i> 59.5%
+                                </span>
+                                <span class="text-muted">Sejak Bulan Lalu</span>
+                            </p>
+                        </div>
+                        <!-- /.d-flex -->
+
+                        <!-- callback Js for Chart dashboard3.js -->
+                        <div class="position-relative mb-4">
+                            <canvas id="sales-chart" height="200"></canvas>
+                        </div>
+
+                        <div class="d-flex flex-row justify-content-end">
+                            <span class="mr-2">
+                                <i class="fas fa-square text-primary"></i> Tahun Ini
+                            </span>
+
+                            <span>
+                                <i class="fas fa-square text-gray"></i> Tahun Kemarin
+                            </span>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <div class="card card-body">
+            <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
                     <h3 class="card-title">Nilai Kerja Sama</h3>
                 </div>
             </div>
@@ -247,61 +302,6 @@
                         </ul>
                     </div>
 
-                    <!-- /.card -->
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <div class="card card-body">
-            <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Jenis Kerja Sama</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card-body">
-                        <canvas id="donutChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-8">
-
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">50</span>
-                                <span>Jenis Kerja Sama </span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i> 59.5%
-                                </span>
-                                <span class="text-muted">Sejak Bulan Lalu</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
-
-                        <!-- callback Js for Chart dashboard3.js -->
-                        <div class="position-relative mb-4">
-                            <canvas id="sales-chart" height="200"></canvas>
-                        </div>
-
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> Tahun Ini
-                            </span>
-
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Tahun Kemarin
-                            </span>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->
