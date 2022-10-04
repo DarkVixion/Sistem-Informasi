@@ -84,8 +84,12 @@ Route::get('UserAkun', function () {
     return view('UserAkun');
 });
 
-Route::get('UserInfo', function () {
-    return view('UserInformation');
+Route::get('UserRekap', function () {
+    return view('UserRekap');
+});
+
+Route::get('UserMitra', function () {
+    return view('Mitra');
 });
 
 Route::get('template', function () {

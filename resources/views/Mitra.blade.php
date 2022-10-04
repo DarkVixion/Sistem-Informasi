@@ -56,7 +56,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Nama Mitra</th>
+                                        <th>Profile Mitra</th>
                                         <th>Jenis Kontrak</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -113,6 +113,12 @@
                                                                     <input type="text" class="form-control" name="namamitra" value="{{ $item->namamitra }}" disabled>
                                                                 </div>
                                                                 <br><br><br>
+                                                                {{-- YANG INI NADD --}}
+                                                                {{-- <label for="input" class="col-sm-2 col-form-label">Nama Kerja Sama</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="namamitra" value="{{ $item->namamitra }}" disabled>
+                                                                </div>
+                                                                <br><br><br> --}}
                                                                 <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
                                                                 <div class="col-sm-10">
                                                                     <input type="text" class="form-control" name="jenismitra" value="{{ $item->jenismitra }}" disabled>
