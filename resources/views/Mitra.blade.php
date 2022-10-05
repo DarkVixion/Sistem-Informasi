@@ -56,7 +56,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Nama Mitra</th>
+                                        <th>Profile Mitra</th>
                                         <th>Jenis Kontrak</th>
                                         <th>Aksi</th>
                                     </tr>
@@ -72,26 +72,6 @@
                                             </button>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td> 2. </td>
-                                        <td>DIKTI</td> 
-                                        <td>MOA</td>
-                                        <td>
-                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xxl">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td> 3. </td>
-                                        <td>DIKTI</td> 
-                                        <td>MOA</td>
-                                        <td>
-                                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal-xxl">
-                                                <i class="fa fa-eye"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
 
                                     @foreach ($tks as $item)
                                         @if ($item->path_moa == null)
@@ -99,27 +79,99 @@
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->namamitra }}</td>
                                                 <td>MoU</td>
-                                                <td><a href="{{ route('show_mitra', $item->id) }}"> <button
-                                                            class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                <td><button class="btn btn-info" data-toggle="modal" data-target="#modal-xxl{{ $item->id }}"><i class="fa fa-eye"></i></button></a></td>
                                             </tr>
                                         @else
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->namamitra }}</td>
                                                 <td>MoU</td>
-                                                <td><a href="{{ route('show_mitra', $item->id) }}"> <button
-                                                            class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                <td><button class="btn btn-info" data-toggle="modal" data-target="#modal-xxl{{ $item->id }}"><i class="fa fa-eye"></i></button></a></td>
                                             </tr>
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->namamitra }}</td>
                                                 <td>MoA</td>
-                                                <td><a href="{{ route('show_mitra', $item->id) }}"> <button
-                                                            class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
+                                                <td><button class="btn btn-info" data-toggle="modal" data-target="#modal-xxl{{ $item->id }}"><i class="fa fa-eye"></i></button></a></td>
                                             </tr>
                                         @endif
+                                        <!-- modal untuk view profile mitra -->
+                                        <div class="modal fade" id="modal-xxl{{ $item->id }}">
+                                            <div class="modal-dialog modal-xl">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title">Profile Mitra</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="card-body">
+                                                            <div class="form-group row">
+                                                                <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="namamitra" value="{{ $item->namamitra }}" disabled>
+                                                                </div>
+                                                                <br><br><br>
+                                                                {{-- YANG INI NADD --}}
+                                                                {{-- <label for="input" class="col-sm-2 col-form-label">Nama Kerja Sama</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="namamitra" value="{{ $item->namamitra }}" disabled>
+                                                                </div>
+                                                                <br><br><br> --}}
+                                                                <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="jenismitra" value="{{ $item->jenismitra }}" disabled>
+                                                                </div>
+                                                                <br><br><br>
+                                                                <label for="select" class="col-sm-2 col-form-label">Lingkup Kerja Sama</label>
+                                                                <div class="col-sm-10">
+                                                                    <input type="text" class="form-control" name="lingkupkerja" value="{{ $item->lingkupkerja }}" disabled>
+                                                                </div>
+                                                                <br><br><br>
+                                                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                                                                <div class="col-sm-10 ">
+                                                                    <input type="text" class="form-control " name="alamat" value="{{ $item->alamat }}" disabled>
+                                                                </div>
+                                                                <br><br><br>
+                                                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                                                                <div class="col-sm-10 ">
+                                                                    <input type="url" class="form-control " name="website" value="{{ $item->website }}" disabled>
+                                                                </div><br><br><br>
+                                                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
+                                                                <div class="col-sm-10 ">
+                                                                    <input type="text" class="form-control " name="notelpmitra" value="{{ $item->narahubung }}" disabled>
+                                                                </div><br><br><br>
+                                                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
+                                                                <div class="col-sm-10 ">
+                                                                    <input type="number" class="form-control " name="notelpnara"  value="{{ $item->notelpnara }}" disabled>
+                                                                </div><br><br><br>
+                                                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
+                                                                <div class="col-sm-10 ">
+                                                                    <input type="text" class="form-control " name="pic"  value="{{ $item->pic }}" disabled>
+                                                                </div><br><br><br>
+                                                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
+                                                                <div class="col-sm-10 ">
+                                                                    <input type="number" class="form-control " name="notelppic" value="{{ $item->notelppic }}" disabled>
+                                                                </div><br><br>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer justify-content-between">
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                        <a href="{{ route('edit_mitra1', $item->id) }}">
+                                                            <button type="submit" class="btn btn-primary">Edit Data Mitra</button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <!-- /.modal-content -->
+                                            </div>
+                                            <!-- /.modal-dialog -->
+                                        </div>
+                                        <!-- /.modal -->
+
                                     @endforeach
-                                    </tbody>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -127,75 +179,7 @@
             </div>
         </div>
         <!-- /.card-body -->
-        <!-- modal untuk tambah lingkup -->
-        <div class="modal fade" id="modal-xxl">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title">Profile Mitra</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" disabled>
-                                </div>
-                            </div><br>
-                            <div class="form-group row">
-                                <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" disabled>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="select" class="col-sm-2 col-form-label">Lingkup Kerja Sama</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" disabled>
-                                </div>
-                            </div>
-                            <div class="form-group row ">
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                                <div class="col-sm-10 ">
-                                    <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" disabled>
-                                </div>
-                                <br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-                                <div class="col-sm-10 ">
-                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website" disabled>
-                                </div><br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
-                                <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="nama narahubung" disabled>
-                                </div><br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
-                                <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" disabled>
-                                </div><br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
-                                <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="nama pic" disabled>
-                                </div><br><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
-                                <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" disabled>
-                                </div><br><br>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <a href="/AdminViewMitraEdit"><button type="submit" class="btn btn-primary" value="Save">Edit Data Mitra</button></a>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        <!-- /.modal -->
+        
     </section>
 </section>
 <!-- jQuery -->

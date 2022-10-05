@@ -1,11 +1,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tambah Kerja Sama | Universitas Pertamina</title>
+    <title>Tambah Kontrak | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -26,15 +25,15 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 
     <style>
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
-    input[type=number] {
-        -moz-appearance: textfield;
-    }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     </style>
 </head>
 
@@ -101,8 +100,7 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                        data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -145,17 +143,13 @@
                         </li>
                         <li class="nav-item">
                             <a href="/Mitra" class="nav-link">
-                                <img class="nav-icon" style="opacity: 75%"
-                                    srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
-                                    loading="lazy"></img>
+                                <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
                                 <p>Mitra</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="Akun" class="nav-link">
-                                <img class="nav-icon" style="opacity: 55%"
-                                    srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x"
-                                    alt="Building icon" loading="lazy"></img>
+                                <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
                                 <p>User</p>
                             </a>
                         </li>
@@ -167,7 +161,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" style="min-height: 1755;">
+        <div class="content-wrapper">
 
             <!-- Content Header (Page header) -->
             <section class="content-header">
@@ -185,8 +179,7 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
-                <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST"
-                    enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <!-- Horizontal Form -->
                     <div class="card card-info">
@@ -207,8 +200,7 @@
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="namamitra"
-                                        placeholder="Masukan Nama Mitra">
+                                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
                                 </div>
                             </div>
                             <div class="form-group row">
@@ -224,8 +216,17 @@
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control " name="judulkerjasama"
-                                        placeholder="Masukan Judul Kerja Sama">
+                                    <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama">
+                                </div>
+                            </div>
+                            <div class="form-group row ">
+                                <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+                                <div class="col-sm-10 ">
+                                    <select class="form-control" name="lingkupkerja">
+                                        @foreach ($lk as $item)
+                                        <option>{{ $item->judullingkupkerja }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row ">
@@ -241,16 +242,13 @@
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
                                 <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra"
-                                        placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/"
-                                        onKeyPress="if(this.value.length==15) return false;">
+                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                 </div><br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                                 <div class="col-sm-10 ">
-                                    <input type="url" class="form-control " name="website"
-                                        placeholder="Masukan Website">
+                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website">
                                 </div><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Pencatatan</label>
+                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
                                 <div class="col-sm-10 ">
                                     <input type="month" class="form-control " name="bulaninput">
                                 </div>
@@ -272,21 +270,17 @@
                                 <br><br>
                                 <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('judul_mou') is-invalid @enderror"
-                                        name="judul_mou" placeholder="Masukan Judul Kerja Sama">
+                                    <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
                                 </div>
                                 <br><br>
                                 <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror"
-                                        name="tglmulai_mou">
+                                    <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou">
                                 </div>
                                 <br><br>
                                 <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                                 <div class=" col-sm-10 ">
-                                    <input type="date"
-                                        class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                        name="tglselesai_mou">
+                                    <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou">
                                 </div>
                                 <br><br>
                                 <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -311,38 +305,22 @@
                                 <br><br>
                                 <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control @error('judul_moa') is-invalid @enderror"
-                                        name="judul_moa" placeholder="Masukan Judul Kerja Sama">
+                                    <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama">
                                 </div>
                                 <br><br>
                                 <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                                 <div class="col-sm-10">
-                                    <input type="number"
-                                        class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                        name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
-                                </div>
-                                <br><br>
-                                <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                                <div class="col-sm-10 ">
-                                    <select class="form-control" name="lingkupkerja">
-                                        <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
-                                        @foreach ($lk as $item)
-                                        <option>{{ $item->judullingkupkerja }}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
                                 </div>
                                 <br><br>
                                 <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror"
-                                        name="tglmulai_moa">
+                                    <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa">
                                 </div>
                                 <br><br>
                                 <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                                 <div class=" col-sm-10 ">
-                                    <input type="date"
-                                        class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                        name="tglselesai_moa">
+                                    <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa">
                                 </div>
                                 <br><br>
                                 <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
@@ -360,15 +338,12 @@
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="narahubung"
-                                        placeholder="Masukkan Narahubung">
+                                    <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control " name="notelpnara"
-                                        placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/"
-                                        onKeyPress="if(this.value.length==15) return false;">
+                                    <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
@@ -396,14 +371,12 @@
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name='notelppic' id="notelppic"
-                                        placeholder="No Telepon PIC" value="" disabled>
+                                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="">
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                 <div class="col-sm-10 ">
-                                    <input type="text" class="form-control" name="emailpic" id="emailpic"
-                                        placeholder="Email PIC" value="" disabled>
+                                    <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="">
                                 </div>
                             </div>
                         </div>

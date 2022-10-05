@@ -307,17 +307,27 @@
                             <br><br><br>
                             <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" value="{{ $tks->tglmulai_mou->format('Y-m-d') }}">
+                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" 
+                                value = @if ( $tks->tglmulai_mou != null)
+                                        '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
+                                        @else
+                                        '{{ $tks->tglmulai_mou }}'
+                                        @endif>
                             </div>
                             <br><br><br>
                             <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou" value="{{ $tks->tglselesai_mou->format('Y-m-d') }}">
+                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou"
+                                 value = @if ( $tks->tglselesai_mou != null)
+                                        '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
+                                        @else
+                                        '{{ $tks->tglselesai_mou }}'
+                                        @endif>
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                             <div class="col-sm-10 ">
-                                <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="500" height="400" alt="pdf"></iframe>
+                                <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="100%" height="500" alt="pdf"></iframe>
                                 <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                             </div>
                         </div>
@@ -354,25 +364,26 @@
                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" 
-                                value="@if ( $tks->tglmulai_moa != null)
-                                        {{ $tks->tglmulai_moa->format('Y-m-d') }}
+                                value = @if ( $tks->tglmulai_moa != null)
+                                        '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
                                         @else
-                                        {{ $tks->tglmulai_moa }}
-                                        @endif">
+                                        '{{ $tks->tglmulai_moa }}'
+                                        @endif>
                             </div>
                             <br><br><br>
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
                                 <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" 
-                                    value="@if ( $tks->tglselesai_moa != null)
-                                            {{ $tks->tglselesai_moa->format('Y-m-d') }}
+                                    value = @if ( $tks->tglselesai_moa != null)
+                                            '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
                                             @else
-                                            {{ $tks->tglselesai_moa }}
-                                            @endif">
+                                            '{{ $tks->tglselesai_moa }}'
+                                            @endif>
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
                             <div class="col-sm-10 ">
+                                <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="100%" height="400" alt="pdf"></iframe>
                                 <input type="file" class="form-control" name="path_moa[]" accept="pdf/*" multiple>
                             </div>
                         </div>
@@ -425,12 +436,12 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="">
+                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="">
+                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $tks->emailpic }}" disabled>
                             </div>
                         </div>
 

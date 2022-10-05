@@ -98,19 +98,16 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-
                         <li class="nav-item">
-                            <a href="/UserDashboard" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Dashboard
-                                </p>
+                            <a href="/UserRekap" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>Rekap Kontrak</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="Kerjasama" class="nav-link">
+                            <a href="/UserMitra" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
-                                <p>Kerjasama</p>
+                                <p>Mitra</p>
                             </a>
                         </li>
                     </ul>
