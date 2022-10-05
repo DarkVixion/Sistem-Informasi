@@ -72,7 +72,7 @@ Route::get('AdminUserMenu', function () {
 Route::post('/AdminUserMenuStore', [AdminUserMenuController::class, 'store'])->name('inputdataakunuser');
 Route::get('/AdminUserMenu', [AdminUserMenuController::class, 'testuser']);
 Route::get('/AdminViewUser/{id}', [AdminViewUserController::class, 'show'])->name('view_user');
-
+Route::delete('/AdminViewUser/{id}', [AdminUserMenuController::class, 'delete'])->name('hapus_user');
 //Route::get('/AdminEditUser', [AdminViewUserController::class, 'index']);
 Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminViewUserController::class, 'edit'])->name('edit_user');
 

@@ -62,4 +62,10 @@ class AdminUserMenuController extends Controller
 
         return view('AdminUserMenu')->with('adminusermenu', $bebasuser);
     }
+
+    public function delete($id)
+    {
+        AdminUserMenu::destroy($id);
+        return back();
+    }
 }
