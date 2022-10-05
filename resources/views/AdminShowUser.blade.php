@@ -7,13 +7,6 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1>User</h1>
-                {{-- </div>
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">User</li>
-                    <li class="breadcrumb-item active">Jenis Mitra</li>
-                </ol>
-            </div> --}}
             </div>
         </div>
         <!-- /.container-fluid -->
@@ -28,7 +21,8 @@
                 <div class="card">
                     <div class="card-header">
                         <a href="/AdminUserMenu">
-                            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
+                            <button type="button" class="btn btn-default"
+                                style="float:right; background-color:lightblue; border-radius:15px;">
                                 Tambah User Baru
                             </button>
                         </a>
@@ -43,14 +37,6 @@
                                     <th>Username</th>
                                     <th>NIP</th>
                                     <th>Aksi</th>
-                                    {{-- <td>
-                                        <a href="{{route('edit_kerjasama', $item->id)}}" ><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                    <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
-                                        {{ method_field('DELETE') }}
-                                        {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                    </form>
-                                    </td> --}}
                                 </tr>
                             </thead>
                             <tbody>
@@ -60,32 +46,10 @@
                                     <td>{{ $itemuser->namaakunuser }}</td>
                                     <td>{{ $itemuser->ssoakunuser }}</td>
                                     <td>{{ $itemuser->nipakunuser }}</td>
-                                    <td><a href="{{route('view_user', $itemuser->id)}}"><button class="btn btn-info"><i class="fa fa-eye"></i></button></a></td>
-                                    {{-- YANG INI NADD DELETENYA HEHEHE --}}
-                                    {{-- <form action="{{route('hapus_user', $item->id)}}" method="POST" style="display:inline ">
-                                        {{ method_field('DELETE') }}
-                                        {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                    </form> --}}
+                                    <td><a href="{{route('view_user', $itemuser->id)}}"><button class="btn btn-info"><i
+                                                    class="fa fa-eye"></i></button></a></td>
                                 </tr>
                                 @endforeach
-                            </tbody>
-                            <tbody>
-                                {{-- @foreach($jm as $item)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                <td>{{ $item->juduljenismitra }}</td>
-                                <td>
-                                    <a data-toggle="modal" data-target="#modal-xl" href=""><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-
-                                    <form action="{{route('hapus_mitra', $item->id)}}" method="POST" style="display:inline ">
-                                        {{ method_field('DELETE') }}
-                                        {{ csrf_field() }}
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                    </form>
-                                </td>
-                                </tr>
-                                @endforeach --}}
                             </tbody>
                         </table>
                     </div>
@@ -97,7 +61,7 @@
         <!-- /.row -->
     </div>
 
-    {{-- <div class="modal fade" id="modal-xl">
+    <!-- <div class="modal fade" id="modal-xl">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
@@ -107,21 +71,22 @@
                     </button>
                 </div>
                 <form action="{{route('tambah_mitra')}}" method="post">
-    {!! csrf_field() !!}
-    <div class="modal-body">
-        <div class="form-group row ">
-            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Jenis Mitra</label>
-            <div class="col-sm-10 ">
-                <input type="text" name="juduljenismitra" id="juduljenismitra" class="form-control " placeholder="Masukan Jenis Mitra Baru">
-            </div>
-        </div>
-    </div>
-    <div class="modal-footer justify-content-between">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary" value="Save">Tambah</button>
-    </div>
-    </form>
-    </div> --}}
+                    {!! csrf_field() !!}
+                    <div class="modal-body">
+                        <div class="form-group row ">
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Jenis Mitra</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" name="juduljenismitra" id="juduljenismitra" class="form-control "
+                                    placeholder="Masukan Jenis Mitra Baru">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" value="Save">Tambah</button>
+                    </div>
+                </form>
+            </div> -->
     <!-- /.modal-content -->
     </div>
     <!-- /.modal-dialog -->
