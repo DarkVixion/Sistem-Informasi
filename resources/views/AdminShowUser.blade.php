@@ -47,7 +47,16 @@
                                     <td>{{ $itemuser->ssoakunuser }}</td>
                                     <td>{{ $itemuser->nipakunuser }}</td>
                                     <td><a href="{{route('view_user', $itemuser->id)}}"><button class="btn btn-info"><i
-                                                    class="fa fa-eye"></i></button></a></td>
+                                                    class="fa fa-eye"></i></button></a>
+                                        {{-- YANG INI NADD DELETENYA HEHEHE --}}
+                                        <form action="{{route('hapus_user', $itemuser->id)}}" method="POST"
+                                            style="display:inline ">
+                                            {{ method_field('DELETE') }}
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-danger"><i
+                                                    class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>

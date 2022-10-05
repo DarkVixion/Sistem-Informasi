@@ -133,7 +133,7 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-info float-right">Edit</button>
+                                    <button type="submit" class="btn btn-info float-right">Save</button>
                                 </div>
                             </div>
                         </div>
