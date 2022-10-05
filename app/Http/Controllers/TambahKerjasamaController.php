@@ -10,6 +10,7 @@ use App\Models\MoU;
 use App\Models\MoA;
 use App\Models\JenisMitra;
 use App\Models\LingkupKerja;
+use App\Models\AdminViewUser;
 
 
 /* KALO ERROR MAKLUMIN MASIH ON PROGRESS */
@@ -26,8 +27,10 @@ class TambahKerjasamaController extends Controller
     {
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
+        $user = AdminViewUser::all(); //define d sini kalo mau ambil data dari tabel lain
+
         return view('TambahKerja')->with('jm', $jenismitra)
-            ->with('lk', $lingkup);
+            ->with('lk', $lingkup)->with('users', $user);
     }
 
     public function store(Request $req) // store input dari hal Tambah Kerjasama
@@ -72,9 +75,8 @@ class TambahKerjasamaController extends Controller
             $user->judul_mou = $req['judul_mou'];
             $user->tglmulai_mou = $req['tglmulai_mou'];
             $user->tglselesai_mou = $req['tglselesai_mou'];
-
         }
-        
+
         $user->path_mou = $mou;
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
@@ -90,7 +92,6 @@ class TambahKerjasamaController extends Controller
             $user->tglmulai_moa = $req['tglmulai_moa'];
             $user->tglselesai_moa = $req['tglselesai_moa'];
             $user->nilaikontrak = $req['nilaikontrak'];
-
         }
 
         $user->path_moa = $moa;
@@ -144,9 +145,8 @@ class TambahKerjasamaController extends Controller
             $user->judul_mou = $req['judul_mou'];
             $user->tglmulai_mou = $req['tglmulai_mou'];
             $user->tglselesai_mou = $req['tglselesai_mou'];
-
         }
-        
+
         $user->path_mou = $mou;
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
@@ -162,7 +162,6 @@ class TambahKerjasamaController extends Controller
             $user->tglmulai_moa = $req['tglmulai_moa'];
             $user->tglselesai_moa = $req['tglselesai_moa'];
             $user->nilaikontrak = $req['nilaikontrak'];
-
         }
 
         $user->path_moa = $moa;

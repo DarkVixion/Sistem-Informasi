@@ -42,7 +42,6 @@ class AdminUserMenuController extends Controller
 
         $picprofileuser = '';
 
-
         $file = $req['path_profileakunuser'];
         $namapicprofileuser = $req['namaakunuser'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
         $picprofileuser .= $namapicprofileuser;
