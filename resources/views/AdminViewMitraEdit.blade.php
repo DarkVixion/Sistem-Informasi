@@ -6,7 +6,7 @@
         <div class="row mb-2">
             <div class="col-sm-6">
                 <h1>Edit Detail Mitra</h1>
-            </div>            
+            </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="/Mitra">Mitra</a></li>
@@ -26,17 +26,17 @@
             <div class="form-group row">
                 <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}" >
+                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}">
                 </div>
             </div><br>
             <div class="form-group row">
                 <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
                 <div class="col-sm-10">
                     <div class="form-group">
-                        <select class="form-control" name="jenismitra" >
+                        <select class="form-control" name="jenismitra">
                             <option selected hidden>{{ $tks->jenismitra }}</option>
                             @foreach ($jm as $item)
-                                <option>{{ $item->juduljenismitra }}</option>
+                            <option>{{ $item->juduljenismitra }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -46,10 +46,10 @@
                 <label for="select" class="col-sm-2 col-form-label">Lingkup Kerja Sama</label>
                 <div class="col-sm-10">
                     <div class="form-group">
-                        <select class="form-control" name="lingkupkerja" >
+                        <select class="form-control" name="lingkupkerja">
                             <option selected hidden>{{ $tks->lingkupkerja }}</option>
                             @foreach ($lk as $item)
-                                <option>{{ $item->judullingkupkerja }}</option>
+                            <option>{{ $item->judullingkupkerja }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -58,28 +58,28 @@
             <div class="form-group row ">
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                 <div class="col-sm-10 ">
-                    <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}" >
+                    <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}">
                 </div>
                 <br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                 <div class="col-sm-10 ">
-                    <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}" >
+                    <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}">
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
                 <div class="col-sm-10 ">
-                    <input type="text" class="form-control " name="narahubung" placeholder="nama narahubung" value="{{ $tks->narahubung }}" >
+                    <input type="text" class="form-control " name="narahubung" placeholder="nama narahubung" value="{{ $tks->narahubung }}">
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
                 <div class="col-sm-10 ">
-                    <input type="number" class="form-control " name="notelpnara" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="{{ $tks->notelpnara }}" >
+                    <input type="number" class="form-control " name="notelpnara" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="{{ $tks->notelpnara }}">
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="text" class="form-control " name="pic" placeholder="nama pic" value="{{ $tks->pic }}" >
+                    <input type="text" class="form-control " name="pic" placeholder="nama pic" value="{{ $tks->pic }}">
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="number" class="form-control " name="notelppic" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="" >
+                    <input type="number" class="form-control " name="notelppic" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="{{ $tks->notelppic }}">
                 </div><br><br>
             </div>
         </div>
@@ -111,8 +111,7 @@
     <div class="form-group row ">
         <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
         <div class="col-sm-10 ">
-            <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3"
-                placeholder="Masukan Lingkup Kerja Sama Baru">
+            <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru">
         </div>
     </div>
 </div>
