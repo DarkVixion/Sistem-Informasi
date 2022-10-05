@@ -51,6 +51,8 @@ class TambahKerjasamaController extends Controller
         $user->notelpnara = $req['notelpnara'];
         $user->emailnara = $req['emailnara'];
         $user->pic = $req['pic'];
+        $user->notelppic = $req['notelppic'];
+        $user->emailpic = $req['emailpic'];
 
         $user->judul_mou = '';
         $user->tglmulai_mou = null;
@@ -130,6 +132,8 @@ class TambahKerjasamaController extends Controller
         $user->notelpnara = $req['notelpnara'];
         $user->emailnara = $req['emailnara'];
         $user->pic = $req['pic'];
+        $user->notelppic = $req['notelppic'];
+        $user->emailpic = $req['emailpic'];
 
         $mou = $user->path_mou;
         $moa = $user->path_moa;

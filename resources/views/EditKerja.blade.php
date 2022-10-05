@@ -182,24 +182,24 @@
 
         <!-- Content Header (Page header) -->
         <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Edit Kerja Sama</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="/Kerjasama">Kerja Sama</a></li>
-                                <li class="breadcrumb-item active">Edit Kerja Sama</li>
-                            </ol>
-                        </div>
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Edit Kerja Sama</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/Kerjasama">Kerja Sama</a></li>
+                            <li class="breadcrumb-item active">Edit Kerja Sama</li>
+                        </ol>
                     </div>
                 </div>
-                <!-- /.container-fluid -->
-                
+            </div>
+            <!-- /.container-fluid -->
+
             <form class="form-horizontal" action="{{route('update_kerjasama', $tks->id)}}" method="POST" enctype="multipart/form-data">
-            @csrf
-            @method("PATCH")
+                @csrf
+                @method("PATCH")
                 <!-- Horizontal Form -->
                 <div class="card card-info">
 
@@ -307,22 +307,20 @@
                             <br><br><br>
                             <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" 
-                                value = @if ( $tks->tglmulai_mou != null)
-                                        '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
-                                        @else
-                                        '{{ $tks->tglmulai_mou }}'
-                                        @endif>
+                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" value=@if ( $tks->tglmulai_mou != null)
+                                '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
+                                @else
+                                '{{ $tks->tglmulai_mou }}'
+                                @endif>
                             </div>
                             <br><br><br>
                             <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou"
-                                 value = @if ( $tks->tglselesai_mou != null)
-                                        '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
-                                        @else
-                                        '{{ $tks->tglselesai_mou }}'
-                                        @endif>
+                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou" value=@if ( $tks->tglselesai_mou != null)
+                                '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
+                                @else
+                                '{{ $tks->tglselesai_mou }}'
+                                @endif>
                             </div>
                             <br><br><br>
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
@@ -363,22 +361,20 @@
                             <br><br><br>
                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" 
-                                value = @if ( $tks->tglmulai_moa != null)
-                                        '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
-                                        @else
-                                        '{{ $tks->tglmulai_moa }}'
-                                        @endif>
+                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" value=@if ( $tks->tglmulai_moa != null)
+                                '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
+                                @else
+                                '{{ $tks->tglmulai_moa }}'
+                                @endif>
                             </div>
                             <br><br><br>
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" 
-                                    value = @if ( $tks->tglselesai_moa != null)
-                                            '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
-                                            @else
-                                            '{{ $tks->tglselesai_moa }}'
-                                            @endif>
+                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" value=@if ( $tks->tglselesai_moa != null)
+                                '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
+                                @else
+                                '{{ $tks->tglselesai_moa }}'
+                                @endif>
                             </div>
                             <br><br><br>
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
@@ -436,12 +432,12 @@
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" disabled>
+                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}">
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $tks->emailpic }}" disabled>
+                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $tks->emailpic }}">
                             </div>
                         </div>
 
