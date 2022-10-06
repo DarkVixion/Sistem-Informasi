@@ -86,6 +86,14 @@ class AkunController extends Controller
         $akun = Akun::find($id);
         $akun->update($input);
 
+        $akun->namaakun = $req['namaakun'];
+        $akun->userssoakun = $req['userssoakun'];
+        $akun->emailakun = $req['emailakun'];
+        $akun->nipakun = $req['nipakun'];
+        $akun->notelpakun = $req['notelpakun'];
+        $akun->roleakun = $req['roleakun'];
+        $akun->statusakun = $req['statusakun'];
+        
         //$picprofile = '';
 
         /*$file = $req['path_profileakun'];
@@ -104,7 +112,7 @@ class AkunController extends Controller
             $akun->path_profileakun = $picprofile;
             $akun->save();
         }
-
+        
 
         /*$akun->path_profileakun = $picprofile;
         $akun->save();*/

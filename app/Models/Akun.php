@@ -9,6 +9,7 @@ class Akun extends Model
 {
     use HasFactory;
     protected $table = 'akun';
+    public $timestamp = false;
     protected $fillable = [
         "namaakun",
         "userssoakun",
@@ -16,9 +17,7 @@ class Akun extends Model
         "nipakun",
         "notelpakun",
         "roleakun",
-        "statusakun",
-        "_token"
-    ];
+        "statusakun"
+        ];
 
-    public $timestamp = false;
 }

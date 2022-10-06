@@ -41,7 +41,6 @@ class TambahKerjasamaController extends Controller
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
         $user->jenismitra = $req['jenismitra'];
-        $user->judulkerjasama = $req['judulkerjasama'];
         $user->lingkupkerja = $req['lingkupkerja'];
         $user->alamat = $req['alamat'];
         $user->negara = $req['negara'];
@@ -51,7 +50,6 @@ class TambahKerjasamaController extends Controller
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
         $user->emailnara = $req['emailnara'];
-        $user->pic = $req['pic'];
         $user->notelppic = $req['notelppic'];
         $user->emailpic = $req['emailpic'];
 
