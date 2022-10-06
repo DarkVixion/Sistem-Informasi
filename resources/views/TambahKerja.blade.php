@@ -183,8 +183,9 @@
                         <!-- form start -->
                         <div class="card-body">
                             <div class="form-group row">
-                                <label for="select" class="col-sm-2 col-form-label">Status</label>
-                                <div class="col-sm-10">
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <select class="form-control" name="status">
                                         <option>Aktif</option>
                                         <option>Tidak Aktif</option>
@@ -193,53 +194,73 @@
                                         <option>Perpanjangan</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                                            <div class="col-sm-13">
+                                                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
+                                            </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
-                                <div class="col-sm-10">
+                            <div class="row">
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
                                     <select class="form-control" name="jenismitra">
                                         @foreach ($jm as $item)
                                         <option>{{ $item->juduljenismitra }}</option>
                                         @endforeach
                                     </select>
                                 </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-4 col-form-label ">Bulan Pencatatan</label>
+                                        <div class="col-sm-13">
+                                            <input type="month" class="form-control " name="bulaninput">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
-                                <div class="col-sm-10">
+                            <div class="row">
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-4 col-form-label">Judul Kerja Sama</label>
                                     <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama">
                                 </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                                        <input type="url" class="form-control " name="website" placeholder="Masukan Website">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group row ">
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                                <div class="col-sm-10 ">
+                            <div class="row">
+                                <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputPassword3 " class="col-sm-4 col-form-label ">Nomor Telephone</label>
+                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                                            <div class="col-sm-13">
+                                                <input type="text" class="form-control " name="negara" placeholder="Masukan Negara">
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                                     <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
                                 </div>
-                                <br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
-                                <div class="col-sm-10 ">
-                                    <input type="text" class="form-control " name="negara" placeholder="Masukan Negara">
                                 </div>
-                                <br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
-                                <div class="col-sm-10 ">
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
-                                </div><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-                                <div class="col-sm-10 ">
-                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website">
-                                </div><br><br>
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Pencatatan</label>
-                                <div class="col-sm-10 ">
-                                    <input type="month" class="form-control " name="bulaninput">
-                                </div>
-                            </div>
                         </div>
                         <!-- /.card-body -->
                     </div>
