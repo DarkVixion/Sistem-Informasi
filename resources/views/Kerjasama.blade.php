@@ -73,7 +73,7 @@
                                     <th>Periode Berakhir MoU</th>
                                     <th>Periode Mulai MoA</th>
                                     <th>Periode Berakhir MoA</th>
-                                    <th>Misc.</th>
+                                    <th style="width: 8%">Misc.</th>
                                 </tr>
                             </thead>
                             <tbody>

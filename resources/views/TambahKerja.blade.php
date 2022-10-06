@@ -161,8 +161,8 @@
         <div class="content-wrapper" style="min-height: 1755;">
 
             <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
+            {{-- <section class="content-header"> --}}
+                <div class="container-fluid" style="padding-top: 1.5%">
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1>Tambah Kerja Sama</h1>
@@ -182,11 +182,12 @@
                     <div class="card card-info">
                         <!-- form start -->
                         <div class="card-body">
-                            <div class="form-group row">
+                            <h3 style="text-align: center;">Kerja Sama</h3>
+                            <div class="form-group row"> 
                                 <div class="col-md-6">
-                                <div class="form-group">
+                                <div class="form-group"> 
                                     <label for="select" class="col-sm-2 col-form-label">Status</label>
-                                    <select class="form-control" name="status">
+                                    <select class="form-control" name="status"> 
                                         <option>Aktif</option>
                                         <option>Tidak Aktif</option>
                                         <option>Kadarluwasa</option>
@@ -226,10 +227,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputPassword3" class="col-sm-4 col-form-label">Judul Kerja Sama</label>
-                                    <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama">
-                                </div>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                                    <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -254,28 +253,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                                    <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
-                                </div>
-                                </div>
-                        </div>
+                            
                         <!-- /.card-body -->
-                    </div>
+                    </div><br>
+                </div>
                     <!-- /.card -->
 
                     <!-- Horizontal Form -->
                     <div class="card card-info">
                         <!-- form start -->
                         <div class="card-body">
+                            <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label"> </label>
                                 <div class="col-sm-10">
-                                    <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                                 </div>
-                                <br><br>
+                                <br>
                                 <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
@@ -305,12 +298,12 @@
                     <div class="card card-info">
                         <!-- form start -->
                         <div class="card-body">
+                            <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
                             <div class="form-group row">
                                 <label for="input" class="col-sm-2 col-form-label"> </label>
                                 <div class="col-sm-10">
-                                    <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
                                 </div>
-                                <br><br>
+                                <br>
                                 <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama">
@@ -407,7 +400,7 @@
                         <!-- /.card-footer -->
                     </div>
                 </form>
-            </section>
+            {{-- </section> --}}
         </div>
     </div>
 
