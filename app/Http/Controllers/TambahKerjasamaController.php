@@ -23,14 +23,15 @@ class TambahKerjasamaController extends Controller
         return view('Kerjasama')->with('kerjasama', $kerjasama);
     }
 
-    public function create() // untuk view hal Tambah Kerjasama, smae as index
+    public function create() // untuk view hal Tambah Kerjasama
     {
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
         $user = AdminViewUser::all(); //define d sini kalo mau ambil data dari tabel lain
 
         return view('TambahKerja')->with('jm', $jenismitra)
-            ->with('lk', $lingkup)->with('users', $user);
+                                ->with('lk', $lingkup)
+                                ->with('users', $user);
     }
 
     public function store(Request $req) // store input dari hal Tambah Kerjasama
@@ -106,12 +107,14 @@ class TambahKerjasamaController extends Controller
     public function edit($id)
     {
         $tambahkerjasama = TambahKerjasama::find($id);
-        // var_dump($tambahkerjasama); die;
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
+        $user = AdminViewUser::all();
+
         return view('EditKerja')->with('tks', $tambahkerjasama)
             ->with('jm', $jenismitra)
-            ->with('lk', $lingkup);
+            ->with('lk', $lingkup)
+            ->with('users', $user);
     }
 
     public function update(Request $req, $id)

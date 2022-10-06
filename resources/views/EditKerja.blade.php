@@ -165,7 +165,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/Akun" class="nav-link">
+                        <a href="/AdminShowUser" class="nav-link">
                             <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
                             <p>User</p>
                         </a>
@@ -326,6 +326,7 @@
                             <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                             <div class="col-sm-10 ">
                                 <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="100%" height="500" alt="pdf"></iframe>
+                                <br><br>
                                 <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                             </div>
                         </div>
@@ -380,6 +381,7 @@
                             <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
                             <div class="col-sm-10 ">
                                 <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="100%" height="400" alt="pdf"></iframe>
+                                <br><br>
                                 <input type="file" class="form-control" name="path_moa[]" accept="pdf/*" multiple>
                             </div>
                         </div>
@@ -424,20 +426,21 @@
                                 <div class="form-group">
                                     <select class="form-control" name="pic">
                                         <option value="" hidden>Pilih Nama PIC UPer</option>
-                                        <option>Bapak Abcd</option>
-                                        <option>Ibu Efgh</option>
+                                        @foreach($users as $u)
+                                            <option value="{{$u->id}}"> {{ $u->namaakunuser }} </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}">
+                                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" disabled>
                             </div>
                             <br><br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $tks->emailpic }}">
+                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $tks->emailpic }}" disabled>
                             </div>
                         </div>
 

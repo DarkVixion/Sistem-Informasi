@@ -145,7 +145,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="Akun" class="nav-link">
+                            <a href="/AdminShowUser" class="nav-link">
                                 <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
                                 <p>User</p>
                             </a>
@@ -380,7 +380,7 @@
                                 <div class="col-sm-10">
                                     <div class="form-group">
                                         <select class="form-control" name="pic">
-                                            <option hidden> Pilih Nama PIC User </option>
+                                            <option value="" hidden> Pilih Nama PIC User </option>
                                             @foreach($users as $u)
                                             <option value="{{$u->id}}"> {{ $u->namaakunuser }} </option>
                                             @endforeach
@@ -390,12 +390,12 @@
                                 <br><br>
                                 <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name="notelppic" id="notelppic" placeholder="No Telepon PIC">
+                                    <input type="number" class="form-control" name="notelppic" id="notelppic" placeholder="No Telepon PIC" disabled>
                                 </div>
                                 <br><br>
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                 <div class="col-sm-10 ">
-                                    <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC">
+                                    <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" disabled>
                                 </div>
                             </div>
                         </div>
