@@ -69,7 +69,10 @@ class AkunController extends Controller
     {
         $akun = Akun::all();
         return view('AkunTampil')->with('akun', $akun);
-    } */
+    } 
+    
+    .
+    */
 
     public function isiakun()
     {
@@ -93,7 +96,7 @@ class AkunController extends Controller
         $akun->notelpakun = $req['notelpakun'];
         $akun->roleakun = $req['roleakun'];
         $akun->statusakun = $req['statusakun'];
-        
+
         //$picprofile = '';
 
         /*$file = $req['path_profileakun'];
@@ -112,7 +115,7 @@ class AkunController extends Controller
             $akun->path_profileakun = $picprofile;
             $akun->save();
         }
-        
+
 
         /*$akun->path_profileakun = $picprofile;
         $akun->save();*/
