@@ -18,6 +18,6 @@ class Akun extends Model
         "notelpakun",
         "roleakun",
         "statusakun"
-        ];
+    ];
 
 }

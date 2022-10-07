@@ -85,17 +85,9 @@ class AkunController extends Controller
 
     public function edit(Request $req, $id)
     {
-        $input = $req->except(['_token']);
+        $input = $req->except(['_token','akun'.'updated_at']);
         $akun = Akun::find($id);
         $akun->update($input);
-
-        $akun->namaakun = $req['namaakun'];
-        $akun->userssoakun = $req['userssoakun'];
-        $akun->emailakun = $req['emailakun'];
-        $akun->nipakun = $req['nipakun'];
-        $akun->notelpakun = $req['notelpakun'];
-        $akun->roleakun = $req['roleakun'];
-        $akun->statusakun = $req['statusakun'];
 
         //$picprofile = '';
 
@@ -115,10 +107,6 @@ class AkunController extends Controller
             $akun->path_profileakun = $picprofile;
             $akun->save();
         }
-
-
-        /*$akun->path_profileakun = $picprofile;
-        $akun->save();*/
 
         return back();
     }

@@ -23,6 +23,9 @@ class CreateAkunTable extends Migration
             $table->string("roleakun");
             $table->string("statusakun");
             $table->string("path_profileakun");
+            $table->string('updated_at');
+            $table->string('created_at');
+
         });
     }
 
