@@ -305,8 +305,6 @@
                             <div class="col-sm-10">
                                 <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" value=@if ( $tks->tglmulai_mou != null)
                                 '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
-                                @else
-                                '{{ $tks->tglmulai_mou }}'
                                 @endif>
                             </div>
                             <br><br>
@@ -314,8 +312,6 @@
                             <div class=" col-sm-10 ">
                                 <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou" value=@if ( $tks->tglselesai_mou != null)
                                 '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
-                                @else
-                                '{{ $tks->tglselesai_mou }}'
                                 @endif>
                             </div>
                             <br><br><br>
@@ -367,8 +363,6 @@
                             <div class="col-sm-10">
                                 <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" value=@if ( $tks->tglmulai_moa != null)
                                 '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
-                                @else
-                                '{{ $tks->tglmulai_moa }}'
                                 @endif>
                             </div>
                             <br><br>
@@ -376,8 +370,6 @@
                             <div class=" col-sm-10 ">
                                 <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" value=@if ( $tks->tglselesai_moa != null)
                                 '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
-                                @else
-                                '{{ $tks->tglselesai_moa }}'
                                 @endif>
                             </div>
                             <br><br><br>
