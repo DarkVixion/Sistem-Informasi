@@ -164,7 +164,7 @@
                     <li class="nav-item">
                         <a href="/Kerjasama" class="nav-link">
                             <i class="nav-icon fas fa-table"></i>
-                            <p>Kerja Sama</p>
+                            <p>Rekap Kontrak</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -172,7 +172,7 @@
                             <img class="nav-icon" style="opacity: 75%"
                                 srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
                                 loading="lazy"></img>
-                            <p>Mitra</p>
+                            <p>Profile Mitra</p>
                         </a>
                     </li>
                     <li class="nav-item">
