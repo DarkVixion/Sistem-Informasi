@@ -208,8 +208,9 @@
                     </div>
                 </div>
             </div>
-            <!-- /.container-fluid -->
-
+        </section>
+        <!-- /.container-fluid -->
+        <section class="content">
             <form class="form-horizontal" action="{{route('update_kerjasama', $tks->id)}}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
@@ -242,8 +243,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
@@ -265,8 +264,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                                 <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat"
@@ -279,8 +276,6 @@
                                         value="{{ $tks->website }}">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="inputPassword3 " class="col-sm-4 col-form-label ">Nomor
@@ -305,187 +300,203 @@
                     </div><br>
                 </div>
                 <!-- /.card -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-info">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="input" class="col-sm-2 col-form-label"> </label>
+                                    <div class="col-sm-10">
+                                        <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                                    </div>
+                                    <br><br>
+                                    <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control @error('judul_mou') is-invalid @enderror"
+                                            name="judul_mou" placeholder="Masukan Judul Kerja Sama"
+                                            value="{{ $tks->judul_mou }}">
+                                    </div>
+                                    <br><br>
+                                    <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                                    <div class="col-sm-10">
+                                        <input type="date"
+                                            class="form-control @error('tglmulai_mou') is-invalid @enderror"
+                                            name="tglmulai_mou" value=@if ( $tks->tglmulai_mou != null)
+                                        '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
+                                        @endif>
+                                    </div>
+                                    <br><br>
+                                    <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal
+                                        Selesai</label>
+                                    <div class=" col-sm-10 ">
+                                        <input type="date"
+                                            class="form-control @error('tglselesai_mou') is-invalid @enderror"
+                                            name="tglselesai_mou" value=@if ( $tks->tglselesai_mou != null)
+                                        '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
+                                        @endif>
+                                    </div>
+                                    <br><br><br>
+                                    <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
+                                    <div class="col-sm-10 ">
+                                        <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="auto"
+                                            height="500" alt="pdf"></iframe>
+                                        <br><br>
+                                        <input type="file" class="form-control " name="path_mou[]" accept="pdf/*"
+                                            multiple>
+                                    </div>
+                                    <div class="col-sm-10" style="opacity: 0.0;">
+                                        <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal
+                                            Mulai</label>
 
-                <!-- Horizontal Form -->
-                <div class="card card-info">
+                                        <br>
+                                        <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
+                                            Selesai</label>
 
-                    <!-- form start -->
+                                    </div>
+                                </div>
 
-                    <div class="card-body">
-
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label"> </label>
-                            <div class="col-sm-10">
-                                <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                             </div>
-                            <br><br>
-                            <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror"
-                                    name="judul_mou" placeholder="Masukan Judul Kerja Sama"
-                                    value="{{ $tks->judul_mou }}">
-                            </div>
-                            <br><br>
-                            <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror"
-                                    name="tglmulai_mou" value=@if ( $tks->tglmulai_mou != null)
-                                '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
-                                @endif>
-                            </div>
-                            <br><br>
-                            <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
-                            <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                    name="tglselesai_mou" value=@if ( $tks->tglselesai_mou != null)
-                                '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
-                                @endif>
-                            </div>
-                            <br><br><br>
-                            <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
-                            <div class="col-sm-10 ">
-                                <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="auto" height="500"
-                                    alt="pdf"></iframe>
-                                <br><br>
-                                <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
-                            </div>
+                            <!-- /.card-body -->
                         </div>
-
                     </div>
-                    <!-- /.card-body -->
-                </div>
+                    <div class="col-md-6">
+                        <div class="card card-info">
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="input" class="col-sm-2 col-form-label"> </label>
+                                    <div class="col-sm-10">
+                                        <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
+                                    </div>
+                                    <br><br>
+                                    <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control @error('judul_moa') is-invalid @enderror"
+                                            name="judul_moa" placeholder="Masukan Judul Kerja Sama"
+                                            value="{{ $tks->judul_moa }}">
+                                    </div>
+                                    <br><br>
+                                    <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
+                                    <div class="col-sm-10">
+                                        <input type="number"
+                                            class="form-control @error('nilaikontrak') is-invalid @enderror"
+                                            name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)"
+                                            value="{{ $tks->nilaikontrak }}">
+                                    </div>
+                                    <br><br>
+                                    <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+                                    <div class="col-sm-10 ">
+                                        <select class="form-control" name="lingkupkerja">
+                                            <option hidden>{{ $tks->lingkupkerja }}</option>
+                                            @foreach ($lk as $item)
+                                            <option>{{ $item->judullingkupkerja }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <br><br>
+                                    <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                                    <div class="col-sm-10">
+                                        <input type="date"
+                                            class="form-control @error('tglmulai_moa') is-invalid @enderror"
+                                            name="tglmulai_moa" value=@if ( $tks->tglmulai_moa != null)
+                                        '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
+                                        @endif>
+                                    </div>
+                                    <br><br>
+                                    <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
+                                        Selesai</label>
+                                    <div class=" col-sm-10 ">
+                                        <input type="date"
+                                            class="form-control @error('tglselesai_moa') is-invalid @enderror"
+                                            name="tglselesai_moa" value=@if ( $tks->tglselesai_moa != null)
+                                        '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
+                                        @endif>
+                                    </div>
+                                    <br><br><br>
+                                    <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
+                                    <div class="col-sm-10 ">
+                                        <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="auto"
+                                            height="400" alt="pdf"></iframe>
+                                        <br><br>
+                                        <input type="file" class="form-control" name="path_moa[]" accept="pdf/*"
+                                            multiple>
+                                    </div>
+                                </div>
 
-                <!-- Horizontal Form -->
-                <div class="card card-info">
-
-                    <!-- form start -->
-                    <div class="card-body">
-
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label"> </label>
-                            <div class="col-sm-10">
-                                <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
                             </div>
-                            <br><br>
-                            <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_moa') is-invalid @enderror"
-                                    name="judul_moa" placeholder="Masukan Judul Kerja Sama"
-                                    value="{{ $tks->judul_moa }}">
-                            </div>
-                            <br><br>
-                            <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                    name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)"
-                                    value="{{ $tks->nilaikontrak }}">
-                            </div>
-                            <br><br>
-                            <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                            <div class="col-sm-10 ">
-                                <select class="form-control" name="lingkupkerja">
-                                    <option hidden>{{ $tks->lingkupkerja }}</option>
-                                    @foreach ($lk as $item)
-                                    <option>{{ $item->judullingkupkerja }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <br><br>
-                            <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror"
-                                    name="tglmulai_moa" value=@if ( $tks->tglmulai_moa != null)
-                                '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
-                                @endif>
-                            </div>
-                            <br><br>
-                            <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
-                            <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                    name="tglselesai_moa" value=@if ( $tks->tglselesai_moa != null)
-                                '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
-                                @endif>
-                            </div>
-                            <br><br><br>
-                            <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
-                            <div class="col-sm-10 ">
-                                <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="auto" height="400"
-                                    alt="pdf"></iframe>
-                                <br><br>
-                                <input type="file" class="form-control" name="path_moa[]" accept="pdf/*" multiple>
-                            </div>
+                            <!-- /.card-body -->
                         </div>
-
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-
-                <div class="card card-info">
-
-                    <!-- form start -->
-                    <div class="card-body">
-
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="narahubung"
-                                    placeholder="Masukkan Narahubung" value="{{ $tks->narahubung }}">
-                            </div>
-                            <br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon"
-                                    value="{{ $tks->notelpnara }}">
-                            </div>
-                            <br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email"
-                                    value="{{ $tks->emailnara }}">
-                            </div>
-                        </div>
-
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-info">
+                            <!-- form start -->
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="narahubung"
+                                            placeholder="Masukkan Narahubung" value="{{ $tks->narahubung }}">
+                                    </div>
+                                    <br><br>
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control " name="notelpnara"
+                                            placeholder="No. Telepon" value="{{ $tks->notelpnara }}">
+                                    </div>
+                                    <br><br>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="text" class="form-control" name="emailnara"
+                                            placeholder="Alamat Email" value="{{ $tks->emailnara }}">
+                                    </div>
+                                </div>
 
-                <div class="card card-info">
-
-                    <!-- form start -->
-                    <div class="card-body">
-
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
-                            <div class="col-sm-10">
-                                <div class="form-group">
-                                    <select class="form-control" name="pic">
-                                        <option value="" hidden>Pilih Nama PIC UPer</option>
-                                        @foreach($users as $u)
-                                        <option value="{{$u->id}}"> {{ $u->namaakunuser }} </option>
-                                        @endforeach
-                                    </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-info">
+                            <!-- form start -->
+                            <div class="card-body">
+                                <div class="form-group row">
+                                    <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
+                                    <div class="col-sm-10">
+                                        <div class="form-group">
+                                            <select class="form-control" name="pic">
+                                                <option value="" hidden>Pilih Nama PIC UPer</option>
+                                                @foreach($users as $u)
+                                                <option value="{{$u->id}}"> {{ $u->namaakunuser }} </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br><br>
+                                    <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" name='notelppic' id="notelppic"
+                                            placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" disabled>
+                                    </div>
+                                    <br><br>
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
+                                    <div class="col-sm-10 ">
+                                        <input type="text" class="form-control" name="emailpic" id="emailpic"
+                                            placeholder="Email PIC" value="{{ $tks->emailpic }}" disabled>
+                                    </div>
                                 </div>
                             </div>
-                            <br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" name='notelppic' id="notelppic"
-                                    placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" disabled>
-                            </div>
-                            <br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailpic" id="emailpic"
-                                    placeholder="Email PIC" value="{{ $tks->emailpic }}" disabled>
-                            </div>
+                            <!-- /.card-body -->
                         </div>
                     </div>
-                    <!-- /.card-body -->
+                </div>
+                <div class=" card card-info">
                     <div class=" card-footer ">
                         <button type="submit" class="btn btn-info">Save</button>
-                        <button type="button" onclick="history.back()" class="btn btn-default float-right">Cancel</button>
+                        <button type="submit" class="btn btn-default float-right">Cancel</button>
                     </div>
-                    <!-- /.card-footer -->
                 </div>
+
+
             </form>
         </section>
     </div>

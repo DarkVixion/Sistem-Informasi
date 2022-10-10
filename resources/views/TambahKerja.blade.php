@@ -273,6 +273,14 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card card-info">
+                                <div class="card-header">
+                                    <div class="card-tools ">
+                                        <button type="button" class="btn btn-tool float-right"
+                                            data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
                                 <!-- form start -->
                                 <div class="card-body">
                                     <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
@@ -319,11 +327,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.card-body -->
+                                <div class=" card-footer ">
+                                    <button type="" class="btn btn-info float-right">Tambah MOU</button>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="card card-info">
+                                <div class="card-header">
+                                    <div class="card-tools ">
+                                        <button type="button" class="btn btn-tool float-right"
+                                            data-card-widget="remove">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
                                 <!-- form start -->
                                 <div class="card-body">
                                     <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
@@ -382,7 +400,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- /.card-body -->
+                                <div class=" card-footer ">
+                                    <button type="" class="btn btn-info float-right">Tambah MOA</button>
+                                </div>
                             </div>
                         </div>
                     </div>
