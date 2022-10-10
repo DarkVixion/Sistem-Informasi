@@ -342,7 +342,8 @@
                                         <div class="col-sm-9">
                                             <input type="number"
                                                 class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                                name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
+                                                name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" pattern="/^-?\d+\.?\d*$/"
+                                                onKeyPress="if(this.value.length==15) return false;">
                                         </div>
                                         <br><br>
                                         <label for="select " class="col-sm-3 col-form-label ">Lingkup Kerja

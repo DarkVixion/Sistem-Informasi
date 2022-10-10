@@ -8,7 +8,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
-use App\Http\Controllers\AdminViewUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,9 +59,6 @@ Route::get('Mitra', [MitraController::class, 'index']);
 Route::get('AdminEditMitra/{id}', [MitraController::class, 'edit'])->name('edit_mitra1');
 Route::match(['put', 'patch'], 'AdminEditMitra/{id}', [MitraController::class, 'update'])->name('update_mitra');
 
-Route::get('AdminShowUser', function () {
-    return view('AdminShowUser');
-});
 Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
 
 // <-- BAGIAN USER -->
@@ -71,10 +67,9 @@ Route::get('AdminUserMenu', function () {
 });
 Route::post('/AdminUserMenuStore', [AdminUserMenuController::class, 'store'])->name('inputdataakunuser');
 Route::get('/AdminUserMenu', [AdminUserMenuController::class, 'testuser']);
-Route::get('/AdminViewUser/{id}', [AdminViewUserController::class, 'show'])->name('view_user');
+Route::get('/AdminViewUser/{id}', [AdminUserMenuController::class, 'show'])->name('view_user');
 Route::delete('/AdminViewUser/{id}', [AdminUserMenuController::class, 'delete'])->name('hapus_user');
-//Route::get('/AdminEditUser', [AdminViewUserController::class, 'index']);
-Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminViewUserController::class, 'edit'])->name('edit_user');
+Route::match(['put','patch'], '/AdminEditUser/{id}', [AdminUserMenuController::class, 'edit'])->name('edit_user');
 
 Route::get('UserDashboard', function () {
     return view('UserDashboard');

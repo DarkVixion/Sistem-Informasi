@@ -67,7 +67,7 @@
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                     <div class="col-sm-10 ">
-                                        <input type="file" class="form-control " name="path_profileakunuser" accept="png/*" multiple>
+                                        <input type="file" class="form-control " name="path_profileakunuser" accept="png/*">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
@@ -97,13 +97,15 @@
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nipakunuser" placeholder="122333">
+                                        <input type="number" class="form-control" name="nipakunuser" placeholder="122333" pattern="/^-?\d+\.?\d*$/"
+                                        onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelpakunuser" placeholder="0812xxx">
+                                        <input type="number" class="form-control" name="notelpakunuser" placeholder="0812xxx" pattern="/^-?\d+\.?\d*$/"
+                                        onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
@@ -133,14 +135,14 @@
                                 </div>
                                 <div>
                                     <button type="submit" class="btn btn-info">Tambahkan</button>
-                                    <button type="submit" class="btn btn-default float-right">Buang</button>
+                                    <button type="button" onclick="history.back()" class="btn btn-default float-right">Buang</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </form>
 
             <!-- /.card-body -->
 
