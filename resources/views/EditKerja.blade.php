@@ -202,88 +202,84 @@
                 @method("PATCH")
                 <!-- Horizontal Form -->
                 <div class="card card-info">
-
                     <!-- form start -->
                     <div class="card-body">
+                        <h3 style="text-align: center;">Kerja Sama</h3>
                         <div class="form-group row">
-                            <label for="select" class="col-sm-2 col-form-label">Status</label>
-                            <div class="col-sm-10">
+                            <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <select class="form-control" name="status">
+                                        <option hidden selected>{{ $tks->status }}</option>
                                         <option>Aktif</option>
                                         <option>Tidak Aktif</option>
                                         <option>Kadarluwasa</option>
                                         <option>Dalam Penjajakan</option>
                                         <option>Perpanjangan</option>
-                                        <option hidden selected>{{ $tks->status }}</option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}">
-                            </div>
-                        </div><br>
-                        <div class="form-group row">
-                            <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
-                            <div class="col-sm-10">
+                            <div class="col-md-6">
                                 <div class="form-group">
+                                    <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                                    <div class="col-sm-13">
+                                        <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
                                     <select class="form-control" name="jenismitra">
+                                        <option hidden selected>{{ $tks->jenismitra }}</option>
                                         @foreach ($jm as $item)
                                         <option>{{ $item->juduljenismitra }}</option>
                                         @endforeach
-                                        <option hidden selected>{{ $tks->jenismitra }}</option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control " name="judulkerjasama" placeholder="Masukan Judul Kerja Sama" value="{{ $tks->judulkerjasama }}">
-                            </div>
-                        </div>.
-                        <div class="form-group row ">
-                            <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                            <div class="col-sm-10 ">
-                                <div class="form-group ">
-                                    <select class="form-control" name="lingkupkerja">
-                                        @foreach ($lk as $item)
-                                        <option>{{ $item->judullingkupkerja }}</option>
-                                        @endforeach
-                                        <option hidden selected>{{ $tks->lingkupkerja }}</option>
-                                    </select>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputPassword3 " class="col-sm-4 col-form-label ">Bulan Pencatatan</label>
+                                    <div class="col-sm-13">
+                                        <input type="month" class="form-control " name="bulaninput" value="{{ $tks->bulaninput }}">
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group row ">
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                            <div class="col-sm-10 ">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                                 <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}">
                             </div>
-                            <br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" class="form-control " name="negara" placeholder="Masukan Negara" value="{{ $tks->negara }}">
-                            </div><br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone</label>
-                            <div class="col-sm-10 ">
-                                <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" value="{{ $tks->notelpmitra }}">
-                            </div><br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-                            <div class="col-sm-10 ">
-                                <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}">
-                            </div><br><br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Bulan Kerja Sama</label>
-                            <div class="col-sm-10 ">
-                                <input type="month" class="form-control " name="bulaninput" value="{{ $tks->bulaninput }}">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputPassword3 " class="col-sm-4 col-form-label ">Nomor Telephone</label>
+                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" value="{{ $tks->notelpmitra }}" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                                    <div class="col-sm-13">
+                                        <input type="text" class="form-control " name="negara" placeholder="Masukan Negara" value="{{ $tks->negara }}">
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                    </div>
-                    <!-- /.card-body -->
+                        <!-- /.card-body -->
+                    </div><br>
                 </div>
                 <!-- /.card -->
 
@@ -299,12 +295,12 @@
                             <div class="col-sm-10">
                                 <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama" value="{{ $tks->judul_mou }}">
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" value=@if ( $tks->tglmulai_mou != null)
@@ -313,7 +309,7 @@
                                 '{{ $tks->tglmulai_mou }}'
                                 @endif>
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
                                 <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou" value=@if ( $tks->tglselesai_mou != null)
@@ -333,10 +329,7 @@
 
                     </div>
                     <!-- /.card-body -->
-
-
                 </div>
-
 
                 <!-- Horizontal Form -->
                 <div class="card card-info">
@@ -349,17 +342,27 @@
                             <div class="col-sm-10">
                                 <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama" value="{{ $tks->judul_moa }}">
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" value="{{ $tks->nilaikontrak }}">
                             </div>
-                            <br><br><br>
+                            <br><br>
+                            <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+                            <div class="col-sm-10 ">
+                                <select class="form-control" name="lingkupkerja">
+                                    <option hidden>{{ $tks->lingkupkerja }}</option>
+                                    @foreach ($lk as $item)
+                                    <option>{{ $item->judullingkupkerja }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <br><br>
                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" value=@if ( $tks->tglmulai_moa != null)
@@ -368,7 +371,7 @@
                                 '{{ $tks->tglmulai_moa }}'
                                 @endif>
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
                             <div class=" col-sm-10 ">
                                 <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" value=@if ( $tks->tglselesai_moa != null)
@@ -400,12 +403,12 @@
                             <div class="col-sm-10">
                                 <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung" value="{{ $tks->narahubung }}">
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon" value="{{ $tks->notelpnara }}">
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email" value="{{ $tks->emailnara }}">
@@ -432,26 +435,23 @@
                                     </select>
                                 </div>
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
                                 <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" disabled>
                             </div>
-                            <br><br><br>
+                            <br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
                                 <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $tks->emailpic }}" disabled>
                             </div>
                         </div>
-
                     </div>
                     <!-- /.card-body -->
-
                     <div class=" card-footer ">
                         <button type="submit" class="btn btn-info">Save</button>
                         <button type="submit" class="btn btn-default float-right">Cancel</button>
                     </div>
-
                     <!-- /.card-footer -->
                 </div>
             </form>

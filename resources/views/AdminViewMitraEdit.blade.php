@@ -75,7 +75,7 @@
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="text" class="form-control " name="pic" placeholder="nama pic" value="{{ $tks->pic }}">
+                    <input type="text" class="form-control " name="pic" placeholder="nama pic" value="{{ $tks->assignuserakun }}">
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
                 <div class="col-sm-10 ">
@@ -96,36 +96,7 @@
 
 
 
-{{-- <div class="modal fade" id="modal-xl">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Tambah Lingkup Kerja Sama Baru</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="{{route('tambah_lingkup')}}" method="post">
-{!! csrf_field() !!}
-<div class="modal-body">
-    <div class="form-group row ">
-        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-        <div class="col-sm-10 ">
-            <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru">
-        </div>
-    </div>
-</div>
-<div class="modal-footer justify-content-between">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-    <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
-</div>
-</form>
-</div>
-<!-- /.modal-content -->
-</div>
-<!-- /.modal-dialog -->
-</div> --}}
-<!-- /.modal -->
+
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>

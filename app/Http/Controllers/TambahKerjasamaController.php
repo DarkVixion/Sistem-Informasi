@@ -122,7 +122,6 @@ class TambahKerjasamaController extends Controller
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
         $user->jenismitra = $req['jenismitra'];
-        $user->judulkerjasama = $req['judulkerjasama'];
         $user->lingkupkerja = $req['lingkupkerja'];
         $user->alamat = $req['alamat'];
         $user->negara = $req['negara'];
@@ -132,9 +131,18 @@ class TambahKerjasamaController extends Controller
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
         $user->emailnara = $req['emailnara'];
-        $user->pic = $req['pic'];
+        $user->assignuserakun = $req['pic'];
         $user->notelppic = $req['notelppic'];
         $user->emailpic = $req['emailpic'];
+
+        $user->judul_mou = $req['judul_mou'];
+        $user->tglmulai_mou = $req['tglmulai_mou'];
+        $user->tglselesai_mou = $req['tglselesai_mou'];
+
+        $user->judul_moa = $req['judul_moa'];
+        $user->tglmulai_moa = $req['tglmulai_moa'];
+        $user->tglselesai_moa = $req['tglselesai_moa'];
+        $user->nilaikontrak = $req['nilaikontrak'];
 
         $mou = $user->path_mou;
         $moa = $user->path_moa;
@@ -146,10 +154,6 @@ class TambahKerjasamaController extends Controller
 
                 $file->move(public_path('files'), $namafilemou);
             }
-
-            $user->judul_mou = $req['judul_mou'];
-            $user->tglmulai_mou = $req['tglmulai_mou'];
-            $user->tglselesai_mou = $req['tglselesai_mou'];
         }
 
         $user->path_mou = $mou;
@@ -159,14 +163,8 @@ class TambahKerjasamaController extends Controller
             foreach ($req['path_moa'] as $file) {
                 $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $moa .= $namafilemoa . '_';
-
                 $file->move(public_path('files'), $namafilemoa);
             }
-
-            $user->judul_moa = $req['judul_moa'];
-            $user->tglmulai_moa = $req['tglmulai_moa'];
-            $user->tglselesai_moa = $req['tglselesai_moa'];
-            $user->nilaikontrak = $req['nilaikontrak'];
         }
 
         $user->path_moa = $moa;

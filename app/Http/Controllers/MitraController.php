@@ -66,7 +66,7 @@ class MitraController extends Controller
         $tks->website = $req['website'];
         $tks->narahubung = $req['narahubung'];
         $tks->notelpnara = $req['notelpnara'];
-        $tks->pic = $req['pic'];
+        $tks->assignuserakun = $req['pic'];
         $tks->notelppic = $req['notelppic'];
 
         $tks->save();

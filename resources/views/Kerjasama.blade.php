@@ -82,7 +82,7 @@
                                     <td>{{ $item->bulaninput }}</td>
                                     <td>{{ $item->namamitra }}</td>
                                     <td>{{ $item->jenismitra }}</td>
-                                    <td>{{ $item->judulkerjasama }}</td>
+                                    <td>{{ $item->judul_mou }}</td>
                                     <td>{{ $item->lingkupkerja }}</td>
                                     <td>
                                         @if ( $item->nilaikontrak != null)

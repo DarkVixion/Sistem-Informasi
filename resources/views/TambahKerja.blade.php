@@ -253,7 +253,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- /.card-body -->
                     </div><br>
                 </div>
@@ -383,12 +382,12 @@
                             <br><br>
                             <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" name="notelppic" id="notelppic" placeholder="No Telepon PIC" value="{{ $u->notelpakunuser }}" disabled>
+                                <input type="number" class="form-control" name="notelppic" id="notelppic" placeholder="No Telepon PIC" value="" disabled>
                             </div>
                             <br><br>
                             <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                             <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $u->emailakunuser }}" disabled>
+                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="" disabled>
                             </div>
                         </div>
                     </div>
