@@ -133,15 +133,14 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-info float-right">Save</button>
+                                    <button type="submit" class="btn btn-info">Simpan</button>
+                                    <button type="button" onclick="history.back()" class="btn btn-default float-right">Cancel</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
             <!-- /.card-body -->
         </form>
         @endsection
