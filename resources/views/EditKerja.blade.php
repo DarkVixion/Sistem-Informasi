@@ -301,7 +301,7 @@
                 </div>
                 <!-- /.card -->
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 d-flex align-items-stretch">
                         <div class="card card-info">
                             <div class="card-body">
                                 <div class="form-group row">
@@ -348,7 +348,7 @@
                             <!-- /.card-body -->
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 d-flex align-items-stretch">
                         <div class="card card-info">
                             <div class="card-body">
                                 <div class="form-group row">
@@ -417,7 +417,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 d-flex align-items-stretch">
                         <div class="card card-info">
                             <!-- form start -->
                             <div class="card-body">
@@ -445,7 +445,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 d-flex align-items-stretch">
                         <div class="card card-info">
                             <!-- form start -->
                             <div class="card-body">
