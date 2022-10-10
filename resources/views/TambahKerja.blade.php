@@ -4,7 +4,8 @@
     <title>Tambah Kerja Sama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -25,15 +26,15 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 
     <style>
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
     </style>
 </head>
 
@@ -53,13 +54,15 @@
                         <span class="dropdown-item dropdown-header">2 Notifications</span>
                         <div class="dropdown-divider"></div>
                         <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
                             Kedaluwarsa - nama MOU
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
                             Dokumen - nama kerja sama
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
@@ -70,7 +73,8 @@
                 <!-- profile -->
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image">
-                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/Akun" class="d-block">Admin123</a>
@@ -97,7 +101,8 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -140,13 +145,17 @@
                         </li>
                         <li class="nav-item">
                             <a href="/Mitra" class="nav-link">
-                                <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
+                                <img class="nav-icon" style="opacity: 75%"
+                                    srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
+                                    loading="lazy"></img>
                                 <p>Mitra</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/AdminShowUser" class="nav-link">
-                                <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
+                                <img class="nav-icon" style="opacity: 55%"
+                                    srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x"
+                                    alt="Building icon" loading="lazy"></img>
                                 <p>User</p>
                             </a>
                         </li>
@@ -161,245 +170,296 @@
         <div class="content-wrapper" style="min-height: 1755;">
 
             <!-- Content Header (Page header) -->
-            {{-- <section class="content-header"> --}}
-            <div class="container-fluid" style="padding-top: 1.5%">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Tambah Kerja Sama</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="Kerjasama">Kerja Sama</a></li>
-                            <li class="breadcrumb-item active">Tambah Kerja Sama</li>
-                        </ol>
+            <section class="content-header">
+                <div class="container-fluid" style="padding-top: 1.5%">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Tambah Kerja Sama</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="Kerjasama">Kerja Sama</a></li>
+                                <li class="breadcrumb-item active">Tambah Kerja Sama</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </section>
             <!-- /.container-fluid -->
-            <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <!-- Horizontal Form -->
-                <div class="card card-info">
-                    <!-- form start -->
-                    <div class="card-body">
-                        <h3 style="text-align: center;">Kerja Sama</h3>
-                        <div class="form-group row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="select" class="col-sm-2 col-form-label">Status</label>
-                                    <select class="form-control" name="status">
-                                        <option>Aktif</option>
-                                        <option>Tidak Aktif</option>
-                                        <option>Kadarluwasa</option>
-                                        <option>Dalam Penjajakan</option>
-                                        <option>Perpanjangan</option>
-                                    </select>
+            <section class="content">
+                <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST"
+                    enctype="multipart/form-data">
+                    @csrf
+                    <!-- Horizontal Form -->
+                    <div class="card card-info">
+                        <!-- form start -->
+                        <div class=" card-body">
+                            <h3 style="text-align: center;">Kerja Sama</h3>
+                            <div class="form-group row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="select" class="col-sm-2 col-form-label">Status</label>
+                                        <select class="form-control" name="status">
+                                            <option>Aktif</option>
+                                            <option>Tidak Aktif</option>
+                                            <option>Kadarluwasa</option>
+                                            <option>Dalam Penjajakan</option>
+                                            <option>Perpanjangan</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
+                                        <div class="col-sm-13">
+                                            <input type="text" class="form-control" name="namamitra"
+                                                placeholder="Masukan Nama Mitra">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
+                                        <select class="form-control" name="jenismitra">
+                                            @foreach ($jm as $item)
+                                            <option>{{ $item->juduljenismitra }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-4 col-form-label ">Bulan
+                                            Pencatatan</label>
+                                        <div class="col-sm-13">
+                                            <input type="month" class="form-control " name="bulaninput">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                                    <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                                        <input type="url" class="form-control " name="website"
+                                            placeholder="Masukan Website">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-4 col-form-label ">Nomor
+                                            Telephone</label>
+                                        <input type="number" class="form-control " name="notelpmitra"
+                                            placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/"
+                                            onKeyPress="if(this.value.length==15) return false;">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                                        <div class="col-sm-13">
+                                            <input type="text" class="form-control " name="negara"
+                                                placeholder="Masukan Negara">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
-                                    <div class="col-sm-13">
-                                        <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra">
+                            <!-- /.card-body -->
+                        </div><br>
+                    </div>
+                    <!-- /.card -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card card-info">
+                                <!-- form start -->
+                                <div class="card-body">
+                                    <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label"> </label>
+                                        <div class="col-sm-10">
+                                        </div>
+                                        <br>
+                                        <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
+                                        <div class="col-sm-10">
+                                            <input type="text"
+                                                class="form-control @error('judul_mou') is-invalid @enderror"
+                                                name="judul_mou" placeholder="Masukan Judul Kerja Sama">
+                                        </div>
+                                        <br><br>
+                                        <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
+                                        <div class="col-sm-10">
+                                            <input type="date"
+                                                class="form-control @error('tglmulai_mou') is-invalid @enderror"
+                                                name="tglmulai_mou">
+                                        </div>
+                                        <br><br>
+                                        <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal
+                                            Selesai</label>
+                                        <div class=" col-sm-10 ">
+                                            <input type="date"
+                                                class="form-control @error('tglselesai_mou') is-invalid @enderror"
+                                                name="tglselesai_mou">
+                                        </div>
+                                        <br><br>
+                                        <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
+                                        <div class="col-sm-10 ">
+                                            <input type="file" class="form-control " name="path_mou[]" accept="pdf/*"
+                                                multiple>
+                                        </div><br><br>
+                                        <div class="col-sm-10" style="opacity: 0.0;">
+                                            <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal
+                                                Mulai</label>
+
+                                            <br>
+                                            <label g for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
+                                                Selesai</label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-info">
+                                <!-- form start -->
+                                <div class="card-body">
+                                    <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label"> </label>
+                                        <div class="col-sm-10">
+                                        </div>
+                                        <br>
+                                        <label for="judul_moa" class="col-sm-2 col-form-label">Judul
+                                            Kerjasama</label>
+                                        <div class="col-sm-10">
+                                            <input type="text"
+                                                class="form-control @error('judul_moa') is-invalid @enderror"
+                                                name="judul_moa" placeholder="Masukan Judul Kerja Sama">
+                                        </div>
+                                        <br>
+                                        <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai
+                                            Kontrak</label>
+                                        <div class="col-sm-10">
+                                            <input type="number"
+                                                class="form-control @error('nilaikontrak') is-invalid @enderror"
+                                                name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
+                                        </div>
+                                        <br>
+                                        <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja
+                                            Sama</label>
+                                        <div class="col-sm-10 ">
+                                            <select class="form-control" name="lingkupkerja">
+                                                <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
+                                                @foreach ($lk as $item)
+                                                <option>{{ $item->judullingkupkerja }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <br>
+                                        <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal
+                                            Mulai</label>
+                                        <div class="col-sm-10">
+                                            <input type="date"
+                                                class="form-control @error('tglmulai_moa') is-invalid @enderror"
+                                                name="tglmulai_moa">
+                                        </div>
+                                        <br>
+                                        <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
+                                            Selesai</label>
+                                        <div class=" col-sm-10 ">
+                                            <input type="date"
+                                                class="form-control @error('tglselesai_moa') is-invalid @enderror"
+                                                name="tglselesai_moa">
+                                        </div>
+                                        <br>
+                                        <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
+                                        <div class="col-sm-10 ">
+                                            <input type="file" class="form-control" name="path_moa[]" accept="pdf/*"
+                                                multiple>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /.card-body -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Horizontal Form -->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card card-info">
+                                <!-- form start -->
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" name="narahubung"
+                                                placeholder="Masukkan Narahubung">
+                                        </div>
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor
+                                            Telepon</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control " name="notelpnara"
+                                                placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/"
+                                                onKeyPress="if(this.value.length==15) return false;">
+                                        </div>
+                                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
+                                        <div class="col-sm-10 ">
+                                            <input type="text" class="form-control" name="emailnara"
+                                                placeholder="Alamat Email">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
-                                    <select class="form-control" name="jenismitra">
-                                        @foreach ($jm as $item)
-                                        <option>{{ $item->juduljenismitra }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputPassword3 " class="col-sm-4 col-form-label ">Bulan Pencatatan</label>
-                                    <div class="col-sm-13">
-                                        <input type="month" class="form-control " name="bulaninput">
+                        <div class="col-md-6">
+                            <div class="card card-info">
+                                <!-- form start -->
+                                <div class="card-body">
+                                    <div class="form-group row">
+                                        <label for="select" class="col-sm-2 col-form-label">Assign User</label>
+                                        <div class="col-sm-10">
+                                            <div class="form-group">
+                                                <select class="form-control" name="pic">
+                                                    <option value="" hidden> Pilih Nama PIC User </option>
+                                                    @foreach($users as $u)
+                                                    <option value="{{$u->id}}"> {{ $u->namaakunuser }} </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor
+                                            Telepon</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" class="form-control" name="notelppic" id="notelppic"
+                                                placeholder="No Telepon PIC" value="" disabled>
+                                        </div>
+                                        <br><br>
+                                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
+                                        <div class="col-sm-10 ">
+                                            <input type="text" class="form-control" name="emailpic" id="emailpic"
+                                                placeholder="Email PIC" value="" disabled>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputPassword3 " class="col-sm-4 col-form-label ">Nomor Telephone</label>
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
-                                    <div class="col-sm-13">
-                                        <input type="text" class="form-control " name="negara" placeholder="Masukan Negara">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div><br>
-                </div>
-                <!-- /.card -->
+                    </div>
 
-                <!-- Horizontal Form -->
-                <div class="card card-info">
-                    <!-- form start -->
-                    <div class="card-body">
-                        <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label"> </label>
-                            <div class="col-sm-10">
-                            </div>
-                            <br>
-                            <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
-                            </div>
-                            <br><br>
-                            <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou">
-                            </div>
-                            <br><br>
-                            <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
-                            <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou">
-                            </div>
-                            <br><br>
-                            <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
-                            <div class="col-sm-10 ">
-                                <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
-                            </div>
+                    <div class=" card card-info">
+                        <div class=" card-footer ">
+                            <button type="submit" class="btn btn-info">Save</button>
+                            <button type="submit" class="btn btn-default float-right">Cancel</button>
                         </div>
                     </div>
-                    <!-- /.card-body -->
-                </div>
 
 
-                <!-- Horizontal Form -->
-                <div class="card card-info">
-                    <!-- form start -->
-                    <div class="card-body">
-                        <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label"> </label>
-                            <div class="col-sm-10">
-                            </div>
-                            <br>
-                            <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama">
-                            </div>
-                            <br><br>
-                            <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
-                            </div>
-                            <br><br>
-                            <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                            <div class="col-sm-10 ">
-                                <select class="form-control" name="lingkupkerja">
-                                    <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
-                                    @foreach ($lk as $item)
-                                    <option>{{ $item->judullingkupkerja }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <br><br>
-                            <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa">
-                            </div>
-                            <br><br>
-                            <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal Selesai</label>
-                            <div class=" col-sm-10 ">
-                                <input type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa">
-                            </div>
-                            <br><br>
-                            <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
-                            <div class="col-sm-10 ">
-                                <input type="file" class="form-control" name="path_moa[]" accept="pdf/*" multiple>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-                </div>
-
-                <div class="card card-info">
-                    <!-- form start -->
-                    <div class="card-body">
-                        <div class="form-group row">
-                            <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung">
-                            </div>
-                            <br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
-                            </div>
-                            <br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card card-info">
-                    <!-- form start -->
-                    <div class="card-body">
-                        <div class="form-group row">
-                            <label for="select" class="col-sm-2 col-form-label">Assign User</label>
-                            <div class="col-sm-10">
-                                <div class="form-group">
-                                    <select class="form-control" name="pic">
-                                        <option value="" hidden> Pilih Nama PIC User </option>
-                                        @foreach($users as $u)
-                                        <option value="{{$u->id}}"> {{ $u->namaakunuser }} </option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                            </div>
-                            <br><br>
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" name="notelppic" id="notelppic" placeholder="No Telepon PIC" value="" disabled>
-                            </div>
-                            <br><br>
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="" disabled>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class=" card-footer ">
-                        <button type="submit" class="btn btn-info">Save</button>
-                        <button type="submit" class="btn btn-default float-right">Cancel</button>
-                    </div>
-                    <!-- /.card-footer -->
-                </div>
-            </form>
-            {{-- </section> --}}
+                </form>
+            </section>
         </div>
     </div>
 
