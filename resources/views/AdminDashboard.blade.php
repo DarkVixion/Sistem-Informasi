@@ -12,12 +12,12 @@
                 <h1 class="m-0">Dashboard</h1>
             </div>
             <!-- /.col -->
-            <div class="col-sm-6">
+            {{-- <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">Home</li>
                     <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
-            </div>
+            </div> --}}
             <!-- /.col -->
         </div>
         <!-- /.row -->
