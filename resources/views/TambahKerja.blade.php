@@ -453,7 +453,7 @@
                     <div class=" card card-info">
                         <div class=" card-footer ">
                             <button type="submit" class="btn btn-info">Save</button>
-                            <button type="submit" class="btn btn-default float-right">Cancel</button>
+                            <button type="button" onclick="history.back()" class="btn btn-default float-right">Cancel</button>
                         </div>
                     </div>
 
