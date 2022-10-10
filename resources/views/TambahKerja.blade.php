@@ -310,11 +310,7 @@
                                         <div class="col-sm-10" style="opacity: 0.0;">
                                             <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal
                                                 Mulai</label>
-
                                             <br>
-                                            <label g for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
-                                                Selesai</label>
-
                                         </div>
                                     </div>
                                 </div>
@@ -328,6 +324,9 @@
                                 <!-- form start -->
                                 <div class="card-body">
                                     <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
+                                    <label for="input" class="col-sm-2 col-form-label"> </label>
+                                    <div class="col-sm-10">
+                                    </div>
                                     <div class="form-group row">
                                         <br><br>
                                         <label for="judul_moa" class="col-sm-3 col-form-label">Judul
