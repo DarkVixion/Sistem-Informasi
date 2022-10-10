@@ -84,7 +84,7 @@ class TambahKerjasamaController extends Controller
         if (isset($req['path_moa'])) {
             foreach ($req['path_moa'] as $file) {
                 $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-                $moa .= $namafilemoa . '_';
+                $moa = $namafilemoa;
 
                 $file->move(public_path('files'), $namafilemoa);
             }
@@ -108,6 +108,8 @@ class TambahKerjasamaController extends Controller
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
         $user = AdminViewUser::all();
+
+        // var_dump($tambahkerjasama->path_moa);die;
 
         return view('EditKerja')->with('tks', $tambahkerjasama)
             ->with('jm', $jenismitra)
@@ -151,7 +153,6 @@ class TambahKerjasamaController extends Controller
             foreach ($req['path_mou'] as $file) {
                 $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $mou = $namafilemou;
-
                 $file->move(public_path('files'), $namafilemou);
             }
         }
@@ -162,7 +163,7 @@ class TambahKerjasamaController extends Controller
         if (isset($req['path_moa'])) {
             foreach ($req['path_moa'] as $file) {
                 $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-                $moa .= $namafilemoa . '_';
+                $moa = $namafilemoa;
                 $file->move(public_path('files'), $namafilemoa);
             }
         }

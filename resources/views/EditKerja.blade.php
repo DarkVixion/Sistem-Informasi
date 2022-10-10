@@ -338,23 +338,12 @@
                                     <br><br><br>
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                                     <div class="col-sm-10 ">
-                                        <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="auto"
+                                        <iframe src="{{ asset('files/'. $tks->path_mou) }}" width="100%"
                                             height="500" alt="pdf"></iframe>
                                         <br><br>
-                                        <input type="file" class="form-control " name="path_mou[]" accept="pdf/*"
-                                            multiple>
-                                    </div>
-                                    <div class="col-sm-10" style="opacity: 0.0;">
-                                        <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal
-                                            Mulai</label>
-
-                                        <br>
-                                        <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
-                                            Selesai</label>
-
+                                        <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                                     </div>
                                 </div>
-
                             </div>
                             <!-- /.card-body -->
                         </div>
@@ -380,7 +369,8 @@
                                         <input type="number"
                                             class="form-control @error('nilaikontrak') is-invalid @enderror"
                                             name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)"
-                                            value="{{ $tks->nilaikontrak }}">
+                                            value="{{ $tks->nilaikontrak }}" pattern="/^-?\d+\.?\d*$/"
+                                            onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                     <br><br>
                                     <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
@@ -397,7 +387,7 @@
                                     <div class="col-sm-10">
                                         <input type="date"
                                             class="form-control @error('tglmulai_moa') is-invalid @enderror"
-                                            name="tglmulai_moa" value=@if ( $tks->tglmulai_moa != null)
+                                            name="tglmulai_moa" value= @if ( $tks->tglmulai_moa != null)
                                         '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
                                         @endif>
                                     </div>
@@ -414,11 +404,10 @@
                                     <br><br><br>
                                     <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
                                     <div class="col-sm-10 ">
-                                        <iframe src="{{ asset('.\files\help_1664769202_396.pdf') }}" width="auto"
-                                            height="400" alt="pdf"></iframe>
+                                        <iframe src="{{ asset('files/'. $tks->path_moa) }}" width="100%"
+                                            height="500" alt="pdf"></iframe>
                                         <br><br>
-                                        <input type="file" class="form-control" name="path_moa[]" accept="pdf/*"
-                                            multiple>
+                                        <input type="file" class="form-control " name="path_moa[]" accept="pdf/*" multiple>
                                     </div>
                                 </div>
 
@@ -442,7 +431,8 @@
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                     <div class="col-sm-10">
                                         <input type="number" class="form-control " name="notelpnara"
-                                            placeholder="No. Telepon" value="{{ $tks->notelpnara }}">
+                                            placeholder="No. Telepon" value="{{ $tks->notelpnara }}" pattern="/^-?\d+\.?\d*$/"
+                                            onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                     <br><br>
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>

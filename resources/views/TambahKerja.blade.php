@@ -315,7 +315,7 @@
                                     </div>
                                 </div>
                                 <div class=" card-footer ">
-                                    <button type="" class="btn btn-info float-right">Tambah MOU</button>
+                                    <button type="button" class="btn btn-info float-right">Tambah MOU</button>
                                 </div>
                             </div>
                         </div>
@@ -375,146 +375,7 @@
                                         <br><br>
                                         <label for="path_moa" class="col-sm-3 col-form-label ">Dokumen MoA</label>
                                         <div class="col-sm-9 ">
-                                            <input type="file" class="form-control" name="path_moa[]" accept="pdf/*"
-                                                multiple>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" card-footer ">
-                                    <button type="" class="btn btn-info float-right">Tambah MOA</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Horizontal Form -->
-                    <!-- /.card -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card card-info">
-                                <div class="card-header">
-                                    <div class="card-tools ">
-                                        <button type="button" class="btn btn-tool float-right"
-                                            data-card-widget="remove">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- form start -->
-                                <div class="card-body">
-                                    <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
-                                    <div class="form-group row">
-                                        <label for="input" class="col-sm-2 col-form-label"> </label>
-                                        <div class="col-sm-10">
-                                        </div>
-                                        <br>
-                                        <label for="judul_mou" class="col-sm-3 col-form-label">Judul Kerja Sama</label>
-                                        <div class="col-sm-9">
-                                            <input type="text"
-                                                class="form-control @error('judul_mou') is-invalid @enderror"
-                                                name="judul_mou" placeholder="Masukan Judul Kerja Sama">
-                                        </div>
-                                        <br><br>
-                                        <label for="tglmulai_mou" class="col-sm-3 col-form-label">Tanggal Mulai</label>
-                                        <div class="col-sm-9">
-                                            <input type="date"
-                                                class="form-control @error('tglmulai_mou') is-invalid @enderror"
-                                                name="tglmulai_mou">
-                                        </div>
-                                        <br><br>
-                                        <label for="tglselesai_mou" class=" col-sm-3 col-form-label ">Tanggal
-                                            Selesai</label>
-                                        <div class=" col-sm-9 ">
-                                            <input type="date"
-                                                class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                                name="tglselesai_mou">
-                                        </div>
-                                        <br><br>
-                                        <label for="path_mou" class="col-sm-3 col-form-label ">Dokumen MoU</label>
-                                        <div class="col-sm-9 ">
-                                            <input type="file" class="form-control " name="path_mou[]" accept="pdf/*"
-                                                multiple>
-                                        </div><br><br>
-                                        <div class="col-sm-10" style="opacity: 0.0;">
-                                            <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal
-                                                Mulai</label>
-
-                                            <br>
-                                            <label g for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
-                                                Selesai</label>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" card-footer ">
-                                    <button type="button" class="btn btn-info float-right">Tambah MOU</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card card-info">
-                                <div class="card-header">
-                                    <div class="card-tools ">
-                                        <button type="button" class="btn btn-tool float-right"
-                                            data-card-widget="remove">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                                <!-- form start -->
-                                <div class="card-body">
-                                    <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
-                                    <div class="form-group row">
-                                        <label for="input" class="col-sm-3 col-form-label"> </label>
-                                        <div class="col-sm-9">
-                                        </div>
-                                        <br>
-                                        <label for="judul_moa" class="col-sm-3 col-form-label">Judul
-                                            Kerjasama</label>
-                                        <div class="col-sm-9">
-                                            <input type="text"
-                                                class="form-control @error('judul_moa') is-invalid @enderror"
-                                                name="judul_moa" placeholder="Masukan Judul Kerja Sama">
-                                        </div>
-                                        <br><br>
-                                        <label for="nilaikontrak" class="col-sm-3 col-form-label">Nilai
-                                            Kontrak</label>
-                                        <div class="col-sm-9">
-                                            <input type="number"
-                                                class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                                name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)">
-                                        </div>
-                                        <br><br>
-                                        <label for="select " class="col-sm-3 col-form-label ">Lingkup Kerja
-                                            Sama</label>
-                                        <div class="col-sm-9 ">
-                                            <select class="form-control" name="lingkupkerja">
-                                                <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
-                                                @foreach ($lk as $item)
-                                                <option>{{ $item->judullingkupkerja }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <br><br>
-                                        <label for="tglmulai_moa" class="col-sm-3 col-form-label">Tanggal
-                                            Mulai</label>
-                                        <div class="col-sm-9">
-                                            <input type="date"
-                                                class="form-control @error('tglmulai_moa') is-invalid @enderror"
-                                                name="tglmulai_moa">
-                                        </div>
-                                        <br><br>
-                                        <label for="tglselesai_moa" class=" col-sm-3 col-form-label ">Tanggal
-                                            Selesai</label>
-                                        <div class=" col-sm-9 ">
-                                            <input type="date"
-                                                class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                                name="tglselesai_moa">
-                                        </div>
-                                        <br><br>
-                                        <label for="path_moa" class="col-sm-3 col-form-label ">Dokumen MoA</label>
-                                        <div class="col-sm-9 ">
-                                            <input type="file" class="form-control" name="path_moa[]" accept="pdf/*"
-                                                multiple>
+                                            <input type="file" class="form-control" name="path_moa[]" accept="pdf/*" multiple>
                                         </div>
                                     </div>
                                 </div>
@@ -525,6 +386,7 @@
                         </div>
                     </div>
                     <!-- Horizontal Form -->
+                    
 
                     <div class="row">
                         <div class="col-md-6">
@@ -597,8 +459,6 @@
                                 class="btn btn-default float-right">Cancel</button>
                         </div>
                     </div>
-
-
                 </form>
             </section>
         </div>
