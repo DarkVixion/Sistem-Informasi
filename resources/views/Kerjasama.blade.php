@@ -60,75 +60,69 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Bulan Pencatatan</th>
-                                    <th>Nama</th>
-                                    <th>Jenis Mitra</th>
-                                    <th>Judul</th>
-                                    <th>Lingkup Kerja Sama</th>
-                                    <th>Nilai Kontrak</th>
-                                    <th>Periode Mulai MoU</th>
-                                    <th>Periode Berakhir MoU</th>
-                                    <th>Periode Mulai MoA</th>
-                                    <th>Periode Berakhir MoA</th>
-                                    <th style="width: 8%">Misc.</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($kerjasama as $item)
-                                <tr>
-                                    <td>{{ $item->bulaninput }}</td>
-                                    <td>{{ $item->namamitra }}</td>
-                                    <td>{{ $item->jenismitra }}</td>
-                                    <td>{{ $item->judul_mou }}</td>
-                                    <td>{{ $item->lingkupkerja }}</td>
-                                    <td>
-                                        @if ( $item->nilaikontrak != null)
-                                        Rp {{ $item->nilaikontrak }}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if ( $item->tglmulai_mou != null)
-                                        {{ $item->tglmulai_mou->format('Y-m-d') }}
-                                        @else
-                                        {{ $item->tglmulai_mou}}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if ( $item->tglselesai_mou != null)
-                                        {{ $item->tglselesai_mou->format('Y-m-d') }}
-                                        @else
-                                        {{ $item->tglselesai_mou}}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if ( $item->tglmulai_moa != null)
-                                        {{ $item->tglmulai_moa->format('Y-m-d') }}
-                                        @else
-                                        {{ $item->tglmulai_moa}}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        @if ( $item->tglselesai_moa != null)
-                                        {{ $item->tglselesai_moa->format('Y-m-d') }}
-                                        @else
-                                        {{ $item->tglselesai_moa }}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <a href="{{route('edit_kerjasama', $item->id)}}"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                        <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
-                                            {{ method_field('DELETE') }}
-                                            {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <div class="md-card-content" style="overflow-x: auto;">
+                            <table id="example1" class="table table-bordered table-striped" style="width:max-content;">
+                                <thead>
+                                    <tr>
+                                        <th>Bulan Pencatatan</th>
+                                        <th>Nama</th>
+                                        <th>Jenis Mitra</th>
+                                        <th>Judul</th>
+                                        <th>Lingkup Kerja Sama</th>
+                                        <th>Nilai Kontrak</th>
+                                        <th>Periode Mulai MoU</th>
+                                        <th>Periode Berakhir MoU</th>
+                                        <th>Periode Mulai MoA</th>
+                                        <th>Periode Berakhir MoA</th>
+                                        <th>Misc.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($kerjasama as $item)
+                                    <tr>
+                                        <td>{{ $item->bulaninput }}</td>
+                                        <td>{{ $item->namamitra }}</td>
+                                        <td>{{ $item->jenismitra }}</td>
+                                        <td>{{ $item->judul_mou }}</td>
+                                        <td>{{ $item->lingkupkerja }}</td>
+                                        <td>
+                                            @if ( $item->nilaikontrak != null)
+                                            Rp {{ number_format($item->nilaikontrak) }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ( $item->tglmulai_mou != null)
+                                            {{ $item->tglmulai_mou->format('Y-m-d') }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ( $item->tglselesai_mou != null)
+                                            {{ $item->tglselesai_mou->format('Y-m-d') }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ( $item->tglmulai_moa != null)
+                                            {{ $item->tglmulai_moa->format('Y-m-d') }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            @if ( $item->tglselesai_moa != null)
+                                            {{ $item->tglselesai_moa->format('Y-m-d') }}
+                                            @endif
+                                        </td>
+                                        <td>
+                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <!-- /.card-body -->
                 </div>
