@@ -329,10 +329,22 @@
                                     <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal
                                         Selesai</label>
                                     <div class=" col-sm-10 ">
-                                        <input type="date"
+                                        <select class="form-control" name="check1" onchange="yesnoCheck1(this)">
+                                            <option value="1">Tidak Terbatas</option>
+                                            <option value="2" @if($tks->tglselesai_mou != null) selected @endif>Terbatas</option>
+                                        </select>
+                                    </div>
+                                    <br><br>
+                                    <label class=" col-sm-2 col-form-label "></label>
+                                    <div class=" col-sm-10 ">
+                                        <input id="check1" type="date"
                                             class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                            name="tglselesai_mou" value=@if ( $tks->tglselesai_mou != null)
-                                        '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
+                                            name="tglselesai_mou"
+                                            @if($tks->tglselesai_mou == null)
+                                            style="display:none;"
+                                            @endif 
+                                            value= @if($tks->tglselesai_mou != null)
+                                            '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
                                         @endif>
                                     </div>
                                     <br><br><br>
@@ -395,11 +407,23 @@
                                     <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
                                         Selesai</label>
                                     <div class=" col-sm-10 ">
-                                        <input type="date"
+                                    <select class="form-control" name="check2" onchange="yesnoCheck2(this)">
+                                            <option value="1">Tidak Terbatas</option>
+                                            <option value="2"  @if($tks->tglselesai_moa != null) selected @endif>Terbatas</option>
+                                        </select>
+                                    </div>
+                                    <br><br>
+                                    <label class=" col-sm-2 col-form-label "></label>
+                                    <div class=" col-sm-10 ">
+                                        <input id="check2" type="date"
                                             class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                            name="tglselesai_moa" value=@if ( $tks->tglselesai_moa != null)
-                                        '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
-                                        @endif>
+                                            name="tglselesai_moa"
+                                            @if($tks->tglselesai_moa == null)
+                                            style="display:none;"
+                                            @endif
+                                            value= @if($tks->tglselesai_moa != null)
+                                            '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
+                                            @endif>
                                     </div>
                                     <br><br><br>
                                     <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
@@ -454,7 +478,12 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="pic" id="pic">
+                                                @if ($tks->assignuserakun != null)
                                                 <option value="{{ $tks->assignuserakun }}" selected hidden>{{ $users[($tks->assignuserakun)-1]->namaakunuser }}</option>
+                                                @else
+                                                <option value="" hidden>---Pilih PIC---</option>
+                                                @endif
+
                                                 @foreach($users as $u)
                                                 <option value="{{ $u->id }}">{{ $u->namaakunuser }}</option>
                                                 @endforeach
@@ -523,6 +552,22 @@
             }
         });
     });
+
+    function yesnoCheck1(that) {
+        if (that.value == "2") {
+            document.getElementById("check1").style.display = "block";
+        } else {
+            document.getElementById("check1").style.display = "none";
+        }
+    }
+
+    function yesnoCheck2(that) {
+        if (that.value == "2") {
+            document.getElementById("check2").style.display = "block";
+        } else {
+            document.getElementById("check2").style.display = "none";
+        }
+    }
     </script>
 
 </body>
