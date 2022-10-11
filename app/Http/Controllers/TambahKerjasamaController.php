@@ -200,10 +200,15 @@ class TambahKerjasamaController extends Controller
     }
 
     //untuk import file excel
-    public function import()
+    public function importExcel()
     {
-        Excel::import(new UsersImport, 'users.xlsx');
+        return view();
+    }
 
-        return redirect('/')->with('success', 'All good!');
+    public function uploadExcel(Request $request)
+    {
+        Excell::import(new ExcelImports, $request->file);
+
+        return view();
     }
 }
