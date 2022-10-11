@@ -149,6 +149,16 @@ class TambahKerjasamaController extends Controller
         $user->tglselesai_moa = $req['tglselesai_moa'];
         $user->nilaikontrak = $req['nilaikontrak'];
 
+        if($req['check1']==1)
+        {
+            $user->tglselesai_mou = null;
+        }
+
+        if($req['check2']==1)
+        {
+            $user->tglselesai_moa = null;
+        }
+
         $mou = $user->path_mou;
         $moa = $user->path_moa;
 

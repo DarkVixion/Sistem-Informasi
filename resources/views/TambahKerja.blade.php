@@ -297,9 +297,17 @@
                                         <label for="tglselesai_mou" class=" col-sm-3 col-form-label ">Tanggal
                                             Selesai</label>
                                         <div class=" col-sm-9 ">
-                                            <input type="date"
+                                            <select class="form-control" onchange="yesnoCheck1(this)">
+                                                <option value="1">Tidak Terbatas</option>
+                                                <option value="2">Terbatas</option>
+                                            </select>
+                                        </div>
+                                        <br><br>
+                                        <div class=" col-sm-3 col-form-label "></div>
+                                        <div class=" col-sm-9 ">
+                                            <input id="check1" type="date"
                                                 class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                                name="tglselesai_mou">
+                                                name="tglselesai_mou" style="display:none;">
                                         </div>
                                         <br><br>
                                         <label for="path_mou" class="col-sm-3 col-form-label ">Dokumen MoU</label>
@@ -368,9 +376,17 @@
                                         <label for="tglselesai_moa" class=" col-sm-3 col-form-label ">Tanggal
                                             Selesai</label>
                                         <div class=" col-sm-9 ">
-                                            <input type="date"
+                                        <select class="form-control" onchange="yesnoCheck2(this)">
+                                                <option value="1">Tidak Terbatas</option>
+                                                <option value="2">Terbatas</option>
+                                            </select>
+                                        </div>
+                                        <br><br>
+                                        <label class=" col-sm-3 col-form-label "></label>
+                                        <div class=" col-sm-9 ">
+                                            <input id="check2" type="date"
                                                 class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                                name="tglselesai_moa">
+                                                name="tglselesai_moa" style="display:none;">
                                         </div>
                                         <br><br>
                                         <label for="path_moa" class="col-sm-3 col-form-label ">Dokumen MoA</label>
@@ -426,7 +442,7 @@
                                         <div class="col-sm-10">
                                             <div class="form-group">
                                                 <select class="form-control" name="pic" id="pic">
-                                                    <option value="" hidden> Pilih Nama PIC User </option>
+                                                    <option value="" hidden>---Pilih PIC---</option>
                                                     @foreach($users as $u)
                                                     <option>{{ $u->namaakunuser }}</option>
                                                     @endforeach
@@ -496,6 +512,22 @@
             }
         });
     });
+
+    function yesnoCheck1(that) {
+        if (that.value == "2") {
+            document.getElementById("check1").style.display = "block";
+        } else {
+            document.getElementById("check1").style.display = "none";
+        }
+    }
+
+    function yesnoCheck2(that) {
+        if (that.value == "2") {
+            document.getElementById("check2").style.display = "block";
+        } else {
+            document.getElementById("check2").style.display = "none";
+        }
+    }
     </script>
 
 </body>
