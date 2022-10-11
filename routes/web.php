@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
+use App\Models\AdminViewUser;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,12 +55,18 @@ Route::match(['put', 'patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaControlle
 //     return view('InformasiMitra');
 // });
 
-
 Route::get('Mitra', [MitraController::class, 'index']);
 Route::get('AdminEditMitra/{id}', [MitraController::class, 'edit'])->name('edit_mitra1');
 Route::match(['put', 'patch'], 'AdminEditMitra/{id}', [MitraController::class, 'update'])->name('update_mitra');
 
 Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
+
+// ---TESTING---
+Route::get('getData/{id}', function ($id) {
+    $data = AdminViewUser::find($id);
+    return response()->json($data);
+});
+
 
 // <-- BAGIAN USER -->
 Route::get('AdminUserMenu', function () {

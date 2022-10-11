@@ -453,10 +453,10 @@
                                     <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="pic">
-                                                <option value="" hidden>Pilih Nama PIC UPer</option>
+                                            <select class="form-control" name="pic" id="pic">
+                                                <option value="{{ $tks->assignuserakun }}" selected hidden>{{ $users[($tks->assignuserakun)-1]->namaakunuser }}</option>
                                                 @foreach($users as $u)
-                                                <option value="{{$u->id}}"> {{ $u->namaakunuser }} </option>
+                                                <option value="{{ $u->id }}">{{ $u->namaakunuser }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -465,13 +465,13 @@
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                     <div class="col-sm-10">
                                         <input type="number" class="form-control" name='notelppic' id="notelppic"
-                                            placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" disabled>
+                                            placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" readonly>
                                     </div>
                                     <br><br>
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                     <div class="col-sm-10 ">
                                         <input type="text" class="form-control" name="emailpic" id="emailpic"
-                                            placeholder="Email PIC" value="{{ $tks->emailpic }}" disabled>
+                                            placeholder="Email PIC" value="{{ $tks->emailpic }}" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -499,6 +499,31 @@
     <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }} "></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.min.js') }} "></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#pic').on('change', function() {
+            var picID = $(this).val();
+            if(picID) 
+            {
+                $.ajax({
+                    url: '/getData/'+picID,
+                    type: "GET",
+                    data : {"_token":"{{ csrf_token() }}"},
+                    dataType: "json",
+                    success:function(data)
+                    {
+                        if(data)
+                        {
+                            document.getElementById('notelppic').value = data.notelpakunuser;
+                            document.getElementById('emailpic').value = data.emailakunuser;
+                        }
+                    }
+                });
+            }
+        });
+    });
+    </script>
 
 </body>
 
