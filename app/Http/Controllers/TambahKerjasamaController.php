@@ -11,6 +11,9 @@ use App\Models\MoA;
 use App\Models\JenisMitra;
 use App\Models\LingkupKerja;
 use App\Models\AdminViewUser;
+use App\Imports\ExcelImports;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 
 /* KALO ERROR MAKLUMIN MASIH ON PROGRESS */
@@ -30,8 +33,8 @@ class TambahKerjasamaController extends Controller
         $user = AdminViewUser::all(); //define d sini kalo mau ambil data dari tabel lain
 
         return view('TambahKerja')->with('jm', $jenismitra)
-                                ->with('lk', $lingkup)
-                                ->with('users', $user);
+            ->with('lk', $lingkup)
+            ->with('users', $user);
     }
 
     public function store(Request $req) // store input dari hal Tambah Kerjasama
@@ -204,5 +207,13 @@ class TambahKerjasamaController extends Controller
     public function path_moa()
     {
         return $this->hasMany(MoA::class);
+    }
+
+    //untuk import file excel
+    public function import()
+    {
+        Excel::import(new UsersImport, 'users.xlsx');
+
+        return redirect('/')->with('success', 'All good!');
     }
 }
