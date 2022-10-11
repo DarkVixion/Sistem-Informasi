@@ -23,7 +23,7 @@ class CreateAdminusermenuTable extends Migration
             $table->string("notelpakunuser");
             $table->string("roleakunuser");
             $table->string("statusakunuser");
-            $table->string("path_profileakunuser");
+            $table->string("path_profileakunuser")->nullable();
             $table->timestamps();
         });
     }
