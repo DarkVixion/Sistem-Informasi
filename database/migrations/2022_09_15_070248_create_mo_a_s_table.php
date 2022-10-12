@@ -18,8 +18,10 @@ class CreateMoASTable extends Migration
             $table->id();
             $table->foreignIdFor(TambahKerjasama::class);
             $table->string('namaperjanjian');
-            $table->string('path');
-            $table->string('jenis');
+            $table->bigInteger("nilaikontrak")->nullable();
+            $table->date("tglmulai");
+            $table->date("tglselesai");
+            $table->string('path');            
             $table->timestamps();
         });
     }
