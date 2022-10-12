@@ -121,6 +121,13 @@
                                 </tbody>
                             </table>
                         </div>
+                        <br>
+                         <label for="path_excel" class="col-sm-3 col-form-label ">Sementara Import Excel</label>
+                        <div class="col-sm-9 ">
+                            <input type="file" class="form-control " name="path_excel" accept="pdf/*" multiple>
+                            <br>
+                            <button type="submit" class="btn btn-info float-right">Tambah file.xls</button>
+                        </div><br>
                     </div>
                     <!-- /.card-body -->
                 </div>

@@ -15,7 +15,7 @@ class ExcelImport implements ToModel
      */
     public function model(array $row)
     {
-        return new TambahKerjasama([
+        $kerjasama = new TambahKerjasama([
             'bulaninput'     => $row[bulaninput],
             'namamitra'     => $row[namamitra],
             'jenismitra'     => $row[jenismitra],
@@ -26,7 +26,9 @@ class ExcelImport implements ToModel
             'tglselesai_mou'     => $row[tglselesai_mou],
             'tglmulai_moa'     => $row[tglmulai_moa],
             'tglselesai_moa'     => $row[tglselesai_moa],
-            'password' => Hash::make($row[2]),
+            'password' => Hash::make('password')
         ]);
+
+        return $kerjasama;
     }
 }

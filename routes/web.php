@@ -76,7 +76,11 @@ Route::post('/AdminUserMenuStore', [AdminUserMenuController::class, 'store'])->n
 Route::get('/AdminUserMenu', [AdminUserMenuController::class, 'testuser']);
 Route::get('/AdminViewUser/{id}', [AdminUserMenuController::class, 'show'])->name('view_user');
 Route::delete('/AdminViewUser/{id}', [AdminUserMenuController::class, 'delete'])->name('hapus_user');
-Route::match(['put','patch'], '/AdminEditUser/{id}', [AdminUserMenuController::class, 'edit'])->name('edit_user');
+Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminUserMenuController::class, 'edit'])->name('edit_user');
+
+// <-- BAGIAN IMPORT EXCEL -->
+Route::get('/importexcel', [TambahKerjasamaController::class, 'importExcel'])->name('import_excel');
+Route::post('/uploadexcel', [TambahKerjasamaController::class, 'uploadExcel'])->name('upload_excel');
 
 Route::get('UserDashboard', function () {
     return view('UserDashboard');
