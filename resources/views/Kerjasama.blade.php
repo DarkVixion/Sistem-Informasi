@@ -73,7 +73,6 @@
                                         <th>Bulan Pencatatan</th>
                                         <th>Nama</th>
                                         <th>Jenis Mitra</th>
-                                        <th>Judul</th>
                                         <th>Lingkup Kerja Sama</th>
                                         <th>Nilai Kontrak</th>
                                         <th>Periode Mulai MoU</th>
@@ -89,7 +88,6 @@
                                         <td>{{ $item->bulaninput }}</td>
                                         <td>{{ $item->namamitra }}</td>
                                         <td>{{ $item->jenismitra }}</td>
-                                        <td>{{ $item->judul_mou }}</td>
                                         <td>{{ $item->lingkupkerja }}</td>
                                         <td>
                                             @if ( $item->nilaikontrak != null)

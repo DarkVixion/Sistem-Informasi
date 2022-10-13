@@ -17,9 +17,10 @@ class CreateMoUSTable extends Migration
         Schema::create('mo_u_s', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(TambahKerjasama::class);
-            $table->string('namaperjanjian');
+            $table->string('Judul');
+            $table->date("tglmulai");
+            $table->date("tglselesai");
             $table->string('path');
-            $table->string('jenis');
             $table->timestamps();
         });
     }
