@@ -37,4 +37,14 @@ class TambahKerjasama extends Model
     protected $dates = ['tglmulai_mou', 'tglselesai_mou', 'tglmulai_moa', 'tglselesai_moa'];
 
     public $timestamp = false;
+
+    public function mou()
+    {
+        return $this->hasMany(MoU::class);
+    }
+
+    public function moa()
+    {
+        return $this->hasMany(MoA::class);
+    }
 }
