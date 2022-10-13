@@ -9,7 +9,8 @@
     <title>Rekap Kontrak - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
@@ -42,11 +43,16 @@
                 <h1>Rekap Kontrak</h1>
             </div>
             <div class="col-sm-6">
+
                 <a href="TambahKerja">
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
+                    <button type="button" class="btn btn-default float-right" data-toggle="modal"
+                        data-target="#modal-xl" style="background-color:lightblue; border-radius:15px;">
                         Tambah Kerja Sama
                     </button>
                 </a>
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl"
+                    style="border-radius:15px;"><i class="fas fa-plus"></i> Import
+                    Excel</button>
             </div>
         </div>
     </div>
@@ -109,11 +115,14 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
+                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button
+                                                    class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
+                                                style="display:inline ">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-danger"><i
+                                                        class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -121,13 +130,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <br>
-                         <label for="path_excel" class="col-sm-3 col-form-label ">Sementara Import Excel</label>
-                        <div class="col-sm-9 ">
-                            <input type="file" class="form-control " name="path_excel" accept="pdf/*" multiple>
-                            <br>
-                            <button type="submit" class="btn btn-info float-right">Tambah file.xls</button>
-                        </div><br>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -136,6 +138,39 @@
         </div>
         <!-- /.row -->
     </div>
+    <!-- modal untuk tambah jenis -->
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah Data Dengan Excel</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('tambah_mitra')}}" method="post">
+                    {!! csrf_field() !!}
+                    <div class="modal-body">
+                        <div class="form-group row ">
+                            <label for="path_excel" class="col-sm-2 col-form-label">Import Excel</label>
+                            <div class="col-sm-10 ">
+                                <input type="file" class="form-control " name="path_excel" accept="pdf/*" multiple>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info float-right">Tambah file.xls</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
     <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
@@ -145,7 +180,7 @@
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-    $.widget.bridge('uibutton', $.ui.button)
+$.widget.bridge('uibutton', $.ui.button)
 </script><!-- Sparkline -->
 <script src="plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
