@@ -45,8 +45,8 @@
             <div class="col-sm-6">
 
                 <a href="TambahKerja">
-                    <button type="button" class="btn btn-default float-right" data-toggle="modal"
-                        data-target="#modal-xl" style="background-color:lightblue; border-radius:15px;">
+                    <button type="button" class="btn btn-default float-right"
+                        style="background-color:lightblue; border-radius:15px;">
                         Tambah Kerja Sama
                     </button>
                 </a>
