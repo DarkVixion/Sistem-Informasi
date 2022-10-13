@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\TambahKerjasama;
 
 class CreateMoASTable extends Migration
 {
@@ -16,13 +15,15 @@ class CreateMoASTable extends Migration
     {
         Schema::create('mo_a_s', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(TambahKerjasama::class);
-            $table->string('namaperjanjian');
-            $table->bigInteger("nilaikontrak")->nullable();
+            $table->unsignedBigInteger('kerja_id');
+            $table->string('judul');
+            $table->bigInteger("nilaikontrak");
             $table->date("tglmulai");
             $table->date("tglselesai");
             $table->string('path');            
             $table->timestamps();
+
+            $table->foreign('kerja_id')->references('id')->on('tambahkerjasama')->cascadeOnDelete();
         });
     }
 
