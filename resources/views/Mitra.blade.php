@@ -58,7 +58,6 @@
                                         <th>No. </th>
                                         <th>Profile Mitra</th>
                                         <th>Jenis Kontrak</th>
-                                        {{-- <th>Judul Kerjasama</th> --}} YANG INI NADD
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
