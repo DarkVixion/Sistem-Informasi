@@ -284,6 +284,6 @@ class TambahKerjasamaController extends Controller
             $i++;
         }
 
-        return redirect()->back();
+        return back();
     }
 }
