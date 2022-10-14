@@ -58,7 +58,7 @@
                                         <th>No. </th>
                                         <th>Profile Mitra</th>
                                         <th>Jenis Kontrak</th>
-                                        {{-- <th>Judul Kerjasama</th>  --}}
+                                        <th>Judul Kerjasama</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
