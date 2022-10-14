@@ -38,12 +38,12 @@ class TambahKerjasama extends Model
 
     public $timestamp = false;
 
-    public function mou()
+    public function mous()
     {
         return $this->hasMany(MoU::class);
     }
 
-    public function moa()
+    public function moas()
     {
         return $this->hasMany(MoA::class);
     }

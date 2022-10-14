@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MoU extends Model
 {
+    protected $table = 'mous';
     public function kerjasama()
     {
         return $this->belongsTo(TambahKerjasama::class);

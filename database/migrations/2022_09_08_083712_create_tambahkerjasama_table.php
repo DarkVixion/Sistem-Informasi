@@ -24,15 +24,6 @@ class CreateTambahkerjasamaTable extends Migration
             $table->bigInteger("notelpmitra")->nullable();
             $table->string("website")->nullable();
             $table->string("bulaninput")->nullable();
-            $table->bigInteger("nilaikontrak")->nullable();
-            $table->string("judul_mou");
-            $table->date("tglmulai_mou")->nullable();
-            $table->date("tglselesai_mou")->nullable();
-            $table->string("path_mou");
-            $table->string("judul_moa");
-            $table->date("tglmulai_moa")->nullable();
-            $table->date("tglselesai_moa")->nullable();
-            $table->string("path_moa");
             $table->string("narahubung")->nullable();
             $table->bigInteger("notelpnara")->nullable();
             $table->string("emailnara")->nullable();
