@@ -442,9 +442,9 @@
                                         <div class="col-sm-10">
                                             <div class="form-group">
                                                 <select class="form-control" name="pic" id="pic">
-                                                    <option value="" hidden>---Pilih PIC---</option>
+                                                    <option value="" hidden>--- Pilih PIC ---</option>
                                                     @foreach($users as $u)
-                                                    <option>{{ $u->namaakunuser }}</option>
+                                                    <option value="{{ $u->id }}">{{ $u->namaakunuser }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -454,13 +454,13 @@
                                             Telepon</label>
                                         <div class="col-sm-10">
                                             <input type="number" class="form-control" name="notelppic" id="notelppic"
-                                                placeholder="No Telepon PIC" value="" id="notelppic" disabled>
+                                                placeholder="No Telepon PIC" value="" id="notelppic" readonly>
                                         </div>
                                         <br><br>
                                         <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                         <div class="col-sm-10 ">
                                             <input type="text" class="form-control" name="emailpic" id="emailpic"
-                                                placeholder="Email PIC" value="" id="emailpic" disabled>
+                                                placeholder="Email PIC" value="" id="emailpic" readonly>
                                         </div>
                                     </div>
                                 </div>

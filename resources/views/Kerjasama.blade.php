@@ -84,6 +84,10 @@
                                 </thead>
                                 <tbody>
                                     @foreach($kerjasama as $item)
+
+                                    <?php
+                                    ?>
+                                    
                                     <tr>
                                         <td>{{ $item->bulaninput }}</td>
                                         <td>{{ $item->namamitra }}</td>
