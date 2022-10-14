@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class MoU extends Model
 {
-    use HasFactory;
-    protected $guarded = [];
+    protected $table = 'mous';
+    public function kerjasama()
+    {
+        return $this->belongsTo(TambahKerjasama::class);
+    }
 }

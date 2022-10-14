@@ -24,6 +24,8 @@ class AkunAdminSeeder extends Seeder
                 'roleakun'=>'Staff',
                 'statusakun'=>'Aktif',
                 'path_profileakun'=>'Admin1_1664500196_923.jpg',
+                'updated_at'=>null,
+                'created_at'=>null
             ]
         ];
 

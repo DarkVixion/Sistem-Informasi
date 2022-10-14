@@ -42,11 +42,14 @@
                 <h1>Rekap Kontrak</h1>
             </div>
             <div class="col-sm-6">
+
                 <a href="TambahKerja">
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
+                    <button type="button" class="btn btn-default float-right" style="background-color:lightblue; border-radius:15px;">
                         Tambah Kerja Sama
                     </button>
                 </a>
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl" style="border-radius:15px;"><i class="fas fa-plus"></i> Import
+                    Excel</button>
             </div>
         </div>
     </div>
@@ -67,7 +70,6 @@
                                         <th>Bulan Pencatatan</th>
                                         <th>Nama</th>
                                         <th>Jenis Mitra</th>
-                                        <th>Judul</th>
                                         <th>Lingkup Kerja Sama</th>
                                         <th>Nilai Kontrak</th>
                                         <th>Periode Mulai MoU</th>
@@ -79,11 +81,14 @@
                                 </thead>
                                 <tbody>
                                     @foreach($kerjasama as $item)
+
+                                    <?php
+                                    ?>
+
                                     <tr>
                                         <td>{{ $item->bulaninput }}</td>
                                         <td>{{ $item->namamitra }}</td>
                                         <td>{{ $item->jenismitra }}</td>
-                                        <td>{{ $item->judul_mou }}</td>
                                         <td>{{ $item->lingkupkerja }}</td>
                                         <td>
                                             @if ( $item->nilaikontrak != null)
@@ -123,16 +128,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <form class="form-horizontal" action="{{route('upload_excel')}}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <br>
-                            <label for="path_excel" class="col-sm-3 col-form-label ">Sementara Import Excel</label>
-                            <div class="col-sm-9 ">
-                                <input type="file" class="form-control " name="path_excel" accept="xlsx/*" multiple>
-                                <br>
-                                <button type="submit" class="btn btn-info float-right">Import Excel</button>
-                            </div><br>
-                        </form>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -141,6 +136,39 @@
         </div>
         <!-- /.row -->
     </div>
+    <!-- modal untuk tambah jenis -->
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah Data Dengan Excel</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('tambah_mitra')}}" method="post">
+                    {!! csrf_field() !!}
+                    <div class="modal-body">
+                        <div class="form-group row ">
+                            <label for="path_excel" class="col-sm-2 col-form-label">Import Excel</label>
+                            <div class="col-sm-10 ">
+                                <input type="file" class="form-control " name="path_excel" accept="pdf/*" multiple>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info float-right">Tambah file.xls</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
     <!-- /.container-fluid -->
 </section>
 <!-- /.content -->

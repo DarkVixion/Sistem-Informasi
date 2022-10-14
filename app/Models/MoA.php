@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class MoA extends Model
 {
-    use HasFactory;
-    protected $guarded = [];
+    protected $table = 'moas';
+    public function kerjasama()
+    {
+        return $this->belongsTo(TambahKerjasama::class);
+    }
 }

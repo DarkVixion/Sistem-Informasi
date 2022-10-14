@@ -345,13 +345,12 @@
                                             @endif 
                                             value= @if($tks->tglselesai_mou != null)
                                             '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
-                                        @endif>
+                                            @endif>
                                     </div>
-                                    <br><br><br>
+                                    <br><br>
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                                     <div class="col-sm-10 ">
-                                        <iframe src="{{ asset('files/'. $tks->path_mou) }}" width="100%"
-                                            height="500" alt="pdf"></iframe>
+                                        <--jadi tempat link pdf mou-->
                                         <br><br>
                                         <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                                     </div>
@@ -425,11 +424,10 @@
                                             '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
                                             @endif>
                                     </div>
-                                    <br><br><br>
+                                    <br><br>
                                     <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
                                     <div class="col-sm-10 ">
-                                        <iframe src="{{ asset('files/'. $tks->path_moa) }}" width="100%"
-                                            height="500" alt="pdf"></iframe>
+                                        <--jadi tempat link pdf mou-->
                                         <br><br>
                                         <input type="file" class="form-control " name="path_moa[]" accept="pdf/*" multiple>
                                     </div>
@@ -474,14 +472,14 @@
                             <!-- form start -->
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="input" class="col-sm-2 col-form-label">PIC UPer</label>
+                                    <label for="input" class="col-sm-2 col-form-label">Assign User</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="pic" id="pic">
                                                 @if ($tks->assignuserakun != null)
-                                                <option value="{{ $tks->assignuserakun }}" selected hidden>{{ $users[($tks->assignuserakun)-1]->namaakunuser }}</option>
+                                                <option value="{{ $tks->assignuserakun }}" hidden>{{ $users[($tks->assignuserakun)-1]->namaakunuser }}</option>
                                                 @else
-                                                <option value="" hidden>---Pilih PIC---</option>
+                                                <option value="" hidden>--- Pilih PIC ---</option>
                                                 @endif
 
                                                 @foreach($users as $u)
