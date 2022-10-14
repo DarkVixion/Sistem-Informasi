@@ -144,15 +144,17 @@ class TambahKerjasamaController extends Controller
 
         $user->save();
 
-        if ($req['check1'] == 1) {
+        if($req['check1'] == 1)
+        {
             $user->tglselesai_mou = null;
         }
 
-        if ($req['check2'] == 1) {
+        if ($req['check2'] == 1) 
+        {
             $user->tglselesai_moa = null;
         }
-
-        if (isset($req['path_mou'])) 
+        
+        if(isset($req['path_mou']))
         {
             $mou = MoU::where('tambah_kerjasama_id',$id)->first();
 
@@ -160,7 +162,7 @@ class TambahKerjasamaController extends Controller
             {
                 $mou = new MoU;
             }
-
+            
             $mou->judul = $req['judul_mou'];
             $mou->tglmulai = $req['tglmulai_mou'];
             $mou->tglselesai = $req['tglselesai_mou'];
@@ -170,11 +172,10 @@ class TambahKerjasamaController extends Controller
                 $path_mou = $namafilemou;
                 $file->move(public_path('files'), $namafilemou);
             }
-            
+
             $mou->path = $path_mou;
 
-                $user->mous()->save($mou);
-            }
+            $user->mous()->save($mou);
         }
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
@@ -192,17 +193,18 @@ class TambahKerjasamaController extends Controller
             $moa->tglselesai = $req['tglselesai_moa'];
             $moa->nilaikontrak = $req['nilaikontrak'];
 
-            foreach ($req['path_moa'] as $file) {
+            foreach ($req['path_moa'] as $file) 
+            {
                 $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_moa = $namafilemoa;
                 $file->move(public_path('files'), $namafilemoa);
             }
-            
+
             $moa->path = $path_moa;
             
             $user->moas()->save($moa);
         }
-
+        
         return redirect('/Kerjasama');
     }
 
