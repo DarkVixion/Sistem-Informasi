@@ -294,13 +294,14 @@
                                     <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control @error('judul_mou') is-invalid @enderror"
-                                            name="judul_mou" placeholder="Masukan Judul Kerja Sama">
+                                            name="judul_mou" placeholder="Masukan Judul Kerja Sama" value="{{ $mou->Judul }}">
                                     </div>
                                     <br><br>
                                     <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" value=@if ( $tks->tglmulai_mou != null)
-                                        '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
+                                        <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" 
+                                        value=@if ( $mou->tglmulai != null)
+                                        '{{ $mou->tglmulai }}'
                                         @endif>
                                     </div>
                                     <br><br>
@@ -309,7 +310,7 @@
                                     <div class=" col-sm-10 ">
                                         <select class="form-control" name="check1" onchange="yesnoCheck1(this)">
                                             <option value="1">Tidak Terbatas</option>
-                                            <option value="2" @if($tks->tglselesai_mou != null) selected @endif>Terbatas</option>
+                                            <option value="2" @if($mou->tglselesai != null) selected @endif>Terbatas</option>
                                         </select>
                                     </div>
                                     <br><br>
@@ -317,11 +318,11 @@
                                     <div class=" col-sm-10 ">
                                         <input id="check1" type="date"
                                             class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                            name="tglselesai_mou"@if($tks->tglselesai_moa == null)
+                                            name="tglselesai_mou"@if($mou->tglselesai == null)
                                             style="display:none;"
                                             @endif
-                                            value= @if($tks->tglselesai_moa != null)
-                                            '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
+                                            value= @if($mou->tglselesai != null)
+                                            '{{ $mou->tglselesai }}'
                                             @endif>
                                     </div>
                                     <br><br>
@@ -347,12 +348,14 @@
                                     <br><br>
                                     <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama" value="{{ $tks->judul_moa }}">
+                                        <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama" 
+                                        value="{{ $moa->judul }}">
                                     </div>
                                     <br><br>
                                     <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" value="{{ $tks->nilaikontrak }}" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
+                                        <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" 
+                                        value="{{ $moa->nilaikontrak }}" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                     <br><br>
                                     <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
@@ -367,8 +370,8 @@
                                     <br><br>
                                     <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" value=@if ( $tks->tglmulai_moa != null)
-                                        '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
+                                        <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" value=@if ( $moa->tglmulai != null)
+                                        '{{ $moa->tglmulai }}'
                                         @endif>
                                     </div>
                                     <br><br>
@@ -377,17 +380,17 @@
                                     <div class=" col-sm-10 ">
                                         <select class="form-control" name="check2" onchange="yesnoCheck2(this)">
                                             <option value="1">Tidak Terbatas</option>
-                                            <option value="2" @if($tks->tglselesai_moa != null) selected @endif>Terbatas</option>
+                                            <option value="2" @if($moa->tglselesai != null) selected @endif>Terbatas</option>
                                         </select>
                                     </div>
                                     <br><br>
                                     <label class=" col-sm-2 col-form-label "></label>
                                     <div class=" col-sm-10 ">
-                                        <input id="check2" type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" @if($tks->tglselesai_moa == null)
+                                        <input id="check2" type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" @if($moa->tglselesai == null)
                                         style="display:none;"
                                         @endif
-                                        value= @if($tks->tglselesai_moa != null)
-                                        '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
+                                        value= @if($moa->tglselesai != null)
+                                        '{{ $moa->tglselesai }}'
                                         @endif>
                                     </div>
                                     <br><br>

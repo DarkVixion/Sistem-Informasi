@@ -154,15 +154,20 @@ class TambahKerjasamaController extends Controller
             $user->tglselesai_moa = null;
         }
         
+
+        $mou = MoU::where('tambah_kerjasama_id',$id)->first();
+        if( $mou == null)
+        {
+            $mou = new MoU;
+        }
+
+        $mou->judul = $req['judul_mou'];
+        $mou->tglmulai = $req['tglmulai_mou'];
+        $mou->tglselesai = $req['tglselesai_mou'];
+        $mou->path = $mou->path;
+
         if(isset($req['path_mou']))
         {
-            $mou = MoU::where('tambah_kerjasama_id',$id)->first();
-
-            if( $mou == null)
-            {
-                $mou = new MoU;
-            }
-            
             $mou->judul = $req['judul_mou'];
             $mou->tglmulai = $req['tglmulai_mou'];
             $mou->tglselesai = $req['tglselesai_mou'];
@@ -174,9 +179,21 @@ class TambahKerjasamaController extends Controller
             }
 
             $mou->path = $path_mou;
-
-            $user->mous()->save($mou);
         }
+        $user->mous()->save($mou);
+
+
+        $moa = MoA::where('tambah_kerjasama_id',$id)->first();
+        if( $moa == null)
+        {
+            $moa = new MoA;
+        }
+
+        $moa->judul = $req['judul_moa'];
+        $moa->tglmulai = $req['tglmulai_moa'];
+        $moa->tglselesai = $req['tglselesai_moa'];
+        $moa->nilaikontrak = $req['nilaikontrak'];
+        $moa->path = $moa->path;
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
         if (isset($req['path_moa'])) 
@@ -201,9 +218,9 @@ class TambahKerjasamaController extends Controller
             }
 
             $moa->path = $path_moa;
-            
-            $user->moas()->save($moa);
         }
+        $user->moas()->save($moa);
+        
 
         return redirect('/Kerjasama');
     }
