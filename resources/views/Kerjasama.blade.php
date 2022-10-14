@@ -146,7 +146,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('tambah_mitra')}}" method="post">
+                <form action="{{route('upload_excel')}}" method="post" enctype="multipart/form-data">
                     {!! csrf_field() !!}
                     <div class="modal-body">
                         <div class="form-group row ">
