@@ -220,7 +220,7 @@ class TambahKerjasamaController extends Controller
             $moa->path = $path_moa;
         }
         $user->moas()->save($moa);
-        
+
 
         return redirect('/Kerjasama');
     }
@@ -270,15 +270,6 @@ class TambahKerjasamaController extends Controller
                 $kerjasama->notelpmitra = $value[5];
                 $kerjasama->website = $value[6];
                 $kerjasama->bulaninput = $value[7];
-                // $kerjasama->nilaikontrak = $value[9];
-                // $kerjasama->judul_mou = $value[10];
-                // $kerjasama->tglmulai_mou = $value[11];
-                // $kerjasama->tglselesai_mou = $value[12];
-                // $kerjasama->path_mou = $value[13];
-                // $kerjasama->judul_moa = $value[14];
-                // $kerjasama->tglmulai_moa = $value[15];
-                // $kerjasama->tglselesai_moa = $value[16];
-                // $kerjasama->path_moa = $value[17];
                 $kerjasama->narahubung = $value[8];
                 $kerjasama->notelpnara = $value[9];
                 $kerjasama->emailnara = $value[10];
