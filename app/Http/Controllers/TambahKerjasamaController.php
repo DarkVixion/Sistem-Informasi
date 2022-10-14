@@ -185,7 +185,7 @@ class TambahKerjasamaController extends Controller
             
             if( $moa == null)
             {
-                $moa = new MoU;
+                $moa = new MoA;
             }
 
             $moa->judul = $req['judul_moa'];
@@ -204,7 +204,7 @@ class TambahKerjasamaController extends Controller
             
             $user->moas()->save($moa);
         }
-        
+
         return redirect('/Kerjasama');
     }
 
