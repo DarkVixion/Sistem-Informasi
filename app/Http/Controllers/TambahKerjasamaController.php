@@ -205,7 +205,7 @@ class TambahKerjasamaController extends Controller
 
     public function uploadExcel(Request $request)
     {
-        Excell::import(new ExcelImports, $request->file);
+        Excel::import(new ExcelImports, $request->file);
 
         return view();
     }
