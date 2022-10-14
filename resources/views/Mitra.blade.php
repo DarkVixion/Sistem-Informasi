@@ -58,6 +58,7 @@
                                         <th>No. </th>
                                         <th>Profile Mitra</th>
                                         <th>Jenis Kontrak</th>
+                                        {{-- <th>Judul Kerjasama</th>  --}}
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -89,6 +90,11 @@
                                                 data-target="#modal-xxl{{ $item->id }}"><i
                                                     class="fa fa-eye"></i></button></a></td>
                                     </tr>
+                                    {{-- buat manggil 
+                                    
+                                    
+                                    
+                                    db judul kerja sama --}}
                                     @endif
                                     <!-- modal untuk view profile mitra -->
                                     <div class="modal fade" id="modal-xxl{{ $item->id }}">
