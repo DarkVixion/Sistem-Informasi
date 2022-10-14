@@ -15,8 +15,6 @@ use App\Models\JenisMitra;
 use App\Models\LingkupKerja;
 use App\Models\AdminViewUser;
 
-/* KALO ERROR MAKLUMIN MASIH ON PROGRESS */
-
 class TambahKerjasamaController extends Controller
 {
     public function index() // untuk view hal Kerjasama
@@ -25,8 +23,8 @@ class TambahKerjasamaController extends Controller
         $mou = MoU::all();
         $moa = MoA::all();
         return view('Kerjasama')->with('kerjasama', $kerjasama)
-                                ->with('mou', $mou)
-                                ->with('moa', $moa);
+            ->with('mou', $mou)
+            ->with('moa', $moa);
     }
 
     public function create() // untuk view hal Tambah Kerjasama
@@ -98,7 +96,7 @@ class TambahKerjasamaController extends Controller
             }
             
             $moa->path = $path_moa;
-            
+
             $user->moas()->save($moa);
         }
 
@@ -146,13 +144,11 @@ class TambahKerjasamaController extends Controller
 
         $user->save();
 
-        if($req['check1']==1)
-        {
+        if ($req['check1'] == 1) {
             $user->tglselesai_mou = null;
         }
 
-        if($req['check2']==1)
-        {
+        if ($req['check2'] == 1) {
             $user->tglselesai_moa = null;
         }
 
@@ -177,7 +173,8 @@ class TambahKerjasamaController extends Controller
             
             $mou->path = $path_mou;
 
-            $user->mous()->save($mou);
+                $user->mous()->save($mou);
+            }
         }
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
@@ -223,13 +220,60 @@ class TambahKerjasamaController extends Controller
     //untuk import file excel
     public function importExcel()
     {
-        return view();
+        return view('Kerjasama');
     }
 
     public function uploadExcel(Request $request)
     {
-        Excel::import(new ExcelImports, $request->file);
+        /*$request->validate([
+            'file' => 'required|max:10000|mimes:xlsx,xls',
+        ]);
+        $path = $request->file('file');
 
-        return view();
+        Excel::import(new ExcelImports, $path);*/
+
+        //dd($request);
+        //Excel::import(new ExcelImports, $request->file('test1.csv'));
+
+        $array = Excel::toArray(new ExcelImports, $request->file('path_excel'), 's3', \Maatwebsite\Excel\Excel::XLSX);
+
+        $i = 0;
+        //dd($array[0]);
+        foreach ($array[0] as $value) {
+            if ($i > 0) {
+                $kerjasama = new TambahKerjasama;
+                $kerjasama->namamitra = $value[0];
+                $kerjasama->jenismitra = $value[1];
+                // $kerjasama->judulkerjasama = $value[2];
+                $kerjasama->lingkupkerja = $value[2];
+                $kerjasama->alamat = $value[3];
+                $kerjasama->negara = $value[4];
+                $kerjasama->notelpmitra = $value[5];
+                $kerjasama->website = $value[6];
+                $kerjasama->bulaninput = $value[7];
+                // $kerjasama->nilaikontrak = $value[9];
+                // $kerjasama->judul_mou = $value[10];
+                // $kerjasama->tglmulai_mou = $value[11];
+                // $kerjasama->tglselesai_mou = $value[12];
+                // $kerjasama->path_mou = $value[13];
+                // $kerjasama->judul_moa = $value[14];
+                // $kerjasama->tglmulai_moa = $value[15];
+                // $kerjasama->tglselesai_moa = $value[16];
+                // $kerjasama->path_moa = $value[17];
+                $kerjasama->narahubung = $value[8];
+                $kerjasama->notelpnara = $value[9];
+                $kerjasama->emailnara = $value[10];
+                $kerjasama->assignuserakun = $value[11];
+                $kerjasama->notelppic = $value[12];
+                $kerjasama->emailpic = $value[13];
+                $kerjasama->status = $value[14];
+
+                $kerjasama->save();
+            }
+
+            $i++;
+        }
+
+        return redirect()->back();
     }
 }

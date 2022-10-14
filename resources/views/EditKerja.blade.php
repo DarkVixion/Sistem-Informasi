@@ -4,15 +4,13 @@
     <title>Edit Kerja Sama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
-    <link rel="stylesheet"
-        href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->
@@ -27,15 +25,15 @@
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 
     <style>
-    input::-webkit-outer-spin-button,
-    input::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-    }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
 
-    input[type=number] {
-        -moz-appearance: textfield;
-    }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
     </style>
 </head>
 
@@ -54,8 +52,7 @@
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
-                            <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                aria-label="Search">
+                            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
                             <div class="input-group-append">
                                 <button class="btn btn-navbar" type="submit">
                                     <i class="fas fa-search"></i>
@@ -79,15 +76,13 @@
                     <span class="dropdown-item dropdown-header">2 Notifications</span>
                     <div class="dropdown-divider"></div>
                     <a href="/InformasiMitra" class="dropdown-item">
-                        <img class="nav-icon"
-                            srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
+                        <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
                         Kedaluwarsa - nama MOU
                         <span class="float-right text-muted text-sm">D-5</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="/InformasiMitra" class="dropdown-item">
-                        <img class="nav-icon"
-                            srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
+                        <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
                         Dokumen - nama kerja sama
                         <span class="float-right text-muted text-sm">D-5</span>
                     </a>
@@ -98,8 +93,7 @@
             <!-- profile -->
             <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                 <div class="image">
-                    <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                        alt="User Image">
+                    <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="/Akun" class="d-block">Admin UPer</a>
@@ -125,8 +119,7 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                    data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -169,17 +162,13 @@
                     </li>
                     <li class="nav-item">
                         <a href="/Mitra" class="nav-link">
-                            <img class="nav-icon" style="opacity: 75%"
-                                srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
-                                loading="lazy"></img>
+                            <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
                             <p>Profile Mitra</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="/AdminShowUser" class="nav-link">
-                            <img class="nav-icon" style="opacity: 55%"
-                                srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon"
-                                loading="lazy"></img>
+                            <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
                             <p>User</p>
                         </a>
                     </li>
@@ -211,8 +200,7 @@
         </section>
         <!-- /.container-fluid -->
         <section class="content">
-            <form class="form-horizontal" action="{{route('update_kerjasama', $tks->id)}}" method="POST"
-                enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{route('update_kerjasama', $tks->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method("PATCH")
                 <!-- Horizontal Form -->
@@ -238,8 +226,7 @@
                                 <div class="form-group">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                                     <div class="col-sm-13">
-                                        <input type="text" class="form-control" name="namamitra"
-                                            placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}">
+                                        <input type="text" class="form-control" name="namamitra" placeholder="Masukan Nama Mitra" value="{{ $tks->namamitra }}">
                                     </div>
                                 </div>
                             </div>
@@ -259,38 +246,32 @@
                                     <label for="inputPassword3 " class="col-sm-4 col-form-label ">Bulan
                                         Pencatatan</label>
                                     <div class="col-sm-13">
-                                        <input type="month" class="form-control " name="bulaninput"
-                                            value="{{ $tks->bulaninput }}">
+                                        <input type="month" class="form-control " name="bulaninput" value="{{ $tks->bulaninput }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat"
-                                    value="{{ $tks->alamat }}">
+                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}">
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website"
-                                        value="{{ $tks->website }}">
+                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="inputPassword3 " class="col-sm-4 col-form-label ">Nomor
                                         Telephone</label>
-                                    <input type="number" class="form-control " name="notelpmitra"
-                                        placeholder="Masukan Nomor Telephone" value="{{ $tks->notelpmitra }}"
-                                        pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
+                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" value="{{ $tks->notelpmitra }}" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
                                     <div class="col-sm-13">
-                                        <input type="text" class="form-control " name="negara"
-                                            placeholder="Masukan Negara" value="{{ $tks->negara }}">
+                                        <input type="text" class="form-control " name="negara" placeholder="Masukan Negara" value="{{ $tks->negara }}">
                                     </div>
                                 </div>
                             </div>
@@ -318,9 +299,9 @@
                                     <br><br>
                                     <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                     <div class="col-sm-10">
-                                        <input type="date"
-                                            class="form-control @error('tglmulai_mou') is-invalid @enderror"
-                                            name="tglmulai_mou">
+                                        <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" value=@if ( $tks->tglmulai_mou != null)
+                                        '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
+                                        @endif>
                                     </div>
                                     <br><br>
                                     <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal
@@ -366,18 +347,12 @@
                                     <br><br>
                                     <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control @error('judul_moa') is-invalid @enderror"
-                                            name="judul_moa" placeholder="Masukan Judul Kerja Sama"
-                                            value="{{ $tks->judul_moa }}">
+                                        <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama" value="{{ $tks->judul_moa }}">
                                     </div>
                                     <br><br>
                                     <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                                     <div class="col-sm-10">
-                                        <input type="number"
-                                            class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                            name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)"
-                                            value="{{ $tks->nilaikontrak }}" pattern="/^-?\d+\.?\d*$/"
-                                            onKeyPress="if(this.value.length==15) return false;">
+                                        <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" value="{{ $tks->nilaikontrak }}" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                     <br><br>
                                     <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
@@ -392,9 +367,7 @@
                                     <br><br>
                                     <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                     <div class="col-sm-10">
-                                        <input type="date"
-                                            class="form-control @error('tglmulai_moa') is-invalid @enderror"
-                                            name="tglmulai_moa" value= @if ( $tks->tglmulai_moa != null)
+                                        <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" value=@if ( $tks->tglmulai_moa != null)
                                         '{{ $tks->tglmulai_moa->format('Y-m-d') }}'
                                         @endif>
                                     </div>
@@ -402,7 +375,7 @@
                                     <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
                                         Selesai</label>
                                     <div class=" col-sm-10 ">
-                                    <select class="form-control" name="check2" onchange="yesnoCheck2(this)">
+                                        <select class="form-control" name="check2" onchange="yesnoCheck2(this)">
                                             <option value="1">Tidak Terbatas</option>
                                             <option value="2" @if($tks->tglselesai_moa != null) selected @endif>Terbatas</option>
                                         </select>
@@ -410,15 +383,12 @@
                                     <br><br>
                                     <label class=" col-sm-2 col-form-label "></label>
                                     <div class=" col-sm-10 ">
-                                        <input id="check2" type="date"
-                                            class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                            name="tglselesai_moa"
-                                            @if($tks->tglselesai_moa == null)
-                                            style="display:none;"
-                                            @endif
-                                            value= @if($tks->tglselesai_moa != null)
-                                            '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
-                                            @endif>
+                                        <input id="check2" type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" @if($tks->tglselesai_moa == null)
+                                        style="display:none;"
+                                        @endif
+                                        value= @if($tks->tglselesai_moa != null)
+                                        '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
+                                        @endif>
                                     </div>
                                     <br><br>
                                     <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
@@ -442,21 +412,17 @@
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Narahubung</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="narahubung"
-                                            placeholder="Masukkan Narahubung" value="{{ $tks->narahubung }}">
+                                        <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung" value="{{ $tks->narahubung }}">
                                     </div>
                                     <br><br>
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control " name="notelpnara"
-                                            placeholder="No. Telepon" value="{{ $tks->notelpnara }}" pattern="/^-?\d+\.?\d*$/"
-                                            onKeyPress="if(this.value.length==15) return false;">
+                                        <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon" value="{{ $tks->notelpnara }}" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                     <br><br>
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" class="form-control" name="emailnara"
-                                            placeholder="Alamat Email" value="{{ $tks->emailnara }}">
+                                        <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email" value="{{ $tks->emailnara }}">
                                     </div>
                                 </div>
 
@@ -487,14 +453,12 @@
                                     <br><br>
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" name='notelppic' id="notelppic"
-                                            placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" readonly>
+                                        <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" readonly>
                                     </div>
                                     <br><br>
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" class="form-control" name="emailpic" id="emailpic"
-                                            placeholder="Email PIC" value="{{ $tks->emailpic }}" readonly>
+                                        <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $tks->emailpic }}" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -524,44 +488,43 @@
     <script src="{{ asset('dist/js/adminlte.min.js') }} "></script>
 
     <script>
-    $(document).ready(function() {
-        $('#pic').on('change', function() {
-            var picID = $(this).val();
-            if(picID) 
-            {
-                $.ajax({
-                    url: '/getData/'+picID,
-                    type: "GET",
-                    data : {"_token":"{{ csrf_token() }}"},
-                    dataType: "json",
-                    success:function(data)
-                    {
-                        if(data)
-                        {
-                            document.getElementById('notelppic').value = data.notelpakunuser;
-                            document.getElementById('emailpic').value = data.emailakunuser;
+        $(document).ready(function() {
+            $('#pic').on('change', function() {
+                var picID = $(this).val();
+                if (picID) {
+                    $.ajax({
+                        url: '/getData/' + picID,
+                        type: "GET",
+                        data: {
+                            "_token": "{{ csrf_token() }}"
+                        },
+                        dataType: "json",
+                        success: function(data) {
+                            if (data) {
+                                document.getElementById('notelppic').value = data.notelpakunuser;
+                                document.getElementById('emailpic').value = data.emailakunuser;
+                            }
                         }
-                    }
-                });
-            }
+                    });
+                }
+            });
         });
-    });
 
-    function yesnoCheck1(that) {
-        if (that.value == "2") {
-            document.getElementById("check1").style.display = "block";
-        } else {
-            document.getElementById("check1").style.display = "none";
+        function yesnoCheck1(that) {
+            if (that.value == "2") {
+                document.getElementById("check1").style.display = "block";
+            } else {
+                document.getElementById("check1").style.display = "none";
+            }
         }
-    }
 
-    function yesnoCheck2(that) {
-        if (that.value == "2") {
-            document.getElementById("check2").style.display = "block";
-        } else {
-            document.getElementById("check2").style.display = "none";
+        function yesnoCheck2(that) {
+            if (that.value == "2") {
+                document.getElementById("check2").style.display = "block";
+            } else {
+                document.getElementById("check2").style.display = "none";
+            }
         }
-    }
     </script>
 
 </body>
