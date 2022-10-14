@@ -11,12 +11,9 @@ use App\Models\MoA;
 use App\Models\JenisMitra;
 use App\Models\LingkupKerja;
 use App\Models\AdminViewUser;
-use App\Imports\ExcelImports;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
-
-
-/* KALO ERROR MAKLUMIN MASIH ON PROGRESS */
+use App\Imports\ExcelImports;
 
 class TambahKerjasamaController extends Controller
 {
@@ -149,13 +146,11 @@ class TambahKerjasamaController extends Controller
         $user->tglselesai_moa = $req['tglselesai_moa'];
         $user->nilaikontrak = $req['nilaikontrak'];
 
-        if($req['check1']==1)
-        {
+        if ($req['check1'] == 1) {
             $user->tglselesai_mou = null;
         }
 
-        if($req['check2']==1)
-        {
+        if ($req['check2'] == 1) {
             $user->tglselesai_moa = null;
         }
 
@@ -212,13 +207,61 @@ class TambahKerjasamaController extends Controller
     //untuk import file excel
     public function importExcel()
     {
-        return view();
+        return view('Kerjasama');
     }
 
     public function uploadExcel(Request $request)
     {
-        Excell::import(new ExcelImports, $request->file);
+        /*$request->validate([
+            'file' => 'required|max:10000|mimes:xlsx,xls',
+        ]);
+        $path = $request->file('file');
 
-        return view();
+        Excel::import(new ExcelImports, $path);*/
+
+        //dd($request);
+        //Excel::import(new ExcelImports, $request->file('test1.csv'));
+
+        $array = Excel::toArray(new ExcelImports, $request->file('path_excel'), 's3', \Maatwebsite\Excel\Excel::XLSX);
+
+        $i = 0;
+        //dd($array[0]);
+        foreach ($array[0] as $value) {
+            if ($i > 0) {
+                $kerjasama = new TambahKerjasama;
+                $kerjasama->namamitra = $value[0];
+                $kerjasama->jenismitra = $value[1];
+                $kerjasama->judulkerjasama = $value[2];
+                $kerjasama->lingkupkerja = $value[3];
+                $kerjasama->alamat = $value[4];
+                $kerjasama->negara = $value[5];
+                $kerjasama->notelpmitra = $value[6];
+                $kerjasama->website = $value[7];
+                $kerjasama->bulaninput = $value[8];
+                $kerjasama->nilaikontrak = $value[9];
+                $kerjasama->judul_mou = $value[10];
+                $kerjasama->tglmulai_mou = $value[11];
+                $kerjasama->tglselesai_mou = $value[12];
+                $kerjasama->path_mou = $value[13];
+                $kerjasama->judul_moa = $value[14];
+                $kerjasama->tglmulai_moa = $value[15];
+                $kerjasama->tglselesai_moa = $value[16];
+                $kerjasama->path_moa = $value[17];
+                $kerjasama->narahubung = $value[18];
+                $kerjasama->notelpnara = $value[19];
+                $kerjasama->emailnara = $value[20];
+                $kerjasama->pic = $value[21];
+                $kerjasama->notelppic = $value[22];
+                $kerjasama->emailpic = $value[23];
+                $kerjasama->status = $value[24];
+
+                $kerjasama->save();
+            }
+
+            $i++;
+        }
+
+
+        return redirect()->back();
     }
 }
