@@ -313,17 +313,14 @@
                                     <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control @error('judul_mou') is-invalid @enderror"
-                                            name="judul_mou" placeholder="Masukan Judul Kerja Sama"
-                                            value="{{ $tks->judul_mou }}">
+                                            name="judul_mou" placeholder="Masukan Judul Kerja Sama">
                                     </div>
                                     <br><br>
                                     <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                     <div class="col-sm-10">
                                         <input type="date"
                                             class="form-control @error('tglmulai_mou') is-invalid @enderror"
-                                            name="tglmulai_mou" value=@if ( $tks->tglmulai_mou != null)
-                                        '{{ $tks->tglmulai_mou->format('Y-m-d') }}'
-                                        @endif>
+                                            name="tglmulai_mou">
                                     </div>
                                     <br><br>
                                     <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal
@@ -339,18 +336,17 @@
                                     <div class=" col-sm-10 ">
                                         <input id="check1" type="date"
                                             class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                            name="tglselesai_mou"
-                                            @if($tks->tglselesai_mou == null)
+                                            name="tglselesai_mou"@if($tks->tglselesai_moa == null)
                                             style="display:none;"
-                                            @endif 
-                                            value= @if($tks->tglselesai_mou != null)
-                                            '{{ $tks->tglselesai_mou->format('Y-m-d') }}'
+                                            @endif
+                                            value= @if($tks->tglselesai_moa != null)
+                                            '{{ $tks->tglselesai_moa->format('Y-m-d') }}'
                                             @endif>
                                     </div>
                                     <br><br>
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                                     <div class="col-sm-10 ">
-                                        <--jadi tempat link pdf mou-->
+                                        <-- jadi tempat link pdf mou -->
                                         <br><br>
                                         <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                                     </div>
@@ -408,7 +404,7 @@
                                     <div class=" col-sm-10 ">
                                     <select class="form-control" name="check2" onchange="yesnoCheck2(this)">
                                             <option value="1">Tidak Terbatas</option>
-                                            <option value="2"  @if($tks->tglselesai_moa != null) selected @endif>Terbatas</option>
+                                            <option value="2" @if($tks->tglselesai_moa != null) selected @endif>Terbatas</option>
                                         </select>
                                     </div>
                                     <br><br>
@@ -427,7 +423,7 @@
                                     <br><br>
                                     <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
                                     <div class="col-sm-10 ">
-                                        <--jadi tempat link pdf mou-->
+                                        <-- jadi tempat link pdf moa -->
                                         <br><br>
                                         <input type="file" class="form-control " name="path_moa[]" accept="pdf/*" multiple>
                                     </div>
