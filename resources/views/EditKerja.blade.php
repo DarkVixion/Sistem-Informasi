@@ -365,7 +365,12 @@
                                     <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
                                     <div class="col-sm-10 ">
                                         <select class="form-control" name="lingkupkerja">
+                                            @if($tks->lingkupkerja != null)
                                             <option hidden>{{ $tks->lingkupkerja }}</option>
+                                            @else
+                                            <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
+                                            @endif
+                                            
                                             @foreach ($lk as $item)
                                             <option>{{ $item->judullingkupkerja }}</option>
                                             @endforeach
