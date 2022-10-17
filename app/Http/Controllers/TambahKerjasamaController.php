@@ -163,10 +163,6 @@ class TambahKerjasamaController extends Controller
 
         if(isset($req['path_mou']))
         {
-            $mou->judul = $req['judul_mou'];
-            $mou->tglmulai = $req['tglmulai_mou'];
-            $mou->tglselesai = $req['tglselesai_mou'];
-
             foreach ($req['path_mou'] as $file) {
                 $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_mou = $namafilemou;
@@ -175,8 +171,12 @@ class TambahKerjasamaController extends Controller
 
             $mou->path = $path_mou;
         }
-        $user->mous()->save($mou);
-
+        
+        if(isset($req->judul_moa))
+        {
+            $user->mous()->save($mou);
+        }
+        
 
         $moa = MoA::where('tambah_kerjasama_id',$id)->first();
         if( $moa == null)
@@ -198,18 +198,6 @@ class TambahKerjasamaController extends Controller
         //jika ada path, jalankan code. jika tidak ada, skip code.
         if (isset($req['path_moa'])) 
         {
-            $moa = MoA::where('tambah_kerjasama_id',$id)->first();
-            
-            if( $moa == null)
-            {
-                $moa = new MoA;
-            }
-
-            $moa->judul = $req['judul_moa'];
-            $moa->tglmulai = $req['tglmulai_moa'];
-            $moa->tglselesai = $req['tglselesai_moa'];
-            $moa->nilaikontrak = $req['nilaikontrak'];
-
             foreach ($req['path_moa'] as $file) 
             {
                 $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
@@ -219,9 +207,12 @@ class TambahKerjasamaController extends Controller
 
             $moa->path = $path_moa;
         }
-        $user->moas()->save($moa);
 
-
+        if(isset($req->judul_moa))
+        {
+           $user->moas()->save($moa); 
+        }
+        
         return redirect('/Kerjasama');
     }
 
