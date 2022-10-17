@@ -331,7 +331,7 @@
                                     <div class="col-sm-10 ">
                                         <br>
                                         @if($mou!=null)
-                                        <a href="{{route('preview', $mou->path)}}" target="_blank">Preview Dokumen</a>
+                                        <a href="{{route('preview', $mou->path)}}" target="_blank" style="text-decoration:underline;">Preview Dokumen</a>
                                         <br><br>
                                         @endif
                                         <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
@@ -409,7 +409,7 @@
                                     <div class="col-sm-10 ">
                                         <br>
                                         @if($moa!=null) 
-                                        <a href="{{route('preview', $moa->path)}}" target="_blank">Preview Dokumen</a>
+                                        <a href="{{route('preview', $moa->path)}}" target="_blank" style="text-decoration:underline;">Preview Dokumen</a>
                                         <br><br>
                                         @endif
                                         <input type="file" class="form-control " name="path_moa[]" accept="pdf/*" multiple>
