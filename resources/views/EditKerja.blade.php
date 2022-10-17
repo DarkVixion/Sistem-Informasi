@@ -302,7 +302,7 @@
                                         <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" 
                                         value=@if ($mou != null) 
                                         @if ($mou->tglmulai != null)
-                                        '{{ $mou->tglmulai }}'
+                                        '{{ $mou->tglmulai->format('Y-m-d') }}'
                                         @endif @endif>
                                     </div>
                                     <br><br>
@@ -323,7 +323,7 @@
                                             style="display:none;"
                                             @endif
                                             value= @if ($mou != null) @if($mou->tglselesai != null)
-                                            '{{ $mou->tglselesai }}'
+                                            '{{ $mou->tglselesai->format('Y-m-d') }}'
                                             @endif @endif>
                                     </div>
                                     <br><br>
@@ -376,7 +376,7 @@
                                     <div class="col-sm-10">
                                         <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" 
                                         value=@if($moa!=null) @if( $moa->tglmulai != null)
-                                        '{{ $moa->tglmulai }}'
+                                        '{{ $moa->tglmulai->format('Y-m-d') }}'
                                         @endif @endif>
                                     </div>
                                     <br><br>
@@ -396,7 +396,7 @@
                                         style="display:none;"
                                         @endif
                                         value= @if($moa!=null) @if($moa->tglselesai != null)
-                                        '{{ $moa->tglselesai }}'
+                                        '{{ $moa->tglselesai->format('Y-m-d') }}'
                                         @endif @endif>
                                     </div>
                                     <br><br>
@@ -481,7 +481,8 @@
                 <div class=" card card-info">
                     <div class=" card-footer ">
                         <button type="submit" class="btn btn-info">Save</button>
-                        <button type="submit" class="btn btn-default float-right">Cancel</button>
+                        <button type="button" onclick="history.back()"
+                                class="btn btn-default float-right">Cancel</button>
                     </div>
                 </div>
 

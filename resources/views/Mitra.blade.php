@@ -64,6 +64,11 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($tks as $item)
+                                    <?php
+                                        $moa = App\Models\MoA::where('tambah_kerjasama_id', $item->id)->first();
+                                        $mou = App\Models\MoU::where('tambah_kerjasama_id', $item->id)->first();
+                                    ?>
+
                                     @if ($item->path_moa == null)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
@@ -93,12 +98,8 @@
                                                 data-target="#modal-xxl{{ $item->id }}"><i
                                                     class="fa fa-eye"></i></button></a></td>
                                     </tr>
-                                    {{-- buat manggil 
-                                    
-                                    
-                                    
-                                    db judul kerja sama --}}
                                     @endif
+                                    
                                     <!-- modal untuk view profile mitra -->
                                     <div class="modal fade" id="modal-xxl{{ $item->id }}">
                                         <div class="modal-dialog modal-xl">

@@ -21,11 +21,8 @@ class TambahKerjasamaController extends Controller
     public function index() // untuk view hal Kerjasama
     {
         $kerjasama = TambahKerjasama::all();
-        $mou = MoU::all();
-        $moa = MoA::all();
-        return view('Kerjasama')->with('kerjasama', $kerjasama)
-            ->with('mou', $mou)
-            ->with('moa', $moa);
+        
+        return view('Kerjasama')->with('kerjasama', $kerjasama);
     }
 
     public function create() // untuk view hal Tambah Kerjasama
