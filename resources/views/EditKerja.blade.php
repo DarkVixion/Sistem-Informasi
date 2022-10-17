@@ -294,15 +294,16 @@
                                     <label for="judul_mou" class="col-sm-2 col-form-label">Judul Kerja Sama</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control @error('judul_mou') is-invalid @enderror"
-                                            name="judul_mou" placeholder="Masukan Judul Kerja Sama" value="{{ $mou->Judul }}">
+                                            name="judul_mou" placeholder="Masukan Judul Kerja Sama" value=@if ($mou != null) "{{ $mou->Judul }}" @endif>
                                     </div>
                                     <br><br>
                                     <label for="tglmulai_mou" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                     <div class="col-sm-10">
                                         <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou" 
-                                        value=@if ( $mou->tglmulai != null)
+                                        value=@if ($mou != null) 
+                                        @if ($mou->tglmulai != null)
                                         '{{ $mou->tglmulai }}'
-                                        @endif>
+                                        @endif @endif>
                                     </div>
                                     <br><br>
                                     <label for="tglselesai_mou" class=" col-sm-2 col-form-label ">Tanggal
@@ -310,7 +311,7 @@
                                     <div class=" col-sm-10 ">
                                         <select class="form-control" name="check1" onchange="yesnoCheck1(this)">
                                             <option value="1">Tidak Terbatas</option>
-                                            <option value="2" @if($mou->tglselesai != null) selected @endif>Terbatas</option>
+                                            <option value="2" @if ($mou != null) @if($mou->tglselesai != null) selected @endif @endif>Terbatas</option>
                                         </select>
                                     </div>
                                     <br><br>
@@ -318,18 +319,21 @@
                                     <div class=" col-sm-10 ">
                                         <input id="check1" type="date"
                                             class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                            name="tglselesai_mou"@if($mou->tglselesai == null)
+                                            name="tglselesai_mou" @if($mou == null || $mou->tglselesai == null)
                                             style="display:none;"
                                             @endif
-                                            value= @if($mou->tglselesai != null)
+                                            value= @if ($mou != null) @if($mou->tglselesai != null)
                                             '{{ $mou->tglselesai }}'
-                                            @endif>
+                                            @endif @endif>
                                     </div>
                                     <br><br>
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Dokumen MoU</label>
                                     <div class="col-sm-10 ">
-                                        <-- jadi tempat link pdf mou -->
+                                        <br>
+                                        @if($mou!=null)
+                                        <a href="{{route('preview', $mou->path)}}" target="_blank">Preview Dokumen</a>
                                         <br><br>
+                                        @endif
                                         <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
                                     </div>
                                 </div>
@@ -349,13 +353,13 @@
                                     <label for="judul_moa" class="col-sm-2 col-form-label">Judul Kerjasama</label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama" 
-                                        value="{{ $moa->judul }}">
+                                        value=@if($moa!=null) "{{ $moa->judul }}" @endif>
                                     </div>
                                     <br><br>
                                     <label for="nilaikontrak" class="col-sm-2 col-form-label">Nilai Kontrak</label>
                                     <div class="col-sm-10">
                                         <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" 
-                                        value="{{ $moa->nilaikontrak }}" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
+                                        value=@if($moa!=null) "{{ $moa->nilaikontrak }}" @endif pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                     <br><br>
                                     <label for="select " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
@@ -370,9 +374,10 @@
                                     <br><br>
                                     <label for="tglmulai_moa" class="col-sm-2 col-form-label">Tanggal Mulai</label>
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" value=@if ( $moa->tglmulai != null)
+                                        <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa" 
+                                        value=@if($moa!=null) @if( $moa->tglmulai != null)
                                         '{{ $moa->tglmulai }}'
-                                        @endif>
+                                        @endif @endif>
                                     </div>
                                     <br><br>
                                     <label for="tglselesai_moa" class=" col-sm-2 col-form-label ">Tanggal
@@ -380,24 +385,28 @@
                                     <div class=" col-sm-10 ">
                                         <select class="form-control" name="check2" onchange="yesnoCheck2(this)">
                                             <option value="1">Tidak Terbatas</option>
-                                            <option value="2" @if($moa->tglselesai != null) selected @endif>Terbatas</option>
+                                            <option value="2" @if($moa!=null) @if($moa->tglselesai != null) selected @endif @endif>Terbatas</option>
                                         </select>
                                     </div>
                                     <br><br>
                                     <label class=" col-sm-2 col-form-label "></label>
                                     <div class=" col-sm-10 ">
-                                        <input id="check2" type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" @if($moa->tglselesai == null)
+                                        <input id="check2" type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" 
+                                        @if($moa==null || $moa->tglselesai == null)
                                         style="display:none;"
                                         @endif
-                                        value= @if($moa->tglselesai != null)
+                                        value= @if($moa!=null) @if($moa->tglselesai != null)
                                         '{{ $moa->tglselesai }}'
-                                        @endif>
+                                        @endif @endif>
                                     </div>
                                     <br><br>
                                     <label for="path_moa" class="col-sm-2 col-form-label ">Dokumen MoA</label>
                                     <div class="col-sm-10 ">
-                                        <-- jadi tempat link pdf moa -->
+                                        <br>
+                                        @if($moa!=null) 
+                                        <a href="{{route('preview', $moa->path)}}" target="_blank">Preview Dokumen</a>
                                         <br><br>
+                                        @endif
                                         <input type="file" class="form-control " name="path_moa[]" accept="pdf/*" multiple>
                                     </div>
                                 </div>

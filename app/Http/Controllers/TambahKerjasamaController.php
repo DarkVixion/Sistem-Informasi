@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Response;
 use Illuminate\Http\Request;
 use App\Imports\ExcelImports;
 use Maatwebsite\Excel\Facades\Excel;
@@ -144,17 +145,6 @@ class TambahKerjasamaController extends Controller
 
         $user->save();
 
-        if($req['check1'] == 1)
-        {
-            $user->tglselesai_mou = null;
-        }
-
-        if ($req['check2'] == 1) 
-        {
-            $user->tglselesai_moa = null;
-        }
-        
-
         $mou = MoU::where('tambah_kerjasama_id',$id)->first();
         if( $mou == null)
         {
@@ -165,6 +155,11 @@ class TambahKerjasamaController extends Controller
         $mou->tglmulai = $req['tglmulai_mou'];
         $mou->tglselesai = $req['tglselesai_mou'];
         $mou->path = $mou->path;
+
+        if($req['check1'] == 1)
+        {
+            $mou->tglselesai = null;
+        }
 
         if(isset($req['path_mou']))
         {
@@ -195,6 +190,11 @@ class TambahKerjasamaController extends Controller
         $moa->nilaikontrak = $req['nilaikontrak'];
         $moa->path = $moa->path;
 
+        if ($req['check2'] == 1) 
+        {
+            $moa->tglselesai = null;
+        }
+
         //jika ada path, jalankan code. jika tidak ada, skip code.
         if (isset($req['path_moa'])) 
         {
@@ -223,6 +223,17 @@ class TambahKerjasamaController extends Controller
 
 
         return redirect('/Kerjasama');
+    }
+
+    // preview file
+    // di sini akan ada peringatan error, tapi program tetap berfungsi
+    // jadi biarkan saja
+    public function preview($path)
+    {
+        $path = './files/'.$path;
+        return Response::make(file_get_contents($path), 200, [
+            'content-type'=>'application/pdf',
+        ]);
     }
 
     public function delete($id)
