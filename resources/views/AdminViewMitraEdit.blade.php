@@ -85,6 +85,9 @@
         </div>
         <!-- /.card-body -->
         <div class=" card-footer ">
+            <button type="button" class="btn btn-default" onclick="history.back()" style="background-color:lightgray; border-radius:15px;">
+                Cancel
+            </button>
             <button class="btn btn-default" style="float:right; background-color:lightblue; border-radius:15px;">
                 Simpan
             </button>
