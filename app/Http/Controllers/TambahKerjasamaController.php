@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Imports\ExcelImports;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
@@ -16,12 +17,17 @@ use App\Models\JenisMitra;
 use App\Models\LingkupKerja;
 use App\Models\AdminViewUser;
 
+
 class TambahKerjasamaController extends Controller
 {
     public function index() // untuk view hal Kerjasama
     {
         $kerjasama = TambahKerjasama::all();
-        
+        $sum = DB::table('moas')->sum('nilaikontrak');
+        $countmoa = DB::table('moas')->count('id');
+        $countmou = DB::table('mous')->count('id');
+        $summitra = DB::table('tambahkerjasama')->count('namamitra');
+
         return view('Kerjasama')->with('kerjasama', $kerjasama);
     }
 
@@ -57,9 +63,8 @@ class TambahKerjasamaController extends Controller
         $user->assignuserakun = $req['pic'];
 
         $user->save();
-        
-        if (isset($req['path_mou'])) 
-        {
+
+        if (isset($req['path_mou'])) {
             $mou = new MoU;
             $mou->judul = $req['judul_mou'];
             $mou->tglmulai = $req['tglmulai_mou'];
@@ -71,15 +76,14 @@ class TambahKerjasamaController extends Controller
 
                 $file->move(public_path('files'), $namafilemou);
             }
-            
+
             $mou->path = $path_mou;
 
             $user->mous()->save($mou);
         }
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
-        if (isset($req['path_moa'])) 
-        {
+        if (isset($req['path_moa'])) {
             $moa = new MoA;
             $moa->judul = $req['judul_moa'];
             $moa->tglmulai = $req['tglmulai_moa'];
@@ -92,7 +96,7 @@ class TambahKerjasamaController extends Controller
 
                 $file->move(public_path('files'), $namafilemoa);
             }
-            
+
             $moa->path = $path_moa;
 
             $user->moas()->save($moa);
@@ -142,9 +146,8 @@ class TambahKerjasamaController extends Controller
 
         $user->save();
 
-        $mou = MoU::where('tambah_kerjasama_id',$id)->first();
-        if( $mou == null)
-        {
+        $mou = MoU::where('tambah_kerjasama_id', $id)->first();
+        if ($mou == null) {
             $mou = new MoU;
         }
 
@@ -153,13 +156,11 @@ class TambahKerjasamaController extends Controller
         $mou->tglselesai = $req['tglselesai_mou'];
         $mou->path = $mou->path;
 
-        if($req['check1'] == 1)
-        {
+        if ($req['check1'] == 1) {
             $mou->tglselesai = null;
         }
 
-        if(isset($req['path_mou']))
-        {
+        if (isset($req['path_mou'])) {
             foreach ($req['path_mou'] as $file) {
                 $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_mou = $namafilemou;
@@ -168,16 +169,14 @@ class TambahKerjasamaController extends Controller
 
             $mou->path = $path_mou;
         }
-        
-        if(isset($req->judul_moa))
-        {
+
+        if (isset($req->judul_moa)) {
             $user->mous()->save($mou);
         }
-        
 
-        $moa = MoA::where('tambah_kerjasama_id',$id)->first();
-        if( $moa == null)
-        {
+
+        $moa = MoA::where('tambah_kerjasama_id', $id)->first();
+        if ($moa == null) {
             $moa = new MoA;
         }
 
@@ -187,16 +186,13 @@ class TambahKerjasamaController extends Controller
         $moa->nilaikontrak = $req['nilaikontrak'];
         $moa->path = $moa->path;
 
-        if ($req['check2'] == 1) 
-        {
+        if ($req['check2'] == 1) {
             $moa->tglselesai = null;
         }
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
-        if (isset($req['path_moa'])) 
-        {
-            foreach ($req['path_moa'] as $file) 
-            {
+        if (isset($req['path_moa'])) {
+            foreach ($req['path_moa'] as $file) {
                 $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_moa = $namafilemoa;
                 $file->move(public_path('files'), $namafilemoa);
@@ -205,11 +201,10 @@ class TambahKerjasamaController extends Controller
             $moa->path = $path_moa;
         }
 
-        if(isset($req->judul_moa))
-        {
-           $user->moas()->save($moa); 
+        if (isset($req->judul_moa)) {
+            $user->moas()->save($moa);
         }
-        
+
         return redirect('/Kerjasama');
     }
 
@@ -218,9 +213,9 @@ class TambahKerjasamaController extends Controller
     // jadi biarkan saja
     public function preview($path)
     {
-        $path = './files/'.$path;
+        $path = './files/' . $path;
         return Response::make(file_get_contents($path), 200, [
-            'content-type'=>'application/pdf',
+            'content-type' => 'application/pdf',
         ]);
     }
 
@@ -262,7 +257,6 @@ class TambahKerjasamaController extends Controller
                 $kerjasama = new TambahKerjasama;
                 $kerjasama->namamitra = $value[0];
                 $kerjasama->jenismitra = $value[1];
-                // $kerjasama->judulkerjasama = $value[2];
                 $kerjasama->lingkupkerja = $value[2];
                 $kerjasama->alamat = $value[3];
                 $kerjasama->negara = $value[4];
@@ -285,4 +279,10 @@ class TambahKerjasamaController extends Controller
 
         return back();
     }
+    /*
+    function sumnilaikontrak()
+    {
+        return DB::table('moas')->sum('id');
+    }
+    */
 }

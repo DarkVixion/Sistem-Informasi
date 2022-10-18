@@ -24,7 +24,15 @@ use App\Models\TambahKerjasama;
 
 // <-- BAGIAN ADMIN -->
 Route::get('AdminDashboard', function () {
-    return view('AdminDashboard');
+    $sum = DB::table('moas')->sum('nilaikontrak');
+    $countmoa = DB::table('moas')->count('id');
+    $countmou = DB::table('mous')->count('id');
+    $summitra = DB::table('tambahkerjasama')->count('namamitra');
+
+    return view('AdminDashboard')->with('sum', $sum)
+        ->with('countmoa', $countmoa)
+        ->with('countmou', $countmou)
+        ->with('summitra', $summitra);
 });
 
 Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
@@ -87,6 +95,9 @@ Route::post('/uploadexcel', [TambahKerjasamaController::class, 'uploadExcel'])->
 Route::get('UserDashboard', function () {
     return view('UserDashboard');
 });
+
+// <-- TESTING DASHBOARD -->
+Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
 Route::get('UserAkun', function () {
     return view('UserAkun');
