@@ -114,7 +114,7 @@
                                                             class="fa fa-eye"></i></button></a></td>
                                             </tr>
 
-                                            @for($i=0; $i<$moa_i; $i++)
+                                            @for($i=1; $i<$moa_i; $i++)
                                                 <tr>
                                                     <td>MoA</td>
                                                     <td>{{ $moa[$i]->judul }}</td>
@@ -210,8 +210,10 @@
                                                                 <label for="inputPassword3 "
                                                                     class="col-sm-2 col-form-label ">PIC</label>
                                                                 <div class="col-sm-10 ">
-                                                                    <input type="text" class="form-control " name="pic"
-                                                                        value="{{ $item->assignuserakun }}" disabled>
+                                                                    <input type="text" class="form-control " name="pic" disabled
+                                                                        value=@if ($item->assignuserakun != null)
+                                                                        "{{ $user[($item->assignuserakun)-1]->namaakunuser }}"
+                                                                        @endif>
                                                                 </div><br><br><br>
                                                                 <label for="inputPassword3 "
                                                                     class="col-sm-2 col-form-label ">Nomor Telephone
