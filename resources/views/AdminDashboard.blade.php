@@ -12,12 +12,25 @@
                 <h1 class="m-0">Dashboard</h1>
             </div>
             <!-- /.col -->
-            {{-- <div class="col-sm-6">
-                <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item">Home</li>
-                    <li class="breadcrumb-item active">Dashboard</li>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-right">
+
+                    <div class="form-group">
+                        <div class="col-sm-13">
+                            <input type="month" class="form-control " name="bulaninput">
+                        </div>
+                    </div>-
+                    <div class="form-group">
+                        <div class="col-sm-13">
+                            <input type="month" class="form-control " name="bulaninput">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default" style="max-height: 38px;">
+                        <i class=" fas fa-search"></i>
+                    </button>
+
                 </ol>
-            </div> --}}
+            </div>
             <!-- /.col -->
         </div>
         <!-- /.row -->
@@ -311,5 +324,31 @@
         <!-- /.row -->
         <!-- /.container-fluid -->
     </div>
-    <!-- /.content -->
+    <!-- 
+    <script>
+    function showKomik($list_komik, $loop) {
+        $i = 1;
+
+        foreach($list_komik as $komik) {
+            // var_dump($komik);
+            if (isset($_GET["Genre"]) || isset($_GET["Type"])) {
+                if ($komik["kategori"] == $_GET["Type"] || in_array($_GET["Genre"], $komik["list_genre"])) {
+                    komikCard($komik);
+                } else if ($_GET["Genre"] == "default" && $_GET["Type"] == "default") {
+                    komikCard($komik);
+                } else {
+                    continue;
+                }
+            } else {
+                komikCard($komik);
+            }
+            $i++;
+            // var_dump($komik['komik_id']);
+            if ($i > $loop && $loop != -1) {
+                break;
+            }
+        }
+    </script>
+/.content -->
+
     @endsection

@@ -9,7 +9,8 @@
     <title>Rekap Kontrak - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
@@ -44,11 +45,13 @@
             <div class="col-sm-6">
 
                 <a href="TambahKerja">
-                    <button type="button" class="btn btn-default float-right" style="background-color:lightblue; border-radius:15px;">
+                    <button type="button" class="btn btn-default float-right"
+                        style="background-color:lightblue; border-radius:15px;">
                         Tambah Kerja Sama
                     </button>
                 </a>
-                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl" style="border-radius:15px;"><i class="fas fa-plus"></i> Import
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl"
+                    style="border-radius:15px;"><i class="fas fa-plus"></i> Import
                     Excel</button>
             </div>
         </div>
@@ -131,11 +134,14 @@
                                         @endif
 
                                         <td>
-                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
+                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button
+                                                    class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
+                                                style="display:inline ">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-danger"><i
+                                                        class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -193,7 +199,7 @@
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-    $.widget.bridge('uibutton', $.ui.button)
+$.widget.bridge('uibutton', $.ui.button)
 </script><!-- Sparkline -->
 <script src="plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
