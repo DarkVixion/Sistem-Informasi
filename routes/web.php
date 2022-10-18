@@ -9,6 +9,7 @@ use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
 use App\Models\AdminViewUser;
+use App\Models\TambahKerjasama;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,7 @@ Route::delete('Kerjasama/{id}', [TambahKerjasamaController::class, 'delete'])->n
 Route::match(['put', 'patch'], 'Kerjasama/{id}', [TambahKerjasamaController::class, 'update'])->name('update_kerjasama');
 Route::get('TambahKerja', [TambahKerjasamaController::class, 'create']);
 Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('tambah_kerjasama');
+Route::get('/preview/{path}', [TambahKerjasamaController::class, 'preview'])->name('preview');
 
 Route::get('JenisMitra', [JenisMitraController::class, 'index']);
 Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');

@@ -75,17 +75,18 @@
                                         <th>Jenis Mitra</th>
                                         <th>Lingkup Kerja Sama</th>
                                         <th>Nilai Kontrak</th>
-                                        <th>Periode Mulai MoU</th>
-                                        <th>Periode Berakhir MoU</th>
                                         <th>Periode Mulai MoA</th>
                                         <th>Periode Berakhir MoA</th>
+                                        <th>Periode Mulai MoU</th>
+                                        <th>Periode Berakhir MoU</th>
                                         <th>Misc.</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach($kerjasama as $item)
-
                                     <?php
+                                        $moa = App\Models\MoA::where('tambah_kerjasama_id', $item->id)->first();
+                                        $mou = App\Models\MoU::where('tambah_kerjasama_id', $item->id)->first();
                                     ?>
 
                                     <tr>
@@ -93,31 +94,45 @@
                                         <td>{{ $item->namamitra }}</td>
                                         <td>{{ $item->jenismitra }}</td>
                                         <td>{{ $item->lingkupkerja }}</td>
+
+                                        @if($moa != null)
                                         <td>
-                                            @if ( $item->nilaikontrak != null)
-                                            Rp {{ number_format($item->nilaikontrak) }}
+                                            @if ( $moa->nilaikontrak != null)
+                                            Rp {{ number_format($moa->nilaikontrak) }}
                                             @endif
                                         </td>
                                         <td>
-                                            @if ( $item->tglmulai_mou != null)
-                                            {{ $item->tglmulai_mou->format('Y-m-d') }}
+                                            @if ( $moa->tglmulai != null)
+                                            {{ $moa->tglmulai->format('Y-m-d') }}
                                             @endif
                                         </td>
                                         <td>
-                                            @if ( $item->tglselesai_mou != null)
-                                            {{ $item->tglselesai_mou->format('Y-m-d') }}
+                                            @if ( $moa->tglselesai != null)
+                                            {{ $moa->tglselesai->format('Y-m-d') }}
+                                            @endif
+                                        </td>
+                                        @else
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        @endif
+
+                                        @if($mou != null)
+                                        <td>
+                                            @if ( $mou->tglmulai != null)
+                                            {{ $mou->tglmulai->format('Y-m-d') }}
                                             @endif
                                         </td>
                                         <td>
-                                            @if ( $item->tglmulai_moa != null)
-                                            {{ $item->tglmulai_moa->format('Y-m-d') }}
+                                            @if ( $mou->tglselesai != null)
+                                            {{ $mou->tglselesai->format('Y-m-d') }}
                                             @endif
                                         </td>
-                                        <td>
-                                            @if ( $item->tglselesai_moa != null)
-                                            {{ $item->tglselesai_moa->format('Y-m-d') }}
-                                            @endif
-                                        </td>
+                                        @else
+                                        <td></td>
+                                        <td></td>
+                                        @endif
+
                                         <td>
                                             <a href="{{route('edit_kerjasama', $item->id)}}"><button
                                                     class="btn btn-primary"><i class="fa fa-edit"></i></button></a>

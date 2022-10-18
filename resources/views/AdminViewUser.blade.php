@@ -61,7 +61,8 @@
                             <!-- /.card-header -->
                             <div class="card-body table-responsive p-3">
                                 <div class="d-flex justify-content-center">
-                                    <img class=" profile-user-img img-fluid img-circle" src="{{ asset('profilpicuser/'.$adminviewuser->path_profileakunuser) }}" alt=" User profile picture">
+                                    <img class=" profile-user-img img-fluid img-circle" alt=" User profile picture"
+                                    src=@if($adminviewuser->path_profileakunuser!=null) "{{ asset('profilpicuser/'.$adminviewuser->path_profileakunuser) }}" @else ../../dist/img/user2-160x160.jpg @endif>
                                 </div>
                                 <h3 class="profile-username text-center">{{ $adminviewuser->namaakunuser }}</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>

@@ -64,11 +64,17 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($tks as $item)
+                                    <?php
+                                        $moa = App\Models\MoA::where('tambah_kerjasama_id', $item->id)->first();
+                                        $mou = App\Models\MoU::where('tambah_kerjasama_id', $item->id)->first();
+                                    ?>
+
                                     @if ($item->path_moa == null)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->namamitra }}</td>
                                         <td>MoU</td>
+                                        <td>Judul Kerjasama</td>
                                         <td><button class="btn btn-info" data-toggle="modal"
                                                 data-target="#modal-xxl{{ $item->id }}"><i
                                                     class="fa fa-eye"></i></button></a></td>
@@ -78,6 +84,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->namamitra }}</td>
                                         <td>MoU</td>
+                                        <td>Judul Kerjasama</td>
                                         <td><button class="btn btn-info" data-toggle="modal"
                                                 data-target="#modal-xxl{{ $item->id }}"><i
                                                     class="fa fa-eye"></i></button></a></td>
@@ -86,16 +93,13 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->namamitra }}</td>
                                         <td>MoA</td>
+                                        <td>Judul Kerjasama</td>
                                         <td><button class="btn btn-info" data-toggle="modal"
                                                 data-target="#modal-xxl{{ $item->id }}"><i
                                                     class="fa fa-eye"></i></button></a></td>
                                     </tr>
-                                    {{-- buat manggil 
-                                    
-                                    
-                                    
-                                    db judul kerja sama --}}
                                     @endif
+                                    
                                     <!-- modal untuk view profile mitra -->
                                     <div class="modal fade" id="modal-xxl{{ $item->id }}">
                                         <div class="modal-dialog modal-xl">
@@ -172,7 +176,7 @@
                                                                 class="col-sm-2 col-form-label ">PIC</label>
                                                             <div class="col-sm-10 ">
                                                                 <input type="text" class="form-control " name="pic"
-                                                                    value="{{ $item->pic }}" disabled>
+                                                                    value="{{ $item->assignuserakun }}" disabled>
                                                             </div><br><br><br>
                                                             <label for="inputPassword3 "
                                                                 class="col-sm-2 col-form-label ">Nomor Telephone

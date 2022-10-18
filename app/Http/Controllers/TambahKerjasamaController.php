@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Response;
 use Illuminate\Http\Request;
 use App\Imports\ExcelImports;
 use Maatwebsite\Excel\Facades\Excel;
@@ -20,11 +21,8 @@ class TambahKerjasamaController extends Controller
     public function index() // untuk view hal Kerjasama
     {
         $kerjasama = TambahKerjasama::all();
-        $mou = MoU::all();
-        $moa = MoA::all();
-        return view('Kerjasama')->with('kerjasama', $kerjasama)
-            ->with('mou', $mou)
-            ->with('moa', $moa);
+        
+        return view('Kerjasama')->with('kerjasama', $kerjasama);
     }
 
     public function create() // untuk view hal Tambah Kerjasama
@@ -144,17 +142,6 @@ class TambahKerjasamaController extends Controller
 
         $user->save();
 
-        if($req['check1'] == 1)
-        {
-            $user->tglselesai_mou = null;
-        }
-
-        if ($req['check2'] == 1) 
-        {
-            $user->tglselesai_moa = null;
-        }
-        
-
         $mou = MoU::where('tambah_kerjasama_id',$id)->first();
         if( $mou == null)
         {
@@ -166,12 +153,13 @@ class TambahKerjasamaController extends Controller
         $mou->tglselesai = $req['tglselesai_mou'];
         $mou->path = $mou->path;
 
+        if($req['check1'] == 1)
+        {
+            $mou->tglselesai = null;
+        }
+
         if(isset($req['path_mou']))
         {
-            $mou->judul = $req['judul_mou'];
-            $mou->tglmulai = $req['tglmulai_mou'];
-            $mou->tglselesai = $req['tglselesai_mou'];
-
             foreach ($req['path_mou'] as $file) {
                 $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_mou = $namafilemou;
@@ -180,8 +168,12 @@ class TambahKerjasamaController extends Controller
 
             $mou->path = $path_mou;
         }
-        $user->mous()->save($mou);
-
+        
+        if(isset($req->judul_moa))
+        {
+            $user->mous()->save($mou);
+        }
+        
 
         $moa = MoA::where('tambah_kerjasama_id',$id)->first();
         if( $moa == null)
@@ -195,21 +187,14 @@ class TambahKerjasamaController extends Controller
         $moa->nilaikontrak = $req['nilaikontrak'];
         $moa->path = $moa->path;
 
+        if ($req['check2'] == 1) 
+        {
+            $moa->tglselesai = null;
+        }
+
         //jika ada path, jalankan code. jika tidak ada, skip code.
         if (isset($req['path_moa'])) 
         {
-            $moa = MoA::where('tambah_kerjasama_id',$id)->first();
-            
-            if( $moa == null)
-            {
-                $moa = new MoA;
-            }
-
-            $moa->judul = $req['judul_moa'];
-            $moa->tglmulai = $req['tglmulai_moa'];
-            $moa->tglselesai = $req['tglselesai_moa'];
-            $moa->nilaikontrak = $req['nilaikontrak'];
-
             foreach ($req['path_moa'] as $file) 
             {
                 $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
@@ -219,10 +204,24 @@ class TambahKerjasamaController extends Controller
 
             $moa->path = $path_moa;
         }
-        $user->moas()->save($moa);
 
-
+        if(isset($req->judul_moa))
+        {
+           $user->moas()->save($moa); 
+        }
+        
         return redirect('/Kerjasama');
+    }
+
+    // preview file
+    // di sini akan ada peringatan error, tapi program tetap berfungsi
+    // jadi biarkan saja
+    public function preview($path)
+    {
+        $path = './files/'.$path;
+        return Response::make(file_get_contents($path), 200, [
+            'content-type'=>'application/pdf',
+        ]);
     }
 
     public function delete($id)
