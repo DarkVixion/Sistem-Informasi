@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class MoU extends Model
 {
     protected $table = 'mous';
+    protected $fillable = [
+        'Judul',
+        'tglmulai',
+        'tglselesai',
+        'path'
+    ];
     protected $dates = ['tglmulai', 'tglselesai'];
 
     public function kerjasama()
