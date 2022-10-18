@@ -167,7 +167,7 @@
         </aside>
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper" style="min-height: 2000;">
+        <div class="content-wrapper" style="min-height: 1450;">
 
             <!-- Content Header (Page header) -->
             <section class="content-header">
@@ -350,7 +350,8 @@
                                         <div class="col-sm-9">
                                             <input type="number"
                                                 class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                                name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" pattern="/^-?\d+\.?\d*$/"
+                                                name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)"
+                                                pattern="/^-?\d+\.?\d*$/"
                                                 onKeyPress="if(this.value.length==15) return false;">
                                         </div>
                                         <br><br>
@@ -376,7 +377,7 @@
                                         <label for="tglselesai_moa" class=" col-sm-3 col-form-label ">Tanggal
                                             Selesai</label>
                                         <div class=" col-sm-9 ">
-                                        <select class="form-control" onchange="yesnoCheck2(this)">
+                                            <select class="form-control" onchange="yesnoCheck2(this)">
                                                 <option value="1">Tidak Terbatas</option>
                                                 <option value="2">Terbatas</option>
                                             </select>
@@ -391,7 +392,8 @@
                                         <br><br>
                                         <label for="path_moa" class="col-sm-3 col-form-label ">Dokumen MoA</label>
                                         <div class="col-sm-9 ">
-                                            <input type="file" class="form-control" name="path_moa[]" accept="pdf/*" multiple>
+                                            <input type="file" class="form-control" name="path_moa[]" accept="pdf/*"
+                                                multiple>
                                         </div>
                                     </div>
                                 </div>
@@ -402,7 +404,7 @@
                         </div>
                     </div>
                     <!-- Horizontal Form -->
-                    
+
 
                     <div class="row">
                         <div class="col-md-6 d-flex align-items-stretch">
@@ -493,18 +495,18 @@
     $(document).ready(function() {
         $('#pic').on('change', function() {
             var picID = $(this).val();
-            if(picID) 
-            {
+            if (picID) {
                 $.ajax({
-                    url: '/getData/'+picID,
+                    url: '/getData/' + picID,
                     type: "GET",
-                    data : {"_token":"{{ csrf_token() }}"},
+                    data: {
+                        "_token": "{{ csrf_token() }}"
+                    },
                     dataType: "json",
-                    success:function(data)
-                    {
-                        if(data)
-                        {
-                            document.getElementById('notelppic').value = data.notelpakunuser;
+                    success: function(data) {
+                        if (data) {
+                            document.getElementById('notelppic').value = data
+                                .notelpakunuser;
                             document.getElementById('emailpic').value = data.emailakunuser;
                         }
                     }
