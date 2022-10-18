@@ -216,6 +216,7 @@ class TambahKerjasamaController extends Controller
     // preview file
     // di sini akan ada peringatan error, tapi program tetap berfungsi
     // jadi biarkan saja
+    // - Vanya, 2022
     public function preview($path)
     {
         $path = './files/'.$path;
