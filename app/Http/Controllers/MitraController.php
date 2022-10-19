@@ -20,7 +20,7 @@ class MitraController extends Controller
         $tks = TambahKerjasama::all();
         $user = AdminViewUser::all();
         return view('Mitra')->with('tks', $tks)
-                            ->with('user', $user);
+            ->with('user', $user);
     }
 
     /**
@@ -35,7 +35,7 @@ class MitraController extends Controller
         $user = AdminViewUser::all();
 
         return view('AdminViewMitra')->with('tks', $tks)
-                                     ->with('user', $user);
+            ->with('user', $user);
     }
 
     /**
@@ -50,8 +50,8 @@ class MitraController extends Controller
         $lkerja = LingkupKerja::all();
         $jmitra = JenisMitra::all();
         return view('AdminViewMitraEdit')->with('tks', $tks)
-                                         ->with('lk', $lkerja)
-                                         ->with('jm', $jmitra);
+            ->with('lk', $lkerja)
+            ->with('jm', $jmitra);
     }
 
     /**
@@ -79,5 +79,4 @@ class MitraController extends Controller
 
         return redirect('Mitra');
     }
-
 }

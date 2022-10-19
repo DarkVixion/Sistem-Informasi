@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kerjasama;
 use Illuminate\Http\Request;
+use App\Models\Kerjasama;
+use App\Models\JenisMitra;
+use App\Models\TambahKerjasama;
+use App\Models\AdminViewUser;
 
 class KerjasamaController extends Controller
 {
@@ -14,7 +17,12 @@ class KerjasamaController extends Controller
      */
     public function index()
     {
-        //
+        $tks = TambahKerjasama::all();
+        $user = AdminViewUser::all();
+        $jmitra = JenisMitra::all();
+        return view('TambahMitra')->with('tks', $tks)
+            ->with('user', $user)
+            ->with('jm', $jmitra);
     }
 
     /**
