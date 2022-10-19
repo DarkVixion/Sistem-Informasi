@@ -50,6 +50,12 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="card-header">
+                            <a href="TambahMitra"><button type="button" class="btn btn-default"
+                                    style="float:right; background-color:lightblue; border-radius:15px;">
+                                    Tambah Jenis Mitra
+                                </button></a>
+                        </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
@@ -99,7 +105,7 @@
                                                     class="fa fa-eye"></i></button></a></td>
                                     </tr>
                                     @endif
-                                    
+
                                     <!-- modal untuk view profile mitra -->
                                     <div class="modal fade" id="modal-xxl{{ $item->id }}">
                                         <div class="modal-dialog modal-xl">
