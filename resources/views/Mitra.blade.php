@@ -57,6 +57,7 @@
                                     <tr>
                                         <th>No. </th>
                                         <th>Profile Mitra</th>
+                                        <th>Jenis Mitra</th>
                                         <th>Jenis Kontrak</th>
                                         <th>Judul Kerjasama</th>
                                         <th>Aksi</th>
@@ -76,6 +77,7 @@
                                             <tr>
                                                 <td rowspan="{{$max_i}}">{{ $loop->iteration }}</td>
                                                 <td rowspan="{{$max_i}}">{{ $item->namamitra }}</td>
+                                                <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
                                                 <td>&nbsp;&ensp;MoU</td>
                                                 <td>{{ $mou[0]->Judul }}</td>
                                                 <td><button class="btn btn-info" data-toggle="modal"
@@ -107,6 +109,7 @@
                                             <tr>
                                                 <td rowspan="{{$moa_i}}">{{ $loop->iteration }}</td>
                                                 <td rowspan="{{$moa_i}}">{{ $item->namamitra }}</td>
+                                                <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
                                                 <td>MoA</td>
                                                 <td>{{ $moa[0]->judul }}</td>
                                                 <td><button class="btn btn-info" data-toggle="modal"
@@ -127,6 +130,7 @@
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
                                                 <td>{{ $item->namamitra }}</td>
+                                                <td>{{ $item->jenismitra }}</td>
                                                 <td></td>
                                                 <td></td>
                                                 <td><button class="btn btn-info" data-toggle="modal"
