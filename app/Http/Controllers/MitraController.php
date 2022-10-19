@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\LingkupKerja;
 use App\Models\JenisMitra;
 use App\Models\TambahKerjasama;
+use App\Models\AdminViewUser;
 
 class MitraController extends Controller
 {
@@ -17,7 +18,9 @@ class MitraController extends Controller
     public function index()
     {
         $tks = TambahKerjasama::all();
-        return view('Mitra')->with('tks', $tks);
+        $user = AdminViewUser::all();
+        return view('Mitra')->with('tks', $tks)
+                            ->with('user', $user);
     }
 
     /**
@@ -29,7 +32,10 @@ class MitraController extends Controller
     public function show($id)
     {
         $tks = TambahKerjasama::find($id);
-        return view('AdminViewMitra')->with('tks', $tks);
+        $user = AdminViewUser::all();
+
+        return view('AdminViewMitra')->with('tks', $tks)
+                                     ->with('user', $user);
     }
 
     /**

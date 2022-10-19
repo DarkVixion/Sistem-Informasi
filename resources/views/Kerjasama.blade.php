@@ -75,10 +75,8 @@
                                         <th>Jenis Mitra</th>
                                         <th>Lingkup Kerja Sama</th>
                                         <th>Nilai Kontrak</th>
-                                        <th>Periode Mulai MoA</th>
-                                        <th>Periode Berakhir MoA</th>
-                                        <th>Periode Mulai MoU</th>
-                                        <th>Periode Berakhir MoU</th>
+                                        <th>Periode Mulai Kerjasama</th>
+                                        <th>Periode Berakhir Kerjasama</th>
                                         <th>Misc.</th>
                                     </tr>
                                 </thead>
@@ -101,34 +99,18 @@
                                             Rp {{ number_format($moa->nilaikontrak) }}
                                             @endif
                                         </td>
-                                        <td>
+                                        <td style="text-align:center;">
                                             @if ( $moa->tglmulai != null)
-                                            {{ $moa->tglmulai->format('Y-m-d') }}
+                                            {{ $moa->tglmulai->format('d-m-Y') }}
                                             @endif
                                         </td>
-                                        <td>
+                                        <td style="text-align:center;">
                                             @if ( $moa->tglselesai != null)
-                                            {{ $moa->tglselesai->format('Y-m-d') }}
+                                            {{ $moa->tglselesai->format('d-m-Y') }}
                                             @endif
                                         </td>
                                         @else
                                         <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        @endif
-
-                                        @if($mou != null)
-                                        <td>
-                                            @if ( $mou->tglmulai != null)
-                                            {{ $mou->tglmulai->format('Y-m-d') }}
-                                            @endif
-                                        </td>
-                                        <td>
-                                            @if ( $mou->tglselesai != null)
-                                            {{ $mou->tglselesai->format('Y-m-d') }}
-                                            @endif
-                                        </td>
-                                        @else
                                         <td></td>
                                         <td></td>
                                         @endif
