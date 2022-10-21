@@ -15,6 +15,9 @@ class KerjasamaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
+    /**Ini controller untuk page tambahmitra*/
     public function index()
     {
         $tks = TambahKerjasama::all();
@@ -41,9 +44,24 @@ class KerjasamaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $req)
     {
-        //
+        //dd($mitrabaru);
+
+        $mitrabaru = new Kerjasama;
+
+        $mitrabaru->status = $req['status'];
+        $mitrabaru->namamitra = $req['namamitra'];
+        $mitrabaru->jenismitra = $req['jenismitra'];
+        $mitrabaru->bulaninput = $req['bulaninput'];
+        $mitrabaru->alamat = $req['alamat'];
+        $mitrabaru->website = $req['website'];
+        $mitrabaru->notelpmitra = $req['notelpmitra'];
+        $mitrabaru->negara = $req['negara'];
+
+        $mitrabaru->save();
+
+        return redirect('/Mitra');
     }
 
     /**
