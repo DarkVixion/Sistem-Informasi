@@ -245,7 +245,35 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="col-md-6">
+                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+                                    <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" ">
+                                </div>
+                                <div class=" col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+                                        <input type="url" class="form-control " name="website"
+                                            placeholder="Masukan Website">
+                                    </div>
+                                </div>
+                                <div class=" col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-4 col-form-label ">Nomor
+                                            Telephone</label>
+                                        <input type="number" class="form-control " name="notelpmitra"
+                                            placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/"
+                                            onKeyPress="if(this.value.length==15) return false;">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                                        <div class="col-sm-13">
+                                            <input type="text" class="form-control " name="negara"
+                                                placeholder="Masukan Negara">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.card-body -->
                         </div><br>
