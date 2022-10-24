@@ -11,7 +11,8 @@ use App\Http\Controllers\AdminUserMenuController;
 use App\Http\Controllers\KerjasamaController;
 use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
-
+use App\Models\Akun;
+use App\Http\Controllers\LoginTestController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -103,16 +104,25 @@ Route::get('UserDashboard', function () {
 Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
 Route::get('UserAkun', function () {
-    return view('UserAkun');
+    $akun = Akun::find(1);
+
+    $akun = $akun::where('id', '1')->first();
+
+    return view('UserAkun')->with('akun', $akun);
 });
 
 Route::get('UserRekap', function () {
-    return view('UserRekap');
+    $tks = TambahKerjasama::all();
+    return view('UserRekap')->with('kerjasama', $tks);
 });
 
 Route::get('UserMitra', function () {
     return view('Mitra');
 });
+
+Route::get('Login', [LoginTestController::class, 'index']);
+Route::post('Login/check', [LoginTestController::class, 'login'])->name('checking');
+
 
 Route::get('template', function () {
     return view('template');
