@@ -72,7 +72,7 @@ Route::match(['put', 'patch'], 'AdminEditMitra/{id}', [MitraController::class, '
 Route::get('TambahMitra', [KerjasamaController::class, 'index']);
 Route::post('TambahMitra', [KerjasamaController::class, 'store'])->name('tambah_mitra');
 
-Route::get('AdminShowUser', [AdminUserMenuController::class, 'index2']);
+Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
 
 // ---TESTING---
 Route::get('getData/{id}', function ($id) {

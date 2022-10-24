@@ -75,11 +75,23 @@
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="text" class="form-control " name="pic" placeholder="nama pic" value="{{ $tks->assignuserakun }}">
+                    <div class="form-group">
+                        <select class="form-control" name="pic" id="pic">
+                            @if ($tks->assignuserakun != null)
+                            <option value="{{ $tks->assignuserakun }}" hidden>{{ $user[($tks->assignuserakun)-1]->namaakunuser }}</option>
+                            @else
+                            <option value="" hidden>--- Pilih PIC ---</option>
+                            @endif
+
+                            @foreach($user as $u)
+                            <option value="{{ $u->id }}">{{ $u->namaakunuser }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="number" class="form-control " name="notelppic" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="{{ $tks->notelppic }}">
+                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $user[($tks->assignuserakun)-1]->notelpakunuser }}" readonly>
                 </div><br><br>
             </div>
         </div>
@@ -111,5 +123,28 @@
 <script src="plugins/toastr/toastr.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#pic').on('change', function() {
+        var picID = $(this).val();
+        if (picID) {
+            $.ajax({
+                url: '/getData/' + picID,
+                type: "GET",
+                data: {
+                    "_token": "{{ csrf_token() }}"
+                },
+                dataType: "json",
+                success: function(data) {
+                    if (data) {
+                        document.getElementById('notelppic').value = data.notelpakunuser;
+                    }
+                }
+            });
+        }
+    });
+});
+</script>
 
 @endsection

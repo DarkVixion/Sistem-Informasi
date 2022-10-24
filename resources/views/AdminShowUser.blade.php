@@ -42,7 +42,7 @@
                             <tbody>
                                 @foreach($adminakunusershow as $itemuser)
                                 <tr>
-                                    <td>{{ $itemuser->id }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $itemuser->namaakunuser }}</td>
                                     <td>{{ $itemuser->ssoakunuser }}</td>
                                     <td>{{ $itemuser->nipakunuser }}</td>

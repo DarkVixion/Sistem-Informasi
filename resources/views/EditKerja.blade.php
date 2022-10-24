@@ -250,31 +250,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}">
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputPassword3 " class="col-sm-4 col-form-label ">Nomor
-                                        Telephone</label>
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" value="{{ $tks->notelpmitra }}" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
-                                    <div class="col-sm-13">
-                                        <input type="text" class="form-control " name="negara" placeholder="Masukan Negara" value="{{ $tks->negara }}">
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                         <!-- /.card-body -->
@@ -455,7 +430,7 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="pic" id="pic">
-                                                @if ($tks->assignuserakun != null)
+                                                @if (count($users) != 0 && $tks->assignuserakun != null)
                                                 <option value="{{ $tks->assignuserakun }}" hidden>{{ $users[($tks->assignuserakun)-1]->namaakunuser }}</option>
                                                 @else
                                                 <option value="" hidden>--- Pilih PIC ---</option>
@@ -470,12 +445,14 @@
                                     <br><br>
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" readonly>
+                                        <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" 
+                                        @if(count($users) != 0)value="{{ $users[($tks->assignuserakun)-1]->notelpakunuser }}"@endif readonly>
                                     </div>
                                     <br><br>
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                     <div class="col-sm-10 ">
-                                        <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="{{ $tks->emailpic }}" readonly>
+                                        <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" 
+                                        @if(count($users) != 0)value="{{ $users[($tks->assignuserakun)-1]->emailakunuser }}"@endif readonly>
                                     </div>
                                 </div>
                             </div>

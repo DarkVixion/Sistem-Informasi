@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Response;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Imports\ExcelImports;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
@@ -23,11 +22,7 @@ class TambahKerjasamaController extends Controller
     public function index() // untuk view hal Kerjasama
     {
         $kerjasama = TambahKerjasama::all();
-        $sum = DB::table('moas')->sum('nilaikontrak');
-        $countmoa = DB::table('moas')->count('id');
-        $countmou = DB::table('mous')->count('id');
-        $summitra = DB::table('tambahkerjasama')->count('namamitra');
-
+        
         return view('Kerjasama')->with('kerjasama', $kerjasama);
     }
 
@@ -49,7 +44,6 @@ class TambahKerjasamaController extends Controller
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
         $user->jenismitra = $req['jenismitra'];
-        $user->lingkupkerja = $req['lingkupkerja'];
         $user->alamat = $req['alamat'];
         $user->negara = $req['negara'];
         $user->notelpmitra = $req['notelpmitra'];
@@ -89,6 +83,7 @@ class TambahKerjasamaController extends Controller
             $moa->tglmulai = $req['tglmulai_moa'];
             $moa->tglselesai = $req['tglselesai_moa'];
             $moa->nilaikontrak = $req['nilaikontrak'];
+            $moa->lingkupkerja = $req['lingkupkerja'];
 
             foreach ($req['path_moa'] as $file) {
                 $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();

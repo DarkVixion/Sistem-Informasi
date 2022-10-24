@@ -47,11 +47,13 @@ class MitraController extends Controller
     public function edit($id)
     {
         $tks = TambahKerjasama::find($id);
+        $user = AdminViewUser::all();
         $lkerja = LingkupKerja::all();
         $jmitra = JenisMitra::all();
         return view('AdminViewMitraEdit')->with('tks', $tks)
             ->with('lk', $lkerja)
-            ->with('jm', $jmitra);
+            ->with('jm', $jmitra)
+            ->with('user', $user);
     }
 
     /**
