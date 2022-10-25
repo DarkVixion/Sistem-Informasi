@@ -113,11 +113,11 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="roleakunuser">
-                                                <option>Role 1</option>
+                                                <option>Staff</option>
                                                 <option>Role 2</option>
                                                 <option>Role 3</option>
                                                 <option>Role 4</option>
-                                                <option>Staff</option>
+                                                <option>Admin</option>
                                             </select>
                                         </div>
                                     </div>

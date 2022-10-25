@@ -71,7 +71,7 @@
                         <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/UserAkun" class="d-block">User456</a>
+                        <a href="/UserAkun" class="d-block">{{ session('name') }}</a>
                     </div>
                 </div>
 
