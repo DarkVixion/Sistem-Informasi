@@ -4,7 +4,8 @@
     <title>Tambah Kerja Sama | Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -25,15 +26,15 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
 
     <style>
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
     </style>
 </head>
 
@@ -53,13 +54,15 @@
                         <span class="dropdown-item dropdown-header">2 Notifications</span>
                         <div class="dropdown-divider"></div>
                         <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
                             Kedaluwarsa - nama MOU
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
                             Dokumen - nama kerja sama
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
@@ -70,7 +73,8 @@
                 <!-- profile -->
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image">
-                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/Akun" class="d-block">Admin123</a>
@@ -97,7 +101,8 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -146,7 +151,9 @@
                         </li>
                         <li class="nav-item">
                             <a href="/AdminShowUser" class="nav-link">
-                                <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
+                                <img class="nav-icon" style="opacity: 55%"
+                                    srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x"
+                                    alt="Building icon" loading="lazy"></img>
                                 <p>User</p>
                             </a>
                         </li>
@@ -187,7 +194,8 @@
             </section>
             <!-- /.container-fluid -->
             <section class="content">
-                <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST" enctype="multipart/form-data">
+                <form class="form-horizontal" action="{{route('tambah_kerjasama')}}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <!-- Horizontal Form -->
                     <div class="card card-info">
@@ -255,7 +263,17 @@
                     <div class="more-item">
                         <div class="row">
                             <div class="col-md-12 align-items-stretch">
-                                <div class="card card-info">
+                                <div class="card">
+                                    <!-- <div class="card-header">
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div> -->
                                     <!-- form start -->
                                     <div class="card-body">
                                         <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
@@ -264,7 +282,9 @@
                                                 <label for="judul_mou" class="col-sm-4 col-form-label">Judul Kerja
                                                     Sama</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou" placeholder="Masukan Judul Kerja Sama">
+                                                    <input type="text"
+                                                        class="form-control @error('judul_mou') is-invalid @enderror"
+                                                        name="judul_mou" placeholder="Masukan Judul Kerja Sama">
                                                 </div>
                                             </div>
                                             <br><br>
@@ -272,7 +292,9 @@
                                                 <label for="tglmulai_mou" class="col-sm-4 col-form-label">Tanggal
                                                     Mulai</label>
                                                 <div class="col-sm-12">
-                                                    <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou">
+                                                    <input type="date"
+                                                        class="form-control @error('tglmulai_mou') is-invalid @enderror"
+                                                        name="tglmulai_mou">
                                                 </div>
                                             </div>
                                             <br><br>
@@ -280,7 +302,8 @@
                                                 <label for="path_mou" class="col-sm-4 col-form-label ">Dokumen
                                                     MoU</label>
                                                 <div class="col-sm-12">
-                                                    <input type="file" class="form-control " name="path_mou[]" accept="pdf/*" multiple>
+                                                    <input type="file" class="form-control " name="path_mou[]"
+                                                        accept="pdf/*" multiple>
                                                 </div><br>
                                             </div>
                                             <div class="col-md-6">
@@ -294,15 +317,24 @@
                                                 </div>
                                                 <br>
                                                 <div class=" col-sm-12">
-                                                    <input id="check1" type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou" style="display:none;">
+                                                    <input id="check1" type="date"
+                                                        class="form-control @error('tglselesai_mou') is-invalid @enderror"
+                                                        name="tglselesai_mou" style="display:none;">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class=" card-footer">
-                                        <button type="button" class="btn btn-info float-right add-more">Tambah
-                                            MOU</button>
-                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 align-items-stretch">
+                            <div class="card card-info">
+                                <div class=" card-footer">
+                                    <button type="button" class="btn btn-info float-right add-more">Tambah
+                                        MOU</button>
                                 </div>
                             </div>
                         </div>
@@ -310,7 +342,17 @@
                     <div class="more-item1">
                         <div class="row">
                             <div class="col-md-12 align-items-stretch">
-                                <div class="card card-info">
+                                <div class="card">
+                                    <!-- <div class="card-header">
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div> -->
                                     <!-- form start -->
                                     <div class="card-body">
                                         <h3 style="text-align: center;">Memorandum of Aggreement (MoA)</h3>
@@ -319,52 +361,57 @@
                                                 <label for="judul_moa[]" class="col-sm-4 col-form-label">Judul
                                                     Kerja Sama</label>
                                                 <div class="col-sm-12">
-                                                    <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa" placeholder="Masukan Judul Kerja Sama">
+                                                    <input type="text"
+                                                        class="form-control @error('judul_moa') is-invalid @enderror"
+                                                        name="judul_moa" placeholder="Masukan Judul Kerja Sama">
                                                 </div>
                                             </div>
-
                                             <br><br>
                                             <div class="col-md-6">
                                                 <label for="nilaikontrak" class="col-sm-4 col-form-label">Nilai
                                                     Kontrak</label>
                                                 <div class="col-sm-12">
-                                                    <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
+                                                    <input type="number"
+                                                        class="form-control @error('nilaikontrak') is-invalid @enderror"
+                                                        name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)"
+                                                        pattern="/^-?\d+\.?\d*$/"
+                                                        onKeyPress="if(this.value.length==15) return false;">
                                                 </div>
                                             </div>
-
                                             <br><br>
                                             <div class="col-md-6">
-                                                <label for="select " class="col-sm-4 col-form-label ">Lingkup Kerja
+                                                <label for="select " class="col-sm-4 col-form-label ">Lingkup
+                                                    Kerja
                                                     Sama</label>
                                                 <div class="col-sm-12">
                                                     <select class="form-control" name="lingkupkerja">
-                                                        <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
+                                                        <option value="" hidden>--- Pilih Lingkup Kerja ---
+                                                        </option>
                                                         @foreach ($lk as $item)
                                                         <option>{{ $item->judullingkupkerja }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
                                             </div>
-
                                             <br><br>
                                             <div class="col-md-6">
                                                 <label for="tglmulai_moa" class="col-sm-4 col-form-label">Tanggal
                                                     Mulai</label>
                                                 <div class="col-sm-12">
-                                                    <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa">
+                                                    <input type="date"
+                                                        class="form-control @error('tglmulai_moa') is-invalid @enderror"
+                                                        name="tglmulai_moa">
                                                 </div>
                                             </div>
-
                                             <br><br>
                                             <div class="col-md-6">
                                                 <label for="path_moa" class="col-sm-4 col-form-label ">Dokumen
                                                     MoA</label>
                                                 <div class="col-sm-12">
-                                                    <input type="file" class="form-control" name="path_moa[]" accept="pdf/*" multiple>
+                                                    <input type="file" class="form-control" name="path_moa[]"
+                                                        accept="pdf/*" multiple>
                                                 </div>
                                             </div>
-
-
                                             <br><br>
                                             <div class="col-md-6">
                                                 <label for="tglselesai_moa" class=" col-sm-4 col-form-label ">Tanggal
@@ -377,15 +424,23 @@
                                                 </div>
                                                 <label class=" col-sm-4 col-form-label "></label>
                                                 <div class=" col-sm-12">
-                                                    <input id="check2" type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa" style="display:none;">
+                                                    <input id="check2" type="date"
+                                                        class="form-control @error('tglselesai_moa') is-invalid @enderror"
+                                                        name="tglselesai_moa" style="display:none;">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class=" card-footer ">
-                                        <button type="button" class="btn btn-info float-right add-more1">Tambah
-                                            MOA</button>
-                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 align-items-stretch">
+                            <div class="card card-info">
+                                <div class=" card-footer">
+                                    <button type="button" class="btn btn-info float-right add-more1">Tambah
+                                        MOA</button>
                                 </div>
                             </div>
                         </div>
@@ -401,18 +456,22 @@
                                     <div class="form-group row">
                                         <label for="input" class="col-sm-3 col-form-label">Narahubung</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control" name="narahubung" placeholder="Masukkan Narahubung">
+                                            <input type="text" class="form-control" name="narahubung"
+                                                placeholder="Masukkan Narahubung">
                                         </div>
                                         <br><br>
                                         <label for="inputPassword3" class="col-sm-3 col-form-label">Nomor
                                             Telepon</label>
                                         <div class="col-sm-9">
-                                            <input type="number" class="form-control " name="notelpnara" placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
+                                            <input type="number" class="form-control " name="notelpnara"
+                                                placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/"
+                                                onKeyPress="if(this.value.length==15) return false;">
                                         </div>
                                         <br><br>
                                         <label for="inputPassword3 " class="col-sm-3 col-form-label ">Email</label>
                                         <div class="col-sm-9 ">
-                                            <input type="text" class="form-control" name="emailnara" placeholder="Alamat Email">
+                                            <input type="text" class="form-control" name="emailnara"
+                                                placeholder="Alamat Email">
                                         </div>
                                     </div>
                                 </div>
@@ -423,13 +482,15 @@
                                 <!-- form start -->
                                 <div class="card-body">
                                     <div class="form-group row">
-                                        <label for="select" class="col-sm-2 col-form-label">Assign User</label>
+                                        <label for="select" class="col-sm-2 col-form-label">Assign
+                                            User</label>
                                         <div class="col-sm-10">
                                             <div class="form-group">
                                                 <select class="form-control" name="pic" id="pic">
                                                     <option value="" hidden>--- Pilih PIC ---</option>
                                                     @foreach($users as $u)
-                                                    <option value="{{ $u->id }}">{{ $u->namaakunuser }}</option>
+                                                    <option value="{{ $u->id }}">{{ $u->namaakunuser }}
+                                                    </option>
                                                     @endforeach
                                                 </select>
                                             </div>
@@ -438,12 +499,14 @@
                                         <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor
                                             Telepon</label>
                                         <div class="col-sm-10">
-                                            <input type="number" class="form-control" name="notelppic" id="notelppic" placeholder="No Telepon PIC" value="" id="notelppic" readonly>
+                                            <input type="number" class="form-control" name="notelppic" id="notelppic"
+                                                placeholder="No Telepon PIC" value="" id="notelppic" readonly>
                                         </div>
                                         <br><br>
                                         <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                         <div class="col-sm-10 ">
-                                            <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" value="" id="emailpic" readonly>
+                                            <input type="text" class="form-control" name="emailpic" id="emailpic"
+                                                placeholder="Email PIC" value="" id="emailpic" readonly>
                                         </div>
                                     </div>
                                 </div>
@@ -454,7 +517,8 @@
                     <div class=" card card-info">
                         <div class=" card-footer ">
                             <button type="submit" class="btn btn-info">Save</button>
-                            <button type="button" onclick="history.back()" class="btn btn-default float-right">Cancel</button>
+                            <button type="button" onclick="history.back()"
+                                class="btn btn-default float-right">Cancel</button>
                         </div>
                     </div>
                 </form>
@@ -472,68 +536,68 @@
     <script src="dist/js/adminlte.min.js "></script>
 
     <script>
-        function myFunction() {
-            var x = document.getElementById("moa2");
-            if (x.style.display === "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
+    function myFunction() {
+        var x = document.getElementById("moa2");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
         }
+    }
     </script>
     <script>
-        $(document).ready(function() {
-            $(".add-more").click(function() {
-                $(".more-item").append(
-                    "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card card-info\"> <!-- form start --> <div class=\"card-body\"> <div class=\"row\"> <div class=\"col-md-6\"></div> </div> <h3 style=\"text-align: center;\">Memorandum of Understanding (MoU)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_mou\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_mou') is-invalid @enderror\" name=\"judul_mou\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_mou\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_mou') is-invalid @enderror\" name=\"tglmulai_mou\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_mou\" class=\"col-sm-4 col-form-label \">Dokumen MoU</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control \" name=\"path_mou[]\" accept=\"pdf/*\" multiple> </div><br> </div> <div class=\"col-md-6\"> <label for=\"tglselesai_mou\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck1(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div> <br> <div class=\" col-sm-12\"> <input id=\"check1\" type=\"date\" class=\"form-control @error('tglselesai_mou') is-invalid @enderror\" name=\"tglselesai_mou\" style=\"display:none;\"> </div> </div> </div> </div> <div class=\" card-footer\"> <button type=\"button\" class=\"btn btn-danger float-right\" data-card-widget=\"remove\"> Delete </button> <button type=\"button\" class=\"btn btn-info float-right add-more\">Tambah MOU</button> </div> </div> </div> </div>"
-                );
-            });
-            $(".add-more1").click(function() {
-                $(".more-item1").append(
-                    "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card card-info\"> <!-- form start --> <div class=\"card-body\"> <h3 style=\"text-align: center;\">Memorandum of Aggreement (MoA)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_moa[]\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_moa') is-invalid @enderror\" name=\"judul_moa\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"nilaikontrak\" class=\"col-sm-4 col-form-label\">Nilai Kontrak</label> <div class=\"col-sm-12\"> <input type=\"number\" class=\"form-control @error('nilaikontrak') is-invalid @enderror\" name=\"nilaikontrak\" placeholder=\"Masukan Nilai Kontrak (Rp)\" pattern=\"/^-?\d+\.?\d*$/\" onKeyPress=\"if(this.value.length==15) return false;\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"select \" class=\"col-sm-4 col-form-label \">Lingkup Kerja Sama</label> <div class=\"col-sm-12\"> <select class=\"form-control\" name=\"lingkupkerja\"> <option value=\"\" hidden>--- Pilih Lingkup Kerja ---</option> @foreach ($lk as $item) <option>{{ $item->judullingkupkerja }}</option> @endforeach </select> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_moa\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_moa') is-invalid @enderror\" name=\"tglmulai_moa\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_moa\" class=\"col-sm-4 col-form-label \">Dokumen MoA</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control\" name=\"path_moa[]\" accept=\"pdf/*\" multiple> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglselesai_moa\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck2(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div> <label class=\" col-sm-4 col-form-label \"></label> <div class=\" col-sm-12\"> <input id=\"check2\" type=\"date\" class=\"form-control @error('tglselesai_moa') is-invalid @enderror\" name=\"tglselesai_moa\" style=\"display:none;\"> </div> </div> </div> </div> <div class=\" card-footer \"> <button type=\"button\" class=\"btn btn-danger float-right\" data-card-widget=\"remove\"> Delete </button> <button type=\"button\" class=\"btn btn-info float-right add-more1\">Tambah MOA</button> </div> </div> </div> </div>"
-                );
-            });
+    $(document).ready(function() {
+        $(".add-more").click(function() {
+            $(".more-item").append(
+                "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card\"> <div class=\"card-header\"> <div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"> <i class=\"fas fa-minus\"></i> </button> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"> <i class=\"fas fa-times\"></i> </button> </div> </div> <!-- form start --> <div class=\"card-body\"> <div class=\"row\"> <div class=\"col-md-6\"></div> </div> <h3 style=\"text-align: center;\">Memorandum of Understanding (MoU)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_mou\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_mou') is-invalid @enderror\" name=\"judul_mou\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_mou\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_mou') is-invalid @enderror\" name=\"tglmulai_mou\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_mou\" class=\"col-sm-4 col-form-label \">Dokumen MoU</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control \" name=\"path_mou[]\" accept=\"pdf/*\" multiple> </div><br> </div> <div class=\"col-md-6\"> <label for=\"tglselesai_mou\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck1(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div> <br> <div class=\" col-sm-12\"> <input id=\"check1\" type=\"date\" class=\"form-control @error('tglselesai_mou') is-invalid @enderror\" name=\"tglselesai_mou\" style=\"display:none;\"> </div> </div> </div> </div>  </div> </div> </div>"
+            );
         });
+        $(".add-more1").click(function() {
+            $(".more-item1").append(
+                "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card\"> <div class=\"card-header\"> <div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"> <i class=\"fas fa-minus\"></i> </button> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"> <i class=\"fas fa-times\"></i> </button> </div> </div> <!-- form start --> <div class=\"card-body\"> <h3 style=\"text-align: center;\">Memorandum of Aggreement (MoA)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_moa[]\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_moa') is-invalid @enderror\" name=\"judul_moa\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"nilaikontrak\" class=\"col-sm-4 col-form-label\">Nilai Kontrak</label> <div class=\"col-sm-12\"> <input type=\"number\" class=\"form-control @error('nilaikontrak') is-invalid @enderror\" name=\"nilaikontrak\" placeholder=\"Masukan Nilai Kontrak (Rp)\" pattern=\"/^-?\d+\.?\d*$/\" onKeyPress=\"if(this.value.length==15) return false;\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"select \" class=\"col-sm-4 col-form-label \">Lingkup Kerja Sama</label> <div class=\"col-sm-12\"> <select class=\"form-control\" name=\"lingkupkerja\"> <option value=\"\" hidden>--- Pilih Lingkup Kerja ---</option> @foreach ($lk as $item) <option>{{ $item->judullingkupkerja }}</option> @endforeach </select> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_moa\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_moa') is-invalid @enderror\" name=\"tglmulai_moa\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_moa\" class=\"col-sm-4 col-form-label \">Dokumen MoA</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control\" name=\"path_moa[]\" accept=\"pdf/*\" multiple> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglselesai_moa\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck2(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div> <label class=\" col-sm-4 col-form-label \"></label> <div class=\" col-sm-12\"> <input id=\"check2\" type=\"date\" class=\"form-control @error('tglselesai_moa') is-invalid @enderror\" name=\"tglselesai_moa\" style=\"display:none;\"> </div> </div> </div> </div>  </div> </div> </div>"
+            );
+        });
+    });
     </script>
     <script>
-        $(document).ready(function() {
-            $('#pic').on('change', function() {
-                var picID = $(this).val();
-                if (picID) {
-                    $.ajax({
-                        url: '/getData/' + picID,
-                        type: "GET",
-                        data: {
-                            "_token": "{{ csrf_token() }}"
-                        },
-                        dataType: "json",
-                        success: function(data) {
-                            if (data) {
-                                document.getElementById('notelppic').value = data
-                                    .notelpakunuser;
-                                document.getElementById('emailpic').value = data.emailakunuser;
-                            }
+    $(document).ready(function() {
+        $('#pic').on('change', function() {
+            var picID = $(this).val();
+            if (picID) {
+                $.ajax({
+                    url: '/getData/' + picID,
+                    type: "GET",
+                    data: {
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        if (data) {
+                            document.getElementById('notelppic').value = data
+                                .notelpakunuser;
+                            document.getElementById('emailpic').value = data.emailakunuser;
                         }
-                    });
-                }
-            });
+                    }
+                });
+            }
         });
+    });
 
-        function yesnoCheck1(that) {
-            if (that.value == "2") {
-                document.getElementById("check1").style.display = "block";
-            } else {
-                document.getElementById("check1").style.display = "none";
-            }
+    function yesnoCheck1(that) {
+        if (that.value == "2") {
+            document.getElementById("check1").style.display = "block";
+        } else {
+            document.getElementById("check1").style.display = "none";
         }
+    }
 
-        function yesnoCheck2(that) {
-            if (that.value == "2") {
-                document.getElementById("check2").style.display = "block";
-            } else {
-                document.getElementById("check2").style.display = "none";
-            }
+    function yesnoCheck2(that) {
+        if (that.value == "2") {
+            document.getElementById("check2").style.display = "block";
+        } else {
+            document.getElementById("check2").style.display = "none";
         }
+    }
     </script>
 
 </body>
