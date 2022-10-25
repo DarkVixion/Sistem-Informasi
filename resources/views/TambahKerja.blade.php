@@ -135,20 +135,18 @@
                                         <p>Lingkup Kerja Sama</p>
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="/Mitra" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Profile Mitra</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
                             <a href="Kerjasama" class="nav-link">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>Rekap Kontrak</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Mitra" class="nav-link">
-                                <img class="nav-icon" style="opacity: 75%"
-                                    srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
-                                    loading="lazy"></img>
-                                <p>Profile Mitra</p>
                             </a>
                         </li>
                         <li class="nav-item">
