@@ -106,6 +106,7 @@ Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
 Route::get('/UserAkun', function () {
     $akun = AdminUserMenu::where('id', session('id'))->first();
+    
     if($akun != null)
     {
         return view('UserAkun')->with('akun', $akun);
@@ -127,8 +128,8 @@ Route::get('UserMitra', function () {
     ->with('user', $user);
 });
 
-Route::get('Login', [LoginController::class, 'index']);
-Route::post('Login/check', [LoginController::class, 'login'])->name('checking');
+Route::get('/Login', [LoginController::class, 'index']);
+Route::post('/Login/check', [LoginController::class, 'login'])->name('checking');
 Route::get('/Logout', [LoginController::class, 'logout']);
 
 
