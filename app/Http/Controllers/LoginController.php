@@ -14,14 +14,29 @@ class LoginController extends Controller
      */
     public function index()
     {
+        if(session()->has('role'))
+        {
+            if(session('role') == 'Admin')
+            {
+                return redirect('/AdminDashboard');
+            }
+            else
+            {
+                return redirect('/UserRekap');
+            }
+        }
+
         return view('Login');
     }
 
     public function login(Request $request)
     {
+        
         $password = md5($request->pw);
         $data = AdminViewUser::where([['ssoakunuser', $request->un], ['passwordakunuser', $password]])->get();
         $request->session()->put('id', $data[0]->id);
+        $request->session()->put('name', $data[0]->namaakunuser);
+        $request->session()->put('role', $data[0]->roleakunuser);
 
         if($data[0]->roleakunuser == 'Admin')
         {
@@ -29,7 +44,7 @@ class LoginController extends Controller
         }
         else
         {
-            return redirect('/UserDashboard');
+            return redirect('/UserRekap');
         }
     }
 

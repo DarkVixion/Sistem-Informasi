@@ -134,7 +134,6 @@ class TambahKerjasamaController extends Controller
         //$user->negara = $req['negara'];
         //$user->notelpmitra = $req['notelpmitra'];
         //$user->website = $req['website'];
-        $user->lingkupkerja = $req['lingkupkerja'];
         $user->bulaninput = $req['bulaninput'];
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
@@ -169,7 +168,7 @@ class TambahKerjasamaController extends Controller
             $mou->path = $path_mou;
         }
 
-        if (isset($req->judul_moa)) {
+        if (isset($req->judul_mou)) {
             $user->mous()->save($mou);
         }
 
@@ -183,6 +182,7 @@ class TambahKerjasamaController extends Controller
         $moa->tglmulai = $req['tglmulai_moa'];
         $moa->tglselesai = $req['tglselesai_moa'];
         $moa->nilaikontrak = $req['nilaikontrak'];
+        $moa->lingkupkerja = $req['lingkupkerja'];
         $moa->path = $moa->path;
 
         if ($req['check2'] == 1) {
