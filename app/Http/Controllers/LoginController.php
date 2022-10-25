@@ -14,7 +14,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        if(session()->has('role'))
+        if(session()->has('id'))
         {
             if(session('role') == 'Admin')
             {
@@ -48,14 +48,15 @@ class LoginController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function Logout()
     {
-        //
+        if(session()->has('id'))
+        {
+            session()->pull('id');
+            session()->pull('name');
+        }
+
+        return redirect('/Login');
     }
 
     /**

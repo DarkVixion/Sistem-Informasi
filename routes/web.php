@@ -111,6 +111,7 @@ Route::get('/UserAkun', function () {
 });
 
 Route::get('UserRekap', function () {
+    
     $tks = TambahKerjasama::all();
     return view('UserRekap')->with('kerjasama', $tks);
 });
@@ -124,6 +125,7 @@ Route::get('UserMitra', function () {
 
 Route::get('Login', [LoginController::class, 'index']);
 Route::post('Login/check', [LoginController::class, 'login'])->name('checking');
+Route::get('/Logout', [LoginController::class, 'logout']);
 
 
 Route::get('template', function () {

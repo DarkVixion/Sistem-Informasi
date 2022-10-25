@@ -28,6 +28,14 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+
+    <?php 
+        if(session()->missing('id'))
+        {
+            header('Location: /Login');
+            die;
+        }
+    ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -69,7 +77,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/Akun" class="d-block">Admin123</a>
+                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123 @endif</a>
+                        <a href="/Logout">Logout</a>
                     </div>
                 </div>
 

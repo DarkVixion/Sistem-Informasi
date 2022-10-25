@@ -26,6 +26,14 @@
         <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
         <!-- summernote -->
         <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+
+        <?php 
+            if(session()->missing('id'))
+            {
+                header('Location: /Login');
+                die;
+            }
+        ?>
     </head>
 <!--
 `body` tag options:
@@ -72,6 +80,7 @@
                     </div>
                     <div class="info">
                         <a href="/UserAkun" class="d-block">{{ session('name') }}</a>
+                        <a href="/Logout">Logout</a>
                     </div>
                 </div>
 
