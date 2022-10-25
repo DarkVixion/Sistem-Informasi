@@ -97,16 +97,12 @@ Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminUserMenuController::
 Route::get('/importexcel', [TambahKerjasamaController::class, 'importExcel'])->name('import_excel');
 Route::post('/uploadexcel', [TambahKerjasamaController::class, 'uploadExcel'])->name('upload_excel');
 
-Route::get('UserDashboard', function () {
-    return view('UserDashboard');
-});
-
 // <-- TESTING DASHBOARD -->
 Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
 Route::get('/UserAkun', function () {
     $akun = AdminUserMenu::where('id', session('id'))->first();
-    
+
     if($akun != null)
     {
         return view('UserAkun')->with('akun', $akun);
