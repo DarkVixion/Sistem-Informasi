@@ -91,7 +91,7 @@
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
                 <div class="col-sm-10 ">
-                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $user[($tks->assignuserakun)-1]->notelpakunuser }}" readonly>
+                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" @if($tks->assignuserakun != null)value="{{ $user[($tks->assignuserakun)-1]->notelpakunuser }}"@endif readonly>
                 </div><br><br>
             </div>
         </div>
@@ -125,26 +125,26 @@
 <script src="dist/js/adminlte.min.js"></script>
 
 <script>
-$(document).ready(function() {
-    $('#pic').on('change', function() {
-        var picID = $(this).val();
-        if (picID) {
-            $.ajax({
-                url: '/getData/' + picID,
-                type: "GET",
-                data: {
-                    "_token": "{{ csrf_token() }}"
-                },
-                dataType: "json",
-                success: function(data) {
-                    if (data) {
-                        document.getElementById('notelppic').value = data.notelpakunuser;
+    $(document).ready(function() {
+        $('#pic').on('change', function() {
+            var picID = $(this).val();
+            if (picID) {
+                $.ajax({
+                    url: '/getData/' + picID,
+                    type: "GET",
+                    data: {
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        if (data) {
+                            document.getElementById('notelppic').value = data.notelpakunuser;
+                        }
                     }
-                }
-            });
-        }
+                });
+            }
+        });
     });
-});
 </script>
 
 @endsection
