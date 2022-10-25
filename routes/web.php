@@ -106,8 +106,12 @@ Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
 Route::get('/UserAkun', function () {
     $akun = AdminUserMenu::where('id', session('id'))->first();
-
-    return view('UserAkun')->with('akun', $akun);
+    if($akun != null)
+    {
+        return view('UserAkun')->with('akun', $akun);
+    }
+    
+    return redirect('/Login');
 });
 
 Route::get('UserRekap', function () {

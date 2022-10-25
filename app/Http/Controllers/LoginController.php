@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AdminViewUser;
+use Illuminate\Contracts\Session\Session as SessionSession;
+use Illuminate\Support\Facades\Session as FacadesSession;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class LoginController extends Controller
 {
@@ -52,8 +55,9 @@ class LoginController extends Controller
     {
         if(session()->has('id'))
         {
-            session()->pull('id');
-            session()->pull('name');
+            // session()->pull('id');
+            // session()->pull('name');
+            FacadesSession::flush();
         }
 
         return redirect('/Login');
