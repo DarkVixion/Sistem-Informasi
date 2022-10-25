@@ -107,8 +107,6 @@ Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 Route::get('/UserAkun', function () {
     $akun = AdminUserMenu::where('id', session('id'))->first();
 
-    // $akun = $akun::where('id', '1')->first();
-
     return view('UserAkun')->with('akun', $akun);
 });
 
@@ -118,7 +116,10 @@ Route::get('UserRekap', function () {
 });
 
 Route::get('UserMitra', function () {
-    return view('Mitra');
+    $tks = TambahKerjasama::all();
+    $user = AdminViewUser::all();
+    return view('UserMitra')->with('tks', $tks)
+    ->with('user', $user);
 });
 
 Route::get('Login', [LoginController::class, 'index']);
