@@ -152,18 +152,18 @@
                                      <p>Lingkup Kerja Sama</p>
                                  </a>
                              </li>
+                             <li class="nav-item">
+                                 <a href="/Mitra" class="nav-link">
+                                     <i class="far fa-circle nav-icon"></i>
+                                     <p>Profile Mitra</p>
+                                 </a>
+                             </li>
                          </ul>
                      </li>
                      <li class="nav-item">
                          <a href="/Kerjasama" class="nav-link">
                              <i class="nav-icon fas fa-table"></i>
                              <p>Rekap Kontrak</p>
-                         </a>
-                     </li>
-                     <li class="nav-item">
-                         <a href="/Mitra" class="nav-link">
-                             <img class="nav-icon" style="opacity: 75%" srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon" loading="lazy"></img>
-                             <p>Profile Mitra</p>
                          </a>
                      </li>
                      <li class="nav-item">
@@ -436,12 +436,12 @@
                                      <br><br>
                                      <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                      <div class="col-sm-10">
-                                         <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" @if(count($users) !=0)value="{{ $users[($tks->assignuserakun)-1]->notelpakunuser }}" @endif readonly>
+                                         <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" @if(count($users) !=0 && $tks->assignuserakun !=0) value="{{ $users[($tks->assignuserakun)-1]->notelpakunuser }}" @endif readonly>
                                      </div>
                                      <br><br>
                                      <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
                                      <div class="col-sm-10 ">
-                                         <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" @if(count($users) !=0)value="{{ $users[($tks->assignuserakun)-1]->emailakunuser }}" @endif readonly>
+                                         <input type="text" class="form-control" name="emailpic" id="emailpic" placeholder="Email PIC" @if(count($users) !=0 && $tks->assignuserakun !=0)value="{{ $users[($tks->assignuserakun)-1]->emailakunuser }}" @endif readonly>
                                      </div>
                                  </div>
                              </div>

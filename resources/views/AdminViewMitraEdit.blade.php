@@ -125,26 +125,26 @@
 <script src="dist/js/adminlte.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-        $('#pic').on('change', function() {
-            var picID = $(this).val();
-            if (picID) {
-                $.ajax({
-                    url: '/getData/' + picID,
-                    type: "GET",
-                    data: {
-                        "_token": "{{ csrf_token() }}"
-                    },
-                    dataType: "json",
-                    success: function(data) {
-                        if (data) {
-                            document.getElementById('notelppic').value = data.notelpakunuser;
-                        }
+$(document).ready(function() {
+    $('#pic').on('change', function() {
+        var picID = $(this).val();
+        if (picID) {
+            $.ajax({
+                url: '/getData/' + picID,
+                type: "GET",
+                data: {
+                    "_token": "{{ csrf_token() }}"
+                },
+                dataType: "json",
+                success: function(data) {
+                    if (data) {
+                        document.getElementById('notelppic').value = data.notelpakunuser;
                     }
-                });
-            }
-        });
+                }
+            });
+        }
     });
+});
 </script>
 
 @endsection

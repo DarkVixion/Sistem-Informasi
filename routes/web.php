@@ -12,6 +12,8 @@ use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
 use App\Models\Akun;
 use App\Http\Controllers\LoginController;
+use App\Models\AdminUserMenu;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -102,10 +104,10 @@ Route::get('UserDashboard', function () {
 // <-- TESTING DASHBOARD -->
 Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
-Route::get('UserAkun', function () {
-    $akun = Akun::find(1);
+Route::get('/UserAkun', function () {
+    $akun = AdminUserMenu::where('id', session('id'))->first();
 
-    $akun = $akun::where('id', '1')->first();
+    // $akun = $akun::where('id', '1')->first();
 
     return view('UserAkun')->with('akun', $akun);
 });
