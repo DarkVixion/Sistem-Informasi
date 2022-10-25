@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminUserMenu;
 use App\Models\AdminViewUser;
+use Illuminate\Support\Facades\Hash;
 
 class AdminUserMenuController extends Controller
 {
@@ -21,13 +22,15 @@ class AdminUserMenuController extends Controller
 
         $adminusermenu->namaakunuser = $req['namaakunuser'];
         $adminusermenu->ssoakunuser = $req['ssoakunuser'];
-        $adminusermenu->passwordakunuser = $req['passwordakunuser'];
         $adminusermenu->emailakunuser = $req['emailakunuser'];
         $adminusermenu->nipakunuser = $req['nipakunuser'];
         $adminusermenu->notelpakunuser = $req['notelpakunuser'];
         $adminusermenu->roleakunuser = $req['roleakunuser'];
         $adminusermenu->statusakunuser = $req['statusakunuser'];
         $adminusermenu->path_profileakunuser = $req['path_profileakunuser'];
+
+        $pw = md5($req['passwordakunuser']);
+        $adminusermenu->passwordakunuser = $pw;
 
         $picprofileuser = '';
 

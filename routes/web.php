@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TambahKerjasamaController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\JenisMitraController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
@@ -12,7 +11,7 @@ use App\Http\Controllers\KerjasamaController;
 use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
 use App\Models\Akun;
-use App\Http\Controllers\LoginTestController;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -120,8 +119,8 @@ Route::get('UserMitra', function () {
     return view('Mitra');
 });
 
-Route::get('Login', [LoginTestController::class, 'index']);
-Route::post('Login/check', [LoginTestController::class, 'login'])->name('checking');
+Route::get('Login', [LoginController::class, 'index']);
+Route::post('Login/check', [LoginController::class, 'login'])->name('checking');
 
 
 Route::get('template', function () {
