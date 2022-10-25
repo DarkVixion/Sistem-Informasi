@@ -18,7 +18,6 @@ class CreateTambahkerjasamaTable extends Migration
             $table->string("status");
             $table->string("namamitra");
             $table->string("jenismitra");
-            $table->string("lingkupkerja")->nullable();
             $table->string("alamat")->nullable();
             $table->string("negara")->nullable();
             $table->bigInteger("notelpmitra")->nullable();

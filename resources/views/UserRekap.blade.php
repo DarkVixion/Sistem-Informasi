@@ -9,7 +9,8 @@
     <title>Rekap Kontrak - Universitas Pertamina</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
     <!-- DataTables -->
@@ -41,13 +42,18 @@
             <div class="col-sm-6">
                 <h1>Rekap Kontrak</h1>
             </div>
-            <div class="col-sm-6">
+            {{-- <div class="col-sm-6">
+
                 <a href="TambahKerja">
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
-                        Tambah Kontrak
+                    <button type="button" class="btn btn-default float-right"
+                        style="background-color:lightblue; border-radius:15px;">
+                        Tambah Kerja Sama
                     </button>
                 </a>
-            </div>
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl"
+                    style="border-radius:15px;"><i class="fas fa-plus"></i> Import
+                    Excel</button>
+            </div> --}}
         </div>
     </div>
     <!-- /.container-fluid -->
@@ -60,57 +66,71 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <table id="example1" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Bulan Pencatatan</th>
-                                    <th>Nama</th>
-                                    <th>Jenis Mitra</th>
-                                    <th>Judul</th>
-                                    <th>Lingkup Kerja Sama</th>
-                                    <th>Periode Mulai MoU</th>
-                                    <th>Periode Berakhir MoU</th>
-                                    <th>Periode Mulai MoA</th>
-                                    <th>Periode Berakhir MoA</th>
-                                    <th>Misc.</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{-- @foreach($kerjasama as $item)
-                                <tr>
-                                    <td>{{ $item->bulaninput }}</td>
-                                    <td>{{ $item->namamitra }}</td>
-                                    <td>{{ $item->jenismitra }}</td>
-                                    <td>{{ $item->judulkerjasama }}</td>
-                                    <td>{{ $item->lingkupkerja }}</td>
-                                    <td>{{ $item->tglmulai_mou->format('Y-m-d') }}</td>
-                                    <td>{{ $item->tglselesai_mou->format('Y-m-d') }}</td>
-                                    <td>
-                                        @if ( $item->tglmulai_moa != null)
-                                        {{ $item->tglmulai_moa->format('Y-m-d') }}
+                        <div class="md-card-content" style="overflow-x: auto;">
+                            <table id="example1" class="table table-bordered table-striped" style="width:max-content;">
+                                <thead>
+                                    <tr>
+                                        <th>Bulan Pencatatan</th>
+                                        <th>Nama</th>
+                                        <th>Jenis Mitra</th>
+                                        <th>Lingkup Kerja Sama</th>
+                                        <th>Nilai Kontrak</th>
+                                        <th>Periode Mulai Kerjasama</th>
+                                        <th>Periode Berakhir Kerjasama</th>
+                                        <th>Misc.</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($kerjasama as $item)
+                                    <?php
+                                        $moa = App\Models\MoA::where('tambah_kerjasama_id', $item->id)->first();
+                                        $mou = App\Models\MoU::where('tambah_kerjasama_id', $item->id)->first();
+                                    ?>
+
+                                    <tr>
+                                        <td>{{ $item->bulaninput }}</td>
+                                        <td>{{ $item->namamitra }}</td>
+                                        <td>{{ $item->jenismitra }}</td>
+                                        <td>{{ $item->lingkupkerja }}</td>
+
+                                        @if($moa != null)
+                                        <td>
+                                            @if ( $moa->nilaikontrak != null)
+                                            Rp {{ number_format($moa->nilaikontrak) }}
+                                            @endif
+                                        </td>
+                                        <td style="text-align:center;">
+                                            @if ( $moa->tglmulai != null)
+                                            {{ $moa->tglmulai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
+                                        <td style="text-align:center;">
+                                            @if ( $moa->tglselesai != null)
+                                            {{ $moa->tglselesai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
                                         @else
-                                        {{ $item->tglmulai_moa}}
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                         @endif
-                                    </td>
-                                    <td>
-                                        @if ( $item->tglselesai_moa != null)
-                                        {{ $item->tglselesai_moa->format('Y-m-d') }}
-                                        @else
-                                        {{ $item->tglselesai_moa }}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <a href="{{route('edit_kerjasama', $item->id)}}"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                        <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST" style="display:inline ">
-                                            {{ method_field('DELETE') }}
-                                            {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
-                                @endforeach --}}
-                            </tbody>
-                        </table>
+
+                                        <td>
+                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button
+                                                    class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
+                                                style="display:inline ">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     <!-- /.card-body -->
                 </div>
@@ -119,6 +139,39 @@
         </div>
         <!-- /.row -->
     </div>
+    <!-- modal untuk tambah jenis -->
+    <div class="modal fade" id="modal-xl">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah Data Dengan Excel</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('upload_excel')}}" method="post" enctype="multipart/form-data">
+                    {!! csrf_field() !!}
+                    <div class="modal-body">
+                        <div class="form-group row ">
+                            <label for="path_excel" class="col-sm-2 col-form-label">Import Excel</label>
+                            <div class="col-sm-10 ">
+                                <input type="file" class="form-control " name="path_excel" accept="pdf/*" multiple>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info float-right">Tambah file.xls</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
     <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
@@ -128,7 +181,7 @@
 <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-    $.widget.bridge('uibutton', $.ui.button)
+$.widget.bridge('uibutton', $.ui.button)
 </script><!-- Sparkline -->
 <script src="plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->

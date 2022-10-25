@@ -4,14 +4,14 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TambahKerjasamaController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\JenisMitraController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
 use App\Http\Controllers\KerjasamaController;
 use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
-
+use App\Models\Akun;
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -69,10 +69,10 @@ Route::match(['put', 'patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaControlle
 Route::get('Mitra', [MitraController::class, 'index']);
 Route::get('AdminEditMitra/{id}', [MitraController::class, 'edit'])->name('edit_mitra1');
 Route::match(['put', 'patch'], 'AdminEditMitra/{id}', [MitraController::class, 'update'])->name('update_mitra');
-Route::get('TambahMitra', [KerjasamaController::class, 'index']);
-Route::post('TambahMitra', [KerjasamaController::class, 'store'])->name('tambah_mitra');
+Route::get('TambahMitra', [MitraController::class, 'index2']);
+Route::post('TambahMitra', [MitraController::class, 'store'])->name('tambah_mitra');
 
-Route::get('AdminShowUser', [AdminUserMenuController::class, 'index2']);
+Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
 
 // ---TESTING---
 Route::get('getData/{id}', function ($id) {
@@ -103,16 +103,25 @@ Route::get('UserDashboard', function () {
 Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
 Route::get('UserAkun', function () {
-    return view('UserAkun');
+    $akun = Akun::find(1);
+
+    $akun = $akun::where('id', '1')->first();
+
+    return view('UserAkun')->with('akun', $akun);
 });
 
 Route::get('UserRekap', function () {
-    return view('UserRekap');
+    $tks = TambahKerjasama::all();
+    return view('UserRekap')->with('kerjasama', $tks);
 });
 
 Route::get('UserMitra', function () {
     return view('Mitra');
 });
+
+Route::get('Login', [LoginController::class, 'index']);
+Route::post('Login/check', [LoginController::class, 'login'])->name('checking');
+
 
 Route::get('template', function () {
     return view('template');
