@@ -11,15 +11,15 @@ class AdminViewUser extends Model
     protected $table = 'adminusermenu';
     protected $primaryKey = 'id';
     protected $fillable = [
-        "namaakunuser",
-        "ssoakunuser",
-        "passwordakunuser",
-        "emailakunuser",
-        "nipakunuser",
-        "notelpakunuser",
-        "roleakunuser",
-        "statusakunuser",
-        "path_profileakunuser"
+        "nama",
+        "username",
+        "password",
+        "email",
+        "nip",
+        "notelp",
+        "role",
+        "status",
+        "path_profile"
     ];
 
     public $timestamp = false;

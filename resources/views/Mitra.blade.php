@@ -64,7 +64,7 @@
                                         <th>Jenis Mitra</th>
                                         <th>Jenis Kontrak</th>
                                         <th>Judul Kerjasama</th>
-                                        <th>Aksi</th>
+                                        <th style="width: 10%;">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>

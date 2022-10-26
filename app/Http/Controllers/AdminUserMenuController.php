@@ -12,34 +12,34 @@ class AdminUserMenuController extends Controller
 
     public function index()
     {
-        $adminakunusershow = AdminUserMenu::all();
-        return view('AdminShowUser')->with('adminakunusershow', $adminakunusershow);
+        $adminshow = AdminUserMenu::all();
+        return view('AdminShowUser')->with('adminshow', $adminshow);
     }
 
     public function store(Request $req) // store input dari hal AdminUserMenu
     {
         $adminusermenu = new AdminUserMenu();
 
-        $adminusermenu->namaakunuser = $req['namaakunuser'];
-        $adminusermenu->ssoakunuser = $req['ssoakunuser'];
-        $adminusermenu->emailakunuser = $req['emailakunuser'];
-        $adminusermenu->nipakunuser = $req['nipakunuser'];
-        $adminusermenu->notelpakunuser = $req['notelpakunuser'];
-        $adminusermenu->roleakunuser = $req['roleakunuser'];
-        $adminusermenu->statusakunuser = $req['statusakunuser'];
-        $adminusermenu->path_profileakunuser = $req['path_profileakunuser'];
+        $adminusermenu->nama = $req['nama'];
+        $adminusermenu->username = $req['username'];
+        $adminusermenu->email = $req['email'];
+        $adminusermenu->nip = $req['nip'];
+        $adminusermenu->notelp = $req['notelp'];
+        $adminusermenu->role = $req['role'];
+        $adminusermenu->status = $req['status'];
+        $adminusermenu->path_profile = $req['path_profile'];
 
-        $pw = md5($req['passwordakunuser']);
-        $adminusermenu->passwordakunuser = $pw;
+        $pw = md5($req['password']);
+        $adminusermenu->password = $pw;
 
         $picprofileuser = '';
 
-        if (isset($req['path_profileakunuser'])) {
-            $file = $req['path_profileakunuser'];
-            $namapicprofileuser = $req['namaakunuser'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+        if (isset($req['path_profile'])) {
+            $file = $req['path_profile'];
+            $namapicprofileuser = $req['nama'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
             $picprofileuser .= $namapicprofileuser;
             $file->move(public_path('profilpicuser'), $namapicprofileuser);
-            $adminusermenu->path_profileakunuser = $picprofileuser;
+            $adminusermenu->path_profile = $picprofileuser;
         }
 
         $adminusermenu->save();
@@ -61,15 +61,15 @@ class AdminUserMenuController extends Controller
         $adminviewuser = AdminViewUser::find($id);
         $adminviewuser->update($input);
 
-        if (isset($req['path_profileakunuser'])) {
+        if (isset($req['path_profile'])) {
             $picprofileuser = '';
 
-            $file = $req['path_profileakunuser'];
-            $namapicprofileuser = $req['namaakunuser'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+            $file = $req['path_profile'];
+            $namapicprofileuser = $req['nama'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
             $picprofileuser = $namapicprofileuser;
             $file->move(public_path('profilpicuser'), $namapicprofileuser);
 
-            $adminviewuser->path_profileakunuser = $picprofileuser;
+            $adminviewuser->path_profile = $picprofileuser;
             $adminviewuser->save();
         }
 

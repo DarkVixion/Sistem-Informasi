@@ -36,12 +36,18 @@ class LoginController extends Controller
     {
         
         $password = md5($request->pw);
-        $data = AdminViewUser::where([['ssoakunuser', $request->un], ['passwordakunuser', $password]])->get();
-        $request->session()->put('id', $data[0]->id);
-        $request->session()->put('name', $data[0]->namaakunuser);
-        $request->session()->put('role', $data[0]->roleakunuser);
+        $data = AdminViewUser::where([['username', $request->un], ['password', $password]])->get();
 
-        if($data[0]->roleakunuser == 'Admin')
+        if(count($data) == 0)
+        {
+            return redirect('/Login');
+        }
+
+        $request->session()->put('id', $data[0]->id);
+        $request->session()->put('name', $data[0]->nama);
+        $request->session()->put('role', $data[0]->role);
+
+        if($data[0]->role == 'Admin')
         {
             return redirect('/AdminDashboard');
         }

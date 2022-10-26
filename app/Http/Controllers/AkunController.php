@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Akun;
+use App\Models\AdminViewUser;
 
 class AkunController extends Controller
 {
@@ -76,25 +77,28 @@ class AkunController extends Controller
 
     public function isiakun()
     {
-        $akun = Akun::find(1);
+        // $akun = Akun::find(1);
 
-        $bebas = $akun::where('id', '1')->first();
+        // $bebas = $akun::where('id', '1')->first();
 
-        return view('Akun')->with('akun', $bebas);
+        // return view('Akun')->with('akun', $bebas);
+        
+        $akun = AdminViewUser::where('id', session('id'))->first();
+
+        if($akun != null)
+        {
+            return view('UserAkun')->with('akun', $akun);
+        }
+        
+        return redirect('/Login');
     }
 
     public function edit(Request $req, $id)
     {
-        $input = $req->except(['_token','akun'.'updated_at']);
-        $akun = Akun::find($id);
+        $input = $req->all();
+        $akun = AdminViewUser::find($id);
         $akun->update($input);
 
-        //$picprofile = '';
-
-        /*$file = $req['path_profileakun'];
-        $namapicprofile = $req['namaakun'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-        $picprofile .= $namapicprofile;
-        $file->move(public_path('profilpic'), $namapicprofile);*/
 
         if (isset($req['path_profileakun'])) {
             $picprofile = '';
@@ -104,7 +108,7 @@ class AkunController extends Controller
             $picprofile .= $namapicprofile;
             $file->move(public_path('profilpic'), $namapicprofile);
 
-            $akun->path_profileakun = $picprofile;
+            $akun->path_profile = $picprofile;
             $akun->save();
         }
 

@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Akun;
+use App\Models\AdminViewUser;
 
 class AkunAdminSeeder extends Seeder
 {
@@ -16,19 +16,20 @@ class AkunAdminSeeder extends Seeder
     {
         $data = [
             [
-                'namaakun'=>'Admin1',
-                'userssoakun'=>'admin01',
-                'emailakun'=>'admin1@gmail.com',
-                'nipakun'=>'12345',
-                'notelpakun'=>'08531111',
-                'roleakun'=>'Staff',
-                'statusakun'=>'Aktif',
-                'path_profileakun'=>'Admin1_1664500196_923.jpg',
+                'nama'=>'Admin1',
+                'username'=>'admin01',
+                'password'=>md5('12345'),
+                'email'=>'admin1@gmail.com',
+                'nip'=>'12345',
+                'notelp'=>'08531111',
+                'role'=>'Staff',
+                'status'=>'Aktif',
+                'path_profile'=>'Admin1_1664500196_923.jpg',
                 'updated_at'=>null,
                 'created_at'=>null
             ]
         ];
 
-        Akun::insert($data);
+        AdminViewUser::insert($data);
     }
 }

@@ -62,62 +62,62 @@
                             <div class="card-body table-responsive p-3">
                                 <div class="d-flex justify-content-center">
                                     <img class=" profile-user-img img-fluid img-circle" alt=" User profile picture"
-                                    src=@if($adminviewuser->path_profileakunuser!=null) "{{ asset('profilpicuser/'.$adminviewuser->path_profileakunuser) }}" @else ../../dist/img/user2-160x160.jpg @endif>
+                                    src=@if($adminviewuser->path_profile!=null) "{{ asset('profilpicuser/'.$adminviewuser->path_profile) }}" @else ../../dist/img/user2-160x160.jpg @endif>
                                 </div>
-                                <h3 class="profile-username text-center">{{ $adminviewuser->namaakunuser }}</h3>
+                                <h3 class="profile-username text-center">{{ $adminviewuser->nama }}</h3>
                                 <p class="text-muted text-center">Universitas Pertamina</p><br><br>
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                     <div class="col-sm-10 ">
-                                        <input type="file" class="form-control " name="path_profileakunuser" accept="png/*" multiple>
+                                        <input type="file" class="form-control " name="path_profile" accept="png/*" multiple>
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="namaakunuser" placeholder="User UPer" value="{{ $adminviewuser->namaakunuser }}">
+                                        <input type="text" class="form-control" name="nama" placeholder="User UPer" value="{{ $adminviewuser->nama }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="ssoakunuser" placeholder="User_UPer01" value="{{ $adminviewuser->ssoakunuser }}">
+                                        <input type="text" class="form-control" name="username" placeholder="User_UPer01" value="{{ $adminviewuser->username }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="passwordakunuser" placeholder="User_UPer01" value="{{ $adminviewuser->passwordakunuser }}"><!-- buat kolom db baru?-->
+                                        <input type="text" class="form-control" name="password" placeholder="User_UPer01" value="{{ $adminviewuser->password }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="emailakunuser" placeholder="User.uper@dududu.ac.id" value="{{ $adminviewuser->emailakunuser }}">
+                                        <input type="text" class="form-control" name="email" placeholder="User.uper@dududu.ac.id" value="{{ $adminviewuser->email }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nipakunuser" placeholder="122333" value="{{ $adminviewuser->nipakunuser }}">
+                                        <input type="text" class="form-control" name="nip" placeholder="122333" value="{{ $adminviewuser->nip }}">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelpakunuser" placeholder="0812xxx" value="{{ $adminviewuser->notelpakunuser }}">
+                                        <input type="text" class="form-control" name="notelp" placeholder="0812xxx" value="{{ $adminviewuser->notelp }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="select" class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="roleakunuser" value="{{ $adminviewuser->roleakunuser }}">
-                                                <option @if ($adminviewuser->roleakunuser == 'Staff') selected @endif> Staff</option>
-                                                <option @if ($adminviewuser->roleakunuser == 'Role 2') selected @endif> Role 2</option>
-                                                <option @if ($adminviewuser->roleakunuser == 'Role 3') selected @endif> Role 3</option>
-                                                <option @if ($adminviewuser->roleakunuser == 'Role 4') selected @endif >Role 4</option>
-                                                <option @if ($adminviewuser->roleakunuser == 'Admin') selected @endif> Admin</option>
+                                            <select class="form-control" name="role" value="{{ $adminviewuser->role }}">
+                                                <option @if ($adminviewuser->role == 'Staff') selected @endif> Staff</option>
+                                                <option @if ($adminviewuser->role == 'Role 2') selected @endif> Role 2</option>
+                                                <option @if ($adminviewuser->role == 'Role 3') selected @endif> Role 3</option>
+                                                <option @if ($adminviewuser->role == 'Role 4') selected @endif >Role 4</option>
+                                                <option @if ($adminviewuser->role == 'Admin') selected @endif> Admin</option>
                                             </select>
                                         </div>
                                     </div>
@@ -126,9 +126,9 @@
                                     <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="statusakunuser" value="{{ $adminviewuser->statusakunuser }}">
-                                                <option @if ($adminviewuser->statusakunuser == 'Aktif') selected @else "" @endif>Aktif</option>
-                                                <option @if ($adminviewuser->statusakunuser == 'Tidak Aktif') selected @else "" @endif>Tidak Aktif</option>
+                                            <select class="form-control" name="status" value="{{ $adminviewuser->status }}">
+                                                <option @if ($adminviewuser->status == 'Aktif') selected @else "" @endif>Aktif</option>
+                                                <option @if ($adminviewuser->status == 'Tidak Aktif') selected @else "" @endif>Tidak Aktif</option>
                                             </select>
                                         </div>
                                     </div>

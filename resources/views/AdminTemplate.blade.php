@@ -35,6 +35,11 @@
             header('Location: /Login');
             die;
         }
+        elseif(session('role')!='Admin')
+        {
+            header('Location: /UserRekap');
+            die;
+        }
     ?>
 </head>
 
