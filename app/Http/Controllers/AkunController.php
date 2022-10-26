@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Akun;
 use App\Models\AdminViewUser;
+use Symfony\Component\Console\Input\Input;
 
 class AkunController extends Controller
 {
@@ -75,19 +76,13 @@ class AkunController extends Controller
     .
     */
 
-    public function isiakun()
+    public function show()
     {
-        // $akun = Akun::find(1);
-
-        // $bebas = $akun::where('id', '1')->first();
-
-        // return view('Akun')->with('akun', $bebas);
-        
         $akun = AdminViewUser::where('id', session('id'))->first();
 
         if($akun != null)
         {
-            return view('UserAkun')->with('akun', $akun);
+            return view('Akun')->with('akun', $akun);
         }
         
         return redirect('/Login');
@@ -100,13 +95,13 @@ class AkunController extends Controller
         $akun->update($input);
 
 
-        if (isset($req['path_profileakun'])) {
+        if (isset($req['path_profile'])) {
             $picprofile = '';
 
-            $file = $req['path_profileakun'];
-            $namapicprofile = $req['namaakun'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+            $file = $req['path_profile'];
+            $namapicprofile = $req['nama'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
             $picprofile .= $namapicprofile;
-            $file->move(public_path('profilpic'), $namapicprofile);
+            $file->move(public_path('profilpicuser'), $namapicprofile);
 
             $akun->path_profile = $picprofile;
             $akun->save();

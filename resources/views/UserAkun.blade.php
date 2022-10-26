@@ -67,31 +67,31 @@
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="namaakun" placeholder="Admin UPer" value="{{ $akun->nama }}">
+                                        <input type="text" class="form-control" name="nama" placeholder="Admin UPer" value="{{ $akun->nama }}">
                                     </div>
                                 </div><br>
                                 <div class=" form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="userssoakun" placeholder="admin_UPer01" value="{{ $akun->username }}">
+                                        <input type="text" class="form-control" name="username" placeholder="admin_UPer01" value="{{ $akun->username }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="emailakun" placeholder="admin.uper@dududu.ac.id" value="{{ $akun->email }}">
+                                        <input type="text" class="form-control" name="email" placeholder="admin.uper@dududu.ac.id" value="{{ $akun->email }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nipakun" placeholder="122333" value="{{ $akun->nip }}">
+                                        <input type="text" class="form-control" name="nip" placeholder="122333" value="{{ $akun->nip }}">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelpakun" placeholder="0812xxx" value="{{ $akun->notelp }}">
+                                        <input type="text" class="form-control" name="notelp" placeholder="0812xxx" value="{{ $akun->notelp }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
@@ -99,7 +99,7 @@
                                     <label for="select" class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="roleakun" value="{{ $akun->role }}" disabled>
+                                            <select class="form-control" name="role" value="{{ $akun->role }}" disabled>
                                                 <option @if ($akun->role == 'Admin') selected @else "" @endif> Role 4</option>
                                                 <option @if ($akun->role == 'Staff') selected @else "" @endif> Staff</option>
                                             </select>
@@ -110,7 +110,7 @@
                                     <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="statusakun" value="{{ $akun->status }}" disabled>
+                                            <select class="form-control" name="status" value="{{ $akun->status }}" disabled>
                                                 <option @if ($akun->status == 'Aktif') selected @endif>Aktif</option>
                                                 <option @if ($akun->status == 'Tidak Aktif') selected @endif>Tidak Aktif</option>
                                             </select>

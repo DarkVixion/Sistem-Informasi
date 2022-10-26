@@ -38,9 +38,8 @@ Route::get('AdminDashboard', function () {
         ->with('summitra', $summitra);
 });
 
-Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
 Route::match(['put', 'patch'], '/Akun/{id}', [AkunController::class, 'edit'])->name('editdataakun');
-Route::get('/Akun', [AkunController::class, 'isiakun']);
+Route::get('/Akun', [AkunController::class, 'show']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
 //Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
@@ -112,7 +111,6 @@ Route::get('/UserAkun', function () {
 });
 
 Route::get('UserRekap', function () {
-    
     $tks = TambahKerjasama::all();
     return view('UserRekap')->with('kerjasama', $tks);
 });

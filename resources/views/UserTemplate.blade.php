@@ -33,6 +33,11 @@
                 header('Location: /Login');
                 die;
             }
+            elseif(session('role')=='Admin')
+            {
+                header('Location: /AdminDashboard');
+                die;
+            }
         ?>
     </head>
 <!--

@@ -61,13 +61,13 @@
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                     <div class="col-sm-10 ">
-                                        <input type="file" class="form-control " name="path_profileakun" accept="png/*">
+                                        <input type="file" class="form-control " name="path_profile" accept="png/*">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nama" placeholder="Admin UPer" value="{{ $akun->nama }}">
+                                        <input type="text" class="form-control" name="nama"  placeholder="Admin UPer" value="{{ $akun->nama }}">
                                     </div>
                                 </div><br>
                                 <div class=" form-group row">
