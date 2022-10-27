@@ -12,7 +12,7 @@
       }
 
       .rounded-bl-lg-5 {
-        border-bottom-left-radius: 0.5rem;
+        border-bottom-left-radius: 1rem;
       }
     }
   </style>
