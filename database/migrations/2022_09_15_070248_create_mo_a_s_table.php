@@ -17,6 +17,7 @@ class CreateMoASTable extends Migration
             $table->id();
             $table->unsignedBigInteger('tambah_kerjasama_id');
             $table->string('judul');
+            $table->string('lingkupkerja');
             $table->bigInteger("nilaikontrak");
             $table->date("tglmulai");
             $table->date("tglselesai")->nullable();

@@ -4,15 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TambahKerjasamaController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\JenisMitraController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
 use App\Http\Controllers\KerjasamaController;
 use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
-use App\Models\Akun;
-use App\Http\Controllers\LoginTestController;
+use App\Http\Controllers\LoginController;
+use App\Models\AdminUserMenu;
+use App\Models\MoA;
+use App\Models\MoU;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,12 +26,16 @@ use App\Http\Controllers\LoginTestController;
 |
 */
 
+Route::get('/', function(){
+    return redirect('/Login');
+});
+
 // <-- BAGIAN ADMIN -->
-Route::get('AdminDashboard', function () {
-    $sum = DB::table('moas')->sum('nilaikontrak');
-    $countmoa = DB::table('moas')->count('id');
-    $countmou = DB::table('mous')->count('id');
-    $summitra = DB::table('tambahkerjasama')->count('namamitra');
+Route::get('/AdminDashboard', function () {
+    $sum = MoA::all()->sum('nilaikontrak');
+    $countmoa = MoA::all()->count('id');
+    $countmou = MoU::all()->count('id');
+    $summitra = TambahKerjasama::all()->count('namamitra');
 
     return view('AdminDashboard')->with('sum', $sum)
         ->with('countmoa', $countmoa)
@@ -37,9 +43,8 @@ Route::get('AdminDashboard', function () {
         ->with('summitra', $summitra);
 });
 
-Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
 Route::match(['put', 'patch'], '/Akun/{id}', [AkunController::class, 'edit'])->name('editdataakun');
-Route::get('/Akun', [AkunController::class, 'isiakun']);
+Route::get('/Akun', [AkunController::class, 'show']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
 //Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
@@ -70,8 +75,8 @@ Route::match(['put', 'patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaControlle
 Route::get('Mitra', [MitraController::class, 'index']);
 Route::get('AdminEditMitra/{id}', [MitraController::class, 'edit'])->name('edit_mitra1');
 Route::match(['put', 'patch'], 'AdminEditMitra/{id}', [MitraController::class, 'update'])->name('update_mitra');
-Route::get('TambahMitra', [KerjasamaController::class, 'index']);
-Route::post('TambahMitra', [KerjasamaController::class, 'store'])->name('tambah_mitra');
+Route::get('TambahMitra', [MitraController::class, 'index2']);
+Route::post('TambahMitra', [MitraController::class, 'store'])->name('tambah_mitra');
 
 Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
 
@@ -96,19 +101,18 @@ Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminUserMenuController::
 Route::get('/importexcel', [TambahKerjasamaController::class, 'importExcel'])->name('import_excel');
 Route::post('/uploadexcel', [TambahKerjasamaController::class, 'uploadExcel'])->name('upload_excel');
 
-Route::get('UserDashboard', function () {
-    return view('UserDashboard');
-});
-
 // <-- TESTING DASHBOARD -->
 Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
-Route::get('UserAkun', function () {
-    $akun = Akun::find(1);
+Route::get('/UserAkun', function () {
+    $akun = AdminUserMenu::where('id', session('id'))->first();
 
-    $akun = $akun::where('id', '1')->first();
-
-    return view('UserAkun')->with('akun', $akun);
+    if($akun != null)
+    {
+        return view('UserAkun')->with('akun', $akun);
+    }
+    
+    return redirect('/Login');
 });
 
 Route::get('UserRekap', function () {
@@ -117,11 +121,15 @@ Route::get('UserRekap', function () {
 });
 
 Route::get('UserMitra', function () {
-    return view('Mitra');
+    $tks = TambahKerjasama::all();
+    $user = AdminViewUser::all();
+    return view('UserMitra')->with('tks', $tks)
+    ->with('user', $user);
 });
 
-Route::get('Login', [LoginTestController::class, 'index']);
-Route::post('Login/check', [LoginTestController::class, 'login'])->name('checking');
+Route::get('/Login', [LoginController::class, 'index']);
+Route::post('/Login/check', [LoginController::class, 'login'])->name('checking');
+Route::get('/Logout', [LoginController::class, 'logout']);
 
 
 Route::get('template', function () {

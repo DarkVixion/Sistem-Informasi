@@ -26,6 +26,19 @@
         <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
         <!-- summernote -->
         <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+
+        <?php 
+            if(session()->missing('id'))
+            {
+                header('Location: /Login');
+                die;
+            }
+            elseif(session('role')=='Admin')
+            {
+                header('Location: /AdminDashboard');
+                die;
+            }
+        ?>
     </head>
 <!--
 `body` tag options:
@@ -71,7 +84,8 @@
                         <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/UserAkun" class="d-block">User456</a>
+                        <a href="/UserAkun" class="d-block">{{ session('name') }}</a>
+                        <a href="/Logout">Logout</a>
                     </div>
                 </div>
 

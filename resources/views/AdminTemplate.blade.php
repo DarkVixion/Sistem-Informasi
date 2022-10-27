@@ -28,6 +28,19 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+
+    <?php 
+        if(session()->missing('id'))
+        {
+            header('Location: /Login');
+            die;
+        }
+        elseif(session('role')!='Admin')
+        {
+            header('Location: /UserRekap');
+            die;
+        }
+    ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -69,7 +82,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/Akun" class="d-block">Admin123</a>
+                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123 @endif</a>
+                        <a href="/Logout">Logout</a>
                     </div>
                 </div>
 
@@ -126,16 +140,19 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lingkup Kerja Sama</p>
                                     </a>
-                                </ul>
-                                <ul class="nav-item">
+                                </li>
+                                <li class="nav-item">
                                     <a href="/Mitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        {{-- <img class="nav-icon" style="opacity: 75%" --}}
-                                            {{-- srcset="https://img.icons8.com/offices/2x/building.png 2.5x" alt="Building icon"
-                                            loading="lazy"></img> --}}
                                         <p>Profile Mitra</p>
                                     </a>
-                                </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Mitra" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Profile Mitra</p>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">

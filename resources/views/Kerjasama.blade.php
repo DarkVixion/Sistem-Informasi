@@ -66,18 +66,19 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="md-card-content" style="overflow-x: auto;">
-                            <table id="example1" class="table table-bordered table-striped" style="width:max-content;">
+                        <div class="md-card-content">
+                            <table id="example1" class="table table-bordered table-striped" >
                                 <thead>
                                     <tr>
                                         <th>Bulan Pencatatan</th>
                                         <th>Nama</th>
                                         <th>Jenis Mitra</th>
+                                        <th>Jenis Kerjasama</th>
                                         <th>Lingkup Kerja Sama</th>
                                         <th>Nilai Kontrak</th>
                                         <th>Periode Mulai Kerjasama</th>
                                         <th>Periode Berakhir Kerjasama</th>
-                                        <th>Misc.</th>
+                                        <th style="width:10%;">Misc.</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -85,12 +86,19 @@
                                     <?php
                                         $moa = App\Models\MoA::where('tambah_kerjasama_id', $item->id)->first();
                                         $mou = App\Models\MoU::where('tambah_kerjasama_id', $item->id)->first();
+                                    
+                                        // $moa = App\Models\MoA::where('tambah_kerjasama_id', $item->id)->get();
+                                        // $mou = App\Models\MoU::where('tambah_kerjasama_id', $item->id)->get();
+                                        // $mou_i = count($mou);
+                                        // $moa_i = count($moa);
+                                        // $max_i = $mou_i + $moa_i;
                                     ?>
-
+                                    
                                     <tr>
                                         <td>{{ $item->bulaninput }}</td>
                                         <td>{{ $item->namamitra }}</td>
                                         <td>{{ $item->jenismitra }}</td>
+                                        <td></td>
                                         <td>{{ $item->lingkupkerja }}</td>
 
                                         @if($moa != null)
@@ -122,8 +130,7 @@
                                                 style="display:inline ">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger"><i
-                                                        class="fa fa-trash"></i></button>
+                                                <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>

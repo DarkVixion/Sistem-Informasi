@@ -19,10 +19,21 @@ class MitraController extends Controller
     {
         $tks = TambahKerjasama::all();
         $user = AdminViewUser::all();
+        $jmitra = JenisMitra::all();
         return view('Mitra')->with('tks', $tks)
-            ->with('user', $user);
+            ->with('user', $user)
+            ->with('jm', $jmitra);
     }
 
+    public function index2()
+    {
+        $tks = TambahKerjasama::all();
+        $user = AdminViewUser::all();
+        $jmitra = JenisMitra::all();
+        return view('TambahMitra')->with('tks', $tks)
+            ->with('user', $user)
+            ->with('jm', $jmitra);
+    }
     /**
      * Display the specified resource.
      *
@@ -33,9 +44,11 @@ class MitraController extends Controller
     {
         $tks = TambahKerjasama::find($id);
         $user = AdminViewUser::all();
+        $jmitra = JenisMitra::all();
 
         return view('AdminViewMitra')->with('tks', $tks)
-            ->with('user', $user);
+            ->with('user', $user)
+            ->with('jm', $jmitra);
     }
 
     /**
@@ -47,13 +60,34 @@ class MitraController extends Controller
     public function edit($id)
     {
         $tks = TambahKerjasama::find($id);
+        $user = AdminViewUser::all();
         $lkerja = LingkupKerja::all();
         $jmitra = JenisMitra::all();
         return view('AdminViewMitraEdit')->with('tks', $tks)
             ->with('lk', $lkerja)
-            ->with('jm', $jmitra);
+            ->with('jm', $jmitra)
+            ->with('user', $user);
     }
 
+    public function store(Request $req)
+    {
+        //dd($tks);
+
+        $tks = new TambahKerjasama;
+
+        $tks->status = $req['status'];
+        $tks->namamitra = $req['namamitra'];
+        $tks->jenismitra = $req['jenismitra'];
+        $tks->bulaninput = $req['bulaninput'];
+        $tks->alamat = $req['alamat'];
+        $tks->website = $req['website'];
+        $tks->notelpmitra = $req['notelpmitra'];
+        $tks->negara = $req['negara'];
+
+        $tks->save();
+
+        return redirect('Mitra');
+    }
     /**
      * Update the specified resource in storage.
      *

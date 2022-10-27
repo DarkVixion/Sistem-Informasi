@@ -67,44 +67,44 @@
                                 <div class="form-group row">
                                     <label for="path_mou" class="col-sm-2 col-form-label ">Foto Profile</label>
                                     <div class="col-sm-10 ">
-                                        <input type="file" class="form-control " name="path_profileakunuser" accept="png/*">
+                                        <input type="file" class="form-control " name="path_profile" accept="png/*">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Nama Pegawai</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="namaakunuser" placeholder="User UPer">
+                                        <input type="text" class="form-control" name="nama" placeholder="User UPer">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Username SSO</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="ssoakunuser" placeholder="User_UPer01">
+                                        <input type="text" class="form-control" name="username" placeholder="User_UPer01">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="passwordakunuser" placeholder="User_UPer01"><!-- buat kolom db baru?-->
+                                        <input type="text" class="form-control" name="password" placeholder="User_UPer01"><!-- buat kolom db baru?-->
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">E-Mail</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="emailakunuser" placeholder="User.uper@dududu.ac.id">
+                                        <input type="text" class="form-control" name="email" placeholder="User.uper@dududu.ac.id">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" name="nipakunuser" placeholder="122333" pattern="/^-?\d+\.?\d*$/"
+                                        <input type="number" class="form-control" name="nip" placeholder="122333" pattern="/^-?\d+\.?\d*$/"
                                         onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" name="notelpakunuser" placeholder="0812xxx" pattern="/^-?\d+\.?\d*$/"
+                                        <input type="number" class="form-control" name="notelp" placeholder="0812xxx" pattern="/^-?\d+\.?\d*$/"
                                         onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                 </div><br>
@@ -112,12 +112,12 @@
                                     <label for="select" class="col-sm-2 col-form-label">Role</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="roleakunuser">
-                                                <option>Role 1</option>
+                                            <select class="form-control" name="role">
+                                                <option>Staff</option>
                                                 <option>Role 2</option>
                                                 <option>Role 3</option>
                                                 <option>Role 4</option>
-                                                <option>Staff</option>
+                                                <option>Admin</option>
                                             </select>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                     <label for="select" class="col-sm-2 col-form-label">Status</label>
                                     <div class="col-sm-10">
                                         <div class="form-group">
-                                            <select class="form-control" name="statusakunuser">
+                                            <select class="form-control" name="status">
                                                 <option>Aktif</option>
                                                 <option>Tidak Aktif</option>
                                             </select>

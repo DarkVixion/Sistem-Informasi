@@ -42,18 +42,6 @@
             <div class="col-sm-6">
                 <h1>Rekap Kontrak</h1>
             </div>
-            {{-- <div class="col-sm-6">
-
-                <a href="TambahKerja">
-                    <button type="button" class="btn btn-default float-right"
-                        style="background-color:lightblue; border-radius:15px;">
-                        Tambah Kerja Sama
-                    </button>
-                </a>
-                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl"
-                    style="border-radius:15px;"><i class="fas fa-plus"></i> Import
-                    Excel</button>
-            </div> --}}
         </div>
     </div>
     <!-- /.container-fluid -->
@@ -66,8 +54,8 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <div class="md-card-content" style="overflow-x: auto;">
-                            <table id="example1" class="table table-bordered table-striped" style="width:max-content;">
+                        <div class="md-card-content">
+                            <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>Bulan Pencatatan</th>
@@ -75,8 +63,8 @@
                                         <th>Jenis Mitra</th>
                                         <th>Lingkup Kerja Sama</th>
                                         <th>Nilai Kontrak</th>
-                                        <th>Periode Mulai Kerjasama</th>
-                                        <th>Periode Berakhir Kerjasama</th>
+                                        <th style="width: 15%;">Periode Mulai Kerjasama</th>
+                                        <th style="width: 15%;">Periode Berakhir Kerjasama</th>
                                         <th>Misc.</th>
                                     </tr>
                                 </thead>
@@ -116,15 +104,9 @@
                                         @endif
 
                                         <td>
-                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button
-                                                    class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
-                                                style="display:inline ">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger"><i
-                                                        class="fa fa-trash"></i></button>
-                                            </form>
+                                            <a href="{{route('edit_kerjasama', $item->id)}}">
+                                                <button class="btn btn-primary"><i class="fa fa-edit"></i></button>
+                                            </a>
                                         </td>
                                     </tr>
                                     @endforeach

@@ -37,17 +37,17 @@
                         <table class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th>No. </th>
+                                    <th style="width: 15%; text-align:center;">No. </th>
                                     <th>Jenis Mitra</th>
-                                    <th>Aksi</th>
+                                    <th style="width: 15%; text-align:center;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($jm as $item)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
+                                    <td style="text-align:center;">{{ $loop->iteration }}</td>
                                     <td>{{ $item->juduljenismitra }}</td>
-                                    <td>
+                                    <td style="text-align:center;">
                                         <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}"
                                             data-toggle="modal"><i class="fa fa-edit"></i></button>
                                         <form action="{{route('hapus_mitra', $item->id)}}" method="POST"
