@@ -140,13 +140,13 @@
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lingkup Kerja Sama</p>
                                     </a>
-                                </li>
-                                <li class="nav-item">
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="/Mitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Profile Mitra</p>
                                     </a>
-                                </li>
+                                </ul>
                             </ul>
                         </li>
                         <li class="nav-item">
