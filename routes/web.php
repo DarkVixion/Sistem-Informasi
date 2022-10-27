@@ -25,6 +25,10 @@ use App\Models\AdminUserMenu;
 |
 */
 
+Route::get('/', function(){
+    return redirect('/Login');
+});
+
 // <-- BAGIAN ADMIN -->
 Route::get('AdminDashboard', function () {
     $sum = DB::table('moas')->sum('nilaikontrak');
