@@ -12,6 +12,8 @@ use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
 use App\Http\Controllers\LoginController;
 use App\Models\AdminUserMenu;
+use App\Models\MoA;
+use App\Models\MoU;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,11 +31,11 @@ Route::get('/', function(){
 });
 
 // <-- BAGIAN ADMIN -->
-Route::get('AdminDashboard', function () {
-    $sum = DB::table('moas')->sum('nilaikontrak');
-    $countmoa = DB::table('moas')->count('id');
-    $countmou = DB::table('mous')->count('id');
-    $summitra = DB::table('tambahkerjasama')->count('namamitra');
+Route::get('/AdminDashboard', function () {
+    $sum = MoA::all()->sum('nilaikontrak');
+    $countmoa = MoA::all()->count('id');
+    $countmou = MoU::all()->count('id');
+    $summitra = TambahKerjasama::all()->count('namamitra');
 
     return view('AdminDashboard')->with('sum', $sum)
         ->with('countmoa', $countmoa)
