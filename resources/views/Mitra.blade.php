@@ -39,6 +39,12 @@
             <div class="col-sm-6">
                 <h1>Mitra</h1>
             </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">Master Data</li>
+                    <li class="breadcrumb-item active">Profile Mitra</li>
+                </ol>
+            </div>    
         </div>
     </div>
     <!-- /.container-fluid -->

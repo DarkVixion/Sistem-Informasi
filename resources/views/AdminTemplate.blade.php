@@ -129,16 +129,22 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+                                <ul class="nav-item">
                                     <a href="/JenisMitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Jenis Mitra</p>
                                     </a>
-                                </li>
-                                <li class="nav-item">
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="/LingkupKerja" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lingkup Kerja Sama</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="/Mitra" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Profile Mitra</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
