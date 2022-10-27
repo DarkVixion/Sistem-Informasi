@@ -147,12 +147,6 @@
                                         <p>Profile Mitra</p>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="/Mitra" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Profile Mitra</p>
-                                    </a>
-                                </li>
                             </ul>
                         </li>
                         <li class="nav-item">
