@@ -10,7 +10,6 @@ use App\Http\Controllers\AdminUserMenuController;
 use App\Http\Controllers\KerjasamaController;
 use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
-use App\Models\Akun;
 use App\Http\Controllers\LoginController;
 use App\Models\AdminUserMenu;
 
