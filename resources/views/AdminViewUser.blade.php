@@ -114,9 +114,6 @@
                                         <div class="form-group">
                                             <select class="form-control" name="role" value="{{ $adminviewuser->role }}">
                                                 <option @if ($adminviewuser->role == 'Staff') selected @endif> Staff</option>
-                                                <option @if ($adminviewuser->role == 'Role 2') selected @endif> Role 2</option>
-                                                <option @if ($adminviewuser->role == 'Role 3') selected @endif> Role 3</option>
-                                                <option @if ($adminviewuser->role == 'Role 4') selected @endif >Role 4</option>
                                                 <option @if ($adminviewuser->role == 'Admin') selected @endif> Admin</option>
                                             </select>
                                         </div>

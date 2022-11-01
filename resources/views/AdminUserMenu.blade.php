@@ -114,9 +114,6 @@
                                         <div class="form-group">
                                             <select class="form-control" name="role">
                                                 <option>Staff</option>
-                                                <option>Role 2</option>
-                                                <option>Role 3</option>
-                                                <option>Role 4</option>
                                                 <option>Admin</option>
                                             </select>
                                         </div>
