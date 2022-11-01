@@ -1,68 +1,98 @@
-<!-- Section: Design Block -->
-<section class=" text-center text-lg-start">
-  <style>
-    .rounded-t-5 {
-      border-top-left-radius: 0.5rem;
-      border-top-right-radius: 0.5rem;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | Log in (v2)</title>
 
-    @media (min-width: 992px) {
-      .rounded-tr-lg-0 {
-        border-top-right-radius: 0;
-      }
-
-      .rounded-bl-lg-5 {
-        border-bottom-left-radius: 1rem;
-      }
-    }
-  </style>
-  <div class="card mb-3">
-    <div class="row g-0 d-flex align-items-center">
-      <div class="col-lg-4 d-none d-lg-flex">
-        <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes wid" width="250" height="380"
-          class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
-      </div>
-      <div class="col-lg-8">
-        <div class="card-body py-5 px-md-5">
-
-          <form action="{{route('checking')}}" method="post">
-            @csrf
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="text" name="un" id="form2Example1" class="form-control" />
-              <label class="form-label" for="form2Example1">Email address</label>
-            </div>
-
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" name="pw" id="form2Example2" class="form-control" />
-              <label class="form-label" for="form2Example2">Password</label>
-            </div>
-
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-                <!-- Checkbox -->
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                  <label class="form-check-label" for="form2Example31"> Remember me </label>
-                </div>
-              </div>
-
-              <div class="col">
-                <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
-              </div>
-            </div>
-
-            <!-- Submit button -->
-            <button class="btn btn-primary btn-block mb-4">Sign in</button>
-
-          </form>
-
-        </div>
-      </div>
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="../../index2.html" class="h2"><b>Sistem Kerjasama</b><br>Universitas Pertamina</a>
     </div>
+    <div class="card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
+
+      <form action="{{ route('checking') }}" method="post">
+        @csrf
+        {{-- <div class="input-group mb-3">
+          <input type="email" class="form-control" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div> --}}
+
+        <!-- Email input -->
+        <div class="form-outline lg-4">
+          <input type="text" name="un" id="form2Example1" class="form-control" />
+          <label class="form-label" for="form2Example1">Email address</label>
+        </div>
+
+        {{--  --}}
+        {{-- <div class="input-group mb-3">
+          <input type="password" class="form-control" placeholder="Password">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div> --}}
+
+        <!-- Password input -->
+        <div class="form-outline mb-4">
+          <input type="password" name="pw" id="form2Example2" class="form-control" />
+          <label class="form-label" for="form2Example2">Password</label>
+        </div>
+
+        {{--  --}}
+        <div class="row">
+          <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Ingat Saya
+              </label>
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <p class="mb-1">
+        <a href="forgot-password.html">Lupa Kata Sandi</a>
+      </p>
+      <p class="mb-0">
+        <a href="register.html" class="text-center">Buat Akun</a>
+      </p>
+    </div>
+    <!-- /.card-body -->
   </div>
-</section>
-<!-- Section: Design Block -->
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+</body>
+</html>
