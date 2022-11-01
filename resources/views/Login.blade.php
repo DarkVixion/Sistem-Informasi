@@ -26,46 +26,21 @@
 
       <form action="{{ route('checking') }}" method="post">
         @csrf
-        {{-- <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
-        </div> --}}
 
         <!-- Email input -->
         <div class="form-outline lg-4">
+          <label class="form-label" for="form2Example1">Username</label>
           <input type="text" name="un" id="form2Example1" class="form-control" />
-          <label class="form-label" for="form2Example1">Email address</label>
         </div>
-
-        {{--  --}}
-        {{-- <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div> --}}
 
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <input type="password" name="pw" id="form2Example2" class="form-control" />
           <label class="form-label" for="form2Example2">Password</label>
+          <input type="password" name="pw" id="form2Example2" class="form-control" />
         </div>
 
-        {{--  --}}
         <div class="row">
           <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Ingat Saya
-              </label>
-            </div>
           </div>
           <!-- /.col -->
           <div class="col-4">

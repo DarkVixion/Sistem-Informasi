@@ -213,23 +213,14 @@
                                     <div class="form-group">
                                         <label for="select" class="col-sm-2 col-form-label">Status</label>
                                         <select class="form-control" name="status">
-                                            <option>Aktif</option>
                                             <option>Tidak Aktif</option>
+                                            <option>Aktif</option>
                                             <option>Kadarluwasa</option>
                                             <option>Dalam Penjajakan</option>
                                             <option>Perpanjangan</option>
                                         </select>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
-                                        <div class="col-sm-13">
-                                            <input type="text" class="form-control" name="namamitra"
-                                                placeholder="Masukan Nama Mitra">
-                                        </div>
-                                    </div>
-                                </div> -->
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="select" class="col-sm-2 col-form-label">Nama Mitra</label>
@@ -247,6 +238,7 @@
                                     <div class="form-group">
                                         <label for="select" class="col-sm-2 col-form-label">Jenis Mitra</label>
                                         <select class="form-control" name="jenismitra">
+                                            <option hidden value="">--- Jenis Mitra ---</option>
                                             @foreach ($jm as $item)
                                             <option>{{ $item->juduljenismitra }}</option>
                                             @endforeach
