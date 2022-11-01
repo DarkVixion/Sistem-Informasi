@@ -15,15 +15,15 @@ class CreateAdminusermenuTable extends Migration
     {
         Schema::create('adminusermenu', function (Blueprint $table) {
             $table->id();
-            $table->string("namaakunuser");
-            $table->string("ssoakunuser");
-            $table->string("passwordakunuser");
-            $table->string("emailakunuser");
-            $table->string("nipakunuser");
-            $table->string("notelpakunuser");
-            $table->string("roleakunuser");
-            $table->string("statusakunuser");
-            $table->string("path_profileakunuser")->nullable();
+            $table->string("nama");
+            $table->string("username");
+            $table->string("password");
+            $table->string("email");
+            $table->string("nip");
+            $table->string("notelp");
+            $table->string("role");
+            $table->string("status");
+            $table->string("path_profile")->nullable();
             $table->timestamps();
         });
     }

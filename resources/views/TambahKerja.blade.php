@@ -104,7 +104,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a href="AdminDashboard" class="nav-link">
@@ -123,24 +123,30 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+                                <ul class="nav-item">
+                                    <a href="/NamaMitra" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Nama Mitra</p>
+                                    </a>
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="JenisMitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Jenis Mitra</p>
                                     </a>
-                                </li>
-                                <li class="nav-item">
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="LingkupKerja" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lingkup Kerja Sama</p>
                                     </a>
-                                </li>
-                                <li class="nav-item">
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="/Mitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Profile Mitra</p>
                                     </a>
-                                </li>
+                                </ul>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -229,8 +235,9 @@
                                         <label for="select" class="col-sm-2 col-form-label">Nama Mitra</label>
                                         <div class="col-sm-13">
                                             <select class="form-control" name="namamitra" id="namamitra">
-                                                @foreach ($tks as $nm)
-                                                <option>{{ $nm->namamitra}} </option>
+                                                <option hidden value="">--- Nama Mitra ---</option>
+                                                @foreach ($nm as $nm)
+                                                <option>{{ $nm->nama}} </option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -489,7 +496,7 @@
                                                 <select class="form-control" name="pic" id="pic">
                                                     <option value="" hidden>--- Pilih PIC ---</option>
                                                     @foreach($users as $u)
-                                                    <option value="{{ $u->id }}">{{ $u->namaakunuser }}
+                                                    <option value="{{ $u->id }}">{{ $u->nama }}
                                                     </option>
                                                     @endforeach
                                                 </select>
@@ -573,9 +580,8 @@
                     dataType: "json",
                     success: function(data) {
                         if (data) {
-                            document.getElementById('notelppic').value = data
-                                .notelpakunuser;
-                            document.getElementById('emailpic').value = data.emailakunuser;
+                            document.getElementById('notelppic').value = data.notelp;
+                            document.getElementById('emailpic').value = data.email;
                         }
                     }
                 });

@@ -6,12 +6,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Jenis Mitra</h1>
+                <h1>Nama Mitra</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item">Master Data</li>
-                    <li class="breadcrumb-item active">Jenis Mitra</li>
+                    <li class="breadcrumb-item active">Nama Mitra</li>
                 </ol>
             </div>
         </div>
@@ -29,7 +29,7 @@
                     <div class="card-header">
                         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
                             style="float:right; background-color:lightblue; border-radius:15px;">
-                            Tambah Jenis Mitra
+                            Tambah Nama Mitra
                         </button>
                     </div>
                     <!-- /.card-header -->
@@ -38,19 +38,19 @@
                             <thead>
                                 <tr>
                                     <th style="width: 15%; text-align:center;">No. </th>
-                                    <th>Jenis Mitra</th>
+                                    <th>Nama Mitra</th>
                                     <th style="width: 15%; text-align:center;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($jm as $item)
+                                @foreach($nm as $item)
                                 <tr>
                                     <td style="text-align:center;">{{ $loop->iteration }}</td>
-                                    <td>{{ $item->juduljenismitra }}</td>
+                                    <td>{{ $item->nama }}</td>
                                     <td style="text-align:center;">
                                         <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}"
                                             data-toggle="modal"><i class="fa fa-edit"></i></button>
-                                        <form action="{{route('hapus_mitra', $item->id)}}" method="POST"
+                                        <form action="{{route('hapus_nama', $item->id)}}" method="POST"
                                             style="display:inline ">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
@@ -65,24 +65,23 @@
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h4 class="modal-title">Edit Jenis Mitra</h4>
+                                                <h4 class="modal-title">Edit Nama Mitra</h4>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                     aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <form action="{{route('edit_mitra', $item->id)}}" method="post">
+                                            <form action="{{route('edit_nama', $item->id)}}" method="post">
                                                 {!! csrf_field() !!}
                                                 @method("PATCH")
                                                 <div class="modal-body">
                                                     <div class="form-group row ">
                                                         <label for="inputPassword3 "
-                                                            class="col-sm-2 col-form-label ">Jenis Mitra</label>
+                                                            class="col-sm-2 col-form-label ">Nama Mitra</label>
                                                         <div class="col-sm-10 ">
-                                                            <input type="text" name="juduljenismitra"
-                                                                id="juduljenismitra" class="form-control "
-                                                                placeholder="Masukan Jenis Mitra Baru"
-                                                                value="{{ $item->juduljenismitra }}">
+                                                            <input type="text" name="nama" class="form-control "
+                                                                placeholder="Masukan Nama Mitra Baru"
+                                                                value="{{ $item->nama }}">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -117,19 +116,19 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Tambah Jenis Mitra Baru</h4>
+                    <h4 class="modal-title">Tambah Nama Mitra Baru</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('tambah_jenis')}}" method="post">
+                <form action="{{route('tambah_nama')}}" method="post">
                     {!! csrf_field() !!}
                     <div class="modal-body">
                         <div class="form-group row ">
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label">Jenis Mitra</label>
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label">Nama Mitra</label>
                             <div class="col-sm-10 ">
-                                <input type="text" name="juduljenismitra" id="juduljenismitra" class="form-control "
-                                    placeholder="Masukan Jenis Mitra Baru">
+                                <input type="text" name="nama" class="form-control "
+                                    placeholder="Masukan Nama Mitra Baru">
                             </div>
                         </div>
                     </div>

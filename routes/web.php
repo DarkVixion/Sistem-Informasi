@@ -7,12 +7,13 @@ use App\Http\Controllers\JenisMitraController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
-use App\Http\Controllers\KerjasamaController;
+use App\Http\Controllers\NamaMitraController;
 use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
-use App\Models\Akun;
 use App\Http\Controllers\LoginController;
 use App\Models\AdminUserMenu;
+use App\Models\MoA;
+use App\Models\MoU;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,26 +26,53 @@ use App\Models\AdminUserMenu;
 |
 */
 
+Route::get('/', function(){
+    return redirect('/Login');
+});
+
 // <-- BAGIAN ADMIN -->
-Route::get('AdminDashboard', function () {
-    $sum = DB::table('moas')->sum('nilaikontrak');
-    $countmoa = DB::table('moas')->count('id');
-    $countmou = DB::table('mous')->count('id');
-    $summitra = DB::table('tambahkerjasama')->count('namamitra');
+Route::get('/AdminDashboard', function () {
+    $sum = MoA::all()->sum('nilaikontrak');
+    $countmoa = MoA::all()->count('id');
+    $countmou = MoU::all()->count('id');
+    $data = TambahKerjasama::all();
+    $temp = [];
+    
+    foreach($data as $d)
+    {
+        $bool = false;
+        if($temp)
+        {
+            foreach($temp as $t)
+            {
+                if($t == $d->namamitra)
+                {
+                    $bool = true;
+                    break;
+                }
+            }
+        }
+
+        if($bool == false)
+        {
+            $temp[] = $d->namamitra;
+        }
+    }
 
     return view('AdminDashboard')->with('sum', $sum)
         ->with('countmoa', $countmoa)
         ->with('countmou', $countmou)
-        ->with('summitra', $summitra);
+        ->with('total', count($temp));
 });
 
-Route::post('/edit_akun', [AkunController::class, 'store'])->name('inputdataakun');
 Route::match(['put', 'patch'], '/Akun/{id}', [AkunController::class, 'edit'])->name('editdataakun');
-Route::get('/Akun', [AkunController::class, 'isiakun']);
+Route::get('/Akun', [AkunController::class, 'show']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
-//Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
-
+Route::get('/NamaMitra', [NamaMitraController::class, 'index']);
+Route::post('/NamaMitra', [NamaMitraController::class, 'store'])->name('tambah_nama');
+Route::delete('NamaMitra/{id}', [NamaMitraController::class, 'destroy'])->name('hapus_nama');
+Route::match(['put', 'patch'], '/NamaMitra/{id}/edit', [NamaMitraController::class, 'update'])->name('edit_nama');
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('Kerjasama/edit/{id}', [TambahKerjasamaController::class, 'edit'])->name('edit_kerjasama');
@@ -55,7 +83,7 @@ Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('t
 Route::get('/preview/{path}', [TambahKerjasamaController::class, 'preview'])->name('preview');
 
 Route::get('JenisMitra', [JenisMitraController::class, 'index']);
-Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');
+Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_jenis');
 Route::delete('JenisMitra/{id}', [JenisMitraController::class, 'delete'])->name('hapus_mitra');
 Route::match(['put', 'patch'], '/JenisMitra/{id}/edit', [JenisMitraController::class, 'update'])->name('edit_mitra');
 
@@ -63,10 +91,6 @@ Route::get('LingkupKerja', [LingkupKerjaController::class, 'index']);
 Route::post('LingkupKerja', [LingkupKerjaController::class, 'store'])->name('tambah_lingkup');
 Route::delete('LingkupKerja/{id}', [LingkupKerjaController::class, 'delete'])->name('hapus_lingkup');
 Route::match(['put', 'patch'], '/LingkupKerja/{id}/edit', [LingkupKerjaController::class, 'update'])->name('edit_lingkup');
-
-// Route::get('InformasiMitra', function () {
-//     return view('InformasiMitra');
-// });
 
 Route::get('Mitra', [MitraController::class, 'index']);
 Route::get('AdminEditMitra/{id}', [MitraController::class, 'edit'])->name('edit_mitra1');
@@ -97,19 +121,18 @@ Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminUserMenuController::
 Route::get('/importexcel', [TambahKerjasamaController::class, 'importExcel'])->name('import_excel');
 Route::post('/uploadexcel', [TambahKerjasamaController::class, 'uploadExcel'])->name('upload_excel');
 
-Route::get('UserDashboard', function () {
-    return view('UserDashboard');
-});
-
 // <-- TESTING DASHBOARD -->
 Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
 Route::get('/UserAkun', function () {
     $akun = AdminUserMenu::where('id', session('id'))->first();
 
-    // $akun = $akun::where('id', '1')->first();
-
-    return view('UserAkun')->with('akun', $akun);
+    if($akun != null)
+    {
+        return view('UserAkun')->with('akun', $akun);
+    }
+    
+    return redirect('/Login');
 });
 
 Route::get('UserRekap', function () {
@@ -118,11 +141,15 @@ Route::get('UserRekap', function () {
 });
 
 Route::get('UserMitra', function () {
-    return view('Mitra');
+    $tks = TambahKerjasama::all();
+    $user = AdminViewUser::all();
+    return view('UserMitra')->with('tks', $tks)
+    ->with('user', $user);
 });
 
-Route::get('Login', [LoginController::class, 'index']);
-Route::post('Login/check', [LoginController::class, 'login'])->name('checking');
+Route::get('/Login', [LoginController::class, 'index']);
+Route::post('/Login/check', [LoginController::class, 'login'])->name('checking');
+Route::get('/Logout', [LoginController::class, 'logout']);
 
 
 Route::get('template', function () {

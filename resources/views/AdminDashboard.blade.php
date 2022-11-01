@@ -81,7 +81,7 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>{{$summitra}}</h3>
+                        <h3>{{$total}}</h3>
 
                         <p>Mitra</p>
                     </div>

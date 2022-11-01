@@ -28,6 +28,19 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+
+    <?php 
+        if(session()->missing('id'))
+        {
+            header('Location: /Login');
+            die;
+        }
+        elseif(session('role')!='Admin')
+        {
+            header('Location: /UserRekap');
+            die;
+        }
+    ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -69,7 +82,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/Akun" class="d-block">Admin123</a>
+                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123 @endif</a>
+                        <a href="/Logout">Logout</a>
                     </div>
                 </div>
 
@@ -96,7 +110,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+                with font-awesome or any other icon font library -->
 
                         <li class="nav-item">
                             <a href="/AdminDashboard" class="nav-link">
@@ -115,24 +129,30 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item">
+                                <ul class="nav-item">
+                                    <a href="/NamaMitra" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Nama Mitra</p>
+                                    </a>
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="/JenisMitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Jenis Mitra</p>
                                     </a>
-                                </li>
-                                <li class="nav-item">
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="/LingkupKerja" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lingkup Kerja Sama</p>
                                     </a>
-                                </li>
-                                <li class="nav-item">
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="/Mitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Profile Mitra</p>
                                     </a>
-                                </li>
+                                </ul>
                             </ul>
                         </li>
                         <li class="nav-item">

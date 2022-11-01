@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AdminViewUser;
+use Illuminate\Contracts\Session\Session as SessionSession;
+use Illuminate\Support\Facades\Session as FacadesSession;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class LoginController extends Controller
 {
@@ -14,7 +17,7 @@ class LoginController extends Controller
      */
     public function index()
     {
-        if(session()->has('role'))
+        if(session()->has('id'))
         {
             if(session('role') == 'Admin')
             {
@@ -33,12 +36,18 @@ class LoginController extends Controller
     {
         
         $password = md5($request->pw);
-        $data = AdminViewUser::where([['ssoakunuser', $request->un], ['passwordakunuser', $password]])->get();
-        $request->session()->put('id', $data[0]->id);
-        $request->session()->put('name', $data[0]->namaakunuser);
-        $request->session()->put('role', $data[0]->roleakunuser);
+        $data = AdminViewUser::where([['username', $request->un], ['password', $password]])->get();
 
-        if($data[0]->roleakunuser == 'Admin')
+        if(count($data) == 0)
+        {
+            return redirect('/Login');
+        }
+
+        $request->session()->put('id', $data[0]->id);
+        $request->session()->put('name', $data[0]->nama);
+        $request->session()->put('role', $data[0]->role);
+
+        if($data[0]->role == 'Admin')
         {
             return redirect('/AdminDashboard');
         }
@@ -48,14 +57,16 @@ class LoginController extends Controller
         }
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function Logout()
     {
-        //
+        if(session()->has('id'))
+        {
+            // session()->pull('id');
+            // session()->pull('name');
+            FacadesSession::flush();
+        }
+
+        return redirect('/Login');
     }
 
     /**

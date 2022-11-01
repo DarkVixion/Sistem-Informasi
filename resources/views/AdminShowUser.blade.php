@@ -36,20 +36,20 @@
                                     <th>Nama</th>
                                     <th>Username</th>
                                     <th>NIP</th>
-                                    <th>Aksi</th>
+                                    <th style="width: 10%;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($adminakunusershow as $itemuser)
+                                @foreach($adminshow as $user)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $itemuser->namaakunuser }}</td>
-                                    <td>{{ $itemuser->ssoakunuser }}</td>
-                                    <td>{{ $itemuser->nipakunuser }}</td>
-                                    <td><a href="{{route('view_user', $itemuser->id)}}"><button class="btn btn-info"><i
+                                    <td>{{ $user->nama }}</td>
+                                    <td>{{ $user->username }}</td>
+                                    <td>{{ $user->nip }}</td>
+                                    <td><a href="{{route('view_user', $user->id)}}"><button class="btn btn-info"><i
                                                     class="fa fa-eye"></i></button></a>
                                         {{-- YANG INI NADD DELETENYA HEHEHE --}}
-                                        <form action="{{route('hapus_user', $itemuser->id)}}" method="POST"
+                                        <form action="{{route('hapus_user', $user->id)}}" method="POST"
                                             style="display:inline ">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
