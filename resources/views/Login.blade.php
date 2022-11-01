@@ -75,12 +75,6 @@
         </div>
       </form>
 
-      <p class="mb-1">
-        <a href="forgot-password.html">Lupa Kata Sandi</a>
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Buat Akun</a>
-      </p>
     </div>
     <!-- /.card-body -->
   </div>
