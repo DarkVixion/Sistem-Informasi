@@ -78,20 +78,20 @@
                     <div class="form-group">
                         <select class="form-control" name="pic" id="pic">
                             @if ($tks->assignuserakun != null)
-                            <option value="{{ $tks->assignuserakun }}" hidden>{{ $user[($tks->assignuserakun)-1]->namaakunuser }}</option>
+                            <option value="{{ $tks->assignuserakun }}" hidden>{{ $user[($tks->assignuserakun)-1]->nama }}</option>
                             @else
                             <option value="" hidden>--- Pilih PIC ---</option>
                             @endif
 
                             @foreach($user as $u)
-                            <option value="{{ $u->id }}">{{ $u->namaakunuser }}</option>
+                            <option value="{{ $u->id }}">{{ $u->nama }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" @if($tks->assignuserakun != null)value="{{ $user[($tks->assignuserakun)-1]->notelpakunuser }}"@endif readonly>
+                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" @if($tks->assignuserakun != null)value="{{ $user[($tks->assignuserakun)-1]->notelp }}"@endif readonly>
                 </div><br><br>
             </div>
         </div>
@@ -138,7 +138,7 @@ $(document).ready(function() {
                 dataType: "json",
                 success: function(data) {
                     if (data) {
-                        document.getElementById('notelppic').value = data.notelpakunuser;
+                        document.getElementById('notelppic').value = '123445';
                     }
                 }
             });
