@@ -22,7 +22,7 @@ class AkunAdminSeeder extends Seeder
                 'email'=>'admin1@gmail.com',
                 'nip'=>'12345',
                 'notelp'=>'08531111',
-                'role'=>'Staff',
+                'role'=>'Admin',
                 'status'=>'Aktif',
                 'path_profile'=>'Admin1_1664500196_923.jpg',
                 'updated_at'=>null,
