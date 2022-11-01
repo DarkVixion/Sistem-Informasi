@@ -130,6 +130,12 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <ul class="nav-item">
+                                    <a href="/NamaMitra" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Nama Mitra</p>
+                                    </a>
+                                </ul>
+                                <ul class="nav-item">
                                     <a href="/JenisMitra" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Jenis Mitra</p>

@@ -7,7 +7,7 @@ use App\Http\Controllers\JenisMitraController;
 use App\Http\Controllers\LingkupKerjaController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AdminUserMenuController;
-use App\Http\Controllers\KerjasamaController;
+use App\Http\Controllers\NamaMitraController;
 use App\Models\AdminViewUser;
 use App\Models\TambahKerjasama;
 use App\Http\Controllers\LoginController;
@@ -69,8 +69,10 @@ Route::match(['put', 'patch'], '/Akun/{id}', [AkunController::class, 'edit'])->n
 Route::get('/Akun', [AkunController::class, 'show']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
-//Route::get('/AkunTampil', [AkunController::class, 'test']); //untuk testing
-
+Route::get('/NamaMitra', [NamaMitraController::class, 'index']);
+Route::post('/NamaMitra', [NamaMitraController::class, 'store'])->name('tambah_nama');
+Route::delete('NamaMitra/{id}', [NamaMitraController::class, 'destroy'])->name('hapus_nama');
+Route::match(['put', 'patch'], '/NamaMitra/{id}/edit', [NamaMitraController::class, 'update'])->name('edit_nama');
 
 Route::get('Kerjasama', [TambahKerjasamaController::class, 'index']);
 Route::get('Kerjasama/edit/{id}', [TambahKerjasamaController::class, 'edit'])->name('edit_kerjasama');
@@ -81,7 +83,7 @@ Route::post('Tambahkerja', [TambahKerjasamaController::class, 'store'])->name('t
 Route::get('/preview/{path}', [TambahKerjasamaController::class, 'preview'])->name('preview');
 
 Route::get('JenisMitra', [JenisMitraController::class, 'index']);
-Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_mitra');
+Route::post('JenisMitra', [JenisMitraController::class, 'store'])->name('tambah_jenis');
 Route::delete('JenisMitra/{id}', [JenisMitraController::class, 'delete'])->name('hapus_mitra');
 Route::match(['put', 'patch'], '/JenisMitra/{id}/edit', [JenisMitraController::class, 'update'])->name('edit_mitra');
 

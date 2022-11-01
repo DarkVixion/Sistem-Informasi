@@ -15,6 +15,7 @@ use App\Models\MoA;
 use App\Models\JenisMitra;
 use App\Models\LingkupKerja;
 use App\Models\AdminViewUser;
+use App\Models\NamaMitra;
 
 
 class TambahKerjasamaController extends Controller
@@ -29,6 +30,7 @@ class TambahKerjasamaController extends Controller
     public function create() // untuk view hal Tambah Kerjasama
     {
         $tambahkerjasama = TambahKerjasama::all();
+        $nm = NamaMitra::all();
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
         $user = AdminViewUser::all(); //define d sini kalo mau ambil data dari tabel lain
@@ -36,7 +38,8 @@ class TambahKerjasamaController extends Controller
         return view('TambahKerja')->with('tks', $tambahkerjasama)
             ->with('jm', $jenismitra)
             ->with('lk', $lingkup)
-            ->with('users', $user);
+            ->with('users', $user)
+            ->with('nm', $nm);
     }
 
     public function store(Request $req) // store input dari hal Tambah Kerjasama
@@ -46,10 +49,6 @@ class TambahKerjasamaController extends Controller
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
         $user->jenismitra = $req['jenismitra'];
-        //$user->alamat = $req['alamat'];
-        //$user->negara = $req['negara'];
-        //$user->notelpmitra = $req['notelpmitra'];
-        //$user->website = $req['website'];
         $user->lingkupkerja = $req['lingkupkerja'];
         $user->bulaninput = $req['bulaninput'];
         $user->narahubung = $req['narahubung'];
@@ -130,10 +129,6 @@ class TambahKerjasamaController extends Controller
         $user->namamitra = $req['namamitra'];
         $user->jenismitra = $req['jenismitra'];
         $user->lingkupkerja = $req['lingkupkerja'];
-        //$user->alamat = $req['alamat'];
-        //$user->negara = $req['negara'];
-        //$user->notelpmitra = $req['notelpmitra'];
-        //$user->website = $req['website'];
         $user->bulaninput = $req['bulaninput'];
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
