@@ -56,7 +56,8 @@
                     <div class="icon">
                         <i class="ion ion-bag"></i>
                     </div>
-                    <a href="/Kerjasama" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/Kerjasama" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -71,7 +72,8 @@
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
                     </div>
-                    <a href="/Kerjasama" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    <a href="/Kerjasama" class="small-box-footer">More info <i
+                            class="fas fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -117,7 +119,8 @@
                 <div class="col-md-4">
                     <!-- PIE CHART -->
                     <div class="card-body">
-                        <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <canvas id="pieChart"
+                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
                     <!-- /.card -->
@@ -127,7 +130,8 @@
                     <!-- LINE CHART -->
                     <div class="card-body">
                         <div class="chart">
-                            <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            <canvas id="lineChart"
+                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                         </div>
                     </div>
                     <!-- /.card-body -->
@@ -146,7 +150,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card-body">
-                        <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <canvas id="donutChart"
+                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
                     <!-- /.card -->
@@ -155,7 +160,8 @@
                 <div class="col-md-8">
 
                     <div class="chart">
-                        <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <canvas id="areaChart"
+                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
                     <!-- /.card -->
@@ -173,7 +179,8 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card-body">
-                        <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <canvas id="donutChart"
+                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
                     <!-- /.card -->
@@ -228,7 +235,8 @@
                 <div class="col-md-4">
                     <!-- PIE CHART -->
                     <div class="card-body">
-                        <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                        <canvas id="pieChart"
+                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
                     <!-- /.card -->
@@ -237,7 +245,8 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <div class="input-group input-group-sm" style="width: 150px; float: right;">
-                            <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+                            <input type="text" name="table_search" class="form-control float-right"
+                                placeholder="Search">
 
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-default">
@@ -315,31 +324,6 @@
         <!-- /.row -->
         <!-- /.container-fluid -->
     </div>
-    <!-- 
-    <script>
-    function showKomik($list_komik, $loop) {
-        $i = 1;
 
-        foreach($list_komik as $komik) {
-            // var_dump($komik);
-            if (isset($_GET["Genre"]) || isset($_GET["Type"])) {
-                if ($komik["kategori"] == $_GET["Type"] || in_array($_GET["Genre"], $komik["list_genre"])) {
-                    komikCard($komik);
-                } else if ($_GET["Genre"] == "default" && $_GET["Type"] == "default") {
-                    komikCard($komik);
-                } else {
-                    continue;
-                }
-            } else {
-                komikCard($komik);
-            }
-            $i++;
-            // var_dump($komik['komik_id']);
-            if ($i > $loop && $loop != -1) {
-                break;
-            }
-        }
-    </script>
-/.content -->
 
     @endsection
