@@ -99,7 +99,7 @@
                                         <td>{{ $item->namamitra }}</td>
                                         <td>{{ $item->jenismitra }}</td>
                                         <td></td>
-                                        <td>{{ $item->lingkupkerja }}</td>
+                                        <td>@if($moa){{ $moa->lingkupkerja }}@endif</td>
 
                                         @if($moa != null)
                                         <td>
