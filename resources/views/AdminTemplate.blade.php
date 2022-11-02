@@ -1,3 +1,16 @@
+<?php 
+        if(session()->missing('id'))
+        {
+            header('Location: /Login');
+            die;
+        }
+        elseif(session('role')!='Admin')
+        {
+            header('Location: /UserRekap');
+            die;
+        }
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,18 +42,6 @@
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 
-    <?php 
-        if(session()->missing('id'))
-        {
-            header('Location: /Login');
-            die;
-        }
-        elseif(session('role')!='Admin')
-        {
-            header('Location: /UserRekap');
-            die;
-        }
-    ?>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

@@ -1,3 +1,16 @@
+<?php 
+    if(session()->missing('id'))
+    {
+        header('Location: /Login');
+        die;
+    }
+    elseif(session('role')!='Admin')
+    {
+        header('Location: /UserRekap');
+        die;
+    }
+?>    
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -77,7 +90,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/Akun" class="d-block">Admin123</a>
+                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123 @endif</a>
+                        <a href="/Logout">Logout</a>
                     </div>
                 </div>
 
