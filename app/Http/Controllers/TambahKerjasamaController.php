@@ -49,7 +49,6 @@ class TambahKerjasamaController extends Controller
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
         $user->jenismitra = $req['jenismitra'];
-        $user->lingkupkerja = $req['lingkupkerja'];
         $user->bulaninput = $req['bulaninput'];
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
@@ -128,7 +127,6 @@ class TambahKerjasamaController extends Controller
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
         $user->jenismitra = $req['jenismitra'];
-        $user->lingkupkerja = $req['lingkupkerja'];
         $user->bulaninput = $req['bulaninput'];
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
