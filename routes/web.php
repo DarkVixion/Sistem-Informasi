@@ -31,39 +31,7 @@ Route::get('/', function(){
 });
 
 // <-- BAGIAN ADMIN -->
-Route::get('/AdminDashboard', function () {
-    $sum = MoA::all()->sum('nilaikontrak');
-    $countmoa = MoA::all()->count('id');
-    $countmou = MoU::all()->count('id');
-    $data = TambahKerjasama::all();
-    $temp = [];
-    
-    foreach($data as $d)
-    {
-        $bool = false;
-        if($temp)
-        {
-            foreach($temp as $t)
-            {
-                if($t == $d->namamitra)
-                {
-                    $bool = true;
-                    break;
-                }
-            }
-        }
-
-        if($bool == false)
-        {
-            $temp[] = $d->namamitra;
-        }
-    }
-
-    return view('AdminDashboard')->with('sum', $sum)
-        ->with('countmoa', $countmoa)
-        ->with('countmou', $countmou)
-        ->with('total', count($temp));
-});
+Route::get('/AdminDashboard', [LoginController::class, 'admin']);
 
 Route::match(['put', 'patch'], '/Akun/{id}', [AkunController::class, 'edit'])->name('editdataakun');
 Route::get('/Akun', [AkunController::class, 'show']);

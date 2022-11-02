@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AdminViewUser;
 use App\Models\MoA;
+use App\Models\MoU;
+use App\Models\TambahKerjasama;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Session as FacadesSession;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -68,8 +70,38 @@ class LoginController extends Controller
         return redirect('/Login');
     }
 
-    public function test()
+    public function admin()
     {
-        return MoA::all();
+        $sum = MoA::all()->sum('nilaikontrak');
+        $countmoa = MoA::all()->count('id');
+        $countmou = MoU::all()->count('id');
+        $data = TambahKerjasama::all();
+        $temp = [];
+        
+        foreach($data as $d)
+        {
+            $bool = false;
+            if($temp)
+            {
+                foreach($temp as $t)
+                {
+                    if($t == $d->namamitra)
+                    {
+                        $bool = true;
+                        break;
+                    }
+                }
+            }
+
+            if($bool == false)
+            {
+                $temp[] = $d->namamitra;
+            }
+        }
+
+        return view('AdminDashboard')->with('sum', $sum)
+            ->with('countmoa', $countmoa)
+            ->with('countmou', $countmou)
+            ->with('total', count($temp));
+        }
     }
-}
