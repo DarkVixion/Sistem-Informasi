@@ -1,5 +1,6 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
+
 <!-- PreLoader -->
 <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="dist/img/logo UP.jpeg" alt="AdminLTELogo" height="350" width="400">
@@ -112,7 +113,7 @@
         <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Status Kerja Sama</h3>
+                    <h3 class="card-title text-bold text-lg">Status Kerja Sama</h3>
                 </div>
             </div>
             <div class="row">
@@ -144,7 +145,7 @@
         <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Mitra</h3>
+                    <h3 class="card-title text-bold text-lg">Mitra</h3>
                 </div>
             </div>
             <div class="row">
@@ -173,11 +174,11 @@
         <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Jenis Kerja Sama</h3>
+                    <h3 class="card-title text-bold text-lg">Jenis Kerja Sama</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="card-body">
                         <canvas id="donutChart"
                             style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
@@ -186,35 +187,23 @@
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->
-                <div class="col-md-8">
-
+                <div class="col-md-9">
                     <div class="card-body">
                         <div class="d-flex">
                             <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">50</span>
-                                <span>Jenis Kerja Sama </span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i> 59.5%
-                                </span>
-                                <span class="text-muted">Sejak Bulan Lalu</span>
+                                <h5><span>Total</span></h5>
                             </p>
                         </div>
-                        <!-- /.d-flex -->
-
                         <!-- callback Js for Chart dashboard3.js -->
                         <div class="position-relative mb-4">
-                            <canvas id="sales-chart" height="200"></canvas>
+                            <canvas id="sales-chart" height="300"></canvas>
                         </div>
-
                         <div class="d-flex flex-row justify-content-end">
                             <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> Tahun Ini
+                                <i class="fas fa-square text-primary"></i> MoA
                             </span>
-
                             <span>
-                                <i class="fas fa-square text-gray"></i> Tahun Kemarin
+                                <i class="fas fa-square text-gray"></i> MoU
                             </span>
                         </div>
                     </div>
@@ -324,6 +313,5 @@
         <!-- /.row -->
         <!-- /.container-fluid -->
     </div>
-
 
     @endsection
