@@ -248,9 +248,10 @@ class TambahKerjasamaController extends Controller
         foreach ($array[0] as $value) {
             if ($i > 0) {
                 $kerjasama = new TambahKerjasama;
-                $kerjasama->namamitra = $value[0];
-                $kerjasama->jenismitra = $value[1];
-                $kerjasama->lingkupkerja = $value[2];
+                $kerjasama->status = $value[0];
+                $kerjasama->namamitra = $value[1];
+                $kerjasama->jenismitra = $value[2];
+                //$kerjasama->lingkupkerja = $value[2];
                 $kerjasama->alamat = $value[3];
                 $kerjasama->negara = $value[4];
                 $kerjasama->notelpmitra = $value[5];
@@ -259,10 +260,10 @@ class TambahKerjasamaController extends Controller
                 $kerjasama->narahubung = $value[8];
                 $kerjasama->notelpnara = $value[9];
                 $kerjasama->emailnara = $value[10];
-                $kerjasama->assignuserakun = $value[11];
-                $kerjasama->notelppic = $value[12];
-                $kerjasama->emailpic = $value[13];
-                $kerjasama->status = $value[14];
+                //$kerjasama->assignuserakun = $value[11];
+                //$kerjasama->notelppic = $value[12];
+                //$kerjasama->emailpic = $value[13];
+                //$kerjasama->status = $value[14];
 
                 $kerjasama->save();
             }
