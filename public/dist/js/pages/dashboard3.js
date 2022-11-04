@@ -1,6 +1,7 @@
 /* global Chart:false */
 
 $(function () {
+
   'use strict'
 
   var ticksStyle = {
@@ -57,12 +58,12 @@ $(function () {
 
             // Include a dollar sign in the ticks
             callback: function (value) {
-              if (value >= 1000) {
-                value /= 1000
-                value += 'k'
+              if (value >= 100) {
+                value /= 100
+                value += ''
               }
 
-              return '$' + value
+              return value
             }
           }, ticksStyle)
         }],

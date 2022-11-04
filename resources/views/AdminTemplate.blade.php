@@ -1,14 +1,14 @@
 <?php 
-        if(session()->missing('id'))
-        {
-            header('Location: /Login');
-            die;
-        }
-        elseif(session('role')!='Admin')
-        {
-            header('Location: /UserRekap');
-            die;
-        }
+        // if(session()->missing('id'))
+        // {
+        //     header('Location: /Login');
+        //     die;
+        // }
+        // elseif(session('role')!='Admin')
+        // {
+        //     header('Location: /UserRekap');
+        //     die;
+        // }
     ?>
 
 <!DOCTYPE html>
