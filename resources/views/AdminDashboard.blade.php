@@ -117,21 +117,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <!-- PIE CHART -->
                     <div class="card-body">
-                        <canvas id="pieChart"
+                        <canvas id="barChart"
                             style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->
-                <div class="col-md-8">
+                <div class="col-md-4">
                     <!-- LINE CHART -->
                     <div class="card-body">
                         <div class="chart">
-                            <canvas id="lineChart"
+                            <canvas id="pieChart"
                                 style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                         </div>
                     </div>
@@ -178,16 +178,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card-body">
-                        <canvas id="donutChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card -->
+                <div class="col-md-4">
                 </div>
                 <!-- /.col -->
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <div class="card-body">
                         <div class="d-flex">
                             <p class="d-flex flex-column">
@@ -217,7 +211,7 @@
         <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Nilai Kerja Sama</h3>
+                    <h3 class="card-title text-bold text-lg">Nilai Kerja Sama</h3>
                 </div>
             </div>
             <div class="row">

@@ -1,15 +1,15 @@
 <?php 
-        // if(session()->missing('id'))
-        // {
-        //     header('Location: /Login');
-        //     die;
-        // }
-        // elseif(session('role')!='Admin')
-        // {
-        //     header('Location: /UserRekap');
-        //     die;
-        // }
-    ?>
+    if(session()->missing('id'))
+    {
+        header('Location: /Login');
+        die;
+    }
+    elseif(session('role')!='Admin')
+    {
+        header('Location: /UserRekap');
+        die;
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -276,7 +276,7 @@
         var areaChartData = {
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
             datasets: [{
-                label: 'Digital Goods',
+                label: 'MoU',
                 backgroundColor: 'rgba(60,141,188,0.9)',
                 borderColor: 'rgba(60,141,188,0.8)',
                 pointRadius: false,
@@ -286,7 +286,7 @@
                 pointHighlightStroke: 'rgba(60,141,188,1)',
                 data: [28, 48, 40, 19, 86, 27, 90]
             }, {
-                label: 'Electronics',
+                label: 'MoA',
                 backgroundColor: 'rgba(210, 214, 222, 1)',
                 borderColor: 'rgba(210, 214, 222, 1)',
                 pointRadius: false,
@@ -405,7 +405,14 @@
         var barChartOptions = {
             responsive: true,
             maintainAspectRatio: false,
-            datasetFill: false
+            datasetFill: false,
+            scales: {
+                xAxes: [{
+                    gridLines: {
+                        display: false,
+                    }
+                }]
+            }
         }
 
         new Chart(barChartCanvas, {
