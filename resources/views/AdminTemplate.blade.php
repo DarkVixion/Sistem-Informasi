@@ -1,14 +1,21 @@
 <?php 
-    if(session()->missing('id'))
-    {
-        header('Location: /Login');
-        die;
-    }
-    elseif(session('role')!='Admin')
-    {
-        header('Location: /UserRekap');
-        die;
-    }
+    // if(session()->missing('id'))
+    // {
+    //     header('Location: /Login');
+    //     die;
+    // }
+    // elseif(session('role')!='Admin')
+    // {
+    //     header('Location: /UserRekap');
+    //     die;
+    // }
+
+    $aktif = \App\Models\TambahKerjasama::where('status', 'aktif')->count();
+    $taktif = \App\Models\TambahKerjasama::where('status', 'tidak aktif')->count();
+    $exp = \App\Models\TambahKerjasama::where('status', 'kedaluwarsa')->count();
+    $pen = \App\Models\TambahKerjasama::where('status', 'dalam penjajakan')->count();
+    $panjang = \App\Models\TambahKerjasama::where('status', 'perpanjangan')->count();
+    // dd($exp);
 ?>
 
 <!DOCTYPE html>
@@ -348,18 +355,15 @@
         var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
         var donutData = {
             labels: [
-                'Chrome',
-                'IE',
-                'FireFox',
-                'Safari',
-                'Opera',
-                'Navigator',
+                'Aktif',
+                'Tidak Aktif',
+                'Kedaluwarsa',
+                'Dalam Penjajakan',
+                'Perpanjangan'
             ],
             datasets: [{
-                data: [700, 500, 400, 600, 300, 100],
-                backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc',
-                    '#d2d6de'
-                ],
+                data: [{{$aktif}},{{$taktif}},{{$exp}},{{$pen}},{{$panjang}}],
+                backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
             }]
         }
         var donutOptions = {

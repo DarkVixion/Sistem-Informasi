@@ -229,7 +229,7 @@
                                         <select class="form-control" name="status">
                                             <option>Tidak Aktif</option>
                                             <option>Aktif</option>
-                                            <option>Kadarluwasa</option>
+                                            <option>Kedaluwarsa</option>
                                             <option>Dalam Penjajakan</option>
                                             <option>Perpanjangan</option>
                                         </select>
