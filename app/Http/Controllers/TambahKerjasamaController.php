@@ -60,42 +60,46 @@ class TambahKerjasamaController extends Controller
         $user->save();
 
         if (isset($req['path_mou'])) {
-            $mou = new MoU;
-            $mou->judul = $req['judul_mou'];
-            $mou->tglmulai = $req['tglmulai_mou'];
-            $mou->tglselesai = $req['tglselesai_mou'];
-
+            $i = 0;
             foreach ($req['path_mou'] as $file) {
-                $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+                $mou = new MoU;
+                $mou->judul = $req['judul_mou'][$i];
+                $mou->tglmulai = $req['tglmulai_mou'][$i];
+                $mou->tglselesai = $req['tglselesai_mou'][$i];
+
+                $namafilemou = $req['judul_mou'][$i] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_mou = $namafilemou;
 
                 $file->move(public_path('files'), $namafilemou);
+
+                $mou->path = $path_mou;
+
+                $user->mous()->save($mou);
+                $i += 1;
             }
-
-            $mou->path = $path_mou;
-
-            $user->mous()->save($mou);
         }
 
         //jika ada path, jalankan code. jika tidak ada, skip code.
         if (isset($req['path_moa'])) {
-            $moa = new MoA;
-            $moa->judul = $req['judul_moa'];
-            $moa->tglmulai = $req['tglmulai_moa'];
-            $moa->tglselesai = $req['tglselesai_moa'];
-            $moa->nilaikontrak = $req['nilaikontrak'];
-            $moa->lingkupkerja = $req['lingkupkerja'];
-
+            $i = 0;
             foreach ($req['path_moa'] as $file) {
-                $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+                $moa = new MoA;
+                $moa->judul = $req['judul_moa'][$i];
+                $moa->tglmulai = $req['tglmulai_moa'][$i];
+                $moa->tglselesai = $req['tglselesai_moa'][$i];
+                $moa->nilaikontrak = $req['nilaikontrak'][$i];
+                $moa->lingkupkerja = $req['lingkupkerja'][$i];
+
+                $namafilemoa = $req['judul_moa'][$i] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_moa = $namafilemoa;
 
                 $file->move(public_path('files'), $namafilemoa);
+
+                $moa->path = $path_moa;
+
+                $user->moas()->save($moa);
+                $i += 1;
             }
-
-            $moa->path = $path_moa;
-
-            $user->moas()->save($moa);
         }
 
         return redirect('/Kerjasama');
@@ -109,8 +113,6 @@ class TambahKerjasamaController extends Controller
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
         $user = AdminViewUser::all();
-
-        // var_dump($tambahkerjasama->path_moa);die;
 
         return view('EditKerja')->with('tks', $tambahkerjasama)
             ->with('jm', $jenismitra)

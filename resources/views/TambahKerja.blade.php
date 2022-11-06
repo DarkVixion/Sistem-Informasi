@@ -297,7 +297,7 @@
                                                 <div class="col-sm-12">
                                                     <input type="text"
                                                         class="form-control @error('judul_mou') is-invalid @enderror"
-                                                        name="judul_mou" placeholder="Masukan Judul Kerja Sama">
+                                                        name="judul_mou[]" placeholder="Masukan Judul Kerja Sama" multiple>
                                                 </div>
                                             </div>
                                             <br><br>
@@ -307,7 +307,7 @@
                                                 <div class="col-sm-12">
                                                     <input type="date"
                                                         class="form-control @error('tglmulai_mou') is-invalid @enderror"
-                                                        name="tglmulai_mou">
+                                                        name="tglmulai_mou[]" multiple>
                                                 </div>
                                             </div>
                                             <br><br>
@@ -332,7 +332,7 @@
                                                 <div class=" col-sm-12">
                                                     <input id="check1" type="date"
                                                         class="form-control @error('tglselesai_mou') is-invalid @enderror"
-                                                        name="tglselesai_mou" style="display:none;">
+                                                        name="tglselesai_mou[]" style="display:none;" multiple>
                                                 </div>
                                             </div>
                                         </div>
@@ -375,7 +375,7 @@
                                                 <div class="col-sm-12">
                                                     <input type="text"
                                                         class="form-control @error('judul_moa') is-invalid @enderror"
-                                                        name="judul_moa" placeholder="Masukan Judul Kerja Sama">
+                                                        name="judul_moa[]" placeholder="Masukan Judul Kerja Sama">
                                                 </div>
                                             </div>
                                             <br><br>
@@ -385,7 +385,7 @@
                                                 <div class="col-sm-12">
                                                     <input type="number"
                                                         class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                                        name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)"
+                                                        name="nilaikontrak[]" placeholder="Masukan Nilai Kontrak (Rp)"
                                                         pattern="/^-?\d+\.?\d*$/"
                                                         onKeyPress="if(this.value.length==15) return false;">
                                                 </div>
@@ -412,7 +412,7 @@
                                                 <div class="col-sm-12">
                                                     <input type="date"
                                                         class="form-control @error('tglmulai_moa') is-invalid @enderror"
-                                                        name="tglmulai_moa">
+                                                        name="tglmulai_moa[]">
                                                 </div>
                                             </div>
                                             <br><br>
@@ -438,7 +438,7 @@
                                                 <div class=" col-sm-12">
                                                     <input id="check2" type="date"
                                                         class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                                        name="tglselesai_moa" style="display:none;">
+                                                        name="tglselesai_moa[]" style="display:none;">
                                                 </div>
                                             </div>
                                         </div>
@@ -561,7 +561,7 @@
     $(document).ready(function() {
         $(".add-more").click(function() {
             $(".more-item").append(
-                "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card\"> <div class=\"card-header\"> <div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"> <i class=\"fas fa-minus\"></i> </button> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"> <i class=\"fas fa-times\"></i> </button> </div> </div> <!-- form start --> <div class=\"card-body\"> <div class=\"row\"> <div class=\"col-md-6\"></div> </div> <h3 style=\"text-align: center;\">Memorandum of Understanding (MoU)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_mou\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_mou') is-invalid @enderror\" name=\"judul_mou\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_mou\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_mou') is-invalid @enderror\" name=\"tglmulai_mou\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_mou\" class=\"col-sm-4 col-form-label \">Dokumen MoU</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control \" name=\"path_mou[]\" accept=\"pdf/*\" multiple> </div><br> </div> <div class=\"col-md-6\"> <label for=\"tglselesai_mou\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck1(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div> <br> <div class=\" col-sm-12\"> <input id=\"check1\" type=\"date\" class=\"form-control @error('tglselesai_mou') is-invalid @enderror\" name=\"tglselesai_mou\" style=\"display:none;\"> </div> </div> </div> </div>  </div> </div> </div>"
+                "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card\"> <div class=\"card-header\"> <div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"> <i class=\"fas fa-minus\"></i> </button> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"> <i class=\"fas fa-times\"></i> </button> </div> </div> <!-- form start --> <div class=\"card-body\"> <div class=\"row\"> <div class=\"col-md-6\"></div> </div> <h3 style=\"text-align: center;\">Memorandum of Understanding (MoU)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_mou\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_mou') is-invalid @enderror\" name=\"judul_mou[]\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_mou\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_mou') is-invalid @enderror\" name=\"tglmulai_mou[]\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_mou\" class=\"col-sm-4 col-form-label \">Dokumen MoU</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control \" name=\"path_mou[]\" accept=\"pdf/*\" multiple> </div><br> </div> <div class=\"col-md-6\"> <label for=\"tglselesai_mou\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck1(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div> <br> <div class=\" col-sm-12\"> <input id=\"check1\" type=\"date\" class=\"form-control @error('tglselesai_mou') is-invalid @enderror\" name=\"tglselesai_mou[]\" style=\"display:none;\"> </div> </div> </div> </div>  </div> </div> </div>"
             );
         });
         $(".add-more1").click(function() {
