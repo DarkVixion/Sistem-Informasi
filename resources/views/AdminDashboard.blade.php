@@ -117,21 +117,21 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-4">
                     <!-- PIE CHART -->
                     <div class="card-body">
-                        <canvas id="barChart"
+                        <canvas id="pieChart"
                             style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
                     <!-- /.card-body -->
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <!-- LINE CHART -->
                     <div class="card-body">
                         <div class="chart">
-                            <canvas id="pieChart"
+                            <canvas id="lineChart"
                                 style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                         </div>
                     </div>
@@ -159,7 +159,6 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-md-8">
-
                     <div class="chart">
                         <canvas id="areaChart"
                             style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
