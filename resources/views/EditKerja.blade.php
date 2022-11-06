@@ -277,6 +277,8 @@
                         <!-- /.card-body -->
                     </div><br>
                 </div>
+
+                @foreach ($mou as $mou)
                 <div class="more-item">
                     <div class="row">
                         <div class="col-md-12 align-items-stretch">
@@ -301,7 +303,7 @@
                                             <div class="col-sm-12">
                                                 <input type="text"
                                                     class="form-control @error('judul_mou') is-invalid @enderror"
-                                                    name="judul_mou" placeholder="Masukan Judul Kerja Sama" value=@if ($mou !=null) "{{ $mou->Judul }}" @endif>
+                                                    name="judul_mou[]" placeholder="Masukan Judul Kerja Sama" value=@if ($mou !=null) "{{ $mou->Judul }}" @endif>
                                             </div>
                                         </div>
                                         <br><br>
@@ -310,7 +312,7 @@
                                                 Mulai</label>
                                             <div class="col-sm-12">
                                                 <input type="date"
-                                                    class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou"
+                                                    class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou[]"
                                                     value=@if ($mou !=null) @if ($mou->tglmulai != null)
                                                     '{{ $mou->tglmulai->format('Y-m-d') }}'
                                                     @endif @endif>
@@ -340,7 +342,7 @@
                                             <br>
                                             <div class=" col-sm-12">
                                                 <input id="check1" type="date"
-                                                    class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou" 
+                                                    class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou[]" 
                                                     @if($mou==null || $mou->tglselesai == null)
                                                     style="display:none;"
                                                     @endif
@@ -355,6 +357,9 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
+
+                @foreach ($moa as $moa)
                 <div class="more-item1">
                     <div class="row">
                         <div class="col-md-12 align-items-stretch">
@@ -379,7 +384,7 @@
                                             <div class="col-sm-12">
                                                 <input type="text"
                                                     class="form-control @error('judul_moa') is-invalid @enderror"
-                                                    name="judul_moa" placeholder="Masukan Judul Kerja Sama"\
+                                                    name="judul_moa[]" placeholder="Masukan Judul Kerja Sama"\
                                                     value=@if($moa!=null) "{{ $moa->judul }}" @endif>
                                             </div>
                                         </div>
@@ -390,7 +395,7 @@
                                             <div class="col-sm-12">
                                                 <input type="number"
                                                     class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                                    name="nilaikontrak" placeholder="Masukan Nilai Kontrak (Rp)"
+                                                    name="nilaikontrak[]" placeholder="Masukan Nilai Kontrak (Rp)"
                                                     pattern="/^-?\d+\.?\d*$/"
                                                     onKeyPress="if(this.value.length==15) return false;"
                                                     value=@if($moa!=null) "{{ $moa->nilaikontrak }}" @endif>
@@ -400,13 +405,12 @@
                                         <div class="col-md-6">
                                             <label for="select " class="col-sm-4 col-form-label ">Lingkup Kerja Sama</label>
                                             <div class="col-sm-12">
-                                                <select class="form-control" name="lingkupkerja">
-                                                    @if($moa->lingkupkerja != null)
+                                                <select class="form-control" name="lingkupkerja[]">
+                                                    @if($moa!=null && $moa->lingkupkerja != null)
                                                     <option hidden>{{ $moa->lingkupkerja }}</option>
                                                     @else
                                                     <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
                                                     @endif
-
                                                     @foreach ($lk as $item)
                                                     <option>{{ $item->judullingkupkerja }}</option>
                                                     @endforeach
@@ -419,7 +423,7 @@
                                                 Mulai</label>
                                             <div class="col-sm-12">
                                                 <input type="date"
-                                                    class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa"
+                                                    class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa[]"
                                                     value=@if($moa!=null) @if( $moa->tglmulai != null)
                                                     '{{ $moa->tglmulai->format('Y-m-d') }}'
                                                     @endif @endif>
@@ -451,7 +455,7 @@
                                             <div class=" col-sm-12">
                                                 <input id="check2" type="date"
                                                     class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                                    name="tglselesai_moa" 
+                                                    name="tglselesai_moa[]" 
                                                     @if($moa==null || $moa->tglselesai == null)
                                                     style="display:none;"
                                                     @endif
@@ -466,6 +470,8 @@
                         </div>
                     </div>
                 </div>
+                @endforeach
+
                 <div class="row">
                     <div class="col-md-6 d-flex align-items-stretch">
                         <div class="card card-info">
