@@ -401,8 +401,8 @@
                                             <label for="select " class="col-sm-4 col-form-label ">Lingkup Kerja Sama</label>
                                             <div class="col-sm-12">
                                                 <select class="form-control" name="lingkupkerja">
-                                                    @if($tks->lingkupkerja != null)
-                                                    <option hidden>{{ $tks->lingkupkerja }}</option>
+                                                    @if($moa->lingkupkerja != null)
+                                                    <option hidden>{{ $moa->lingkupkerja }}</option>
                                                     @else
                                                     <option value="" hidden>--- Pilih Lingkup Kerja ---</option>
                                                     @endif
