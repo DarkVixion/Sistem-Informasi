@@ -45,7 +45,6 @@ class TambahKerjasamaController extends Controller
     public function store(Request $req) // store input dari hal Tambah Kerjasama
     {
         $u = AdminViewUser::where('id', $req['pic'])->first('nama');
-
         $user = new TambahKerjasama;
 
         $user->status = $req['status'];
@@ -127,6 +126,7 @@ class TambahKerjasamaController extends Controller
     public function update(Request $req, $id)
     {
         $user = TambahKerjasama::find($id);
+        $u = AdminViewUser::where('id', $req['pic'])->first();
 
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
@@ -135,9 +135,17 @@ class TambahKerjasamaController extends Controller
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
         $user->emailnara = $req['emailnara'];
-        $user->assignuserakun = $req['pic'];
         $user->notelppic = $req['notelppic'];
         $user->emailpic = $req['emailpic'];
+
+        if($req['pic'] == $u->nama)
+        {
+            $user->assignuserakun = $req['pic'];
+        }
+        else
+        {
+            $user->assignuserakun = $u->nama;
+        }
 
         $user->save();
 
