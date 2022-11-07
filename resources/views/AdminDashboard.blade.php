@@ -128,7 +128,7 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    <div id="container"></div>
+                    <div id="container1"></div>
                 </div>
             </div>
             <!-- /.row -->
@@ -194,9 +194,8 @@
                             <thead>
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Task</th>
-                                    <th>Progress</th>
-                                    <th style="width: 40px">Label</th>
+                                    <th>Nama Mitra</th>
+                                    <th style="width: 50%">Total</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -205,10 +204,9 @@
                                     <td>Update software</td>
                                     <td>
                                         <div class="progress progress-xs">
-                                            <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                                            <div class="progress-bar bg-danger" style="width: 55%"></div>
                                         </div>
                                     </td>
-                                    <td><span class="badge bg-danger">55%</span></td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>
@@ -218,7 +216,6 @@
                                             <div class="progress-bar bg-warning" style="width: 70%"></div>
                                         </div>
                                     </td>
-                                    <td><span class="badge bg-warning">70%</span></td>
                                 </tr>
                                 <tr>
                                     <td>3.</td>
@@ -228,7 +225,6 @@
                                             <div class="progress-bar bg-primary" style="width: 30%"></div>
                                         </div>
                                     </td>
-                                    <td><span class="badge bg-primary">30%</span></td>
                                 </tr>
                                 <tr>
                                     <td>4.</td>
@@ -238,7 +234,6 @@
                                             <div class="progress-bar bg-success" style="width: 90%"></div>
                                         </div>
                                     </td>
-                                    <td><span class="badge bg-success">90%</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -295,39 +290,71 @@
             colorByPoint: true,
             data: [{
                 name: 'Aktif',
-                y: {
-                    {
-                        $aktif
-                    }
-                }
-            }, {
+                y: {{$aktif}}
+            }, 
+            {
                 name: 'Tidak Aktif',
-                y: {
-                    {
-                        $taktif
-                    }
-                }
-            }, {
+                y: {{$taktif}}
+            }, 
+            {
                 name: 'Kedaluwarsa',
-                y: {
-                    {
-                        $exp
-                    }
-                }
-            }, {
+                y: {{$exp}}
+            }, 
+            {
                 name: 'Perpanjangan',
-                y: {
-                    {
-                        $pan
-                    }
-                }
-            }, {
+                y: {{$pan}}
+            }, 
+            {
                 name: 'Dalam Penjajakan',
-                y: {
-                    {
-                        $pen
-                    }
-                }
+                y: {{$pen}}
+            }]
+        }]
+    });
+
+    Highcharts.chart('container1', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{point.name}: <b>{point.y:f}</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false,
+                },
+                showInLegend: true
+            }
+        },
+        series: [{
+            colorByPoint: true,
+            data: [{
+                name: 'Aktif',
+                y: 1
+            }, 
+            {
+                name: 'Tidak Aktif',
+                y: 2
+            }, 
+            {
+                name: 'Kedaluwarsa',
+                y: 3
+            }, 
+            {
+                name: 'Perpanjangan',
+                y: 4
+            }, 
+            {
+                name: 'Dalam Penjajakan',
+                y: 5
             }]
         }]
     });

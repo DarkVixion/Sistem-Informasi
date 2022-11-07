@@ -78,8 +78,6 @@ class MitraController extends Controller
 
     public function store(Request $req)
     {
-        //dd($tks);
-
         $tks = new TambahKerjasama;
 
         $tks->status = $req['status'];

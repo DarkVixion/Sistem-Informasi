@@ -17,7 +17,7 @@ use App\Models\JenisMitra;
 use App\Models\LingkupKerja;
 use App\Models\AdminViewUser;
 use App\Models\NamaMitra;
-
+use PhpOffice\PhpSpreadsheet\Cell\DataType;
 
 class TambahKerjasamaController extends Controller
 {
@@ -131,7 +131,6 @@ class TambahKerjasamaController extends Controller
     public function update(Request $req, $id)
     {
         $user = TambahKerjasama::find($id);
-        $u = AdminViewUser::where('id', $req['pic'])->first();
 
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
@@ -143,13 +142,14 @@ class TambahKerjasamaController extends Controller
         $user->notelppic = $req['notelppic'];
         $user->emailpic = $req['emailpic'];
 
-        if($req['pic'] == $u->nama)
+        if(is_numeric($req['pic']))
         {
-            $user->assignuserakun = $req['pic'];
+            $u = AdminViewUser::where('id', $req['pic'])->first();
+            $user->assignuserakun = $u->nama;
         }
         else
         {
-            $user->assignuserakun = $u->nama;
+            $user->assignuserakun = $req['pic'];
         }
 
         $user->save();

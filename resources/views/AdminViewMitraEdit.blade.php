@@ -78,7 +78,7 @@
                     <div class="form-group">
                         <select class="form-control" name="pic" id="pic">
                             @if ($tks->assignuserakun != null)
-                            <option value="{{ $tks->assignuserakun }}" hidden>{{ $user[($tks->assignuserakun)-1]->nama }}</option>
+                            <option hidden selected>{{ $tks->assignuserakun }}</option>
                             @else
                             <option value="" hidden>--- Pilih PIC ---</option>
                             @endif
@@ -91,7 +91,7 @@
                 </div><br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
                 <div class="col-sm-10 ">
-                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" @if($tks->assignuserakun != null)value="{{ $user[($tks->assignuserakun)-1]->notelp }}"@endif readonly>
+                    <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" @if($tks->notelppic != null) value="{{ $tks->notelppic }}"@endif readonly>
                 </div><br><br>
             </div>
         </div>

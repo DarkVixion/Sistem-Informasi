@@ -67,7 +67,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="md-card-content">
-                            <table id="example1" class="table table-bordered table-striped" >
+                            <table id="example1" class="table table-bordered" >
                                 <thead>
                                     <tr>
                                         <!-- <th>No.<th> -->
