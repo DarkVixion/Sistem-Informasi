@@ -7,6 +7,9 @@ use App\Models\LingkupKerja;
 use App\Models\JenisMitra;
 use App\Models\TambahKerjasama;
 use App\Models\AdminViewUser;
+use App\Imports\ExcelImports;
+use App\Models\NamaMItra;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MitraController extends Controller
 {
@@ -112,5 +115,33 @@ class MitraController extends Controller
         $tks->save();
 
         return redirect('Mitra');
+    }
+
+    public function importMitra()
+    {
+        return view('NamaMitra');
+    }
+
+    public function uploadMitra(Request $request)
+    {
+        $array = Excel::toArray(new ExcelImports, $request->file('path_excel'), 's3', \Maatwebsite\Excel\Excel::XLSX);
+
+        $i = 0;
+
+        foreach ($array[0] as $value) {
+            if ($i > 0) {
+                $mitra = new NamaMitra;
+                $mitra->nama = $value[0];
+                $mitra->jenismitra = $value[1];
+                $mitra->alamat = $value[2];
+                $mitra->negara = $value[3];
+                $mitra->notelpmitra	 = $value[4];
+                $mitra->website = $value[5];
+
+                $mitra->save();
+            }
+
+            $i++;
+        }
     }
 }

@@ -27,8 +27,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
-                            style="float:right; background-color:lightblue; border-radius:15px;">
+                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-excel" style="border-radius:15px;">
+                        <i class="fas fa-plus"></i> Import  Excel</button>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
                             Tambah Nama Mitra
                         </button>
                     </div>
@@ -235,6 +236,40 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+
+    <div class="modal fade" id="modal-excel">
+        <div class="modal-dialog modal-excel">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Tambah Data Dengan Excel</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{route('uploadMitra')}}" method="post" enctype="multipart/form-data">
+                    {!! csrf_field() !!}
+                    <div class="modal-body">
+                        <div class="form-group row ">
+                            <label for="path_excel">Import Excel</label>
+                            <div class="col-sm-10 ">
+                                <input type="file" class="form-control " name="path_excel" accept="pdf/*" multiple>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="form-group row ">
+                            <label for="path_excel"><a href="excel/template.xlsx">Download Template</label>                            
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-info float-right">Tambah file.xls</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
 
 
 </section>
