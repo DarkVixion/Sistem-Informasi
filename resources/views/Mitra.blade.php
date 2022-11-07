@@ -51,15 +51,15 @@
 
     <!-- Main content -->
     <section class="content">
+        <div class="card-header">
+            <a href="TambahMitra"><button type="button" class="btn btn-default" style="float:right; background-color:lightblue; border-radius:15px;">
+                    Tambah Mitra
+                </button></a>
+        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header">
-                            <a href="TambahMitra"><button type="button" class="btn btn-default" style="float:right; background-color:lightblue; border-radius:15px;">
-                                    Tambah Mitra
-                                </button></a>
-                        </div>
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <table class="table text-nowrap">
