@@ -38,6 +38,8 @@ Route::get('/Akun', [AkunController::class, 'show']);
 
 // <-- BAGIAN TEST AKUN ADMIN -->
 Route::get('/NamaMitra', [NamaMitraController::class, 'index']);
+Route::get('/NamaMitra/Edit/{id}',  [NamaMitraController::class, 'edit'])->name('mitraEdit');
+Route::match(['put', 'patch'],'/NamaMitra/Edit/{id}', [NamaMitraController::class, 'update'])->name('mitra.update');
 Route::post('/NamaMitra', [NamaMitraController::class, 'store'])->name('tambah_nama');
 Route::delete('NamaMitra/{id}', [NamaMitraController::class, 'destroy'])->name('hapus_nama');
 Route::match(['put', 'patch'], '/NamaMitra/{id}/edit', [NamaMitraController::class, 'update'])->name('edit_nama');
@@ -65,6 +67,9 @@ Route::get('AdminEditMitra/{id}', [MitraController::class, 'edit'])->name('edit_
 Route::match(['put', 'patch'], 'AdminEditMitra/{id}', [MitraController::class, 'update'])->name('update_mitra');
 Route::get('TambahMitra', [MitraController::class, 'create']);
 Route::post('TambahMitra', [MitraController::class, 'store'])->name('tambah_mitra');
+//import data mitra
+Route::get('/importMitra', [MitraController::class, 'importMitra'])->name('uploadMitra');
+Route::post('/uploadMitra', [MitraController::class, 'uploadMitra'])->name('uploadMitra');
 
 Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
 
@@ -89,6 +94,9 @@ Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminUserMenuController::
 Route::get('/importexcel', [TambahKerjasamaController::class, 'importExcel'])->name('import_excel');
 Route::post('/uploadexcel', [TambahKerjasamaController::class, 'uploadExcel'])->name('upload_excel');
 
+//import daata kerjasama
+Route::get('/TambahKerja/export_excel', [TambahKerjasamaController::class, 'export_excel'])->name('export_excel');
+
 // <-- TESTING DASHBOARD -->
 Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
 
@@ -104,12 +112,12 @@ Route::get('/UserAkun', function () {
 });
 
 Route::get('UserRekap', function () {
-    $tks = TambahKerjasama::all();
+    $tks = TambahKerjasama::where('assignuserakun',session('id'))->get();
     return view('UserRekap')->with('kerjasama', $tks);
 });
 
 Route::get('UserMitra', function () {
-    $tks = TambahKerjasama::all();
+    $tks = TambahKerjasama::where('assignuserakun',session('id'))->get();
     $user = AdminViewUser::all();
     return view('UserMitra')->with('tks', $tks)
     ->with('user', $user);

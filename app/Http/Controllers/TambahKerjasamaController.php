@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Imports\ExcelImports;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+use App\Exports\KerjasamaExport;
 
 use App\Models\TambahKerjasama;
 use App\Models\PerjanjianKerjasama;
@@ -109,6 +110,9 @@ class TambahKerjasamaController extends Controller
     public function edit($id)
     {
         $tambahkerjasama = TambahKerjasama::find($id);
+
+        $mitra = NamaMitra::all();
+
         $mou = MoU::where('tambah_kerjasama_id', $id)->get();
         $moa = MoA::where('tambah_kerjasama_id', $id)->get();
         $jenismitra = JenisMitra::all();
@@ -120,6 +124,7 @@ class TambahKerjasamaController extends Controller
             ->with('lk', $lingkup)
             ->with('users', $user)
             ->with('mou', $mou)
+            ->with('nm', $mitra)
             ->with('moa', $moa);
     }
 
@@ -281,4 +286,17 @@ class TambahKerjasamaController extends Controller
 
         return back();
     }
+
+    /*
+    function sumnilaikontrak()
+    {
+        return DB::table('moas')->sum('id');
+    }
+    */
+
+    public function export_excel()
+    {
+        return Excel::download(new KerjasamaExport, 'kerjasama.xlsx');
+    }
+
 }
