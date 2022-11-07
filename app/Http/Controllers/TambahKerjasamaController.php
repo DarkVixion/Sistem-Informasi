@@ -273,10 +273,4 @@ class TambahKerjasamaController extends Controller
 
         return back();
     }
-    /*
-    function sumnilaikontrak()
-    {
-        return DB::table('moas')->sum('id');
-    }
-    */
 }
