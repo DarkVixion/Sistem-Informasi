@@ -239,8 +239,12 @@
                                     <div class="form-group">
                                         <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                                         <div class="col-sm-13">
-                                            <input type="text" class="form-control" name="namamitra"
-                                                placeholder="Masukan Nama Mitra">
+                                            <select class="form-control" name="namamitra" id="namamitra">
+                                                <option hidden value="">--- Nama Mitra ---</option>
+                                                @foreach ($nm as $nm)
+                                                <option>{{ $nm->nama}} </option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

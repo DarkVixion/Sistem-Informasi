@@ -76,7 +76,7 @@ class LoginController extends Controller
         $taktif = TambahKerjasama::where('status','tidak aktif')->count();
         $exp = TambahKerjasama::where('status','kedaluwarsa')->count();
         $panjang = TambahKerjasama::where('status','perpanjangan')->count();
-        $pen = TambahKerjasama::where('status','dalam penjajakan')->count(); 
+        $pen = TambahKerjasama::where('status','Dalam Penjajakan')->count(); 
         
         $sum = MoA::all()->sum('nilaikontrak');
         $countmoa = MoA::all()->count('id');

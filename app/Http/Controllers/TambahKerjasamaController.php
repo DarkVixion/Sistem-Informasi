@@ -44,6 +44,7 @@ class TambahKerjasamaController extends Controller
 
     public function store(Request $req) // store input dari hal Tambah Kerjasama
     {
+        $u = AdminViewUser::where('id', $req['pic'])->first('nama');
         $user = new TambahKerjasama;
 
         $user->status = $req['status'];
@@ -55,7 +56,7 @@ class TambahKerjasamaController extends Controller
         $user->emailnara = $req['emailnara'];
         $user->notelppic = $req['notelppic'];
         $user->emailpic = $req['emailpic'];
-        $user->assignuserakun = $req['pic'];
+        $user->assignuserakun = $u->nama;
 
         $user->save();
 
@@ -125,6 +126,7 @@ class TambahKerjasamaController extends Controller
     public function update(Request $req, $id)
     {
         $user = TambahKerjasama::find($id);
+        $u = AdminViewUser::where('id', $req['pic'])->first();
 
         $user->status = $req['status'];
         $user->namamitra = $req['namamitra'];
@@ -133,9 +135,17 @@ class TambahKerjasamaController extends Controller
         $user->narahubung = $req['narahubung'];
         $user->notelpnara = $req['notelpnara'];
         $user->emailnara = $req['emailnara'];
-        $user->assignuserakun = $req['pic'];
         $user->notelppic = $req['notelppic'];
         $user->emailpic = $req['emailpic'];
+
+        if($req['pic'] == $u->nama)
+        {
+            $user->assignuserakun = $req['pic'];
+        }
+        else
+        {
+            $user->assignuserakun = $u->nama;
+        }
 
         $user->save();
 
@@ -144,10 +154,12 @@ class TambahKerjasamaController extends Controller
             $mou = new MoU;
         }
 
-        $mou->judul = $req['judul_mou'];
-        $mou->tglmulai = $req['tglmulai_mou'];
-        $mou->tglselesai = $req['tglselesai_mou'];
+        $mou->judul = $req['judul_mou'][0];
+        $mou->tglmulai = $req['tglmulai_mou'][0];
+        $mou->tglselesai = $req['tglselesai_mou'][0];
         $mou->path = $mou->path;
+
+        $user->mous()->save($mou);
 
         if ($req['check1'] == 1) {
             $mou->tglselesai = null;
@@ -155,29 +167,25 @@ class TambahKerjasamaController extends Controller
 
         if (isset($req['path_mou'])) {
             foreach ($req['path_mou'] as $file) {
-                $namafilemou = $req['judul_mou'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+                $namafilemou = $req['judul_mou'][0] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_mou = $namafilemou;
                 $file->move(public_path('files'), $namafilemou);
             }
 
             $mou->path = $path_mou;
-        }
-
-        if (isset($req->judul_mou)) {
             $user->mous()->save($mou);
         }
-
 
         $moa = MoA::where('tambah_kerjasama_id', $id)->first();
         if ($moa == null) {
             $moa = new MoA;
         }
 
-        $moa->judul = $req['judul_moa'];
-        $moa->tglmulai = $req['tglmulai_moa'];
-        $moa->tglselesai = $req['tglselesai_moa'];
-        $moa->nilaikontrak = $req['nilaikontrak'];
-        $moa->lingkupkerja = $req['lingkupkerja'];
+        $moa->judul = $req['judul_moa'][0];
+        $moa->tglmulai = $req['tglmulai_moa'][0];
+        $moa->tglselesai = $req['tglselesai_moa'][0];
+        $moa->nilaikontrak = $req['nilaikontrak'][0];
+        $moa->lingkupkerja = $req['lingkupkerja'][0];
         $moa->path = $moa->path;
 
         if ($req['check2'] == 1) {

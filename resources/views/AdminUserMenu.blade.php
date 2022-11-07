@@ -104,7 +104,7 @@
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" name="notelp" placeholder="0812xxx" pattern="/^-?\d+\.?\d*$/"
+                                        <input type="text" class="form-control" name="notelp" placeholder="0812xxx" pattern="/^-?\d+\.?\d*$/"
                                         onKeyPress="if(this.value.length==15) return false;">
                                     </div>
                                 </div><br>

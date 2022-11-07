@@ -99,13 +99,13 @@
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">NIP</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="nip" placeholder="122333" value="{{ $adminviewuser->nip }}">
+                                        <input type="number" class="form-control" name="nip" placeholder="122333" onKeyPress="if(this.value.length==15) return false;" value="{{ $adminviewuser->nip }}">
                                     </div>
                                 </div></br>
                                 <div class="form-group row">
                                     <label for="input" class="col-sm-2 col-form-label">No Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name="notelp" placeholder="0812xxx" value="{{ $adminviewuser->notelp }}">
+                                        <input type="text" class="form-control" name="notelp" placeholder="0812xxx" onKeyPress="if(this.value.length==15) return false;" value="{{ $adminviewuser->notelp }}">
                                     </div>
                                 </div><br>
                                 <div class="form-group row">
