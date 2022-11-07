@@ -18,20 +18,19 @@
     </div>
     <!-- /.container-fluid -->
 </section>
-
-
 <!-- Main content -->
 <section class="content">
+    <div class="card-header">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
+            style="float:right; background-color:lightblue; border-radius:15px;">
+            Tambah Nama Mitra
+        </button>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
-                            style="float:right; background-color:lightblue; border-radius:15px;">
-                            Tambah Nama Mitra
-                        </button>
-                    </div>
+                    
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap">

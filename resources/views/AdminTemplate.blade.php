@@ -80,14 +80,20 @@
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image">
                         <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                            alt="User Image">
+                            alt="User Image" style="padding-top: 28%">
+                    </div>
+                    <div class="info" style="padding-top: 7%">
+                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123
+                            @endif</a>
                     </div>
                     <div class="info">
-                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123 @endif</a>
-                        <a href="/Logout">Logout</a>
+                        <a href="/Logout" class="nav-link">
+                            <img class="nav-icon" style="opacity: 55%; width: 18px;"
+                                srcset="https://cdn-icons-png.flaticon.com/512/1286/1286853.png 2x" width="1rem"
+                                height="1rem" alt="exit icon" loading="lazy">
+                        </a>
                     </div>
                 </div>
-
 
             </ul>
         </nav>

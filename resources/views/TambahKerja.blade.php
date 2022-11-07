@@ -278,15 +278,15 @@
                             <div class="col-md-12 align-items-stretch">
                                 <div class="card">
                                     <!-- <div class="card-header">
-                                        <div class="card-tools">
-                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                                <i class="fas fa-minus"></i>
-                                            </button>
-                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                                <i class="fas fa-times"></i>
-                                            </button>
-                                        </div>
-                                    </div> -->
+                                            <div class="card-tools">
+                                                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                    <i class="fas fa-minus"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </div> -->
                                     <!-- form start -->
                                     <div class="card-body">
                                         <h3 style="text-align: center;">Memorandum of Understanding (MoU)</h3>
