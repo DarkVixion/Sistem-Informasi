@@ -15,7 +15,11 @@
     $exp = \App\Models\TambahKerjasama::where('status', 'kedaluwarsa')->count();
     $pen = \App\Models\TambahKerjasama::where('status', 'dalam penjajakan')->count();
     $panjang = \App\Models\TambahKerjasama::where('status', 'perpanjangan')->count();
-    // dd($exp);
+    
+    $tamin = \App\Models\TambahKerjasama::where('jenismitra', 'pertamina')->count();
+    $ntamin = \App\Models\TambahKerjasama::where('jenismitra', 'non-pertamina')->count();
+    $bumn = \App\Models\TambahKerjasama::where('jenismitra', 'bumn')->count();
+    $mentri = \App\Models\TambahKerjasama::where('jenismitra', 'kementerian')->count();
 ?>
 
 <!DOCTYPE html>
@@ -355,15 +359,14 @@
         var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
         var donutData = {
             labels: [
-                'Aktif',
-                'Tidak Aktif',
-                'Kedaluwarsa',
-                'Dalam Penjajakan',
-                'Perpanjangan'
+                'Pertamina',
+                'Non-Pertamina',
+                'BUMN',
+                'Kementrian'
             ],
             datasets: [{
-                data: [{{$aktif}},{{$taktif}},{{$exp}},{{$pen}},{{$panjang}}],
-                backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
+                data: [{{$tamin}},{{$ntamin}},{{$bumn}},{{$mentri}}],
+                backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef'],
             }]
         }
         var donutOptions = {
@@ -383,7 +386,19 @@
         //-------------
         // Get context with jQuery - using jQuery's .get() method.
         var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-        var pieData = donutData;
+        var pieData = {
+            labels: [
+                'Aktif',
+                'Tidak Aktif',
+                'Kedaluwarsa',
+                'Dalam Penjajakan',
+                'Perpanjangan'
+            ],
+            datasets: [{
+                data: [{{$aktif}},{{$taktif}},{{$exp}},{{$pen}},{{$panjang}}],
+                backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc'],
+            }]
+        }
         var pieOptions = {
             maintainAspectRatio: false,
             responsive: true,

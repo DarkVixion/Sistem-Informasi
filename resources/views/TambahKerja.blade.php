@@ -459,7 +459,6 @@
                     </div>
                     <!-- Horizontal Form -->
 
-
                     <div class="row">
                         <div class="col-md-6 d-flex align-items-stretch">
                             <div class="card card-info">
