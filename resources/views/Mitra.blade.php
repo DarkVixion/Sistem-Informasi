@@ -198,15 +198,15 @@
                                                                     </div><br><br><br>
                                                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
                                                                     <div class="col-sm-10 ">
-                                                                        <input type="text" class="form-control " name="pic" disabled value=@if(count($user) != 0 && $item->assignuserakun != null)
-                                                                        "{{ $user[($item->assignuserakun)-1]->nama }}"
+                                                                        <input type="text" class="form-control " name="pic" disabled value=@if($item->assignuserakun != null)
+                                                                        "{{ $item->assignuserakun }}"
                                                                         @endif>
                                                                     </div><br><br><br>
                                                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone
                                                                         PIC</label>
                                                                     <div class="col-sm-10 ">
                                                                         <input type="number" class="form-control " name="notelppic" 
-                                                                        @if(count($user) != 0 && $item->assignuserakun != null)value="{{ $user[($item->assignuserakun)-1]->notelp }}"@endif disabled>
+                                                                        @if($item->notelppic != null) value="{{ $item->notelppic }}"@endif disabled>
                                                                     </div><br><br>
                                                                 </div>
                                                             </div>
