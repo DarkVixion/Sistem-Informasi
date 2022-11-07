@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Imports\ExcelImports;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
+use App\Exports\KerjasamaExport;
 
 use App\Models\TambahKerjasama;
 use App\Models\PerjanjianKerjasama;
@@ -280,4 +281,9 @@ class TambahKerjasamaController extends Controller
         return DB::table('moas')->sum('id');
     }
     */
+
+    public function export_excel()
+    {
+        return Excel::download(new KerjasamaExport, 'kerjasama.xlsx');
+    }
 }

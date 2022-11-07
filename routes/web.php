@@ -67,6 +67,7 @@ Route::get('AdminEditMitra/{id}', [MitraController::class, 'edit'])->name('edit_
 Route::match(['put', 'patch'], 'AdminEditMitra/{id}', [MitraController::class, 'update'])->name('update_mitra');
 Route::get('TambahMitra', [MitraController::class, 'index2']);
 Route::post('TambahMitra', [MitraController::class, 'store'])->name('tambah_mitra');
+//import data mitra
 Route::get('/importMitra', [MitraController::class, 'importMitra'])->name('uploadMitra');
 Route::post('/uploadMitra', [MitraController::class, 'uploadMitra'])->name('uploadMitra');
 
@@ -92,6 +93,9 @@ Route::match(['put', 'patch'], '/AdminEditUser/{id}', [AdminUserMenuController::
 // <-- BAGIAN IMPORT EXCEL -->
 Route::get('/importexcel', [TambahKerjasamaController::class, 'importExcel'])->name('import_excel');
 Route::post('/uploadexcel', [TambahKerjasamaController::class, 'uploadExcel'])->name('upload_excel');
+
+//import daata kerjasama
+Route::get('/TambahKerja/export_excel', [TambahKerjasamaController::class, 'export_excel'])->name('export_excel');
 
 // <-- TESTING DASHBOARD -->
 Route::get('testsum', [TambahKerjasamaController::class, 'sumnilaikontrak']);
