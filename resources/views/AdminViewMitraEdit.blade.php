@@ -138,7 +138,7 @@ $(document).ready(function() {
                 dataType: "json",
                 success: function(data) {
                     if (data) {
-                        document.getElementById('notelppic').value = '123445';
+                        document.getElementById('notelppic').value = data.notelp;
                     }
                 }
             });
