@@ -333,22 +333,22 @@
                                         <div class="col-md-6">
                                             <label for="tglselesai_mou" class=" col-sm-4 col-form-label ">Tanggal
                                                 Selesai</label>
-                                            <div class=" col-sm-12">
+                                            <!-- <div class=" col-sm-12">
                                                 <select class="form-control" onchange="yesnoCheck1(this)">
                                                     <option value="1">Tidak Terbatas</option>
                                                     <option value="2" @if ($mou !=null) @if($mou->tglselesai != null) selected @endif @endif>Terbatas</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
                                             <br>
                                             <div class=" col-sm-12">
                                                 <input id="check1" type="date"
-                                                    class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou[]" 
-                                                    @if($mou==null || $mou->tglselesai == null)
+                                                    class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou[]">
+                                                    <!-- @if($mou==null || $mou->tglselesai == null)
                                                     style="display:none;"
                                                     @endif
                                                     value= @if ($mou != null) @if($mou->tglselesai != null)
                                                     '{{ $mou->tglselesai->format('Y-m-d') }}'
-                                                    @endif @endif>
+                                                    @endif @endif> -->
                                             </div>
                                         </div>
                                     </div>
@@ -455,23 +455,23 @@
                                         <div class="col-md-6">
                                             <label for="tglselesai_moa" class=" col-sm-4 col-form-label ">Tanggal
                                                 Selesai</label>
-                                            <div class=" col-sm-12">
+                                            <!-- <div class=" col-sm-12">
                                                 <select class="form-control" onchange="yesnoCheck2(this)">
                                                     <option value="1">Tidak Terbatas</option>
                                                     <option value="2" @if($moa!=null) @if($moa->tglselesai != null) selected @endif @endif>Terbatas</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
                                             <label class=" col-sm-4 col-form-label "></label>
                                             <div class=" col-sm-12">
                                                 <input id="check2" type="date"
                                                     class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                                    name="tglselesai_moa[]" 
-                                                    @if($moa==null || $moa->tglselesai == null)
+                                                    name="tglselesai_moa[]">
+                                                    <!-- @if($moa==null || $moa->tglselesai == null)
                                                     style="display:none;"
                                                     @endif
                                                     value= @if($moa!=null) @if($moa->tglselesai != null)
                                                     '{{ $moa->tglselesai->format('Y-m-d') }}'
-                                                    @endif @endif>
+                                                    @endif @endif> -->
                                             </div>
                                         </div>
                                     </div>

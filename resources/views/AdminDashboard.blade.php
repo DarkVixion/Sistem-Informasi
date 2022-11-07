@@ -133,7 +133,7 @@
             </div>
             <!-- /.row -->
         </div>
-        <div class="card card-body">
+        <div class="card card-body" style="display:none;">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                     <h3 class="card-title text-bold text-lg">Jenis Kerja Sama</h3>
