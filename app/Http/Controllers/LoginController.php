@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\AdminViewUser;
+use App\Models\MoA;
+use App\Models\MoU;
+use App\Models\TambahKerjasama;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Session as FacadesSession;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -61,67 +64,55 @@ class LoginController extends Controller
     {
         if(session()->has('id'))
         {
-            // session()->pull('id');
-            // session()->pull('name');
             FacadesSession::flush();
         }
 
         return redirect('/Login');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function admin()
     {
-        //
-    }
+        $aktif = TambahKerjasama::where('status','aktif')->count();
+        $taktif = TambahKerjasama::where('status','tidak aktif')->count();
+        $exp = TambahKerjasama::where('status','kedaluwarsa')->count();
+        $panjang = TambahKerjasama::where('status','perpanjangan')->count();
+        $pen = TambahKerjasama::where('status','dalam penjajakan')->count(); 
+        
+        $sum = MoA::all()->sum('nilaikontrak');
+        $countmoa = MoA::all()->count('id');
+        $countmou = MoU::all()->count('id');
+        $data = TambahKerjasama::all();
+        $temp = [];
+        
+        foreach($data as $d)
+        {
+            $bool = false;
+            if($temp)
+            {
+                foreach($temp as $t)
+                {
+                    if($t == $d->namamitra)
+                    {
+                        $bool = true;
+                        break;
+                    }
+                }
+            }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+            if($bool == false)
+            {
+                $temp[] = $d->namamitra;
+            }
+        }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+        return view('AdminDashboard')->with('sum', $sum)
+            ->with('countmoa', $countmoa)
+            ->with('countmou', $countmou)
+            ->with('total', count($temp))
+            ->with('aktif', $aktif)
+            ->with('taktif', $taktif)
+            ->with('exp', $exp)
+            ->with('pen', $pen)
+            ->with('pan', $panjang);
+        }
     }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-}
