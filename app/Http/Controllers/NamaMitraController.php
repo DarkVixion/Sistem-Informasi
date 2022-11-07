@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\NamaMitra;
+use App\Models\JenisMitra;
 
 class NamaMitraController extends Controller
 {
     public function index()
     {
         $nm = NamaMitra::all();
-        return view('NamaMitra')->with('nm', $nm);
+        $jm = JenisMitra::all();
+        return view('NamaMitra', compact('nm', 'jm'));
     }
 
     public function create()
@@ -32,15 +34,23 @@ class NamaMitraController extends Controller
 
     public function edit($id)
     {
-        //
+        $jm = JenisMitra::all();
+        $tks = NamaMitra::find($id);
+        return view('NamaMitraEdit', compact('jm', 'tks'));
     }
 
     public function update(Request $req, $id)
     {
-        $input = $req->all();
-        $nama = NamaMitra::find($id);
-        $nama->update($input);
-        return back();
+        $tks = NamaMitra::find($id);
+        $tks->nama = $req['nama'];
+        $tks->jenismitra = $req['jenismitra'];
+        $tks->alamat = $req['alamat'];
+        $tks->website = $req['website'];
+        $tks->notelpmitra = $req['notelpmitra'];
+
+        $tks->save();
+
+        return redirect('Mitra');
     }
 
     public function destroy($id)

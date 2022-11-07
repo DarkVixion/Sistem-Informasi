@@ -10,6 +10,11 @@ class NamaMitra extends Model
     protected $table = 'nama_mitras';
     protected $primaryKey = 'id';
     protected $fillable = [
-        "nama"
+        "nama",
+        "jenismitra",
+        "alamat",
+        "negara",
+        "notelp",
+        "website"
     ];
 }

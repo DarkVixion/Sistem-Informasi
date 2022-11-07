@@ -104,8 +104,9 @@ class TambahKerjasamaController extends Controller
     public function edit($id)
     {
         $tambahkerjasama = TambahKerjasama::find($id);
-        $mou = MoU::where('tambah_kerjasama_id', $id)->first();
-        $moa = MoA::where('tambah_kerjasama_id', $id)->first();
+        $mitra = NamaMitra::all();
+        $mou = MoU::where('tambah_kerjasama_id', $id)->get();
+        $moa = MoA::where('tambah_kerjasama_id', $id)->get();
         $jenismitra = JenisMitra::all();
         $lingkup = LingkupKerja::all();
         $user = AdminViewUser::all();
@@ -117,6 +118,7 @@ class TambahKerjasamaController extends Controller
             ->with('lk', $lingkup)
             ->with('users', $user)
             ->with('mou', $mou)
+            ->with('nm', $mitra)
             ->with('moa', $moa);
     }
 

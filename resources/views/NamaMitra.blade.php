@@ -48,8 +48,9 @@
                                     <td style="text-align:center;">{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama }}</td>
                                     <td style="text-align:center;">
-                                        <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}"
-                                            data-toggle="modal"><i class="fa fa-edit"></i></button>
+                                    <a href="{{route('mitraEdit', $item->id)}}"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                        <!-- <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}"
+                                            data-toggle="modal"><i class="fa fa-edit"></i></button> -->
                                         <form action="{{route('hapus_nama', $item->id)}}" method="POST"
                                             style="display:inline ">
                                             {{ method_field('DELETE') }}
@@ -75,13 +76,61 @@
                                                 {!! csrf_field() !!}
                                                 @method("PATCH")
                                                 <div class="modal-body">
-                                                    <div class="form-group row ">
-                                                        <label for="inputPassword3 "
-                                                            class="col-sm-2 col-form-label ">Nama Mitra</label>
-                                                        <div class="col-sm-10 ">
-                                                            <input type="text" name="nama" class="form-control "
-                                                                placeholder="Masukan Nama Mitra Baru"
-                                                                value="{{ $item->nama }}">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-6">                            
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Nama Mitra</label>
+                                                                    <div class="col-sm-13">
+                                                                        <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Mitra" value="{{ $item->nama }}">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Jenis Mitra</label>
+                                                                    <select class="form-control" name="jenismitra">
+                                                                        <option hidden selected>{{ $item->jenismitra }}</option>
+                                                                        @foreach ($jm as $item)
+                                                                        <option>{{ $item->juduljenismitra }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Alamat</label>
+                                                                    <div class="col-sm-13">
+                                                                        <input type="text" class="form-control" name="alamat" placeholder="Masukan Alamat" value="{{$item->alamat}}">
+                                                                    </div>
+                                                                </div>
+                                                            </div> 
+                                                        </div>
+                                                        <div class="col-md-6 col-lg-6">
+                                                            <div class=" col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Website</label>
+                                                                    <input type="url" class="form-control " name="website"
+                                                                        placeholder="Masukan Website" value="{{ $item->website }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class=" col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Nomor Telephone</label>
+                                                                    <input type="number" class="form-control " name="notelpmitra"
+                                                                        placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/"
+                                                                        onKeyPress="if(this.value.length==15) return false;" value="{{ $item->notelpmitra }}">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-12">
+                                                                <div class="form-group">
+                                                                    <label>Negara</label>
+                                                                    <div class="col-sm-13">
+                                                                        <input type="text" class="form-control " name="negara"
+                                                                            placeholder="Masukan Negara" value="{{ $item->negara }}">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -123,12 +172,55 @@
                 </div>
                 <form action="{{route('tambah_nama')}}" method="post">
                     {!! csrf_field() !!}
-                    <div class="modal-body">
-                        <div class="form-group row ">
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label">Nama Mitra</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" name="nama" class="form-control "
-                                    placeholder="Masukan Nama Mitra Baru">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-6">                            
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Nama Mitra</label>
+                                    <div class="col-sm-13">
+                                        <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Mitra">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Jenis Mitra</label>
+                                    <select class="form-control" name="jenismitra">
+                                        @foreach ($jm as $item)
+                                        <option>{{ $item->juduljenismitra }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>                            
+                            <div class="col-md-12">
+                                <label>Alamat</label>
+                                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                            <div class=" col-md-12">
+                                <div class="form-group">
+                                    <label>Website</label>
+                                    <input type="url" class="form-control " name="website"
+                                        placeholder="Masukan Website">
+                                </div>
+                            </div>
+                            <div class=" col-md-12">
+                                <div class="form-group">
+                                    <label>Nomor Telephone</label>
+                                    <input type="number" class="form-control " name="notelpmitra"
+                                        placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/"
+                                        onKeyPress="if(this.value.length==15) return false;">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>Negara</label>
+                                    <div class="col-sm-13">
+                                        <input type="text" class="form-control " name="negara"
+                                            placeholder="Masukan Negara">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
