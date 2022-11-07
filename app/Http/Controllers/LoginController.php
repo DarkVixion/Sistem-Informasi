@@ -72,6 +72,12 @@ class LoginController extends Controller
 
     public function admin()
     {
+        $aktif = TambahKerjasama::where('status','aktif')->count();
+        $taktif = TambahKerjasama::where('status','tidak aktif')->count();
+        $exp = TambahKerjasama::where('status','kedaluwarsa')->count();
+        $panjang = TambahKerjasama::where('status','perpanjangan')->count();
+        $pen = TambahKerjasama::where('status','Dalam Penjajakan')->count(); 
+        
         $sum = MoA::all()->sum('nilaikontrak');
         $countmoa = MoA::all()->count('id');
         $countmou = MoU::all()->count('id');
@@ -102,6 +108,11 @@ class LoginController extends Controller
         return view('AdminDashboard')->with('sum', $sum)
             ->with('countmoa', $countmoa)
             ->with('countmou', $countmou)
-            ->with('total', count($temp));
+            ->with('total', count($temp))
+            ->with('aktif', $aktif)
+            ->with('taktif', $taktif)
+            ->with('exp', $exp)
+            ->with('pen', $pen)
+            ->with('pan', $panjang);
         }
     }

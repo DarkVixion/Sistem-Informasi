@@ -2,6 +2,7 @@
 @section('isiAdmin')
 
 <!-- PreLoader -->
+<title>Admin Dashboard| Universitas Pertamina</title>
 <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="dist/img/logo UP.jpeg" alt="AdminLTELogo" height="350" width="400">
 </div>
@@ -43,7 +44,6 @@
 <!-- Main content -->
 <div class="content">
     <div class="container-fluid">
-
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-lg-3 col-6">
@@ -51,7 +51,6 @@
                 <div class="small-box bg-info">
                     <div class="inner">
                         <h3>{{$countmou}}</h3>
-
                         <p>Memorandum of Understanding (MoU)</p>
                     </div>
                     <div class="icon">
@@ -67,7 +66,6 @@
                 <div class="small-box bg-success">
                     <div class="inner">
                         <h3>{{$countmoa}}</sup></h3>
-
                         <p>Memorandum of Aggrement (MoA)</p>
                     </div>
                     <div class="icon">
@@ -83,7 +81,6 @@
                 <div class="small-box bg-warning">
                     <div class="inner">
                         <h3>{{$total}}</h3>
-
                         <p>Mitra</p>
                     </div>
                     <div class="icon">
@@ -98,7 +95,6 @@
                 <div class="small-box bg-danger">
                     <div class="inner">
                         <h3>Rp {{number_format($sum)}} </h3>
-
                         <p>Nilai Kerja Sama</p>
                     </div>
                     <div class="icon">
@@ -117,26 +113,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <!-- PIE CHART -->
-                    <div class="card-body">
-                        <canvas id="pieChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-8">
-                    <!-- LINE CHART -->
-                    <div class="card-body">
-                        <div class="chart">
-                            <canvas id="lineChart"
-                                style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card -->
+                <div class="col-md-12">
+                    <div id="container"></div>
                 </div>
                 <!-- /.col -->
             </div>
@@ -149,25 +127,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card-body">
-                        <canvas id="donutChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card -->
+                <div class="col-md-12">
+                    <div id="container"></div>
                 </div>
-                <!-- /.col -->
-                <div class="col-md-8">
-
-                    <div class="chart">
-                        <canvas id="areaChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card -->
-                </div>
-                <!-- /.col -->
             </div>
             <!-- /.row -->
         </div>
@@ -178,20 +140,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card-body">
-                        <canvas id="donutChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card -->
-                </div>
+                <div class="col-md-4"></div>
                 <!-- /.col -->
-                <div class="col-md-9">
+                <div class="col-md-8">
                     <div class="card-body">
                         <div class="d-flex">
                             <p class="d-flex flex-column">
-                                <h5><span>Total</span></h5>
+                            <h5><span>Total</span></h5>
                             </p>
                         </div>
                         <!-- callback Js for Chart dashboard3.js -->
@@ -217,19 +172,11 @@
         <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                    <h3 class="card-title">Nilai Kerja Sama</h3>
+                    <h3 class="card-title text-bold text-lg">Nilai Kerja Sama</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                    <!-- PIE CHART -->
-                    <div class="card-body">
-                        <canvas id="pieChart"
-                            style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <!-- /.card-body -->
-                    <!-- /.card -->
-                </div>
+                <div class="col-md-4"></div>
                 <!-- /.col -->
                 <div class="col-md-8">
                     <div class="card-body">
@@ -313,5 +260,77 @@
         <!-- /.row -->
         <!-- /.container-fluid -->
     </div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+    <script>
+    Highcharts.chart('container', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{point.name}: <b>{point.y:f}</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: false,
+                },
+                showInLegend: true
+            }
+        },
+        series: [{
+            colorByPoint: true,
+            data: [{
+                name: 'Aktif',
+                y: {
+                    {
+                        $aktif
+                    }
+                }
+            }, {
+                name: 'Tidak Aktif',
+                y: {
+                    {
+                        $taktif
+                    }
+                }
+            }, {
+                name: 'Kedaluwarsa',
+                y: {
+                    {
+                        $exp
+                    }
+                }
+            }, {
+                name: 'Perpanjangan',
+                y: {
+                    {
+                        $pan
+                    }
+                }
+            }, {
+                name: 'Dalam Penjajakan',
+                y: {
+                    {
+                        $pen
+                    }
+                }
+            }]
+        }]
+    });
+    </script>
 
     @endsection

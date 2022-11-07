@@ -7,9 +7,11 @@ use App\Models\LingkupKerja;
 use App\Models\JenisMitra;
 use App\Models\TambahKerjasama;
 use App\Models\AdminViewUser;
+
 use App\Imports\ExcelImports;
 use App\Models\NamaMItra;
 use Maatwebsite\Excel\Facades\Excel;
+
 
 class MitraController extends Controller
 {
@@ -28,14 +30,16 @@ class MitraController extends Controller
             ->with('jm', $jmitra);
     }
 
-    public function index2()
+    public function create()
     {
         $tks = TambahKerjasama::all();
+        $nm = NamaMitra::all();
         $user = AdminViewUser::all();
         $jmitra = JenisMitra::all();
         return view('TambahMitra')->with('tks', $tks)
             ->with('user', $user)
-            ->with('jm', $jmitra);
+            ->with('jm', $jmitra)
+            ->with('nm', $nm);
     }
     /**
      * Display the specified resource.
