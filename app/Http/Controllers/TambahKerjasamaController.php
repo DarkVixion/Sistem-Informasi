@@ -154,61 +154,164 @@ class TambahKerjasamaController extends Controller
 
         $user->save();
 
-        $mou = MoU::where('tambah_kerjasama_id', $id)->first();
-        if ($mou == null) {
-            $mou = new MoU;
-        }
+        $i = 0;
+        $mou = MoU::where('tambah_kerjasama_id', $id)->get();
+        
+        if(count($mou) != 0)
+        {
+            foreach ($mou as $mou) 
+            {
+                $mou->judul = $req['judul_mou'][$i];
+                $mou->tglmulai = $req['tglmulai_mou'][$i];
+                $mou->tglselesai = $req['tglselesai_mou'][$i];
+                $mou->path = $mou->path;
 
-        $mou->judul = $req['judul_mou'][0];
-        $mou->tglmulai = $req['tglmulai_mou'][0];
-        $mou->tglselesai = $req['tglselesai_mou'][0];
-        $mou->path = $mou->path;
+                $user->mous()->save($mou);
 
-        $user->mous()->save($mou);
+                if ($req['check1'] == 1) 
+                {
+                    $mou->tglselesai = null;
+                }
 
-        if ($req['check1'] == 1) {
-            $mou->tglselesai = null;
-        }
+                if (isset($req['path_mou'])) 
+                {
+                    $namafilemou = $req['judul_mou'][$i] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $req['path_mou'][$i]->extension();
+                    $path_mou = $namafilemou;
+                    $req['path_mou'][$i]->move(public_path('files'), $namafilemou);
+                    $mou->path = $path_mou;
+                }
 
-        if (isset($req['path_mou'])) {
-            foreach ($req['path_mou'] as $file) {
-                $namafilemou = $req['judul_mou'][0] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
-                $path_mou = $namafilemou;
-                $file->move(public_path('files'), $namafilemou);
+                $user->mous()->save($mou);
+
+                $i++;
             }
+        }
+        else
+        {
+            if (isset($req['path_mou'])) 
+            {
+                $i = 0;
+                foreach ($req['path_mou'] as $file) 
+                {
+                    $mou = new MoU;
+                    $mou->judul = $req['judul_mou'][$i];
+                    $mou->tglmulai = $req['tglmulai_mou'][$i];
+                    $mou->tglselesai = $req['tglselesai_mou'][$i];
+    
+                    $namafilemou = $req['judul_mou'][$i] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+                    $path_mou = $namafilemou;
+                    $file->move(public_path('files'), $namafilemou);
+                    $mou->path = $path_mou;
+    
+                    $user->mous()->save($mou);
+                    $i++;
+                }
+            }
+        }
 
+        for($i; $i<count($req['path_mou']); $i++)
+        {
+            $mou = new MoU;
+            $mou->judul = $req['judul_mou'][$i];
+            $mou->tglmulai = $req['tglmulai_mou'][$i];
+            $mou->tglselesai = $req['tglselesai_mou'][$i];
+
+            $namafilemou = $req['judul_mou'][$i] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $req['path_mou'][$i]->extension();
+            $path_mou = $namafilemou;
+            $req['path_mou'][$i]->move(public_path('files'), $namafilemou);
             $mou->path = $path_mou;
+
             $user->mous()->save($mou);
+            $i++;
         }
 
-        $moa = MoA::where('tambah_kerjasama_id', $id)->first();
-        if ($moa == null) {
+
+        $moa = MoA::where('tambah_kerjasama_id', $id)->get();
+        $i = 0;
+        
+        if(count($moa) != 0)
+        {
+            foreach($moa as $moa)
+            {
+                $moa->judul = $req['judul_moa'][$i];
+                $moa->tglmulai = $req['tglmulai_moa'][$i];
+                $moa->tglselesai = $req['tglselesai_moa'][$i];
+                $moa->nilaikontrak = $req['nilaikontrak'][$i];
+                $moa->lingkupkerja = $req['lingkupkerja'][$i];
+                $moa->path = $moa->path;
+        
+                if ($req['check2'] == 1) {
+                    $moa->tglselesai = null;
+                }
+        
+                //jika ada path, jalankan code. jika tidak ada, skip code.
+                if (isset($req['path_moa'])) 
+                {
+                    $namafilemoa = $req['judul_moa'][$i] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $req['path_moa'][$i]->extension();
+                    $path_moa = $namafilemoa;
+                    $req['path_moa'][$i]->move(public_path('files'), $namafilemoa);
+        
+                    $moa->path = $path_moa;
+                }
+        
+                $user->moas()->save($moa);
+            }
+        }
+        else
+        {
+            foreach($req['path_moa'] as $file)
+            {
+                $moa = new MoA;
+                $moa->judul = $req['judul_moa'][$i];
+                $moa->tglmulai = $req['tglmulai_moa'][$i];
+                $moa->tglselesai = $req['tglselesai_moa'][$i];
+                $moa->nilaikontrak = $req['nilaikontrak'][$i];
+                $moa->lingkupkerja = $req['lingkupkerja'][$i];
+                $moa->path = $moa->path;
+        
+                if ($req['check2'] == 1) {
+                    $moa->tglselesai = null;
+                }
+        
+                //jika ada path, jalankan code. jika tidak ada, skip code.
+                if (isset($req['path_moa'])) 
+                {
+                    $namafilemoa = $req['judul_moa'][$i] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+                    $path_moa = $namafilemoa;
+                    $file->move(public_path('files'), $namafilemoa);
+        
+                    $moa->path = $path_moa;
+                }
+        
+                $user->moas()->save($moa);
+                $i++;
+            }
+        }
+
+        for($i; $i<count($req['path_moa']); $i++)
+        {
             $moa = new MoA;
-        }
-
-        $moa->judul = $req['judul_moa'][0];
-        $moa->tglmulai = $req['tglmulai_moa'][0];
-        $moa->tglselesai = $req['tglselesai_moa'][0];
-        $moa->nilaikontrak = $req['nilaikontrak'][0];
-        $moa->lingkupkerja = $req['lingkupkerja'][0];
-        $moa->path = $moa->path;
-
-        if ($req['check2'] == 1) {
-            $moa->tglselesai = null;
-        }
-
-        //jika ada path, jalankan code. jika tidak ada, skip code.
-        if (isset($req['path_moa'])) {
-            foreach ($req['path_moa'] as $file) {
-                $namafilemoa = $req['judul_moa'] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
+            $moa->judul = $req['judul_moa'][$i];
+            $moa->tglmulai = $req['tglmulai_moa'][$i];
+            $moa->tglselesai = $req['tglselesai_moa'][$i];
+            $moa->nilaikontrak = $req['nilaikontrak'][$i];
+            $moa->lingkupkerja = $req['lingkupkerja'][$i];
+            $moa->path = $moa->path;
+    
+            if ($req['check2'] == 1) {
+                $moa->tglselesai = null;
+            }
+    
+            //jika ada path, jalankan code. jika tidak ada, skip code.
+            if (isset($req['path_moa'])) 
+            {
+                $namafilemoa = $req['judul_moa'][$i] . '_' .  time()  . '_' . rand(1, 1000) . '.' . $file->extension();
                 $path_moa = $namafilemoa;
                 $file->move(public_path('files'), $namafilemoa);
+    
+                $moa->path = $path_moa;
             }
-
-            $moa->path = $path_moa;
-        }
-
-        if (isset($req->judul_moa)) {
+    
             $user->moas()->save($moa);
         }
 
