@@ -278,7 +278,7 @@
             text: ''
         },
         tooltip: {
-            pointFormat: '{point.name}: <b>{point.y:.1f}</b>'
+            pointFormat: '{point.name}: <b>{point.y:f}</b>'
         },
         plotOptions: {
             pie: {
@@ -294,19 +294,19 @@
             colorByPoint: true,
             data: [{
                 name: 'Aktif',
-                y: 70
+                y: {{$aktif}}
             }, {
                 name: 'Tidak Aktif',
-                y: 14
+                y: {{$taktif}}
             },  {
                 name: 'Kedaluwarsa',
-                y: 4
+                y: {{$exp}}
             }, {
                 name: 'Perpanjangan',
-                y: 2
+                y: {{$pan}}
             }, {
-                name: 'Internet Explorer',
-                y: 50
+                name: 'Dalam Penjajakan',
+                y: {{$pen}}
             }]
         }]
     });
