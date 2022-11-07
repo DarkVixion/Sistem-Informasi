@@ -526,8 +526,8 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="pic" id="pic">
-                                                @if (count($users) != 0 && $tks->assignuserakun != null)
-                                                <option hidden>{{ $users[($tks->assignuserakun)-1]->namaakunuser }}</option>
+                                                @if ($tks->assignuserakun != null)
+                                                <option hidden selected>{{ $tks->assignuserakun }}</option>
                                                 @else
                                                 <option value="" hidden>--- Pilih PIC ---</option>
                                                 @endif
