@@ -240,13 +240,11 @@ class TambahKerjasamaController extends Controller
 
         Excel::import(new ExcelImports, $path);*/
 
-        //dd($request);
         //Excel::import(new ExcelImports, $request->file('test1.csv'));
 
         $array = Excel::toArray(new ExcelImports, $request->file('path_excel'), 's3', \Maatwebsite\Excel\Excel::XLSX);
 
         $i = 0;
-        //dd($array[0]);
         foreach ($array[0] as $value) {
             if ($i > 0) {
                 $kerjasama = new TambahKerjasama;
