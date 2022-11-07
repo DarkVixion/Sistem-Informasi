@@ -2,6 +2,7 @@
 @section('isiAdmin')
 
 <!-- PreLoader -->
+<title>Admin Dashboard| Universitas Pertamina</title>
 <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="dist/img/logo UP.jpeg" alt="AdminLTELogo" height="350" width="400">
 </div>
@@ -145,7 +146,7 @@
                     <div class="card-body">
                         <div class="d-flex">
                             <p class="d-flex flex-column">
-                                <h5><span>Total</span></h5>
+                            <h5><span>Total</span></h5>
                             </p>
                         </div>
                         <!-- callback Js for Chart dashboard3.js -->
@@ -265,7 +266,7 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    
+
     <script>
     Highcharts.chart('container', {
         chart: {
@@ -294,19 +295,39 @@
             colorByPoint: true,
             data: [{
                 name: 'Aktif',
-                y: {{$aktif}}
+                y: {
+                    {
+                        $aktif
+                    }
+                }
             }, {
                 name: 'Tidak Aktif',
-                y: {{$taktif}}
-            },  {
+                y: {
+                    {
+                        $taktif
+                    }
+                }
+            }, {
                 name: 'Kedaluwarsa',
-                y: {{$exp}}
+                y: {
+                    {
+                        $exp
+                    }
+                }
             }, {
                 name: 'Perpanjangan',
-                y: {{$pan}}
+                y: {
+                    {
+                        $pan
+                    }
+                }
             }, {
                 name: 'Dalam Penjajakan',
-                y: {{$pen}}
+                y: {
+                    {
+                        $pen
+                    }
+                }
             }]
         }]
     });

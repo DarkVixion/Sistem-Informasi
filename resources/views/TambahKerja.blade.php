@@ -9,7 +9,7 @@
         header('Location: /UserRekap');
         die;
     }
-?>    
+?>
 
 <head>
     <meta charset="utf-8">
@@ -90,7 +90,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123 @endif</a>
+                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123
+                            @endif</a>
                         <a href="/Logout">Logout</a>
                     </div>
                 </div>
@@ -202,15 +203,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!--
-                <button id="myBtn" disabled="true;">My Button</button>
-                <br><br>
-
-
-                <button onclick="enableBtn()">Enable "My Button"</button>
-                /.container-fluid -->
-
             </section>
             <!-- /.container-fluid -->
             <section class="content">
@@ -297,7 +289,8 @@
                                                 <div class="col-sm-12">
                                                     <input type="text"
                                                         class="form-control @error('judul_mou') is-invalid @enderror"
-                                                        name="judul_mou[]" placeholder="Masukan Judul Kerja Sama" multiple>
+                                                        name="judul_mou[]" placeholder="Masukan Judul Kerja Sama"
+                                                        multiple>
                                                 </div>
                                             </div>
                                             <br><br>

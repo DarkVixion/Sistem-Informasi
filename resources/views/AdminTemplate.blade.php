@@ -52,9 +52,14 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">2</span>
+                    <a class="nav-link" data-toggle="dropdown" href="#" style="padding-top: 29%;">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
+                            data-src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png" alt="Notification "
+                            title="Notification " width="25" height="25" class="lzy lazyload--done"
+                            srcset="https://cdn-icons-png.flaticon.com/128/3119/3119338.png 4x">
+                        <!-- <i class="far fa-bell fa-2x"> </i> -->
+                        <!-- https://www.flaticon.com/free-icon/notification_3119338 -->
+                        <span class=" badge badge-warning navbar-badge">2</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">2 Notifications</span>
@@ -78,15 +83,17 @@
                 </li>
                 <!-- profile -->
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
-                    <div class="image">
-                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                    <div class="image" style="padding-top:3%">
+                        <img src=" {{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
                             alt="User Image" style="padding-top: 28%">
                     </div>
                     <div class="info" style="padding-top: 7%">
-                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123
+                        <a href="/Akun" class="d-block" style="padding-top:5%">@if(session()->has('id'))
+                            {{session('name')}} @else
+                            Admin123
                             @endif</a>
                     </div>
-                    <div class="info">
+                    <div class=" info">
                         <a href="/Logout" class="nav-link">
                             <img class="nav-icon" style="opacity: 55%; width: 18px;"
                                 srcset="https://cdn-icons-png.flaticon.com/512/1286/1286853.png 2x" width="1rem"
