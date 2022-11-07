@@ -82,7 +82,8 @@
                             alt="User Image">
                     </div>
                     <div class="info">
-                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123 @endif</a>
+                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123
+                            @endif</a>
                         <a href="/Logout">Logout</a>
                     </div>
                 </div>
@@ -394,7 +395,7 @@
         //-------------
         //- BAR CHART -
         //-------------
-        var barChartCanvas = $('#barChart').get(0).getContext('2d')
+        var barChartCanvas = $('#barChart').get(1).getContext('2d')
         var barChartData = $.extend(true, {}, areaChartData)
         var temp0 = areaChartData.datasets[0]
         var temp1 = areaChartData.datasets[1]
