@@ -169,16 +169,15 @@
             </div>
             <!-- /.row -->
         </div>
-        <div class="card card-body">
+        <!-- <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                     <h3 class="card-title text-bold text-lg">Nilai Kerja Sama</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4"></div>
-                <!-- /.col -->
-                <div class="col-md-8">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
                     <div class="card-body">
                         <div class="input-group input-group-sm" style="width: 150px; float: right;">
                             <input type="text" name="table_search" class="form-control float-right"
@@ -245,13 +244,12 @@
                             <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
                         </ul>
                     </div>
-
                     <!-- /.card -->
                 </div>
                 <!-- /.col -->
             </div>
             <!-- /.row -->
-        </div>
+        </div> -->
         <!-- /.row -->
         <!-- /.container-fluid -->
     </div>
@@ -274,7 +272,7 @@
             text: ''
         },
         tooltip: {
-            pointFormat: '{point.name}: <b>{point.y:f}</b>'
+            pointFormat: '{series.name}: <b>{point.y:f}</b>'
         },
         plotOptions: {
             pie: {
@@ -287,6 +285,7 @@
             }
         },
         series: [{
+            name: 'Total',
             colorByPoint: true,
             data: [{
                 name: 'Aktif',
@@ -322,7 +321,7 @@
             text: ''
         },
         tooltip: {
-            pointFormat: '{point.name}: <b>{point.y:f}</b>'
+            pointFormat: '{series.name}: <b>{point.y:f}</b>'
         },
         plotOptions: {
             pie: {
@@ -335,22 +334,23 @@
             }
         },
         series: [{
+            name: 'Total',
             colorByPoint: true,
             data: [{
-                name: 'Aktif',
-                y: 1
+                name: 'Pertamina',
+                y: {{$tamin}}
             }, 
             {
-                name: 'Tidak Aktif',
-                y: 2
+                name: 'Non-Pertamina',
+                y: {{$ntamin}}
             }, 
             {
-                name: 'Kedaluwarsa',
-                y: 3
+                name: 'BUMN',
+                y: {{$bumn}}
             }, 
             {
-                name: 'Perpanjangan',
-                y: 4
+                name: 'Kementerian',
+                y: {{$mentri}}
             }, 
             {
                 name: 'Dalam Penjajakan',
