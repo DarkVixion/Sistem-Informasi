@@ -110,7 +110,7 @@
                                                 {{ $mou[0]->tglselesai->format('d-m-Y') }}
                                                 @endif
                                             </td>
-                                            <td rowspan="{{$max_i}}">
+                                            <td rowspan="{{$max_i}}" style="vertical-align:middle;">
                                                 <a href="{{route('edit_kerjasama', $item->id)}}"><button
                                                         class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
                                                 <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
