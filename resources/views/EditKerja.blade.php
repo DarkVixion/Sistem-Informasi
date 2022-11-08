@@ -531,14 +531,12 @@
                                     <div class="col-sm-10">
                                         <div class="form-group">
                                             <select class="form-control" name="pic" id="pic">
-                                                @if ($tks->assignuserakun != null)
+                                                @if ($tks->assignuserakun == null)
                                                 <option hidden selected>{{ $tks->assignuserakun }}</option>
-                                                @else
-                                                <option value="" hidden>--- Pilih PIC ---</option>
                                                 @endif
 
                                                 @foreach($users as $u)
-                                                <option value="{{ $u->id }}">{{ $u->nama }}</option>
+                                                <option value="{{ $u->id }}" <?php if($tks->assignuserakun == $u->id){ echo('selected');} ?>>{{ $u->nama }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
