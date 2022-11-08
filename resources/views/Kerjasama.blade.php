@@ -70,7 +70,6 @@
                             <table id="example1" class="table table-bordered" >
                                 <thead>
                                     <tr>
-                                        <!-- <th>No.<th> -->
                                         <th>Bulan Pencatatan</th>
                                         <th>Nama</th>
                                         <th>Jenis Mitra</th>
