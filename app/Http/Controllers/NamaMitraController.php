@@ -24,6 +24,7 @@ class NamaMitraController extends Controller
     {
         $input = $req->all();
         NamaMitra::create($input);
+        //dd($input);
         return back();
     }
 

@@ -119,7 +119,7 @@
                                                             <div class=" col-md-12">
                                                                 <div class="form-group">
                                                                     <label>Nomor Telephone</label>
-                                                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value="{{ $item->notelpmitra }}">
+                                                                    <input type="text" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" onKeyPress="if(this.value.length==15) return false;" value="{{ $item->notelpmitra }}">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12">
@@ -204,7 +204,7 @@
                             <div class=" col-md-12">
                                 <div class="form-group">
                                     <label>Nomor Telephone</label>
-                                    <input type="number" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;">
+                                    <input type="text" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" onKeyPress="if(this.value.length==15) return false;" value="{{ $item->notelpmitra }}">
                                 </div>
                             </div>
                             <div class="col-md-12">
