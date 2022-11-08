@@ -102,7 +102,7 @@
                     <div class="info" style="padding-top: 7%">
                         <a href="/Akun" class="d-block" style="padding-top:5%">@if(session()->has('id'))
                             {{session('name')}} @else
-                            Admin123
+                            ???
                             @endif</a>
                     </div>
                     <div class=" info">

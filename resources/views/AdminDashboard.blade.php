@@ -17,7 +17,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-right">
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <div class="col-sm-13">
                             <input type="month" class="form-control " name="bulaninput">
                         </div>
@@ -29,7 +29,7 @@
                     </div>
                     <button type="submit" class="btn btn-default" style="max-height: 38px;">
                         <i class=" fas fa-search"></i>
-                    </button>
+                    </button> -->
 
                 </ol>
             </div>
