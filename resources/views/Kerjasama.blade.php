@@ -99,10 +99,17 @@
                                         <td rowspan="{{$max_i}}">{{ $item->bulaninput }}</td>
                                         <td rowspan="{{$max_i}}">{{ $item->namamitra }}</td>
                                         <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
-                                        <td>&nbsp;&ensp;MoU</td>
-                                                <td>{{ $mou[0]->tglmulai }}</td>
-                                                <td>{{ $mou[0]->tglselesai }}</td>
-                                                    </a></td>
+                                        <td>MoU</td>
+                                        <td style="text-align:center;">
+                                            @if ( $mou[0]->tglmulai != null)
+                                            {{ $mou[0]->tglmulai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
+                                        <td style="text-align:center;">
+                                            @if ( $mou[0]->tglselesai != null)
+                                            {{ $mou[0]->tglselesai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
                                         <td rowspan="{{$max_i}}">
                                             <a href="{{route('edit_kerjasama', $item->id)}}"><button
                                                     class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
@@ -113,7 +120,7 @@
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
-                                            </tr>
+                                    </tr>
 
                                             @for($i=1; $i<$mou_i; $i++) 
                                                 <tr>
