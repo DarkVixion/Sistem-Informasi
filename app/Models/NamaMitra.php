@@ -14,7 +14,7 @@ class NamaMitra extends Model
         "jenismitra",
         "alamat",
         "negara",
-        "notelp",
+        "notelpmitra",
         "website"
     ];
 }

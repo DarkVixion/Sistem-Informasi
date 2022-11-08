@@ -72,6 +72,13 @@ class LoginController extends Controller
 
     public function admin()
     {
+        $tamin = TambahKerjasama::where('jenismitra','pertamina')->count();
+        $ntamin = TambahKerjasama::where('jenismitra','non-pertamina')->count();
+        $bumn = TambahKerjasama::where('jenismitra','bumn')->count();
+        $mentri = TambahKerjasama::where('jenismitra','kementerian')->count();
+        // $oth  = TambahKerjasama::where('jenismitra','!=','pertamina')->get();
+        // dd($oth);
+
         $aktif = TambahKerjasama::where('status','aktif')->count();
         $taktif = TambahKerjasama::where('status','tidak aktif')->count();
         $exp = TambahKerjasama::where('status','kedaluwarsa')->count();
@@ -113,6 +120,10 @@ class LoginController extends Controller
             ->with('taktif', $taktif)
             ->with('exp', $exp)
             ->with('pen', $pen)
-            ->with('pan', $panjang);
+            ->with('pan', $panjang)
+            ->with('tamin', $tamin)
+            ->with('ntamin', $ntamin)
+            ->with('bumn', $bumn)
+            ->with('mentri', $mentri);
         }
     }
