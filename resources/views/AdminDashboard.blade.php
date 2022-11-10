@@ -169,7 +169,7 @@
             </div>
             <!-- /.row -->
         </div>
-        <!-- <div class="card card-body">
+        <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                     <h3 class="card-title text-bold text-lg">Nilai Kerja Sama</h3>
@@ -179,7 +179,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-10">
                     <div class="card-body">
-                        <div class="input-group input-group-sm" style="width: 150px; float: right;">
+                        <!-- <div class="input-group input-group-sm" style="width: 150px; float: right;">
                             <input type="text" name="table_search" class="form-control float-right"
                                 placeholder="Search">
 
@@ -188,7 +188,7 @@
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
@@ -249,7 +249,7 @@
                 <!-- /.col -->
             </div>
             <!-- /.row -->
-        </div> -->
+        </div>
         <!-- /.row -->
         <!-- /.container-fluid -->
     </div>
@@ -351,10 +351,10 @@
             {
                 name: 'Kementerian',
                 y: {{$mentri}}
-            }, 
+            },
             {
-                name: 'Dalam Penjajakan',
-                y: 5
+                name: 'Other',
+                y: {{$other}}
             }]
         }]
     });

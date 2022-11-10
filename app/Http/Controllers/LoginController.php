@@ -7,6 +7,7 @@ use App\Models\AdminViewUser;
 use App\Models\MoA;
 use App\Models\MoU;
 use App\Models\TambahKerjasama;
+use Carbon\Carbon;
 use Illuminate\Contracts\Session\Session as SessionSession;
 use Illuminate\Support\Facades\Session as FacadesSession;
 use Symfony\Component\HttpFoundation\Session\Session;
@@ -20,6 +21,7 @@ class LoginController extends Controller
      */
     public function index()
     {
+        // dd(Carbon::now()->toDateString());
         if(session()->has('id'))
         {
             if(session('role') == 'Admin')
@@ -76,8 +78,7 @@ class LoginController extends Controller
         $ntamin = TambahKerjasama::where('jenismitra','non-pertamina')->count();
         $bumn = TambahKerjasama::where('jenismitra','bumn')->count();
         $mentri = TambahKerjasama::where('jenismitra','kementerian')->count();
-        // $oth  = TambahKerjasama::where('jenismitra','!=','pertamina')->get();
-        // dd($oth);
+        $oth  = TambahKerjasama::whereNotIn('jenismitra',['pertamina','non-pertamina','bumn','kementerian'])->get();
 
         $aktif = TambahKerjasama::where('status','aktif')->count();
         $taktif = TambahKerjasama::where('status','tidak aktif')->count();
@@ -124,6 +125,7 @@ class LoginController extends Controller
             ->with('tamin', $tamin)
             ->with('ntamin', $ntamin)
             ->with('bumn', $bumn)
-            ->with('mentri', $mentri);
+            ->with('mentri', $mentri)
+            ->with('other', $oth);
         }
     }
