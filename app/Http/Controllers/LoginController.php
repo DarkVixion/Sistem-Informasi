@@ -117,6 +117,11 @@ class LoginController extends Controller
             $total[] = MoA::where('tambah_kerjasama_id',$id)->sum('nilaikontrak');
         }
 
+        $mon = Carbon::now()->subMonth(2);
+        $m0n = Carbon::now();
+        $d4t = MoU::whereBetween('tglselesai',[$mon,$m0n])->get();
+        // dd($d4t);
+        
         return view('AdminDashboard')->with('sum', $sum)
             ->with('countmoa', $countmoa)
             ->with('countmou', $countmou)

@@ -80,14 +80,18 @@
                             <img class="nav-icon"
                                 srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
                             Kedaluwarsa - nama MOU
-                            <span class="float-right text-muted text-sm">D-5</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="/UserInformasiMitra" class="dropdown-item">
                             <img class="nav-icon"
                                 srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
                             Dokumen - nama kerja sama
-                            <span class="float-right text-muted text-sm">D-5</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="/UserInformasiMitra" class="dropdown-item">
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img>
+                            {{ session('name') }}
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>

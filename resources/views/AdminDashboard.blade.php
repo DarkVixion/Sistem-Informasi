@@ -189,7 +189,7 @@
                                 </button>
                             </div>
                         </div> -->
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th style="width: 10px">#</th>
@@ -203,7 +203,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $nm }}</td>
-                                        <td>{{ $tots[$inc] }}</td>
+                                        <td>Rp {{ number_format($tots[$inc]) }}</td>
                                     </tr>
                                     <?php $inc++; ?>
                                 @endforeach
