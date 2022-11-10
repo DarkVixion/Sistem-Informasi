@@ -9,6 +9,7 @@ use App\Models\MoU;
 use App\Models\TambahKerjasama;
 use Carbon\Carbon;
 use Illuminate\Contracts\Session\Session as SessionSession;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Session as FacadesSession;
 use Symfony\Component\HttpFoundation\Session\Session;
 
@@ -110,7 +111,13 @@ class LoginController extends Controller
             if($bool == false)
             {
                 $temp[] = $d->namamitra;
+                $fid[] = $d->id;
             }
+        }
+
+        foreach($fid as $id)
+        {
+            $total[] = MoA::where('tambah_kerjasama_id',$id)->sum('nilaikontrak');
         }
 
         return view('AdminDashboard')->with('sum', $sum)
@@ -126,6 +133,8 @@ class LoginController extends Controller
             ->with('ntamin', $ntamin)
             ->with('bumn', $bumn)
             ->with('mentri', $mentri)
-            ->with('other', $oth);
+            ->with('other', $oth)
+            ->with('nmitra', $temp)
+            ->with('tots', $total);
         }
     }
