@@ -8,10 +8,7 @@ use App\Models\MoA;
 use App\Models\MoU;
 use App\Models\TambahKerjasama;
 use Carbon\Carbon;
-use Illuminate\Contracts\Session\Session as SessionSession;
-use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Session as FacadesSession;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 class LoginController extends Controller
 {
