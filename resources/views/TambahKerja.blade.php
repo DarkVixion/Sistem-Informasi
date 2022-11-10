@@ -503,7 +503,7 @@
                                         <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor
                                             Telepon</label>
                                         <div class="col-sm-10">
-                                            <input type="number" class="form-control" name="notelppic" id="notelppic"
+                                            <input type="text" class="form-control" name="notelppic" id="notelppic"
                                                 placeholder="No Telepon PIC" value="" id="notelppic" readonly>
                                         </div>
                                         <br><br>

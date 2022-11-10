@@ -247,7 +247,9 @@
                                     <label for="select" class="col-sm-2 col-form-label">Nama Mitra</label>
                                     <div class="col-sm-13">
                                         <select class="form-control" name="namamitra" id="namamitra">
-                                            <option>{{ $tks->namamitra}} </option>
+                                            @foreach ($nm as $nm)
+                                            <option <?php if($nm->nama == $tks->namamitra) {echo('selected');} ?>>{{ $nm->nama }} </option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -544,7 +546,7 @@
                                     <br><br>
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC"  value="{{ $tks->notelppic }}" readonly>
+                                        <input type="text" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC"  value="{{ $tks->notelppic }}" readonly>
                                     </div>
                                     <br><br>
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
