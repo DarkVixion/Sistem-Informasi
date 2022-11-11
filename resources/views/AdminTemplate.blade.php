@@ -71,28 +71,18 @@
                             srcset="https://cdn-icons-png.flaticon.com/128/3119/3119338.png 4x">
                         <!-- <i class="far fa-bell fa-2x"> </i> -->
                         <!-- https://www.flaticon.com/free-icon/notification_3119338 -->
-                        <span class=" badge badge-warning navbar-badge">2</span>
+                        <span class=" badge badge-warning navbar-badge">{{ count(session('mou')) }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">2 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon"
-                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
-                            Kedaluwarsa - nama MOU
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon"
-                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
-                            Dokumen - nama kerja sama
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon"
-                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img>
-                            {{ session('name') }}
-                        </a>
+                        <span class="dropdown-item dropdown-header">{{ count(session('mou')) }} Notifications</span>
+                        @foreach(session('mou') as $d)
+                            <div class="dropdown-divider"></div>
+                            <a href="{{route('edit_kerjasama', $d->tambah_kerjasama_id)}}" class="dropdown-item">
+                                <img class="nav-icon"
+                                    srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> 
+                                    Hampir Kedaluwarsa - {{ $d->Judul }}
+                            </a>
+                        @endforeach
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
