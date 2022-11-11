@@ -475,8 +475,7 @@
                                             Telepon</label>
                                         <div class="col-sm-9">
                                             <input type="number" class="form-control " name="notelpnara"
-                                                placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/"
-                                                onKeyPress="if(this.value.length==15) return false;">
+                                                placeholder="No. Telepon" onKeyPress="if(this.value.length==15) return false;">
                                         </div>
                                         <br><br>
                                         <label for="inputPassword3 " class="col-sm-3 col-form-label ">Email</label>
