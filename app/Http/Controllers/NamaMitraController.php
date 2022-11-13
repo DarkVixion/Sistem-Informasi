@@ -24,6 +24,7 @@ class NamaMitraController extends Controller
     {
         $input = $req->all();
         NamaMitra::create($input);
+        //dd($input);
         return back();
     }
 
@@ -46,6 +47,7 @@ class NamaMitraController extends Controller
         $tks->jenismitra = $req['jenismitra'];
         $tks->alamat = $req['alamat'];
         $tks->website = $req['website'];
+        $tks->negara = $req['negara'];
         $tks->notelpmitra = $req['notelpmitra'];
 
         $tks->save();

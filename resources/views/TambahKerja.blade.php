@@ -59,40 +59,47 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">2</span>
+                    <a class="nav-link" data-toggle="dropdown" href="#" style="padding-top: 29%;">
+                        <img src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
+                            data-src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png" alt="Notification "
+                            title="Notification " width="25" height="25" class="lzy lazyload--done"
+                            srcset="https://cdn-icons-png.flaticon.com/128/3119/3119338.png 4x">
+                        <!-- <i class="far fa-bell fa-2x"> </i> -->
+                        <!-- https://www.flaticon.com/free-icon/notification_3119338 -->
+                        <span class=" badge badge-warning navbar-badge">{{ count(session('mou')) }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">2 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon"
-                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
-                            Kedaluwarsa - nama MOU
-                            <span class="float-right text-muted text-sm">D-5</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon"
-                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
-                            Dokumen - nama kerja sama
-                            <span class="float-right text-muted text-sm">D-5</span>
-                        </a>
+                        <span class="dropdown-item dropdown-header">{{ count(session('mou')) }} Notifications</span>
+                        @foreach(session('mou') as $d)
+                            <div class="dropdown-divider"></div>
+                            <a href="{{route('edit_kerjasama', $d->tambah_kerjasama_id)}}" class="dropdown-item">
+                                <img class="nav-icon"
+                                    srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> 
+                                    Hampir Kedaluwarsa - {{ $d->Judul }}
+                            </a>
+                        @endforeach
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
                 <!-- profile -->
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
-                    <div class="image">
-                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                            alt="User Image">
+                <div class="image" style="padding-top:3%">
+                        <img src=" {{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image" style="padding-top: 28%">
                     </div>
-                    <div class="info">
-                        <a href="/Akun" class="d-block">@if(session()->has('id')) {{session('name')}} @else Admin123
+                    <div class="info" style="padding-top: 7%">
+                        <a href="/Akun" class="d-block" style="padding-top:5%">@if(session()->has('id'))
+                            {{session('name')}} @else
+                            ???
                             @endif</a>
-                        <a href="/Logout">Logout</a>
+                    </div>
+                    <div class=" info">
+                        <a href="/Logout" class="nav-link">
+                            <img class="nav-icon" style="opacity: 55%; width: 18px;"
+                                srcset="https://cdn-icons-png.flaticon.com/512/1286/1286853.png 2x" width="1rem"
+                                height="1rem" alt="exit icon" loading="lazy">
+                        </a>
                     </div>
                 </div>
 
@@ -468,8 +475,7 @@
                                             Telepon</label>
                                         <div class="col-sm-9">
                                             <input type="number" class="form-control " name="notelpnara"
-                                                placeholder="No. Telepon" pattern="/^-?\d+\.?\d*$/"
-                                                onKeyPress="if(this.value.length==15) return false;">
+                                                placeholder="No. Telepon" onKeyPress="if(this.value.length==15) return false;">
                                         </div>
                                         <br><br>
                                         <label for="inputPassword3 " class="col-sm-3 col-form-label ">Email</label>
@@ -503,7 +509,7 @@
                                         <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor
                                             Telepon</label>
                                         <div class="col-sm-10">
-                                            <input type="number" class="form-control" name="notelppic" id="notelppic"
+                                            <input type="text" class="form-control" name="notelppic" id="notelppic"
                                                 placeholder="No Telepon PIC" value="" id="notelppic" readonly>
                                         </div>
                                         <br><br>

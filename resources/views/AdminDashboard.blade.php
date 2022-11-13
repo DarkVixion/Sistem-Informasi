@@ -169,7 +169,7 @@
             </div>
             <!-- /.row -->
         </div>
-        <!-- <div class="card card-body">
+        <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                     <h3 class="card-title text-bold text-lg">Nilai Kerja Sama</h3>
@@ -179,7 +179,7 @@
                 <div class="col-md-2"></div>
                 <div class="col-md-10">
                     <div class="card-body">
-                        <div class="input-group input-group-sm" style="width: 150px; float: right;">
+                        <!-- <div class="input-group input-group-sm" style="width: 150px; float: right;">
                             <input type="text" name="table_search" class="form-control float-right"
                                 placeholder="Search">
 
@@ -188,8 +188,8 @@
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
-                        </div>
-                        <table class="table table-bordered">
+                        </div> -->
+                        <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th style="width: 10px">#</th>
@@ -198,42 +198,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1.</td>
-                                    <td>Update software</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-danger" style="width: 55%"></div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2.</td>
-                                    <td>Clean database</td>
-                                    <td>
-                                        <div class="progress progress-xs">
-                                            <div class="progress-bar bg-warning" style="width: 70%"></div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3.</td>
-                                    <td>Cron job running</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar bg-primary" style="width: 30%"></div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4.</td>
-                                    <td>Fix and squish bugs</td>
-                                    <td>
-                                        <div class="progress progress-xs progress-striped active">
-                                            <div class="progress-bar bg-success" style="width: 90%"></div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                <?php $inc = 0; ?>
+                                @foreach($nmitra as $nm)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $nm }}</td>
+                                        <td>Rp {{ number_format($tots[$inc]) }}</td>
+                                    </tr>
+                                    <?php $inc++; ?>
+                                @endforeach
                             </tbody>
                         </table>
                         <ul class="pagination pagination-sm m-0 float-right">
@@ -249,7 +222,7 @@
                 <!-- /.col -->
             </div>
             <!-- /.row -->
-        </div> -->
+        </div>
         <!-- /.row -->
         <!-- /.container-fluid -->
     </div>
@@ -351,10 +324,10 @@
             {
                 name: 'Kementerian',
                 y: {{$mentri}}
-            }, 
+            },
             {
-                name: 'Dalam Penjajakan',
-                y: 5
+                name: 'Other',
+                y: {{$other}}
             }]
         }]
     });

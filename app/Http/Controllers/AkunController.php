@@ -90,6 +90,8 @@ class AkunController extends Controller
 
     public function edit(Request $req, $id)
     {
+        $req->session()->put('name',$req->nama);
+        
         $input = $req->all();
         $akun = AdminViewUser::find($id);
         $akun->update($input);

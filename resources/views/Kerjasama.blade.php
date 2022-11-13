@@ -43,7 +43,18 @@
                 <h1>Rekap Kontrak</h1>
             </div>
 
+            <a href="TambahKerja">
+                <button type="button" class="btn btn-default float-right"
+                    style="background-color:lightblue; border-radius:15px;">
+                    Tambah Kerja Sama
+                </button>
+            </a>
+            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl"
+                style="border-radius:15px;">
+                <i class="fas fa-plus"></i> Import Excel</button>
+            <a href="/TambahKerja/export_excel" class="btn btn-danger float-right" target="_blank">/Export Excel</a>
         </div>
+    </div>
     </div>
     <!-- /.container-fluid -->
 </section>
