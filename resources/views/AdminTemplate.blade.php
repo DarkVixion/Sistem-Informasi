@@ -71,7 +71,7 @@
                             srcset="https://cdn-icons-png.flaticon.com/128/3119/3119338.png 4x">
                         <!-- <i class="far fa-bell fa-2x"> </i> -->
                         <!-- https://www.flaticon.com/free-icon/notification_3119338 -->
-                        <span class=" badge badge-warning navbar-badge">2</span>
+                        <span class=" badge badge-warning navbar-badge">10</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">2 Notifications</span>

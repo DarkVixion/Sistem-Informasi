@@ -42,18 +42,7 @@
             <div class="col-sm-6">
                 <h1>Rekap Kontrak</h1>
             </div>
-            <div class="col-sm-6">
 
-                <a href="TambahKerja">
-                    <button type="button" class="btn btn-default float-right"
-                        style="background-color:lightblue; border-radius:15px;">
-                        Tambah Kerja Sama
-                    </button>
-                </a>
-                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl" style="border-radius:15px;">
-                <i class="fas fa-plus"></i> Import Excel</button>
-                <a href="/TambahKerja/export_excel" class="btn btn-danger float-right" target="_blank">/Export Excel</a>
-            </div>
         </div>
     </div>
     <!-- /.container-fluid -->
@@ -61,13 +50,26 @@
 
 <!-- Main content -->
 <section class="content">
+    <div class="card-header">
+        <a href="TambahKerja">
+            <button type="button" class="btn btn-default float-right"
+                style="background-color:lightblue; margin-right:5px;">
+                Tambah Kerja Sama
+            </button>
+        </a>
+        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-xl"
+            style="margin-right:5px;">
+            <i class="fas fa-plus"></i> Import Excel</button>
+        <a href="/TambahKerja/export_excel" class="btn btn-danger float-right" target="_blank"
+            style="margin-right:5px;">Export Excel</a>
+    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="md-card-content">
-                            <table id="example1" class="table table-bordered" >
+                            <table id="example1" class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>Bulan Pencatatan</th>
@@ -95,99 +97,72 @@
                                     ?>
 
                                     @if ($mou_i != 0)
-                                        <tr>
-                                            <td rowspan="{{$max_i}}">{{ $item->bulaninput }}</td>
-                                            <td rowspan="{{$max_i}}">{{ $item->namamitra }}</td>
-                                            <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
-                                            <td>MoU</td>
-                                            <td style="text-align:center;">
-                                                @if ( $mou[0]->tglmulai != null)
-                                                {{ $mou[0]->tglmulai->format('d-m-Y') }}
-                                                @endif
-                                            </td>
-                                            <td style="text-align:center;">
-                                                @if ( $mou[0]->tglselesai != null)
-                                                {{ $mou[0]->tglselesai->format('d-m-Y') }}
-                                                @endif
-                                            </td>
-                                            <td rowspan="{{$max_i}}" style="vertical-align:middle;">
-                                                <a href="{{route('edit_kerjasama', $item->id)}}"><button
-                                                        class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                                <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
-                                                    style="display:inline ">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <td rowspan="{{$max_i}}">{{ $item->bulaninput }}</td>
+                                        <td rowspan="{{$max_i}}">{{ $item->namamitra }}</td>
+                                        <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
+                                        <td>MoU</td>
+                                        <td style="text-align:center;">
+                                            @if ( $mou[0]->tglmulai != null)
+                                            {{ $mou[0]->tglmulai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
+                                        <td style="text-align:center;">
+                                            @if ( $mou[0]->tglselesai != null)
+                                            {{ $mou[0]->tglselesai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
+                                        <td rowspan="{{$max_i}}" style="vertical-align:middle;">
+                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button
+                                                    class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
+                                                style="display:inline ">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger"><i
+                                                        class="fa fa-trash"></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
 
-                                        @for($i=1; $i<$mou_i; $i++) 
-                                        <tr>
-                                            <td>MoU</td>
-                                            <td style="text-align:center;">
-                                                @if ( $mou[$i]->tglmulai != null)
-                                                {{ $mou[0]->tglmulai->format('d-m-Y') }}
-                                                @endif
-                                            </td>
-                                            <td style="text-align:center;">
-                                                @if ( $mou[$i]->tglselesai != null)
-                                                {{ $mou[0]->tglselesai->format('d-m-Y') }}
-                                                @endif
-                                            </td>
+                                    @for($i=1; $i<$mou_i; $i++) <tr>
+                                        <td>MoU</td>
+                                        <td style="text-align:center;">
+                                            @if ( $mou[$i]->tglmulai != null)
+                                            {{ $mou[0]->tglmulai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
+                                        <td style="text-align:center;">
+                                            @if ( $mou[$i]->tglselesai != null)
+                                            {{ $mou[0]->tglselesai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
                                         </tr>
                                         @endfor
 
                                         @if ($moa_i != 0)
-                                            @for($i=0; $i<$moa_i; $i++) 
-                                                <tr>
-                                                    <td>MoA</td>
-                                                    <td style="text-align:center;">
-                                                        @if ( $moa[$i]->tglmulai != null)
-                                                        {{ $moa[0]->tglmulai->format('d-m-Y') }}
-                                                        @endif
-                                                    </td>
-                                                    <td style="text-align:center;">
-                                                        @if ( $moa[$i]->tglselesai != null)
-                                                        {{ $moa[0]->tglselesai->format('d-m-Y') }}
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                            @endfor
-                                        @endif
-                                        
-
-                                    @elseif ($moa_i != 0)
-                                        <tr>
-                                            <td rowspan="{{$max_i}}">{{ $item->bulaninput }}</td>
-                                            <td rowspan="{{$moa_i}}">{{ $item->namamitra }}</td>
-                                            <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
+                                        @for($i=0; $i<$moa_i; $i++) <tr>
                                             <td>MoA</td>
                                             <td style="text-align:center;">
-                                                @if ( $moa[0]->tglmulai != null)
+                                                @if ( $moa[$i]->tglmulai != null)
                                                 {{ $moa[0]->tglmulai->format('d-m-Y') }}
                                                 @endif
                                             </td>
                                             <td style="text-align:center;">
-                                                @if ( $moa[0]->tglselesai != null)
+                                                @if ( $moa[$i]->tglselesai != null)
                                                 {{ $moa[0]->tglselesai->format('d-m-Y') }}
                                                 @endif
                                             </td>
-                                            <td rowspan="{{$max_i}}">
-                                                <a href="{{route('edit_kerjasama', $item->id)}}"><button
-                                                        class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                                <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
-                                                    style="display:inline ">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger"><i
-                                                            class="fa fa-trash"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr>
+                                            </tr>
+                                            @endfor
+                                            @endif
 
-                                        @for($i=1; $i<$moa_i; $i++) 
+
+                                            @elseif ($moa_i != 0)
                                             <tr>
+                                                <td rowspan="{{$max_i}}">{{ $item->bulaninput }}</td>
+                                                <td rowspan="{{$moa_i}}">{{ $item->namamitra }}</td>
+                                                <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
                                                 <td>MoA</td>
                                                 <td style="text-align:center;">
                                                     @if ( $moa[0]->tglmulai != null)
@@ -199,32 +174,60 @@
                                                     {{ $moa[0]->tglselesai->format('d-m-Y') }}
                                                     @endif
                                                 </td>
+                                                <td rowspan="{{$max_i}}">
+                                                    <a href="{{route('edit_kerjasama', $item->id)}}"><button
+                                                            class="btn btn-primary"><i
+                                                                class="fa fa-edit"></i></button></a>
+                                                    <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
+                                                        style="display:inline ">
+                                                        {{ method_field('DELETE') }}
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" class="btn btn-danger"><i
+                                                                class="fa fa-trash"></i></button>
+                                                    </form>
+                                                </td>
                                             </tr>
-                                        @endfor
 
-                                    @else
-                                        <tr>
-                                            <td>{{ $item->bulaninput }}</td>
-                                            <td>{{ $item->namamitra }}</td>
-                                            <td>{{ $item->jenismitra }}</td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                                <a href="{{route('edit_kerjasama', $item->id)}}"><button
-                                                        class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
-                                                <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
-                                                    style="display:inline ">
-                                                    {{ method_field('DELETE') }}
-                                                    {{ csrf_field() }}
-                                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        
-                                    @endif
+                                            @for($i=1; $i<$moa_i; $i++) <tr>
+                                                <td>MoA</td>
+                                                <td style="text-align:center;">
+                                                    @if ( $moa[0]->tglmulai != null)
+                                                    {{ $moa[0]->tglmulai->format('d-m-Y') }}
+                                                    @endif
+                                                </td>
+                                                <td style="text-align:center;">
+                                                    @if ( $moa[0]->tglselesai != null)
+                                                    {{ $moa[0]->tglselesai->format('d-m-Y') }}
+                                                    @endif
+                                                </td>
+                                                </tr>
+                                                @endfor
 
-                                        <!-- <td>
+                                                @else
+                                                <tr>
+                                                    <td>{{ $item->bulaninput }}</td>
+                                                    <td>{{ $item->namamitra }}</td>
+                                                    <td>{{ $item->jenismitra }}</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td>
+                                                        <a href="{{route('edit_kerjasama', $item->id)}}"><button
+                                                                class="btn btn-primary"><i
+                                                                    class="fa fa-edit"></i></button></a>
+                                                        <form action="{{route('hapus_kerjasama', $item->id)}}"
+                                                            method="POST" style="display:inline ">
+                                                            {{ method_field('DELETE') }}
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-danger"><i
+                                                                    class="fa fa-trash"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+
+                                                @endif
+
+                                                <!-- <td>
                                             <a href="{{route('edit_kerjasama', $item->id)}}"><button
                                                     class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
                                             <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
@@ -234,8 +237,8 @@
                                                 <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td> -->
-                                    </tr>
-                                    @endforeach
+                                                </tr>
+                                                @endforeach
                                 </tbody>
                             </table>
                         </div>
