@@ -42,19 +42,6 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group row">
-                <label for="select" class="col-sm-2 col-form-label">Lingkup Kerja Sama</label>
-                <div class="col-sm-10">
-                    <div class="form-group">
-                        <select class="form-control" name="lingkupkerja">
-                            <option selected hidden>{{ $tks->lingkupkerja }}</option>
-                            @foreach ($lk as $item)
-                            <option>{{ $item->judullingkupkerja }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                </div>
-            </div>
             <div class="form-group row ">
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
                 <div class="col-sm-10 ">
