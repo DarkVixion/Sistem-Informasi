@@ -41,7 +41,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
-
+    @yield('lib_tambahan')
     <style>
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -71,7 +71,8 @@
                             srcset="https://cdn-icons-png.flaticon.com/128/3119/3119338.png 4x">
                         <!-- <i class="far fa-bell fa-2x"> </i> -->
                         <!-- https://www.flaticon.com/free-icon/notification_3119338 -->
-                        <span class=" badge badge-warning navbar-badge" style="font-weight:bold ;">{{ count(session('mou')) }}</span>
+                        <span class=" badge badge-warning navbar-badge"
+                            style="font-weight:bold ;">{{ count(session('mou')) }}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <span class="dropdown-item dropdown-header">{{ count(session('mou')) }} Notifications</span>
