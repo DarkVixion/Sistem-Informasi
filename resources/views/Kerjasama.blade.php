@@ -60,7 +60,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="md-card-content">
-                            <table id="example1" class="table table-bordered" >
+                            <table id="example1" class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>Bulan Pencatatan</th>
