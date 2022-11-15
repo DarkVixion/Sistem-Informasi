@@ -198,9 +198,10 @@
                                                                     </div><br><br><br>
                                                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
                                                                     <div class="col-sm-10 ">
-                                                                        <input type="text" class="form-control " name="pic" disabled value=@if($item->assignuserakun != null)
-                                                                        "{{ $item->assignuserakun }}"
-                                                                        @endif>
+                                                                        <input type="text" class="form-control " name="pic" disabled value=@if($item->assignuserakun != null) @foreach($user as $u)  @if($item->assignuserakun == $u->id)
+                                                                        "{{ $u->nama }}"
+                                                                        @break
+                                                                        @endif @endforeach @endif>
                                                                     </div><br><br><br>
                                                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone
                                                                         PIC</label>

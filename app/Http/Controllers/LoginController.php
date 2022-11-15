@@ -9,6 +9,9 @@ use App\Models\MoU;
 use App\Models\TambahKerjasama;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session as FacadesSession;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class LoginController extends Controller
 {
@@ -121,6 +124,12 @@ class LoginController extends Controller
         $m0n = Carbon::now();
         $d4t = MoU::whereBetween('tglselesai',[$mon,$m0n])->get();
         session()->put('mou',$d4t);
+
+        for($i=0;$i<5;$i++){
+            $year[] = Carbon::now()->subYear($i)->format('Y'); 
+        }
+
+        $temp = $this->paginate($temp);
         
         return view('AdminDashboard')->with('sum', $sum)
             ->with('countmoa', $countmoa)
@@ -137,6 +146,14 @@ class LoginController extends Controller
             ->with('mentri', $mentri)
             ->with('other', $oth)
             ->with('nmitra', $temp)
-            ->with('tots', $total);
-        }
+            ->with('tots', $total)
+            ->with('years', $year);
     }
+
+    public function paginate($items, $perPage = 5, $page = null, $options = [])
+    {
+        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
+        $items = $items instanceof Collection ? $items : Collection::make($items);
+        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+    }
+}

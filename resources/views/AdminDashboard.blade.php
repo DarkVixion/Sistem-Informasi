@@ -109,31 +109,58 @@
         <div class="card card-body">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
-                    <h3 class="card-title text-bold text-lg">Status Kerja Sama</h3>
+                    <h3 class="card-title text-bold text-lg">Jenis Kerja Sama</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
-                    <div id="container"></div>
+                <div class="col-sm-8"></div>
+                <div class="col-sm-4">
+                    <select class="form-control" id="chosenyear">
+                        @foreach($years as $y)
+                            <option>{{ $y }}</option>
+                        @endforeach
+                    </select>
                 </div>
-                <!-- /.col -->
+            </div><br>
+            <div class="col-sm-12">
+                <div id="container2"></div>
             </div>
             <!-- /.row -->
         </div>
-        <div class="card card-body">
-            <div class="card-header border-0">
-                <div class="d-flex justify-content-between">
-                    <h3 class="card-title text-bold text-lg">Mitra</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <div class="card-header border-0">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title text-bold text-lg">Status Kerja Sama</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="container"></div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="container1"></div>
+            <div class="col-md-6">
+                <div class="card card-body">
+                    <div class="card-header border-0">
+                        <div class="d-flex justify-content-between">
+                            <h3 class="card-title text-bold text-lg">Mitra</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="container1"></div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
                 </div>
             </div>
-            <!-- /.row -->
         </div>
-        <div class="card card-body" style="display:none;">
+        <div class="card card-body" style="display:none ;">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between">
                     <h3 class="card-title text-bold text-lg">Jenis Kerja Sama</h3>
@@ -330,6 +357,70 @@
                 y: {{$other}}
             }]
         }]
+    });
+
+    Highcharts.chart('container2', {
+        title: {
+            text: 'MoU VS MoA'
+        },
+        yAxis: {
+            title: {
+                text: 'Number of Employees'
+            }
+        },
+        xAxis: {
+            accessibility: {
+                rangeDescription: 'Range: January to December'
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+        },
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointStart: 2010
+            }
+        },
+        series: [{
+            name: 'Installation & Developers',
+            data: [43934, 48656, 65165, 81827, 112143, 142383,
+                171533, 165174, 155157, 161454, 154610]
+        }, {
+            name: 'Manufacturing',
+            data: [24916, 37941, 29742, 29851, 32490, 30282,
+                38121, 36885, 33726, 34243, 31050]
+        }, {
+            name: 'Sales & Distribution',
+            data: [11744, 30000, 16005, 19771, 20185, 24377,
+                32147, 30912, 29243, 29213, 25663]
+        }, {
+            name: 'Operations & Maintenance',
+            data: [null, null, null, null, null, null, null,
+                null, 11164, 11218, 10077]
+        }, {
+            name: 'Other',
+            data: [21908, 5548, 8105, 11248, 8989, 11816, 18274,
+                17300, 13053, 11906, 10073]
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
     });
     </script>
 
