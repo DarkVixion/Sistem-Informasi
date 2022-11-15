@@ -60,15 +60,13 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="md-card-content">
-                            <table id="example1" class="table table-bordered">
+                            <table id="example1" class="table table-bordered" >
                                 <thead>
                                     <tr>
                                         <th>Bulan Pencatatan</th>
                                         <th>Nama</th>
                                         <th>Jenis Mitra</th>
                                         <th>Jenis Kerjasama</th>
-                                        <!-- <th>Lingkup Kerja Sama</th> -->
-                                        <!-- <th>Nilai Kontrak</th> -->
                                         <th>Periode Mulai Kerjasama</th>
                                         <th>Periode Berakhir Kerjasama</th>
                                         <th style="width:10%;">Misc.</th>

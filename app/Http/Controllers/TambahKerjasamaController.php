@@ -17,14 +17,13 @@ use App\Models\JenisMitra;
 use App\Models\LingkupKerja;
 use App\Models\AdminViewUser;
 use App\Models\NamaMitra;
-use PhpOffice\PhpSpreadsheet\Cell\DataType;
 
 class TambahKerjasamaController extends Controller
 {
     public function index() // untuk view hal Kerjasama
     {
         $kerjasama = TambahKerjasama::all();
-
+        
         return view('Kerjasama')->with('kerjasama', $kerjasama);
     }
 
