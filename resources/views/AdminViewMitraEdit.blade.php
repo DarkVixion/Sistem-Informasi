@@ -48,6 +48,16 @@
                     <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat" value="{{ $tks->alamat }}">
                 </div>
                 <br><br><br>
+                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Negara</label>
+                <div class="col-sm-10 ">
+                    <input type="text" class="form-control " name="negara" placeholder="Masukan Alamat" value="{{ $tks->negara }}">
+                </div>
+                <br><br><br>
+                <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Mitra</label>
+                <div class="col-sm-10 ">
+                    <input type="text" class="form-control " name="notelpmitra" placeholder="Masukan Alamat" value="{{ $tks->notelpmitra }}">
+                </div>
+                <br><br><br>
                 <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
                 <div class="col-sm-10 ">
                     <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $tks->website }}">
@@ -69,7 +79,9 @@
                             @endif
 
                             @foreach($user as $u)
-                            <option value="{{ $u->id }}" <?php if($tks->assignuserakun == $u->id){echo('selected');} ?>>{{ $u->nama }}</option>
+                            <option value="{{ $u->id }}" <?php if ($tks->assignuserakun == $u->id) {
+                                                                echo ('selected');
+                                                            } ?>>{{ $u->nama }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -106,26 +118,26 @@
 <script src="dist/js/adminlte.min.js"></script>
 
 <script>
-$(document).ready(function() {
-    $('#pic').on('change', function() {
-        var picID = $(this).val();
-        if (picID) {
-            $.ajax({
-                url: '/getData/' + picID,
-                type: "GET",
-                data: {
-                    "_token": "{{ csrf_token() }}"
-                },
-                dataType: "json",
-                success: function(data) {
-                    if (data) {
-                        document.getElementById('notelppic').value = data.notelp;
+    $(document).ready(function() {
+        $('#pic').on('change', function() {
+            var picID = $(this).val();
+            if (picID) {
+                $.ajax({
+                    url: '/getData/' + picID,
+                    type: "GET",
+                    data: {
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        if (data) {
+                            document.getElementById('notelppic').value = data.notelp;
+                        }
                     }
-                }
-            });
-        }
+                });
+            }
+        });
     });
-});
 </script>
 
 @endsection
