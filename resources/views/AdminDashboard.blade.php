@@ -423,7 +423,6 @@
                     dataType: "json",
                     success: function(data) {
                         if (data) {
-                            console.log(data.data1);
                             Highcharts.chart('container2', {
                                 chart: {
                                     type: 'column'
