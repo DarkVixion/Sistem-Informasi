@@ -1,14 +1,11 @@
-<?php 
-    if(session()->missing('id'))
-    {
-        header('Location: /Login');
-        die;
-    }
-    elseif(session('role')!='Admin')
-    {
-        header('Location: /UserRekap');
-        die;
-    }
+<?php
+if (session()->missing('id')) {
+    header('Location: /Login');
+    die;
+} elseif (session('role') != 'Admin') {
+    header('Location: /UserRekap');
+    die;
+}
 ?>
 
 <head>
@@ -131,73 +128,73 @@
             </div>
 
 
-    <!-- Sidebar Menu -->
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
 
-                <li class="nav-item">
-                    <a href="/AdminDashboard" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Dashboard
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Master Data
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <ul class="nav-item">
+                    <li class="nav-item">
+                        <a href="/AdminDashboard" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Master Data
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <ul class="nav-item">
                                 <a href="/NamaMitra" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Nama Mitra</p>
                                 </a>
                             </ul>
-                        <ul class="nav-item">
-                            <a href="/JenisMitra" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Jenis Mitra</p>
-                            </a>
+                            <ul class="nav-item">
+                                <a href="/JenisMitra" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Jenis Mitra</p>
+                                </a>
+                            </ul>
+                            <ul class="nav-item">
+                                <a href="/LingkupKerja" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Lingkup Kerja Sama</p>
+                                </a>
+                            </ul>
+                            <ul class="nav-item">
+                                <a href="/Mitra" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Profile Mitra</p>
+                                </a>
+                            </ul>
                         </ul>
-                        <ul class="nav-item">
-                            <a href="/LingkupKerja" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Lingkup Kerja Sama</p>
-                            </a>
-                        </ul>
-                        <ul class="nav-item">
-                            <a href="/Mitra" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Profile Mitra</p>
-                            </a>
-                        </ul>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/Kerjasama" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Rekap Kontrak</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/AdminShowUser" class="nav-link">
-                        <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
-                        <p>User</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-</aside>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Kerjasama" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>Rekap Kontrak</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/AdminShowUser" class="nav-link">
+                            <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
+                            <p>User</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -236,7 +233,7 @@
                                         <option hidden selected>{{ $tks->status }}</option>
                                         <option>Aktif</option>
                                         <option>Tidak Aktif</option>
-                                        <option>Kadarluwasa</option>
+                                        <option>Kedaluwarsa</option>
                                         <option>Dalam Penjajakan</option>
                                         <option>Perpanjangan</option>
                                     </select>
