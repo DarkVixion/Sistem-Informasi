@@ -76,7 +76,7 @@ class LoginController extends Controller
         $ntamin = TambahKerjasama::where('jenismitra','non-pertamina')->count();
         $bumn = TambahKerjasama::where('jenismitra','bumn')->count();
         $mentri = TambahKerjasama::where('jenismitra','kementerian')->count();
-        $oth  = TambahKerjasama::whereNotIn('jenismitra',['pertamina','non-pertamina','bumn','kementerian'])->get();
+        $oth  = TambahKerjasama::whereNotIn('jenismitra',['pertamina','non-pertamina','bumn','kementerian'])->count();
 
         $aktif = TambahKerjasama::where('status','aktif')->count();
         $taktif = TambahKerjasama::where('status','tidak aktif')->count();
