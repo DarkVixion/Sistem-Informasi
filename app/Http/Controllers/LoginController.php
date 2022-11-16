@@ -122,12 +122,14 @@ class LoginController extends Controller
         $d4t = MoU::whereBetween('tglselesai',[$mon,$m0n])->get();
         session()->put('mou',$d4t);
 
-        for($i=0;$i<5;$i++){
-            $year[] = Carbon::now()->subYear($i)->format('Y'); 
-        }
+        $i = -1;
+        $n = 0;
+        do{
+            $year[] = Carbon::now()->subYear($n)->format('Y'); 
+            $i++;
+            $n++;
+        }while($year[$i] != '2018');
 
-        // $temp = $this->paginate($temp);
-        
         return view('AdminDashboard')->with('sum', $sum)
             ->with('countmoa', $countmoa)
             ->with('countmou', $countmou)
@@ -166,8 +168,6 @@ class LoginController extends Controller
             $data2[] = $temp2;
         }
         
-        // $data1 = MoU::whereBetween('tglselesai',[$y1,$y2])->get();
-
         return response()->json(['data1'=>$data1, 'data2'=>$data2]);
     }
 }
