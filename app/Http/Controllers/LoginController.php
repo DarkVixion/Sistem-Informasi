@@ -9,9 +9,6 @@ use App\Models\MoU;
 use App\Models\TambahKerjasama;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session as FacadesSession;
-use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Collection;
-use Illuminate\Pagination\LengthAwarePaginator;
 
 class LoginController extends Controller
 {
@@ -129,7 +126,7 @@ class LoginController extends Controller
             $year[] = Carbon::now()->subYear($i)->format('Y'); 
         }
 
-        $temp = $this->paginate($temp);
+        // $temp = $this->paginate($temp);
         
         return view('AdminDashboard')->with('sum', $sum)
             ->with('countmoa', $countmoa)
@@ -150,10 +147,27 @@ class LoginController extends Controller
             ->with('years', $year);
     }
 
-    public function paginate($items, $perPage = 5, $page = null, $options = [])
-    {
-        $page = $page ?: (Paginator::resolveCurrentPage() ?: 1);
-        $items = $items instanceof Collection ? $items : Collection::make($items);
-        return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+    public function getData1($n){
+        for($i=0;$i<12;$i++){
+            $y1 = Carbon::now()->endOfYear()->subYear($n)->endOfMonth()->addMonth($i);
+            $y2 = Carbon::now()->endOfYear()->subYear($n)->endOfMonth()->addMonth($i+1);
+            // return response()->json(['data1'=>$y2, 'data2'=>$y2]);
+
+            $data = TambahKerjasama::whereBetween('bulaninput',[$y1,$y2])->get();
+            $temp1 = 0;
+            $temp2 = 0;
+
+            foreach($data as $d){
+                $temp1 += $d->mous->count();
+                $temp2 += $d->moas->count();
+            }
+
+            $data1[] = $temp1;
+            $data2[] = $temp2;
+        }
+        
+        // $data1 = MoU::whereBetween('tglselesai',[$y1,$y2])->get();
+
+        return response()->json(['data1'=>$data1, 'data2'=>$data2]);
     }
 }

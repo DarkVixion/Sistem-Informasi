@@ -73,11 +73,12 @@ Route::post('/uploadMitra', [MitraController::class, 'uploadMitra'])->name('uplo
 
 Route::get('AdminShowUser', [AdminUserMenuController::class, 'index']);
 
-// ---TESTING---
+// ---AMBIL DATA---
 Route::get('getData/{id}', function ($id) {
     $data = AdminViewUser::find($id);
     return response()->json($data);
 });
+Route::get('getData1/{id}',[LoginController::class,'getData1']);
 
 
 // <-- BAGIAN USER -->

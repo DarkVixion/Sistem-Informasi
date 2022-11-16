@@ -113,11 +113,12 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-8"></div>
-                <div class="col-sm-4">
+                <div class="col-sm-9"></div>
+                <div class="col-sm-3">
                     <select class="form-control" id="chosenyear">
+                        <option hidden>{{ $years[0] }}</option>
                         @foreach($years as $y)
-                            <option>{{ $y }}</option>
+                            <option value="{{ $loop->iteration }}">{{ $y }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -225,14 +226,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $inc = 0; ?>
+                                <?php $i = 0; ?>
                                 @foreach($nmitra as $nm)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $nm }}</td>
-                                        <td>Rp {{ number_format($tots[$inc]) }}</td>
+                                        <td>Rp {{ number_format($tots[$i]) }}</td>
                                     </tr>
-                                    <?php $inc++; ?>
+                                    <?php $i++; ?>
                                 @endforeach
                             </tbody>
                         </table>
@@ -254,6 +255,7 @@
         <!-- /.container-fluid -->
     </div>
 
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }} "></script>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -360,67 +362,118 @@
     });
 
     Highcharts.chart('container2', {
+        chart: {
+            type: 'column'
+        },
         title: {
             text: 'MoU VS MoA'
         },
+        xAxis: {
+            categories: [
+                'Jan','Feb','Mar','Apr',
+                'May','Jun','Jul','Aug',
+                'Sep','Okt','Nov','Dec'
+            ],
+            crosshair: true
+        },
         yAxis: {
             title: {
-                text: 'Number of Employees'
+                useHTML: true,
+                text: 'Total'
             }
         },
-        xAxis: {
-            accessibility: {
-                rangeDescription: 'Range: January to December'
-            }
-        },
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
         },
         plotOptions: {
-            series: {
-                label: {
-                    connectorAllowed: false
-                },
-                pointStart: 2010
+            column: {
+                pointPadding: 0.1,
+                borderWidth: 0
             }
         },
         series: [{
-            name: 'Installation & Developers',
-            data: [43934, 48656, 65165, 81827, 112143, 142383,
-                171533, 165174, 155157, 161454, 154610]
+            name: 'MoU',
+            data: [13.93, 13.63, 13.73, 13.67, 14.37, 14.89, 14.56,
+                14.32, 14.13, 13.93, 13.21, 12.16]
+
         }, {
-            name: 'Manufacturing',
-            data: [24916, 37941, 29742, 29851, 32490, 30282,
-                38121, 36885, 33726, 34243, 31050]
-        }, {
-            name: 'Sales & Distribution',
-            data: [11744, 30000, 16005, 19771, 20185, 24377,
-                32147, 30912, 29243, 29213, 25663]
-        }, {
-            name: 'Operations & Maintenance',
-            data: [null, null, null, null, null, null, null,
-                null, 11164, 11218, 10077]
-        }, {
-            name: 'Other',
-            data: [21908, 5548, 8105, 11248, 8989, 11816, 18274,
-                17300, 13053, 11906, 10073]
-        }],
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
+            name: 'MoA',
+            data: [12.24, 12.24, 11.95, 12.02, 11.65, 11.96, 11.59,
+                11.94, 11.96, 11.59, 11.42, 11.76]
+
+        }]
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+        $('#chosenyear').on('change', function() {
+            var id = $(this).val();
+            if (id) {
+                $.ajax({
+                    url: '/getData1/' + id,
+                    type: "GET",
+                    data: {
+                        "_token": "{{ csrf_token() }}"
+                    },
+                    dataType: "json",
+                    success: function(data) {
+                        if (data) {
+                            console.log(data.data1);
+                            Highcharts.chart('container2', {
+                                chart: {
+                                    type: 'column'
+                                },
+                                title: {
+                                    text: 'MoU VS MoA'
+                                },
+                                xAxis: {
+                                    categories: [
+                                        'Jan','Feb','Mar','Apr',
+                                        'May','Jun','Jul','Aug',
+                                        'Sep','Okt','Nov','Dec'
+                                    ],
+                                    crosshair: true
+                                },
+                                yAxis: {
+                                    title: {
+                                        useHTML: true,
+                                        text: 'Total'
+                                    }
+                                },
+                                tooltip: {
+                                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                        '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                                    footerFormat: '</table>',
+                                    shared: true,
+                                    useHTML: true
+                                },
+                                plotOptions: {
+                                    column: {
+                                        pointPadding: 0.1,
+                                        borderWidth: 0
+                                    }
+                                },
+                                series: [{
+                                    name: 'MoU',
+                                    data: data.data1
+
+                                }, {
+                                    name: 'MoA',
+                                    data: data.data2
+
+                                }]
+                            });
+                        }
                     }
-                }
-            }]
-        }
+                });
+            }
+        });
     });
     </script>
 
