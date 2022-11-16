@@ -105,6 +105,8 @@ class MitraController extends Controller
         $tks->namamitra = $req['namamitra'];
         $tks->jenismitra = $req['jenismitra'];
         $tks->alamat = $req['alamat'];
+        $tks->negara = $req['negara'];
+        $tks->notelpmitra = $req['notelpmitra'];
         $tks->website = $req['website'];
         $tks->narahubung = $req['narahubung'];
         $tks->notelpnara = $req['notelpnara'];
@@ -134,7 +136,7 @@ class MitraController extends Controller
                 $mitra->jenismitra = $value[1];
                 $mitra->alamat = $value[2];
                 $mitra->negara = $value[3];
-                $mitra->notelpmitra	 = $value[4];
+                $mitra->notelpmitra     = $value[4];
                 $mitra->website = $value[5];
 
                 $mitra->save();
