@@ -211,6 +211,7 @@
     <!-- /.content-wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
+
     <!-- jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap -->
@@ -284,7 +285,9 @@
     </script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
-    <!-- Page specific script -->
+
+
+
 </body>
 
 </html>

@@ -26,7 +26,8 @@
             <div class="form-group row">
                 <label for="input" class="col-sm-2 col-form-label">Nama Mitra</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Mitra" value="{{ $tks->nama }}">
+                    <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Mitra"
+                        value="{{ $tks->nama }}">
                 </div>
             </div>
             <div class="form-group row">
@@ -45,57 +46,47 @@
             <div class="form-group row">
                 <label for="input" class="col-sm-2 col-form-label">Website</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="website" placeholder="Website" value="{{ $tks->website }}">
+                    <input type="text" class="form-control" name="website" placeholder="Website"
+                        value="{{ $tks->website }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="input" class="col-sm-2 col-form-label">Nomor Telephone</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="notelpmitra" placeholder="Nomor Telephone" value="{{ $tks->notelpmitra }}">
+                    <input type="text" class="form-control" name="notelpmitra" placeholder="Nomor Telephone"
+                        value="{{ $tks->notelpmitra }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="input" class="col-sm-2 col-form-label">Alamat</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="alamat" placeholder="Alamat" value="{{ $tks->alamat }}">
+                    <input type="text" class="form-control" name="alamat" placeholder="Alamat"
+                        value="{{ $tks->alamat }}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="input" class="col-sm-2 col-form-label">Negara</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" name="negara" placeholder="Negara" value="{{ $tks->negara }}">
+                    <input type="text" class="form-control" name="negara" placeholder="Negara"
+                        value="{{ $tks->negara }}">
                 </div>
             </div>
-            
+
         </div>
         <!-- /.card-body -->
         <div class=" card-footer ">
-            <button type="button" class="btn btn-default" onclick="history.back()" style="background-color:lightgray; border-radius:15px;">
+            <button type="button" class="btn btn-default" onclick="history.back()"
+                style="background-color:lightgray; border-radius:15px;">
                 Cancel
             </button>
             <button class="btn btn-default" style="float:right; background-color:lightblue; border-radius:15px;">
-                Simpan
-            </button>
+                Simpan </button>
         </div>
     </form>
 
 </div>
 <!-- Main content -->
 
-
-
-
-
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- SweetAlert2 -->
-<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
-<!-- Toastr -->
-<script src="plugins/toastr/toastr.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
 
 <script>
 $(document).ready(function() {

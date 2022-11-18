@@ -13,33 +13,35 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <!-- Google Font: Source Sans Pro -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-        <!-- Font Awesome -->
-        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
-        <!-- DataTables -->
-        <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
-        <!-- Ionicons -->
-        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        <!-- Tempusdominus Bootstrap 4 -->
-        <link rel="stylesheet" href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
-        <!-- iCheck -->
-        <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
-        <!-- JQVMap -->
-        <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
-        <!-- Theme style -->
-        <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
-        <!-- overlayScrollbars -->
-        <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
-        <!-- Daterange picker -->
-        <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
-        <!-- summernote -->
-        <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
+<head>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet"
+        href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="{{ asset('plugins/jqvmap/jqvmap.min.css') }}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="{{ asset('plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}">
+    <!-- summernote -->
+    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote-bs4.min.css') }}">
 
-    </head>
+</head>
 <!--
 `body` tag options:
 
@@ -66,12 +68,16 @@
                         <span class="dropdown-item dropdown-header">2 Notifications</span>
                         <div class="dropdown-divider"></div>
                         <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir Kedaluwarsa - nama MOU
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Hampir
+                            Kedaluwarsa - nama MOU
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="/UserInformasiMitra" class="dropdown-item">
-                            <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi Dokumen - nama kerja sama
+                            <img class="nav-icon"
+                                srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> Lengkapi
+                            Dokumen - nama kerja sama
                             <span class="float-right text-muted text-sm">D-5</span>
                         </a>
                         <div class="dropdown-divider"></div>
@@ -81,7 +87,8 @@
                 <!-- profile -->
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image">
-                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+                        <img src="{{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
+                            alt="User Image">
                     </div>
                     <div class="info">
                         <a href="/UserAkun" class="d-block">{{ session('name') }}</a>
@@ -109,7 +116,8 @@
 
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                        data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item">
@@ -135,32 +143,34 @@
         <div class="content-wrapper">
             @yield('isiUser')
         </div>
-            
-        </div>
-        <!-- /.content-wrapper -->
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
 
 
-        <!-- ./wrapper -->
+    <!-- ./wrapper -->
 
-        <!-- REQUIRED SCRIPTS -->
+    <!-- REQUIRED SCRIPTS -->
 
-        <!-- jQuery -->
-        <script src="plugins/jquery/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <!-- AdminLTE -->
-        <script src="dist/js/adminlte.js"></script>
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="dist/js/adminlte.js"></script>
+    <!-- bs-custom-file-input -->
+    <script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js "></script>
 
-        <!-- OPTIONAL SCRIPTS -->
-        <script src="plugins/chart.js/Chart.min.js"></script>
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="dist/js/pages/dashboard3.js"></script>
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="dist/js/pages/dashboard3.js"></script>
 </body>
 
 </html>
