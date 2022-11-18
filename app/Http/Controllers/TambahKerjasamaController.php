@@ -22,7 +22,7 @@ class TambahKerjasamaController extends Controller
 {
     public function index() // untuk view hal Kerjasama
     {
-        $kerjasama = TambahKerjasama::all();
+        $kerjasama = TambahKerjasama::orderBy('bulaninput', 'asc')->get();
 
         return view('Kerjasama')->with('kerjasama', $kerjasama);
     }

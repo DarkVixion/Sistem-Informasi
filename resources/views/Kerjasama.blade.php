@@ -64,13 +64,14 @@
                             <table id="example1" class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>Bulan Pencatatan</th>
-                                        <th>Nama</th>
-                                        <th>Jenis Mitra</th>
-                                        <th>Jenis Kerjasama</th>
-                                        <th>Periode Mulai Kerjasama</th>
-                                        <th>Periode Berakhir Kerjasama</th>
-                                        <th style="width:10%;">Misc.</th>
+                                        <th style="font-size: 12px;">Bulan Pencatatan</th>
+                                        <th style="font-size: 12px;">Nama</th>
+                                        <th style="font-size: 12px;">Jenis Mitra</th>
+                                        <th style="font-size: 12px;">Jenis Kerjasama</th>
+                                        <th style="font-size: 12px;">Judul</th>
+                                        <th style="font-size: 12px;">Periode Mulai Kerjasama</th>
+                                        <th style="font-size: 12px;">Periode Berakhir Kerjasama</th>
+                                        <th style="width:10%; font-size: 12px;">Misc.</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -88,16 +89,17 @@
 
                                     @if ($mou_i != 0)
                                     <tr>
-                                        <td rowspan="{{$max_i}}">{{ $item->bulaninput }}</td>
-                                        <td rowspan="{{$max_i}}">{{ $item->namamitra }}</td>
-                                        <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
-                                        <td>MoU</td>
-                                        <td style="text-align:center;">
+                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->bulaninput }}</td>
+                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->namamitra }}</td>
+                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->jenismitra }}</td>
+                                        <td style="font-size: 12px;">MoU</td>
+                                        <td style="font-size: 12px;">{{ $mou[0]->Judul }}</td>
+                                        <td style="text-align:center; font-size: 12px;">
                                             @if ( $mou[0]->tglmulai != null)
                                             {{ $mou[0]->tglmulai->format('d-m-Y') }}
                                             @endif
                                         </td>
-                                        <td style="text-align:center;">
+                                        <td style="text-align:center; font-size: 12px;">
                                             @if ( $mou[0]->tglselesai != null)
                                             {{ $mou[0]->tglselesai->format('d-m-Y') }}
                                             @endif
@@ -117,13 +119,14 @@
 
                                         @for($i=1; $i<$mou_i; $i++) 
                                         <tr>
-                                            <td>MoU</td>
-                                            <td style="text-align:center;">
+                                            <td style="font-size: 12px;">MoU</td>
+                                            <td style="font-size: 12px;">{{ $mou[0]->Judul }}</td>
+                                            <td style="text-align:center; font-size:12px;">
                                                 @if ( $mou[$i]->tglmulai != null)
                                                 {{ $mou[0]->tglmulai->format('d-m-Y') }}
                                                 @endif
                                             </td>
-                                            <td style="text-align:center;">
+                                            <td style="text-align:center; font-size:12px;">
                                                 @if ( $mou[$i]->tglselesai != null)
                                                 {{ $mou[0]->tglselesai->format('d-m-Y') }}
                                                 @endif
@@ -134,13 +137,14 @@
                                         @if ($moa_i != 0)
                                         @for($i=0; $i<$moa_i; $i++) 
                                         <tr>
-                                            <td>MoA</td>
-                                            <td style="text-align:center;">
+                                            <td style="font-size: 12px;">MoA</td>
+                                            <td style="font-size: 12px;">{{ $moa[$i]->Judul }}</td>
+                                            <td style="text-align:center; font-size:12px;">
                                                 @if ( $moa[$i]->tglmulai != null)
                                                 {{ $moa[0]->tglmulai->format('d-m-Y') }}
                                                 @endif
                                             </td>
-                                            <td style="text-align:center;">
+                                            <td style="text-align:center; font-size:12px;">
                                                 @if ( $moa[$i]->tglselesai != null)
                                                 {{ $moa[0]->tglselesai->format('d-m-Y') }}
                                                 @endif
@@ -151,16 +155,17 @@
 
                                     @elseif ($moa_i != 0)
                                     <tr>
-                                        <td rowspan="{{$max_i}}">{{ $item->bulaninput }}</td>
-                                        <td rowspan="{{$moa_i}}">{{ $item->namamitra }}</td>
-                                        <td rowspan="{{$max_i}}">{{ $item->jenismitra }}</td>
-                                        <td>MoA</td>
-                                        <td style="text-align:center;">
+                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->bulaninput }}</td>
+                                        <td rowspan="{{$moa_i}}" style="font-size: 12px;">{{ $item->namamitra }}</td>
+                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->jenismitra }}</td>
+                                        <td style="font-size: 12px;">MoA</td>
+                                        <td style="font-size: 12px;">{{ $moa[0]->Judul }}</td>
+                                        <td style="text-align:center; font-size:12px">
                                             @if ( $moa[0]->tglmulai != null)
                                             {{ $moa[0]->tglmulai->format('d-m-Y') }}
                                             @endif
                                         </td>
-                                        <td style="text-align:center;">
+                                        <td style="text-align:center; font-size:12px;">
                                             @if ( $moa[0]->tglselesai != null)
                                             {{ $moa[0]->tglselesai->format('d-m-Y') }}
                                             @endif
@@ -181,13 +186,14 @@
 
                                     @for($i=1; $i<$moa_i; $i++) 
                                     <tr>
-                                        <td>MoA</td>
-                                        <td style="text-align:center;">
+                                        <td style="font-size: 12px;">MoA</td>
+                                        <td style="font-size: 12px;">{{ $moa[0]->Judul }}</td>
+                                        <td style="text-align:center; font-size:12px">
                                             @if ( $moa[0]->tglmulai != null)
                                             {{ $moa[0]->tglmulai->format('d-m-Y') }}
                                             @endif
                                         </td>
-                                        <td style="text-align:center;">
+                                        <td style="text-align:center; font-size:12px;">
                                             @if ( $moa[0]->tglselesai != null)
                                             {{ $moa[0]->tglselesai->format('d-m-Y') }}
                                             @endif
@@ -197,13 +203,14 @@
 
                                     @else
                                     <tr>
-                                        <td>{{ $item->bulaninput }}</td>
-                                        <td>{{ $item->namamitra }}</td>
-                                        <td>{{ $item->jenismitra }}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>
+                                        <td style="font-size: 12px;">{{ $item->bulaninput }}</td>
+                                        <td style="font-size: 12px;">{{ $item->namamitra }}</td>
+                                        <td style="font-size: 12px;">{{ $item->jenismitra }}</td>
+                                        <td style="font-size: 12px;"></td>
+                                        <td style="font-size: 12px;"></td>
+                                        <td style="font-size: 12px;"></td>
+                                        <td style="font-size: 12px;"></td>
+                                        <td style="font-size: 12px;">
                                             <a href="{{route('edit_kerjasama', $item->id)}}"><button
                                                     class="btn btn-primary"><i
                                                         class="fa fa-edit"></i></button></a>
