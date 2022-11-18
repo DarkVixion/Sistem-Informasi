@@ -37,7 +37,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Mitra</h1>
+                <h1>Profil Mitra</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -66,7 +66,7 @@
                                 <thead>
                                     <tr>
                                         <th>No. </th>
-                                        <th>Profile Mitra</th>
+                                        <th>Nama Mitra</th>
                                         <th>Jenis Mitra</th>
                                         <th>Jenis Kontrak</th>
                                         <th>Judul Kerjasama</th>
