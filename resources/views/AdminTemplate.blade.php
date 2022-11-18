@@ -60,9 +60,17 @@
     <div class="wrapper">
         <!-- Navbar -->
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>     
+            
+            </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Notifications Dropdown Menu -->
+            
+            <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#" style="padding-top: 29%;">
                         <img src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
@@ -88,7 +96,6 @@
                         <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                     </div>
                 </li>
-                <!-- profile -->
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image" style="padding-top:3%">
                         <img src=" {{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
@@ -108,7 +115,6 @@
                         </a>
                     </div>
                 </div>
-
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -263,7 +269,7 @@
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+            // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
         $('#example2').DataTable({
             "paging": true,

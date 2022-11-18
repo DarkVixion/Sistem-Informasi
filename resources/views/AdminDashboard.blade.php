@@ -50,8 +50,8 @@
                 <!-- small box -->
                 <div class="small-box bg-info">
                     <div class="inner">
-                        <h3>{{$countmou}}</h3>
-                        <p>Memorandum of Understanding (MoU)</p>
+                        <h4>{{$countmou}}</h4>
+                        <p style="font-size:13px;">Memorandum of Understanding (MoU)</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-bag"></i>
@@ -65,8 +65,8 @@
                 <!-- small box -->
                 <div class="small-box bg-success">
                     <div class="inner">
-                        <h3>{{$countmoa}}</sup></h3>
-                        <p>Memorandum of Aggrement (MoA)</p>
+                        <h4>{{$countmoa}}</h4>
+                        <p style="font-size:13px;">Memorandum of Aggrement (MoA)</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-stats-bars"></i>
@@ -80,8 +80,8 @@
                 <!-- small box -->
                 <div class="small-box bg-warning">
                     <div class="inner">
-                        <h3>{{$total}}</h3>
-                        <p>Mitra</p>
+                        <h4>{{$mitra}}</h4>
+                        <p style="font-size:13px;">Mitra</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
@@ -94,8 +94,8 @@
                 <!-- small box -->
                 <div class="small-box bg-danger">
                     <div class="inner">
-                        <h3>Rp {{number_format($sum)}} </h3>
-                        <p>Nilai Kerja Sama</p>
+                        <h4>Rp {{number_format($sum)}} </h4>
+                        <p style="font-size:13px;">Nilai Kerja Sama</p>
                     </div>
                     <div class="icon">
                         <i class="ion ion-pie-graph"></i>
@@ -311,24 +311,24 @@
             name: 'Total',
             colorByPoint: true,
             data: [{
-                name: 'Pertamina',
-                y: {{$tamin}}
+                name: 'MoU',
+                y: {{$countmou}}
             }, 
             {
-                name: 'Non-Pertamina',
-                y: {{$ntamin}}
-            }, 
-            {
-                name: 'BUMN',
-                y: {{$bumn}}
-            }, 
-            {
-                name: 'Kementerian',
-                y: {{$mentri}}
-            },
-            {
-                name: 'Other',
-                y: {{$other}}
+                name: 'MoA',
+                y: {{$countmoa}}
+            // }, 
+            // {
+            //     name: 'BUMN',
+            //     y: {{$bumn}}
+            // }, 
+            // {
+            //     name: 'Kementerian',
+            //     y: {{$mentri}}
+            // },
+            // {
+            //     name: 'Other',
+            //     y: {{$other}}
             }]
         }]
     });

@@ -59,6 +59,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nama Kerjasama" title="Type in a name">
                         <div class="md-card-content">
                             <table id="example1" class="table table-bordered">
                                 <thead>
@@ -301,4 +302,5 @@ $.widget.bridge('uibutton', $.ui.button)
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 
+@include('jsKerjasama')
 @endsection

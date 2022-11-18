@@ -40,7 +40,7 @@
 
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
-                        <table class="table table-hover text-nowrap">
+                        <table id="example1" class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
                                     <th style="width: 15%; text-align:center;">No. </th>

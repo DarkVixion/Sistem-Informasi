@@ -7,6 +7,7 @@ use App\Models\AdminViewUser;
 use App\Models\MoA;
 use App\Models\MoU;
 use App\Models\TambahKerjasama;
+use App\Models\NamaMitra;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session as FacadesSession;
 
@@ -117,6 +118,8 @@ class LoginController extends Controller
             $total[] = MoA::where('tambah_kerjasama_id',$id)->sum('nilaikontrak');
         }
 
+        $mitra = NamaMitra::all()->count();
+
         $mon = Carbon::now()->addMonth(3);
         $m0n = Carbon::now();
         $d4t = MoU::whereBetween('tglselesai',[$mon,$m0n])->get();
@@ -134,6 +137,7 @@ class LoginController extends Controller
             ->with('countmoa', $countmoa)
             ->with('countmou', $countmou)
             ->with('total', count($temp))
+            ->with('mitra', $mitra)
             ->with('aktif', $aktif)
             ->with('taktif', $taktif)
             ->with('exp', $exp)
