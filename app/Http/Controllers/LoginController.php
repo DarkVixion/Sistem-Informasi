@@ -7,6 +7,7 @@ use App\Models\AdminViewUser;
 use App\Models\MoA;
 use App\Models\MoU;
 use App\Models\TambahKerjasama;
+use App\Models\NamaMitra;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Session as FacadesSession;
 
@@ -76,7 +77,7 @@ class LoginController extends Controller
         $ntamin = TambahKerjasama::where('jenismitra','non-pertamina')->count();
         $bumn = TambahKerjasama::where('jenismitra','bumn')->count();
         $mentri = TambahKerjasama::where('jenismitra','kementerian')->count();
-        $oth  = TambahKerjasama::whereNotIn('jenismitra',['pertamina','non-pertamina','bumn','kementerian'])->get();
+        $oth  = TambahKerjasama::whereNotIn('jenismitra',['pertamina','non-pertamina','bumn','kementerian'])->count();
 
         $aktif = TambahKerjasama::where('status','aktif')->count();
         $taktif = TambahKerjasama::where('status','tidak aktif')->count();
@@ -117,15 +118,26 @@ class LoginController extends Controller
             $total[] = MoA::where('tambah_kerjasama_id',$id)->sum('nilaikontrak');
         }
 
+        $mitra = NamaMitra::all()->count();
+
         $mon = Carbon::now()->addMonth(3);
         $m0n = Carbon::now();
         $d4t = MoU::whereBetween('tglselesai',[$mon,$m0n])->get();
         session()->put('mou',$d4t);
-        
+
+        $i = -1;
+        $n = 0;
+        do{
+            $year[] = Carbon::now()->subYear($n)->format('Y'); 
+            $i++;
+            $n++;
+        }while($year[$i] != '2018');
+
         return view('AdminDashboard')->with('sum', $sum)
             ->with('countmoa', $countmoa)
             ->with('countmou', $countmou)
             ->with('total', count($temp))
+            ->with('mitra', $mitra)
             ->with('aktif', $aktif)
             ->with('taktif', $taktif)
             ->with('exp', $exp)
@@ -137,6 +149,29 @@ class LoginController extends Controller
             ->with('mentri', $mentri)
             ->with('other', $oth)
             ->with('nmitra', $temp)
-            ->with('tots', $total);
-        }
+            ->with('tots', $total)
+            ->with('years', $year);
     }
+
+    public function getData1($n){
+        for($i=0;$i<12;$i++){
+            $y1 = Carbon::now()->endOfYear()->subYear($n)->endOfMonth()->addMonth($i);
+            $y2 = Carbon::now()->endOfYear()->subYear($n)->endOfMonth()->addMonth($i+1);
+            // return response()->json(['data1'=>$y2, 'data2'=>$y2]);
+
+            $data = TambahKerjasama::whereBetween('bulaninput',[$y1,$y2])->get();
+            $temp1 = 0;
+            $temp2 = 0;
+
+            foreach($data as $d){
+                $temp1 += $d->mous->count();
+                $temp2 += $d->moas->count();
+            }
+
+            $data1[] = $temp1;
+            $data2[] = $temp2;
+        }
+        
+        return response()->json(['data1'=>$data1, 'data2'=>$data2]);
+    }
+}

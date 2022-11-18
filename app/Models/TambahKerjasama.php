@@ -11,6 +11,7 @@ class TambahKerjasama extends Model
     protected $table = 'tambahkerjasama';
     protected $primaryKey = 'id';
     protected $fillable = [
+        "status",
         "namamitra",
         "jenismitra",
         "judulkerjasama",

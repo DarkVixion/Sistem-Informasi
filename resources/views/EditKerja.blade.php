@@ -1,14 +1,11 @@
-<?php 
-    if(session()->missing('id'))
-    {
-        header('Location: /Login');
-        die;
-    }
-    elseif(session('role')!='Admin')
-    {
-        header('Location: /UserRekap');
-        die;
-    }
+<?php
+if (session()->missing('id')) {
+    header('Location: /Login');
+    die;
+} elseif (session('role') != 'Admin') {
+    header('Location: /UserRekap');
+    die;
+}
 ?>
 
 <head>
@@ -59,49 +56,42 @@
         <ul class="navbar-nav ml-auto">
             <!-- Notifications Dropdown Menu -->
             <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#" style="padding-top: 29%;">
-                        <img src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
-                            data-src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png" alt="Notification "
-                            title="Notification " width="25" height="25" class="lzy lazyload--done"
-                            srcset="https://cdn-icons-png.flaticon.com/128/3119/3119338.png 4x">
-                        <!-- <i class="far fa-bell fa-2x"> </i> -->
-                        <!-- https://www.flaticon.com/free-icon/notification_3119338 -->
-                        <span class=" badge badge-warning navbar-badge">{{ count(session('mou')) }}</span>
+                <a class="nav-link" data-toggle="dropdown" href="#" style="padding-top: 29%;">
+                    <img src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png" data-src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png" alt="Notification " title="Notification " width="25" height="25" class="lzy lazyload--done" srcset="https://cdn-icons-png.flaticon.com/128/3119/3119338.png 4x">
+                    <!-- <i class="far fa-bell fa-2x"> </i> -->
+                    <!-- https://www.flaticon.com/free-icon/notification_3119338 -->
+                    <span class=" badge badge-warning navbar-badge">{{ count(session('mou')) }}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    <span class="dropdown-item dropdown-header">{{ count(session('mou')) }} Notifications</span>
+                    @foreach(session('mou') as $d)
+                    <div class="dropdown-divider"></div>
+                    <a href="{{route('edit_kerjasama', $d->tambah_kerjasama_id)}}" class="dropdown-item">
+                        <img class="nav-icon" srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img>
+                        Hampir Kedaluwarsa - {{ $d->Judul }}
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">{{ count(session('mou')) }} Notifications</span>
-                        @foreach(session('mou') as $d)
-                            <div class="dropdown-divider"></div>
-                            <a href="{{route('edit_kerjasama', $d->tambah_kerjasama_id)}}" class="dropdown-item">
-                                <img class="nav-icon"
-                                    srcset="https://img.icons8.com/material-outlined/344/error--v1.png 17x"></img> 
-                                    Hampir Kedaluwarsa - {{ $d->Judul }}
-                            </a>
-                        @endforeach
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-                    </div>
-                </li>
-                <!-- profile -->
-                <div class="user-panel mt-1 pb-1 mb-1 d-flex">
-                    <div class="image" style="padding-top:3%">
-                        <img src=" {{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                            alt="User Image" style="padding-top: 28%">
-                    </div>
-                    <div class="info" style="padding-top: 7%">
-                        <a href="/Akun" class="d-block" style="padding-top:5%">@if(session()->has('id'))
-                            {{session('name')}} @else
-                            ???
-                            @endif</a>
-                    </div>
-                    <div class=" info">
-                        <a href="/Logout" class="nav-link">
-                            <img class="nav-icon" style="opacity: 55%; width: 18px;"
-                                srcset="https://cdn-icons-png.flaticon.com/512/1286/1286853.png 2x" width="1rem"
-                                height="1rem" alt="exit icon" loading="lazy">
-                        </a>
-                    </div>
+                    @endforeach
+                    <div class="dropdown-divider"></div>
+                    <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
                 </div>
+            </li>
+            <!-- profile -->
+            <div class="user-panel mt-1 pb-1 mb-1 d-flex">
+                <div class="image" style="padding-top:3%">
+                    <img src=" {{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image" style="padding-top: 28%">
+                </div>
+                <div class="info" style="padding-top: 7%">
+                    <a href="/Akun" class="d-block" style="padding-top:5%">@if(session()->has('id'))
+                        {{session('name')}} @else
+                        ???
+                        @endif</a>
+                </div>
+                <div class=" info">
+                    <a href="/Logout" class="nav-link">
+                        <img class="nav-icon" style="opacity: 55%; width: 18px;" srcset="https://cdn-icons-png.flaticon.com/512/1286/1286853.png 2x" width="1rem" height="1rem" alt="exit icon" loading="lazy">
+                    </a>
+                </div>
+            </div>
 
         </ul>
     </nav>
@@ -120,73 +110,73 @@
             </div>
 
 
-    <!-- Sidebar Menu -->
-        <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
 
-                <li class="nav-item">
-                    <a href="/AdminDashboard" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Dashboard
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Master Data
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <ul class="nav-item">
+                    <li class="nav-item">
+                        <a href="/AdminDashboard" class="nav-link">
+                            <i class="nav-icon fas fa-th"></i>
+                            <p>
+                                Dashboard
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-copy"></i>
+                            <p>
+                                Master Data
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <ul class="nav-item">
                                 <a href="/NamaMitra" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Nama Mitra</p>
                                 </a>
                             </ul>
-                        <ul class="nav-item">
-                            <a href="/JenisMitra" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Jenis Mitra</p>
-                            </a>
+                            <ul class="nav-item">
+                                <a href="/JenisMitra" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Jenis Mitra</p>
+                                </a>
+                            </ul>
+                            <ul class="nav-item">
+                                <a href="/LingkupKerja" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Lingkup Kerja Sama</p>
+                                </a>
+                            </ul>
+                            <ul class="nav-item">
+                                <a href="/Mitra" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Profile Mitra</p>
+                                </a>
+                            </ul>
                         </ul>
-                        <ul class="nav-item">
-                            <a href="/LingkupKerja" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Lingkup Kerja Sama</p>
-                            </a>
-                        </ul>
-                        <ul class="nav-item">
-                            <a href="/Mitra" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Profile Mitra</p>
-                            </a>
-                        </ul>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="/Kerjasama" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>Rekap Kontrak</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/AdminShowUser" class="nav-link">
-                        <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
-                        <p>User</p>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-</aside>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/Kerjasama" class="nav-link">
+                            <i class="nav-icon fas fa-table"></i>
+                            <p>Rekap Kontrak</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/AdminShowUser" class="nav-link">
+                            <img class="nav-icon" style="opacity: 55%" srcset="https://cdn-icons-png.flaticon.com/128/848/848006.png 2.5x" alt="Building icon" loading="lazy"></img>
+                            <p>User</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -225,7 +215,7 @@
                                         <option hidden selected>{{ $tks->status }}</option>
                                         <option>Aktif</option>
                                         <option>Tidak Aktif</option>
-                                        <option>Kadarluwasa</option>
+                                        <option>Kedaluwarsa</option>
                                         <option>Dalam Penjajakan</option>
                                         <option>Perpanjangan</option>
                                     </select>
@@ -237,7 +227,9 @@
                                     <div class="col-sm-13">
                                         <select class="form-control" name="namamitra" id="namamitra">
                                             @foreach ($nm as $nm)
-                                            <option <?php if($nm->nama == $tks->namamitra) {echo('selected');} ?>>{{ $nm->nama }} </option>
+                                            <option <?php if ($nm->nama == $tks->namamitra) {
+                                                        echo ('selected');
+                                                    } ?>>{{ $nm->nama }} </option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -270,7 +262,7 @@
                 </div>
 
                 <div class="more-item">
-                @foreach ($mou as $mou)
+                    @foreach ($mou as $mou)
                     <div class="row">
                         <div class="col-md-12 align-items-stretch">
                             <div class="card">
@@ -292,9 +284,7 @@
                                             <label for="judul_mou" class="col-sm-4 col-form-label">Judul Kerja
                                                 Sama</label>
                                             <div class="col-sm-12">
-                                                <input type="text"
-                                                    class="form-control @error('judul_mou') is-invalid @enderror"
-                                                    name="judul_mou[]" placeholder="Masukan Judul Kerja Sama" value=@if ($mou !=null) "{{ $mou->Judul }}" @endif>
+                                                <input type="text" class="form-control @error('judul_mou') is-invalid @enderror" name="judul_mou[]" placeholder="Masukan Judul Kerja Sama" value=@if ($mou !=null) "{{ $mou->Judul }}" @endif>
                                             </div>
                                         </div>
                                         <br><br>
@@ -302,11 +292,9 @@
                                             <label for="tglmulai_mou" class="col-sm-4 col-form-label">Tanggal
                                                 Mulai</label>
                                             <div class="col-sm-12">
-                                                <input type="date"
-                                                    class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou[]"
-                                                    value=@if ($mou !=null) @if ($mou->tglmulai != null)
-                                                    '{{ $mou->tglmulai->format('Y-m-d') }}'
-                                                    @endif @endif>
+                                                <input type="date" class="form-control @error('tglmulai_mou') is-invalid @enderror" name="tglmulai_mou[]" value=@if ($mou !=null) @if ($mou->tglmulai != null)
+                                                '{{ $mou->tglmulai->format('Y-m-d') }}'
+                                                @endif @endif>
                                             </div>
                                         </div>
                                         <br><br>
@@ -332,12 +320,10 @@
                                             </div> -->
                                             <br>
                                             <div class=" col-sm-12">
-                                                <input id="check1" type="date"
-                                                    class="form-control @error('tglselesai_mou') is-invalid @enderror" 
-                                                    name="tglselesai_mou[]" value=@if($mou->tglselesai != null)
-                                                    '{{ $mou->tglselesai->format('Y-m-d') }}'
-                                                    @endif>
-                                                    <!-- @if($mou==null || $mou->tglselesai == null)
+                                                <input id="check1" type="date" class="form-control @error('tglselesai_mou') is-invalid @enderror" name="tglselesai_mou[]" value=@if($mou->tglselesai != null)
+                                                '{{ $mou->tglselesai->format('Y-m-d') }}'
+                                                @endif>
+                                                <!-- @if($mou==null || $mou->tglselesai == null)
                                                     style="display:none;"
                                                     @endif
                                                     value= @if ($mou != null) @if($mou->tglselesai != null)
@@ -350,21 +336,21 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @endforeach
                 </div>
                 <div class="row">
-                        <div class="col-md-12 align-items-stretch">
-                            <div class="card card-info">
-                                <div class=" card-footer">
-                                    <button type="button" class="btn btn-info float-right add-more">Tambah
-                                        MOU</button>
-                                </div>
+                    <div class="col-md-12 align-items-stretch">
+                        <div class="card card-info">
+                            <div class=" card-footer">
+                                <button type="button" class="btn btn-info float-right add-more">Tambah
+                                    MOU</button>
                             </div>
                         </div>
                     </div>
+                </div>
 
                 <div class="more-item1">
-                @foreach ($moa as $moa)
+                    @foreach ($moa as $moa)
                     <div class="row">
                         <div class="col-md-12 align-items-stretch">
                             <div class="card">
@@ -386,10 +372,7 @@
                                             <label for="judul_moa[]" class="col-sm-4 col-form-label">Judul
                                                 Kerja Sama</label>
                                             <div class="col-sm-12">
-                                                <input type="text"
-                                                    class="form-control @error('judul_moa') is-invalid @enderror"
-                                                    name="judul_moa[]" placeholder="Masukan Judul Kerja Sama"\
-                                                    value=@if($moa!=null) "{{ $moa->judul }}" @endif>
+                                                <input type="text" class="form-control @error('judul_moa') is-invalid @enderror" name="judul_moa[]" placeholder="Masukan Judul Kerja Sama" \ value=@if($moa!=null) "{{ $moa->judul }}" @endif>
                                             </div>
                                         </div>
                                         <br><br>
@@ -397,12 +380,7 @@
                                             <label for="nilaikontrak" class="col-sm-4 col-form-label">Nilai
                                                 Kontrak</label>
                                             <div class="col-sm-12">
-                                                <input type="number"
-                                                    class="form-control @error('nilaikontrak') is-invalid @enderror"
-                                                    name="nilaikontrak[]" placeholder="Masukan Nilai Kontrak (Rp)"
-                                                    pattern="/^-?\d+\.?\d*$/"
-                                                    onKeyPress="if(this.value.length==15) return false;"
-                                                    value=@if($moa!=null) "{{ $moa->nilaikontrak }}" @endif>
+                                                <input type="number" class="form-control @error('nilaikontrak') is-invalid @enderror" name="nilaikontrak[]" placeholder="Masukan Nilai Kontrak (Rp)" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;" value=@if($moa!=null) "{{ $moa->nilaikontrak }}" @endif>
                                             </div>
                                         </div>
                                         <br><br>
@@ -426,11 +404,9 @@
                                             <label for="tglmulai_moa" class="col-sm-4 col-form-label">Tanggal
                                                 Mulai</label>
                                             <div class="col-sm-12">
-                                                <input type="date"
-                                                    class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa[]"
-                                                    value=@if($moa!=null) @if( $moa->tglmulai != null)
-                                                    '{{ $moa->tglmulai->format('Y-m-d') }}'
-                                                    @endif @endif>
+                                                <input type="date" class="form-control @error('tglmulai_moa') is-invalid @enderror" name="tglmulai_moa[]" value=@if($moa!=null) @if( $moa->tglmulai != null)
+                                                '{{ $moa->tglmulai->format('Y-m-d') }}'
+                                                @endif @endif>
                                             </div>
                                         </div>
                                         <br><br>
@@ -457,12 +433,10 @@
                                             </div> -->
                                             <label class=" col-sm-4 col-form-label "></label>
                                             <div class=" col-sm-12">
-                                                <input id="check2" type="date"
-                                                    class="form-control @error('tglselesai_moa') is-invalid @enderror"
-                                                    name="tglselesai_moa[]" value=@if($moa->tglselesai != null)
-                                                    '{{ $moa->tglselesai->format('Y-m-d') }}'
-                                                    @endif>
-                                                    <!-- @if($moa==null || $moa->tglselesai == null)
+                                                <input id="check2" type="date" class="form-control @error('tglselesai_moa') is-invalid @enderror" name="tglselesai_moa[]" value=@if($moa->tglselesai != null)
+                                                '{{ $moa->tglselesai->format('Y-m-d') }}'
+                                                @endif>
+                                                <!-- @if($moa==null || $moa->tglselesai == null)
                                                     style="display:none;"
                                                     @endif
                                                     value= @if($moa!=null) @if($moa->tglselesai != null)
@@ -475,7 +449,7 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @endforeach
                 </div>
                 <div class="row">
                     <div class="col-md-12 align-items-stretch">
@@ -527,7 +501,9 @@
                                                 @endif
 
                                                 @foreach($users as $u)
-                                                <option value="{{ $u->id }}" <?php if($tks->assignuserakun == $u->id){ echo('selected');} ?>>{{ $u->nama }}</option>
+                                                <option value="{{ $u->id }}" <?php if ($tks->assignuserakun == $u->id) {
+                                                                                    echo ('selected');
+                                                                                } ?>>{{ $u->nama }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -535,7 +511,7 @@
                                     <br><br>
                                     <label for="inputPassword3" class="col-sm-2 col-form-label">Nomor Telepon</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC"  value="{{ $tks->notelppic }}" readonly>
+                                        <input type="text" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC" value="{{ $tks->notelppic }}" readonly>
                                     </div>
                                     <br><br>
                                     <label for="inputPassword3 " class="col-sm-2 col-form-label ">Email</label>
@@ -570,23 +546,23 @@
     <script src="{{ asset('dist/js/adminlte.min.js') }} "></script>
 
     <script>
-    $(document).ready(function() {
-        $(".add-more").click(function() {
-            $(".more-item").append(
-                "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card\"> <div class=\"card-header\"> <div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"> <i class=\"fas fa-minus\"></i> </button> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"> <i class=\"fas fa-times\"></i> </button> </div> </div> <!-- form start --> <div class=\"card-body\"> <div class=\"row\"> <div class=\"col-md-6\"></div> </div> <h3 style=\"text-align: center;\">Memorandum of Understanding (MoU)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_mou\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_mou') is-invalid @enderror\" name=\"judul_mou[]\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_mou\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_mou') is-invalid @enderror\" name=\"tglmulai_mou[]\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_mou\" class=\"col-sm-4 col-form-label \">Dokumen MoU</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control \" name=\"path_mou[]\" accept=\"pdf/*\" multiple> </div><br> </div> <div class=\"col-md-6\"> <label for=\"tglselesai_mou\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <br> <div class=\" col-sm-12\"> <input id=\"check1\" type=\"date\" class=\"form-control @error('tglselesai_mou') is-invalid @enderror\" name=\"tglselesai_mou[]\" > </div> </div> </div> </div>  </div> </div> </div>"
-            );
+        $(document).ready(function() {
+            $(".add-more").click(function() {
+                $(".more-item").append(
+                    "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card\"> <div class=\"card-header\"> <div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"> <i class=\"fas fa-minus\"></i> </button> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"> <i class=\"fas fa-times\"></i> </button> </div> </div> <!-- form start --> <div class=\"card-body\"> <div class=\"row\"> <div class=\"col-md-6\"></div> </div> <h3 style=\"text-align: center;\">Memorandum of Understanding (MoU)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_mou\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_mou') is-invalid @enderror\" name=\"judul_mou[]\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_mou\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_mou') is-invalid @enderror\" name=\"tglmulai_mou[]\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_mou\" class=\"col-sm-4 col-form-label \">Dokumen MoU</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control \" name=\"path_mou[]\" accept=\"pdf/*\" multiple> </div><br> </div> <div class=\"col-md-6\"> <label for=\"tglselesai_mou\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <br> <div class=\" col-sm-12\"> <input id=\"check1\" type=\"date\" class=\"form-control @error('tglselesai_mou') is-invalid @enderror\" name=\"tglselesai_mou[]\" > </div> </div> </div> </div>  </div> </div> </div>"
+                );
+            });
+            // style=\"display:none;\"
+            // <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck1(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div>
+
+            $(".add-more1").click(function() {
+                $(".more-item1").append(
+                    "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card\"> <div class=\"card-header\"> <div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"> <i class=\"fas fa-minus\"></i> </button> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"> <i class=\"fas fa-times\"></i> </button> </div> </div> <!-- form start --> <div class=\"card-body\"> <h3 style=\"text-align: center;\">Memorandum of Aggreement (MoA)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_moa[]\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_moa') is-invalid @enderror\" name=\"judul_moa[]\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"nilaikontrak\" class=\"col-sm-4 col-form-label\">Nilai Kontrak</label> <div class=\"col-sm-12\"> <input type=\"number\" class=\"form-control @error('nilaikontrak') is-invalid @enderror\" name=\"nilaikontrak[]\" placeholder=\"Masukan Nilai Kontrak (Rp)\" pattern=\"/^-?\d+\.?\d*$/\" onKeyPress=\"if(this.value.length==15) return false;\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"select \" class=\"col-sm-4 col-form-label \">Lingkup Kerja Sama</label> <div class=\"col-sm-12\"> <select class=\"form-control\" name=\"lingkupkerja[]\"> <option value=\"\" hidden>--- Pilih Lingkup Kerja ---</option> @foreach ($lk as $item) <option>{{ $item->judullingkupkerja }}</option> @endforeach </select> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_moa\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_moa') is-invalid @enderror\" name=\"tglmulai_moa[]\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_moa\" class=\"col-sm-4 col-form-label \">Dokumen MoA</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control\" name=\"path_moa[]\" accept=\"pdf/*\" multiple> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglselesai_moa\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <label class=\" col-sm-4 col-form-label \"></label> <div class=\" col-sm-12\"> <input id=\"check2\" type=\"date\" class=\"form-control @error('tglselesai_moa') is-invalid @enderror\" name=\"tglselesai_moa[]\" > </div> </div> </div> </div>  </div> </div> </div>"
+                );
+            });
+            // style=\"display:none;\"
+            // <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck2(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div>
         });
-        // style=\"display:none;\"
-        // <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck1(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div>
-        
-        $(".add-more1").click(function() {
-            $(".more-item1").append(
-                "<div class=\"row\"> <div class=\"col-md-12 align-items-stretch\"> <div class=\"card\"> <div class=\"card-header\"> <div class=\"card-tools\"> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"collapse\"> <i class=\"fas fa-minus\"></i> </button> <button type=\"button\" class=\"btn btn-tool\" data-card-widget=\"remove\"> <i class=\"fas fa-times\"></i> </button> </div> </div> <!-- form start --> <div class=\"card-body\"> <h3 style=\"text-align: center;\">Memorandum of Aggreement (MoA)</h3> <div class=\"form-group row\"> <div class=\"col-md-6\"> <label for=\"judul_moa[]\" class=\"col-sm-4 col-form-label\">Judul Kerja Sama</label> <div class=\"col-sm-12\"> <input type=\"text\" class=\"form-control @error('judul_moa') is-invalid @enderror\" name=\"judul_moa[]\" placeholder=\"Masukan Judul Kerja Sama\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"nilaikontrak\" class=\"col-sm-4 col-form-label\">Nilai Kontrak</label> <div class=\"col-sm-12\"> <input type=\"number\" class=\"form-control @error('nilaikontrak') is-invalid @enderror\" name=\"nilaikontrak[]\" placeholder=\"Masukan Nilai Kontrak (Rp)\" pattern=\"/^-?\d+\.?\d*$/\" onKeyPress=\"if(this.value.length==15) return false;\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"select \" class=\"col-sm-4 col-form-label \">Lingkup Kerja Sama</label> <div class=\"col-sm-12\"> <select class=\"form-control\" name=\"lingkupkerja[]\"> <option value=\"\" hidden>--- Pilih Lingkup Kerja ---</option> @foreach ($lk as $item) <option>{{ $item->judullingkupkerja }}</option> @endforeach </select> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglmulai_moa\" class=\"col-sm-4 col-form-label\">Tanggal Mulai</label> <div class=\"col-sm-12\"> <input type=\"date\" class=\"form-control @error('tglmulai_moa') is-invalid @enderror\" name=\"tglmulai_moa[]\"> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"path_moa\" class=\"col-sm-4 col-form-label \">Dokumen MoA</label> <div class=\"col-sm-12\"> <input type=\"file\" class=\"form-control\" name=\"path_moa[]\" accept=\"pdf/*\" multiple> </div> </div> <br><br> <div class=\"col-md-6\"> <label for=\"tglselesai_moa\" class=\" col-sm-4 col-form-label \">Tanggal Selesai</label> <label class=\" col-sm-4 col-form-label \"></label> <div class=\" col-sm-12\"> <input id=\"check2\" type=\"date\" class=\"form-control @error('tglselesai_moa') is-invalid @enderror\" name=\"tglselesai_moa[]\" > </div> </div> </div> </div>  </div> </div> </div>"
-            );
-        });
-        // style=\"display:none;\"
-        // <div class=\" col-sm-12\"> <select class=\"form-control\" onchange=\"yesnoCheck2(this)\"> <option value=\"1\">Tidak Terbatas</option> <option value=\"2\">Terbatas</option> </select> </div>
-    });
     </script>
 
     <script>

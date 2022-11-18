@@ -45,67 +45,63 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row ">
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
-                        <div class="col-sm-10 ">
-                            <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat"
-                                value="{{ $tks->alamat }}">
-                        </div>
-                        <br><br><br>
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
-                        <div class="col-sm-10 ">
-                            <input type="url" class="form-control " name="website" placeholder="Masukan Website"
-                                value="{{ $tks->website }}">
-                        </div><br><br><br>
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
-                        <div class="col-sm-10 ">
-                            <input type="text" class="form-control " name="narahubung" placeholder="nama narahubung"
-                                value="{{ $tks->narahubung }}">
-                        </div><br><br><br>
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
-                        <div class="col-sm-10 ">
-                            <input type="number" class="form-control " name="notelpnara"
-                                placeholder="Masukan Nomor Telephone" pattern="/^-?\d+\.?\d*$/"
-                                onKeyPress="if(this.value.length==15) return false;" value="{{ $tks->notelpnara }}">
-                        </div><br><br><br>
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
-                        <div class="col-sm-10 ">
-                            <div class="form-group">
-                                <select class="form-control" name="pic" id="pic">
-                                    @if ($tks->assignuserakun == null)
-                                    <option value="" hidden>--- Pilih PIC ---</option>
-                                    @endif
-
-                                    @foreach($user as $u)
-                                    <option value="{{ $u->id }}"
-                                        <?php if($tks->assignuserakun == $u->id){echo('selected');} ?>>
-                                        {{ $u->nama }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                        </div><br><br><br>
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
-                        <div class="col-sm-10 ">
-                            <input type="number" class="form-control" name='notelppic' id="notelppic"
-                                placeholder="No Telepon PIC" @if($tks->notelppic != null)
-                            value="{{ $tks->notelppic }}"@endif
-                            readonly>
-                        </div><br><br>
-                    </div>
                 </div>
-                <!-- /.card-body -->
-                <div class=" card-footer ">
-                    <button type="button" class="btn btn-default" onclick="history.back()"
-                        style="background-color:lightgray; border-radius:15px;">
-                        Cancel
-                    </button>
-                    <button class="btn btn-default"
-                        style="float:right; background-color:lightblue; border-radius:15px;">
-                        Simpan
-                    </button>
-                </div>
-            </form>
         </div>
+        <div class="form-group row ">
+            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Alamat</label>
+            <div class="col-sm-10 ">
+                <input type="text" class="form-control " name="alamat" placeholder="Masukan Alamat"
+                    value="{{ $tks->alamat }}">
+            </div>
+            <br><br><br>
+            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Website</label>
+            <div class="col-sm-10 ">
+                <input type="url" class="form-control " name="website" placeholder="Masukan Website"
+                    value="{{ $tks->website }}">
+            </div><br><br><br>
+            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Narahubung</label>
+            <div class="col-sm-10 ">
+                <input type="text" class="form-control " name="narahubung" placeholder="nama narahubung"
+                    value="{{ $tks->narahubung }}">
+            </div><br><br><br>
+            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone Narahubung</label>
+            <div class="col-sm-10 ">
+                <input type="number" class="form-control " name="notelpnara" placeholder="Masukan Nomor Telephone"
+                    pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==15) return false;"
+                    value="{{ $tks->notelpnara }}">
+            </div><br><br><br>
+            <label for="inputPassword3 " class="col-sm-2 col-form-label ">PIC</label>
+            <div class="col-sm-10 ">
+                <div class="form-group">
+                    <select class="form-control" name="pic" id="pic">
+                        @if ($tks->assignuserakun == null)
+                        <option value="" hidden>--- Pilih PIC ---</option>
+                        @endif
+
+                        @foreach($user as $u)
+                        <option value="{{ $u->id }}" <?php if($tks->assignuserakun == $u->id){echo('selected');} ?>>
+                            {{ $u->nama }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div><br><br><br>
+            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Nomor Telephone PIC</label>
+            <div class="col-sm-10 ">
+                <input type="number" class="form-control" name='notelppic' id="notelppic" placeholder="No Telepon PIC"
+                    @if($tks->notelppic != null) value="{{ $tks->notelppic }}"@endif readonly>
+            </div><br><br>
+        </div>
+    </div>
+    <!-- /.card-body -->
+    <div class=" card-footer ">
+        <button type="button" class="btn btn-default" onclick="history.back()"
+            style="background-color:lightgray; border-radius:15px;">
+            Cancel
+        </button>
+        <button class="btn btn-default" style="float:right; background-color:lightblue; border-radius:15px;">
+            Simpan
+        </button>
+    </div>
     </div>
     <!-- Main content -->
 </section>

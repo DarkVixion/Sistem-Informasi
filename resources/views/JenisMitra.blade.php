@@ -34,20 +34,20 @@
                 <div class="card">
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
-                        <table class="table table-hover text-nowrap">
+                        <table id="example1" class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th style="width: 15%; text-align:center;">No. </th>
-                                    <th>Jenis Mitra</th>
-                                    <th style="width: 15%; text-align:center;">Aksi</th>
+                                    <th style="width: 15%; text-align:center; font-size: 12px;">No. </th>
+                                    <th style="font-size: 12px;">Jenis Mitra</th>
+                                    <th style="width: 15%; text-align:center; font-size: 12px;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($jm as $item)
                                 <tr>
-                                    <td style="text-align:center;">{{ $loop->iteration }}</td>
-                                    <td>{{ $item->juduljenismitra }}</td>
-                                    <td style="text-align:center;">
+                                    <td style="text-align:center; font-size: 12px;">{{ $loop->iteration }}</td>
+                                    <td style="font-size: 12px;">{{ $item->juduljenismitra }}</td>
+                                    <td style="text-align:center; font-size: 12px;">
                                         <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}"
                                             data-toggle="modal"><i class="fa fa-edit"></i></button>
                                         <form action="{{route('hapus_mitra', $item->id)}}" method="POST"
