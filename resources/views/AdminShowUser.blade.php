@@ -70,37 +70,6 @@
         <!-- /.row -->
     </div>
 
-    <!-- <div class="modal fade" id="modal-xl">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Tambah User Baru</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="{{route('tambah_mitra')}}" method="post">
-                    {!! csrf_field() !!}
-                    <div class="modal-body">
-                        <div class="form-group row ">
-                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Jenis Mitra</label>
-                            <div class="col-sm-10 ">
-                                <input type="text" name="juduljenismitra" id="juduljenismitra" class="form-control "
-                                    placeholder="Masukan Jenis Mitra Baru">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" value="Save">Tambah</button>
-                    </div>
-                </form>
-            </div> -->
-    <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-    </div>
-    <!-- /.modal -->
 </section>
 
 @endsection
