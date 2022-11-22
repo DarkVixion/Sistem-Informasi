@@ -50,6 +50,7 @@ class LoginController extends Controller
         $request->session()->put('id', $data[0]->id);
         $request->session()->put('name', $data[0]->nama);
         $request->session()->put('role', $data[0]->role);
+        $request->session()->put('foto', $data[0]->path_profile);
 
         if($data[0]->role == 'Admin')
         {
