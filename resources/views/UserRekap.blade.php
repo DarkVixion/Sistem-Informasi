@@ -36,6 +36,9 @@
 </head>
 
 <!-- Content Header (Page header) -->
+<div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="dist/img/logo UP.jpeg" alt="AdminLTELogo" height="350" width="400">
+</div>
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
