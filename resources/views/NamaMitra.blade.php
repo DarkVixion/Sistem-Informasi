@@ -4,7 +4,7 @@
 <style>
 .dataTables_filter{
     padding-right: 1em;
-    padding-top: 1em;
+    padding-top: 0.90em;
     text-align: right;
 }
 
