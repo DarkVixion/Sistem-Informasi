@@ -33,19 +33,20 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nama Kerjasama" title="Type in a name">
+                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Nama Kerjasama"
+                            title="Type in a name">
                         <div class="md-card-content">
                             <table id="example1" class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="font-size: 12px;">Bulan Pencatatan</th>
-                                        <th style="font-size: 12px;">Nama</th>
-                                        <th style="font-size: 12px;">Jenis Mitra</th>
-                                        <th style="font-size: 12px;">Jenis Kerjasama</th>
-                                        <th style="font-size: 12px;">Judul</th>
-                                        <th style="font-size: 12px;">Periode Mulai Kerjasama</th>
-                                        <th style="font-size: 12px;">Periode Berakhir Kerjasama</th>
-                                        <th style="width:10%; font-size: 12px;">Misc.</th>
+                                        <th style="font-size: 16px;">Bulan Pencatatan</th>
+                                        <th style="font-size: 16px;">Nama</th>
+                                        <th style="font-size: 16px;">Jenis Mitra</th>
+                                        <th style="font-size: 16px;">Jenis Kerjasama</th>
+                                        <th style="font-size: 16px;">Judul</th>
+                                        <th style="font-size: 16px;">Periode Mulai Kerjasama</th>
+                                        <th style="font-size: 16px;">Periode Berakhir Kerjasama</th>
+                                        <th style="width:10%; font-size: 16px;">Misc.</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -63,17 +64,17 @@
 
                                     @if ($mou_i != 0)
                                     <tr>
-                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->bulaninput }}</td>
-                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->namamitra }}</td>
-                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->jenismitra }}</td>
-                                        <td style="font-size: 12px;">MoU</td>
-                                        <td style="font-size: 12px;">{{ $mou[0]->Judul }}</td>
-                                        <td style="text-align:center; font-size: 12px;">
+                                        <td rowspan="{{$max_i}}" style="font-size: 16px;">{{ $item->bulaninput }}</td>
+                                        <td rowspan="{{$max_i}}" style="font-size: 16px;">{{ $item->namamitra }}</td>
+                                        <td rowspan="{{$max_i}}" style="font-size: 16px;">{{ $item->jenismitra }}</td>
+                                        <td style="font-size: 16px;">MoU</td>
+                                        <td style="font-size: 16px;">{{ $mou[0]->Judul }}</td>
+                                        <td style="text-align:center; font-size: 16px;">
                                             @if ( $mou[0]->tglmulai != null)
                                             {{ $mou[0]->tglmulai->format('d-m-Y') }}
                                             @endif
                                         </td>
-                                        <td style="text-align:center; font-size: 12px;">
+                                        <td style="text-align:center; font-size: 16px;">
                                             @if ( $mou[0]->tglselesai != null)
                                             {{ $mou[0]->tglselesai->format('d-m-Y') }}
                                             @endif
@@ -91,114 +92,114 @@
                                         </td>
                                     </tr>
 
-                                        @for($i=1; $i<$mou_i; $i++) 
-                                        <tr>
-                                            <td style="font-size: 12px;">MoU</td>
-                                            <td style="font-size: 12px;">{{ $mou[0]->Judul }}</td>
-                                            <td style="text-align:center; font-size:12px;">
-                                                @if ( $mou[$i]->tglmulai != null)
-                                                {{ $mou[0]->tglmulai->format('d-m-Y') }}
-                                                @endif
-                                            </td>
-                                            <td style="text-align:center; font-size:12px;">
-                                                @if ( $mou[$i]->tglselesai != null)
-                                                {{ $mou[0]->tglselesai->format('d-m-Y') }}
-                                                @endif
-                                            </td>
+                                    @for($i=1; $i<$mou_i; $i++) <tr>
+                                        <td style="font-size: 16px;">MoU</td>
+                                        <td style="font-size: 16px;">{{ $mou[0]->Judul }}</td>
+                                        <td style="text-align:center; font-size:16px;">
+                                            @if ( $mou[$i]->tglmulai != null)
+                                            {{ $mou[0]->tglmulai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
+                                        <td style="text-align:center; font-size:16px;">
+                                            @if ( $mou[$i]->tglselesai != null)
+                                            {{ $mou[0]->tglselesai->format('d-m-Y') }}
+                                            @endif
+                                        </td>
                                         </tr>
                                         @endfor
 
                                         @if ($moa_i != 0)
-                                        @for($i=0; $i<$moa_i; $i++) 
-                                        <tr>
-                                            <td style="font-size: 12px;">MoA</td>
-                                            <td style="font-size: 12px;">{{ $moa[$i]->Judul }}</td>
-                                            <td style="text-align:center; font-size:12px;">
+                                        @for($i=0; $i<$moa_i; $i++) <tr>
+                                            <td style="font-size: 16px;">MoA</td>
+                                            <td style="font-size: 16px;">{{ $moa[$i]->Judul }}</td>
+                                            <td style="text-align:center; font-size:16px;">
                                                 @if ( $moa[$i]->tglmulai != null)
                                                 {{ $moa[0]->tglmulai->format('d-m-Y') }}
                                                 @endif
                                             </td>
-                                            <td style="text-align:center; font-size:12px;">
+                                            <td style="text-align:center; font-size:16px;">
                                                 @if ( $moa[$i]->tglselesai != null)
                                                 {{ $moa[0]->tglselesai->format('d-m-Y') }}
                                                 @endif
                                             </td>
-                                        </tr>
-                                        @endfor
-                                        @endif
+                                            </tr>
+                                            @endfor
+                                            @endif
 
-                                    @elseif ($moa_i != 0)
-                                    <tr>
-                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->bulaninput }}</td>
-                                        <td rowspan="{{$moa_i}}" style="font-size: 12px;">{{ $item->namamitra }}</td>
-                                        <td rowspan="{{$max_i}}" style="font-size: 12px;">{{ $item->jenismitra }}</td>
-                                        <td style="font-size: 12px;">MoA</td>
-                                        <td style="font-size: 12px;">{{ $moa[0]->Judul }}</td>
-                                        <td style="text-align:center; font-size:12px">
-                                            @if ( $moa[0]->tglmulai != null)
-                                            {{ $moa[0]->tglmulai->format('d-m-Y') }}
-                                            @endif
-                                        </td>
-                                        <td style="text-align:center; font-size:12px;">
-                                            @if ( $moa[0]->tglselesai != null)
-                                            {{ $moa[0]->tglselesai->format('d-m-Y') }}
-                                            @endif
-                                        </td>
-                                        <td rowspan="{{$max_i}}">
-                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button
-                                                    class="btn btn-primary"><i
-                                                        class="fa fa-edit"></i></button></a>
-                                            <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
-                                                style="display:inline ">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger"><i
-                                                        class="fa fa-trash"></i></button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                            @elseif ($moa_i != 0)
+                                            <tr>
+                                                <td rowspan="{{$max_i}}" style="font-size: 16px;">
+                                                    {{ $item->bulaninput }}</td>
+                                                <td rowspan="{{$moa_i}}" style="font-size: 16px;">{{ $item->namamitra }}
+                                                </td>
+                                                <td rowspan="{{$max_i}}" style="font-size: 16px;">
+                                                    {{ $item->jenismitra }}</td>
+                                                <td style="font-size: 16px;">MoA</td>
+                                                <td style="font-size: 16px;">{{ $moa[0]->Judul }}</td>
+                                                <td style="text-align:center; font-size:16px">
+                                                    @if ( $moa[0]->tglmulai != null)
+                                                    {{ $moa[0]->tglmulai->format('d-m-Y') }}
+                                                    @endif
+                                                </td>
+                                                <td style="text-align:center; font-size:16px;">
+                                                    @if ( $moa[0]->tglselesai != null)
+                                                    {{ $moa[0]->tglselesai->format('d-m-Y') }}
+                                                    @endif
+                                                </td>
+                                                <td rowspan="{{$max_i}}">
+                                                    <a href="{{route('edit_kerjasama', $item->id)}}"><button
+                                                            class="btn btn-primary"><i
+                                                                class="fa fa-edit"></i></button></a>
+                                                    <form action="{{route('hapus_kerjasama', $item->id)}}" method="POST"
+                                                        style="display:inline ">
+                                                        {{ method_field('DELETE') }}
+                                                        {{ csrf_field() }}
+                                                        <button type="submit" class="btn btn-danger"><i
+                                                                class="fa fa-trash"></i></button>
+                                                    </form>
+                                                </td>
+                                            </tr>
 
-                                    @for($i=1; $i<$moa_i; $i++) 
-                                    <tr>
-                                        <td style="font-size: 12px;">MoA</td>
-                                        <td style="font-size: 12px;">{{ $moa[0]->Judul }}</td>
-                                        <td style="text-align:center; font-size:12px">
-                                            @if ( $moa[0]->tglmulai != null)
-                                            {{ $moa[0]->tglmulai->format('d-m-Y') }}
-                                            @endif
-                                        </td>
-                                        <td style="text-align:center; font-size:12px;">
-                                            @if ( $moa[0]->tglselesai != null)
-                                            {{ $moa[0]->tglselesai->format('d-m-Y') }}
-                                            @endif
-                                        </td>
-                                    </tr>
-                                    @endfor
+                                            @for($i=1; $i<$moa_i; $i++) <tr>
+                                                <td style="font-size: 16px;">MoA</td>
+                                                <td style="font-size: 16px;">{{ $moa[0]->Judul }}</td>
+                                                <td style="text-align:center; font-size:16px">
+                                                    @if ( $moa[0]->tglmulai != null)
+                                                    {{ $moa[0]->tglmulai->format('d-m-Y') }}
+                                                    @endif
+                                                </td>
+                                                <td style="text-align:center; font-size:16px;">
+                                                    @if ( $moa[0]->tglselesai != null)
+                                                    {{ $moa[0]->tglselesai->format('d-m-Y') }}
+                                                    @endif
+                                                </td>
+                                                </tr>
+                                                @endfor
 
-                                    @else
-                                    <tr>
-                                        <td style="font-size: 12px;">{{ $item->bulaninput }}</td>
-                                        <td style="font-size: 12px;">{{ $item->namamitra }}</td>
-                                        <td style="font-size: 12px;">{{ $item->jenismitra }}</td>
-                                        <td style="font-size: 12px;"></td>
-                                        <td style="font-size: 12px;"></td>
-                                        <td style="font-size: 12px;"></td>
-                                        <td style="font-size: 12px;"></td>
-                                        <td style="font-size: 12px;">
-                                            <a href="{{route('edit_kerjasama', $item->id)}}"><button
-                                                    class="btn btn-primary"><i
-                                                        class="fa fa-edit"></i></button></a>
-                                            <form action="{{route('hapus_kerjasama', $item->id)}}"
-                                                method="POST" style="display:inline ">
-                                                {{ method_field('DELETE') }}
-                                                {{ csrf_field() }}
-                                                <button type="submit" class="btn btn-danger"><i
-                                                        class="fa fa-trash"></i></button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    @endif
-                                    @endforeach
+                                                @else
+                                                <tr>
+                                                    <td style="font-size: 16px;">{{ $item->bulaninput }}</td>
+                                                    <td style="font-size: 16px;">{{ $item->namamitra }}</td>
+                                                    <td style="font-size: 16px;">{{ $item->jenismitra }}</td>
+                                                    <td style="font-size: 16px;"></td>
+                                                    <td style="font-size: 16px;"></td>
+                                                    <td style="font-size: 16px;"></td>
+                                                    <td style="font-size: 16px;"></td>
+                                                    <td style="font-size: 16px;">
+                                                        <a href="{{route('edit_kerjasama', $item->id)}}"><button
+                                                                class="btn btn-primary"><i
+                                                                    class="fa fa-edit"></i></button></a>
+                                                        <form action="{{route('hapus_kerjasama', $item->id)}}"
+                                                            method="POST" style="display:inline ">
+                                                            {{ method_field('DELETE') }}
+                                                            {{ csrf_field() }}
+                                                            <button type="submit" class="btn btn-danger"><i
+                                                                    class="fa fa-trash"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                @endif
+                                                @endforeach
                                 </tbody>
                             </table>
                         </div>
