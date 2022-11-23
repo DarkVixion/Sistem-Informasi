@@ -1,6 +1,28 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
 
+<style>
+.dataTables_filter label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left;
+    padding-right: 1em;
+    padding-top: 0.90em;
+}
+
+.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+    justify-content: flex-end;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.dataTables_info {
+    padding-top: 0.85em;
+    padding-left: 1em;
+}
+</style>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
