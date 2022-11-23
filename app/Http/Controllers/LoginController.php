@@ -130,10 +130,6 @@ class LoginController extends Controller
         for($i=0;$i<12;$i++){
             $y1 = Carbon::now()->endOfYear()->subYear(1)->addMonth($i);
             $y2 = Carbon::now()->endOfYear()->subYear(1)->addMonth($i+1);
-            // return response()->json(['data1'=>$y2, 'data2'=>$y2]);
-
-            // $t = TambahKerjasama::whereBetween('bulaninput',[$y1,$y2])->where('status','aktif')->count();
-            // dd($t);
 
             $data = TambahKerjasama::whereBetween('bulaninput',[$y1,$y2])->get();
             $temp1 = 0;
