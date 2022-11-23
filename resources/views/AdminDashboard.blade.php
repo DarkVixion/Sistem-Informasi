@@ -13,27 +13,6 @@
             <div class="col-sm-6">
                 <h1 class="m-0">Dashboard</h1>
             </div>
-            <!-- /.col -->
-            <div class="col-sm-6">
-                <ol class="breadcrumb float-right">
-
-                    <!-- <div class="form-group">
-                        <div class="col-sm-13">
-                            <input type="month" class="form-control " name="bulaninput">
-                        </div>
-                    </div>-
-                    <div class="form-group">
-                        <div class="col-sm-13">
-                            <input type="month" class="form-control " name="bulaninput">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-default" style="max-height: 38px;">
-                        <i class=" fas fa-search"></i>
-                    </button> -->
-
-                </ol>
-            </div>
-            <!-- /.col -->
         </div>
         <!-- /.row -->
     </div>
@@ -124,10 +103,10 @@
             </div><br>
             <div class="row">
                 <div class="col-sm-5">
-                    <div id="container1"></div>
+                    <div id="pie-mou-moa"></div>
                 </div>
                 <div class="col-sm-7">
-                    <div id="container2"></div>
+                    <div id="bar-mou-moa"></div>
                 </div>
             </div>
         </div>
@@ -139,10 +118,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-5">
-                    <div id="container"></div>
+                    <div id="pie-status"></div>
                 </div>
                 <div class="col-sm-7">
-                    <div id="container4"></div>
+                    <div id="bar-status"></div>
                 </div>
                 <!-- /.col -->
             </div>
@@ -158,7 +137,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <div id="container3"></div>
+                            <div id="pie-mitra"></div>
                         </div>
                     </div>
                     <!-- /.row -->
@@ -235,7 +214,7 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
     <script>
-    Highcharts.chart('container', {
+    Highcharts.chart('pie-status', {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -263,28 +242,27 @@
             colorByPoint: true,
             data: [{
                 name: 'Aktif',
-                y: {{$aktif}}
+                y: {{$paktif}}
             }, 
             {
                 name: 'Tidak Aktif',
-                y: {{$taktif}}
+                y: {{$ptaktif}}
             }, 
             {
                 name: 'Kedaluwarsa',
-                y: {{$exp}}
+                y: {{$pexp}}
             }, 
             {
                 name: 'Perpanjangan',
-                y: {{$pan}}
+                y: {{$ppan}}
             }, 
             {
                 name: 'Dalam Penjajakan',
-                y: {{$pen}}
+                y: {{$ppen}}
             }]
         }]
     });
-
-    Highcharts.chart('container1', {
+    Highcharts.chart('pie-mou-moa', {
         chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -312,28 +290,15 @@
             colorByPoint: true,
             data: [{
                 name: 'MoU',
-                y: {{$countmou}}
+                y: {{$pmous}}
             }, 
             {
                 name: 'MoA',
-                y: {{$countmoa}}
-            // }, 
-            // {
-            //     name: 'BUMN',
-            //     y: {{$bumn}}
-            // }, 
-            // {
-            //     name: 'Kementerian',
-            //     y: {{$mentri}}
-            // },
-            // {
-            //     name: 'Other',
-            //     y: {{$other}}
+                y: {{$pmoas}}
             }]
         }]
     });
-
-    Highcharts.chart('container2', {
+    Highcharts.chart('bar-mou-moa', {
         chart: {
             type: 'column'
         },
@@ -370,17 +335,131 @@
         },
         series: [{
             name: 'MoU',
-            data: [13.93, 13.63, 13.73, 13.67, 14.37, 14.89, 14.56,
-                14.32, 14.13, 13.93, 13.21, 12.16]
-
+            data: [<?php echo implode(',', $bmous) ?>]
         }, {
             name: 'MoA',
-            data: [12.24, 12.24, 11.95, 12.02, 11.65, 11.96, 11.59,
-                11.94, 11.96, 11.59, 11.42, 11.76]
-
+            data: [<?php echo implode(',', $bmoas) ?>]
+        }]
+    });
+    Highcharts.chart('pie-mitra', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: ''
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.y}</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.y}'
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [{
+                name: 'Chrome',
+                y: 7
+            }, {
+                name: 'Edge',
+                y: 4
+            },  {
+                name: 'Firefox',
+                y: 4
+            }, {
+                name: 'Safari',
+                y: 2
+            }, {
+                name: 'Internet Explorer',
+                y: 1
+            },  {
+                name: 'Opera',
+                y: 1
+            }, {
+                name: 'Sogou Explorer',
+                y: 5
+            }, {
+                name: 'QQ',
+                y: 3
+            }, {
+                name: 'Other',
+                y: 2
+            }]
+        }]
+    });
+    Highcharts.chart('bar-status', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: [
+                'Jan','Feb','Mar','Apr',
+                'May','Jun','Jul','Aug',
+                'Sep','Okt','Nov','Dec'
+            ],
+            crosshair: true
+        },
+        yAxis: {
+            title: {
+                useHTML: true,
+                text: 'Total'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.2,
+                borderWidth: 0
+            }
+        },
+        series: [{
+                name: 'Aktif',
+                data: [<?php echo implode(',', $baktif) ?>]
+            }, 
+            {
+                name: 'Tidak Aktif',
+                data: [<?php echo implode(',', $btaktif) ?>]
+            }, 
+            {
+                name: 'Kedaluwarsa',
+                data: [<?php echo implode(',', $bkeda) ?>]
+            }, 
+            {
+                name: 'Perpanjangan',
+                data: [<?php echo implode(',', $bper) ?>]
+            }, 
+            {
+                name: 'Dalam Penjajakan',
+                data: [[<?php echo implode(',', $bpen) ?>]]
         }]
     });
     </script>
+    
     <script>
     $(document).ready(function() {
         $('#chosenyear').on('change', function() {
@@ -395,7 +474,91 @@
                     dataType: "json",
                     success: function(data) {
                         if (data) {
-                            Highcharts.chart('container2', {
+                            Highcharts.chart('pie-status', {
+                                chart: {
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false,
+                                    type: 'pie'
+                                },
+                                title: {
+                                    text: ''
+                                },
+                                tooltip: {
+                                    pointFormat: '{series.name}: <b>{point.y:f}</b>'
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: false,
+                                        },
+                                        showInLegend: true
+                                    }
+                                },
+                                series: [{
+                                    name: 'Total',
+                                    colorByPoint: true,
+                                    data: [{
+                                        name: 'Aktif',
+                                        y: data.data10
+                                    }, 
+                                    {
+                                        name: 'Tidak Aktif',
+                                        y: data.data11
+                                    }, 
+                                    {
+                                        name: 'Kedaluwarsa',
+                                        y: data.data12
+                                    }, 
+                                    {
+                                        name: 'Perpanjangan',
+                                        y: data.data13
+                                    }, 
+                                    {
+                                        name: 'Dalam Penjajakan',
+                                        y: data.data13
+                                    }]
+                                }]
+                            });
+                            Highcharts.chart('pie-mou-moa', {
+                                chart: {
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false,
+                                    type: 'pie'
+                                },
+                                title: {
+                                    text: ''
+                                },
+                                tooltip: {
+                                    pointFormat: '{series.name}: <b>{point.y:f}</b>'
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: false,
+                                        },
+                                        showInLegend: true
+                                    }
+                                },
+                                series: [{
+                                    name: 'Total',
+                                    colorByPoint: true,
+                                    data: [{
+                                        name: 'MoU',
+                                        y: data.data8
+                                    }, 
+                                    {
+                                        name: 'MoA',
+                                        y: data.data9
+                                    }]
+                                }]
+                            });
+                            Highcharts.chart('bar-mou-moa', {
                                 chart: {
                                     type: 'column'
                                 },
@@ -433,11 +596,126 @@
                                 series: [{
                                     name: 'MoU',
                                     data: data.data1
-
                                 }, {
                                     name: 'MoA',
                                     data: data.data2
-
+                                }]
+                            });
+                            Highcharts.chart('pie-mitra', {
+                                chart: {
+                                    plotBackgroundColor: null,
+                                    plotBorderWidth: null,
+                                    plotShadow: false,
+                                    type: 'pie'
+                                },
+                                title: {
+                                    text: ''
+                                },
+                                tooltip: {
+                                    pointFormat: '{series.name}: <b>{point.y}</b>'
+                                },
+                                accessibility: {
+                                    point: {
+                                        valueSuffix: '%'
+                                    }
+                                },
+                                plotOptions: {
+                                    pie: {
+                                        allowPointSelect: true,
+                                        cursor: 'pointer',
+                                        dataLabels: {
+                                            enabled: true,
+                                            format: '<b>{point.name}</b>: {point.y}'
+                                        }
+                                    }
+                                },
+                                series: [{
+                                    name: 'Brands',
+                                    colorByPoint: true,
+                                    data: [{
+                                        name: 'Chrome',
+                                        y: 9
+                                    }, {
+                                        name: 'Edge',
+                                        y: 2
+                                    },  {
+                                        name: 'Firefox',
+                                        y: 8
+                                    }, {
+                                        name: 'Safari',
+                                        y: 4
+                                    }, {
+                                        name: 'Internet Explorer',
+                                        y: 5
+                                    },  {
+                                        name: 'Opera',
+                                        y: 6
+                                    }, {
+                                        name: 'Sogou Explorer',
+                                        y: 10
+                                    }, {
+                                        name: 'QQ',
+                                        y: 15
+                                    }, {
+                                        name: 'Other',
+                                        y: 13
+                                    }]
+                                }]
+                            });
+                            Highcharts.chart('bar-status', {
+                                chart: {
+                                    type: 'column'
+                                },
+                                title: {
+                                    text: ''
+                                },
+                                xAxis: {
+                                    categories: [
+                                        'Jan','Feb','Mar','Apr',
+                                        'May','Jun','Jul','Aug',
+                                        'Sep','Okt','Nov','Dec'
+                                    ],
+                                    crosshair: true
+                                },
+                                yAxis: {
+                                    title: {
+                                        useHTML: true,
+                                        text: 'Total'
+                                    }
+                                },
+                                tooltip: {
+                                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                                        '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                                    footerFormat: '</table>',
+                                    shared: true,
+                                    useHTML: true
+                                },
+                                plotOptions: {
+                                    column: {
+                                        pointPadding: 0.2,
+                                        borderWidth: 0
+                                    }
+                                },
+                                series: [{
+                                        name: 'Aktif',
+                                        data: data.data3
+                                    }, 
+                                    {
+                                        name: 'Tidak Aktif',
+                                        data: data.data4
+                                    }, 
+                                    {
+                                        name: 'Kedaluwarsa',
+                                        data: data.data5
+                                    }, 
+                                    {
+                                        name: 'Perpanjangan',
+                                        data: data.data6
+                                    }, 
+                                    {
+                                        name: 'Dalam Penjajakan',
+                                        data: data.data7
                                 }]
                             });
                         }
@@ -447,114 +725,5 @@
         });
     });
     </script>
-    <script>
-    Highcharts.chart('container3', {
-        chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-        },
-        title: {
-            text: ''
-        },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.y}</b>'
-        },
-        accessibility: {
-            point: {
-                valueSuffix: '%'
-            }
-        },
-        plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
-                dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.y}'
-                }
-            }
-        },
-        series: [{
-            name: 'Brands',
-            colorByPoint: true,
-            data: [{
-                name: 'Chrome',
-                y: 70
-            }, {
-                name: 'Edge',
-                y: 14
-            },  {
-                name: 'Firefox',
-                y: 4
-            }, {
-                name: 'Safari',
-                y: 2
-            }, {
-                name: 'Internet Explorer',
-                y: 1
-            },  {
-                name: 'Opera',
-                y: 1
-            }, {
-                name: 'Sogou Explorer',
-                y: 0
-            }, {
-                name: 'QQ',
-                y: 0
-            }, {
-                name: 'Other',
-                y: 2
-            }]
-        }]
-    });
 
-    Highcharts.chart('container4', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: ''
-        },
-        xAxis: {
-            categories: [
-                'Jan','Feb','Mar','Apr',
-                'May','Jun','Jul','Aug',
-                'Sep','Okt','Nov','Dec'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            title: {
-                useHTML: true,
-                text: 'Total'
-            }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.1,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'MoU',
-            data: [13.93, 13.63, 13.73, 13.67, 14.37, 14.89, 14.56,
-                14.32, 14.13, 13.93, 13.21, 12.16]
-        }, {
-            name: 'MoA',
-            data: [12.24, 12.24, 11.95, 12.02, 11.65, 11.96, 11.59,
-                11.94, 11.96, 11.59, 11.42, 11.76]
-        }]
-    });
-</script>
-
-    @endsection
+@endsection
