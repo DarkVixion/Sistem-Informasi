@@ -1,5 +1,31 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
+<style>
+.pagination {
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.dataTables_info {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+
+.dataTables_filter {
+    padding-right: 1em;
+    padding-top: 1em;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-container>div {
+    margin: 3px;
+}
+</style>
 
 <!-- Content Header (Page header) -->
 <section class="content-header">

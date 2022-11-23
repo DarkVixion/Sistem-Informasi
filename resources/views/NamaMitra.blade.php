@@ -1,5 +1,31 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
+<style>
+.pagination {
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.dataTables_info {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+
+.dataTables_filter {
+    padding-right: 1em;
+    padding-top: 1em;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-container>div {
+    margin: 3px;
+}
+</style>
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -26,17 +52,25 @@
         </button>
     </div> -->
     <div class="container-fluid">
+        <div class="card-header">
+            <div class="flex-container float-right">
+                <div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-excel"
+                        style="border-radius:15px;">
+                        <i class="fas fa-plus"></i> Import Excel</button>
+                </div>
+                <div>
+                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
+                        style="background-color:lightblue; border-radius:15px;">
+                        Tambah Nama Mitra
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-12">
                 <div class="card">
 
-                    <div class="card-header">
-                        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#modal-excel" style="border-radius:15px;">
-                            <i class="fas fa-plus"></i> Import Excel</button>
-                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
-                            Tambah Nama Mitra
-                        </button>
-                    </div>
 
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
@@ -54,13 +88,16 @@
                                     <td style="text-align:center;">{{ $loop->iteration }}</td>
                                     <td>{{ $item->nama }}</td>
                                     <td style="text-align:center;">
-                                        <a href="{{route('mitraEdit', $item->id)}}"><button class="btn btn-primary"><i class="fa fa-edit"></i></button></a>
+                                        <a href="{{route('mitraEdit', $item->id)}}"><button class="btn btn-primary"><i
+                                                    class="fa fa-edit"></i></button></a>
                                         <!-- <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}"
                                             data-toggle="modal"><i class="fa fa-edit"></i></button> -->
-                                        <form action="{{route('hapus_nama', $item->id)}}" method="POST" style="display:inline ">
+                                        <form action="{{route('hapus_nama', $item->id)}}" method="POST"
+                                            style="display:inline ">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            <button type="submit" class="btn btn-danger"><i
+                                                    class="fa fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -71,7 +108,8 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h4 class="modal-title">Edit Nama Mitra</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
@@ -85,7 +123,9 @@
                                                                 <div class="form-group">
                                                                     <label>Nama Mitra</label>
                                                                     <div class="col-sm-13">
-                                                                        <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Mitra" value="{{ $item->nama }}">
+                                                                        <input type="text" class="form-control"
+                                                                            name="nama" placeholder="Masukan Nama Mitra"
+                                                                            value="{{ $item->nama }}">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -93,9 +133,12 @@
                                                                 <div class="form-group">
                                                                     <label>Jenis Mitra</label>
                                                                     <select class="form-control" name="jenismitra">
-                                                                        <option hidden selected>{{ $item->jenismitra }}</option>
+                                                                        <option hidden selected>
+                                                                            {{ $item->jenismitra }}
+                                                                        </option>
                                                                         @foreach ($jm as $item)
-                                                                        <option>{{ $item->juduljenismitra }}</option>
+                                                                        <option>{{ $item->juduljenismitra }}
+                                                                        </option>
                                                                         @endforeach
                                                                     </select>
                                                                 </div>
@@ -104,7 +147,9 @@
                                                                 <div class="form-group">
                                                                     <label>Alamat</label>
                                                                     <div class="col-sm-13">
-                                                                        <input type="text" class="form-control" name="alamat" placeholder="Masukan Alamat" value="{{$item->alamat}}">
+                                                                        <input type="text" class="form-control"
+                                                                            name="alamat" placeholder="Masukan Alamat"
+                                                                            value="{{$item->alamat}}">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -113,20 +158,28 @@
                                                             <div class=" col-md-12">
                                                                 <div class="form-group">
                                                                     <label>Website</label>
-                                                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website" value="{{ $item->website }}">
+                                                                    <input type="url" class="form-control "
+                                                                        name="website" placeholder="Masukan Website"
+                                                                        value="{{ $item->website }}">
                                                                 </div>
                                                             </div>
                                                             <div class=" col-md-12">
                                                                 <div class="form-group">
                                                                     <label>Nomor Telephone</label>
-                                                                    <input type="text" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" onKeyPress="if(this.value.length==15) return false;" value="{{ $item->notelpmitra }}">
+                                                                    <input type="text" class="form-control "
+                                                                        name="notelpmitra"
+                                                                        placeholder="Masukan Nomor Telephone"
+                                                                        onKeyPress="if(this.value.length==15) return false;"
+                                                                        value="{{ $item->notelpmitra }}">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-12">
                                                                 <div class="form-group">
                                                                     <label>Negara</label>
                                                                     <div class="col-sm-13">
-                                                                        <input type="text" class="form-control " name="negara" placeholder="Masukan Negara" value="{{ $item->negara }}">
+                                                                        <input type="text" class="form-control "
+                                                                            name="negara" placeholder="Masukan Negara"
+                                                                            value="{{ $item->negara }}">
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -134,8 +187,10 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer justify-content-between">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary" value="Save">Simpan</button>
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary"
+                                                        value="Save">Simpan</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -175,7 +230,8 @@
                                 <div class="form-group">
                                     <label>Nama Mitra</label>
                                     <div class="col-sm-13">
-                                        <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Mitra">
+                                        <input type="text" class="form-control" name="nama"
+                                            placeholder="Masukan Nama Mitra">
                                     </div>
                                 </div>
                             </div>
@@ -198,20 +254,25 @@
                             <div class=" col-md-12">
                                 <div class="form-group">
                                     <label>Website</label>
-                                    <input type="url" class="form-control " name="website" placeholder="Masukan Website">
+                                    <input type="url" class="form-control " name="website"
+                                        placeholder="Masukan Website">
                                 </div>
                             </div>
                             <div class=" col-md-12">
                                 <div class="form-group">
                                     <label>Nomor Telephone</label>
-                                    <input type="text" class="form-control " name="notelpmitra" placeholder="Masukan Nomor Telephone" onKeyPress="if(this.value.length==15) return false;" value="{{ $item->notelpmitra }}">
+                                    <input type="text" class="form-control " name="notelpmitra"
+                                        placeholder="Masukan Nomor Telephone"
+                                        onKeyPress="if(this.value.length==15) return false;"
+                                        value="{{ $item->notelpmitra }}">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label>Negara</label>
                                     <div class="col-sm-13">
-                                        <input type="text" class="form-control " name="negara" placeholder="Masukan Negara">
+                                        <input type="text" class="form-control " name="negara"
+                                            placeholder="Masukan Negara">
                                     </div>
                                 </div>
                             </div>

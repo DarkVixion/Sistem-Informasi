@@ -1,5 +1,31 @@
 @extends('AdminTemplate')
 @section('isiAdmin')
+<style>
+.pagination {
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.dataTables_info {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+
+.dataTables_filter {
+    padding-right: 1em;
+    padding-top: 1em;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.flex-container>div {
+    margin: 3px;
+}
+</style>
 
 
 <!-- Content Header (Page header) -->
@@ -23,7 +49,8 @@
 <!-- Main content -->
 <section class="content">
     <div class="card-header">
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl" style="float:right; background-color:lightblue; border-radius:15px;">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
+            style="float:right; background-color:lightblue; border-radius:15px;">
             Tambah Lingkup Kerja Sama
         </button>
     </div>
@@ -47,40 +74,50 @@
                                     <td style="text-align:center;">{{ $loop->iteration }}</td>
                                     <td>{{ $item->judullingkupkerja }}</td>
                                     <td style="text-align:center;">
-                                        <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}" data-toggle="modal"><i class="fa fa-edit"></i></button>
-                                        <form action="{{route('hapus_lingkup', $item->id)}}" method="POST" style="display:inline ">
+                                        <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}"
+                                            data-toggle="modal"><i class="fa fa-edit"></i></button>
+                                        <form action="{{route('hapus_lingkup', $item->id)}}" method="POST"
+                                            style="display:inline ">
                                             {{ method_field('DELETE') }}
                                             {{ csrf_field() }}
-                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            <button type="submit" class="btn btn-danger"><i
+                                                    class="fa fa-trash"></i></button>
                                         </form>
                                     </td>
                                 </tr>
-                                
+
                                 <!-- modal untuk edit -->
                                 <div class="modal fade" id="modal-xxl{{ $item->id }}">
                                     <div class="modal-dialog modal-xl">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h4 class="modal-title">Edit Lingkup Kerja Sama Baru</h4>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <form action="{{route('edit_lingkup', $item->id)}}" method="post">
-                                            {!! csrf_field() !!}
-                                            @method("PATCH")
-                                            <div class="modal-body">
-                                                <div class="form-group row ">
-                                                    <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                                                    <div class="col-sm-10 ">
-                                                        <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru" value="{{ $item->judullingkupkerja }}">
+                                                {!! csrf_field() !!}
+                                                @method("PATCH")
+                                                <div class="modal-body">
+                                                    <div class="form-group row ">
+                                                        <label for="inputPassword3 "
+                                                            class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+                                                        <div class="col-sm-10 ">
+                                                            <input type="text" class="form-control"
+                                                                name="judullingkupkerja" id="inputPassword3"
+                                                                placeholder="Masukan Lingkup Kerja Sama Baru"
+                                                                value="{{ $item->judullingkupkerja }}">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="modal-footer justify-content-between">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary" value="Save">Simpan</button>
-                                            </div>
+                                                <div class="modal-footer justify-content-between">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary"
+                                                        value="Save">Simpan</button>
+                                                </div>
                                             </form>
                                         </div>
                                         <!-- /.modal-content -->
@@ -88,7 +125,7 @@
                                     <!-- /.modal-dialog -->
                                 </div>
                                 <!-- /.modal -->
-                                
+
                                 @endforeach
                             </tbody>
                         </table>
@@ -112,19 +149,20 @@
                     </button>
                 </div>
                 <form action="{{route('tambah_lingkup')}}" method="post">
-                {!! csrf_field() !!}
-                <div class="modal-body">
-                    <div class="form-group row ">
-                        <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
-                        <div class="col-sm-10 ">
-                            <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3" placeholder="Masukan Lingkup Kerja Sama Baru">
+                    {!! csrf_field() !!}
+                    <div class="modal-body">
+                        <div class="form-group row ">
+                            <label for="inputPassword3 " class="col-sm-2 col-form-label ">Lingkup Kerja Sama</label>
+                            <div class="col-sm-10 ">
+                                <input type="text" class="form-control" name="judullingkupkerja" id="inputPassword3"
+                                    placeholder="Masukan Lingkup Kerja Sama Baru">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
-                </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" value="Save">Tambah Lingkup Kerja Sama</button>
+                    </div>
                 </form>
             </div>
             <!-- /.modal-content -->
