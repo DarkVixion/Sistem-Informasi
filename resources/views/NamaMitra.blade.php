@@ -28,7 +28,7 @@
 </style>
 
 <style>
-.dataTables_filter{
+.dataTables_filter {
     padding-right: 1em;
     padding-top: 0.90em;
     text-align: right;
@@ -46,7 +46,6 @@
     padding-top: 0.85em;
     padding-left: 1em;
 }
-
 </style>
 
 <!-- Content Header (Page header) -->
@@ -75,15 +74,14 @@
     </div> -->
     <div class="container-fluid">
         <div class="card-header">
-            <div class="flex-container float-right">
+            <div class="flex-container float-right btn-border">
                 <div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-excel"
-                        style="border-radius:15px;">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal-excel">
                         <i class="fas fa-plus"></i> Import Excel</button>
                 </div>
                 <div>
                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
-                        style="background-color:lightblue; border-radius:15px;">
+                        style="background-color:lightblue;">
                         Tambah Nama Mitra
                     </button>
                 </div>

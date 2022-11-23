@@ -28,27 +28,27 @@
 </style>
 
 <style>
-    .dataTables_filter label {
-        font-weight: normal;
-        white-space: nowrap;
-        text-align: left;
-        padding-right: 1em;
-        padding-top: 0.90em;
-    }
-    
-    .dataTables_paginate ul.pagination {
-        margin: 2px 0;
-        white-space: nowrap;
-        justify-content: flex-end;
-        padding-right: 1em;
-        padding-bottom: 1em;
-    }
-    
-    .dataTables_info {
-        padding-top: 0.85em;
-        padding-left: 1em;
-    }
-    </style>
+.dataTables_filter label {
+    font-weight: normal;
+    white-space: nowrap;
+    text-align: left;
+    padding-right: 1em;
+    padding-top: 0.90em;
+}
+
+.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+    justify-content: flex-end;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+.dataTables_info {
+    padding-top: 0.85em;
+    padding-left: 1em;
+}
+</style>
 
 <!-- Content Header (Page header) -->
 <section class="content-header">
@@ -71,8 +71,8 @@
 <!-- Main content -->
 <section class="content">
     <div class="card-header">
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
-            style="float:right; background-color:lightblue; border-radius:15px;">
+        <button type="button" class="btn btn-default btn-border" data-toggle="modal" data-target="#modal-xl"
+            style="float:right; background-color:lightblue;">
             Tambah Lingkup Kerja Sama
         </button>
     </div>

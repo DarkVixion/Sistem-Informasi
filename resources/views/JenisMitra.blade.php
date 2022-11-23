@@ -72,8 +72,8 @@
 <section class="content">
     <div class="container-fluid">
         <div class="card-header">
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
-                style="float:right; background-color:lightblue; border-radius:15px;">
+            <button type="button" class="btn btn-default btn-border" data-toggle="modal" data-target="#modal-xl"
+                style="float:right; background-color:lightblue;">
                 Tambah Jenis Mitra
             </button>
         </div>
