@@ -72,8 +72,8 @@
 <section class="content">
     <div class="container-fluid">
         <div class="card-header">
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-xl"
-                style="float:right; background-color:lightblue; border-radius:15px;">
+            <button type="button" class="btn btn-default btn-border" data-toggle="modal" data-target="#modal-xl"
+                style="float:right; background-color:lightblue;">
                 Tambah Jenis Mitra
             </button>
         </div>
@@ -85,17 +85,17 @@
                         <table id="example1" class="table table-hover text-nowrap">
                             <thead>
                                 <tr>
-                                    <th style="width: 15%; text-align:center; font-size: 12px;">No. </th>
-                                    <th style="font-size: 12px;">Jenis Mitra</th>
-                                    <th style="width: 15%; text-align:center; font-size: 12px;">Aksi</th>
+                                    <th style="width: 15%; text-align:center; font-size: 16px;">No. </th>
+                                    <th style="font-size: 16px;">Jenis Mitra</th>
+                                    <th style="width: 15%; text-align:center; font-size: 16px;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($jm as $item)
                                 <tr>
-                                    <td style="text-align:center; font-size: 12px;">{{ $loop->iteration }}</td>
-                                    <td style="font-size: 12px;">{{ $item->juduljenismitra }}</td>
-                                    <td style="text-align:center; font-size: 12px;">
+                                    <td style="text-align:center; font-size: 16px;">{{ $loop->iteration }}</td>
+                                    <td style="font-size: 16px;">{{ $item->juduljenismitra }}</td>
+                                    <td style="text-align:center; font-size: 16px;">
                                         <button class="btn btn-primary" data-target="#modal-xxl{{ $item->id }}"
                                             data-toggle="modal"><i class="fa fa-edit"></i></button>
                                         <form action="{{route('hapus_mitra', $item->id)}}" method="POST"

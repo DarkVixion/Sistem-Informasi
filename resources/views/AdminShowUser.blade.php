@@ -16,17 +16,18 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
+        <div class="card-header">
+            <a href="/AdminUserMenu">
+                <button type="button" class="btn btn-default btn-border"
+                    style="float:right; background-color:lightblue;">
+                    Tambah User Baru
+                </button>
+            </a>
+        </div>
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div class="card-header">
-                        <a href="/AdminUserMenu">
-                            <button type="button" class="btn btn-default"
-                                style="float:right; background-color:lightblue; border-radius:15px;">
-                                Tambah User Baru
-                            </button>
-                        </a>
-                    </div>
+                    
                     <!-- /.card-header -->
                     <div class="card-body table-responsive p-0">
                         <table class="table table-hover text-nowrap">

@@ -52,6 +52,10 @@
     input[type=number] {
         -moz-appearance: textfield;
     }
+
+    .btn-border {
+        border-radius: 5px;
+    }
     </style>
 
 </head>
@@ -62,15 +66,15 @@
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <!-- Left navbar links -->
             <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-            </li>     
-            
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+
             </ul>
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-            
-            <!-- Notifications Dropdown Menu -->
+
+                <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#" style="padding-top: 29%;">
                         <img src="https://cdn-icons-png.flaticon.com/128/3119/3119338.png"
@@ -98,10 +102,8 @@
                 </li>
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image" style="padding-top:3%">
-                        <img src=@if(session('foto')!=null)
-                                    "{{ asset('profilpicuser/'.session('foto')) }}" @else
-                                    ../../dist/img/user2-160x160.jpg @endif 
-                                    class="img-circle elevation-2" alt="User Image">
+                        <img src=@if(session('foto')!=null) "{{ asset('profilpicuser/'.session('foto')) }}" @else
+                            ../../dist/img/user2-160x160.jpg @endif class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info" style="padding-top: 7%">
                         <a href="/Akun" class="d-block" style="padding-top:5%">@if(session()->has('id'))
