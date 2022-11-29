@@ -109,6 +109,8 @@ class AkunController extends Controller
             $akun->save();
         }
 
+        $req->session()->put('foto',$picprofile);
+
         return back();
     }
 }

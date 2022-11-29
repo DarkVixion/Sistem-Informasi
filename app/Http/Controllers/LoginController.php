@@ -106,11 +106,7 @@ class LoginController extends Controller
                 $fid[] = $d->id;
             }
         }
-
-        foreach($fid as $id)
-        {
-            $total[] = MoA::where('tambah_kerjasama_id',$id)->sum('nilaikontrak');
-        }
+        // dd($temp);
 
         $mitra = NamaMitra::all()->count();
 
@@ -159,7 +155,6 @@ class LoginController extends Controller
         return view('AdminDashboard')->with('sum', $sum)
             ->with('countmoa', $countmoa)
             ->with('countmou', $countmou)
-            ->with('total', count($temp))
             ->with('mitra', $mitra)
             ->with('paktif', $data10)
             ->with('ptaktif', $data11)
@@ -172,7 +167,6 @@ class LoginController extends Controller
             ->with('mentri', $mentri)
             ->with('other', $oth)
             ->with('nmitra', $temp)
-            ->with('tots', $total)
             ->with('years', $year)
             ->with('bmous', $data1)
             ->with('bmoas', $data2)
