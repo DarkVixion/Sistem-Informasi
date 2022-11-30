@@ -26,9 +26,9 @@ use App\Models\MoU;
 |
 */
 
-Route::get('/', function(){
-    return redirect('/Login');
-});
+// Route::get('/', function(){
+//     return redirect('/Login');
+// });
 
 // <-- BAGIAN ADMIN -->
 Route::get('/AdminDashboard', [LoginController::class, 'admin']);
@@ -109,7 +109,7 @@ Route::get('/UserAkun', function () {
         return view('UserAkun')->with('akun', $akun);
     }
     
-    return redirect('/Login');
+    return redirect('/auth');
 });
 
 Route::get('UserRekap', function () {
@@ -124,9 +124,9 @@ Route::get('UserMitra', function () {
     ->with('user', $user);
 });
 
-Route::get('/Login', [LoginController::class, 'index']);
-Route::post('/Login/check', [LoginController::class, 'login'])->name('checking');
-Route::get('/Logout', [LoginController::class, 'logout']);
+// Route::get('/Login', [LoginController::class, 'index']);
+// Route::post('/Login/check', [LoginController::class, 'login'])->name('checking');
+// Route::get('/Logout', [LoginController::class, 'logout']);
 
 
 Route::get('template', function () {
@@ -136,3 +136,9 @@ Route::get('template', function () {
 Route::get('D3', function () {
     return view('D3');
 });
+
+
+route::get('auth/', 'App\Http\Controllers\AuthController@auth');
+route::get('login', 'App\Http\Controllers\AuthController@showLoginForm')->name('login');
+route::get('gettoken/', 'App\Http\Controllers\AuthController@getToken');
+route::post('logout/', 'App\Http\Controllers\AuthController@logout')->name('logout');

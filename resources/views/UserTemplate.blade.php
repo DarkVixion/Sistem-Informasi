@@ -1,7 +1,7 @@
 <?php 
         if(session()->missing('id'))
         {
-            header('Location: /Login');
+            header('Location: /auth');
             die;
         }
         elseif(session('role')=='Admin')
