@@ -93,8 +93,9 @@
                 </li>
                 <div class="user-panel mt-1 pb-1 mb-1 d-flex">
                     <div class="image" style="padding-top:3%">
-                        <img src=" {{ asset ('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                            alt="User Image" style="padding-top: 28%">
+                        <img src=@if(session('foto')!=null) "{{ asset('profilpicuser/'.session('foto')) }}" @else
+                            ../../dist/img/user2-160x160.jpg @endif 
+                        class="img-circle elevation-2" alt="User Image">
                     </div>
                     <div class="info" style="padding-top: 7%">
                         <a href="/Akun" class="d-block" style="padding-top:5%">@if(session()->has('id'))
