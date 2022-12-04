@@ -46,13 +46,6 @@
                                 <tbody>
                                     @foreach ($tks as $item)
                                     <?php
-                                            $moa = App\Models\MoA::where('tambah_kerjasama_id', $item->id)->get();
-                                            $mou = App\Models\MoU::where('tambah_kerjasama_id', $item->id)->get();
-                                            $mou_i = count($mou);
-                                            $moa_i = count($moa);
-                                            $max_i = $mou_i + $moa_i;
-                                        ?>
-                                    <?php
                                     $moa = App\Models\MoA::where('tambah_kerjasama_id', $item->id)->get();
                                     $mou = App\Models\MoU::where('tambah_kerjasama_id', $item->id)->get();
                                     $mou_i = count($mou);
@@ -73,7 +66,7 @@
                                             </a></td>
                                     </tr>
 
-                                    @for($i=1; $i<$mou_i; $i++) <tr>
+                                        @for($i=1; $i<$mou_i; $i++) <tr>
                                         <td>MoU</td>
                                         <td>{{ $mou[$i]->Judul }}</td>
                                         <td><button class="btn btn-info" data-toggle="modal"
@@ -83,7 +76,7 @@
                                         @endfor
 
                                         @if ($moa_i != 0)
-                                        @for($i=0; $i<$moa_i; $i++) <tr>
+                                            @for($i=0; $i<$moa_i; $i++) <tr>
                                             <td>MoA</td>
                                             <td>{{ $moa[$i]->judul }}</td>
                                             <td><button class="btn btn-info" data-toggle="modal"
@@ -91,16 +84,7 @@
                                                         class="fa fa-eye"></i></button></a></td>
                                             </tr>
                                             @endfor
-                                            @if ($moa_i != 0)
-                                            @for($i=0; $i<$moa_i; $i++) <tr>
-                                                <td>MoA</td>
-                                                <td>{{ $moa[$i]->judul }}</td>
-                                                <td><button class="btn btn-info" data-toggle="modal"
-                                                        data-target="#modal-xxl{{ $item->id }}"><i
-                                                            class="fa fa-eye"></i></button></a></td>
-                                                </tr>
-                                                @endfor
-                                                @endif
+                                        @endif
 
                                                 @elseif ($moa_i != 0)
                                                 <tr>
@@ -114,12 +98,12 @@
                                                                 class="fa fa-eye"></i></button></a></td>
                                                 </tr>
 
-                                                @for($i=1; $i<$moa_i; $i++) <tr>
-                                                    <td>MoA</td>
-                                                    <td>{{ $moa[$i]->judul }}</td>
-                                                    <td><button class="btn btn-info" data-toggle="modal" data-target="#modal-xxl{{ $item->id }}"><i class="fa fa-eye"></i></button></a></td>
-                                                </tr>
-                                                @endfor
+                                                    @for($i=1; $i<$moa_i; $i++) <tr>
+                                                        <td>MoA</td>
+                                                        <td>{{ $moa[$i]->judul }}</td>
+                                                        <td><button class="btn btn-info" data-toggle="modal" data-target="#modal-xxl{{ $item->id }}"><i class="fa fa-eye"></i></button></a></td>
+                                                    </tr>
+                                                    @endfor
 
                                                     @else
                                                     <tr>
@@ -275,7 +259,7 @@
                                                     <!-- /.modal-content -->
                                                 </div>
                                                 <!-- /.modal -->
-                                                @endforeach
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
