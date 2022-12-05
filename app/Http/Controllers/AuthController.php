@@ -14,14 +14,14 @@ class AuthController extends Controller
         $login_url = 'https://sso-dev.universitaspertamina.ac.id/sso-login?redirect_url=http://localhost:803/auth';
         return \Redirect::to($login_url);
     }
-
+//sso0
     public function auth(Request $request)
     {
         if(isset($_GET['username'])){
             $username = $_GET['username'];
             $token_login = $_GET['token'];
             $password = "";
-
+            //dd($username);
             setcookie('username', $username, time() + (86400 * 30), "/"); 
             setcookie('token_login', $token_login, time() + (86400 * 30), "/");
 
@@ -29,7 +29,10 @@ class AuthController extends Controller
             $data = AdminViewUser::find($data->id);
 
             $data = AdminViewUser::where([['username', $request->un], ['password', $password]])->get();
-
+            $dataSes = AdminViewUser::where('username', $username)->first();
+            session(['id'=> $dataSes->id]);
+            session(['name'=> $dataSes->nama]);
+            session(['role'=> $dataSes->role]);
             if(session()->has('id'))
             {
                 if(session('role') == 'Admin')
@@ -40,6 +43,8 @@ class AuthController extends Controller
                 {
                     return redirect('/UserRekap');
                 }
+            }else{
+                dd('periksa session');
             }
         } else {
             $login_url = 'https://sso-dev.universitaspertamina.ac.id/sso-login?redirect_url=http://localhost:803/auth';
@@ -47,7 +52,7 @@ class AuthController extends Controller
         }
     }
     
-    public function logout(Request $request)
+    public function logout()
     {
         Session::flush();
         if (isset($_COOKIE['token_login']) || isset($_COOKIE['username'])) {

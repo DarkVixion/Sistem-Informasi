@@ -108,7 +108,7 @@
                             @endif</a>
                     </div>
                     <div class=" info">
-                        <a href="/Logout" class="nav-link">
+                    <a href="{{route('logout')}}" class="nav-link">
                             <img class="nav-icon" style="opacity: 55%; width: 18px;"
                                 srcset="https://cdn-icons-png.flaticon.com/512/1286/1286853.png 2x" width="1rem"
                                 height="1rem" alt="exit icon" loading="lazy">

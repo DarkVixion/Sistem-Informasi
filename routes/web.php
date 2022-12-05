@@ -26,9 +26,9 @@ use App\Models\MoU;
 |
 */
 
-// Route::get('/', function(){
-//     return redirect('/Login');
-// });
+Route::get('/', function(){
+    return redirect('/login');
+});
 
 // <-- BAGIAN ADMIN -->
 Route::get('/AdminDashboard', [LoginController::class, 'admin']);
@@ -141,4 +141,4 @@ Route::get('D3', function () {
 route::get('auth/', 'App\Http\Controllers\AuthController@auth');
 route::get('login', 'App\Http\Controllers\AuthController@showLoginForm')->name('login');
 route::get('gettoken/', 'App\Http\Controllers\AuthController@getToken');
-route::post('logout/', 'App\Http\Controllers\AuthController@logout')->name('logout');
+route::get('logout/', 'App\Http\Controllers\AuthController@logout')->name('logout');
